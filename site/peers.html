@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Compared with other cities · San Diego Spending</title>
+  <meta name="description" content="City of San Diego spending per resident by service, next to 11 comparable US cities (Census Bureau, FY2024).">
+  <link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav>
+      <strong>San Diego Spending</strong>
+      <a href="index.html">Where your dollar goes</a>
+      <a href="vendors.html">Who gets paid</a>
+      <a href="peers.html" aria-current="page">Compared with other cities</a>
+      <a href="methods.html">Data &amp; methods</a>
+    </nav>
+  </header>
+  <main>
+    <h1>Compared with other cities</h1>
+    <p id="phead" class="headline" aria-live="polite">Loading…</p>
+    <p id="peer-note" class="note">The peers are 11 US cities of roughly 0.6 to 1.7 million people, chosen to be broadly
+      similar and to cover several regions. A higher number is not waste: it can reflect higher prices or wages, or
+      a different mix of services. Fiscal years end in different months and nothing is adjusted for cost of living.
+      This compares San Diego with other cities, not with the private sector. "Administration, courts &amp; inspection" is
+      a broad Census category that includes spending not classified elsewhere, so it is the least comparable row: part
+      of any gap there may reflect how cities report.</p>
+
+    <form class="controls" aria-label="Which services to include" onsubmit="return false">
+      <fieldset>
+        <legend>Include</legend>
+        <label><input type="checkbox" id="kind-core" value="core"> City services</label>
+        <label><input type="checkbox" id="kind-utility" value="utility"> Utilities, transit &amp; airports</label>
+        <label><input type="checkbox" id="kind-outside" value="outside"> Health, welfare, jails &amp; schools</label>
+        <label><input type="checkbox" id="kind-debt" value="debt"> Interest on debt</label>
+        <label><input type="checkbox" id="kind-other" value="other"> Grants to other governments</label>
+      </fieldset>
+    </form>
+
+    <h2>Per resident, by service</h2>
+    <figure>
+      <div id="peer-chart" role="img" aria-label="Dot plot of spending per resident by service for San Diego and 11 peer cities"></div>
+      <ul id="peer-legend" class="legend"></ul>
+      <details class="method">
+        <summary>Method</summary>
+        <p>Source: Census Bureau, Annual Survey of State and Local Government Finances, FY2024 individual unit files.
+          Each service is current operation plus construction spending under the matching Census item codes; per resident
+          is that amount divided by the city's population as the Census reports it. A $0 means the city reports no
+          spending on that service, usually because a county or special district provides it; those cities are left out
+          of the middle peer and the rank. "Administration" is a broad Census category that includes spending not
+          classified elsewhere, so differences there may partly reflect how cities report. See
+          <a href="methods.html">Data &amp; methods</a>.</p>
+      </details>
+    </figure>
+    <div class="table-wrap">
+      <table id="peer-table">
+        <caption class="note">The same figures. "Middle peer" is the median of the other cities that report spending.</caption>
+        <thead><tr><th scope="col">Service</th><th scope="col">San Diego</th><th scope="col">Middle peer</th><th scope="col">Lowest to highest</th><th scope="col">San Diego rank</th><th scope="col">Cities reporting $0</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+
+    <h2>The cities</h2>
+    <div class="table-wrap">
+      <table id="city-table">
+        <caption class="note">Population and fiscal year end, as reported to the Census.</caption>
+        <thead><tr><th scope="col">City</th><th scope="col">Region</th><th scope="col">Population</th><th scope="col">Fiscal year ends</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </main>
+  <script type="module" src="js/peers.js"></script>
+</body>
+</html>

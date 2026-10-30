@@ -52,3 +52,5 @@ table button { font: inherit; font-size: .85rem; cursor: pointer; color: var(--a
   background: none; border: 1px solid var(--line); border-radius: 6px; padding: .15rem .5rem; }
 .visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 h3 { font-size: 1rem; margin: 1.25rem 0 .25rem; }
+.legend { display: flex; flex-wrap: wrap; gap: .25rem 1rem; padding: 0; list-style: none; font-size: .85rem; }
+.legend .swatch { display: inline-block; width: .8rem; height: .8rem; margin-right: .3rem; vertical-align: -1px; }

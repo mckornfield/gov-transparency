@@ -217,3 +217,30 @@ def test_nav_links_to_the_vendors_page_from_every_page(page, site_url):
     for path in ("/", "/methods.html"):
         page.goto(site_url + path)
         assert page.locator("nav a[href='vendors.html']").count() == 1
+
+
+def test_peers_page_renders(page, site_url):
+    errors = []
+    page.on("pageerror", lambda e: errors.append(str(e)))
+    page.goto(f"{site_url}/peers.html")
+    page.wait_for_selector("#peer-chart svg")
+    assert "middle peer" in page.inner_text("#phead")
+    assert page.locator("#peer-table tbody tr").count() == 8
+    assert page.locator("#city-table tbody tr").count() == 12
+    page.check("#kind-utility")
+    page.wait_for_function("location.hash.includes('kinds=')")
+    assert page.locator("#peer-table tbody tr").count() == 12
+    assert page.locator("figure details.method").count() == 1
+    assert not errors
+
+
+def test_peers_deep_link_and_garbage_hash(page, site_url):
+    errors = []
+    page.on("pageerror", lambda e: errors.append(str(e)))
+    page.goto(f"{site_url}/peers.html#kinds=core,outside")
+    page.wait_for_selector("#peer-chart svg")
+    assert page.is_checked("#kind-outside") and not page.is_checked("#kind-utility")
+    page.goto(f"{site_url}/peers.html#kinds=%00zzz")
+    page.wait_for_selector("#peer-chart svg")
+    assert page.is_checked("#kind-core")
+    assert not errors

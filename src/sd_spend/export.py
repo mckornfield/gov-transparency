@@ -41,3 +41,19 @@ def vendors_payload(vendors: pd.DataFrame, cov: dict) -> dict:
                                "reference_basis": c["reference_basis"]} for fy, c in sorted(cov.items())},
         "vendors": [{"name": e["name"], "ids": "; ".join(sorted(e["ids"])), "amounts": e["amounts"]} for e in ranked],
     }
+
+
+def peers_payload(tidy: pd.DataFrame, fiscal_year: int = 2024) -> dict:
+    groups = tidy[["group", "label", "kind"]].drop_duplicates().rename(columns={"group": "key"})
+    cities = tidy[["city", "state", "region", "population", "fy_end", "is_home"]].drop_duplicates("city")
+    rows = tidy[["city", "group", "amount_usd", "per_resident"]].rename(columns={"amount_usd": "amount"})
+    home = tidy.loc[tidy["is_home"], "city"].iloc[0]
+    return {
+        "fiscal_year": fiscal_year,
+        "home": home,
+        "groups": groups.to_dict("records"),
+        "cities": [{**c, "population": int(c["population"]), "is_home": bool(c["is_home"])}
+                   for c in cities.to_dict("records")],
+        "rows": [{**r, "amount": int(r["amount"]), "per_resident": round(float(r["per_resident"]), 2)}
+                 for r in rows.to_dict("records")],
+    }

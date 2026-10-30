@@ -50,3 +50,19 @@ def test_vendors_payload_shapes_years_coverage_and_sorted_vendors():
     assert payload["coverage"]["2025"] == {"vendors_total": 50, "reference_total": 90, "reference_basis": "adopted"}
     assert [v["name"] for v in payload["vendors"]] == ["Beta LLC", "Alpha Inc"]  # 500 > 150.8
     assert payload["vendors"][1] == {"name": "Alpha Inc", "ids": "1; 2; 3", "amounts": {"2024": 100, "2025": 50}}
+
+
+def test_peers_payload_shape():
+    import pandas as pd
+    from sd_spend.export import peers_payload
+    tidy = pd.DataFrame([
+        {"city": "San Diego", "state": "CA", "region": "West", "is_home": True, "population": 100, "fy_end": "0630",
+         "group": "police", "label": "Police", "kind": "core", "amount_usd": 5000, "per_resident": 50.0},
+        {"city": "Dallas", "state": "TX", "region": "South", "is_home": False, "population": 200, "fy_end": "0930",
+         "group": "police", "label": "Police", "kind": "core", "amount_usd": 6000, "per_resident": 30.0},
+    ])
+    p = peers_payload(tidy)
+    assert p["home"] == "San Diego" and p["fiscal_year"] == 2024
+    assert p["groups"] == [{"key": "police", "label": "Police", "kind": "core"}]
+    assert [c["city"] for c in p["cities"]] == ["San Diego", "Dallas"]
+    assert p["rows"][0] == {"city": "San Diego", "group": "police", "amount": 5000, "per_resident": 50.0}

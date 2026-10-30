@@ -29,8 +29,8 @@ def read_zip_member(zip_bytes: bytes, suffix: str) -> str:
 def parse_units(text: str) -> pd.DataFrame:
     rows = []
     for line in text.splitlines():
-        if len(line) < 144:
-            continue
+        if len(line) < 144 or not line[116:125].strip():
+            continue  # short lines and rows with no population (e.g. state totals)
         rows.append({"unit_id": line[0:12], "name": line[12:76].strip(),
                      "population": int(line[116:125]), "fy_end": line[140:144]})
     return pd.DataFrame(rows, columns=["unit_id", "name", "population", "fy_end"])
@@ -47,7 +47,8 @@ def parse_items(text: str) -> pd.DataFrame:
 
 def check_peers(tidy: pd.DataFrame) -> None:
     low, high = PER_RESIDENT_RANGE
-    totals = tidy.groupby("city").agg(amount=("amount_usd", "sum"), population=("population", "first"))
+    # Schools, health and welfare are excluded: a city that runs them (Boston) legitimately spends far more.
+    totals = tidy[tidy["kind"] != "outside"].groupby("city").agg(amount=("amount_usd", "sum"), population=("population", "first"))
     for city, row in totals.iterrows():
         per = row.amount / row.population
         if not low <= per <= high:

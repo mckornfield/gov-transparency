@@ -39,6 +39,12 @@ def test_parse_units_reads_fixed_columns():
     assert u.loc[0, "name"] == "SAN DIEGO CITY"
 
 
+def test_parse_units_skips_rows_without_population():
+    blank = unit_line("010000226085", "ALABAMA", 0).replace("        0", "         ")
+    u = parse_units(blank + "\n" + units_text())
+    assert list(u["unit_id"]) == [HOME, PEER]
+
+
 def test_parse_items_converts_thousands_to_dollars():
     i = parse_items(items_text([(HOME, "E62", 5)]))
     assert i.loc[0, "amount_usd"] == 5000 and i.loc[0, "item"] == "E62"
@@ -92,3 +98,10 @@ def test_read_zip_member_finds_by_suffix():
     assert read_zip_member(buf.getvalue(), "Fin_PID_2024.txt") == "hello"
     with pytest.raises(CensusError):
         read_zip_member(buf.getvalue(), "missing.txt")
+
+
+def test_large_outside_services_do_not_trip_the_total_check():
+    funcs = {"groups": FUNCS["groups"] + [{"key": "county", "label": "County-type", "kind": "outside", "codes": ["E12"]}]}
+    items = parse_items(items_text([(HOME, "E62", 200_000), (PEER, "E62", 300_000), (PEER, "E12", 5_000_000)]))
+    t = build_peer_spending(parse_units(units_text()), items, PEERS, funcs)
+    assert t[(~t.is_home) & (t.group == "county")].iloc[0].per_resident == 50_000

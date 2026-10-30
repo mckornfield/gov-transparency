@@ -94,7 +94,7 @@ function render() {
     `FY${state.fy}: the City paid ${conc.count.toLocaleString("en-US")} vendors $25,000 or more, ${formatMoney(conc.total)} in total. The 10 largest received ${Math.round(conc.share * 100)}% of that.`;
   const basis = cov.reference_basis === "actual" ? "actual spending" : "adopted budget";
   $("vcoverage").textContent =
-    `These payments equal ${Math.round((100 * cov.vendors_total) / cov.reference_total)}% of the City's FY${state.fy} ${basis} (${formatMoney(cov.reference_total)}). Vendors paid less than $25,000 in the year are not published, so this is not total spending.`;
+    `For scale, the City's FY${state.fy} ${basis} was ${formatMoney(cov.reference_total)}, but the two figures are not directly comparable: the City's figure includes payroll, while this list includes capital, pass-through and other payments. Vendors paid less than $25,000 in the year are not published, so this is not total spending.`;
   const leaders = topVendors(data.vendors, state.fy, 25);
   drawLeaders(leaders);
   fillTable("leader-table", leaders.map((l) => [l.name, money(l.amount), `${((100 * l.amount) / conc.total).toFixed(1)}%`]));

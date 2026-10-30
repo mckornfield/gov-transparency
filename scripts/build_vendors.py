@@ -19,12 +19,13 @@ SITE_DATA = ROOT / "site" / "data"
 def main() -> None:
     reports = {}
     for fy in YEARS:
-        got_fy, df = vendors.parse_and_validate(
-            vendors.pdf_to_text(RAW / "sandiego" / f"vendor_payments_fy{fy}.pdf.gz"))
+        raw = RAW / "sandiego" / f"vendor_payments_fy{fy}.pdf.gz"
+        got_fy, df = vendors.parse_and_validate(vendors.pdf_to_text(raw), expected_pages=vendors.pdf_page_count(raw))
         if got_fy != fy:
             raise vendors.ExtractionError(f"vendor_payments_fy{fy}.pdf.gz is a report for FY{got_fy}")
         reports[fy] = df
         print(f"FY{fy}: {len(df):>5} rows  ${df['amount'].sum() / 1e6:>8,.1f}M")
+    vendors.check_row_counts({fy: len(df) for fy, df in reports.items()})
     table = vendors.combine(reports)
     spending = pd.read_csv(PROCESSED / "spending.csv")
     cov = vendors.coverage(table.groupby("fy")["amount"].sum(), spending)

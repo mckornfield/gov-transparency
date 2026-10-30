@@ -166,8 +166,10 @@ def test_vendors_page_shows_leaders_headline_and_honest_coverage(page, site_url)
     assert page.locator("#leader-table tbody tr").count() == 25
     head = page.locator("#vhead").inner_text()
     assert "FY2026" in head and "vendors" in head and "$" in head
-    coverage = page.locator("#vcoverage").inner_text()
-    assert "%" in coverage and "not total spending" in coverage.lower()
+    coverage = page.locator("#vcoverage").inner_text().lower()
+    assert "not directly comparable" in coverage and "less than $25,000" in coverage
+    assert "not total spending" in coverage
+    assert "% of the city" not in coverage  # the two totals are not nested, so no "coverage" percentage
     assert "pass-through" in page.locator("#passthrough-note").inner_text().lower()
     assert errors == []
 

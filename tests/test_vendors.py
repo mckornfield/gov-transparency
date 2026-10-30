@@ -50,7 +50,7 @@ def test_parses_fy22_layout_without_cents():
     assert list(df["vendor_id"]) == ["10020828", "10007317"]
     assert list(df["vendor_name"]) == ["SDCERS", "San Diego County Water Authority"]
     assert list(df["amount"]) == [841366616.0, 260209475.0]
-    assert info == {"unmatched": [], "pages_declared": 1, "pages_seen": 1}
+    assert info == {"unmatched": [], "pages_declared": 1, "pages_seen": 1, "page_numbers": [1]}
 
 
 def test_parses_fy23_layout_with_padded_ids_dollar_sign_cents_and_blank_rows():
@@ -114,11 +114,11 @@ def test_combine_merges_ids_and_spellings_and_uses_the_latest_name():
                      ("C", "CGI Technologies & Solutions", 5.0)),
         2025: report(("D", "CGI Technologies and Solutions", 6.0)),
     })
-    sdge = out[out["vendor_key"] == v.name_key("San Diego Gas and Electric")]
+    sdge = out[out["vendor_key"] == v.loose_key("San Diego Gas and Electric")]
     assert list(sdge["amount"]) == [75.0]
     assert list(sdge["vendor_ids"]) == ["A; B"]
     assert list(sdge["vendor_name"]) == ["San Diego Gas and Electric"]
-    cgi = out[out["vendor_key"] == v.name_key("CGI Technologies and Solutions")]
+    cgi = out[out["vendor_key"] == v.loose_key("CGI Technologies and Solutions")]
     assert list(cgi["fy"]) == [2024, 2025]
     assert set(cgi["vendor_name"]) == {"CGI Technologies and Solutions"}
     assert list(out["fy"]) == sorted(out["fy"])
@@ -153,3 +153,56 @@ def test_check_coverage_catches_a_lost_chunk_of_pages_and_double_counting():
         bad = {2023: {"vendors_total": paid, "reference_total": 100.0, "reference_basis": "actual"}}
         with pytest.raises(v.ExtractionError, match="2023"):
             v.check_coverage(bad)
+
+
+def test_combine_merges_a_vendor_id_renamed_with_a_suffix_change():
+    out = v.combine({
+        2022: report(("10036157", "Shimmick Construction Inc", 364.0)),
+        2025: report(("10036157", "Shimmick Construction Company Inc", 70.0)),
+    })
+    assert out["vendor_key"].nunique() == 1
+    assert list(out["fy"]) == [2022, 2025]
+    assert set(out["vendor_name"]) == {"Shimmick Construction Company Inc"}
+
+
+def test_combine_merges_an_id_renamed_to_a_longer_name_with_the_same_first_word():
+    out = v.combine({
+        2022: report(("10013048", "Flatiron West Inc", 90.0)),
+        2025: report(("10013048", "Flatiron Dragados Constructors Inc", 100.0)),
+    })
+    assert out["vendor_key"].nunique() == 1
+
+
+def test_combine_does_not_merge_an_id_reused_by_an_unrelated_payee():
+    out = v.combine({
+        2022: report(("12298", "Accion San Diego", 30000.0)),
+        2023: report(("12298", "Accessity", 40000.0)),
+    })
+    assert out["vendor_key"].nunique() == 2
+
+
+def test_combine_merges_suffix_variants_within_a_year():
+    out = v.combine({2026: report(
+        ("1", "Downtown San Diego Partnership Inc", 13.5), ("2", "Downtown San Diego Partnership", 4.0),
+        ("3", "AT&T Corp", 1.0), ("4", "AT&T", 2.0),
+        ("5", "The Regents of the University of Ca", 5.0), ("6", "Regents of the University of CA", 6.0))})
+    assert sorted(out["amount"]) == [3.0, 11.0, 17.5]
+
+
+def test_page_footers_must_be_exactly_one_to_n_not_just_the_right_count():
+    duplicated = FY24.replace("Page 2 of 2", "Page 1 of 2")  # two footers, but page 2 is missing
+    with pytest.raises(v.ExtractionError, match="pages"):
+        v.parse_and_validate(duplicated)
+
+
+def test_declared_pages_must_match_the_real_pdf_page_count():
+    assert v.parse_and_validate(FY24, expected_pages=2)[0] == 2024
+    with pytest.raises(v.ExtractionError, match="PDF has 3 pages"):
+        v.parse_and_validate(FY24, expected_pages=3)
+
+
+def test_check_row_counts_flags_a_year_that_shrinks_or_balloons():
+    v.check_row_counts({2024: 1500, 2025: 1600})
+    for bad in (700, 2400):
+        with pytest.raises(v.ExtractionError, match="2025"):
+            v.check_row_counts({2024: 1500, 2025: bad})

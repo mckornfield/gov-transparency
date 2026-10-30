@@ -58,18 +58,24 @@
     <ul>
       <li><strong>Source:</strong> the City's yearly "Cumulative Amounts Paid to Vendors - $25,000 or more" reports
         (PDF), FY2022 to FY2026, read with <code>pdftotext</code>. The FY2026 report covers July 2025 to June 2026.</li>
-      <li><strong>Only payments of $25,000 or more</strong> to a vendor in the year are published, so the totals are
-        a share of City spending, not all of it. The page states that share next to every total.</li>
+      <li><strong>Only payments of $25,000 or more</strong> to a vendor in the year are published, so the totals leave
+        out smaller vendors. They are not directly comparable to the City's spending either: spending includes payroll,
+        while the vendor list includes capital, pass-through and other payments. The page shows the City's figure only
+        for scale and says so.</li>
       <li><strong>No purpose or category</strong> is published, so a large payee can be a pass-through (for example to
         the pension system or a regional water wholesaler). The page makes no judgement about whether a payment was
         too high.</li>
-      <li><strong>One company, several IDs.</strong> Vendors whose names match ignoring case, punctuation and
-        "&amp;" vs "and" are combined, and all their vendor IDs are kept in
-        <code>data/processed/vendor_payments.csv</code>.</li>
-      <li><strong>Checks:</strong> the extractor fails on any line it does not recognise, a page-count mismatch, a
-        duplicate vendor ID or an amount under $25,000. The reports print no totals, so the build also requires each
-        year's vendor payments to be between 40% and 110% of the City's own spending for that year (they are
-        58%-86% today).</li>
+      <li><strong>One company, several IDs or spellings.</strong> Vendors whose names match ignoring case,
+        punctuation, "&amp;" vs "and" and endings like Inc, LLC, Co or "The" are combined, as is a vendor ID renamed
+        to another name starting with the same word. All vendor IDs are kept in
+        <code>data/processed/vendor_payments.csv</code>. Two different companies with near-identical names could be
+        combined by mistake.</li>
+      <li><strong>Checks:</strong> the extractor fails on any line it does not recognise, page footers that are not
+        exactly 1 to N, a page count that differs from the PDF's real page count, a duplicate vendor ID or an amount
+        under $25,000. The reports print no totals, so the build also requires the number of vendors not to jump more
+        than 35% year over year and each year's vendor payments to be between 40% and 110% of the City's own spending.
+        The last check is a coarse sanity band (it mainly catches a lost first page or a double count); the page-count
+        checks are what guard against a lost page.</li>
     </ul>
 
     <h2>Checks that run on every build</h2>

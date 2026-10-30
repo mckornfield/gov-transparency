@@ -29,7 +29,7 @@ def test_known_top_payees():
 
 
 def test_one_company_under_two_vendor_ids_is_one_row():
-    sdge = table[(table["fy"] == 2025) & (table["vendor_key"] == v.name_key("San Diego Gas and Electric"))]
+    sdge = table[(table["fy"] == 2025) & (table["vendor_key"] == v.loose_key("San Diego Gas and Electric"))]
     assert len(sdge) == 1
     assert "10019640" in sdge.iloc[0]["vendor_ids"] and "10010990" in sdge.iloc[0]["vendor_ids"]
     assert 78e6 < sdge.iloc[0]["amount"] < 79e6
@@ -54,3 +54,17 @@ def test_re_extracting_a_raw_pdf_reproduces_the_processed_total():
     fy, df = v.parse_and_validate(v.pdf_to_text(ROOT / "data/raw/sandiego/vendor_payments_fy2025.pdf.gz"))
     assert fy == 2025
     assert abs(df["amount"].sum() - table.loc[table["fy"] == 2025, "amount"].sum()) < 1
+
+
+def test_a_vendor_id_renamed_across_years_is_one_vendor():
+    # ID 10036157 is "Shimmick Construction Inc" in some years and "... Company Inc" in others
+    hits = table[table["vendor_ids"].str.contains("10036157")]
+    assert hits["vendor_key"].nunique() == 1
+    assert hits["fy"].nunique() >= 3
+
+
+@pytest.mark.skipif(shutil.which("pdfinfo") is None, reason="needs poppler's pdfinfo")
+def test_pdf_page_counts_match_what_the_reports_declare():
+    expected = {2022: 38, 2023: 42, 2024: 46, 2025: 46, 2026: 43}
+    for fy, pages in expected.items():
+        assert v.pdf_page_count(ROOT / f"data/raw/sandiego/vendor_payments_fy{fy}.pdf.gz") == pages

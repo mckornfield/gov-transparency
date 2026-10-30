@@ -1,0 +1,47 @@
+:root {
+  --bg: #ffffff; --text: #1b1f24; --muted: #5b6672; --line: #d8dee4;
+  --accent: #0b5fff; --bar: #b9c4d4; --panel: #f5f7fa;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #12161b; --text: #e6e9ee; --muted: #9aa5b1; --line: #2a323b;
+    --accent: #6ea0ff; --bar: #3a4656; --panel: #1a2028;
+  }
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; background: var(--bg); color: var(--text);
+  font: 16px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+a { color: var(--accent); }
+.site-header { border-bottom: 1px solid var(--line); }
+.site-header nav { display: flex; flex-wrap: wrap; gap: 1rem; align-items: baseline;
+  max-width: 1100px; margin: 0 auto; padding: .75rem 16px; }
+.site-header a[aria-current="page"] { font-weight: 600; color: var(--text); text-decoration: none; }
+main { max-width: 1100px; margin: 0 auto; padding: 1rem 16px 3rem; }
+h1 { font-size: clamp(1.5rem, 4vw, 2.1rem); line-height: 1.2; margin: .5rem 0; }
+h2 { font-size: 1.15rem; margin: 2rem 0 .5rem; }
+.headline { font-size: 1.15rem; color: var(--text); margin: .25rem 0 1rem; }
+.controls { display: flex; flex-wrap: wrap; gap: 1rem 2rem; align-items: flex-end;
+  background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: .75rem 1rem; }
+.controls fieldset { border: 0; margin: 0; padding: 0; }
+.controls legend { font-size: .8rem; color: var(--muted); padding: 0; }
+.controls label { margin-right: .75rem; white-space: nowrap; }
+.year-control { flex: 1 1 260px; }
+.year-control input[type="range"] { width: 100%; }
+figure { margin: 0; }
+#treemap, #totals-chart { width: 100%; overflow-x: auto; }
+#treemap svg { display: block; max-width: 100%; height: auto; }
+#treemap rect.leaf { stroke: none; }
+#treemap text.group { font-size: 11px; fill: var(--text); paint-order: stroke;
+  stroke: var(--bg); stroke-width: 3px; pointer-events: none; }
+#legend { display: flex; flex-wrap: wrap; gap: .25rem 1rem; padding: 0; list-style: none; font-size: .85rem; }
+#legend .swatch { display: inline-block; width: .8rem; height: .8rem; margin-right: .3rem; vertical-align: -1px; }
+.note { color: var(--muted); font-size: .9rem; }
+details.method { margin: .5rem 0 0; font-size: .9rem; color: var(--muted); }
+details.method summary { cursor: pointer; }
+table { border-collapse: collapse; width: 100%; font-size: .95rem; }
+th, td { text-align: left; padding: .35rem .5rem; border-bottom: 1px solid var(--line); }
+th:not(:first-child), td:not(:first-child) { text-align: right; font-variant-numeric: tabular-nums; }
+.table-wrap { overflow-x: auto; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }

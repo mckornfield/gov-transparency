@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Data &amp; methods · San Diego Spending</title>
+  <link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav>
+      <strong>San Diego Spending</strong>
+      <a href="index.html">Where your dollar goes</a>
+      <a href="methods.html" aria-current="page">Data &amp; methods</a>
+    </nav>
+  </header>
+  <main>
+    <h1>Data &amp; methods</h1>
+    <p>Every number on this site comes from public files committed to the project's repository
+      (<code>data/raw/</code>, with the source URL, retrieval date and checksum of each file in
+      <code>data/raw/MANIFEST.csv</code>) and is rebuilt by scripts in <code>scripts/</code>.</p>
+
+    <h2>Sources</h2>
+    <ul>
+      <li><strong>Operating actuals</strong> (FY2011-23) and <strong>operating budget</strong> (FY2011-26):
+        City of San Diego Department of Finance, <a href="https://data.sandiego.gov/datasets/operating-actuals/">data.sandiego.gov</a>.
+        Account and department reference tables come from the same portal.</li>
+      <li><strong>Population</strong>: City of San Diego estimated population as reported in the California
+        State Controller's Office local-government finance data
+        (<a href="https://bythenumbers.sco.ca.gov/">bythenumbers.sco.ca.gov</a>).</li>
+    </ul>
+
+    <h2>How the numbers are built</h2>
+    <ul>
+      <li><strong>Spending</strong> is every row whose account number starts with 5 (expense accounts).
+        Revenue rows (starting with 4) are not used on this page.</li>
+      <li><strong>Fiscal years</strong> are named by the year they end: FY2023 is July 2022 to June 2023.</li>
+      <li><strong>Dollars are nominal</strong>, not adjusted for inflation.</li>
+      <li><strong>Adopted budget only.</strong> The budget file also contains "proposed" rows for FY2024 and
+        FY2025; they are excluded because adding them to the adopted rows would count the budget twice.</li>
+      <li><strong>FY2026 budget</strong> rows have no budget stage in the source file. They are treated as the
+        adopted budget. There are no FY2024-26 actuals yet.</li>
+      <li><strong>Transfers Out</strong> (money moved between city funds) is about 13% of FY2023 spending. It is
+        hidden by default because it counts the same dollars twice; the checkbox adds it back.</li>
+      <li><strong>Credits.</strong> A department and spending type that nets to a credit cannot be drawn in a
+        treemap. It is left out of the picture, included in the totals, and listed under the chart.</li>
+      <li><strong>Unclassified.</strong> Rows whose department or account is missing from the City's reference
+        tables are kept and labelled "Unclassified". Rows with a blank account number cannot be identified as
+        spending or revenue and are excluded; their totals are recorded in
+        <code>data/processed/build_report.json</code>.</li>
+      <li><strong>Population</strong> is missing from the source for a few years. Those years are
+        interpolated, and years after the latest report use the latest value. Per-resident figures for them are
+        marked "(population estimated)".</li>
+    </ul>
+
+    <h2>Checks that run on every build</h2>
+    <ul>
+      <li>Aggregating never changes a total.</li>
+      <li>Adopted budget stays within 25% of actual spending for every year that has both.</li>
+      <li>No year's total changes by more than 40% from the year before (this would catch double counting).</li>
+    </ul>
+    <p class="note">Margin estimates (spending compared with private-sector prices) and peer-city comparisons are
+      not on the site yet.</p>
+  </main>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Where San Diego's money goes</title>
+  <meta name="description" content="Interactive look at City of San Diego spending: actuals for FY2011-23 and adopted budgets through FY2026.">
+  <link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav>
+      <strong>San Diego Spending</strong>
+      <a href="index.html" aria-current="page">Where your dollar goes</a>
+      <a href="methods.html">Data &amp; methods</a>
+    </nav>
+  </header>
+  <main>
+    <h1>Where San Diego's money goes</h1>
+    <p id="headline" class="headline" aria-live="polite">Loading…</p>
+
+    <form class="controls" aria-label="Chart controls" onsubmit="return false">
+      <fieldset>
+        <legend>Show</legend>
+        <label><input type="radio" name="basis" value="actual" checked> Actual spending</label>
+        <label><input type="radio" name="basis" value="adopted"> Adopted budget</label>
+      </fieldset>
+      <fieldset>
+        <legend>Amounts</legend>
+        <label><input type="radio" name="mode" value="total" checked> Total</label>
+        <label><input type="radio" name="mode" value="perResident"> Per resident</label>
+      </fieldset>
+      <fieldset>
+        <legend>Transfers</legend>
+        <label><input type="checkbox" id="transfers"> Include transfers between city funds</label>
+      </fieldset>
+      <div class="year-control">
+        <label for="fy">Fiscal year: <strong id="fy-label"></strong></label>
+        <input type="range" id="fy" min="2011" max="2023" step="1" value="2023">
+      </div>
+    </form>
+
+    <h2>Total by year</h2>
+    <figure>
+      <div id="totals-chart" role="img" aria-label="Bar chart of total city spending by fiscal year"></div>
+      <figcaption class="note">Highlighted bar is the year selected above. Dollars are nominal (not adjusted for inflation).</figcaption>
+      <details class="method">
+        <summary>Method</summary>
+        <p>Sum of all expense accounts (account numbers starting with 5) in the City's operating
+          <em>actuals</em> or <em>adopted budget</em> files, by fiscal year (named for the year it ends).
+          Source: City of San Diego Department of Finance via data.sandiego.gov.
+          See <a href="methods.html">Data &amp; methods</a>.</p>
+      </details>
+    </figure>
+
+    <h2>What it is spent on</h2>
+    <figure>
+      <div id="treemap"></div>
+      <ul id="legend" aria-label="Colour key for types of spending"></ul>
+      <p id="omitted-note" class="note"></p>
+      <details class="method">
+        <summary>Method</summary>
+        <p>Each rectangle is one department group and one type of spending; its area is the amount.
+          Colour shows the type of spending. "Transfers Out" (money moved between city funds) is hidden by
+          default because it counts the same dollars twice. Per-resident figures divide by the City's
+          estimated population for that year (<a href="methods.html">years where population is estimated are flagged</a>).</p>
+      </details>
+    </figure>
+
+    <h2>Table view</h2>
+    <div class="table-wrap">
+      <table>
+        <caption class="note">Department groups, largest first (same data as the chart above).</caption>
+        <thead><tr><th scope="col">Department group</th><th scope="col" id="value-head">Spending</th><th scope="col">Share</th></tr></thead>
+        <tbody id="table-body"></tbody>
+      </table>
+    </div>
+  </main>
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>

@@ -94,3 +94,62 @@ def test_amounts_below_the_published_threshold_fail_loudly():
 def test_empty_report_fails_loudly():
     with pytest.raises(v.ExtractionError, match="no rows"):
         v.parse_and_validate("City of San Diego\nFiscal Year 2024 (x)\nPage 1 of 1\n")
+
+
+import pandas as pd
+
+
+def report(*rows):
+    return pd.DataFrame(rows, columns=["vendor_id", "vendor_name", "amount"])
+
+
+def test_name_key_ignores_case_punctuation_and_ampersand():
+    assert v.name_key("CGI Technologies & Solutions Inc.") == v.name_key("cgi technologies and solutions inc")
+    assert v.name_key("San Diego Gas And Electric") == v.name_key("San Diego Gas and Electric")
+
+
+def test_combine_merges_ids_and_spellings_and_uses_the_latest_name():
+    out = v.combine({
+        2024: report(("A", "San Diego Gas and Electric", 60.0), ("B", "San Diego Gas And Electric", 15.0),
+                     ("C", "CGI Technologies & Solutions", 5.0)),
+        2025: report(("D", "CGI Technologies and Solutions", 6.0)),
+    })
+    sdge = out[out["vendor_key"] == v.name_key("San Diego Gas and Electric")]
+    assert list(sdge["amount"]) == [75.0]
+    assert list(sdge["vendor_ids"]) == ["A; B"]
+    assert list(sdge["vendor_name"]) == ["San Diego Gas and Electric"]
+    cgi = out[out["vendor_key"] == v.name_key("CGI Technologies and Solutions")]
+    assert list(cgi["fy"]) == [2024, 2025]
+    assert set(cgi["vendor_name"]) == {"CGI Technologies and Solutions"}
+    assert list(out["fy"]) == sorted(out["fy"])
+    assert list(out[out["fy"] == 2024]["amount"]) == [75.0, 5.0]
+
+
+def test_combine_never_merges_vendors_whose_names_have_no_letters_or_digits():
+    out = v.combine({2024: report(("1001", "---", 30000.0), ("1002", "...", 40000.0))})
+    assert len(out) == 2
+
+
+def spending(rows):
+    return pd.DataFrame(rows, columns=["basis", "fy", "amount"])
+
+
+def test_coverage_prefers_actuals_and_falls_back_to_adopted():
+    cov = v.coverage(pd.Series({2023: 60.0, 2026: 30.0}),
+                     spending([("actual", 2023, 100.0), ("adopted", 2023, 90.0), ("adopted", 2026, 50.0)]))
+    assert cov[2023] == {"vendors_total": 60.0, "reference_total": 100.0, "reference_basis": "actual"}
+    assert cov[2026] == {"vendors_total": 30.0, "reference_total": 50.0, "reference_basis": "adopted"}
+
+
+def test_coverage_requires_a_reference_year():
+    with pytest.raises(v.ExtractionError, match="2030"):
+        v.coverage(pd.Series({2030: 1.0}), spending([("actual", 2023, 100.0)]))
+
+
+def test_check_coverage_catches_a_lost_chunk_of_pages_and_double_counting():
+    ok = {2023: {"vendors_total": 60.0, "reference_total": 100.0, "reference_basis": "actual"}}
+    v.check_coverage(ok)
+    for paid in (10.0, 150.0):
+        bad = {2023: {"vendors_total": paid, "reference_total": 100.0, "reference_basis": "actual"}}
+        with pytest.raises(v.ExtractionError, match="2023"):
+            v.check_coverage(bad)

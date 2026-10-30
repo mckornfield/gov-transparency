@@ -11,6 +11,8 @@ uv run python scripts/fetch_sd_budget.py        # ~130 MB download -> data/raw/s
 uv run python scripts/fetch_sco_population.py   # -> data/raw/sco/
 uv run python scripts/fetch_sd_vendor_payments.py   # 5 PDFs -> data/raw/sandiego/vendor_payments_fy20NN.pdf.gz
 uv run python scripts/build_processed.py        # -> data/processed/, site/data/
+uv run python scripts/fetch_census_finances.py   # Census FY2024 city finances -> data/raw/census/
+uv run python scripts/build_peers.py            # -> data/processed/peer_spending.csv, site/data/peers.json
 uv run python scripts/build_vendors.py          # needs poppler: brew install poppler (or apt install poppler-utils)
 uv run pytest -m "not smoke" && npm test        # unit + data checks
 uv run playwright install chromium && uv run pytest -m smoke   # browser smoke test
@@ -24,6 +26,7 @@ original bytes; files are stored gzip-compressed).
 |---|---|---|
 | Operating actuals FY2011-23, operating budget FY2011-26, account and department reference tables | City of San Diego Dept. of Finance, data.sandiego.gov (files on seshat.datasd.org) | `fetch_sd_budget.py` |
 | City population by year | State Controller's Office, bythenumbers.sco.ca.gov (dataset rrtv-rsj9) | `fetch_sco_population.py` |
+| City finances for San Diego and 11 peer cities, FY2024 (Census individual unit files; fixed-width text in a zip) | Census Bureau, Annual Survey of State and Local Government Finances | `fetch_census_finances.py`, `build_peers.py`; peers in `config/peers.json`, service mapping in `config/census_functions.json` |
 | Vendor payments of $25,000 or more, FY2022-FY2026 (PDF, one per year) | City of San Diego, sandiego.gov "Cumulative Amounts Paid to Vendors" | `fetch_sd_vendor_payments.py`, `build_vendors.py` |
 
 ## Data-quality notes
@@ -36,4 +39,5 @@ original bytes; files are stored gzip-compressed).
 - SCO population is missing for 2006, 2010 and 2026; the build interpolates or carries forward and flags those years.
 - Vendor payments: the PDFs list only vendors paid $25,000 or more in the year, with no purpose or category, and print no totals. `build_vendors.py` fails on any unrecognised line, page footers that are not exactly 1..N, a page count that differs from `pdfinfo`, a duplicate vendor ID or an amount under $25,000, and on a year-over-year change of more than 35% in vendor count. It also requires each year's vendor total to be 40%-110% of the City's own spending (currently 58%-86%), which is only a coarse sanity band; vendor payments and City spending are not directly comparable (spending includes payroll; the vendor list includes capital and pass-through payments).
 - The same company can appear under several vendor IDs and spellings (e.g. San Diego Gas and Electric); vendors are merged when names match ignoring case, punctuation, "&" vs "and" and endings like Inc/LLC/Co/"The", or when a vendor ID is renamed to a name starting with the same word, and all IDs are kept in `data/processed/vendor_payments.csv`.
+- Peer cities: consolidated city-counties are excluded; $0 for a service means the city does not report it and is left out of the median and rank; `build_peers.py` fails on an unmapped spending code, a missing or duplicate city, or a total outside $500-$8,000 per resident (schools, health and welfare excluded). Administration is a Census catch-all category, so gaps there may reflect reporting. No cost-of-living adjustment yet.
 - The FY2026 vendor report covers July 2025 to June 2026; the quarterly file in the same series (July-September 2025 only) is not used.

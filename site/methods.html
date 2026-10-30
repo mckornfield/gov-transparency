@@ -79,14 +79,41 @@
         checks are what guard against a lost page.</li>
     </ul>
 
+    <h2>Compared with other cities</h2>
+    <ul>
+      <li><strong>Source:</strong> Census Bureau, Annual Survey of State and Local Government Finances, FY2024
+        individual unit files (<a href="https://www2.census.gov/programs-surveys/gov-finances/tables/2024/">census.gov</a>),
+        retrieved 2026-10-29. Amounts are in thousands of dollars in the source; the processed table stores dollars.</li>
+      <li><strong>Peers:</strong> Phoenix, San Jose, San Antonio, Dallas, Austin, Fort Worth, Charlotte, Columbus,
+        Seattle, Portland and Boston: US cities of roughly 0.6 to 1.7 million people, spread across regions. Seattle,
+        Portland and Boston (0.64 to 0.75 million) are smaller than San Diego (1.38 million) and were added for
+        regional spread. Consolidated city-counties (Indianapolis, Jacksonville, Philadelphia, San Francisco) are left
+        out because they also provide county services. The list is in <code>config/peers.json</code>.</li>
+      <li><strong>Services:</strong> each service is current-operation plus construction spending under the Census
+        item codes listed in <code>config/census_functions.json</code>. The build fails if a spending code is not
+        mapped. Utilities, transit and airports, "health, welfare, jails and schools", interest and grants are separate
+        groups, off by default, because cities differ in whether they provide them. San Diego reports a small amount
+        in the health and welfare group (about $94 per resident); Boston's city government runs its schools, so its
+        figure there is much larger.</li>
+      <li><strong>$0 means "not reported":</strong> usually a county or special district provides the service. Such cities
+        are left out of the middle peer and the rank.</li>
+      <li><strong>Administration is a catch-all.</strong> It includes the Census's "general, not elsewhere classified"
+        spending, so differences there may partly reflect how each city reports rather than how much it spends.</li>
+      <li><strong>Not adjusted:</strong> fiscal years end in June, September or December, and nothing is adjusted for
+        cost of living or wages (a BEA price adjustment is planned). A higher figure is not waste.</li>
+      <li><strong>Peer gap, not margin:</strong> peers share the same pressures and habits, so this says nothing about
+        what a private-sector provider would charge.</li>
+    </ul>
+
     <h2>Checks that run on every build</h2>
     <ul>
       <li>Aggregating never changes a total.</li>
       <li>Adopted budget stays within 25% of actual spending for every year that has both.</li>
       <li>No year's total changes by more than 40% from the year before (this would catch double counting).</li>
+      <li>City comparison: every configured city must be found exactly once, every spending code must be mapped, and a
+        city's total (leaving out schools, health and welfare) must be between $500 and $8,000 per resident.</li>
     </ul>
-    <p class="note">Margin estimates (spending compared with private-sector prices) and peer-city comparisons are
-      not on the site yet.</p>
+    <p class="note">Margin estimates (spending compared with private-sector prices) are not on the site yet.</p>
   </main>
 </body>
 </html>

@@ -1,6 +1,6 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { formatMoney, formatPerResident } from "./format.js";
+import { formatMoney, formatPerResident, truncate } from "./format.js";
 
 test("formatMoney scales and rounds", () => {
   assert.equal(formatMoney(3.98e9), "$4.0B");
@@ -21,4 +21,11 @@ test("formatMoney never prints a rounded value at the wrong scale", () => {
 test("formatPerResident", () => {
   assert.equal(formatPerResident(1234.6), "$1,235");
   assert.equal(formatPerResident(-50), "-$50");
+});
+
+test("truncate cuts with an ellipsis and respects the limit", () => {
+  assert.equal(truncate("Police", 10), "Police");
+  assert.equal(truncate("Department of Information Technology", 12), "Department …");
+  assert.equal(truncate("abcdef", 3), "ab…");
+  assert.equal(truncate("abc", 0), "");
 });

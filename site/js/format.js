@@ -14,3 +14,8 @@ export function formatPerResident(value) {
   const sign = value < 0 ? "-" : "";
   return `${sign}$${Math.round(Math.abs(value)).toLocaleString("en-US")}`;
 }
+
+export function truncate(text, maxChars) {
+  if (maxChars < 1) return "";
+  return text.length <= maxChars ? text : `${text.slice(0, maxChars - 1)}…`;
+}

@@ -1,0 +1,8 @@
+{
+  "name": "gov-transparency-site",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test site/js/*.test.js"
+  }
+}

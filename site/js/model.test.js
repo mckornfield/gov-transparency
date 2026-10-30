@@ -1,6 +1,6 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { rowsFromColumns, availableYears, totalsByYear, buildHierarchy } from "./model.js";
+import { rowsFromColumns, availableYears, totalsByYear, totalsByClass, buildHierarchy } from "./model.js";
 
 const columns = ["basis", "fy", "dept_group", "dept_name", "account_type", "account_class", "amount"];
 const rows = rowsFromColumns({ columns, rows: [
@@ -60,4 +60,12 @@ test("other basis/year are ignored and an empty selection is safe", () => {
   const empty = buildHierarchy(rows, { fy: 1999, basis: "actual" });
   assert.deepEqual(empty.root.children, []);
   assert.equal(empty.total, 0);
+});
+
+test("totalsByClass nets credits, sorts largest first, and honours transfers and divisor", () => {
+  assert.deepEqual(totalsByClass(rows, { fy: 2023, basis: "actual" }), [
+    { name: "Personnel Cost", value: 600 }, { name: "Supplies", value: 70 }]);
+  assert.deepEqual(totalsByClass(rows, { fy: 2023, basis: "actual", includeTransfers: true, divisor: 10 }), [
+    { name: "Personnel Cost", value: 60 }, { name: "Supplies", value: 7 }, { name: "Transfers Out", value: 5 }]);
+  assert.deepEqual(totalsByClass(rows, { fy: 1999, basis: "actual" }), []);
 });

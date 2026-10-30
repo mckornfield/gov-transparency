@@ -55,3 +55,10 @@ def test_site_json_conserves_totals():
         got = rows[(rows["basis"] == basis) & (rows["fy"] == fy)]["amount"].sum()
         n = ((rows["basis"] == basis) & (rows["fy"] == fy)).sum()
         assert abs(got - expected) <= 0.5 * n + 1, (basis, fy)
+
+
+def test_meta_json_states_data_age():
+    meta = json.loads((ROOT / "site/data/meta.json").read_text())
+    assert meta["latest_actual_fy"] == 2023
+    assert meta["latest_budget_fy"] == 2026
+    assert len(meta["retrieved"]) == 10 and meta["retrieved"][4] == "-"

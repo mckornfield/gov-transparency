@@ -1,15 +1,16 @@
 import * as d3 from "https://cdn.jsdelivr.net/npm/d3@7.9.0/+esm";
 import * as Plot from "https://cdn.jsdelivr.net/npm/@observablehq/plot@0.6.16/+esm";
-import { rowsFromColumns, availableYears, totalsByYear, buildHierarchy } from "./model.js";
+import { rowsFromColumns, availableYears, totalsByYear, totalsByClass, buildHierarchy } from "./model.js";
 import { parseHash, serializeHash } from "./state.js";
 import { formatMoney, formatPerResident } from "./format.js";
 
 const $ = (id) => document.getElementById(id);
 const css = (name) => getComputedStyle(document.documentElement).getPropertyValue(name).trim();
 
-const [spending, population] = await Promise.all([
+const [spending, population, meta] = await Promise.all([
   fetch("data/spending.json").then((r) => r.json()),
   fetch("data/population.json").then((r) => r.json()),
+  fetch("data/meta.json").then((r) => r.json()),
 ]);
 const rows = rowsFromColumns(spending);
 const years = availableYears(rows);
@@ -83,6 +84,18 @@ function drawTreemap(tree, fmt) {
   }));
 }
 
+function fillTable(tableId, lines) {
+  $(tableId).querySelector("tbody").replaceChildren(...lines.map((cells) => {
+    const tr = document.createElement("tr");
+    for (const text of cells) {
+      const td = document.createElement("td");
+      td.textContent = text;
+      tr.append(td);
+    }
+    return tr;
+  }));
+}
+
 function drawTable(tree, fmt) {
   const groups = tree.root.children
     .map((g) => ({ name: g.name, value: d3.sum(g.children, (c) => c.value) }))
@@ -119,14 +132,28 @@ function render() {
   });
   const label = state.basis === "actual" ? "actual spending" : "adopted budget";
   const estimated = pop.source === "reported" ? "" : " (population estimated)";
+  const scope = state.transfers ? "including transfers between funds" : "excluding transfers between funds";
   $("headline").textContent =
-    `FY${state.fy} ${label}: ${formatMoney(tree.rawTotal)}, or ${formatPerResident(tree.rawTotal / pop.population)} per resident${estimated}.`;
+    `FY${state.fy} ${label}, ${scope}: ${formatMoney(tree.rawTotal)}, or ${formatPerResident(tree.rawTotal / pop.population)} per resident${estimated}.`;
+  $("totals-scope").textContent = state.transfers
+    ? "Currently including transfers between city funds."
+    : "Currently excluding transfers between city funds (about 13% of FY2023 spending); tick the box above to include them.";
+  $("asof").textContent =
+    `Data retrieved ${meta.retrieved} from the City's open-data portal. The latest actual spending the City has published is FY${meta.latest_actual_fy}; adopted budgets run through FY${meta.latest_budget_fy}.`;
   $("value-head").textContent = perResident ? "Per resident" : "Spending";
   $("omitted-note").textContent = tree.omitted.count
     ? `${tree.omitted.count} spending categories net to a credit (${formatMoney(tree.omitted.amount)}) and are left out of the picture; totals include them.`
     : "";
 
-  drawTotals(totalsByYear(rows, { basis: state.basis, includeTransfers: state.transfers }));
+  const byYear = totalsByYear(rows, { basis: state.basis, includeTransfers: state.transfers });
+  drawTotals(byYear);
+  fillTable("totals-table", byYear.map((d) => [`FY${d.fy}`, formatMoney(d.total)]));
+  const byClass = totalsByClass(rows, {
+    fy: state.fy, basis: state.basis, includeTransfers: state.transfers,
+    divisor: perResident ? pop.population : 1 });
+  const classSum = byClass.reduce((sum, c) => sum + c.value, 0);
+  $("class-value-head").textContent = perResident ? "Per resident" : "Spending";
+  fillTable("class-table", byClass.map((c) => [c.name, fmt(c.value), `${((100 * c.value) / classSum).toFixed(1)}%`]));
   drawTreemap(tree, fmt);
   drawTable(tree, fmt);
 }

@@ -3,6 +3,7 @@
 Fails (ReconciliationError) rather than writing numbers that do not reconcile; do not loosen the
 tolerances in sd_spend.spending to make it pass, investigate the data and tell the user.
 """
+import csv
 import json
 
 import pandas as pd
@@ -16,6 +17,11 @@ SITE_DATA = ROOT / "site" / "data"
 
 def write_json(path, payload) -> None:
     path.write_text(json.dumps(payload, separators=(",", ":")) + "\n")
+
+
+def retrieved_date(raw_path: str) -> str:
+    with (RAW / "MANIFEST.csv").open(newline="") as f:
+        return next(r["retrieved"] for r in csv.DictReader(f) if r["path"] == raw_path)
 
 
 def main() -> None:
@@ -34,6 +40,8 @@ def main() -> None:
     population.to_csv(PROCESSED / "population.csv", index=False)
     (PROCESSED / "build_report.json").write_text(json.dumps(report, indent=2, sort_keys=True) + "\n")
     write_json(SITE_DATA / "spending.json", export.spending_payload(tidy))
+    write_json(SITE_DATA / "meta.json",
+               export.meta_payload(tidy, retrieved_date("sandiego/actuals_operating.csv.gz")))
     write_json(SITE_DATA / "population.json", export.population_payload(population))
 
     print(tidy.groupby(["basis", "fy"])["amount"].sum().div(1e6).round(0).unstack("basis"))

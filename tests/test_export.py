@@ -25,3 +25,13 @@ def test_population_payload():
         {"fy": 2011, "population": 10, "source": "reported"},
         {"fy": 2012, "population": 20, "source": "interpolated"},
     ]}
+
+
+def test_meta_payload_reports_latest_years_and_retrieval_date():
+    tidy = pd.DataFrame([
+        ("actual", 2022, "Police", "Police", "Personnel", "Personnel Cost", "Salaries", "Wages", 1.0),
+        ("actual", 2023, "Police", "Police", "Personnel", "Personnel Cost", "Salaries", "Wages", 1.0),
+        ("adopted", 2026, "Police", "Police", "Personnel", "Personnel Cost", "Salaries", "Wages", 1.0),
+    ], columns=KEYS + ["amount"])
+    assert export.meta_payload(tidy, "2026-10-29") == {
+        "retrieved": "2026-10-29", "latest_actual_fy": 2023, "latest_budget_fy": 2026}

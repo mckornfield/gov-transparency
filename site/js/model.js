@@ -26,6 +26,17 @@ export function totalsByYear(rows, { basis, includeTransfers = false }) {
   return [...totals].sort((a, b) => a[0] - b[0]).map(([fy, total]) => ({ fy, total }));
 }
 
+export function totalsByClass(rows, { fy, basis, divisor = 1, includeTransfers = false }) {
+  const totals = new Map();
+  for (const row of selected(rows, includeTransfers)) {
+    if (row.basis === basis && row.fy === fy) {
+      totals.set(row.account_class, (totals.get(row.account_class) ?? 0) + row.amount);
+    }
+  }
+  return [...totals].map(([name, total]) => ({ name, value: total / divisor }))
+    .sort((a, b) => b.value - a.value);
+}
+
 export function buildHierarchy(rows, { fy, basis, divisor = 1, includeTransfers = false }) {
   const leaves = new Map();
   let rawTotal = 0;

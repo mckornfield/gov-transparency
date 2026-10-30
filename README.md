@@ -26,7 +26,7 @@ original bytes; files are stored gzip-compressed).
 ## Data-quality notes
 - Fiscal years are named by the year they end (FY2023 = July 2022 to June 2023). Dollars are nominal.
 - The budget file contains `adopted` and `proposed` rows for FY2024-25; only adopted rows are used (summing both double-counts).
-- FY2026 budget rows have a blank `budget_cycle` and are treated as adopted. No actuals exist after FY2023.
+- FY2026 budget rows have a blank `budget_cycle` and are treated as adopted. The City's actuals file stops at FY2023.
 - Expense = account numbers starting with 5. 12 FY2026 budget rows have a blank account number and are excluded; their total is in `data/processed/build_report.json`.
 - `Transfers Out` (~13% of FY2023 spending) is hidden by default in the UI because it moves money between city funds.
 - The build fails if aggregation changes a total, if adopted budget differs from actuals by more than 25%, or if any year's total jumps more than 40%.

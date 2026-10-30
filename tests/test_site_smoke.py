@@ -96,3 +96,25 @@ def test_methods_page(page, site_url):
     page.goto(f"{site_url}/methods.html")
     assert "methods" in page.locator("h1").inner_text().lower()
     assert "Transfers Out" in page.locator("main").inner_text()
+
+
+def test_headline_says_whether_transfers_are_included(page, site_url):
+    open_index(page, site_url)
+    assert "excluding transfers" in page.locator("#headline").inner_text().lower()
+    assert "excluding transfers" in page.locator("#totals-method").text_content().lower()
+    page.check("#transfers")
+    page.wait_for_function("document.getElementById('headline').innerText.toLowerCase().includes('including transfers')")
+
+
+def test_every_chart_has_a_data_table(page, site_url):
+    open_index(page, site_url)
+    assert page.locator("#totals-table tbody tr").count() == 13  # FY2011-23 actuals
+    assert page.locator("#class-table tbody tr").count() >= 5
+    page.check("input[name=basis][value=adopted]")
+    page.wait_for_function("document.querySelectorAll('#totals-table tbody tr').length === 16")
+
+
+def test_page_states_how_old_the_data_is(page, site_url):
+    open_index(page, site_url)
+    text = page.locator("#asof").inner_text()
+    assert "FY2023" in text and "retrieved" in text.lower()

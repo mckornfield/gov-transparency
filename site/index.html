@@ -18,6 +18,7 @@
   <main>
     <h1>Where San Diego's money goes</h1>
     <p id="headline" class="headline" aria-live="polite">Loading…</p>
+    <p id="asof" class="note"></p>
 
     <form class="controls" aria-label="Chart controls" onsubmit="return false">
       <fieldset>
@@ -46,9 +47,10 @@
       <figcaption class="note">Highlighted bar is the year selected above. Dollars are nominal (not adjusted for inflation).</figcaption>
       <details class="method">
         <summary>Method</summary>
-        <p>Sum of all expense accounts (account numbers starting with 5) in the City's operating
+        <p id="totals-method">Sum of expense accounts (account numbers starting with 5) in the City's operating
           <em>actuals</em> or <em>adopted budget</em> files, by fiscal year (named for the year it ends).
           Source: City of San Diego Department of Finance via data.sandiego.gov.
+          <span id="totals-scope"></span>
           See <a href="methods.html">Data &amp; methods</a>.</p>
       </details>
     </figure>
@@ -68,6 +70,20 @@
     </figure>
 
     <h2>Table view</h2>
+    <div class="table-wrap">
+      <table id="totals-table">
+        <caption class="note">Total by fiscal year (same data as the bar chart; always in total dollars).</caption>
+        <thead><tr><th scope="col">Fiscal year</th><th scope="col">Total</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+    <div class="table-wrap">
+      <table id="class-table">
+        <caption class="note">Type of spending for the selected year (the colours in the treemap).</caption>
+        <thead><tr><th scope="col">Type of spending</th><th scope="col" id="class-value-head">Spending</th><th scope="col">Share</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
     <div class="table-wrap">
       <table>
         <caption class="note">Department groups, largest first (same data as the chart above).</caption>

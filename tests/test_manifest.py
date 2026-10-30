@@ -10,6 +10,7 @@ REQUIRED = {
     "sandiego/accounts.csv.gz",
     "sandiego/depts.csv.gz",
     "sco/san_diego_population.csv.gz",
+    *{f"sandiego/vendor_payments_fy{fy}.pdf.gz" for fy in range(2022, 2027)},
 }
 
 

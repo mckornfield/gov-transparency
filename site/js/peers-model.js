@@ -53,8 +53,37 @@ export function headline(data, kinds) {
   for (const r of data.rows) if (keys.includes(r.group)) totals.set(r.city, (totals.get(r.city) || 0) + r.per_resident);
   const home = totals.get(data.home) || 0;
   const mid = median([...totals].filter(([c, v]) => c !== data.home && v > 0).map(([, v]) => v));
-  if (!mid) return `San Diego spends ${formatPerResident(home)} per resident on these services.`;
+  if (!mid) return `San Diego spends ${formatPerResident(home)} per resident on these services (including construction).`;
   const pct = Math.round(Math.abs(home / mid - 1) * 100);
   const dir = home >= mid ? "more" : "less";
-  return `San Diego spends ${formatPerResident(home)} per resident on these services, ${pct}% ${dir} than the middle peer (${formatPerResident(mid)}).`;
+  return `San Diego spends ${formatPerResident(home)} per resident on these services (including construction), ${pct}% ${dir} than the middle peer (${formatPerResident(mid)}).`;
+}
+
+const MONTH_NAMES = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
+// Census survey year N covers fiscal years that ended July 1 of N-1 through June 30 of N.
+export function fiscalYearEnd(mmdd, surveyYear) {
+  const month = Number(String(mmdd).slice(0, 2));
+  if (!(month >= 1 && month <= 12)) return String(mmdd);
+  return `${MONTH_NAMES[month - 1]} ${month >= 7 ? surveyYear - 1 : surveyYear}`;
+}
+
+// Rank 1 is the highest spender; say so, so "1 of 12" is not read as "best" or "cheapest".
+export function rankLabel(rank, of) {
+  if (rank === null || rank === undefined) return "n/a";
+  if (rank === 1) return `highest of ${of}`;
+  if (rank === of) return `lowest of ${of}`;
+  const suffix = rank % 100 >= 11 && rank % 100 <= 13 ? "th" : ({ 1: "st", 2: "nd", 3: "rd" })[rank % 10] || "th";
+  return `${rank}${suffix} highest of ${of}`;
+}
+
+// One row per city (San Diego first) with that city's per-resident value for each visible service.
+export function cityMatrix(data, kinds) {
+  const columns = visibleGroups(data, kinds);
+  const cities = [...data.cities].sort((a, b) => Number(b.is_home) - Number(a.is_home));
+  const rows = cities.map((c) => ({
+    city: c.city,
+    values: columns.map((g) => data.rows.find((r) => r.city === c.city && r.group === g.key)?.per_resident ?? 0),
+  }));
+  return { columns, rows };
 }

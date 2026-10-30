@@ -50,3 +50,37 @@ test("headline states the comparison in plain words", () => {
   assert.match(h, /San Diego spends \$6 per resident/);
   assert.match(h, /middle peer/);
 });
+
+import { fiscalYearEnd, rankLabel, cityMatrix } from "./peers-model.js";
+import { formatPerResident } from "./format.js";
+
+test("fiscal year end names the real year: survey 2024 covers years ended Jul 2023 to Jun 2024", () => {
+  assert.equal(fiscalYearEnd("0630", 2024), "June 2024");
+  assert.equal(fiscalYearEnd("0930", 2024), "September 2023");
+  assert.equal(fiscalYearEnd("1231", 2024), "December 2023");
+  assert.equal(fiscalYearEnd("0701", 2024), "July 2023");
+  assert.equal(fiscalYearEnd("zzzz", 2024), "zzzz");
+});
+
+test("rank label says which direction the rank runs", () => {
+  assert.equal(rankLabel(1, 12), "highest of 12");
+  assert.equal(rankLabel(2, 12), "2nd highest of 12");
+  assert.equal(rankLabel(3, 12), "3rd highest of 12");
+  assert.equal(rankLabel(11, 12), "11th highest of 12");
+  assert.equal(rankLabel(12, 12), "lowest of 12");
+  assert.equal(rankLabel(null, 12), "n/a");
+});
+
+test("cityMatrix gives every city's value for each visible service, San Diego first", () => {
+  const m = cityMatrix(data, ["core", "utility"]);
+  assert.deepEqual(m.columns.map((c) => c.key), ["police", "water"]);
+  assert.equal(m.rows[0].city, "San Diego");
+  assert.deepEqual(m.rows.find((r) => r.city === "A").values, [4, 1]);
+  assert.equal(m.rows.length, 4);
+});
+
+test("a tiny non-zero amount is not shown as $0", () => {
+  assert.equal(formatPerResident(0.49), "under $1");
+  assert.equal(formatPerResident(0), "$0");
+  assert.equal(formatPerResident(1234.4), "$1,234");
+});

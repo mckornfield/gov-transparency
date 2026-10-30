@@ -1,13 +1,12 @@
 import * as Plot from "https://cdn.jsdelivr.net/npm/@observablehq/plot@0.6.16/+esm";
 import { formatPerResident, truncate } from "./format.js";
-import { KINDS, parsePeerHash, serializePeerHash, visibleGroups, groupStats, headline } from "./peers-model.js";
+import { KINDS, parsePeerHash, serializePeerHash, visibleGroups, groupStats, headline, fiscalYearEnd, rankLabel, cityMatrix } from "./peers-model.js";
 
 const $ = (id) => document.getElementById(id);
 const css = (name) => getComputedStyle(document.documentElement).getPropertyValue(name).trim();
 
 const REGIONS = ["West", "South", "Midwest", "Pacific Northwest", "Northeast"];
 const REGION_COLORS = ["#E69F00", "#56B4E9", "#009E73", "#CC79A7", "#D55E00"];
-const MONTHS = { "0630": "June", "0930": "September", "1231": "December" };
 
 let data;
 try {
@@ -72,9 +71,34 @@ function drawLegend() {
   $("peer-legend").innerHTML = items.join("");
 }
 
+function drawMatrix({ columns, rows }) {
+  const head = document.createElement("tr");
+  for (const label of ["City", ...columns.map((c) => c.label)]) {
+    const th = document.createElement("th");
+    th.scope = "col";
+    th.textContent = label;
+    head.append(th);
+  }
+  $("matrix-table").querySelector("thead").replaceChildren(head);
+  $("matrix-table").querySelector("tbody").replaceChildren(...rows.map((row) => {
+    const tr = document.createElement("tr");
+    const th = document.createElement("th");
+    th.scope = "row";
+    th.textContent = row.city;
+    tr.append(th);
+    for (const value of row.values) {
+      const td = document.createElement("td");
+      td.textContent = formatPerResident(value);
+      tr.append(td);
+    }
+    return tr;
+  }));
+}
+
 function render() {
   for (const kind of KINDS) $(`kind-${kind}`).checked = state.kinds.includes(kind);
-  $("phead").textContent = headline(data, state.kinds);
+  const sentence = headline(data, state.kinds);
+  if ($("phead").textContent !== sentence) $("phead").textContent = sentence;
   const stats = visibleGroups(data, state.kinds).map((g) => groupStats(data, g.key));
   drawChart(stats);
   drawLegend();
@@ -83,11 +107,12 @@ function render() {
     s.homeIsZero ? "$0 (not provided by the city)" : formatPerResident(s.home.per_resident),
     s.median === null ? "n/a" : formatPerResident(s.median),
     s.min === null ? "n/a" : `${formatPerResident(s.min)} to ${formatPerResident(s.max)}`,
-    s.rank === null ? "n/a" : `${s.rank} of ${s.of}`,
+    rankLabel(s.rank, s.of),
     s.zeroCities.join(", ") || "none",
   ]));
+  drawMatrix(cityMatrix(data, state.kinds));
   fillTable("city-table", data.cities.map((c) => [
-    c.city, c.region, c.population.toLocaleString("en-US"), MONTHS[c.fy_end] ?? c.fy_end,
+    c.city, c.region, c.population.toLocaleString("en-US"), fiscalYearEnd(c.fy_end, data.fiscal_year),
   ]));
 }
 

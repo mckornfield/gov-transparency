@@ -11,6 +11,7 @@ export function formatMoney(value) {
 }
 
 export function formatPerResident(value) {
+  if (value !== 0 && Math.abs(value) < 0.5) return "under $1"; // never show a real amount as "$0"
   const sign = value < 0 ? "-" : "";
   return `${sign}$${Math.round(Math.abs(value)).toLocaleString("en-US")}`;
 }

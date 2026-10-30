@@ -244,3 +244,15 @@ def test_peers_deep_link_and_garbage_hash(page, site_url):
     page.wait_for_selector("#peer-chart svg")
     assert page.is_checked("#kind-core")
     assert not errors
+
+
+def test_peers_page_lists_every_city_value_and_real_fiscal_years(page, site_url):
+    page.goto(f"{site_url}/peers.html")
+    page.wait_for_selector("#peer-chart svg")
+    assert page.locator("#matrix-table tbody tr").count() == 12
+    assert page.locator("#matrix-table tbody tr").first.locator("th").inner_text() == "San Diego"
+    page.check("#kind-utility")
+    page.wait_for_function("document.querySelectorAll('#matrix-table thead th').length === 13")
+    cities = page.locator("#city-table tbody").inner_text()
+    assert "September 2023" in cities and "December 2023" in cities and "June 2024" in cities
+    assert "highest of" in page.locator("#peer-table tbody").inner_text()

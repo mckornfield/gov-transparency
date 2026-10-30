@@ -1,4 +1,4 @@
-export const DEFAULTS = { fy: 2023, basis: "actual", mode: "total", transfers: false };
+export const DEFAULTS = { fy: 2023, basis: "actual", mode: "total", transfers: false, view: "bars", expand: false };
 // Money moved between city funds; counting it makes the same dollars appear twice, so it is
 // hidden unless the reader asks for it.
 export const TRANSFERS_CLASS = "Transfers Out";
@@ -67,4 +67,19 @@ export function buildHierarchy(rows, { fy, basis, divisor = 1, includeTransfers 
     rawTotal,
     omitted: { amount: omittedAmount, count: omittedCount },
   };
+}
+
+// Groups ranked by total, largest first. Beyond topN the rest are merged into one "All other" bar
+// (its spending types summed) unless expandAll. Input is a buildHierarchy root.
+export function rankGroups(root, { topN = 15, expandAll = false } = {}) {
+  const groups = root.children
+    .map((g) => ({ name: g.name, children: g.children, total: g.children.reduce((s, c) => s + c.value, 0) }))
+    .sort((a, b) => b.total - a.total);
+  if (expandAll || groups.length <= topN) return groups;
+  const rest = groups.slice(topN);
+  const merged = new Map();
+  for (const g of rest) for (const c of g.children) merged.set(c.name, (merged.get(c.name) ?? 0) + c.value);
+  const children = [...merged].map(([name, value]) => ({ name, value })).sort((a, b) => b.value - a.value);
+  return [...groups.slice(0, topN), {
+    name: `All other (${rest.length} groups)`, children, total: rest.reduce((s, g) => s + g.total, 0) }];
 }

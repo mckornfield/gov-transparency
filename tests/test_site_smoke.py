@@ -33,13 +33,13 @@ def open_index(page, site_url, hash_=""):
     errors = []
     page.on("pageerror", lambda e: errors.append(str(e)))
     page.goto(f"{site_url}/{hash_}")
-    page.wait_for_selector("#treemap rect.leaf")
+    page.wait_for_selector("#bars rect")
     return errors
 
 
 def test_index_renders_chart_table_and_headline(page, site_url):
     errors = open_index(page, site_url)
-    assert page.locator("#treemap rect.leaf").count() > 20
+    assert page.locator("#bars rect").count() > 16
     assert page.locator("#table-body tr").count() > 10
     assert "FY2023" in page.locator("#headline").inner_text()
     assert "$" in page.locator("#headline").inner_text()
@@ -118,3 +118,36 @@ def test_page_states_how_old_the_data_is(page, site_url):
     open_index(page, site_url)
     text = page.locator("#asof").inner_text()
     assert "FY2023" in text and "retrieved" in text.lower()
+
+
+def test_bar_view_is_the_default_and_groups_the_long_tail(page, site_url):
+    open_index(page, site_url)
+    assert "All other" in page.locator("#bars").inner_text()
+    assert page.locator("#treemap").is_hidden()
+    assert page.locator("#expand").is_visible()
+
+
+def test_expand_shows_every_group(page, site_url):
+    open_index(page, site_url)
+    page.click("#expand")
+    page.wait_for_function("!document.getElementById('bars').innerText.includes('All other')")
+    assert "expand=1" in page.url
+    assert "top 15" in page.locator("#expand").inner_text().lower()
+
+
+def test_treemap_is_still_available_behind_a_toggle(page, site_url):
+    open_index(page, site_url)
+    page.check("input[name=view][value=treemap]")
+    page.wait_for_selector("#treemap rect.leaf")
+    assert page.locator("#bars").is_hidden()
+    assert "view=treemap" in page.url
+
+
+def test_spending_type_colours_do_not_shift_between_views(page, site_url):
+    open_index(page, site_url)
+    def swatches():
+        return page.evaluate("[...document.querySelectorAll('#legend .swatch')].map(e => e.style.background)")
+    before = swatches()
+    page.check("input[name=basis][value=adopted]")
+    page.wait_for_function("document.getElementById('fy').max === '2026'")
+    assert swatches() == before

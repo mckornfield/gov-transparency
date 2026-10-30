@@ -1,6 +1,6 @@
 import * as d3 from "https://cdn.jsdelivr.net/npm/d3@7.9.0/+esm";
 import * as Plot from "https://cdn.jsdelivr.net/npm/@observablehq/plot@0.6.16/+esm";
-import { rowsFromColumns, availableYears, totalsByYear, totalsByClass, buildHierarchy } from "./model.js";
+import { rowsFromColumns, availableYears, totalsByYear, totalsByClass, buildHierarchy, rankGroups } from "./model.js";
 import { parseHash, serializeHash } from "./state.js";
 import { formatMoney, formatPerResident } from "./format.js";
 
@@ -16,6 +16,53 @@ const rows = rowsFromColumns(spending);
 const years = availableYears(rows);
 const popByFy = new Map(population.rows.map((p) => [p.fy, p]));
 let state = parseHash(location.hash, years);
+
+// One fixed colour per spending type, shared by both views and every year/basis.
+const allClasses = [...new Set(rows.map((r) => r.account_class))].sort();
+const palette = d3.schemeTableau10.concat(d3.schemeSet3).slice(0, allClasses.length);
+const color = d3.scaleOrdinal(palette).domain(allClasses);
+
+function drawLegend() {
+  $("legend").replaceChildren(...allClasses.map((name) => {
+    const li = document.createElement("li");
+    const swatch = document.createElement("span");
+    swatch.className = "swatch";
+    swatch.style.background = color(name);
+    li.append(swatch, name);
+    return li;
+  }));
+}
+
+const TOP_GROUPS = 15;
+
+function drawBars(tree, fmt) {
+  const groups = rankGroups(tree.root, { topN: TOP_GROUPS, expandAll: state.expand });
+  const data = groups.flatMap((g) => g.children.map((c) => ({ group: g.name, type: c.name, value: c.value })));
+  const width = Math.max(300, $("bars").clientWidth);
+  const marginLeft = Math.round(Math.min(220, Math.max(100, width * 0.34)));
+  const chart = Plot.plot({
+    width,
+    height: 26 * groups.length + 40,
+    marginLeft,
+    marginRight: 64,
+    x: { label: null, grid: true, ticks: width < 500 ? 3 : 8, tickFormat: (v) => fmt(v) },
+    // labels are cut to fit the margin; the full name is in each bar's hover title
+    y: { label: null, domain: groups.map((g) => g.name), tickFormat: (n) => truncate(n, Math.floor(marginLeft / 6.6)) },
+    color: { domain: allClasses, range: palette },
+    marks: [
+      Plot.barX(data, {
+        y: "group", x: "value", fill: "type",
+        title: (d) => `${d.group} › ${d.type}: ${fmt(d.value)}`,
+      }),
+      Plot.text(groups, { y: "name", x: "total", text: (g) => fmt(g.total), dx: 4, textAnchor: "start" }),
+      Plot.ruleX([0]),
+    ],
+  });
+  $("bars").replaceChildren(chart);
+  const hasLongTail = rankGroups(tree.root, { topN: TOP_GROUPS }).length > TOP_GROUPS;
+  $("expand").hidden = !hasLongTail && !state.expand;
+  $("expand").textContent = state.expand ? `Show top ${TOP_GROUPS} only` : "Show all groups";
+}
 
 function update(patch) {
   state = parseHash(serializeHash({ ...state, ...patch }), years); // re-validates (e.g. year vs basis)
@@ -55,8 +102,6 @@ function drawTreemap(tree, fmt) {
   const h = d3.hierarchy(tree.root).sum((d) => d.value ?? 0).sort((a, b) => b.value - a.value);
   d3.treemap().size([width, height]).paddingInner(1).paddingOuter(2)
     .paddingTop((d) => (d.depth === 1 ? 16 : 2)).round(true)(h);
-  const classes = [...new Set(h.leaves().map((d) => d.data.name))].sort();
-  const color = d3.scaleOrdinal(d3.schemeTableau10.concat(d3.schemeSet3)).domain(classes);
 
   const svg = d3.create("svg")
     .attr("viewBox", `0 0 ${width} ${height}`).attr("width", width).attr("height", height)
@@ -73,15 +118,6 @@ function drawTreemap(tree, fmt) {
     .attr("x", (d) => d.x0 + 3).attr("y", (d) => d.y0 + 12)
     .text((d) => truncate(d.data.name, Math.floor((d.x1 - d.x0) / 6.5)));
   el.replaceChildren(svg.node());
-
-  $("legend").replaceChildren(...classes.map((name) => {
-    const li = document.createElement("li");
-    const swatch = document.createElement("span");
-    swatch.className = "swatch";
-    swatch.style.background = color(name);
-    li.append(swatch, name);
-    return li;
-  }));
 }
 
 function fillTable(tableId, lines) {
@@ -122,6 +158,10 @@ function render() {
   document.querySelector(`input[name=basis][value=${state.basis}]`).checked = true;
   document.querySelector(`input[name=mode][value=${state.mode}]`).checked = true;
   $("transfers").checked = state.transfers;
+  document.querySelector(`input[name=view][value=${state.view}]`).checked = true;
+  $("bars").hidden = state.view !== "bars";
+  $("treemap").hidden = state.view !== "treemap";
+  $("expand").hidden = state.view !== "bars";
 
   const pop = popByFy.get(state.fy);
   const perResident = state.mode === "perResident";
@@ -154,7 +194,9 @@ function render() {
   const classSum = byClass.reduce((sum, c) => sum + c.value, 0);
   $("class-value-head").textContent = perResident ? "Per resident" : "Spending";
   fillTable("class-table", byClass.map((c) => [c.name, fmt(c.value), `${((100 * c.value) / classSum).toFixed(1)}%`]));
-  drawTreemap(tree, fmt);
+  drawLegend();
+  if (state.view === "bars") drawBars(tree, fmt);
+  else drawTreemap(tree, fmt);
   drawTable(tree, fmt);
 }
 
@@ -162,15 +204,18 @@ document.querySelectorAll("input[name=basis]").forEach((el) =>
   el.addEventListener("change", () => update({ basis: el.value })));
 document.querySelectorAll("input[name=mode]").forEach((el) =>
   el.addEventListener("change", () => update({ mode: el.value })));
+document.querySelectorAll("input[name=view]").forEach((el) =>
+  el.addEventListener("change", () => update({ view: el.value })));
+$("expand").addEventListener("click", () => update({ expand: !state.expand }));
 $("transfers").addEventListener("change", (e) => update({ transfers: e.target.checked }));
 $("fy").addEventListener("input", (e) => update({ fy: Number(e.target.value) }));
 window.addEventListener("hashchange", () => { state = parseHash(location.hash, years); render(); });
 window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", render);
 
-let lastWidth = $("treemap").clientWidth;
+let lastWidth = $("view-area").clientWidth;
 new ResizeObserver(() => {
-  const width = $("treemap").clientWidth;
+  const width = $("view-area").clientWidth;
   if (width !== lastWidth) { lastWidth = width; render(); }
-}).observe($("treemap"));
+}).observe($("view-area"));
 
 render();

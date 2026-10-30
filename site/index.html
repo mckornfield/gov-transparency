@@ -32,6 +32,11 @@
         <label><input type="radio" name="mode" value="perResident"> Per resident</label>
       </fieldset>
       <fieldset>
+        <legend>Chart</legend>
+        <label><input type="radio" name="view" value="bars" checked> Bars</label>
+        <label><input type="radio" name="view" value="treemap"> Treemap</label>
+      </fieldset>
+      <fieldset>
         <legend>Transfers</legend>
         <label><input type="checkbox" id="transfers"> Include transfers between city funds</label>
       </fieldset>
@@ -57,13 +62,18 @@
 
     <h2>What it is spent on</h2>
     <figure>
-      <div id="treemap"></div>
+      <div id="view-area">
+        <div id="bars" role="img" aria-label="Bar chart of the largest department groups, split by type of spending"></div>
+        <div id="treemap" hidden></div>
+      </div>
+      <p><button type="button" id="expand"></button></p>
       <ul id="legend" aria-label="Colour key for types of spending"></ul>
       <p id="omitted-note" class="note"></p>
       <details class="method">
         <summary>Method</summary>
-        <p>Each rectangle is one department group and one type of spending; its area is the amount.
-          Colour shows the type of spending. "Transfers Out" (money moved between city funds) is hidden by
+        <p>Bars show the 15 largest department groups (the rest are combined into "All other"; use the button to
+          see every group), each split by type of spending. In the treemap view each rectangle is one department
+          group and one type of spending and its area is the amount. Colour shows the type of spending. "Transfers Out" (money moved between city funds) is hidden by
           default because it counts the same dollars twice. Per-resident figures divide by the City's
           estimated population for that year (<a href="methods.html">years where population is estimated are flagged</a>).</p>
       </details>

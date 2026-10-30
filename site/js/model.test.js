@@ -1,6 +1,6 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { rowsFromColumns, availableYears, totalsByYear, totalsByClass, buildHierarchy } from "./model.js";
+import { rowsFromColumns, availableYears, totalsByYear, totalsByClass, buildHierarchy, rankGroups } from "./model.js";
 
 const columns = ["basis", "fy", "dept_group", "dept_name", "account_type", "account_class", "amount"];
 const rows = rowsFromColumns({ columns, rows: [
@@ -68,4 +68,31 @@ test("totalsByClass nets credits, sorts largest first, and honours transfers and
   assert.deepEqual(totalsByClass(rows, { fy: 2023, basis: "actual", includeTransfers: true, divisor: 10 }), [
     { name: "Personnel Cost", value: 60 }, { name: "Supplies", value: 7 }, { name: "Transfers Out", value: 5 }]);
   assert.deepEqual(totalsByClass(rows, { fy: 1999, basis: "actual" }), []);
+});
+
+const makeRoot = (count) => ({ name: "root", children: Array.from({ length: count }, (_, i) => ({
+  name: `G${i}`, children: [{ name: "Personnel Cost", value: 100 + i }, { name: "Supplies", value: 10 }] })) });
+
+test("rankGroups keeps the top N by total and merges the rest into one 'All other' bar", () => {
+  const ranked = rankGroups(makeRoot(20), { topN: 15 });
+  assert.equal(ranked.length, 16);
+  assert.deepEqual(ranked.slice(0, 3).map((g) => g.name), ["G19", "G18", "G17"]);
+  const other = ranked.at(-1);
+  assert.equal(other.name, "All other (5 groups)");
+  // G0..G4: personnel 100+101+102+103+104 = 510, supplies 5*10 = 50
+  assert.deepEqual(other.children, [{ name: "Personnel Cost", value: 510 }, { name: "Supplies", value: 50 }]);
+  assert.equal(other.total, 560);
+});
+
+test("rankGroups conserves the total however groups are merged", () => {
+  const sum = (groups) => groups.reduce((s, g) => s + g.total, 0);
+  assert.equal(sum(rankGroups(makeRoot(20), { topN: 15 })), sum(rankGroups(makeRoot(20), { expandAll: true })));
+});
+
+test("rankGroups with expandAll or few groups shows every group and no 'All other'", () => {
+  assert.equal(rankGroups(makeRoot(20), { expandAll: true }).length, 20);
+  const few = rankGroups(makeRoot(4), { topN: 15 });
+  assert.equal(few.length, 4);
+  assert.ok(!few.some((g) => g.name.startsWith("All other")));
+  assert.deepEqual(rankGroups({ name: "root", children: [] }), []);
 });

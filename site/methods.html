@@ -11,6 +11,7 @@
     <nav>
       <strong>San Diego Spending</strong>
       <a href="index.html">Where your dollar goes</a>
+      <a href="vendors.html">Who gets paid</a>
       <a href="methods.html" aria-current="page">Data &amp; methods</a>
     </nav>
   </header>
@@ -51,6 +52,24 @@
       <li><strong>Population</strong> is missing from the source for a few years. Those years are
         interpolated, and years after the latest report use the latest value. Per-resident figures for them are
         marked "(population estimated)".</li>
+    </ul>
+
+    <h2>Who gets paid (vendor payments)</h2>
+    <ul>
+      <li><strong>Source:</strong> the City's yearly "Cumulative Amounts Paid to Vendors - $25,000 or more" reports
+        (PDF), FY2022 to FY2026, read with <code>pdftotext</code>. The FY2026 report covers July 2025 to June 2026.</li>
+      <li><strong>Only payments of $25,000 or more</strong> to a vendor in the year are published, so the totals are
+        a share of City spending, not all of it. The page states that share next to every total.</li>
+      <li><strong>No purpose or category</strong> is published, so a large payee can be a pass-through (for example to
+        the pension system or a regional water wholesaler). The page makes no judgement about whether a payment was
+        too high.</li>
+      <li><strong>One company, several IDs.</strong> Vendors whose names match ignoring case, punctuation and
+        "&amp;" vs "and" are combined, and all their vendor IDs are kept in
+        <code>data/processed/vendor_payments.csv</code>.</li>
+      <li><strong>Checks:</strong> the extractor fails on any line it does not recognise, a page-count mismatch, a
+        duplicate vendor ID or an amount under $25,000. The reports print no totals, so the build also requires each
+        year's vendor payments to be between 40% and 110% of the City's own spending for that year (they are
+        58%-86% today).</li>
     </ul>
 
     <h2>Checks that run on every build</h2>

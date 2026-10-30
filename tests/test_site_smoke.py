@@ -151,3 +151,67 @@ def test_spending_type_colours_do_not_shift_between_views(page, site_url):
     page.check("input[name=basis][value=adopted]")
     page.wait_for_function("document.getElementById('fy').max === '2026'")
     assert swatches() == before
+
+
+def open_vendors(page, site_url, hash_=""):
+    errors = []
+    page.on("pageerror", lambda e: errors.append(str(e)))
+    page.goto(f"{site_url}/vendors.html{hash_}")
+    page.wait_for_selector("#leader-table tbody tr")
+    return errors
+
+
+def test_vendors_page_shows_leaders_headline_and_honest_coverage(page, site_url):
+    errors = open_vendors(page, site_url)
+    assert page.locator("#leader-table tbody tr").count() == 25
+    head = page.locator("#vhead").inner_text()
+    assert "FY2026" in head and "vendors" in head and "$" in head
+    coverage = page.locator("#vcoverage").inner_text()
+    assert "%" in coverage and "not total spending" in coverage.lower()
+    assert "pass-through" in page.locator("#passthrough-note").inner_text().lower()
+    assert errors == []
+
+
+def test_every_vendor_figure_has_a_method_drawer(page, site_url):
+    open_vendors(page, site_url)
+    assert page.locator("figure").count() == page.locator("figure details.method").count() >= 1
+
+
+def test_vendor_search_finds_a_payee_and_shows_its_trend(page, site_url):
+    open_vendors(page, site_url)
+    page.locator("#q").press_sequentially("water authority")  # real keystrokes: the space must survive
+    page.wait_for_selector("#search-table tbody tr")
+    assert page.input_value("#q") == "water authority"
+    assert "San Diego County Water Authority" in page.locator("#search-table").inner_text()
+    assert "q=water%20authority" in page.url
+    page.click("#search-table tbody tr button")
+    page.wait_for_selector("#vendor-trend svg")
+    assert page.locator("#vendor-trend rect").count() == 5
+
+
+def test_vendor_search_with_regex_characters_is_literal_and_safe(page, site_url):
+    errors = open_vendors(page, site_url)
+    page.fill("#q", "(.*")
+    page.wait_for_function("document.getElementById('search-empty').hidden === false")
+    assert "no vendors" in page.locator("#search-empty").inner_text().lower()
+    assert errors == []
+
+
+def test_vendors_deep_link_restores_year_and_search(page, site_url):
+    open_vendors(page, site_url, "#fy=2022&q=sdcers")
+    assert page.input_value("#fy") == "2022"
+    assert page.input_value("#q") == "sdcers"
+    assert "SDCERS" in page.locator("#search-table").inner_text()
+    assert "FY2022" in page.locator("#vhead").inner_text()
+
+
+def test_vendors_page_has_no_horizontal_scroll_on_a_phone(page, site_url):
+    page.set_viewport_size({"width": 390, "height": 800})
+    open_vendors(page, site_url)
+    assert page.evaluate("document.documentElement.scrollWidth") <= 390
+
+
+def test_nav_links_to_the_vendors_page_from_every_page(page, site_url):
+    for path in ("/", "/methods.html"):
+        page.goto(site_url + path)
+        assert page.locator("nav a[href='vendors.html']").count() == 1

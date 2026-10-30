@@ -2,7 +2,7 @@ import * as d3 from "https://cdn.jsdelivr.net/npm/d3@7.9.0/+esm";
 import * as Plot from "https://cdn.jsdelivr.net/npm/@observablehq/plot@0.6.16/+esm";
 import { rowsFromColumns, availableYears, totalsByYear, totalsByClass, buildHierarchy, rankGroups } from "./model.js";
 import { parseHash, serializeHash } from "./state.js";
-import { formatMoney, formatPerResident } from "./format.js";
+import { formatMoney, formatPerResident, truncate } from "./format.js";
 
 const $ = (id) => document.getElementById(id);
 const css = (name) => getComputedStyle(document.documentElement).getPropertyValue(name).trim();
@@ -68,10 +68,6 @@ function update(patch) {
   state = parseHash(serializeHash({ ...state, ...patch }), years); // re-validates (e.g. year vs basis)
   history.replaceState(null, "", serializeHash(state));
   render();
-}
-
-function truncate(text, maxChars) {
-  return text.length <= maxChars ? text : `${text.slice(0, Math.max(0, maxChars - 1))}…`;
 }
 
 function drawTotals(data) {

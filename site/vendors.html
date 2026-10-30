@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Who gets paid · San Diego Spending</title>
+  <meta name="description" content="The vendors the City of San Diego paid $25,000 or more each year, FY2022 to FY2026.">
+  <link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav>
+      <strong>San Diego Spending</strong>
+      <a href="index.html">Where your dollar goes</a>
+      <a href="vendors.html" aria-current="page">Who gets paid</a>
+      <a href="methods.html">Data &amp; methods</a>
+    </nav>
+  </header>
+  <main>
+    <h1>Who gets paid</h1>
+    <p id="vhead" class="headline" aria-live="polite">Loading…</p>
+    <p id="vcoverage" class="note"></p>
+    <p id="passthrough-note" class="note">The City publishes no purpose or category for these payments, so a large
+      payment is not necessarily a purchase of services: it can be a pass-through, for example to the pension system
+      or a regional water wholesaler. Nothing here says a payment was too high.</p>
+
+    <form class="controls" aria-label="Year" onsubmit="return false">
+      <div class="year-control">
+        <label for="fy">Fiscal year: <strong id="fy-label"></strong></label>
+        <input type="range" id="fy" min="2022" max="2026" step="1" value="2026">
+      </div>
+    </form>
+
+    <h2>Largest payees</h2>
+    <figure>
+      <div id="leaders" role="img" aria-label="Bar chart of the 25 vendors paid the most in the selected year"></div>
+      <details class="method">
+        <summary>Method</summary>
+        <p>Source: the City's yearly "Cumulative Amounts Paid to Vendors - $25,000 or more" reports (PDF), read with
+          <code>pdftotext</code>. Only vendors paid $25,000 or more in the year are listed. A company that appears
+          under several vendor IDs or spellings is combined into one row. Fiscal years are named by the year they end;
+          the FY2026 report covers July 2025 to June 2026. See <a href="methods.html">Data &amp; methods</a>.</p>
+      </details>
+    </figure>
+    <div class="table-wrap">
+      <table id="leader-table">
+        <caption class="note">The same 25 payees, largest first.</caption>
+        <thead><tr><th scope="col">Vendor</th><th scope="col">Paid</th><th scope="col">Share of listed payments</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+
+    <h2>Find a vendor</h2>
+    <div class="vendor-search">
+      <label for="q">Search by name</label>
+      <input type="search" id="q" autocomplete="off" placeholder="e.g. water, construction, SDCERS">
+    </div>
+    <p id="search-empty" class="note" hidden>No vendors match that name.</p>
+    <div class="table-wrap">
+      <table id="search-table" hidden>
+        <caption class="note">Matches, largest in the selected year first. A dash means no payment of $25,000 or more that year.</caption>
+        <thead><tr><th scope="col">Vendor</th><th scope="col">FY2022</th><th scope="col">FY2023</th><th scope="col">FY2024</th><th scope="col">FY2025</th><th scope="col">FY2026</th><th scope="col"><span class="visually-hidden">Trend</span></th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+    <figure id="trend-figure" hidden>
+      <h3 id="trend-title"></h3>
+      <div id="vendor-trend" role="img" aria-label="Bar chart of one vendor's payments by fiscal year"></div>
+      <details class="method">
+        <summary>Method</summary>
+        <p>Years with no bar had no payment of $25,000 or more to this vendor (they may have been paid less, which the
+          City does not publish).</p>
+      </details>
+    </figure>
+  </main>
+  <script type="module" src="js/vendors.js"></script>
+</body>
+</html>

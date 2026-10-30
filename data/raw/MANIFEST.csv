@@ -1,4 +1,6 @@
 path,url,retrieved,sha256_original,bytes_original
+census/2024_Individual_Unit_Files.zip.gz,https://www2.census.gov/programs-surveys/gov-finances/tables/2024/2024_Individual_Unit_Files.zip,2026-10-29,0967c4d30466593796acb26f2b30c1afb37b5b9a5de43766dc65e4ccc95bd89a,4267040
+census/2024_methodology.pdf.gz,https://www2.census.gov/programs-surveys/gov-finances/tables/2024/2024_methodology.pdf,2026-10-29,6a8d82a94335bf6d03130ba047f68df037a555761d9d82bde15ead86f9a9b6f9,384434
 sandiego/accounts.csv.gz,https://seshat.datasd.org/accounts_city_budget/budget_reference_accounts_datasd.csv,2026-10-29,6a66ca1c680a11fbd3337beeafb4851cc9f3fc73e5a875108d1b5512d7204828,194159
 sandiego/accounts_dictionary.csv.gz,https://seshat.datasd.org/accounts_city_budget/budget_reference_accounts_dictionary_datasd.csv,2026-10-29,605365659e77563aeba53eb7917a7c0c5fcaafa19fc22924dcf026fd6f158197,731
 sandiego/actuals_operating.csv.gz,https://seshat.datasd.org/operating_actuals/actuals_operating_datasd.csv,2026-10-29,53cfc7488c40c2d3b654c64ba8599bc11a4086fa5efe403371c38eff78dd2143,69104357

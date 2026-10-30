@@ -1,0 +1,16 @@
+{
+  "home": "062073207598",
+  "peers": [
+    {"id": "042013207536", "name": "Phoenix", "state": "AZ", "region": "West"},
+    {"id": "062085100745", "name": "San Jose", "state": "CA", "region": "West"},
+    {"id": "482029175988", "name": "San Antonio", "state": "TX", "region": "South"},
+    {"id": "482113187649", "name": "Dallas", "state": "TX", "region": "South"},
+    {"id": "482453176394", "name": "Austin", "state": "TX", "region": "South"},
+    {"id": "482439176375", "name": "Fort Worth", "state": "TX", "region": "South"},
+    {"id": "372119194726", "name": "Charlotte", "state": "NC", "region": "South"},
+    {"id": "392049209050", "name": "Columbus", "state": "OH", "region": "Midwest"},
+    {"id": "532033184255", "name": "Seattle", "state": "WA", "region": "Pacific Northwest"},
+    {"id": "412051211254", "name": "Portland", "state": "OR", "region": "Pacific Northwest"},
+    {"id": "252025128108", "name": "Boston", "state": "MA", "region": "Northeast"}
+  ]
+}

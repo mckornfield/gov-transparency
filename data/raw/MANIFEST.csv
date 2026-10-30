@@ -1,0 +1,10 @@
+path,url,retrieved,sha256_original,bytes_original
+sandiego/accounts.csv.gz,https://seshat.datasd.org/accounts_city_budget/budget_reference_accounts_datasd.csv,2026-10-29,6a66ca1c680a11fbd3337beeafb4851cc9f3fc73e5a875108d1b5512d7204828,194159
+sandiego/accounts_dictionary.csv.gz,https://seshat.datasd.org/accounts_city_budget/budget_reference_accounts_dictionary_datasd.csv,2026-10-29,605365659e77563aeba53eb7917a7c0c5fcaafa19fc22924dcf026fd6f158197,731
+sandiego/actuals_operating.csv.gz,https://seshat.datasd.org/operating_actuals/actuals_operating_datasd.csv,2026-10-29,53cfc7488c40c2d3b654c64ba8599bc11a4086fa5efe403371c38eff78dd2143,69104357
+sandiego/actuals_operating_dictionary.csv.gz,https://seshat.datasd.org/operating_actuals/operating_actuals_dictionary_datasd.csv,2026-10-29,7b46195425062e67555737057d62f4a525f4cd4878c23200fe8bb7455da89669,872
+sandiego/budget_operating.csv.gz,https://seshat.datasd.org/operating_budget/budget_operating_datasd.csv,2026-10-29,4ad8a734cb351a7ccae7939ea9c8076cf7e30a4d4f2a8c10f45852cb042c5fe5,63825383
+sandiego/budget_operating_dictionary.csv.gz,https://seshat.datasd.org/operating_budget/operating_budget_dictionary_datasd.csv,2026-10-29,8fdee828cc4c5374f67fc11d8b7b6455589eca0edb13d56689cc71917298ddc9,959
+sandiego/depts.csv.gz,https://seshat.datasd.org/departments_city_budget/budget_reference_depts_datasd.csv,2026-10-29,fa3bfecc363f23cf7380484778b687f34641b9df76e91a0e467affcf12fe04d6,353307
+sandiego/depts_dictionary.csv.gz,https://seshat.datasd.org/departments_city_budget/budget_reference_depts_dictionary_datasd.csv,2026-10-29,a331ce1da38dbd805891294d361582f2421bea37b8dc37b5e3d6f1cc3134eb00,649
+sco/san_diego_population.csv.gz,https://bythenumbers.sco.ca.gov/resource/rrtv-rsj9.csv?%24select=entity_name%2Cfiscal_year%2Cestimated_population&%24where=entity_name%3D%27San+Diego%27&%24group=entity_name%2Cfiscal_year%2Cestimated_population&%24order=fiscal_year&%24limit=100,2026-10-29,f548f05c6a81e1748cdb3918885ea67c3606107cb06e2460d66c5e0a26a375b4,660

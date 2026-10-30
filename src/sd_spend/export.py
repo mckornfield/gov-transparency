@@ -23,3 +23,21 @@ def meta_payload(tidy: pd.DataFrame, retrieved: str) -> dict:
 def population_payload(pop: pd.DataFrame) -> dict:
     return {"rows": [{"fy": int(r.fy), "population": int(r.population), "source": str(r.source)}
                      for r in pop.itertuples(index=False)]}
+
+
+def vendors_payload(vendors: pd.DataFrame, cov: dict) -> dict:
+    by_key: dict[str, dict] = {}
+    for row in vendors.itertuples(index=False):
+        entry = by_key.setdefault(row.vendor_key, {"name": row.vendor_name, "ids": set(), "amounts": {}, "latest": 0})
+        entry["ids"].update(row.vendor_ids.split("; "))
+        entry["amounts"][str(int(row.fy))] = int(round(row.amount))
+        if row.fy >= entry["latest"]:
+            entry["latest"], entry["name"] = int(row.fy), row.vendor_name
+    ranked = sorted(by_key.values(), key=lambda e: (-sum(e["amounts"].values()), e["name"]))
+    return {
+        "years": sorted(int(y) for y in vendors["fy"].unique()),
+        "coverage": {str(fy): {"vendors_total": int(round(c["vendors_total"])),
+                               "reference_total": int(round(c["reference_total"])),
+                               "reference_basis": c["reference_basis"]} for fy, c in sorted(cov.items())},
+        "vendors": [{"name": e["name"], "ids": "; ".join(sorted(e["ids"])), "amounts": e["amounts"]} for e in ranked],
+    }

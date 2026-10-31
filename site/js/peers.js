@@ -1,4 +1,5 @@
 import * as Plot from "https://cdn.jsdelivr.net/npm/@observablehq/plot@0.6.16/+esm";
+import { enhanceTables } from "./tables.js";
 import { formatPerResident, truncate } from "./format.js";
 import { KINDS, parsePeerHash, serializePeerHash, visibleGroups, groupStats, headline, fiscalYearEnd, rankLabel, cityMatrix } from "./peers-model.js";
 
@@ -48,15 +49,15 @@ function drawChart(stats) {
   $("peer-chart").replaceChildren(Plot.plot({
     width, height: 38 * labels.length + 50, marginLeft, marginRight: 20,
     x: { label: null, grid: true, ticks: width < 500 ? 3 : 6, tickFormat: (v) => formatPerResident(v) },
-    y: { label: null, domain: labels, tickFormat: (n) => truncate(n, Math.floor(marginLeft / 6.6)) },
+    y: { label: null, type: "band", padding: 0.3, domain: labels, tickFormat: (n) => truncate(n, Math.floor(marginLeft / 6.6)) },
     color: { domain: REGIONS, range: REGION_COLORS },
     marks: [
       Plot.dot(peers, { x: "per_resident", y: "label", fill: "region", r: 5, fillOpacity: 0.85,
         title: (d) => `${d.city}: ${formatPerResident(d.per_resident)} per resident` }),
-      Plot.dot(mids, { x: "per_resident", y: "label", symbol: "diamond", r: 7, stroke: css("--text"), strokeWidth: 2,
-        title: (d) => `Middle peer: ${formatPerResident(d.per_resident)} per resident` }),
       Plot.dot(home, { x: "per_resident", y: "label", r: 8, fill: css("--accent"), stroke: css("--bg"), strokeWidth: 2,
         title: (d) => `San Diego: ${formatPerResident(d.per_resident)} per resident` }),
+      Plot.tickX(mids, { x: "per_resident", y: "label", stroke: css("--text"), strokeWidth: 3,
+        title: (d) => `Middle peer: ${formatPerResident(d.per_resident)} per resident` }),
       Plot.ruleX([0]),
     ],
   }));
@@ -65,7 +66,7 @@ function drawChart(stats) {
 function drawLegend() {
   const items = [
     `<li><span class="swatch" style="background:${css("--accent")}"></span>San Diego</li>`,
-    `<li><span class="swatch" style="border:2px solid ${css("--text")};transform:rotate(45deg)"></span>Middle peer</li>`,
+    `<li><span class="swatch" style="width:3px;height:1rem;margin:0 .45rem 0 .15rem;background:${css("--text")}"></span>Middle peer</li>`,
     ...REGIONS.map((r, i) => `<li><span class="swatch" style="background:${REGION_COLORS[i]};border-radius:50%"></span>${r}</li>`),
   ];
   $("peer-legend").innerHTML = items.join("");
@@ -129,3 +130,5 @@ new ResizeObserver(() => {
 }).observe($("peer-chart"));
 
 render();
+
+enhanceTables();

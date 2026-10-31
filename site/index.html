@@ -83,21 +83,21 @@
 
     <h2>Table view</h2>
     <div class="table-wrap">
-      <table id="totals-table">
+      <table id="totals-table" data-title="Total by fiscal year" data-default-sort="0:desc">
         <caption class="note">Total by fiscal year (same data as the bar chart; always in total dollars).</caption>
         <thead><tr><th scope="col">Fiscal year</th><th scope="col">Total</th></tr></thead>
         <tbody></tbody>
       </table>
     </div>
     <div class="table-wrap">
-      <table id="class-table">
+      <table id="class-table" data-title="Type of spending">
         <caption class="note">Type of spending for the selected year (the colours in the treemap).</caption>
         <thead><tr><th scope="col">Type of spending</th><th scope="col" id="class-value-head">Spending</th><th scope="col">Share</th></tr></thead>
         <tbody></tbody>
       </table>
     </div>
     <div class="table-wrap">
-      <table>
+      <table data-title="Department groups">
         <caption class="note">Department groups, largest first (same data as the chart above).</caption>
         <thead><tr><th scope="col">Department group</th><th scope="col" id="value-head">Spending</th><th scope="col">Share</th></tr></thead>
         <tbody id="table-body"></tbody>

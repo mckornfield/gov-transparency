@@ -54,3 +54,9 @@ table button { font: inherit; font-size: .85rem; cursor: pointer; color: var(--a
 h3 { font-size: 1rem; margin: 1.25rem 0 .25rem; }
 .legend { display: flex; flex-wrap: wrap; gap: .25rem 1rem; padding: 0; list-style: none; font-size: .85rem; }
 .legend .swatch { display: inline-block; width: .8rem; height: .8rem; margin-right: .3rem; vertical-align: -1px; }
+.table-details { margin: 1rem 0; }
+.table-details > summary { cursor: pointer; font-weight: 600; font-size: .95rem; }
+.sort-button { font: inherit; font-weight: inherit; color: inherit; background: none; border: 0; padding: 0; cursor: pointer; text-align: inherit; }
+.sort-button::after { content: " \2195"; color: var(--muted); font-size: .8em; }
+th[aria-sort="ascending"] .sort-button::after { content: " \25B2"; color: var(--accent); }
+th[aria-sort="descending"] .sort-button::after { content: " \25BC"; color: var(--accent); }

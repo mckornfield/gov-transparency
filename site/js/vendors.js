@@ -1,4 +1,5 @@
 import * as Plot from "https://cdn.jsdelivr.net/npm/@observablehq/plot@0.6.16/+esm";
+import { enhanceTables } from "./tables.js";
 import { formatMoney, truncate } from "./format.js";
 import { topVendors, concentration, searchVendors, parseVendorHash, serializeVendorHash } from "./vendors-model.js";
 
@@ -114,3 +115,5 @@ new ResizeObserver(() => {
 }).observe($("leaders"));
 
 render();
+
+enhanceTables();

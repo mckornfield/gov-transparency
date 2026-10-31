@@ -2,6 +2,7 @@ import * as d3 from "https://cdn.jsdelivr.net/npm/d3@7.9.0/+esm";
 import * as Plot from "https://cdn.jsdelivr.net/npm/@observablehq/plot@0.6.16/+esm";
 import { rowsFromColumns, availableYears, totalsByYear, totalsByClass, buildHierarchy, rankGroups } from "./model.js";
 import { parseHash, serializeHash } from "./state.js";
+import { enhanceTables } from "./tables.js";
 import { formatMoney, formatPerResident, truncate } from "./format.js";
 
 const $ = (id) => document.getElementById(id);
@@ -215,3 +216,5 @@ new ResizeObserver(() => {
 }).observe($("view-area"));
 
 render();
+
+enhanceTables();

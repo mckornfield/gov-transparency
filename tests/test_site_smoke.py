@@ -256,3 +256,61 @@ def test_peers_page_lists_every_city_value_and_real_fiscal_years(page, site_url)
     cities = page.locator("#city-table tbody").inner_text()
     assert "September 2023" in cities and "December 2023" in cities and "June 2024" in cities
     assert "highest of" in page.locator("#peer-table tbody").inner_text()
+
+
+def test_peers_median_marker_is_a_tick_not_a_diamond(page, site_url):
+    page.goto(f"{site_url}/peers.html")
+    page.wait_for_selector("#peer-chart svg")
+    assert page.locator("#peer-chart svg [aria-label='tick'] line, #peer-chart svg g[aria-label='tick'] path").count() >= 8
+    assert page.locator("#peer-legend li", has_text="Middle peer").count() == 1
+
+
+def test_tables_are_collapsible(page, site_url):
+    page.goto(f"{site_url}/peers.html")
+    page.wait_for_selector("#peer-chart svg")
+    assert page.locator("details.table-details").count() == 3
+    assert page.locator("#city-table").is_visible()
+    page.locator("details.table-details > summary", has_text="The cities").click()
+    assert not page.locator("#city-table").is_visible()
+    page.locator("details.table-details > summary", has_text="The cities").click()
+    assert page.locator("#city-table").is_visible()
+
+
+def test_city_table_defaults_to_latest_fiscal_year_then_sorts_on_click(page, site_url):
+    page.goto(f"{site_url}/peers.html")
+    page.wait_for_selector("#peer-chart svg")
+    rows = page.locator("#city-table tbody tr")
+    assert rows.first.locator("td").nth(3).inner_text() == "June 2024"
+    assert rows.last.locator("td").nth(3).inner_text() == "September 2023"
+    page.locator("#city-table th", has_text="Population").locator("button").click()
+    assert rows.first.locator("th, td").first.inner_text() == "Phoenix"
+    assert page.locator("#city-table th", has_text="Population").get_attribute("aria-sort") == "descending"
+    page.locator("#city-table th", has_text="Population").locator("button").click()
+    assert rows.first.locator("th, td").first.inner_text() == "Portland"
+
+
+def test_sorting_survives_the_page_redrawing_the_table(page, site_url):
+    page.goto(f"{site_url}/peers.html")
+    page.wait_for_selector("#peer-chart svg")
+    page.locator("#matrix-table th", has_text="Police").locator("button").click()
+    first = page.locator("#matrix-table tbody tr").first.locator("th").inner_text()
+    page.check("#kind-utility")
+    page.wait_for_function("document.querySelectorAll('#matrix-table thead th').length === 13")
+    assert page.locator("#matrix-table th", has_text="Police").get_attribute("aria-sort") == "descending"
+    assert page.locator("#matrix-table tbody tr").first.locator("th").inner_text() == first
+
+
+def test_index_totals_default_to_latest_year_and_headers_keep_sort_buttons(page, site_url):
+    page.goto(f"{site_url}/")
+    page.wait_for_selector("#bars rect")
+    assert page.locator("#totals-table tbody tr").first.locator("td").first.inner_text() == "FY2023"
+    page.check("input[name=mode][value=perResident]")
+    page.wait_for_function("location.hash.includes('mode=perResident')")
+    assert page.locator("#value-head .sort-button").count() == 1
+    assert page.locator("#value-head").inner_text().startswith("Per resident")
+
+
+def test_vendor_search_table_wrapper_hidden_until_there_are_matches(page, site_url):
+    page.goto(f"{site_url}/vendors.html")
+    page.wait_for_selector("#leaders svg")
+    assert page.locator("#search-table").evaluate("t => t.closest('details').hidden") is True

@@ -314,3 +314,13 @@ def test_vendor_search_table_wrapper_hidden_until_there_are_matches(page, site_u
     page.goto(f"{site_url}/vendors.html")
     page.wait_for_selector("#leaders svg")
     assert page.locator("#search-table").evaluate("t => t.closest('details').hidden") is True
+
+
+def test_peers_legend_renders_without_the_stylesheet(page, site_url):
+    """A browser holding an older cached site.css must still show every swatch, in a row."""
+    page.route("**/css/site.css*", lambda route: route.abort())
+    page.goto(f"{site_url}/peers.html")
+    page.wait_for_selector("#peer-legend li")
+    boxes = [li.locator(".swatch").bounding_box() for li in page.locator("#peer-legend li").all()]
+    assert len(boxes) == 7 and all(b and b["width"] > 0 and b["height"] > 0 for b in boxes)
+    assert len({round(b["y"]) for b in boxes[:3]}) == 1  # laid out in a row, not a bulleted column

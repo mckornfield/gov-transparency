@@ -63,13 +63,16 @@ function drawChart(stats) {
   }));
 }
 
+// Inline styles on purpose: the legend must still make sense if the browser holds an older cached site.css.
 function drawLegend() {
+  const swatch = (style) => `<span class="swatch" style="display:inline-block;width:.8rem;height:.8rem;margin-right:.3rem;vertical-align:-1px;${style}"></span>`;
   const items = [
-    `<li><span class="swatch" style="background:${css("--accent")}"></span>San Diego</li>`,
-    `<li><span class="swatch" style="width:3px;height:1rem;margin:0 .45rem 0 .15rem;background:${css("--text")}"></span>Middle peer</li>`,
-    ...REGIONS.map((r, i) => `<li><span class="swatch" style="background:${REGION_COLORS[i]};border-radius:50%"></span>${r}</li>`),
+    `${swatch(`background:${css("--accent")}`)}San Diego`,
+    `${swatch(`width:3px;height:1rem;margin:0 .45rem 0 .15rem;background:${css("--text")}`)}Middle peer`,
+    ...REGIONS.map((r, i) => `${swatch(`background:${REGION_COLORS[i]};border-radius:50%`)}${r}`),
   ];
-  $("peer-legend").innerHTML = items.join("");
+  $("peer-legend").style.cssText = "display:flex;flex-wrap:wrap;gap:.25rem 1rem;padding:0;list-style:none;font-size:.85rem";
+  $("peer-legend").innerHTML = items.map((html) => `<li>${html}</li>`).join("");
 }
 
 function drawMatrix({ columns, rows }) {

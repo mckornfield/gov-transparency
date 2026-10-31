@@ -67,7 +67,7 @@ function drawChart(stats) {
 function drawLegend() {
   const swatch = (style) => `<span class="swatch" style="display:inline-block;width:.8rem;height:.8rem;margin-right:.3rem;vertical-align:-1px;${style}"></span>`;
   const items = [
-    `${swatch(`background:${css("--accent")}`)}San Diego`,
+    `${swatch(`background:${css("--accent")};border-radius:50%`)}San Diego`,
     `${swatch(`width:3px;height:1rem;margin:0 .45rem 0 .15rem;background:${css("--text")}`)}Middle peer`,
     ...REGIONS.map((r, i) => `${swatch(`background:${REGION_COLORS[i]};border-radius:50%`)}${r}`),
   ];

@@ -324,3 +324,10 @@ def test_peers_legend_renders_without_the_stylesheet(page, site_url):
     boxes = [li.locator(".swatch").bounding_box() for li in page.locator("#peer-legend li").all()]
     assert len(boxes) == 7 and all(b and b["width"] > 0 and b["height"] > 0 for b in boxes)
     assert len({round(b["y"]) for b in boxes[:3]}) == 1  # laid out in a row, not a bulleted column
+
+
+def test_legend_san_diego_swatch_is_a_circle_like_the_plot_dot(page, site_url):
+    page.goto(f"{site_url}/peers.html")
+    page.wait_for_selector("#peer-legend li")
+    swatch = page.locator("#peer-legend li", has_text="San Diego").locator(".swatch")
+    assert swatch.evaluate("e => getComputedStyle(e).borderRadius") in ("50%", "9999px")

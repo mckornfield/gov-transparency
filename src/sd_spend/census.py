@@ -68,9 +68,10 @@ def check_peers(tidy: pd.DataFrame) -> None:
 
 
 def build_peer_spending(units: pd.DataFrame, items: pd.DataFrame, peers_cfg: dict, functions_cfg: dict) -> pd.DataFrame:
-    wanted = {peers_cfg["home"]: {"city": "San Diego", "state": "CA", "region": "West", "is_home": True}}
+    wanted = {peers_cfg["home"]: {"city": "San Diego", "state": "CA", "region": "West", "is_home": True, "reference": False}}
     for p in peers_cfg["peers"]:
-        wanted[p["id"]] = {"city": p["name"], "state": p["state"], "region": p["region"], "is_home": False}
+        wanted[p["id"]] = {"city": p["name"], "state": p["state"], "region": p["region"], "is_home": False,
+                           "reference": bool(p.get("reference", False))}
     present = units[units["unit_id"].isin(wanted)]
     for uid in wanted:
         n = (present["unit_id"] == uid).sum()

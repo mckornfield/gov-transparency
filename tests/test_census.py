@@ -156,3 +156,10 @@ def test_an_unlisted_code_outside_the_prefix_rules_still_fails_the_build():
     items = parse_items(items_text([(HOME, "E62", 200_000), (HOME, "E75", 5_000), (PEER, "E62", 300_000)]))
     with pytest.raises(CensusError, match="E75"):
         build_peer_spending(parse_units(units_text()), items, PEERS, cfg)
+
+
+def test_reference_cities_are_flagged_and_still_built_like_any_other():
+    peers = {"home": HOME, "peers": [{"id": PEER, "name": "Dallas", "state": "TX", "region": "South", "reference": True}]}
+    t = build_peer_spending(parse_units(units_text()), good_items(), peers, FUNCS)
+    assert t[t.city == "Dallas"]["reference"].all() and not t[t.is_home]["reference"].any()
+    assert t[t.city == "Dallas"].shape[0] == 2  # both groups present

@@ -57,7 +57,7 @@ def test_peers_payload_has_one_snapshot_per_survey_year_with_price_levels():
     from sd_spend.export import peers_payload
 
     def row(fy, city, home, pop, fy_end, amount, per, rpp):
-        return {"fiscal_year": fy, "city": city, "state": "CA", "region": "West", "is_home": home, "population": pop,
+        return {"fiscal_year": fy, "city": city, "state": "CA", "region": "West", "is_home": home, "reference": city == "Dallas", "population": pop,
                 "fy_end": fy_end, "group": "police", "label": "Police", "kind": "core", "amount_usd": amount,
                 "per_resident": per, "rpp": rpp}
     tidy = pd.DataFrame([
@@ -72,6 +72,7 @@ def test_peers_payload_has_one_snapshot_per_survey_year_with_price_levels():
     assert [y["fiscal_year"] for y in p["years"]] == [2023, 2024]  # oldest first
     latest = p["years"][-1]
     assert [c["city"] for c in latest["cities"]] == ["San Diego", "Dallas"]
+    assert latest["cities"][1]["reference"] is True and latest["cities"][0]["reference"] is False
     assert latest["cities"][0]["rpp"] == 112.35 and latest["cities"][0]["population"] == 100
     assert latest["rows"][0] == {"city": "San Diego", "group": "police", "amount": 5000, "per_resident": 50.0}
     assert p["years"][0]["rows"][0]["per_resident"] == 44.44

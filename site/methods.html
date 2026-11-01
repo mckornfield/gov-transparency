@@ -89,6 +89,12 @@
         Portland and Boston (0.64 to 0.75 million) are smaller than San Diego (1.38 million) and were added for
         regional spread. Consolidated city-counties (Indianapolis, Jacksonville, Philadelphia, San Francisco) are left
         out because they also provide county services. The list is in <code>config/peers.json</code>.</li>
+      <li><strong>Reference cities:</strong> Arlington County, VA and Vancouver, WA (0.19 to 0.23 million people) are included
+        for comparison with places of personal interest. They are built exactly like the peers but marked
+        <code>reference</code> in <code>config/peers.json</code> and left out of the middle peer, range, rank and trend,
+        so the median still describes cities of San Diego's size. Arlington is a county government (it provides
+        county services and its schools are funded through it), so only its city-type lines are comparable.
+        Their price levels are the Washington DC area and Portland-Vancouver metros.</li>
       <li><strong>Services:</strong> each service is current-operation plus construction spending under the Census
         item codes listed in <code>config/census_functions.json</code>. The build fails if a spending code is not
         mapped. Utilities, transit and airports, "health, welfare, jails and schools", interest and grants are separate

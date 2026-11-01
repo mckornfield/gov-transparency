@@ -12,6 +12,8 @@
     {"id": "392049209050", "name": "Columbus", "state": "OH", "region": "Midwest", "msa": "18140"},
     {"id": "532033184255", "name": "Seattle", "state": "WA", "region": "Pacific Northwest", "msa": "42660"},
     {"id": "412051211254", "name": "Portland", "state": "OR", "region": "Pacific Northwest", "msa": "38900"},
-    {"id": "252025128108", "name": "Boston", "state": "MA", "region": "Northeast", "msa": "14460"}
+    {"id": "252025128108", "name": "Boston", "state": "MA", "region": "Northeast", "msa": "14460"},
+    {"id": "511013176669", "name": "Arlington County, VA", "state": "VA", "region": "Mid-Atlantic", "msa": "47900", "reference": true},
+    {"id": "532011176816", "name": "Vancouver, WA", "state": "WA", "region": "Pacific Northwest", "msa": "38900", "reference": true}
   ]
 }

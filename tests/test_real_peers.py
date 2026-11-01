@@ -10,10 +10,10 @@ def latest():
     return t[t.fiscal_year == 2024]
 
 
-def test_twelve_cities_all_groups_in_every_survey_year():
+def test_fourteen_cities_all_groups_in_every_survey_year():
     t = pd.read_csv(CSV)
     assert sorted(t["fiscal_year"].unique()) == [2019, 2020, 2021, 2022, 2023, 2024]
-    assert t.groupby("fiscal_year")["city"].nunique().eq(12).all()
+    assert t.groupby("fiscal_year")["city"].nunique().eq(14).all()
     assert t.groupby(["fiscal_year", "city"])["group"].nunique().eq(15).all()
 
 

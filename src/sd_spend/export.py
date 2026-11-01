@@ -49,11 +49,11 @@ def peers_payload(tidy: pd.DataFrame) -> dict:
     home = tidy.loc[tidy["is_home"], "city"].iloc[0]
     years = []
     for fiscal_year, year in sorted(tidy.groupby("fiscal_year"), key=lambda kv: kv[0]):
-        cities = year[["city", "state", "region", "population", "fy_end", "is_home", "rpp"]].drop_duplicates("city")
+        cities = year[["city", "state", "region", "population", "fy_end", "is_home", "reference", "rpp"]].drop_duplicates("city")
         rows = year[["city", "group", "amount_usd", "per_resident"]].rename(columns={"amount_usd": "amount"})
         years.append({
             "fiscal_year": int(fiscal_year),
-            "cities": [{**c, "population": int(c["population"]), "is_home": bool(c["is_home"]), "rpp": round(float(c["rpp"]), 2)}
+            "cities": [{**c, "population": int(c["population"]), "is_home": bool(c["is_home"]), "reference": bool(c["reference"]), "rpp": round(float(c["rpp"]), 2)}
                        for c in cities.to_dict("records")],
             "rows": [{**r, "amount": int(r["amount"]), "per_resident": round(float(r["per_resident"]), 2)}
                      for r in rows.to_dict("records")],

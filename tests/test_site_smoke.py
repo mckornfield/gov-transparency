@@ -226,7 +226,7 @@ def test_peers_page_renders(page, site_url):
     page.wait_for_selector("#peer-chart svg")
     assert "middle peer" in page.inner_text("#phead")
     assert page.locator("#peer-table tbody tr").count() == 8
-    assert page.locator("#city-table tbody tr").count() == 12
+    assert page.locator("#city-table tbody tr").count() == 14
     page.check("#kind-utility")
     page.wait_for_function("location.hash.includes('kinds=')")
     assert page.locator("#peer-table tbody tr").count() == 12
@@ -249,7 +249,7 @@ def test_peers_deep_link_and_garbage_hash(page, site_url):
 def test_peers_page_lists_every_city_value_and_real_fiscal_years(page, site_url):
     page.goto(f"{site_url}/peers.html")
     page.wait_for_selector("#peer-chart svg")
-    assert page.locator("#matrix-table tbody tr").count() == 12
+    assert page.locator("#matrix-table tbody tr").count() == 14
     assert page.locator("#matrix-table tbody tr").first.locator("th").inner_text() == "San Diego"
     page.check("#kind-utility")
     page.wait_for_function("document.querySelectorAll('#matrix-table thead th').length === 13")
@@ -286,7 +286,7 @@ def test_city_table_defaults_to_latest_fiscal_year_then_sorts_on_click(page, sit
     assert rows.first.locator("th, td").first.inner_text() == "Phoenix"
     assert page.locator("#city-table th", has_text="Population").get_attribute("aria-sort") == "descending"
     page.locator("#city-table th", has_text="Population").locator("button").click()
-    assert rows.first.locator("th, td").first.inner_text() == "Portland"
+    assert rows.first.locator("th, td").first.inner_text() == "Vancouver, WA"
 
 
 def test_sorting_survives_the_page_redrawing_the_table(page, site_url):
@@ -322,7 +322,7 @@ def test_peers_legend_renders_without_the_stylesheet(page, site_url):
     page.goto(f"{site_url}/peers.html")
     page.wait_for_selector("#peer-legend li")
     boxes = [li.locator(".swatch").bounding_box() for li in page.locator("#peer-legend li").all()]
-    assert len(boxes) == 7 and all(b and b["width"] > 0 and b["height"] > 0 for b in boxes)
+    assert len(boxes) == 9 and all(b and b["width"] > 0 and b["height"] > 0 for b in boxes)
     assert len({round(b["y"]) for b in boxes[:3]}) == 1  # laid out in a row, not a bulleted column
 
 
@@ -418,3 +418,16 @@ def test_peers_unticking_every_service_falls_back_to_city_services(page, site_ur
     assert page.is_checked("#kind-core")
     assert "$0 per resident" not in page.inner_text("#phead")
     assert page.locator("#peer-table tbody tr").count() == 8
+
+
+def test_reference_cities_are_marked_and_kept_out_of_the_peer_summary(page, site_url):
+    page.goto(f"{site_url}/peers.html")
+    page.wait_for_selector("#peer-chart svg")
+    roles = {tr.locator("td").first.inner_text(): tr.locator("td").last.inner_text() for tr in page.locator("#city-table tbody tr").all()}
+    assert roles["Arlington County, VA"] == "Reference" and roles["Vancouver, WA"] == "Reference"
+    assert list(roles.values()).count("Peer") == 11 and list(roles.values()).count("San Diego") == 1
+    assert page.locator("#peer-legend li", has_text="reference city").count() == 1
+    assert page.locator("#matrix-table tbody tr", has_text="Arlington County, VA").count() == 1
+    # libraries: Vancouver reports $0, and the rank is still out of the 12 peers + San Diego reporting spending
+    assert "Vancouver, WA" in page.locator("#peer-table tbody tr", has_text="Libraries").inner_text()
+    assert "of 12" in page.locator("#peer-table tbody tr", has_text="Police").inner_text()  # San Diego + 11 peers only

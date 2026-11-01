@@ -69,11 +69,14 @@ function median(values) {
 export function groupStats(data, key) {
   const group = data.groups.find((g) => g.key === key);
   const regionOf = new Map(data.cities.map((c) => [c.city, c.region]));
+  const referenceCities = new Set(data.cities.filter((c) => c.reference).map((c) => c.city));
   const values = data.rows.filter((r) => r.group === key).map((r) => ({
     city: r.city, region: regionOf.get(r.city), per_resident: r.per_resident, amount: r.amount, is_home: r.city === data.home,
+    is_reference: referenceCities.has(r.city),
   }));
   const home = values.find((v) => v.is_home);
-  const nonzero = values.filter((v) => v.per_resident > 0);
+  // Reference cities are drawn and listed but are not peers: they stay out of the middle, range and rank.
+  const nonzero = values.filter((v) => v.per_resident > 0 && !v.is_reference);
   const mid = median(nonzero.filter((v) => !v.is_home).map((v) => v.per_resident));
   const homeIsZero = !home || home.per_resident <= 0;
   const ranked = [...nonzero].sort((a, b) => b.per_resident - a.per_resident);
@@ -89,9 +92,10 @@ export function groupStats(data, key) {
 
 function cityTotals(view, keys) {
   const totals = new Map();
+  const referenceCities = new Set(view.cities.filter((c) => c.reference).map((c) => c.city));
   for (const r of view.rows) if (keys.includes(r.group)) totals.set(r.city, (totals.get(r.city) || 0) + r.per_resident);
   const home = totals.get(view.home) || 0;
-  const middle = median([...totals].filter(([c, v]) => c !== view.home && v > 0).map(([, v]) => v));
+  const middle = median([...totals].filter(([c, v]) => c !== view.home && !referenceCities.has(c) && v > 0).map(([, v]) => v));
   return { home, middle, pct: middle ? (home / middle - 1) * 100 : null };
 }
 

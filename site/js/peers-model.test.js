@@ -167,3 +167,19 @@ test("a year in the middle with no data leaves a gap, not a bridge, in the trend
   const t = trendSeries(mid, ["core"], "police");
   assert.deepEqual(t.map((r) => r.pct === null), [false, true, false]);
 });
+
+test("reference cities are shown but never count toward the middle peer, range, rank or trend", () => {
+  const withRef = JSON.parse(JSON.stringify(multi));
+  for (const y of withRef.years) {
+    y.cities.push({ city: "Ref", state: "XX", region: "South", population: 10, fy_end: "0630", is_home: false, reference: true, rpp: 100 });
+    y.rows.push({ city: "Ref", group: "police", amount: 1, per_resident: 1000 }, { city: "Ref", group: "fire", amount: 1, per_resident: 1000 });
+  }
+  const view = yearView(withRef, 2024, false);
+  const s = groupStats(view, "police");
+  assert.equal(s.median, 90); // A=100, B=80 only
+  assert.equal(s.max, 144); // San Diego, not the reference city's 1000
+  assert.equal(s.of, 3);
+  assert.equal(s.values.find((v) => v.city === "Ref").is_reference, true); // still available to draw
+  assert.equal(trendSeries(withRef, ["core"], "all")[1].middle, 135 + 0 * 1); // unchanged by the reference city
+  assert.match(headline(view, ["core"]), /middle peer \(\$135\)/);
+});

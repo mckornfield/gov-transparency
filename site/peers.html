@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Compared with other cities · San Diego Spending</title>
-  <meta name="description" content="City of San Diego spending per resident by service, next to 11 comparable US cities, FY2019 to FY2024 (Census Bureau), with an option to adjust for local prices (BEA).">
+  <meta name="description" content="City of San Diego spending per resident by service, next to 11 comparable US cities and two reference cities, FY2019 to FY2024 (Census Bureau), with an option to adjust for local prices (BEA).">
   <link rel="stylesheet" href="css/site.css?v=2">
 </head>
 <body>
@@ -25,7 +25,10 @@
       Adjusting lowers the figures of expensive metros and raises those of cheaper ones, so how much it changes San Diego's gap depends on the peers too. It is a rough correction:
       prices for households are not the same as the wages and construction costs a city pays.</p>
     <p id="peer-note" class="note">The peers are 11 US cities of roughly 0.6 to 1.7 million people, chosen to be broadly
-      similar and to cover several regions. A higher number is not waste: it can reflect higher prices or wages, or
+      similar and to cover several regions. Two much smaller cities, Arlington County VA and Vancouver WA, are shown as
+      hollow rings for reference only: they do not count toward the middle peer, the range or the rank. (Arlington is
+      a county government, so its "health, welfare, jails &amp; schools" line is very large; Vancouver reports $0 for
+      libraries, which a separate district runs.) A higher number is not waste: it can reflect higher prices or wages, or
       a different mix of services. Austin's figures are mostly Census estimates rather than its own reports in most
       years. Fiscal years end in different months. By default nothing is adjusted for cost of
       living; tick the box below to put every city on the same price level. This compares San Diego with other
@@ -55,7 +58,7 @@
 
     <h2>Per resident, by service</h2>
     <figure>
-      <div id="peer-chart" role="img" aria-label="Dot plot of spending per resident by service for San Diego and 11 peer cities"></div>
+      <div id="peer-chart" role="img" aria-label="Dot plot of spending per resident by service for San Diego, 11 peer cities and 2 reference cities"></div>
       <ul id="peer-legend" class="legend"></ul>
       <details class="method">
         <summary>Method</summary>
@@ -114,7 +117,7 @@
     <div class="table-wrap">
       <table id="city-table" data-title="The cities" data-default-sort="3:desc">
         <caption class="note" id="city-caption"></caption>
-        <thead><tr><th scope="col">City</th><th scope="col">Region</th><th scope="col">Population</th><th scope="col">Fiscal year ends</th></tr></thead>
+        <thead><tr><th scope="col">City</th><th scope="col">Region</th><th scope="col">Population</th><th scope="col">Fiscal year ends</th><th scope="col">Role</th></tr></thead>
         <tbody></tbody>
       </table>
     </div>

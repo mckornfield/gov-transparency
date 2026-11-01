@@ -6,8 +6,8 @@ import { KINDS, parsePeerHash, serializePeerHash, visibleGroups, groupStats, hea
 const $ = (id) => document.getElementById(id);
 const css = (name) => getComputedStyle(document.documentElement).getPropertyValue(name).trim();
 
-const REGIONS = ["West", "South", "Midwest", "Pacific Northwest", "Northeast"];
-const REGION_COLORS = ["#E69F00", "#56B4E9", "#009E73", "#CC79A7", "#D55E00"];
+const REGIONS = ["West", "South", "Midwest", "Pacific Northwest", "Northeast", "Mid-Atlantic"];
+const REGION_COLORS = ["#E69F00", "#56B4E9", "#009E73", "#CC79A7", "#D55E00", "#8a8a8a"];
 
 let data;
 try {
@@ -57,7 +57,8 @@ function drawChart(stats) {
   const width = Math.max(300, $("peer-chart").clientWidth);
   const marginLeft = Math.round(Math.min(230, Math.max(110, width * 0.3)));
   const labels = stats.map((s) => s.label);
-  const peers = stats.flatMap((s) => s.values.filter((v) => !v.is_home && v.per_resident > 0).map((v) => ({ ...v, label: s.label })));
+  const peers = stats.flatMap((s) => s.values.filter((v) => !v.is_home && !v.is_reference && v.per_resident > 0).map((v) => ({ ...v, label: s.label })));
+  const references = stats.flatMap((s) => s.values.filter((v) => v.is_reference && v.per_resident > 0).map((v) => ({ ...v, label: s.label })));
   const home = stats.filter((s) => !s.homeIsZero).map((s) => ({ label: s.label, per_resident: s.home.per_resident }));
   const mids = stats.filter((s) => s.median !== null).map((s) => ({ label: s.label, per_resident: s.median }));
   $("peer-chart").replaceChildren(Plot.plot({
@@ -68,6 +69,8 @@ function drawChart(stats) {
     marks: [
       Plot.dot(peers, { x: "per_resident", y: "label", fill: "region", r: 5, fillOpacity: 0.85,
         title: (d) => `${d.city}: ${formatPerResident(d.per_resident)} per resident` }),
+      Plot.dot(references, { x: "per_resident", y: "label", stroke: "region", fill: "none", r: 5, strokeWidth: 2,
+        title: (d) => `${d.city} (reference, not in the middle peer): ${formatPerResident(d.per_resident)} per resident` }),
       Plot.dot(home, { x: "per_resident", y: "label", r: 8, fill: css("--accent"), stroke: css("--bg"), strokeWidth: 2,
         title: (d) => `San Diego: ${formatPerResident(d.per_resident)} per resident` }),
       Plot.tickX(mids, { x: "per_resident", y: "label", stroke: css("--text"), strokeWidth: 3,
@@ -84,6 +87,7 @@ function drawLegend() {
     `${swatch(`background:${css("--accent")};border-radius:50%`)}San Diego`,
     `${swatch(`width:3px;height:1rem;margin:0 .45rem 0 .15rem;background:${css("--text")}`)}Middle peer`,
     ...REGIONS.map((r, i) => `${swatch(`background:${REGION_COLORS[i]};border-radius:50%`)}${r}`),
+    `${swatch(`box-sizing:border-box;border:2px solid ${css("--text")};border-radius:50%`)}Hollow ring: reference city (not a peer)`,
   ];
   $("peer-legend").style.cssText = "display:flex;flex-wrap:wrap;gap:.25rem 1rem;padding:0;list-style:none;font-size:.85rem";
   $("peer-legend").innerHTML = items.map((html) => `<li>${html}</li>`).join("");
@@ -184,6 +188,7 @@ function render() {
   $("city-caption").textContent = `Population and the fiscal year that ended, as reported to the Census. The ${view.fiscal_year} survey covers years that ended between July ${view.fiscal_year - 1} and June ${view.fiscal_year}, so cities with a September or December year end show ${view.fiscal_year - 1}.`;
   fillTable("city-table", view.cities.map((c) => [
     c.city, c.region, c.population.toLocaleString("en-US"), fiscalYearEnd(c.fy_end, view.fiscal_year),
+    c.is_home ? "San Diego" : c.reference ? "Reference" : "Peer",
   ]));
 }
 

@@ -11,7 +11,7 @@ def load(name):
 def test_peers_config_shape():
     cfg = load("peers.json")
     ids = [cfg["home"]] + [p["id"] for p in cfg["peers"]]
-    assert len(ids) == 12 and len(set(ids)) == 12
+    assert len(ids) == 14 and len(set(ids)) == 14
     assert all(len(i) == 12 for i in ids)
     assert {p["region"] for p in cfg["peers"]} >= {"West", "South", "Northeast", "Pacific Northwest"}
 
@@ -28,3 +28,9 @@ def test_every_city_has_a_five_digit_metro_code():
     cfg = load("peers.json")
     codes = [cfg["home_msa"]] + [p["msa"] for p in cfg["peers"]]
     assert all(len(c) == 5 and c.isdigit() for c in codes)
+
+
+def test_exactly_two_reference_cities_and_eleven_real_peers():
+    peers = load("peers.json")["peers"]
+    assert sorted(p["name"] for p in peers if p.get("reference")) == ["Arlington County, VA", "Vancouver, WA"]
+    assert sum(1 for p in peers if not p.get("reference")) == 11

@@ -17,5 +17,5 @@
     {"key": "transfers", "label": "Grants & payments to other governments", "kind": "other", "codes": ["J19", "L89", "M89"]}
   ],
   "prefix_groups": {"L": "transfers", "M": "transfers", "S": "transfers"},
-  "ignored_prefixes": ["G"]
+  "code_twins": {"G": "F"}
 }

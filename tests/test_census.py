@@ -129,20 +129,30 @@ def test_read_survey_names_the_missing_member():
         read_survey(survey_zip(2023, "readme.txt"), 2023)
 
 
-def test_older_years_publish_extra_codes_that_must_not_break_or_skew_the_series():
-    cfg = {"groups": [*FUNCS["groups"], {"key": "transfers", "label": "Grants", "kind": "other", "codes": ["M89"]}],
-           "prefix_groups": {"L": "transfers", "M": "transfers"}, "ignored_prefixes": ["G"]}
-    items = parse_items(items_text([(HOME, "E62", 200_000), (HOME, "G62", 99_000),  # equipment: only published to FY2021
+def test_older_years_split_out_codes_that_later_years_fold_in_so_they_are_mapped_to_match():
+    cfg = {"groups": [{**FUNCS["groups"][0], "codes": ["E62", "F62"]}, FUNCS["groups"][1],
+                      {"key": "transfers", "label": "Grants", "kind": "other", "codes": ["M89"]}],
+           "prefix_groups": {"L": "transfers", "M": "transfers"}, "code_twins": {"G": "F"}}
+    items = parse_items(items_text([(HOME, "E62", 200_000), (HOME, "F62", 10_000), (HOME, "G62", 99_000),
                                     (HOME, "M62", 7_000), (HOME, "M89", 3_000), (HOME, "L25", 1_000),
                                     (PEER, "E62", 300_000), (PEER, "E91", 80_000)]))
     t = build_peer_spending(parse_units(units_text()), items, PEERS, cfg)
     home = t[t.is_home].set_index("group")["amount_usd"]
-    assert home["police"] == 200_000_000  # the G62 equipment line is not counted
+    # FY2022+ files fold equipment and land (G, "other capital outlay") into construction (F); older files list G
+    # separately, so G62 counts with police just as F62 does.
+    assert home["police"] == 309_000_000
     assert home["transfers"] == 11_000_000  # M62 + M89 + L25 all roll into transfers
 
 
+def test_a_twin_code_whose_construction_code_is_not_mapped_fails_the_build():
+    cfg = {"groups": FUNCS["groups"], "code_twins": {"G": "F"}}
+    items = parse_items(items_text([(HOME, "E62", 200_000), (HOME, "G77", 5_000), (PEER, "E62", 300_000)]))
+    with pytest.raises(CensusError, match="G77"):
+        build_peer_spending(parse_units(units_text()), items, PEERS, cfg)
+
+
 def test_an_unlisted_code_outside_the_prefix_rules_still_fails_the_build():
-    cfg = {"groups": FUNCS["groups"], "prefix_groups": {"L": "police"}, "ignored_prefixes": ["G"]}
+    cfg = {"groups": FUNCS["groups"], "prefix_groups": {"L": "police"}}
     items = parse_items(items_text([(HOME, "E62", 200_000), (HOME, "E75", 5_000), (PEER, "E62", 300_000)]))
     with pytest.raises(CensusError, match="E75"):
         build_peer_spending(parse_units(units_text()), items, PEERS, cfg)

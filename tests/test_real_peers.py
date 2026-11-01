@@ -59,3 +59,19 @@ def test_every_configured_metro_has_a_price_level_for_every_survey_year():
         for year in range(2018, 2025):
             assert (msa, year) in rpp, (msa, year)
     assert 100 < rpp[("41740", 2023)] < 125  # San Diego costs more than the US average
+
+
+def test_older_years_count_equipment_and_land_with_construction():
+    # FY2019-21 files list "other capital outlay" (G) apart from construction (F); FY2022+ fold it into F.
+    import gzip
+
+    from sd_spend.census import parse_items, read_survey
+    from sd_spend.io import RAW
+    phoenix = "042013207536"
+    _, items = read_survey(gzip.decompress((RAW / "census" / "2021_Individual_Unit_Files.zip.gz").read_bytes()), 2021)
+    it = parse_items(items)
+    it = it[it.unit_id == phoenix].set_index("item")["amount_usd"]
+    assert it["G24"] > 0  # the raw file really has a separate fire equipment line
+    t = pd.read_csv(CSV)
+    fire = t[(t.fiscal_year == 2021) & (t.city == "Phoenix") & (t.group == "fire")].iloc[0]
+    assert fire.amount_usd == it.get("E24", 0) + it.get("F24", 0) + it["G24"]

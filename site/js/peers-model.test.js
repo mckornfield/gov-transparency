@@ -1,6 +1,6 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { parsePeerHash, serializePeerHash, groupStats, visibleGroups, headline, DEFAULT_KINDS, yearView, trendSeries } from "./peers-model.js";
+import { parsePeerHash, serializePeerHash, groupStats, visibleGroups, headline, DEFAULT_KINDS, yearView, trendSeries, normalizeState } from "./peers-model.js";
 
 const city = (c, region = "South", home = false) => ({ city: c, state: "XX", region, population: 100, fy_end: "0630", is_home: home });
 const data = {
@@ -150,4 +150,20 @@ test("trend has no gap for a year when nobody else reports spending", () => {
   const empty = { ...multi, years: [snapshot(2024, { "San Diego": { police: 5 }, A: { police: 0 }, B: { police: 0 } })] };
   const t = trendSeries(empty, ["core"], "police");
   assert.equal(t[0].middle, null); assert.equal(t[0].pct, null); assert.equal(t[0].pctAdjusted, null);
+});
+
+test("normalizeState falls back for anything the page cannot honour, including an empty selection", () => {
+  const ok = { kinds: ["core"], adjusted: true, year: 2023, trend: "police" };
+  assert.deepEqual(normalizeState(multi, ok), ok);
+  assert.deepEqual(normalizeState(multi, { ...ok, kinds: [] }).kinds, DEFAULT_KINDS); // all boxes unticked
+  assert.equal(normalizeState(multi, { ...ok, year: 2024 }).year, null); // the latest year is the default
+  assert.equal(normalizeState(multi, { ...ok, year: 1850 }).year, null);
+  assert.equal(normalizeState(multi, { ...ok, trend: "water" }).trend, "all"); // water is not an included kind
+  assert.equal(normalizeState(multi, { ...ok, trend: "constructor" }).trend, "all");
+});
+
+test("a year in the middle with no data leaves a gap, not a bridge, in the trend", () => {
+  const mid = { ...multi, years: [multi.years[0], snapshot(2023.5, { "San Diego": { police: 5 }, A: { police: 0 }, B: { police: 0 } }), multi.years[1]] };
+  const t = trendSeries(mid, ["core"], "police");
+  assert.deepEqual(t.map((r) => r.pct === null), [false, true, false]);
 });

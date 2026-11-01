@@ -86,3 +86,9 @@ def test_add_price_levels_needs_a_metro_for_every_city():
 def test_parse_ignores_the_footnote_rows_at_the_end_of_the_real_file():
     rpp = parse_rpp(zipped(CSV + '\n"Note: See the included footnote file."\n"U.S. Bureau of Economic Analysis"\n'))
     assert len(rpp) == 6
+
+
+def test_fiscal_year_ending_in_march_weights_the_late_year_by_three_twelfths():
+    rpp = parse_rpp(zipped(CSV))
+    # Survey 2024, FY ended Mar 2024: 3 months of 2024 (114), 9 months of 2023 (112)
+    assert fiscal_year_rpp(rpp, "41740", "0331", 2024) == pytest.approx(0.25 * 114.0 + 0.75 * 112.0)

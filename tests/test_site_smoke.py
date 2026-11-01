@@ -408,3 +408,13 @@ def test_peers_trend_choices_follow_the_included_services(page, site_url):
     page.select_option("#trend-service", "water")
     page.wait_for_function("location.hash.includes('trend=water')")
     assert page.input_value("#trend-service") == "water"
+
+
+def test_peers_unticking_every_service_falls_back_to_city_services(page, site_url):
+    page.goto(f"{site_url}/peers.html")
+    page.wait_for_selector("#peer-chart svg")
+    page.click("#kind-core")  # the page puts the tick straight back
+    page.wait_for_timeout(300)
+    assert page.is_checked("#kind-core")
+    assert "$0 per resident" not in page.inner_text("#phead")
+    assert page.locator("#peer-table tbody tr").count() == 8

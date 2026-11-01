@@ -31,6 +31,18 @@ export function serializePeerHash({ kinds, adjusted = false, year = null, trend 
   return parts.length ? `#${parts.join("&")}` : "";
 }
 
+// Anything in the hash or controls the page cannot honour (no services ticked, an unknown year or service)
+// falls back to the default rather than producing an empty or inconsistent page.
+export function normalizeState(data, parsed) {
+  const years = data.years.map((y) => y.fiscal_year);
+  const kinds = parsed.kinds.length ? parsed.kinds : [...DEFAULT_KINDS];
+  return {
+    kinds, adjusted: parsed.adjusted,
+    year: years.includes(parsed.year) && parsed.year !== Math.max(...years) ? parsed.year : null,
+    trend: visibleGroups(data, kinds).some((g) => g.key === parsed.trend) ? parsed.trend : "all",
+  };
+}
+
 // One survey year in the single-year shape the rest of this module uses. Adjusting divides each city's
 // per-resident figure by its metro price level (US average = 100) so cities are compared at the same prices.
 export function yearView(data, fiscalYear, adjusted) {

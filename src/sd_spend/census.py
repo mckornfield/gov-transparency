@@ -78,14 +78,13 @@ def build_peer_spending(units: pd.DataFrame, items: pd.DataFrame, peers_cfg: dic
             raise CensusError(f"city {uid} found {n} times in the unit file (expected 1)")
 
     code_to_group = {c: g["key"] for g in functions_cfg["groups"] for c in g["codes"]}
-    # Older (FY2019-21) files break intergovernmental transfers (L, M, S) out by function and add "other capital
-    # outlay" (G: equipment and land), which FY2022+ files do not publish. Transfers roll up by prefix and G is
-    # ignored in every year so the years stay comparable.
+    # Older (FY2019-21) files break intergovernmental transfers (L, M, S) out by function, and list "other capital
+    # outlay" (G: equipment and land) apart from construction (F). FY2022+ files fold G into F. So transfers roll up
+    # by prefix and each G code is counted with its F twin (G62 with F62) to keep the years comparable.
     prefix_groups = functions_cfg.get("prefix_groups", {})
-    ignored = tuple(functions_cfg.get("ignored_prefixes", ()))
+    twins = functions_cfg.get("code_twins", {})
     spend = items[items["unit_id"].isin(wanted) & items["item"].str[0].isin(list(EXPENDITURE_PREFIXES))]
-    spend = spend[~spend["item"].str.startswith(ignored)] if ignored else spend
-    spend = spend.assign(group=[code_to_group.get(c) or prefix_groups.get(c[0]) for c in spend["item"]])
+    spend = spend.assign(group=[code_to_group.get(twins.get(c[0], c[0]) + c[1:]) or prefix_groups.get(c[0]) for c in spend["item"]])
     unmapped = sorted(set(spend.loc[spend["group"].isna(), "item"]))
     if unmapped:
         raise CensusError(f"expenditure item codes not mapped in census_functions.json: {', '.join(unmapped)}")

@@ -83,7 +83,7 @@
     <ul>
       <li><strong>Source:</strong> Census Bureau, Annual Survey of State and Local Government Finances, individual
         unit files for survey years 2019 to 2024 (<a href="https://www2.census.gov/programs-surveys/gov-finances/tables/">census.gov</a>),
-        retrieved 2026-10-29 (2024) and 2026-10-31 (2019 to 2023). The 2022 survey was the five-yearly census of all governments. Amounts are in thousands of dollars in the source; the processed table stores dollars.</li>
+        retrieved 2026-10-31. The 2022 survey was the five-yearly census of all governments. Amounts are in thousands of dollars in the source; the processed table stores dollars.</li>
       <li><strong>Peers:</strong> Phoenix, San Jose, San Antonio, Dallas, Austin, Fort Worth, Charlotte, Columbus,
         Seattle, Portland and Boston: US cities of roughly 0.6 to 1.7 million people, spread across regions. Seattle,
         Portland and Boston (0.64 to 0.75 million) are smaller than San Diego (1.38 million) and were added for
@@ -97,6 +97,9 @@
         figure there is much larger.</li>
       <li><strong>$0 means "not reported":</strong> usually a county or special district provides the service. Such cities
         are left out of the middle peer and the rank.</li>
+      <li><strong>Some figures are Census estimates, not reports.</strong> Austin did not return the survey in most
+        years: nearly all its lines in 2019 to 2022 and 2024 are flagged by the Census as imputed (estimated). Treat
+        Austin's numbers as approximate. A few lines for other cities are flagged the same way.</li>
       <li><strong>Administration is a catch-all.</strong> It includes the Census's "general, not elsewhere classified"
         spending, so differences there may partly reflect how each city reports rather than how much it spends.</li>
       <li><strong>Fiscal-year timing:</strong> a survey year covers each government's fiscal year that ended between
@@ -107,15 +110,16 @@
         divided by its metro area's price level, the BEA Regional Price Parity for all items (US average = 100;
         <a href="https://apps.bea.gov/regional/">apps.bea.gov</a>, table MARPP, retrieved 2026-10-31). A city's fiscal year
         spans two calendar years, so the level is the two years blended by months (a year ended June 2024 is half 2023
-        and half 2024). Dallas and Fort Worth share one metro area, as do the other peers within their metros; the
+        and half 2024). Dallas and Fort Worth share one metro area; every other city has its own. The
         metro for each city is in <code>config/peers.json</code>. This is a rough correction: the index measures what
         households pay for goods and rent, not the wages and construction costs a city pays. It is off by default and
         the as-reported and adjusted gaps are both shown in the trend table.</li>
       <li><strong>Over time:</strong> the trend compares San Diego with the middle peer in each survey year, in dollars
         of the day (no inflation adjustment), so the gap is meaningful but the amounts are not comparable across
-        years. To keep the years comparable, "other capital outlay" (equipment and land, published only through the
-        2021 survey) is left out of every year and intergovernmental transfers, which older files list by service, are
-        grouped into "Grants to other governments". Many cities' broad administration line jumps in the 2022
+        years. To keep the years comparable, "other capital outlay" (equipment and land), which the 2019 to 2021 files list
+        apart from construction and later files fold into it, is counted with construction in every year, and
+        intergovernmental transfers, which older files list by service, are grouped into "Grants to other
+        governments". Many cities' broad administration line jumps in the 2022
         survey, so the single-service trends are steadier. Census population estimates change between years, and some
         cities carry the same estimate across two surveys.</li>
       <li><strong>Peer gap, not margin:</strong> peers share the same pressures and habits, so this says nothing about

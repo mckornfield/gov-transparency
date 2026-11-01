@@ -1,7 +1,7 @@
 import * as Plot from "https://cdn.jsdelivr.net/npm/@observablehq/plot@0.6.16/+esm";
 import { enhanceTables } from "./tables.js";
 import { formatPerResident, truncate } from "./format.js";
-import { KINDS, parsePeerHash, serializePeerHash, visibleGroups, groupStats, headline, fiscalYearEnd, rankLabel, cityMatrix, yearView, trendSeries } from "./peers-model.js";
+import { KINDS, parsePeerHash, serializePeerHash, visibleGroups, groupStats, headline, fiscalYearEnd, rankLabel, cityMatrix, yearView, trendSeries, normalizeState } from "./peers-model.js";
 
 const $ = (id) => document.getElementById(id);
 const css = (name) => getComputedStyle(document.documentElement).getPropertyValue(name).trim();
@@ -22,15 +22,7 @@ try {
 const YEARS = data.years.map((y) => y.fiscal_year).sort((a, b) => b - a);
 const LATEST = YEARS[0];
 
-// Hash values the page cannot honour (an unknown year or service) quietly fall back to the defaults.
-function sanitize(parsed) {
-  const groups = visibleGroups(data, parsed.kinds);
-  return {
-    kinds: parsed.kinds, adjusted: parsed.adjusted,
-    year: YEARS.includes(parsed.year) && parsed.year !== LATEST ? parsed.year : null,
-    trend: groups.some((g) => g.key === parsed.trend) ? parsed.trend : "all",
-  };
-}
+const sanitize = (parsed) => normalizeState(data, parsed);
 
 let state = sanitize(parsePeerHash(location.hash));
 
@@ -132,14 +124,13 @@ function gap(pct) {
 }
 
 const TREND_LINES = [
-  { key: "pct", label: "As reported", color: () => css("--text"), dash: "5 4" },
-  { key: "pctAdjusted", label: "Adjusted for local prices", color: () => css("--accent"), dash: null },
+  { key: "pct", label: "As reported", color: () => css("--text") },
+  { key: "pctAdjusted", label: "Adjusted for local prices", color: () => css("--accent") },
 ];
 
 function drawTrend(series) {
   const width = Math.max(300, $("trend-chart").clientWidth);
-  const points = TREND_LINES.flatMap((line) => series.filter((r) => r[line.key] !== null)
-    .map((r) => ({ year: r.fiscal_year, pct: r[line.key], line: line.label })));
+  const points = TREND_LINES.flatMap((line) => series.map((r) => ({ year: r.fiscal_year, pct: r[line.key], line: line.label })));
   $("trend-chart").replaceChildren(Plot.plot({
     width, height: 260, marginLeft: 56, marginRight: 20,
     x: { label: null, ticks: YEARS.length, tickFormat: (v) => String(v), type: "linear", domain: [Math.min(...YEARS) - 0.2, LATEST + 0.2] },
@@ -147,8 +138,8 @@ function drawTrend(series) {
     color: { domain: TREND_LINES.map((l) => l.label), range: TREND_LINES.map((l) => l.color()) },
     marks: [
       Plot.ruleY([0]),
-      Plot.line(points, { x: "year", y: "pct", stroke: "line", strokeWidth: 2 }),
-      Plot.dot(points, { x: "year", y: "pct", fill: "line", r: 4, title: (d) => `${d.line}, ${d.year}: ${gap(d.pct)}` }),
+      Plot.line(points, { x: "year", y: "pct", stroke: "line", strokeWidth: 2, defined: (d) => d.pct !== null }),
+      Plot.dot(points.filter((d) => d.pct !== null), { x: "year", y: "pct", fill: "line", r: 4, title: (d) => `${d.line}, ${d.year}: ${gap(d.pct)}` }),
     ],
   }));
   const swatch = (color) => `<span class="swatch" style="display:inline-block;width:1.2rem;height:3px;margin-right:.4rem;vertical-align:middle;background:${color}"></span>`;
@@ -172,8 +163,9 @@ function render() {
   const view = yearView(data, state.year ?? LATEST, state.adjusted);
   const text = headline(view, state.kinds, state.adjusted);
   if ($("phead").textContent !== text) $("phead").textContent = text;
-  drawTrend(trendSeries(data, state.kinds, state.trend));
-  fillTable("trend-table", trendSeries(data, state.kinds, state.trend).map((r) => [
+  const trend = trendSeries(data, state.kinds, state.trend);
+  drawTrend(trend);
+  fillTable("trend-table", trend.map((r) => [
     String(r.fiscal_year), sentence(r.home), sentence(r.middle), gap(r.pct),
     sentence(r.homeAdjusted), sentence(r.middleAdjusted), gap(r.pctAdjusted),
   ]));

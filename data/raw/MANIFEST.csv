@@ -1,6 +1,12 @@
 path,url,retrieved,sha256_original,bytes_original
-census/2024_Individual_Unit_Files.zip.gz,https://www2.census.gov/programs-surveys/gov-finances/tables/2024/2024_Individual_Unit_Files.zip,2026-10-29,0967c4d30466593796acb26f2b30c1afb37b5b9a5de43766dc65e4ccc95bd89a,4267040
-census/2024_methodology.pdf.gz,https://www2.census.gov/programs-surveys/gov-finances/tables/2024/2024_methodology.pdf,2026-10-29,6a8d82a94335bf6d03130ba047f68df037a555761d9d82bde15ead86f9a9b6f9,384434
+bea/MARPP.zip.gz,https://apps.bea.gov/regional/zip/MARPP.zip,2026-10-31,5dbf2e6ac2af222cc9abc205586c9b480344d89392752eb689c3ec823a34c83e,146479
+census/2019_Individual_Unit_Files.zip.gz,https://www2.census.gov/programs-surveys/gov-finances/tables/2019/2019_Individual_Unit_File.zip,2026-10-31,cceced1d67c66ca4c9f67f2d6a64f568e7d8f2a17c731f607c8da23fcdbf88da,4907770
+census/2020_Individual_Unit_Files.zip.gz,https://www2.census.gov/programs-surveys/gov-finances/tables/2020/2020_Individual_Unit_File.zip,2026-10-31,0f6f1511dffbf62419f64426ac6284a5186699affbc2201a3ff7ddd3b3f428f3,4923104
+census/2021_Individual_Unit_Files.zip.gz,https://www2.census.gov/programs-surveys/gov-finances/tables/2021/2021_Individual_Unit_File.zip,2026-10-31,dae63fdb3917de5195eb793c5401594c4c6dafb55ee099ca7075efcee96a7caa,4915294
+census/2022_Individual_Unit_Files.zip.gz,https://www2.census.gov/programs-surveys/gov-finances/tables/2022/2022_Individual_Unit_File.zip,2026-10-31,c8de889f6b3320d3be347e3880607346d6440eda82705b26db2fa410fe6e83a5,9719280
+census/2023_Individual_Unit_Files.zip.gz,https://www2.census.gov/programs-surveys/gov-finances/tables/2023/2023_Individual_Unit_Files.zip,2026-10-31,42e0cc63e42d577d5777e509cc5f7bfa7fbae164770984009ca9a0df53373918,4249720
+census/2024_Individual_Unit_Files.zip.gz,https://www2.census.gov/programs-surveys/gov-finances/tables/2024/2024_Individual_Unit_Files.zip,2026-10-31,0967c4d30466593796acb26f2b30c1afb37b5b9a5de43766dc65e4ccc95bd89a,4267040
+census/2024_methodology.pdf.gz,https://www2.census.gov/programs-surveys/gov-finances/tables/2024/2024_methodology.pdf,2026-10-31,6a8d82a94335bf6d03130ba047f68df037a555761d9d82bde15ead86f9a9b6f9,384434
 sandiego/accounts.csv.gz,https://seshat.datasd.org/accounts_city_budget/budget_reference_accounts_datasd.csv,2026-10-29,6a66ca1c680a11fbd3337beeafb4851cc9f3fc73e5a875108d1b5512d7204828,194159
 sandiego/accounts_dictionary.csv.gz,https://seshat.datasd.org/accounts_city_budget/budget_reference_accounts_dictionary_datasd.csv,2026-10-29,605365659e77563aeba53eb7917a7c0c5fcaafa19fc22924dcf026fd6f158197,731
 sandiego/actuals_operating.csv.gz,https://seshat.datasd.org/operating_actuals/actuals_operating_datasd.csv,2026-10-29,53cfc7488c40c2d3b654c64ba8599bc11a4086fa5efe403371c38eff78dd2143,69104357

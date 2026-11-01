@@ -105,3 +105,44 @@ def test_large_outside_services_do_not_trip_the_total_check():
     items = parse_items(items_text([(HOME, "E62", 200_000), (PEER, "E62", 300_000), (PEER, "E12", 5_000_000)]))
     t = build_peer_spending(parse_units(units_text()), items, PEERS, funcs)
     assert t[(~t.is_home) & (t.group == "county")].iloc[0].per_resident == 50_000
+
+
+def survey_zip(year, items_name):
+    buf = io.BytesIO()
+    with zipfile.ZipFile(buf, "w") as z:
+        z.writestr(f"{year}_Individual_Unit_Files/Fin_PID_{year}.txt", "units")
+        z.writestr(f"{year}_Individual_Unit_Files/{items_name}", "items")
+        z.writestr(f"{year}_Individual_Unit_Files/{year}statetypepu.txt", "other")
+    return buf.getvalue()
+
+
+@pytest.mark.parametrize("year,name", [(2023, "2023FinEstDAT_07152026modp.txt"),
+                                       (2021, "2021FinEstDAT_09202024modp_pu.txt")])
+def test_read_survey_finds_units_and_items_whatever_the_year_names_them(year, name):
+    from sd_spend.census import read_survey
+    assert read_survey(survey_zip(year, name), year) == ("units", "items")
+
+
+def test_read_survey_names_the_missing_member():
+    from sd_spend.census import read_survey
+    with pytest.raises(CensusError, match="FinEstDAT"):
+        read_survey(survey_zip(2023, "readme.txt"), 2023)
+
+
+def test_older_years_publish_extra_codes_that_must_not_break_or_skew_the_series():
+    cfg = {"groups": [*FUNCS["groups"], {"key": "transfers", "label": "Grants", "kind": "other", "codes": ["M89"]}],
+           "prefix_groups": {"L": "transfers", "M": "transfers"}, "ignored_prefixes": ["G"]}
+    items = parse_items(items_text([(HOME, "E62", 200_000), (HOME, "G62", 99_000),  # equipment: only published to FY2021
+                                    (HOME, "M62", 7_000), (HOME, "M89", 3_000), (HOME, "L25", 1_000),
+                                    (PEER, "E62", 300_000), (PEER, "E91", 80_000)]))
+    t = build_peer_spending(parse_units(units_text()), items, PEERS, cfg)
+    home = t[t.is_home].set_index("group")["amount_usd"]
+    assert home["police"] == 200_000_000  # the G62 equipment line is not counted
+    assert home["transfers"] == 11_000_000  # M62 + M89 + L25 all roll into transfers
+
+
+def test_an_unlisted_code_outside_the_prefix_rules_still_fails_the_build():
+    cfg = {"groups": FUNCS["groups"], "prefix_groups": {"L": "police"}, "ignored_prefixes": ["G"]}
+    items = parse_items(items_text([(HOME, "E62", 200_000), (HOME, "E75", 5_000), (PEER, "E62", 300_000)]))
+    with pytest.raises(CensusError, match="E75"):
+        build_peer_spending(parse_units(units_text()), items, PEERS, cfg)

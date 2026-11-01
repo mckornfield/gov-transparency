@@ -51,3 +51,10 @@ test("first click sorts numbers high-to-low and text A-to-Z", () => {
   assert.equal(firstDirection(["n/a", "Acme", "Zed"]), "asc");
   assert.equal(firstDirection([]), "asc");
 });
+
+test("signed percentages sort as numbers, plus or minus", () => {
+  assert.equal(parseSortValue("+33%"), 33);
+  assert.equal(parseSortValue("−5%"), -5);
+  assert.equal(parseSortValue("-5%"), -5);
+  assert.equal(parseSortValue("0%"), 0);
+});

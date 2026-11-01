@@ -268,7 +268,7 @@ def test_peers_median_marker_is_a_tick_not_a_diamond(page, site_url):
 def test_tables_are_collapsible(page, site_url):
     page.goto(f"{site_url}/peers.html")
     page.wait_for_selector("#peer-chart svg")
-    assert page.locator("details.table-details").count() == 3
+    assert page.locator("details.table-details").count() == 4
     assert page.locator("#city-table").is_visible()
     page.locator("details.table-details > summary", has_text="The cities").click()
     assert not page.locator("#city-table").is_visible()
@@ -331,3 +331,80 @@ def test_legend_san_diego_swatch_is_a_circle_like_the_plot_dot(page, site_url):
     page.wait_for_selector("#peer-legend li")
     swatch = page.locator("#peer-legend li", has_text="San Diego").locator(".swatch")
     assert swatch.evaluate("e => getComputedStyle(e).borderRadius") in ("50%", "9999px")
+
+
+def test_peers_price_adjustment_toggle_changes_the_numbers_and_says_so(page, site_url):
+    errors = []
+    page.on("pageerror", lambda e: errors.append(str(e)))
+    page.goto(f"{site_url}/peers.html")
+    page.wait_for_selector("#peer-chart svg")
+    raw_head = page.inner_text("#phead")
+    raw_cell = page.locator("#peer-table tbody tr").first.locator("td").nth(1).inner_text()
+    assert "adjusted" not in raw_head.lower() and not page.locator("#adjust-note").is_visible()
+    page.check("#adjust")
+    page.wait_for_function("location.hash.includes('adjust=1')")
+    assert "adjusted" in page.inner_text("#phead").lower() and page.inner_text("#phead") != raw_head
+    assert page.locator("#adjust-note").is_visible()
+    assert page.locator("#peer-table tbody tr").first.locator("td").nth(1).inner_text() != raw_cell
+    page.uncheck("#adjust")
+    page.wait_for_function("!location.hash.includes('adjust')")
+    assert page.inner_text("#phead") == raw_head
+    assert not errors
+
+
+def test_peers_year_picker_switches_the_survey_year_and_its_fiscal_year_labels(page, site_url):
+    errors = []
+    page.on("pageerror", lambda e: errors.append(str(e)))
+    page.goto(f"{site_url}/peers.html")
+    page.wait_for_selector("#peer-chart svg")
+    years = page.locator("#year option").all_inner_texts()
+    assert years[0] == "2024" and years[-1] == "2019" and len(years) == 6
+    assert page.input_value("#year") == "2024"
+    page.select_option("#year", "2021")
+    page.wait_for_function("location.hash.includes('year=2021')")
+    cities = page.locator("#city-table tbody").inner_text()
+    assert "June 2021" in cities and "September 2020" in cities and "June 2024" not in cities
+    page.goto(f"{site_url}/peers.html#year=2022&adjust=1")
+    page.wait_for_selector("#peer-chart svg")
+    assert page.input_value("#year") == "2022" and page.is_checked("#adjust")
+    assert not errors
+
+
+def test_peers_garbage_year_and_trend_in_the_hash_fall_back(page, site_url):
+    errors = []
+    page.on("pageerror", lambda e: errors.append(str(e)))
+    page.goto(f"{site_url}/peers.html#year=1850&trend=zzz&adjust=7")
+    page.wait_for_selector("#peer-chart svg")
+    assert page.input_value("#year") == "2024" and page.input_value("#trend-service") == "all"
+    assert not page.is_checked("#adjust")
+    assert not errors
+
+
+def test_peers_trend_shows_every_year_raw_and_price_adjusted(page, site_url):
+    page.goto(f"{site_url}/peers.html")
+    page.wait_for_selector("#trend-chart svg")
+    rows = page.locator("#trend-table tbody tr")
+    assert rows.count() == 6
+    assert rows.first.locator("td").first.inner_text() == "2024"  # newest first
+    assert rows.last.locator("td").first.inner_text() == "2019"
+    heads = page.locator("#trend-table thead th").all_inner_texts()
+    assert any("price-adjusted" in h.lower() for h in heads)
+    assert page.locator("#trend-legend li").count() == 2
+    page.select_option("#trend-service", "police")
+    page.wait_for_function("location.hash.includes('trend=police')")
+    assert rows.count() == 6
+    police_2024 = rows.first.locator("td").nth(1).inner_text()
+    page.select_option("#trend-service", "all")
+    page.wait_for_function("!location.hash.includes('trend')")
+    assert rows.first.locator("td").nth(1).inner_text() != police_2024
+
+
+def test_peers_trend_choices_follow_the_included_services(page, site_url):
+    page.goto(f"{site_url}/peers.html#trend=water")
+    page.wait_for_selector("#trend-chart svg")
+    assert page.input_value("#trend-service") == "all"  # water is not included yet
+    page.check("#kind-utility")
+    page.wait_for_function("document.querySelectorAll('#trend-service option').length > 9")
+    page.select_option("#trend-service", "water")
+    page.wait_for_function("location.hash.includes('trend=water')")
+    assert page.input_value("#trend-service") == "water"

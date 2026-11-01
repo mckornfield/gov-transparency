@@ -1,7 +1,7 @@
 import * as Plot from "https://cdn.jsdelivr.net/npm/@observablehq/plot@0.6.16/+esm";
 import { enhanceTables } from "./tables.js";
 import { formatPerResident, truncate } from "./format.js";
-import { KINDS, parsePeerHash, serializePeerHash, visibleGroups, groupStats, headline, fiscalYearEnd, rankLabel, cityMatrix } from "./peers-model.js";
+import { KINDS, parsePeerHash, serializePeerHash, visibleGroups, groupStats, headline, fiscalYearEnd, rankLabel, cityMatrix, yearView, trendSeries } from "./peers-model.js";
 
 const $ = (id) => document.getElementById(id);
 const css = (name) => getComputedStyle(document.documentElement).getPropertyValue(name).trim();
@@ -19,10 +19,32 @@ try {
   throw error;
 }
 
-let state = parsePeerHash(location.hash);
+const YEARS = data.years.map((y) => y.fiscal_year).sort((a, b) => b - a);
+const LATEST = YEARS[0];
 
-function update(kinds) {
-  state = parsePeerHash(serializePeerHash({ kinds: KINDS.filter((k) => kinds.includes(k)) }));
+// Hash values the page cannot honour (an unknown year or service) quietly fall back to the defaults.
+function sanitize(parsed) {
+  const groups = visibleGroups(data, parsed.kinds);
+  return {
+    kinds: parsed.kinds, adjusted: parsed.adjusted,
+    year: YEARS.includes(parsed.year) && parsed.year !== LATEST ? parsed.year : null,
+    trend: groups.some((g) => g.key === parsed.trend) ? parsed.trend : "all",
+  };
+}
+
+let state = sanitize(parsePeerHash(location.hash));
+
+function readControls() {
+  return sanitize({
+    kinds: KINDS.filter((k) => $(`kind-${k}`).checked),
+    adjusted: $("adjust").checked,
+    year: Number($("year").value),
+    trend: $("trend-service").value,
+  });
+}
+
+function update() {
+  state = readControls();
   history.replaceState(null, "", serializePeerHash(state) || location.pathname + location.search);
   render();
 }
@@ -99,11 +121,63 @@ function drawMatrix({ columns, rows }) {
   }));
 }
 
+function sentence(value) {
+  return value === null ? "n/a" : formatPerResident(value);
+}
+
+function gap(pct) {
+  if (pct === null) return "n/a";
+  const rounded = Math.round(pct);
+  return rounded === 0 ? "0%" : `${rounded > 0 ? "+" : "−"}${Math.abs(rounded)}%`;
+}
+
+const TREND_LINES = [
+  { key: "pct", label: "As reported", color: () => css("--text"), dash: "5 4" },
+  { key: "pctAdjusted", label: "Adjusted for local prices", color: () => css("--accent"), dash: null },
+];
+
+function drawTrend(series) {
+  const width = Math.max(300, $("trend-chart").clientWidth);
+  const points = TREND_LINES.flatMap((line) => series.filter((r) => r[line.key] !== null)
+    .map((r) => ({ year: r.fiscal_year, pct: r[line.key], line: line.label })));
+  $("trend-chart").replaceChildren(Plot.plot({
+    width, height: 260, marginLeft: 56, marginRight: 20,
+    x: { label: null, ticks: YEARS.length, tickFormat: (v) => String(v), type: "linear", domain: [Math.min(...YEARS) - 0.2, LATEST + 0.2] },
+    y: { label: "Gap to the middle peer (%)", grid: true, tickFormat: (v) => `${v > 0 ? "+" : v < 0 ? "−" : ""}${Math.abs(v)}%` },
+    color: { domain: TREND_LINES.map((l) => l.label), range: TREND_LINES.map((l) => l.color()) },
+    marks: [
+      Plot.ruleY([0]),
+      Plot.line(points, { x: "year", y: "pct", stroke: "line", strokeWidth: 2 }),
+      Plot.dot(points, { x: "year", y: "pct", fill: "line", r: 4, title: (d) => `${d.line}, ${d.year}: ${gap(d.pct)}` }),
+    ],
+  }));
+  const swatch = (color) => `<span class="swatch" style="display:inline-block;width:1.2rem;height:3px;margin-right:.4rem;vertical-align:middle;background:${color}"></span>`;
+  $("trend-legend").style.cssText = "display:flex;flex-wrap:wrap;gap:.25rem 1rem;padding:0;list-style:none;font-size:.85rem";
+  $("trend-legend").innerHTML = TREND_LINES.map((l) => `<li>${swatch(l.color())}${l.label}</li>`).join("");
+}
+
+function fillTrendOptions() {
+  const groups = visibleGroups(data, state.kinds);
+  const options = [["all", "All the services included above"], ...groups.map((g) => [g.key, g.label])];
+  $("trend-service").replaceChildren(...options.map(([value, label]) => new Option(label, value)));
+  $("trend-service").value = state.trend;
+}
+
 function render() {
   for (const kind of KINDS) $(`kind-${kind}`).checked = state.kinds.includes(kind);
-  const sentence = headline(data, state.kinds);
-  if ($("phead").textContent !== sentence) $("phead").textContent = sentence;
-  const stats = visibleGroups(data, state.kinds).map((g) => groupStats(data, g.key));
+  $("adjust").checked = state.adjusted;
+  $("year").value = String(state.year ?? LATEST);
+  $("adjust-note").hidden = !state.adjusted;
+  fillTrendOptions();
+  const view = yearView(data, state.year ?? LATEST, state.adjusted);
+  const text = headline(view, state.kinds, state.adjusted);
+  if ($("phead").textContent !== text) $("phead").textContent = text;
+  drawTrend(trendSeries(data, state.kinds, state.trend));
+  fillTable("trend-table", trendSeries(data, state.kinds, state.trend).map((r) => [
+    String(r.fiscal_year), sentence(r.home), sentence(r.middle), gap(r.pct),
+    sentence(r.homeAdjusted), sentence(r.middleAdjusted), gap(r.pctAdjusted),
+  ]));
+  const stats = visibleGroups(view, state.kinds).map((g) => groupStats(view, g.key));
   drawChart(stats);
   drawLegend();
   fillTable("peer-table", stats.map((s) => [
@@ -114,16 +188,16 @@ function render() {
     rankLabel(s.rank, s.of),
     s.zeroCities.join(", ") || "none",
   ]));
-  drawMatrix(cityMatrix(data, state.kinds));
-  fillTable("city-table", data.cities.map((c) => [
-    c.city, c.region, c.population.toLocaleString("en-US"), fiscalYearEnd(c.fy_end, data.fiscal_year),
+  drawMatrix(cityMatrix(view, state.kinds));
+  $("city-caption").textContent = `Population and the fiscal year that ended, as reported to the Census. The ${view.fiscal_year} survey covers years that ended between July ${view.fiscal_year - 1} and June ${view.fiscal_year}, so cities with a September or December year end show ${view.fiscal_year - 1}.`;
+  fillTable("city-table", view.cities.map((c) => [
+    c.city, c.region, c.population.toLocaleString("en-US"), fiscalYearEnd(c.fy_end, view.fiscal_year),
   ]));
 }
 
-for (const kind of KINDS) {
-  $(`kind-${kind}`).addEventListener("change", () => update(KINDS.filter((k) => $(`kind-${k}`).checked)));
-}
-window.addEventListener("hashchange", () => { state = parsePeerHash(location.hash); render(); });
+$("year").replaceChildren(...YEARS.map((y) => new Option(String(y), String(y))));
+for (const id of [...KINDS.map((k) => `kind-${k}`), "adjust", "year", "trend-service"]) $(id).addEventListener("change", update);
+window.addEventListener("hashchange", () => { state = sanitize(parsePeerHash(location.hash)); render(); });
 window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", render);
 
 let lastWidth = $("peer-chart").clientWidth;

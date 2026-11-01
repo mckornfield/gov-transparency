@@ -1,181 +1,1081 @@
-unit_id,city,state,region,is_home,population,fy_end,group,label,kind,amount_usd,per_resident
-062073207598,San Diego,CA,West,True,1381162,0630,police,Police,core,677921000,490.8338051582653
-062073207598,San Diego,CA,West,True,1381162,0630,fire,Fire,core,372339000,269.5838721308579
-062073207598,San Diego,CA,West,True,1381162,0630,parks,Parks & recreation,core,730299000,528.7569452388641
-062073207598,San Diego,CA,West,True,1381162,0630,libraries,Libraries,core,85499000,61.90367241496653
-062073207598,San Diego,CA,West,True,1381162,0630,roads,Roads & highways,core,640493000,463.73488410483344
-062073207598,San Diego,CA,West,True,1381162,0630,sanitation,Sewer & trash,core,820746000,594.24310833921
-062073207598,San Diego,CA,West,True,1381162,0630,housing,Housing & community development,core,742935000,537.905763407913
-062073207598,San Diego,CA,West,True,1381162,0630,admin,"Administration, courts & inspection",core,1560166000,1129.6039132266887
-062073207598,San Diego,CA,West,True,1381162,0630,water,Water utility,utility,1009560000,730.9497365262004
-062073207598,San Diego,CA,West,True,1381162,0630,power,Electric & gas utilities,utility,0,0.0
-062073207598,San Diego,CA,West,True,1381162,0630,transit,Transit,utility,45132000,32.67683298555853
-062073207598,San Diego,CA,West,True,1381162,0630,enterprise,"Airports, parking & other commercial",utility,14553000,10.536779899823483
-062073207598,San Diego,CA,West,True,1381162,0630,county,"Health, welfare, jails & schools",outside,129326000,93.63564882323725
-062073207598,San Diego,CA,West,True,1381162,0630,debt,Interest on debt,debt,207954000,150.5645246538784
-062073207598,San Diego,CA,West,True,1381162,0630,transfers,Grants & payments to other governments,other,5429000,3.9307481671230455
-042013207536,Phoenix,AZ,West,False,1644409,0630,police,Police,core,709524000,431.4765973672
-042013207536,Phoenix,AZ,West,False,1644409,0630,fire,Fire,core,442999000,269.3970903832319
-042013207536,Phoenix,AZ,West,False,1644409,0630,parks,Parks & recreation,core,305050000,185.50737681440566
-042013207536,Phoenix,AZ,West,False,1644409,0630,libraries,Libraries,core,47895000,29.1259656204752
-042013207536,Phoenix,AZ,West,False,1644409,0630,roads,Roads & highways,core,263626000,160.31656357998529
-042013207536,Phoenix,AZ,West,False,1644409,0630,sanitation,Sewer & trash,core,291939000,177.53429955686207
-042013207536,Phoenix,AZ,West,False,1644409,0630,housing,Housing & community development,core,369534000,224.72146528023137
-042013207536,Phoenix,AZ,West,False,1644409,0630,admin,"Administration, courts & inspection",core,389619000,236.93557989526937
-042013207536,Phoenix,AZ,West,False,1644409,0630,water,Water utility,utility,284976000,173.29995153273913
-042013207536,Phoenix,AZ,West,False,1644409,0630,power,Electric & gas utilities,utility,0,0.0
-042013207536,Phoenix,AZ,West,False,1644409,0630,transit,Transit,utility,561621000,341.5336452184341
-042013207536,Phoenix,AZ,West,False,1644409,0630,enterprise,"Airports, parking & other commercial",utility,374187000,227.55105329635145
-042013207536,Phoenix,AZ,West,False,1644409,0630,county,"Health, welfare, jails & schools",outside,5118000,3.112364381367409
-042013207536,Phoenix,AZ,West,False,1644409,0630,debt,Interest on debt,debt,335035000,203.7418914637417
-042013207536,Phoenix,AZ,West,False,1644409,0630,transfers,Grants & payments to other governments,other,10429000,6.3420961573428505
-062085100745,San Jose,CA,West,False,971233,0630,police,Police,core,520660000,536.0814552223823
-062085100745,San Jose,CA,West,False,971233,0630,fire,Fire,core,280371000,288.67532301723685
-062085100745,San Jose,CA,West,False,971233,0630,parks,Parks & recreation,core,225600000,232.28205796137487
-062085100745,San Jose,CA,West,False,971233,0630,libraries,Libraries,core,61813000,63.64384241474497
-062085100745,San Jose,CA,West,False,971233,0630,roads,Roads & highways,core,317908000,327.32413334390407
-062085100745,San Jose,CA,West,False,971233,0630,sanitation,Sewer & trash,core,389636000,401.17664865176533
-062085100745,San Jose,CA,West,False,971233,0630,housing,Housing & community development,core,283741000,292.14513921994
-062085100745,San Jose,CA,West,False,971233,0630,admin,"Administration, courts & inspection",core,398215000,410.0097504924153
-062085100745,San Jose,CA,West,False,971233,0630,water,Water utility,utility,59277000,61.03272850078199
-062085100745,San Jose,CA,West,False,971233,0630,power,Electric & gas utilities,utility,413394000,425.638338071297
-062085100745,San Jose,CA,West,False,971233,0630,transit,Transit,utility,0,0.0
-062085100745,San Jose,CA,West,False,971233,0630,enterprise,"Airports, parking & other commercial",utility,144019000,148.28470614157467
-062085100745,San Jose,CA,West,False,971233,0630,county,"Health, welfare, jails & schools",outside,0,0.0
-062085100745,San Jose,CA,West,False,971233,0630,debt,Interest on debt,debt,94991000,97.80454329702553
-062085100745,San Jose,CA,West,False,971233,0630,transfers,Grants & payments to other governments,other,0,0.0
-482029175988,San Antonio,TX,South,False,1472909,0930,police,Police,core,535536000,363.5906902598871
-482029175988,San Antonio,TX,South,False,1472909,0930,fire,Fire,core,359045000,243.76590814503814
-482029175988,San Antonio,TX,South,False,1472909,0930,parks,Parks & recreation,core,229267000,155.6559162853917
-482029175988,San Antonio,TX,South,False,1472909,0930,libraries,Libraries,core,47300000,32.113321325350036
-482029175988,San Antonio,TX,South,False,1472909,0930,roads,Roads & highways,core,208950000,141.8621245440146
-482029175988,San Antonio,TX,South,False,1472909,0930,sanitation,Sewer & trash,core,535499000,363.56556990282496
-482029175988,San Antonio,TX,South,False,1472909,0930,housing,Housing & community development,core,95539000,64.86415657722236
-482029175988,San Antonio,TX,South,False,1472909,0930,admin,"Administration, courts & inspection",core,568963000,386.28523554408315
-482029175988,San Antonio,TX,South,False,1472909,0930,water,Water utility,utility,631605000,428.81467897881
-482029175988,San Antonio,TX,South,False,1472909,0930,power,Electric & gas utilities,utility,3045833000,2067.903040853169
-482029175988,San Antonio,TX,South,False,1472909,0930,transit,Transit,utility,0,0.0
-482029175988,San Antonio,TX,South,False,1472909,0930,enterprise,"Airports, parking & other commercial",utility,148494000,100.81681896166022
-482029175988,San Antonio,TX,South,False,1472909,0930,county,"Health, welfare, jails & schools",outside,377133000,256.04636810556525
-482029175988,San Antonio,TX,South,False,1472909,0930,debt,Interest on debt,debt,569714000,386.79511089958714
-482029175988,San Antonio,TX,South,False,1472909,0930,transfers,Grants & payments to other governments,other,1169000,0.793667497448926
-482113187649,Dallas,TX,South,False,1299544,0930,police,Police,core,672300000,517.3353114630978
-482113187649,Dallas,TX,South,False,1299544,0930,fire,Fire,core,444810000,342.28160031518746
-482113187649,Dallas,TX,South,False,1299544,0930,parks,Parks & recreation,core,298522000,229.71288390389245
-482113187649,Dallas,TX,South,False,1299544,0930,libraries,Libraries,core,62276000,47.921424745910876
-482113187649,Dallas,TX,South,False,1299544,0930,roads,Roads & highways,core,321486000,247.3836976662583
-482113187649,Dallas,TX,South,False,1299544,0930,sanitation,Sewer & trash,core,495021000,380.91899927974737
-482113187649,Dallas,TX,South,False,1299544,0930,housing,Housing & community development,core,74048000,56.97998682614825
-482113187649,Dallas,TX,South,False,1299544,0930,admin,"Administration, courts & inspection",core,607928000,467.80101327850383
-482113187649,Dallas,TX,South,False,1299544,0930,water,Water utility,utility,449824000,346.1398767567701
-482113187649,Dallas,TX,South,False,1299544,0930,power,Electric & gas utilities,utility,0,0.0
-482113187649,Dallas,TX,South,False,1299544,0930,transit,Transit,utility,0,0.0
-482113187649,Dallas,TX,South,False,1299544,0930,enterprise,"Airports, parking & other commercial",utility,1473447000,1133.8184778660823
-482113187649,Dallas,TX,South,False,1299544,0930,county,"Health, welfare, jails & schools",outside,72762000,55.99040894344478
-482113187649,Dallas,TX,South,False,1299544,0930,debt,Interest on debt,debt,486139000,374.0842941831904
-482113187649,Dallas,TX,South,False,1299544,0930,transfers,Grants & payments to other governments,other,14903000,11.467868729338907
-482453176394,Austin,TX,South,False,974447,0930,police,Police,core,393514000,403.83314844214203
-482453176394,Austin,TX,South,False,974447,0930,fire,Fire,core,249752000,256.30126625665633
-482453176394,Austin,TX,South,False,974447,0930,parks,Parks & recreation,core,244047000,250.44666359483892
-482453176394,Austin,TX,South,False,974447,0930,libraries,Libraries,core,63414000,65.07691028860472
-482453176394,Austin,TX,South,False,974447,0930,roads,Roads & highways,core,568505000,583.412951140493
-482453176394,Austin,TX,South,False,974447,0930,sanitation,Sewer & trash,core,436068000,447.5030453169849
-482453176394,Austin,TX,South,False,974447,0930,housing,Housing & community development,core,104429000,107.1674498459126
-482453176394,Austin,TX,South,False,974447,0930,admin,"Administration, courts & inspection",core,661491000,678.8373303011862
-482453176394,Austin,TX,South,False,974447,0930,water,Water utility,utility,320235000,328.63254748590737
-482453176394,Austin,TX,South,False,974447,0930,power,Electric & gas utilities,utility,1807087000,1854.4743839326304
-482453176394,Austin,TX,South,False,974447,0930,transit,Transit,utility,0,0.0
-482453176394,Austin,TX,South,False,974447,0930,enterprise,"Airports, parking & other commercial",utility,219824000,225.58846196868583
-482453176394,Austin,TX,South,False,974447,0930,county,"Health, welfare, jails & schools",outside,254814000,261.4960074791138
-482453176394,Austin,TX,South,False,974447,0930,debt,Interest on debt,debt,282455000,289.86183958696574
-482453176394,Austin,TX,South,False,974447,0930,transfers,Grants & payments to other governments,other,482000,0.49463952375039383
-482439176375,Fort Worth,TX,South,False,956709,0930,police,Police,core,455203000,475.80089661537625
-482439176375,Fort Worth,TX,South,False,956709,0930,fire,Fire,core,200663000,209.7429834986396
-482439176375,Fort Worth,TX,South,False,956709,0930,parks,Parks & recreation,core,94559000,98.83778662059206
-482439176375,Fort Worth,TX,South,False,956709,0930,libraries,Libraries,core,25874000,27.044796275565506
-482439176375,Fort Worth,TX,South,False,956709,0930,roads,Roads & highways,core,152437000,159.33476114471588
-482439176375,Fort Worth,TX,South,False,956709,0930,sanitation,Sewer & trash,core,432087000,451.6388996027005
-482439176375,Fort Worth,TX,South,False,956709,0930,housing,Housing & community development,core,154572000,161.5663697111661
-482439176375,Fort Worth,TX,South,False,956709,0930,admin,"Administration, courts & inspection",core,276317000,288.82032049452863
-482439176375,Fort Worth,TX,South,False,956709,0930,water,Water utility,utility,484457000,506.3786376003571
-482439176375,Fort Worth,TX,South,False,956709,0930,power,Electric & gas utilities,utility,0,0.0
-482439176375,Fort Worth,TX,South,False,956709,0930,transit,Transit,utility,0,0.0
-482439176375,Fort Worth,TX,South,False,956709,0930,enterprise,"Airports, parking & other commercial",utility,42252000,44.16389936751928
-482439176375,Fort Worth,TX,South,False,956709,0930,county,"Health, welfare, jails & schools",outside,80025000,83.64612437010626
-482439176375,Fort Worth,TX,South,False,956709,0930,debt,Interest on debt,debt,90970000,95.08638467914486
-482439176375,Fort Worth,TX,South,False,956709,0930,transfers,Grants & payments to other governments,other,0,0.0
-372119194726,Charlotte,NC,South,False,897720,0630,police,Police,core,388589000,432.8621396426503
-372119194726,Charlotte,NC,South,False,897720,0630,fire,Fire,core,195184000,217.42191329144944
-372119194726,Charlotte,NC,South,False,897720,0630,parks,Parks & recreation,core,169134000,188.40395669028206
-372119194726,Charlotte,NC,South,False,897720,0630,libraries,Libraries,core,0,0.0
-372119194726,Charlotte,NC,South,False,897720,0630,roads,Roads & highways,core,136386000,151.9248763534287
-372119194726,Charlotte,NC,South,False,897720,0630,sanitation,Sewer & trash,core,534272000,595.1432517934322
-372119194726,Charlotte,NC,South,False,897720,0630,housing,Housing & community development,core,152583000,169.96725036759793
-372119194726,Charlotte,NC,South,False,897720,0630,admin,"Administration, courts & inspection",core,234118000,260.79178362963955
-372119194726,Charlotte,NC,South,False,897720,0630,water,Water utility,utility,383083000,426.72882413224613
-372119194726,Charlotte,NC,South,False,897720,0630,power,Electric & gas utilities,utility,0,0.0
-372119194726,Charlotte,NC,South,False,897720,0630,transit,Transit,utility,268088000,298.63209018402176
-372119194726,Charlotte,NC,South,False,897720,0630,enterprise,"Airports, parking & other commercial",utility,773345000,861.4545738092055
-372119194726,Charlotte,NC,South,False,897720,0630,county,"Health, welfare, jails & schools",outside,397000,0.4422314307356414
-372119194726,Charlotte,NC,South,False,897720,0630,debt,Interest on debt,debt,236489000,263.43291895022946
-372119194726,Charlotte,NC,South,False,897720,0630,transfers,Grants & payments to other governments,other,11384000,12.681014124671389
-392049209050,Columbus,OH,Midwest,False,907971,1231,police,Police,core,394461000,434.44228945638133
-392049209050,Columbus,OH,Midwest,False,907971,1231,fire,Fire,core,313117000,344.85352505751837
-392049209050,Columbus,OH,Midwest,False,907971,1231,parks,Parks & recreation,core,280843000,309.3083369402767
-392049209050,Columbus,OH,Midwest,False,907971,1231,libraries,Libraries,core,0,0.0
-392049209050,Columbus,OH,Midwest,False,907971,1231,roads,Roads & highways,core,296580000,326.6403882943398
-392049209050,Columbus,OH,Midwest,False,907971,1231,sanitation,Sewer & trash,core,384483000,423.4529516911884
-392049209050,Columbus,OH,Midwest,False,907971,1231,housing,Housing & community development,core,118897000,130.94801485950543
-392049209050,Columbus,OH,Midwest,False,907971,1231,admin,"Administration, courts & inspection",core,480429000,529.1237275199318
-392049209050,Columbus,OH,Midwest,False,907971,1231,water,Water utility,utility,240814000,265.2221271384218
-392049209050,Columbus,OH,Midwest,False,907971,1231,power,Electric & gas utilities,utility,91762000,101.06269913906942
-392049209050,Columbus,OH,Midwest,False,907971,1231,transit,Transit,utility,0,0.0
-392049209050,Columbus,OH,Midwest,False,907971,1231,enterprise,"Airports, parking & other commercial",utility,21433000,23.605379466965356
-392049209050,Columbus,OH,Midwest,False,907971,1231,county,"Health, welfare, jails & schools",outside,81425000,89.67797429653591
-392049209050,Columbus,OH,Midwest,False,907971,1231,debt,Interest on debt,debt,165251000,182.00030617717968
-392049209050,Columbus,OH,Midwest,False,907971,1231,transfers,Grants & payments to other governments,other,10195000,11.228332182415517
-532033184255,Seattle,WA,Pacific Northwest,False,749256,1231,police,Police,core,366586000,489.266685885732
-532033184255,Seattle,WA,Pacific Northwest,False,749256,1231,fire,Fire,core,306166000,408.62669101081605
-532033184255,Seattle,WA,Pacific Northwest,False,749256,1231,parks,Parks & recreation,core,480160000,640.8490555964851
-532033184255,Seattle,WA,Pacific Northwest,False,749256,1231,libraries,Libraries,core,103212000,137.75265062942438
-532033184255,Seattle,WA,Pacific Northwest,False,749256,1231,roads,Roads & highways,core,540446000,721.310206391407
-532033184255,Seattle,WA,Pacific Northwest,False,749256,1231,sanitation,Sewer & trash,core,508882000,679.1830829516214
-532033184255,Seattle,WA,Pacific Northwest,False,749256,1231,housing,Housing & community development,core,263883000,352.1933758288222
-532033184255,Seattle,WA,Pacific Northwest,False,749256,1231,admin,"Administration, courts & inspection",core,838630000,1119.2836627267582
-532033184255,Seattle,WA,Pacific Northwest,False,749256,1231,water,Water utility,utility,226750000,302.6335458107776
-532033184255,Seattle,WA,Pacific Northwest,False,749256,1231,power,Electric & gas utilities,utility,1238700000,1653.2400140939812
-532033184255,Seattle,WA,Pacific Northwest,False,749256,1231,transit,Transit,utility,0,0.0
-532033184255,Seattle,WA,Pacific Northwest,False,749256,1231,enterprise,"Airports, parking & other commercial",utility,15958000,21.298461407049125
-532033184255,Seattle,WA,Pacific Northwest,False,749256,1231,county,"Health, welfare, jails & schools",outside,355481000,474.44531642055586
-532033184255,Seattle,WA,Pacific Northwest,False,749256,1231,debt,Interest on debt,debt,237580000,317.087884514772
-532033184255,Seattle,WA,Pacific Northwest,False,749256,1231,transfers,Grants & payments to other governments,other,219826000,293.39237857287765
-412051211254,Portland,OR,Pacific Northwest,False,635067,0630,police,Police,core,276522000,435.4217743954575
-412051211254,Portland,OR,Pacific Northwest,False,635067,0630,fire,Fire,core,180606000,284.3888912508444
-412051211254,Portland,OR,Pacific Northwest,False,635067,0630,parks,Parks & recreation,core,250975000,395.19452278263554
-412051211254,Portland,OR,Pacific Northwest,False,635067,0630,libraries,Libraries,core,0,0.0
-412051211254,Portland,OR,Pacific Northwest,False,635067,0630,roads,Roads & highways,core,270671000,426.2085732686472
-412051211254,Portland,OR,Pacific Northwest,False,635067,0630,sanitation,Sewer & trash,core,520995000,820.3780073598533
-412051211254,Portland,OR,Pacific Northwest,False,635067,0630,housing,Housing & community development,core,173192000,272.7145324823995
-412051211254,Portland,OR,Pacific Northwest,False,635067,0630,admin,"Administration, courts & inspection",core,455031000,716.5086518430339
-412051211254,Portland,OR,Pacific Northwest,False,635067,0630,water,Water utility,utility,279792000,440.57083740770656
-412051211254,Portland,OR,Pacific Northwest,False,635067,0630,power,Electric & gas utilities,utility,3116000,4.906568913201284
-412051211254,Portland,OR,Pacific Northwest,False,635067,0630,transit,Transit,utility,0,0.0
-412051211254,Portland,OR,Pacific Northwest,False,635067,0630,enterprise,"Airports, parking & other commercial",utility,15820000,24.910757447639384
-412051211254,Portland,OR,Pacific Northwest,False,635067,0630,county,"Health, welfare, jails & schools",outside,5901000,9.291932977150442
-412051211254,Portland,OR,Pacific Northwest,False,635067,0630,debt,Interest on debt,debt,154938000,243.97110856019916
-412051211254,Portland,OR,Pacific Northwest,False,635067,0630,transfers,Grants & payments to other governments,other,0,0.0
-252025128108,Boston,MA,Northeast,False,650706,0630,police,Police,core,550945000,846.6880588161166
-252025128108,Boston,MA,Northeast,False,650706,0630,fire,Fire,core,320770000,492.9568806803687
-252025128108,Boston,MA,Northeast,False,650706,0630,parks,Parks & recreation,core,216366000,332.5096126361214
-252025128108,Boston,MA,Northeast,False,650706,0630,libraries,Libraries,core,85797000,131.85217287069736
-252025128108,Boston,MA,Northeast,False,650706,0630,roads,Roads & highways,core,179279000,275.51459491690565
-252025128108,Boston,MA,Northeast,False,650706,0630,sanitation,Sewer & trash,core,270334000,415.44722194047694
-252025128108,Boston,MA,Northeast,False,650706,0630,housing,Housing & community development,core,213344000,327.86542616788535
-252025128108,Boston,MA,Northeast,False,650706,0630,admin,"Administration, courts & inspection",core,1496319000,2299.531585693078
-252025128108,Boston,MA,Northeast,False,650706,0630,water,Water utility,utility,105002000,161.36626986688304
-252025128108,Boston,MA,Northeast,False,650706,0630,power,Electric & gas utilities,utility,0,0.0
-252025128108,Boston,MA,Northeast,False,650706,0630,transit,Transit,utility,0,0.0
-252025128108,Boston,MA,Northeast,False,650706,0630,enterprise,"Airports, parking & other commercial",utility,12235000,18.802654347739225
-252025128108,Boston,MA,Northeast,False,650706,0630,county,"Health, welfare, jails & schools",outside,2700937000,4150.779307398426
-252025128108,Boston,MA,Northeast,False,650706,0630,debt,Interest on debt,debt,83136000,127.76276843920296
-252025128108,Boston,MA,Northeast,False,650706,0630,transfers,Grants & payments to other governments,other,355772000,546.7476863591238
+unit_id,city,state,region,is_home,population,fy_end,group,label,kind,amount_usd,per_resident,rpp,fiscal_year
+062073207598,San Diego,CA,West,True,1419516,0630,police,Police,core,383743000,270.3336912017899,113.0215,2019
+062073207598,San Diego,CA,West,True,1419516,0630,fire,Fire,core,207429000,146.12656708342843,113.0215,2019
+062073207598,San Diego,CA,West,True,1419516,0630,parks,Parks & recreation,core,365092000,257.1947058011322,113.0215,2019
+062073207598,San Diego,CA,West,True,1419516,0630,libraries,Libraries,core,61817000,43.54794169280233,113.0215,2019
+062073207598,San Diego,CA,West,True,1419516,0630,roads,Roads & highways,core,251095000,176.88775610842006,113.0215,2019
+062073207598,San Diego,CA,West,True,1419516,0630,sanitation,Sewer & trash,core,378682000,266.76839147991285,113.0215,2019
+062073207598,San Diego,CA,West,True,1419516,0630,housing,Housing & community development,core,397649000,280.12998796772985,113.0215,2019
+062073207598,San Diego,CA,West,True,1419516,0630,admin,"Administration, courts & inspection",core,899437000,633.622305067361,113.0215,2019
+062073207598,San Diego,CA,West,True,1419516,0630,water,Water utility,utility,579179000,408.0116039551509,113.0215,2019
+062073207598,San Diego,CA,West,True,1419516,0630,power,Electric & gas utilities,utility,0,0.0,113.0215,2019
+062073207598,San Diego,CA,West,True,1419516,0630,transit,Transit,utility,0,0.0,113.0215,2019
+062073207598,San Diego,CA,West,True,1419516,0630,enterprise,"Airports, parking & other commercial",utility,10471000,7.3764578912812535,113.0215,2019
+062073207598,San Diego,CA,West,True,1419516,0630,county,"Health, welfare, jails & schools",outside,43722000,30.800639091070476,113.0215,2019
+062073207598,San Diego,CA,West,True,1419516,0630,debt,Interest on debt,debt,240991000,169.76983704304848,113.0215,2019
+062073207598,San Diego,CA,West,True,1419516,0630,transfers,Grants & payments to other governments,other,50549000,35.61002482536301,113.0215,2019
+042013207536,Phoenix,AZ,West,False,1626078,0630,police,Police,core,694644000,427.1898396017903,99.83600000000001,2019
+042013207536,Phoenix,AZ,West,False,1626078,0630,fire,Fire,core,343659000,211.3422603343751,99.83600000000001,2019
+042013207536,Phoenix,AZ,West,False,1626078,0630,parks,Parks & recreation,core,229074000,140.87516097013796,99.83600000000001,2019
+042013207536,Phoenix,AZ,West,False,1626078,0630,libraries,Libraries,core,35283000,21.69822111854413,99.83600000000001,2019
+042013207536,Phoenix,AZ,West,False,1626078,0630,roads,Roads & highways,core,151714000,93.30056737745667,99.83600000000001,2019
+042013207536,Phoenix,AZ,West,False,1626078,0630,sanitation,Sewer & trash,core,212840000,130.8916300448072,99.83600000000001,2019
+042013207536,Phoenix,AZ,West,False,1626078,0630,housing,Housing & community development,core,216434000,133.10185612252303,99.83600000000001,2019
+042013207536,Phoenix,AZ,West,False,1626078,0630,admin,"Administration, courts & inspection",core,276698000,170.16280891814537,99.83600000000001,2019
+042013207536,Phoenix,AZ,West,False,1626078,0630,water,Water utility,utility,255596000,157.18557166384392,99.83600000000001,2019
+042013207536,Phoenix,AZ,West,False,1626078,0630,power,Electric & gas utilities,utility,0,0.0,99.83600000000001,2019
+042013207536,Phoenix,AZ,West,False,1626078,0630,transit,Transit,utility,280466000,172.48004093284578,99.83600000000001,2019
+042013207536,Phoenix,AZ,West,False,1626078,0630,enterprise,"Airports, parking & other commercial",utility,599487000,368.67050658086515,99.83600000000001,2019
+042013207536,Phoenix,AZ,West,False,1626078,0630,county,"Health, welfare, jails & schools",outside,20046000,12.327821912601978,99.83600000000001,2019
+042013207536,Phoenix,AZ,West,False,1626078,0630,debt,Interest on debt,debt,309752000,190.49024708531817,99.83600000000001,2019
+042013207536,Phoenix,AZ,West,False,1626078,0630,transfers,Grants & payments to other governments,other,11950000,7.348970959572665,99.83600000000001,2019
+062085100745,San Jose,CA,West,False,1035317,0630,police,Police,core,260006000,251.1366084010984,113.693,2019
+062085100745,San Jose,CA,West,False,1035317,0630,fire,Fire,core,154483000,149.2132361392694,113.693,2019
+062085100745,San Jose,CA,West,False,1035317,0630,parks,Parks & recreation,core,200585000,193.742592848374,113.693,2019
+062085100745,San Jose,CA,West,False,1035317,0630,libraries,Libraries,core,31426000,30.35398819878356,113.693,2019
+062085100745,San Jose,CA,West,False,1035317,0630,roads,Roads & highways,core,84815000,81.92176888817627,113.693,2019
+062085100745,San Jose,CA,West,False,1035317,0630,sanitation,Sewer & trash,core,409479000,395.510746949968,113.693,2019
+062085100745,San Jose,CA,West,False,1035317,0630,housing,Housing & community development,core,31273000,30.20620737416656,113.693,2019
+062085100745,San Jose,CA,West,False,1035317,0630,admin,"Administration, courts & inspection",core,174589000,168.63337509188008,113.693,2019
+062085100745,San Jose,CA,West,False,1035317,0630,water,Water utility,utility,42062000,40.627170229021644,113.693,2019
+062085100745,San Jose,CA,West,False,1035317,0630,power,Electric & gas utilities,utility,98843000,95.47124214129586,113.693,2019
+062085100745,San Jose,CA,West,False,1035317,0630,transit,Transit,utility,0,0.0,113.693,2019
+062085100745,San Jose,CA,West,False,1035317,0630,enterprise,"Airports, parking & other commercial",utility,193065000,186.47911702406122,113.693,2019
+062085100745,San Jose,CA,West,False,1035317,0630,county,"Health, welfare, jails & schools",outside,152000,0.14681493687440658,113.693,2019
+062085100745,San Jose,CA,West,False,1035317,0630,debt,Interest on debt,debt,238888000,230.73899105298185,113.693,2019
+062085100745,San Jose,CA,West,False,1035317,0630,transfers,Grants & payments to other governments,other,56657000,54.72430183219246,113.693,2019
+482029175988,San Antonio,TX,South,False,1511946,0930,police,Police,core,402603000,266.28133544451987,95.93025,2019
+482029175988,San Antonio,TX,South,False,1511946,0930,fire,Fire,core,281612000,186.25797482185212,95.93025,2019
+482029175988,San Antonio,TX,South,False,1511946,0930,parks,Parks & recreation,core,156817000,103.7186513274945,95.93025,2019
+482029175988,San Antonio,TX,South,False,1511946,0930,libraries,Libraries,core,39960000,26.429515339833564,95.93025,2019
+482029175988,San Antonio,TX,South,False,1511946,0930,roads,Roads & highways,core,161656000,106.91916245686024,95.93025,2019
+482029175988,San Antonio,TX,South,False,1511946,0930,sanitation,Sewer & trash,core,356046000,235.48856903619574,95.93025,2019
+482029175988,San Antonio,TX,South,False,1511946,0930,housing,Housing & community development,core,61753000,40.843389909427984,95.93025,2019
+482029175988,San Antonio,TX,South,False,1511946,0930,admin,"Administration, courts & inspection",core,316418000,209.27863825824468,95.93025,2019
+482029175988,San Antonio,TX,South,False,1511946,0930,water,Water utility,utility,392298000,259.4656158354862,95.93025,2019
+482029175988,San Antonio,TX,South,False,1511946,0930,power,Electric & gas utilities,utility,2213037000,1463.7010845625439,95.93025,2019
+482029175988,San Antonio,TX,South,False,1511946,0930,transit,Transit,utility,0,0.0,95.93025,2019
+482029175988,San Antonio,TX,South,False,1511946,0930,enterprise,"Airports, parking & other commercial",utility,122860000,81.25951588218098,95.93025,2019
+482029175988,San Antonio,TX,South,False,1511946,0930,county,"Health, welfare, jails & schools",outside,176654000,116.83882889997395,95.93025,2019
+482029175988,San Antonio,TX,South,False,1511946,0930,debt,Interest on debt,debt,436471000,288.6816063536661,95.93025,2019
+482029175988,San Antonio,TX,South,False,1511946,0930,transfers,Grants & payments to other governments,other,0,0.0,95.93025,2019
+482113187649,Dallas,TX,South,False,1341075,0930,police,Police,core,417454000,311.28311242846223,100.74950000000001,2019
+482113187649,Dallas,TX,South,False,1341075,0930,fire,Fire,core,241331000,179.953395596816,100.74950000000001,2019
+482113187649,Dallas,TX,South,False,1341075,0930,parks,Parks & recreation,core,229093000,170.8278806181608,100.74950000000001,2019
+482113187649,Dallas,TX,South,False,1341075,0930,libraries,Libraries,core,28799000,21.474563316742167,100.74950000000001,2019
+482113187649,Dallas,TX,South,False,1341075,0930,roads,Roads & highways,core,208619000,155.56102380552915,100.74950000000001,2019
+482113187649,Dallas,TX,South,False,1341075,0930,sanitation,Sewer & trash,core,297076000,221.5207948847007,100.74950000000001,2019
+482113187649,Dallas,TX,South,False,1341075,0930,housing,Housing & community development,core,28105000,20.95706802378689,100.74950000000001,2019
+482113187649,Dallas,TX,South,False,1341075,0930,admin,"Administration, courts & inspection",core,357826000,266.82027477956115,100.74950000000001,2019
+482113187649,Dallas,TX,South,False,1341075,0930,water,Water utility,utility,299917000,223.6392446358332,100.74950000000001,2019
+482113187649,Dallas,TX,South,False,1341075,0930,power,Electric & gas utilities,utility,0,0.0,100.74950000000001,2019
+482113187649,Dallas,TX,South,False,1341075,0930,transit,Transit,utility,0,0.0,100.74950000000001,2019
+482113187649,Dallas,TX,South,False,1341075,0930,enterprise,"Airports, parking & other commercial",utility,860478000,641.6330182875678,100.74950000000001,2019
+482113187649,Dallas,TX,South,False,1341075,0930,county,"Health, welfare, jails & schools",outside,43561000,32.48215051358052,100.74950000000001,2019
+482113187649,Dallas,TX,South,False,1341075,0930,debt,Interest on debt,debt,391558000,291.9732304308111,100.74950000000001,2019
+482113187649,Dallas,TX,South,False,1341075,0930,transfers,Grants & payments to other governments,other,12383000,9.233637194042092,100.74950000000001,2019
+482453176394,Austin,TX,South,False,950715,0930,police,Police,core,375571000,395.0405747253383,99.70125,2019
+482453176394,Austin,TX,South,False,950715,0930,fire,Fire,core,181420000,190.8248002818931,99.70125,2019
+482453176394,Austin,TX,South,False,950715,0930,parks,Parks & recreation,core,184263000,193.81518120572412,99.70125,2019
+482453176394,Austin,TX,South,False,950715,0930,libraries,Libraries,core,76959000,80.94854924977517,99.70125,2019
+482453176394,Austin,TX,South,False,950715,0930,roads,Roads & highways,core,180655000,190.02014273467864,99.70125,2019
+482453176394,Austin,TX,South,False,950715,0930,sanitation,Sewer & trash,core,291666000,306.78594531484197,99.70125,2019
+482453176394,Austin,TX,South,False,950715,0930,housing,Housing & community development,core,73605000,77.42067812120351,99.70125,2019
+482453176394,Austin,TX,South,False,950715,0930,admin,"Administration, courts & inspection",core,368667000,387.77867184171913,99.70125,2019
+482453176394,Austin,TX,South,False,950715,0930,water,Water utility,utility,200647000,211.04852663521666,99.70125,2019
+482453176394,Austin,TX,South,False,950715,0930,power,Electric & gas utilities,utility,1342512000,1412.107729445733,99.70125,2019
+482453176394,Austin,TX,South,False,950715,0930,transit,Transit,utility,0,0.0,99.70125,2019
+482453176394,Austin,TX,South,False,950715,0930,enterprise,"Airports, parking & other commercial",utility,154826000,162.8521691568977,99.70125,2019
+482453176394,Austin,TX,South,False,950715,0930,county,"Health, welfare, jails & schools",outside,161819000,170.2076857943758,99.70125,2019
+482453176394,Austin,TX,South,False,950715,0930,debt,Interest on debt,debt,255953000,269.22158585906396,99.70125,2019
+482453176394,Austin,TX,South,False,950715,0930,transfers,Grants & payments to other governments,other,0,0.0,99.70125,2019
+482439176375,Fort Worth,TX,South,False,874168,0930,police,Police,core,318763000,364.64729891737056,100.74950000000001,2019
+482439176375,Fort Worth,TX,South,False,874168,0930,fire,Fire,core,151854000,173.71260444216674,100.74950000000001,2019
+482439176375,Fort Worth,TX,South,False,874168,0930,parks,Parks & recreation,core,131150000,150.02836983280102,100.74950000000001,2019
+482439176375,Fort Worth,TX,South,False,874168,0930,libraries,Libraries,core,20900000,23.908447804083426,100.74950000000001,2019
+482439176375,Fort Worth,TX,South,False,874168,0930,roads,Roads & highways,core,166524000,190.49427569986548,100.74950000000001,2019
+482439176375,Fort Worth,TX,South,False,874168,0930,sanitation,Sewer & trash,core,272785000,312.05100163812904,100.74950000000001,2019
+482439176375,Fort Worth,TX,South,False,874168,0930,housing,Housing & community development,core,26553000,30.375168159896038,100.74950000000001,2019
+482439176375,Fort Worth,TX,South,False,874168,0930,admin,"Administration, courts & inspection",core,220245000,251.94813811532794,100.74950000000001,2019
+482439176375,Fort Worth,TX,South,False,874168,0930,water,Water utility,utility,211681000,242.15139424000878,100.74950000000001,2019
+482439176375,Fort Worth,TX,South,False,874168,0930,power,Electric & gas utilities,utility,0,0.0,100.74950000000001,2019
+482439176375,Fort Worth,TX,South,False,874168,0930,transit,Transit,utility,0,0.0,100.74950000000001,2019
+482439176375,Fort Worth,TX,South,False,874168,0930,enterprise,"Airports, parking & other commercial",utility,32507000,37.186215921882294,100.74950000000001,2019
+482439176375,Fort Worth,TX,South,False,874168,0930,county,"Health, welfare, jails & schools",outside,11104000,12.702363847681452,100.74950000000001,2019
+482439176375,Fort Worth,TX,South,False,874168,0930,debt,Interest on debt,debt,81231000,92.9237858169139,100.74950000000001,2019
+482439176375,Fort Worth,TX,South,False,874168,0930,transfers,Grants & payments to other governments,other,0,0.0,100.74950000000001,2019
+372119194726,Charlotte,NC,South,False,859035,0630,police,Police,core,302531000,352.1754061243139,95.0055,2019
+372119194726,Charlotte,NC,South,False,859035,0630,fire,Fire,core,137617000,160.19952621255246,95.0055,2019
+372119194726,Charlotte,NC,South,False,859035,0630,parks,Parks & recreation,core,135154000,157.33235549191826,95.0055,2019
+372119194726,Charlotte,NC,South,False,859035,0630,libraries,Libraries,core,0,0.0,95.0055,2019
+372119194726,Charlotte,NC,South,False,859035,0630,roads,Roads & highways,core,125915000,146.57726402300256,95.0055,2019
+372119194726,Charlotte,NC,South,False,859035,0630,sanitation,Sewer & trash,core,311324000,362.41131036570107,95.0055,2019
+372119194726,Charlotte,NC,South,False,859035,0630,housing,Housing & community development,core,105406000,122.70280023514758,95.0055,2019
+372119194726,Charlotte,NC,South,False,859035,0630,admin,"Administration, courts & inspection",core,137504000,160.06798326028624,95.0055,2019
+372119194726,Charlotte,NC,South,False,859035,0630,water,Water utility,utility,185904000,216.41027431943985,95.0055,2019
+372119194726,Charlotte,NC,South,False,859035,0630,power,Electric & gas utilities,utility,0,0.0,95.0055,2019
+372119194726,Charlotte,NC,South,False,859035,0630,transit,Transit,utility,175051000,203.77633041727054,95.0055,2019
+372119194726,Charlotte,NC,South,False,859035,0630,enterprise,"Airports, parking & other commercial",utility,313979000,365.50198769549553,95.0055,2019
+372119194726,Charlotte,NC,South,False,859035,0630,county,"Health, welfare, jails & schools",outside,0,0.0,95.0055,2019
+372119194726,Charlotte,NC,South,False,859035,0630,debt,Interest on debt,debt,188341000,219.2471785200836,95.0055,2019
+372119194726,Charlotte,NC,South,False,859035,0630,transfers,Grants & payments to other governments,other,9260000,10.779537504292607,95.0055,2019
+392049209050,Columbus,OH,Midwest,False,879170,1231,police,Police,core,336064000,382.25144170069495,95.274,2019
+392049209050,Columbus,OH,Midwest,False,879170,1231,fire,Fire,core,257075000,292.40647428824917,95.274,2019
+392049209050,Columbus,OH,Midwest,False,879170,1231,parks,Parks & recreation,core,168421000,191.5681836277398,95.274,2019
+392049209050,Columbus,OH,Midwest,False,879170,1231,libraries,Libraries,core,0,0.0,95.274,2019
+392049209050,Columbus,OH,Midwest,False,879170,1231,roads,Roads & highways,core,230298000,261.9493385807068,95.274,2019
+392049209050,Columbus,OH,Midwest,False,879170,1231,sanitation,Sewer & trash,core,351550000,399.8657824994028,95.274,2019
+392049209050,Columbus,OH,Midwest,False,879170,1231,housing,Housing & community development,core,30416000,34.596266933585085,95.274,2019
+392049209050,Columbus,OH,Midwest,False,879170,1231,admin,"Administration, courts & inspection",core,358628000,407.9165576623406,95.274,2019
+392049209050,Columbus,OH,Midwest,False,879170,1231,water,Water utility,utility,184627000,210.00147866737947,95.274,2019
+392049209050,Columbus,OH,Midwest,False,879170,1231,power,Electric & gas utilities,utility,80136000,91.149607015708,95.274,2019
+392049209050,Columbus,OH,Midwest,False,879170,1231,transit,Transit,utility,0,0.0,95.274,2019
+392049209050,Columbus,OH,Midwest,False,879170,1231,enterprise,"Airports, parking & other commercial",utility,4646000,5.28452972690151,95.274,2019
+392049209050,Columbus,OH,Midwest,False,879170,1231,county,"Health, welfare, jails & schools",outside,62668000,71.28086718154623,95.274,2019
+392049209050,Columbus,OH,Midwest,False,879170,1231,debt,Interest on debt,debt,153427000,174.51346156033532,95.274,2019
+392049209050,Columbus,OH,Midwest,False,879170,1231,transfers,Grants & payments to other governments,other,0,0.0,95.274,2019
+532033184255,Seattle,WA,Pacific Northwest,False,724745,1231,police,Police,core,276475000,381.47900295966167,110.462,2019
+532033184255,Seattle,WA,Pacific Northwest,False,724745,1231,fire,Fire,core,188901000,260.6447785083029,110.462,2019
+532033184255,Seattle,WA,Pacific Northwest,False,724745,1231,parks,Parks & recreation,core,273869000,377.88325548986194,110.462,2019
+532033184255,Seattle,WA,Pacific Northwest,False,724745,1231,libraries,Libraries,core,75056000,103.56194247631926,110.462,2019
+532033184255,Seattle,WA,Pacific Northwest,False,724745,1231,roads,Roads & highways,core,358082000,494.07998675396175,110.462,2019
+532033184255,Seattle,WA,Pacific Northwest,False,724745,1231,sanitation,Sewer & trash,core,308503000,425.6710981103698,110.462,2019
+532033184255,Seattle,WA,Pacific Northwest,False,724745,1231,housing,Housing & community development,core,99572000,137.38901268722103,110.462,2019
+532033184255,Seattle,WA,Pacific Northwest,False,724745,1231,admin,"Administration, courts & inspection",core,456284000,629.5786793975813,110.462,2019
+532033184255,Seattle,WA,Pacific Northwest,False,724745,1231,water,Water utility,utility,151570000,209.1356270136393,110.462,2019
+532033184255,Seattle,WA,Pacific Northwest,False,724745,1231,power,Electric & gas utilities,utility,1000500000,1380.4855500900317,110.462,2019
+532033184255,Seattle,WA,Pacific Northwest,False,724745,1231,transit,Transit,utility,0,0.0,110.462,2019
+532033184255,Seattle,WA,Pacific Northwest,False,724745,1231,enterprise,"Airports, parking & other commercial",utility,9544000,13.168769705206659,110.462,2019
+532033184255,Seattle,WA,Pacific Northwest,False,724745,1231,county,"Health, welfare, jails & schools",outside,207100000,285.75567958385363,110.462,2019
+532033184255,Seattle,WA,Pacific Northwest,False,724745,1231,debt,Interest on debt,debt,228892000,315.82418643798854,110.462,2019
+532033184255,Seattle,WA,Pacific Northwest,False,724745,1231,transfers,Grants & payments to other governments,other,193054000,266.3750698521549,110.462,2019
+412051211254,Portland,OR,Pacific Northwest,False,647805,0630,police,Police,core,221576000,342.0412006699547,106.8535,2019
+412051211254,Portland,OR,Pacific Northwest,False,647805,0630,fire,Fire,core,122405000,188.953465934965,106.8535,2019
+412051211254,Portland,OR,Pacific Northwest,False,647805,0630,parks,Parks & recreation,core,159981000,246.9585754972561,106.8535,2019
+412051211254,Portland,OR,Pacific Northwest,False,647805,0630,libraries,Libraries,core,0,0.0,106.8535,2019
+412051211254,Portland,OR,Pacific Northwest,False,647805,0630,roads,Roads & highways,core,220870000,340.95136653776984,106.8535,2019
+412051211254,Portland,OR,Pacific Northwest,False,647805,0630,sanitation,Sewer & trash,core,291454000,449.9100809657227,106.8535,2019
+412051211254,Portland,OR,Pacific Northwest,False,647805,0630,housing,Housing & community development,core,112334000,173.40712097004499,106.8535,2019
+412051211254,Portland,OR,Pacific Northwest,False,647805,0630,admin,"Administration, courts & inspection",core,333535000,514.869443736927,106.8535,2019
+412051211254,Portland,OR,Pacific Northwest,False,647805,0630,water,Water utility,utility,193064000,298.0279559435324,106.8535,2019
+412051211254,Portland,OR,Pacific Northwest,False,647805,0630,power,Electric & gas utilities,utility,2792000,4.309938947677156,106.8535,2019
+412051211254,Portland,OR,Pacific Northwest,False,647805,0630,transit,Transit,utility,0,0.0,106.8535,2019
+412051211254,Portland,OR,Pacific Northwest,False,647805,0630,enterprise,"Airports, parking & other commercial",utility,17907000,27.6425776275268,106.8535,2019
+412051211254,Portland,OR,Pacific Northwest,False,647805,0630,county,"Health, welfare, jails & schools",outside,0,0.0,106.8535,2019
+412051211254,Portland,OR,Pacific Northwest,False,647805,0630,debt,Interest on debt,debt,145615000,224.78214894914365,106.8535,2019
+412051211254,Portland,OR,Pacific Northwest,False,647805,0630,transfers,Grants & payments to other governments,other,0,0.0,106.8535,2019
+252025128108,Boston,MA,Northeast,False,685094,0630,police,Police,core,427736000,624.3464400505624,110.11200000000001,2019
+252025128108,Boston,MA,Northeast,False,685094,0630,fire,Fire,core,259809000,379.23117119694524,110.11200000000001,2019
+252025128108,Boston,MA,Northeast,False,685094,0630,parks,Parks & recreation,core,98297000,143.47958090422628,110.11200000000001,2019
+252025128108,Boston,MA,Northeast,False,685094,0630,libraries,Libraries,core,55449000,80.93633866301559,110.11200000000001,2019
+252025128108,Boston,MA,Northeast,False,685094,0630,roads,Roads & highways,core,124405000,181.58822001068467,110.11200000000001,2019
+252025128108,Boston,MA,Northeast,False,685094,0630,sanitation,Sewer & trash,core,129214000,188.60769471050688,110.11200000000001,2019
+252025128108,Boston,MA,Northeast,False,685094,0630,housing,Housing & community development,core,90678000,132.35847927437695,110.11200000000001,2019
+252025128108,Boston,MA,Northeast,False,685094,0630,admin,"Administration, courts & inspection",core,640806000,935.3548564138644,110.11200000000001,2019
+252025128108,Boston,MA,Northeast,False,685094,0630,water,Water utility,utility,65181000,95.1416885857999,110.11200000000001,2019
+252025128108,Boston,MA,Northeast,False,685094,0630,power,Electric & gas utilities,utility,0,0.0,110.11200000000001,2019
+252025128108,Boston,MA,Northeast,False,685094,0630,transit,Transit,utility,0,0.0,110.11200000000001,2019
+252025128108,Boston,MA,Northeast,False,685094,0630,enterprise,"Airports, parking & other commercial",utility,4818000,7.032611583227995,110.11200000000001,2019
+252025128108,Boston,MA,Northeast,False,685094,0630,county,"Health, welfare, jails & schools",outside,1754094000,2560.36981786441,110.11200000000001,2019
+252025128108,Boston,MA,Northeast,False,685094,0630,debt,Interest on debt,debt,74376000,108.56320446537264,110.11200000000001,2019
+252025128108,Boston,MA,Northeast,False,685094,0630,transfers,Grants & payments to other governments,other,327152000,477.52863110755607,110.11200000000001,2019
+062073207598,San Diego,CA,West,True,1423851,0630,police,Police,core,399076000,280.27932698014047,114.31599999999999,2020
+062073207598,San Diego,CA,West,True,1423851,0630,fire,Fire,core,205534000,144.35077827665955,114.31599999999999,2020
+062073207598,San Diego,CA,West,True,1423851,0630,parks,Parks & recreation,core,373819000,262.5408136104129,114.31599999999999,2020
+062073207598,San Diego,CA,West,True,1423851,0630,libraries,Libraries,core,47391000,33.28367926138339,114.31599999999999,2020
+062073207598,San Diego,CA,West,True,1423851,0630,roads,Roads & highways,core,307642000,216.06333808804433,114.31599999999999,2020
+062073207598,San Diego,CA,West,True,1423851,0630,sanitation,Sewer & trash,core,408672000,287.01879620831113,114.31599999999999,2020
+062073207598,San Diego,CA,West,True,1423851,0630,housing,Housing & community development,core,389034000,273.22662272948503,114.31599999999999,2020
+062073207598,San Diego,CA,West,True,1423851,0630,admin,"Administration, courts & inspection",core,986404000,692.7719262759938,114.31599999999999,2020
+062073207598,San Diego,CA,West,True,1423851,0630,water,Water utility,utility,600993000,422.089811363689,114.31599999999999,2020
+062073207598,San Diego,CA,West,True,1423851,0630,power,Electric & gas utilities,utility,0,0.0,114.31599999999999,2020
+062073207598,San Diego,CA,West,True,1423851,0630,transit,Transit,utility,98539000,69.20597731082817,114.31599999999999,2020
+062073207598,San Diego,CA,West,True,1423851,0630,enterprise,"Airports, parking & other commercial",utility,5787000,4.064329764841967,114.31599999999999,2020
+062073207598,San Diego,CA,West,True,1423851,0630,county,"Health, welfare, jails & schools",outside,45052000,31.64095119503375,114.31599999999999,2020
+062073207598,San Diego,CA,West,True,1423851,0630,debt,Interest on debt,debt,273203000,191.87611625092794,114.31599999999999,2020
+062073207598,San Diego,CA,West,True,1423851,0630,transfers,Grants & payments to other governments,other,0,0.0,114.31599999999999,2020
+042013207536,Phoenix,AZ,West,False,1680992,0630,police,Police,core,736632000,438.2126744208182,101.4095,2020
+042013207536,Phoenix,AZ,West,False,1680992,0630,fire,Fire,core,324664000,193.13833736270013,101.4095,2020
+042013207536,Phoenix,AZ,West,False,1680992,0630,parks,Parks & recreation,core,215575000,128.2427281034056,101.4095,2020
+042013207536,Phoenix,AZ,West,False,1680992,0630,libraries,Libraries,core,38178000,22.71158934724258,101.4095,2020
+042013207536,Phoenix,AZ,West,False,1680992,0630,roads,Roads & highways,core,136907000,81.44417106089738,101.4095,2020
+042013207536,Phoenix,AZ,West,False,1680992,0630,sanitation,Sewer & trash,core,207930000,123.69481829776703,101.4095,2020
+042013207536,Phoenix,AZ,West,False,1680992,0630,housing,Housing & community development,core,251312000,149.50219870171898,101.4095,2020
+042013207536,Phoenix,AZ,West,False,1680992,0630,admin,"Administration, courts & inspection",core,327930000,195.08123774533132,101.4095,2020
+042013207536,Phoenix,AZ,West,False,1680992,0630,water,Water utility,utility,290929000,173.0698301955036,101.4095,2020
+042013207536,Phoenix,AZ,West,False,1680992,0630,power,Electric & gas utilities,utility,0,0.0,101.4095,2020
+042013207536,Phoenix,AZ,West,False,1680992,0630,transit,Transit,utility,323528000,192.46254592526319,101.4095,2020
+042013207536,Phoenix,AZ,West,False,1680992,0630,enterprise,"Airports, parking & other commercial",utility,701572000,417.3559422055548,101.4095,2020
+042013207536,Phoenix,AZ,West,False,1680992,0630,county,"Health, welfare, jails & schools",outside,19041000,11.327240105842264,101.4095,2020
+042013207536,Phoenix,AZ,West,False,1680992,0630,debt,Interest on debt,debt,326398000,194.16987112371743,101.4095,2020
+042013207536,Phoenix,AZ,West,False,1680992,0630,transfers,Grants & payments to other governments,other,21806000,12.972102187279893,101.4095,2020
+062085100745,San Jose,CA,West,False,1021795,0630,police,Police,core,312462000,305.7971510919509,113.1905,2020
+062085100745,San Jose,CA,West,False,1021795,0630,fire,Fire,core,111113000,108.74294746010698,113.1905,2020
+062085100745,San Jose,CA,West,False,1021795,0630,parks,Parks & recreation,core,186331000,182.35653922753585,113.1905,2020
+062085100745,San Jose,CA,West,False,1021795,0630,libraries,Libraries,core,36808000,36.02288130202242,113.1905,2020
+062085100745,San Jose,CA,West,False,1021795,0630,roads,Roads & highways,core,239765000,234.65078611658893,113.1905,2020
+062085100745,San Jose,CA,West,False,1021795,0630,sanitation,Sewer & trash,core,342733000,335.42246732465907,113.1905,2020
+062085100745,San Jose,CA,West,False,1021795,0630,housing,Housing & community development,core,43204000,42.282453916881565,113.1905,2020
+062085100745,San Jose,CA,West,False,1021795,0630,admin,"Administration, courts & inspection",core,263641000,258.01750840432766,113.1905,2020
+062085100745,San Jose,CA,West,False,1021795,0630,water,Water utility,utility,42192000,41.2920399884517,113.1905,2020
+062085100745,San Jose,CA,West,False,1021795,0630,power,Electric & gas utilities,utility,300103000,293.70176992449564,113.1905,2020
+062085100745,San Jose,CA,West,False,1021795,0630,transit,Transit,utility,0,0.0,113.1905,2020
+062085100745,San Jose,CA,West,False,1021795,0630,enterprise,"Airports, parking & other commercial",utility,122665000,120.04854202653173,113.1905,2020
+062085100745,San Jose,CA,West,False,1021795,0630,county,"Health, welfare, jails & schools",outside,245000,0.23977412298944503,113.1905,2020
+062085100745,San Jose,CA,West,False,1021795,0630,debt,Interest on debt,debt,213266000,208.7170127080285,113.1905,2020
+062085100745,San Jose,CA,West,False,1021795,0630,transfers,Grants & payments to other governments,other,0,0.0,113.1905,2020
+482029175988,San Antonio,TX,South,False,1547253,0930,police,Police,core,416012000,268.87134812470873,95.69650000000001,2020
+482029175988,San Antonio,TX,South,False,1547253,0930,fire,Fire,core,285196000,184.32408920842292,95.69650000000001,2020
+482029175988,San Antonio,TX,South,False,1547253,0930,parks,Parks & recreation,core,172129000,111.24812813418362,95.69650000000001,2020
+482029175988,San Antonio,TX,South,False,1547253,0930,libraries,Libraries,core,41775000,26.999462919121825,95.69650000000001,2020
+482029175988,San Antonio,TX,South,False,1547253,0930,roads,Roads & highways,core,184344000,119.1427646286677,95.69650000000001,2020
+482029175988,San Antonio,TX,South,False,1547253,0930,sanitation,Sewer & trash,core,429054000,277.30048027051816,95.69650000000001,2020
+482029175988,San Antonio,TX,South,False,1547253,0930,housing,Housing & community development,core,68510000,44.278472880647186,95.69650000000001,2020
+482029175988,San Antonio,TX,South,False,1547253,0930,admin,"Administration, courts & inspection",core,367607000,237.58687170100816,95.69650000000001,2020
+482029175988,San Antonio,TX,South,False,1547253,0930,water,Water utility,utility,493257000,318.79531013997064,95.69650000000001,2020
+482029175988,San Antonio,TX,South,False,1547253,0930,power,Electric & gas utilities,utility,2088802000,1350.0067539051468,95.69650000000001,2020
+482029175988,San Antonio,TX,South,False,1547253,0930,transit,Transit,utility,0,0.0,95.69650000000001,2020
+482029175988,San Antonio,TX,South,False,1547253,0930,enterprise,"Airports, parking & other commercial",utility,121314000,78.40605253310221,95.69650000000001,2020
+482029175988,San Antonio,TX,South,False,1547253,0930,county,"Health, welfare, jails & schools",outside,248860000,160.83988849916594,95.69650000000001,2020
+482029175988,San Antonio,TX,South,False,1547253,0930,debt,Interest on debt,debt,492013000,317.9913045894886,95.69650000000001,2020
+482029175988,San Antonio,TX,South,False,1547253,0930,transfers,Grants & payments to other governments,other,0,0.0,95.69650000000001,2020
+482113187649,Dallas,TX,South,False,1343573,0930,police,Police,core,435782000,324.34560682597817,102.82900000000001,2020
+482113187649,Dallas,TX,South,False,1343573,0930,fire,Fire,core,246368000,183.36778128170184,102.82900000000001,2020
+482113187649,Dallas,TX,South,False,1343573,0930,parks,Parks & recreation,core,247104000,183.9155743677493,102.82900000000001,2020
+482113187649,Dallas,TX,South,False,1343573,0930,libraries,Libraries,core,31112000,23.15616643085266,102.82900000000001,2020
+482113187649,Dallas,TX,South,False,1343573,0930,roads,Roads & highways,core,233494000,173.7858679803777,102.82900000000001,2020
+482113187649,Dallas,TX,South,False,1343573,0930,sanitation,Sewer & trash,core,318264000,236.8788298067913,102.82900000000001,2020
+482113187649,Dallas,TX,South,False,1343573,0930,housing,Housing & community development,core,19288000,14.355751418047252,102.82900000000001,2020
+482113187649,Dallas,TX,South,False,1343573,0930,admin,"Administration, courts & inspection",core,441141000,328.334225233761,102.82900000000001,2020
+482113187649,Dallas,TX,South,False,1343573,0930,water,Water utility,utility,339180000,252.44627571408475,102.82900000000001,2020
+482113187649,Dallas,TX,South,False,1343573,0930,power,Electric & gas utilities,utility,0,0.0,102.82900000000001,2020
+482113187649,Dallas,TX,South,False,1343573,0930,transit,Transit,utility,0,0.0,102.82900000000001,2020
+482113187649,Dallas,TX,South,False,1343573,0930,enterprise,"Airports, parking & other commercial",utility,993535000,739.4722876985471,102.82900000000001,2020
+482113187649,Dallas,TX,South,False,1343573,0930,county,"Health, welfare, jails & schools",outside,47330000,35.22696571008795,102.82900000000001,2020
+482113187649,Dallas,TX,South,False,1343573,0930,debt,Interest on debt,debt,439673000,327.2416161980034,102.82900000000001,2020
+482113187649,Dallas,TX,South,False,1343573,0930,transfers,Grants & payments to other governments,other,13120000,9.765007186062833,102.82900000000001,2020
+482453176394,Austin,TX,South,False,978908,0930,police,Police,core,398189000,406.7685625206863,99.27425,2020
+482453176394,Austin,TX,South,False,978908,0930,fire,Fire,core,192324000,196.4679009672002,99.27425,2020
+482453176394,Austin,TX,South,False,978908,0930,parks,Parks & recreation,core,196802000,201.04238600563076,99.27425,2020
+482453176394,Austin,TX,South,False,978908,0930,libraries,Libraries,core,83227000,85.02024705079538,99.27425,2020
+482453176394,Austin,TX,South,False,978908,0930,roads,Roads & highways,core,195822000,200.04127047689875,99.27425,2020
+482453176394,Austin,TX,South,False,978908,0930,sanitation,Sewer & trash,core,312246000,318.9737952902622,99.27425,2020
+482453176394,Austin,TX,South,False,978908,0930,housing,Housing & community development,core,78670000,80.3650598421915,99.27425,2020
+482453176394,Austin,TX,South,False,978908,0930,admin,"Administration, courts & inspection",core,394985000,403.4955276696074,99.27425,2020
+482453176394,Austin,TX,South,False,978908,0930,water,Water utility,utility,203823000,208.21466368647512,99.27425,2020
+482453176394,Austin,TX,South,False,978908,0930,power,Electric & gas utilities,utility,1354712000,1383.901245060823,99.27425,2020
+482453176394,Austin,TX,South,False,978908,0930,transit,Transit,utility,0,0.0,99.27425,2020
+482453176394,Austin,TX,South,False,978908,0930,enterprise,"Airports, parking & other commercial",utility,166778000,170.37147515394705,99.27425,2020
+482453176394,Austin,TX,South,False,978908,0930,county,"Health, welfare, jails & schools",outside,171546000,175.24220866516566,99.27425,2020
+482453176394,Austin,TX,South,False,978908,0930,debt,Interest on debt,debt,266725000,272.4719789806601,99.27425,2020
+482453176394,Austin,TX,South,False,978908,0930,transfers,Grants & payments to other governments,other,0,0.0,99.27425,2020
+482439176375,Fort Worth,TX,South,False,909585,0930,police,Police,core,330875000,363.7647938345509,102.82900000000001,2020
+482439176375,Fort Worth,TX,South,False,909585,0930,fire,Fire,core,156836000,172.42588653067057,102.82900000000001,2020
+482439176375,Fort Worth,TX,South,False,909585,0930,parks,Parks & recreation,core,126524000,139.10079871589792,102.82900000000001,2020
+482439176375,Fort Worth,TX,South,False,909585,0930,libraries,Libraries,core,20296000,22.313472627626886,102.82900000000001,2020
+482439176375,Fort Worth,TX,South,False,909585,0930,roads,Roads & highways,core,194954000,214.33291006338055,102.82900000000001,2020
+482439176375,Fort Worth,TX,South,False,909585,0930,sanitation,Sewer & trash,core,257754000,283.3753854779927,102.82900000000001,2020
+482439176375,Fort Worth,TX,South,False,909585,0930,housing,Housing & community development,core,32265000,35.472220847969126,102.82900000000001,2020
+482439176375,Fort Worth,TX,South,False,909585,0930,admin,"Administration, courts & inspection",core,235411000,258.8114359845424,102.82900000000001,2020
+482439176375,Fort Worth,TX,South,False,909585,0930,water,Water utility,utility,188700000,207.45724698626296,102.82900000000001,2020
+482439176375,Fort Worth,TX,South,False,909585,0930,power,Electric & gas utilities,utility,0,0.0,102.82900000000001,2020
+482439176375,Fort Worth,TX,South,False,909585,0930,transit,Transit,utility,0,0.0,102.82900000000001,2020
+482439176375,Fort Worth,TX,South,False,909585,0930,enterprise,"Airports, parking & other commercial",utility,27753000,30.5117168818747,102.82900000000001,2020
+482439176375,Fort Worth,TX,South,False,909585,0930,county,"Health, welfare, jails & schools",outside,11017000,12.112117064375512,102.82900000000001,2020
+482439176375,Fort Worth,TX,South,False,909585,0930,debt,Interest on debt,debt,78869000,86.70877378144978,102.82900000000001,2020
+482439176375,Fort Worth,TX,South,False,909585,0930,transfers,Grants & payments to other governments,other,0,0.0,102.82900000000001,2020
+372119194726,Charlotte,NC,South,False,885708,0630,police,Police,core,328068000,370.4019834979474,94.32600000000001,2020
+372119194726,Charlotte,NC,South,False,885708,0630,fire,Fire,core,131580000,148.5591188066496,94.32600000000001,2020
+372119194726,Charlotte,NC,South,False,885708,0630,parks,Parks & recreation,core,133960000,151.24623465069752,94.32600000000001,2020
+372119194726,Charlotte,NC,South,False,885708,0630,libraries,Libraries,core,0,0.0,94.32600000000001,2020
+372119194726,Charlotte,NC,South,False,885708,0630,roads,Roads & highways,core,132068000,149.11009045870648,94.32600000000001,2020
+372119194726,Charlotte,NC,South,False,885708,0630,sanitation,Sewer & trash,core,369518000,417.20070271466443,94.32600000000001,2020
+372119194726,Charlotte,NC,South,False,885708,0630,housing,Housing & community development,core,166502000,187.98746313683517,94.32600000000001,2020
+372119194726,Charlotte,NC,South,False,885708,0630,admin,"Administration, courts & inspection",core,172290000,194.5223482231164,94.32600000000001,2020
+372119194726,Charlotte,NC,South,False,885708,0630,water,Water utility,utility,226390000,255.60342686302934,94.32600000000001,2020
+372119194726,Charlotte,NC,South,False,885708,0630,power,Electric & gas utilities,utility,0,0.0,94.32600000000001,2020
+372119194726,Charlotte,NC,South,False,885708,0630,transit,Transit,utility,267102000,301.5689143600374,94.32600000000001,2020
+372119194726,Charlotte,NC,South,False,885708,0630,enterprise,"Airports, parking & other commercial",utility,427820000,483.02600857167374,94.32600000000001,2020
+372119194726,Charlotte,NC,South,False,885708,0630,county,"Health, welfare, jails & schools",outside,493000,0.5566168534099274,94.32600000000001,2020
+372119194726,Charlotte,NC,South,False,885708,0630,debt,Interest on debt,debt,193050000,217.96122424094622,94.32600000000001,2020
+372119194726,Charlotte,NC,South,False,885708,0630,transfers,Grants & payments to other governments,other,4673000,5.276005184552923,94.32600000000001,2020
+392049209050,Columbus,OH,Midwest,False,898553,1231,police,Police,core,360994000,401.75036976116047,95.628,2020
+392049209050,Columbus,OH,Midwest,False,898553,1231,fire,Fire,core,279992000,311.6032109402562,95.628,2020
+392049209050,Columbus,OH,Midwest,False,898553,1231,parks,Parks & recreation,core,185696000,206.66115409998073,95.628,2020
+392049209050,Columbus,OH,Midwest,False,898553,1231,libraries,Libraries,core,0,0.0,95.628,2020
+392049209050,Columbus,OH,Midwest,False,898553,1231,roads,Roads & highways,core,227539000,253.22824585750647,95.628,2020
+392049209050,Columbus,OH,Midwest,False,898553,1231,sanitation,Sewer & trash,core,324817000,361.48897171341036,95.628,2020
+392049209050,Columbus,OH,Midwest,False,898553,1231,housing,Housing & community development,core,35406000,39.40335183344778,95.628,2020
+392049209050,Columbus,OH,Midwest,False,898553,1231,admin,"Administration, courts & inspection",core,364593000,405.7556983283123,95.628,2020
+392049209050,Columbus,OH,Midwest,False,898553,1231,water,Water utility,utility,217769000,242.35520887471301,95.628,2020
+392049209050,Columbus,OH,Midwest,False,898553,1231,power,Electric & gas utilities,utility,77299000,86.02608861135626,95.628,2020
+392049209050,Columbus,OH,Midwest,False,898553,1231,transit,Transit,utility,0,0.0,95.628,2020
+392049209050,Columbus,OH,Midwest,False,898553,1231,enterprise,"Airports, parking & other commercial",utility,6544000,7.282820267697064,95.628,2020
+392049209050,Columbus,OH,Midwest,False,898553,1231,county,"Health, welfare, jails & schools",outside,67766000,75.41680902517714,95.628,2020
+392049209050,Columbus,OH,Midwest,False,898553,1231,debt,Interest on debt,debt,154893000,172.38048284297088,95.628,2020
+392049209050,Columbus,OH,Midwest,False,898553,1231,transfers,Grants & payments to other governments,other,0,0.0,95.628,2020
+532033184255,Seattle,WA,Pacific Northwest,False,753675,1231,police,Police,core,252467000,334.98125850001657,112.45800000000001,2020
+532033184255,Seattle,WA,Pacific Northwest,False,753675,1231,fire,Fire,core,188706000,250.38113245099015,112.45800000000001,2020
+532033184255,Seattle,WA,Pacific Northwest,False,753675,1231,parks,Parks & recreation,core,326361000,433.0261717583839,112.45800000000001,2020
+532033184255,Seattle,WA,Pacific Northwest,False,753675,1231,libraries,Libraries,core,73891000,98.04093276279563,112.45800000000001,2020
+532033184255,Seattle,WA,Pacific Northwest,False,753675,1231,roads,Roads & highways,core,363953000,482.9044349354828,112.45800000000001,2020
+532033184255,Seattle,WA,Pacific Northwest,False,753675,1231,sanitation,Sewer & trash,core,314885000,417.79944936477926,112.45800000000001,2020
+532033184255,Seattle,WA,Pacific Northwest,False,753675,1231,housing,Housing & community development,core,93808000,124.46744286330315,112.45800000000001,2020
+532033184255,Seattle,WA,Pacific Northwest,False,753675,1231,admin,"Administration, courts & inspection",core,475899000,631.4379540252761,112.45800000000001,2020
+532033184255,Seattle,WA,Pacific Northwest,False,753675,1231,water,Water utility,utility,164999000,218.92592961156998,112.45800000000001,2020
+532033184255,Seattle,WA,Pacific Northwest,False,753675,1231,power,Electric & gas utilities,utility,987675000,1310.4786545924967,112.45800000000001,2020
+532033184255,Seattle,WA,Pacific Northwest,False,753675,1231,transit,Transit,utility,0,0.0,112.45800000000001,2020
+532033184255,Seattle,WA,Pacific Northwest,False,753675,1231,enterprise,"Airports, parking & other commercial",utility,9589000,12.722990679006204,112.45800000000001,2020
+532033184255,Seattle,WA,Pacific Northwest,False,753675,1231,county,"Health, welfare, jails & schools",outside,202278000,268.38889441735495,112.45800000000001,2020
+532033184255,Seattle,WA,Pacific Northwest,False,753675,1231,debt,Interest on debt,debt,240114000,318.5909045676187,112.45800000000001,2020
+532033184255,Seattle,WA,Pacific Northwest,False,753675,1231,transfers,Grants & payments to other governments,other,194775000,258.43367499253657,112.45800000000001,2020
+412051211254,Portland,OR,Pacific Northwest,False,654741,0630,police,Police,core,229659000,350.7631261827196,106.1355,2020
+412051211254,Portland,OR,Pacific Northwest,False,654741,0630,fire,Fire,core,128328000,195.99811223063776,106.1355,2020
+412051211254,Portland,OR,Pacific Northwest,False,654741,0630,parks,Parks & recreation,core,153024000,233.7168437595935,106.1355,2020
+412051211254,Portland,OR,Pacific Northwest,False,654741,0630,libraries,Libraries,core,0,0.0,106.1355,2020
+412051211254,Portland,OR,Pacific Northwest,False,654741,0630,roads,Roads & highways,core,263354000,402.2262238045273,106.1355,2020
+412051211254,Portland,OR,Pacific Northwest,False,654741,0630,sanitation,Sewer & trash,core,316765000,483.8019919326879,106.1355,2020
+412051211254,Portland,OR,Pacific Northwest,False,654741,0630,housing,Housing & community development,core,123444000,188.53867407112125,106.1355,2020
+412051211254,Portland,OR,Pacific Northwest,False,654741,0630,admin,"Administration, courts & inspection",core,406467000,620.8057842719487,106.1355,2020
+412051211254,Portland,OR,Pacific Northwest,False,654741,0630,water,Water utility,utility,244371000,373.2330799506981,106.1355,2020
+412051211254,Portland,OR,Pacific Northwest,False,654741,0630,power,Electric & gas utilities,utility,2639000,4.030601413383307,106.1355,2020
+412051211254,Portland,OR,Pacific Northwest,False,654741,0630,transit,Transit,utility,0,0.0,106.1355,2020
+412051211254,Portland,OR,Pacific Northwest,False,654741,0630,enterprise,"Airports, parking & other commercial",utility,14572000,22.256128759310933,106.1355,2020
+412051211254,Portland,OR,Pacific Northwest,False,654741,0630,county,"Health, welfare, jails & schools",outside,0,0.0,106.1355,2020
+412051211254,Portland,OR,Pacific Northwest,False,654741,0630,debt,Interest on debt,debt,147118000,224.69648303680387,106.1355,2020
+412051211254,Portland,OR,Pacific Northwest,False,654741,0630,transfers,Grants & payments to other governments,other,0,0.0,106.1355,2020
+252025128108,Boston,MA,Northeast,False,692600,0630,police,Police,core,437644000,631.8856482818366,111.22300000000001,2020
+252025128108,Boston,MA,Northeast,False,692600,0630,fire,Fire,core,277013000,399.96101645971703,111.22300000000001,2020
+252025128108,Boston,MA,Northeast,False,692600,0630,parks,Parks & recreation,core,105824000,152.79237655212245,111.22300000000001,2020
+252025128108,Boston,MA,Northeast,False,692600,0630,libraries,Libraries,core,57153000,82.5194917701415,111.22300000000001,2020
+252025128108,Boston,MA,Northeast,False,692600,0630,roads,Roads & highways,core,131728000,190.19347386658967,111.22300000000001,2020
+252025128108,Boston,MA,Northeast,False,692600,0630,sanitation,Sewer & trash,core,128785000,185.94426797574357,111.22300000000001,2020
+252025128108,Boston,MA,Northeast,False,692600,0630,housing,Housing & community development,core,91423000,131.99971123303493,111.22300000000001,2020
+252025128108,Boston,MA,Northeast,False,692600,0630,admin,"Administration, courts & inspection",core,719158000,1038.3453652902108,111.22300000000001,2020
+252025128108,Boston,MA,Northeast,False,692600,0630,water,Water utility,utility,59069000,85.2858792954086,111.22300000000001,2020
+252025128108,Boston,MA,Northeast,False,692600,0630,power,Electric & gas utilities,utility,0,0.0,111.22300000000001,2020
+252025128108,Boston,MA,Northeast,False,692600,0630,transit,Transit,utility,0,0.0,111.22300000000001,2020
+252025128108,Boston,MA,Northeast,False,692600,0630,enterprise,"Airports, parking & other commercial",utility,4614000,6.66185388391568,111.22300000000001,2020
+252025128108,Boston,MA,Northeast,False,692600,0630,county,"Health, welfare, jails & schools",outside,1883286000,2719.1539127923766,111.22300000000001,2020
+252025128108,Boston,MA,Northeast,False,692600,0630,debt,Interest on debt,debt,76731000,110.78688997978631,111.22300000000001,2020
+252025128108,Boston,MA,Northeast,False,692600,0630,transfers,Grants & payments to other governments,other,341120000,492.5209356049668,111.22300000000001,2020
+062073207598,San Diego,CA,West,True,1423851,0630,police,Police,core,493169000,346.36278655561574,115.099,2021
+062073207598,San Diego,CA,West,True,1423851,0630,fire,Fire,core,249596000,175.29643200025845,115.099,2021
+062073207598,San Diego,CA,West,True,1423851,0630,parks,Parks & recreation,core,328062000,230.40472633723613,115.099,2021
+062073207598,San Diego,CA,West,True,1423851,0630,libraries,Libraries,core,48481000,34.04920880063995,115.099,2021
+062073207598,San Diego,CA,West,True,1423851,0630,roads,Roads & highways,core,397733000,279.336110309295,115.099,2021
+062073207598,San Diego,CA,West,True,1423851,0630,sanitation,Sewer & trash,core,439955000,308.98949398497456,115.099,2021
+062073207598,San Diego,CA,West,True,1423851,0630,housing,Housing & community development,core,694492000,487.75609245630335,115.099,2021
+062073207598,San Diego,CA,West,True,1423851,0630,admin,"Administration, courts & inspection",core,1188327000,834.5866245836116,115.099,2021
+062073207598,San Diego,CA,West,True,1423851,0630,water,Water utility,utility,631798000,443.72479985616474,115.099,2021
+062073207598,San Diego,CA,West,True,1423851,0630,power,Electric & gas utilities,utility,0,0.0,115.099,2021
+062073207598,San Diego,CA,West,True,1423851,0630,transit,Transit,utility,67771000,47.59697468344651,115.099,2021
+062073207598,San Diego,CA,West,True,1423851,0630,enterprise,"Airports, parking & other commercial",utility,5771000,4.053092633990495,115.099,2021
+062073207598,San Diego,CA,West,True,1423851,0630,county,"Health, welfare, jails & schools",outside,31176000,21.895549464094206,115.099,2021
+062073207598,San Diego,CA,West,True,1423851,0630,debt,Interest on debt,debt,270593000,190.04305928078148,115.099,2021
+062073207598,San Diego,CA,West,True,1423851,0630,transfers,Grants & payments to other governments,other,0,0.0,115.099,2021
+042013207536,Phoenix,AZ,West,False,1680992,0630,police,Police,core,574575000,341.8070996173688,100.95450000000001,2021
+042013207536,Phoenix,AZ,West,False,1680992,0630,fire,Fire,core,340334000,202.46021396889455,100.95450000000001,2021
+042013207536,Phoenix,AZ,West,False,1680992,0630,parks,Parks & recreation,core,126082000,75.00452113989834,100.95450000000001,2021
+042013207536,Phoenix,AZ,West,False,1680992,0630,libraries,Libraries,core,33532000,19.947745140964383,100.95450000000001,2021
+042013207536,Phoenix,AZ,West,False,1680992,0630,roads,Roads & highways,core,140595000,83.63811368525252,100.95450000000001,2021
+042013207536,Phoenix,AZ,West,False,1680992,0630,sanitation,Sewer & trash,core,256376000,152.5147056024062,100.95450000000001,2021
+042013207536,Phoenix,AZ,West,False,1680992,0630,housing,Housing & community development,core,282043000,167.78366583541148,100.95450000000001,2021
+042013207536,Phoenix,AZ,West,False,1680992,0630,admin,"Administration, courts & inspection",core,259541000,154.39752241533571,100.95450000000001,2021
+042013207536,Phoenix,AZ,West,False,1680992,0630,water,Water utility,utility,264856000,157.55934591003407,100.95450000000001,2021
+042013207536,Phoenix,AZ,West,False,1680992,0630,power,Electric & gas utilities,utility,0,0.0,100.95450000000001,2021
+042013207536,Phoenix,AZ,West,False,1680992,0630,transit,Transit,utility,546729000,325.2418809845615,100.95450000000001,2021
+042013207536,Phoenix,AZ,West,False,1680992,0630,enterprise,"Airports, parking & other commercial",utility,591138000,351.66021016161886,100.95450000000001,2021
+042013207536,Phoenix,AZ,West,False,1680992,0630,county,"Health, welfare, jails & schools",outside,19143000,11.387918562372695,100.95450000000001,2021
+042013207536,Phoenix,AZ,West,False,1680992,0630,debt,Interest on debt,debt,387067000,230.26106013591973,100.95450000000001,2021
+042013207536,Phoenix,AZ,West,False,1680992,0630,transfers,Grants & payments to other governments,other,6311000,3.7543307761131524,100.95450000000001,2021
+062085100745,San Jose,CA,West,False,1021795,0630,police,Police,core,436971000,427.6503603951869,112.53950000000002,2021
+062085100745,San Jose,CA,West,False,1021795,0630,fire,Fire,core,198783000,194.5429366947382,112.53950000000002,2021
+062085100745,San Jose,CA,West,False,1021795,0630,parks,Parks & recreation,core,184151000,180.22303886787466,112.53950000000002,2021
+062085100745,San Jose,CA,West,False,1021795,0630,libraries,Libraries,core,39514000,38.6711620236936,112.53950000000002,2021
+062085100745,San Jose,CA,West,False,1021795,0630,roads,Roads & highways,core,229137000,224.2494825282958,112.53950000000002,2021
+062085100745,San Jose,CA,West,False,1021795,0630,sanitation,Sewer & trash,core,310092000,303.4777034532367,112.53950000000002,2021
+062085100745,San Jose,CA,West,False,1021795,0630,housing,Housing & community development,core,184351000,180.41877284582523,112.53950000000002,2021
+062085100745,San Jose,CA,West,False,1021795,0630,admin,"Administration, courts & inspection",core,328749000,321.73674758635536,112.53950000000002,2021
+062085100745,San Jose,CA,West,False,1021795,0630,water,Water utility,utility,43852000,42.91663200544141,112.53950000000002,2021
+062085100745,San Jose,CA,West,False,1021795,0630,power,Electric & gas utilities,utility,291614000,285.39384123038377,112.53950000000002,2021
+062085100745,San Jose,CA,West,False,1021795,0630,transit,Transit,utility,0,0.0,112.53950000000002,2021
+062085100745,San Jose,CA,West,False,1021795,0630,enterprise,"Airports, parking & other commercial",utility,97498000,95.41835691112209,112.53950000000002,2021
+062085100745,San Jose,CA,West,False,1021795,0630,county,"Health, welfare, jails & schools",outside,200000,0.19573397795056738,112.53950000000002,2021
+062085100745,San Jose,CA,West,False,1021795,0630,debt,Interest on debt,debt,190648000,186.58145714159886,112.53950000000002,2021
+062085100745,San Jose,CA,West,False,1021795,0630,transfers,Grants & payments to other governments,other,0,0.0,112.53950000000002,2021
+482029175988,San Antonio,TX,South,False,1547253,0930,police,Police,core,427623000,276.37561536477875,96.52625,2021
+482029175988,San Antonio,TX,South,False,1547253,0930,fire,Fire,core,314925000,203.5381414674911,96.52625,2021
+482029175988,San Antonio,TX,South,False,1547253,0930,parks,Parks & recreation,core,158266000,102.28837817732459,96.52625,2021
+482029175988,San Antonio,TX,South,False,1547253,0930,libraries,Libraries,core,39997000,25.850329584108092,96.52625,2021
+482029175988,San Antonio,TX,South,False,1547253,0930,roads,Roads & highways,core,176114000,113.82366038391912,96.52625,2021
+482029175988,San Antonio,TX,South,False,1547253,0930,sanitation,Sewer & trash,core,410752000,265.4717748164004,96.52625,2021
+482029175988,San Antonio,TX,South,False,1547253,0930,housing,Housing & community development,core,117643000,76.03346059112505,96.52625,2021
+482029175988,San Antonio,TX,South,False,1547253,0930,admin,"Administration, courts & inspection",core,431806000,279.0791163436103,96.52625,2021
+482029175988,San Antonio,TX,South,False,1547253,0930,water,Water utility,utility,454333000,293.63846765848893,96.52625,2021
+482029175988,San Antonio,TX,South,False,1547253,0930,power,Electric & gas utilities,utility,2120320000,1370.3770488730672,96.52625,2021
+482029175988,San Antonio,TX,South,False,1547253,0930,transit,Transit,utility,0,0.0,96.52625,2021
+482029175988,San Antonio,TX,South,False,1547253,0930,enterprise,"Airports, parking & other commercial",utility,113812000,73.55745957513089,96.52625,2021
+482029175988,San Antonio,TX,South,False,1547253,0930,county,"Health, welfare, jails & schools",outside,259233000,167.5440280290295,96.52625,2021
+482029175988,San Antonio,TX,South,False,1547253,0930,debt,Interest on debt,debt,464270000,300.06081746165626,96.52625,2021
+482029175988,San Antonio,TX,South,False,1547253,0930,transfers,Grants & payments to other governments,other,60000,0.03877840275636887,96.52625,2021
+482113187649,Dallas,TX,South,False,1343573,0930,police,Police,core,488552000,363.6214779546776,104.2445,2021
+482113187649,Dallas,TX,South,False,1343573,0930,fire,Fire,core,291185000,216.72436108793494,104.2445,2021
+482113187649,Dallas,TX,South,False,1343573,0930,parks,Parks & recreation,core,230832000,171.8045837479616,104.2445,2021
+482113187649,Dallas,TX,South,False,1343573,0930,libraries,Libraries,core,49893000,37.134565818158,104.2445,2021
+482113187649,Dallas,TX,South,False,1343573,0930,roads,Roads & highways,core,218342000,162.50847553501,104.2445,2021
+482113187649,Dallas,TX,South,False,1343573,0930,sanitation,Sewer & trash,core,368387000,274.1845809643391,104.2445,2021
+482113187649,Dallas,TX,South,False,1343573,0930,housing,Housing & community development,core,22838000,16.997959917324923,104.2445,2021
+482113187649,Dallas,TX,South,False,1343573,0930,admin,"Administration, courts & inspection",core,460680000,342.8767919569685,104.2445,2021
+482113187649,Dallas,TX,South,False,1343573,0930,water,Water utility,utility,346925000,258.2107559470159,104.2445,2021
+482113187649,Dallas,TX,South,False,1343573,0930,power,Electric & gas utilities,utility,0,0.0,104.2445,2021
+482113187649,Dallas,TX,South,False,1343573,0930,transit,Transit,utility,0,0.0,104.2445,2021
+482113187649,Dallas,TX,South,False,1343573,0930,enterprise,"Airports, parking & other commercial",utility,1016650000,756.6764143072241,104.2445,2021
+482113187649,Dallas,TX,South,False,1343573,0930,county,"Health, welfare, jails & schools",outside,66663000,49.61620991192886,104.2445,2021
+482113187649,Dallas,TX,South,False,1343573,0930,debt,Interest on debt,debt,409436000,304.73669834091635,104.2445,2021
+482113187649,Dallas,TX,South,False,1343573,0930,transfers,Grants & payments to other governments,other,13436000,10.000200956702763,104.2445,2021
+482453176394,Austin,TX,South,False,978908,0930,police,Police,core,420825000,429.8922881414801,100.67174999999999,2021
+482453176394,Austin,TX,South,False,978908,0930,fire,Fire,core,203278000,207.6579208669252,100.67174999999999,2021
+482453176394,Austin,TX,South,False,978908,0930,parks,Parks & recreation,core,206534000,210.98407613381443,100.67174999999999,2021
+482453176394,Austin,TX,South,False,978908,0930,libraries,Libraries,core,86309000,88.16865323401177,100.67174999999999,2021
+482453176394,Austin,TX,South,False,978908,0930,roads,Roads & highways,core,202626000,206.99187257638104,100.67174999999999,2021
+482453176394,Austin,TX,South,False,978908,0930,sanitation,Sewer & trash,core,326952000,333.9966574999898,100.67174999999999,2021
+482453176394,Austin,TX,South,False,978908,0930,housing,Housing & community development,core,82504000,84.28166896174105,100.67174999999999,2021
+482453176394,Austin,TX,South,False,978908,0930,admin,"Administration, courts & inspection",core,413283000,422.18778475607513,100.67174999999999,2021
+482453176394,Austin,TX,South,False,978908,0930,water,Water utility,utility,204408000,208.81226836434067,100.67174999999999,2021
+482453176394,Austin,TX,South,False,978908,0930,power,Electric & gas utilities,utility,1359636000,1388.9313398194722,100.67174999999999,2021
+482453176394,Austin,TX,South,False,978908,0930,transit,Transit,utility,0,0.0,100.67174999999999,2021
+482453176394,Austin,TX,South,False,978908,0930,enterprise,"Airports, parking & other commercial",utility,173605000,177.3455728219608,100.67174999999999,2021
+482453176394,Austin,TX,South,False,978908,0930,county,"Health, welfare, jails & schools",outside,181317000,185.22373910520702,100.67174999999999,2021
+482453176394,Austin,TX,South,False,978908,0930,debt,Interest on debt,debt,283847000,289.96289743264947,100.67174999999999,2021
+482453176394,Austin,TX,South,False,978908,0930,transfers,Grants & payments to other governments,other,0,0.0,100.67174999999999,2021
+482439176375,Fort Worth,TX,South,False,909585,0930,police,Police,core,344854000,379.13334102915064,104.2445,2021
+482439176375,Fort Worth,TX,South,False,909585,0930,fire,Fire,core,170760000,187.7339665891588,104.2445,2021
+482439176375,Fort Worth,TX,South,False,909585,0930,parks,Parks & recreation,core,118082000,129.81964302401644,104.2445,2021
+482439176375,Fort Worth,TX,South,False,909585,0930,libraries,Libraries,core,19871000,21.846226575856022,104.2445,2021
+482439176375,Fort Worth,TX,South,False,909585,0930,roads,Roads & highways,core,196384000,215.90505560228016,104.2445,2021
+482439176375,Fort Worth,TX,South,False,909585,0930,sanitation,Sewer & trash,core,294459000,323.7289533138739,104.2445,2021
+482439176375,Fort Worth,TX,South,False,909585,0930,housing,Housing & community development,core,51302000,56.401545759879504,104.2445,2021
+482439176375,Fort Worth,TX,South,False,909585,0930,admin,"Administration, courts & inspection",core,228996000,251.75876910898927,104.2445,2021
+482439176375,Fort Worth,TX,South,False,909585,0930,water,Water utility,utility,237174000,260.74968254753543,104.2445,2021
+482439176375,Fort Worth,TX,South,False,909585,0930,power,Electric & gas utilities,utility,0,0.0,104.2445,2021
+482439176375,Fort Worth,TX,South,False,909585,0930,transit,Transit,utility,0,0.0,104.2445,2021
+482439176375,Fort Worth,TX,South,False,909585,0930,enterprise,"Airports, parking & other commercial",utility,18081000,19.878296146044626,104.2445,2021
+482439176375,Fort Worth,TX,South,False,909585,0930,county,"Health, welfare, jails & schools",outside,34670000,38.11628379975483,104.2445,2021
+482439176375,Fort Worth,TX,South,False,909585,0930,debt,Interest on debt,debt,78715000,86.53946580033751,104.2445,2021
+482439176375,Fort Worth,TX,South,False,909585,0930,transfers,Grants & payments to other governments,other,0,0.0,104.2445,2021
+372119194726,Charlotte,NC,South,False,885708,0630,police,Police,core,352699000,398.2113744033022,95.3845,2021
+372119194726,Charlotte,NC,South,False,885708,0630,fire,Fire,core,145125000,163.85196927204,95.3845,2021
+372119194726,Charlotte,NC,South,False,885708,0630,parks,Parks & recreation,core,119450000,134.86386032417005,95.3845,2021
+372119194726,Charlotte,NC,South,False,885708,0630,libraries,Libraries,core,0,0.0,95.3845,2021
+372119194726,Charlotte,NC,South,False,885708,0630,roads,Roads & highways,core,166783000,188.30472345287612,95.3845,2021
+372119194726,Charlotte,NC,South,False,885708,0630,sanitation,Sewer & trash,core,155287000,175.32527650196226,95.3845,2021
+372119194726,Charlotte,NC,South,False,885708,0630,housing,Housing & community development,core,241007000,272.10660849851195,95.3845,2021
+372119194726,Charlotte,NC,South,False,885708,0630,admin,"Administration, courts & inspection",core,187471000,211.66230857122213,95.3845,2021
+372119194726,Charlotte,NC,South,False,885708,0630,water,Water utility,utility,73037000,82.46171424442367,95.3845,2021
+372119194726,Charlotte,NC,South,False,885708,0630,power,Electric & gas utilities,utility,0,0.0,95.3845,2021
+372119194726,Charlotte,NC,South,False,885708,0630,transit,Transit,utility,182735000,206.31517384962086,95.3845,2021
+372119194726,Charlotte,NC,South,False,885708,0630,enterprise,"Airports, parking & other commercial",utility,403700000,455.7935572445998,95.3845,2021
+372119194726,Charlotte,NC,South,False,885708,0630,county,"Health, welfare, jails & schools",outside,397000,0.44822898743152373,95.3845,2021
+372119194726,Charlotte,NC,South,False,885708,0630,debt,Interest on debt,debt,183341000,206.99937225360955,95.3845,2021
+372119194726,Charlotte,NC,South,False,885708,0630,transfers,Grants & payments to other governments,other,6907000,7.798281149092026,95.3845,2021
+392049209050,Columbus,OH,Midwest,False,898553,1231,police,Police,core,368483000,410.08488091409185,94.41699999999999,2021
+392049209050,Columbus,OH,Midwest,False,898553,1231,fire,Fire,core,285823000,318.09253321729494,94.41699999999999,2021
+392049209050,Columbus,OH,Midwest,False,898553,1231,parks,Parks & recreation,core,204523000,227.6137300749093,94.41699999999999,2021
+392049209050,Columbus,OH,Midwest,False,898553,1231,libraries,Libraries,core,0,0.0,94.41699999999999,2021
+392049209050,Columbus,OH,Midwest,False,898553,1231,roads,Roads & highways,core,234958000,261.484853981902,94.41699999999999,2021
+392049209050,Columbus,OH,Midwest,False,898553,1231,sanitation,Sewer & trash,core,263067000,292.7673715406882,94.41699999999999,2021
+392049209050,Columbus,OH,Midwest,False,898553,1231,housing,Housing & community development,core,60995000,67.8813603649423,94.41699999999999,2021
+392049209050,Columbus,OH,Midwest,False,898553,1231,admin,"Administration, courts & inspection",core,413858000,460.58273691145655,94.41699999999999,2021
+392049209050,Columbus,OH,Midwest,False,898553,1231,water,Water utility,utility,196512000,218.69828490918175,94.41699999999999,2021
+392049209050,Columbus,OH,Midwest,False,898553,1231,power,Electric & gas utilities,utility,81768000,90.99964053316833,94.41699999999999,2021
+392049209050,Columbus,OH,Midwest,False,898553,1231,transit,Transit,utility,0,0.0,94.41699999999999,2021
+392049209050,Columbus,OH,Midwest,False,898553,1231,enterprise,"Airports, parking & other commercial",utility,7685000,8.552639632831898,94.41699999999999,2021
+392049209050,Columbus,OH,Midwest,False,898553,1231,county,"Health, welfare, jails & schools",outside,80320000,89.38816074288329,94.41699999999999,2021
+392049209050,Columbus,OH,Midwest,False,898553,1231,debt,Interest on debt,debt,160089000,178.16311336114842,94.41699999999999,2021
+392049209050,Columbus,OH,Midwest,False,898553,1231,transfers,Grants & payments to other governments,other,0,0.0,94.41699999999999,2021
+532033184255,Seattle,WA,Pacific Northwest,False,753675,1231,police,Police,core,269071000,357.01197465751153,113.029,2021
+532033184255,Seattle,WA,Pacific Northwest,False,753675,1231,fire,Fire,core,220627000,292.7349321657213,113.029,2021
+532033184255,Seattle,WA,Pacific Northwest,False,753675,1231,parks,Parks & recreation,core,309975000,411.2847049457657,113.029,2021
+532033184255,Seattle,WA,Pacific Northwest,False,753675,1231,libraries,Libraries,core,81357000,107.94705940889641,113.029,2021
+532033184255,Seattle,WA,Pacific Northwest,False,753675,1231,roads,Roads & highways,core,487890000,647.3479948253557,113.029,2021
+532033184255,Seattle,WA,Pacific Northwest,False,753675,1231,sanitation,Sewer & trash,core,405391000,537.8856934354994,113.029,2021
+532033184255,Seattle,WA,Pacific Northwest,False,753675,1231,housing,Housing & community development,core,120654000,160.08757090257737,113.029,2021
+532033184255,Seattle,WA,Pacific Northwest,False,753675,1231,admin,"Administration, courts & inspection",core,529757000,702.8984641921253,113.029,2021
+532033184255,Seattle,WA,Pacific Northwest,False,753675,1231,water,Water utility,utility,180275000,239.19461306265964,113.029,2021
+532033184255,Seattle,WA,Pacific Northwest,False,753675,1231,power,Electric & gas utilities,utility,967200000,1283.3117723156533,113.029,2021
+532033184255,Seattle,WA,Pacific Northwest,False,753675,1231,transit,Transit,utility,0,0.0,113.029,2021
+532033184255,Seattle,WA,Pacific Northwest,False,753675,1231,enterprise,"Airports, parking & other commercial",utility,6868000,9.112681195475503,113.029,2021
+532033184255,Seattle,WA,Pacific Northwest,False,753675,1231,county,"Health, welfare, jails & schools",outside,266334000,353.3804358642651,113.029,2021
+532033184255,Seattle,WA,Pacific Northwest,False,753675,1231,debt,Interest on debt,debt,236051000,313.1999867316814,113.029,2021
+532033184255,Seattle,WA,Pacific Northwest,False,753675,1231,transfers,Grants & payments to other governments,other,184708000,245.07645868577305,113.029,2021
+412051211254,Portland,OR,Pacific Northwest,False,654741,0630,police,Police,core,213139000,325.5317751599487,105.61899999999999,2021
+412051211254,Portland,OR,Pacific Northwest,False,654741,0630,fire,Fire,core,136032000,207.7645969933149,105.61899999999999,2021
+412051211254,Portland,OR,Pacific Northwest,False,654741,0630,parks,Parks & recreation,core,145520000,222.25582329501285,105.61899999999999,2021
+412051211254,Portland,OR,Pacific Northwest,False,654741,0630,libraries,Libraries,core,0,0.0,105.61899999999999,2021
+412051211254,Portland,OR,Pacific Northwest,False,654741,0630,roads,Roads & highways,core,263172000,401.9482512932595,105.61899999999999,2021
+412051211254,Portland,OR,Pacific Northwest,False,654741,0630,sanitation,Sewer & trash,core,316431000,483.2918665548667,105.61899999999999,2021
+412051211254,Portland,OR,Pacific Northwest,False,654741,0630,housing,Housing & community development,core,214133000,327.04993272148835,105.61899999999999,2021
+412051211254,Portland,OR,Pacific Northwest,False,654741,0630,admin,"Administration, courts & inspection",core,339437000,518.429424764907,105.61899999999999,2021
+412051211254,Portland,OR,Pacific Northwest,False,654741,0630,water,Water utility,utility,229196000,350.0559763326262,105.61899999999999,2021
+412051211254,Portland,OR,Pacific Northwest,False,654741,0630,power,Electric & gas utilities,utility,2888000,4.4109044645134485,105.61899999999999,2021
+412051211254,Portland,OR,Pacific Northwest,False,654741,0630,transit,Transit,utility,0,0.0,105.61899999999999,2021
+412051211254,Portland,OR,Pacific Northwest,False,654741,0630,enterprise,"Airports, parking & other commercial",utility,10618000,16.217099585943142,105.61899999999999,2021
+412051211254,Portland,OR,Pacific Northwest,False,654741,0630,county,"Health, welfare, jails & schools",outside,0,0.0,105.61899999999999,2021
+412051211254,Portland,OR,Pacific Northwest,False,654741,0630,debt,Interest on debt,debt,133626000,204.08986148721402,105.61899999999999,2021
+412051211254,Portland,OR,Pacific Northwest,False,654741,0630,transfers,Grants & payments to other governments,other,0,0.0,105.61899999999999,2021
+252025128108,Boston,MA,Northeast,False,692600,0630,police,Police,core,436816000,630.6901530464914,111.18200000000002,2021
+252025128108,Boston,MA,Northeast,False,692600,0630,fire,Fire,core,268960000,388.33381461160843,111.18200000000002,2021
+252025128108,Boston,MA,Northeast,False,692600,0630,parks,Parks & recreation,core,129832000,187.45596303782847,111.18200000000002,2021
+252025128108,Boston,MA,Northeast,False,692600,0630,libraries,Libraries,core,64127000,92.5887958417557,111.18200000000002,2021
+252025128108,Boston,MA,Northeast,False,692600,0630,roads,Roads & highways,core,125097000,180.61940514005198,111.18200000000002,2021
+252025128108,Boston,MA,Northeast,False,692600,0630,sanitation,Sewer & trash,core,160883000,232.28847819809414,111.18200000000002,2021
+252025128108,Boston,MA,Northeast,False,692600,0630,housing,Housing & community development,core,119659000,172.7678313600924,111.18200000000002,2021
+252025128108,Boston,MA,Northeast,False,692600,0630,admin,"Administration, courts & inspection",core,720739000,1040.6280681490039,111.18200000000002,2021
+252025128108,Boston,MA,Northeast,False,692600,0630,water,Water utility,utility,59890000,86.4712676869766,111.18200000000002,2021
+252025128108,Boston,MA,Northeast,False,692600,0630,power,Electric & gas utilities,utility,0,0.0,111.18200000000002,2021
+252025128108,Boston,MA,Northeast,False,692600,0630,transit,Transit,utility,0,0.0,111.18200000000002,2021
+252025128108,Boston,MA,Northeast,False,692600,0630,enterprise,"Airports, parking & other commercial",utility,4843000,6.992492058908461,111.18200000000002,2021
+252025128108,Boston,MA,Northeast,False,692600,0630,county,"Health, welfare, jails & schools",outside,2082939000,3007.419867167196,111.18200000000002,2021
+252025128108,Boston,MA,Northeast,False,692600,0630,debt,Interest on debt,debt,70270000,101.45827317354895,111.18200000000002,2021
+252025128108,Boston,MA,Northeast,False,692600,0630,transfers,Grants & payments to other governments,other,345232000,498.4579844065839,111.18200000000002,2021
+062073207598,San Diego,CA,West,True,1422420,0630,police,Police,core,629133000,442.29763361032605,114.842,2022
+062073207598,San Diego,CA,West,True,1422420,0630,fire,Fire,core,323179000,227.2036388689698,114.842,2022
+062073207598,San Diego,CA,West,True,1422420,0630,parks,Parks & recreation,core,389163000,273.5921879613616,114.842,2022
+062073207598,San Diego,CA,West,True,1422420,0630,libraries,Libraries,core,58198000,40.914779038539955,114.842,2022
+062073207598,San Diego,CA,West,True,1422420,0630,roads,Roads & highways,core,316590000,222.5713924157422,114.842,2022
+062073207598,San Diego,CA,West,True,1422420,0630,sanitation,Sewer & trash,core,480405000,337.7377989623318,114.842,2022
+062073207598,San Diego,CA,West,True,1422420,0630,housing,Housing & community development,core,775910000,545.4858621222986,114.842,2022
+062073207598,San Diego,CA,West,True,1422420,0630,admin,"Administration, courts & inspection",core,1356815000,953.8778982297774,114.842,2022
+062073207598,San Diego,CA,West,True,1422420,0630,water,Water utility,utility,596100000,419.07453494748387,114.842,2022
+062073207598,San Diego,CA,West,True,1422420,0630,power,Electric & gas utilities,utility,0,0.0,114.842,2022
+062073207598,San Diego,CA,West,True,1422420,0630,transit,Transit,utility,33662000,23.665302793830232,114.842,2022
+062073207598,San Diego,CA,West,True,1422420,0630,enterprise,"Airports, parking & other commercial",utility,8173000,5.745841593903348,114.842,2022
+062073207598,San Diego,CA,West,True,1422420,0630,county,"Health, welfare, jails & schools",outside,16835000,11.835463505856216,114.842,2022
+062073207598,San Diego,CA,West,True,1422420,0630,debt,Interest on debt,debt,188003000,132.1712293134236,114.842,2022
+062073207598,San Diego,CA,West,True,1422420,0630,transfers,Grants & payments to other governments,other,0,0.0,114.842,2022
+042013207536,Phoenix,AZ,West,False,1708127,0630,police,Police,core,547806000,320.70566181554415,101.505,2022
+042013207536,Phoenix,AZ,West,False,1708127,0630,fire,Fire,core,361015000,211.3513807814056,101.505,2022
+042013207536,Phoenix,AZ,West,False,1708127,0630,parks,Parks & recreation,core,126841000,74.2573590839557,101.505,2022
+042013207536,Phoenix,AZ,West,False,1708127,0630,libraries,Libraries,core,38112000,22.31215828799615,101.505,2022
+042013207536,Phoenix,AZ,West,False,1708127,0630,roads,Roads & highways,core,142657000,83.51662376392387,101.505,2022
+042013207536,Phoenix,AZ,West,False,1708127,0630,sanitation,Sewer & trash,core,222814000,130.4434623420858,101.505,2022
+042013207536,Phoenix,AZ,West,False,1708127,0630,housing,Housing & community development,core,276998000,162.16475707017102,101.505,2022
+042013207536,Phoenix,AZ,West,False,1708127,0630,admin,"Administration, courts & inspection",core,344268000,201.54707466131032,101.505,2022
+042013207536,Phoenix,AZ,West,False,1708127,0630,water,Water utility,utility,319778000,187.20973323412136,101.505,2022
+042013207536,Phoenix,AZ,West,False,1708127,0630,power,Electric & gas utilities,utility,0,0.0,101.505,2022
+042013207536,Phoenix,AZ,West,False,1708127,0630,transit,Transit,utility,673670000,394.391049377476,101.505,2022
+042013207536,Phoenix,AZ,West,False,1708127,0630,enterprise,"Airports, parking & other commercial",utility,612337000,358.48446866070265,101.505,2022
+042013207536,Phoenix,AZ,West,False,1708127,0630,county,"Health, welfare, jails & schools",outside,55346000,32.401572014258896,101.505,2022
+042013207536,Phoenix,AZ,West,False,1708127,0630,debt,Interest on debt,debt,352652000,206.45537480526917,101.505,2022
+042013207536,Phoenix,AZ,West,False,1708127,0630,transfers,Grants & payments to other governments,other,8841000,5.175844653237142,101.505,2022
+062085100745,San Jose,CA,West,False,1013616,0630,police,Police,core,510819000,503.95711985604015,113.44650000000001,2022
+062085100745,San Jose,CA,West,False,1013616,0630,fire,Fire,core,259968000,256.47582516455935,113.44650000000001,2022
+062085100745,San Jose,CA,West,False,1013616,0630,parks,Parks & recreation,core,215129000,212.2391517103124,113.44650000000001,2022
+062085100745,San Jose,CA,West,False,1013616,0630,libraries,Libraries,core,52237000,51.53529541759404,113.44650000000001,2022
+062085100745,San Jose,CA,West,False,1013616,0630,roads,Roads & highways,core,234963000,231.80671970450348,113.44650000000001,2022
+062085100745,San Jose,CA,West,False,1013616,0630,sanitation,Sewer & trash,core,343743000,339.12546763271297,113.44650000000001,2022
+062085100745,San Jose,CA,West,False,1013616,0630,housing,Housing & community development,core,191979000,189.4001278590709,113.44650000000001,2022
+062085100745,San Jose,CA,West,False,1013616,0630,admin,"Administration, courts & inspection",core,395610000,390.29573329544917,113.44650000000001,2022
+062085100745,San Jose,CA,West,False,1013616,0630,water,Water utility,utility,50653000,49.97257344004041,113.44650000000001,2022
+062085100745,San Jose,CA,West,False,1013616,0630,power,Electric & gas utilities,utility,332724000,328.25448690628406,113.44650000000001,2022
+062085100745,San Jose,CA,West,False,1013616,0630,transit,Transit,utility,0,0.0,113.44650000000001,2022
+062085100745,San Jose,CA,West,False,1013616,0630,enterprise,"Airports, parking & other commercial",utility,138172000,136.3159224005935,113.44650000000001,2022
+062085100745,San Jose,CA,West,False,1013616,0630,county,"Health, welfare, jails & schools",outside,200000,0.1973133810042462,113.44650000000001,2022
+062085100745,San Jose,CA,West,False,1013616,0630,debt,Interest on debt,debt,87192000,86.02074158261117,113.44650000000001,2022
+062085100745,San Jose,CA,West,False,1013616,0630,transfers,Grants & payments to other governments,other,0,0.0,113.44650000000001,2022
+482029175988,San Antonio,TX,South,False,1567118,0930,police,Police,core,492530000,314.29030870681083,96.33175,2022
+482029175988,San Antonio,TX,South,False,1567118,0930,fire,Fire,core,342986000,218.86418253124526,96.33175,2022
+482029175988,San Antonio,TX,South,False,1567118,0930,parks,Parks & recreation,core,163301000,104.20466104020247,96.33175,2022
+482029175988,San Antonio,TX,South,False,1567118,0930,libraries,Libraries,core,38820000,24.771587078956404,96.33175,2022
+482029175988,San Antonio,TX,South,False,1567118,0930,roads,Roads & highways,core,189043000,120.63099268848931,96.33175,2022
+482029175988,San Antonio,TX,South,False,1567118,0930,sanitation,Sewer & trash,core,439476000,280.43580636557044,96.33175,2022
+482029175988,San Antonio,TX,South,False,1567118,0930,housing,Housing & community development,core,166094000,105.9869135572433,96.33175,2022
+482029175988,San Antonio,TX,South,False,1567118,0930,admin,"Administration, courts & inspection",core,513518000,327.68304620328524,96.33175,2022
+482029175988,San Antonio,TX,South,False,1567118,0930,water,Water utility,utility,502872000,320.8896841207873,96.33175,2022
+482029175988,San Antonio,TX,South,False,1567118,0930,power,Electric & gas utilities,utility,2473594000,1578.4350636008264,96.33175,2022
+482029175988,San Antonio,TX,South,False,1567118,0930,transit,Transit,utility,0,0.0,96.33175,2022
+482029175988,San Antonio,TX,South,False,1567118,0930,enterprise,"Airports, parking & other commercial",utility,90850000,57.9726606420193,96.33175,2022
+482029175988,San Antonio,TX,South,False,1567118,0930,county,"Health, welfare, jails & schools",outside,314302000,200.5605193737804,96.33175,2022
+482029175988,San Antonio,TX,South,False,1567118,0930,debt,Interest on debt,debt,499029000,318.43741186049806,96.33175,2022
+482029175988,San Antonio,TX,South,False,1567118,0930,transfers,Grants & payments to other governments,other,58000,0.03701061438896114,96.33175,2022
+482113187649,Dallas,TX,South,False,1343266,0930,police,Police,core,593912000,442.1402760138349,104.10449999999999,2022
+482113187649,Dallas,TX,South,False,1343266,0930,fire,Fire,core,386707000,287.8856458810094,104.10449999999999,2022
+482113187649,Dallas,TX,South,False,1343266,0930,parks,Parks & recreation,core,246697000,183.65461494596008,104.10449999999999,2022
+482113187649,Dallas,TX,South,False,1343266,0930,libraries,Libraries,core,39543000,29.437951976749208,104.10449999999999,2022
+482113187649,Dallas,TX,South,False,1343266,0930,roads,Roads & highways,core,233714000,173.98936621637114,104.10449999999999,2022
+482113187649,Dallas,TX,South,False,1343266,0930,sanitation,Sewer & trash,core,402346000,299.52816493531435,104.10449999999999,2022
+482113187649,Dallas,TX,South,False,1343266,0930,housing,Housing & community development,core,82138000,61.14797813686939,104.10449999999999,2022
+482113187649,Dallas,TX,South,False,1343266,0930,admin,"Administration, courts & inspection",core,595680000,443.4564710191429,104.10449999999999,2022
+482113187649,Dallas,TX,South,False,1343266,0930,water,Water utility,utility,336340000,250.38972176769158,104.10449999999999,2022
+482113187649,Dallas,TX,South,False,1343266,0930,power,Electric & gas utilities,utility,0,0.0,104.10449999999999,2022
+482113187649,Dallas,TX,South,False,1343266,0930,transit,Transit,utility,0,0.0,104.10449999999999,2022
+482113187649,Dallas,TX,South,False,1343266,0930,enterprise,"Airports, parking & other commercial",utility,1233243000,918.0929168161779,104.10449999999999,2022
+482113187649,Dallas,TX,South,False,1343266,0930,county,"Health, welfare, jails & schools",outside,64099000,47.718769030110195,104.10449999999999,2022
+482113187649,Dallas,TX,South,False,1343266,0930,debt,Interest on debt,debt,368830000,274.5770383527909,104.10449999999999,2022
+482113187649,Dallas,TX,South,False,1343266,0930,transfers,Grants & payments to other governments,other,17083000,12.717510902531592,104.10449999999999,2022
+482453176394,Austin,TX,South,False,995484,0930,police,Police,core,445407000,447.42758296466843,100.25699999999999,2022
+482453176394,Austin,TX,South,False,995484,0930,fire,Fire,core,239018000,240.1023019958131,100.25699999999999,2022
+482453176394,Austin,TX,South,False,995484,0930,parks,Parks & recreation,core,216454000,217.4359407082384,100.25699999999999,2022
+482453176394,Austin,TX,South,False,995484,0930,libraries,Libraries,core,89847000,90.25458972720807,100.25699999999999,2022
+482453176394,Austin,TX,South,False,995484,0930,roads,Roads & highways,core,374287000,375.98494802528216,100.25699999999999,2022
+482453176394,Austin,TX,South,False,995484,0930,sanitation,Sewer & trash,core,369177000,370.85176657786565,100.25699999999999,2022
+482453176394,Austin,TX,South,False,995484,0930,housing,Housing & community development,core,86075000,86.46547809909552,100.25699999999999,2022
+482453176394,Austin,TX,South,False,995484,0930,admin,"Administration, courts & inspection",core,583311000,585.9571826367877,100.25699999999999,2022
+482453176394,Austin,TX,South,False,995484,0930,water,Water utility,utility,277297000,278.5549541730455,100.25699999999999,2022
+482453176394,Austin,TX,South,False,995484,0930,power,Electric & gas utilities,utility,1571249000,1578.3769503075891,100.25699999999999,2022
+482453176394,Austin,TX,South,False,995484,0930,transit,Transit,utility,0,0.0,100.25699999999999,2022
+482453176394,Austin,TX,South,False,995484,0930,enterprise,"Airports, parking & other commercial",utility,190690000,191.55506266298605,100.25699999999999,2022
+482453176394,Austin,TX,South,False,995484,0930,county,"Health, welfare, jails & schools",outside,193536000,194.41397350434562,100.25699999999999,2022
+482453176394,Austin,TX,South,False,995484,0930,debt,Interest on debt,debt,272273000,273.5081628634915,100.25699999999999,2022
+482453176394,Austin,TX,South,False,995484,0930,transfers,Grants & payments to other governments,other,0,0.0,100.25699999999999,2022
+482439176375,Fort Worth,TX,South,False,927720,0930,police,Police,core,361883000,390.0778252058811,104.10449999999999,2022
+482439176375,Fort Worth,TX,South,False,927720,0930,fire,Fire,core,186944000,201.50907601431467,104.10449999999999,2022
+482439176375,Fort Worth,TX,South,False,927720,0930,parks,Parks & recreation,core,93830000,101.14043030224637,104.10449999999999,2022
+482439176375,Fort Worth,TX,South,False,927720,0930,libraries,Libraries,core,20478000,22.07347044366835,104.10449999999999,2022
+482439176375,Fort Worth,TX,South,False,927720,0930,roads,Roads & highways,core,220790000,237.99206657181045,104.10449999999999,2022
+482439176375,Fort Worth,TX,South,False,927720,0930,sanitation,Sewer & trash,core,348877000,376.05850903289786,104.10449999999999,2022
+482439176375,Fort Worth,TX,South,False,927720,0930,housing,Housing & community development,core,91550000,98.68279222179106,104.10449999999999,2022
+482439176375,Fort Worth,TX,South,False,927720,0930,admin,"Administration, courts & inspection",core,270888000,291.9932738326219,104.10449999999999,2022
+482439176375,Fort Worth,TX,South,False,927720,0930,water,Water utility,utility,282975000,305.0219893933514,104.10449999999999,2022
+482439176375,Fort Worth,TX,South,False,927720,0930,power,Electric & gas utilities,utility,0,0.0,104.10449999999999,2022
+482439176375,Fort Worth,TX,South,False,927720,0930,transit,Transit,utility,0,0.0,104.10449999999999,2022
+482439176375,Fort Worth,TX,South,False,927720,0930,enterprise,"Airports, parking & other commercial",utility,27466000,29.605915577976113,104.10449999999999,2022
+482439176375,Fort Worth,TX,South,False,927720,0930,county,"Health, welfare, jails & schools",outside,64956000,70.01681541844522,104.10449999999999,2022
+482439176375,Fort Worth,TX,South,False,927720,0930,debt,Interest on debt,debt,66138000,71.29090673910231,104.10449999999999,2022
+482439176375,Fort Worth,TX,South,False,927720,0930,transfers,Grants & payments to other governments,other,0,0.0,104.10449999999999,2022
+372119194726,Charlotte,NC,South,False,900350,0630,police,Police,core,330419000,366.98950408174596,96.694,2022
+372119194726,Charlotte,NC,South,False,900350,0630,fire,Fire,core,160981000,178.7982451268951,96.694,2022
+372119194726,Charlotte,NC,South,False,900350,0630,parks,Parks & recreation,core,124373000,138.13850169378574,96.694,2022
+372119194726,Charlotte,NC,South,False,900350,0630,libraries,Libraries,core,3000,0.003332037540956295,96.694,2022
+372119194726,Charlotte,NC,South,False,900350,0630,roads,Roads & highways,core,130800000,145.27683678569446,96.694,2022
+372119194726,Charlotte,NC,South,False,900350,0630,sanitation,Sewer & trash,core,491250000,545.6211473315933,96.694,2022
+372119194726,Charlotte,NC,South,False,900350,0630,housing,Housing & community development,core,171545000,190.53145998778254,96.694,2022
+372119194726,Charlotte,NC,South,False,900350,0630,admin,"Administration, courts & inspection",core,183255000,203.53751318931526,96.694,2022
+372119194726,Charlotte,NC,South,False,900350,0630,water,Water utility,utility,340778000,378.49502971066806,96.694,2022
+372119194726,Charlotte,NC,South,False,900350,0630,power,Electric & gas utilities,utility,0,0.0,96.694,2022
+372119194726,Charlotte,NC,South,False,900350,0630,transit,Transit,utility,351976000,390.9324151718776,96.694,2022
+372119194726,Charlotte,NC,South,False,900350,0630,enterprise,"Airports, parking & other commercial",utility,465057000,516.5291275615039,96.694,2022
+372119194726,Charlotte,NC,South,False,900350,0630,county,"Health, welfare, jails & schools",outside,10126000,11.246737379907813,96.694,2022
+372119194726,Charlotte,NC,South,False,900350,0630,debt,Interest on debt,debt,174671000,194.00344310545898,96.694,2022
+372119194726,Charlotte,NC,South,False,900350,0630,transfers,Grants & payments to other governments,other,2439000,2.7089465207974674,96.694,2022
+392049209050,Columbus,OH,Midwest,False,903852,1231,police,Police,core,356502000,394.42519350513135,94.858,2022
+392049209050,Columbus,OH,Midwest,False,903852,1231,fire,Fire,core,283049000,313.15857020839695,94.858,2022
+392049209050,Columbus,OH,Midwest,False,903852,1231,parks,Parks & recreation,core,206626000,228.60601071856897,94.858,2022
+392049209050,Columbus,OH,Midwest,False,903852,1231,libraries,Libraries,core,0,0.0,94.858,2022
+392049209050,Columbus,OH,Midwest,False,903852,1231,roads,Roads & highways,core,212165000,234.73422639989732,94.858,2022
+392049209050,Columbus,OH,Midwest,False,903852,1231,sanitation,Sewer & trash,core,287392000,317.9635604059072,94.858,2022
+392049209050,Columbus,OH,Midwest,False,903852,1231,housing,Housing & community development,core,56374000,62.37083062271257,94.858,2022
+392049209050,Columbus,OH,Midwest,False,903852,1231,admin,"Administration, courts & inspection",core,447186000,494.7557786009214,94.858,2022
+392049209050,Columbus,OH,Midwest,False,903852,1231,water,Water utility,utility,186566000,206.41211171740505,94.858,2022
+392049209050,Columbus,OH,Midwest,False,903852,1231,power,Electric & gas utilities,utility,86483000,95.68270026508765,94.858,2022
+392049209050,Columbus,OH,Midwest,False,903852,1231,transit,Transit,utility,0,0.0,94.858,2022
+392049209050,Columbus,OH,Midwest,False,903852,1231,enterprise,"Airports, parking & other commercial",utility,24526000,27.134973424852742,94.858,2022
+392049209050,Columbus,OH,Midwest,False,903852,1231,county,"Health, welfare, jails & schools",outside,81773000,90.47167014068675,94.858,2022
+392049209050,Columbus,OH,Midwest,False,903852,1231,debt,Interest on debt,debt,160921000,178.03910374707363,94.858,2022
+392049209050,Columbus,OH,Midwest,False,903852,1231,transfers,Grants & payments to other governments,other,0,0.0,94.858,2022
+532033184255,Seattle,WA,Pacific Northwest,False,769714,1231,police,Police,core,269267000,349.8273384659757,114.481,2022
+532033184255,Seattle,WA,Pacific Northwest,False,769714,1231,fire,Fire,core,241863000,314.22450416648263,114.481,2022
+532033184255,Seattle,WA,Pacific Northwest,False,769714,1231,parks,Parks & recreation,core,324139000,421.11615483153486,114.481,2022
+532033184255,Seattle,WA,Pacific Northwest,False,769714,1231,libraries,Libraries,core,80948000,105.16633450866166,114.481,2022
+532033184255,Seattle,WA,Pacific Northwest,False,769714,1231,roads,Roads & highways,core,450557000,585.3563791226352,114.481,2022
+532033184255,Seattle,WA,Pacific Northwest,False,769714,1231,sanitation,Sewer & trash,core,418878000,544.1995338528336,114.481,2022
+532033184255,Seattle,WA,Pacific Northwest,False,769714,1231,housing,Housing & community development,core,227796000,295.9488849104992,114.481,2022
+532033184255,Seattle,WA,Pacific Northwest,False,769714,1231,admin,"Administration, courts & inspection",core,596835000,775.3983947284316,114.481,2022
+532033184255,Seattle,WA,Pacific Northwest,False,769714,1231,water,Water utility,utility,177759000,230.94162247276262,114.481,2022
+532033184255,Seattle,WA,Pacific Northwest,False,769714,1231,power,Electric & gas utilities,utility,1061200000,1378.6939044892,114.481,2022
+532033184255,Seattle,WA,Pacific Northwest,False,769714,1231,transit,Transit,utility,0,0.0,114.481,2022
+532033184255,Seattle,WA,Pacific Northwest,False,769714,1231,enterprise,"Airports, parking & other commercial",utility,9919000,12.886604634968313,114.481,2022
+532033184255,Seattle,WA,Pacific Northwest,False,769714,1231,county,"Health, welfare, jails & schools",outside,297508000,386.5175896501818,114.481,2022
+532033184255,Seattle,WA,Pacific Northwest,False,769714,1231,debt,Interest on debt,debt,231321000,300.52850799127987,114.481,2022
+532033184255,Seattle,WA,Pacific Northwest,False,769714,1231,transfers,Grants & payments to other governments,other,186287000,242.02106236862002,114.481,2022
+412051211254,Portland,OR,Pacific Northwest,False,656751,0630,police,Police,core,214482000,326.5803934824614,107.12,2022
+412051211254,Portland,OR,Pacific Northwest,False,656751,0630,fire,Fire,core,146972000,223.7864883342393,107.12,2022
+412051211254,Portland,OR,Pacific Northwest,False,656751,0630,parks,Parks & recreation,core,155622000,236.95738567584976,107.12,2022
+412051211254,Portland,OR,Pacific Northwest,False,656751,0630,libraries,Libraries,core,0,0.0,107.12,2022
+412051211254,Portland,OR,Pacific Northwest,False,656751,0630,roads,Roads & highways,core,255388000,388.8657954080009,107.12,2022
+412051211254,Portland,OR,Pacific Northwest,False,656751,0630,sanitation,Sewer & trash,core,353745000,538.6287953882065,107.12,2022
+412051211254,Portland,OR,Pacific Northwest,False,656751,0630,housing,Housing & community development,core,223622000,340.4973878989145,107.12,2022
+412051211254,Portland,OR,Pacific Northwest,False,656751,0630,admin,"Administration, courts & inspection",core,369502000,562.6211456092187,107.12,2022
+412051211254,Portland,OR,Pacific Northwest,False,656751,0630,water,Water utility,utility,228621000,348.1091007094013,107.12,2022
+412051211254,Portland,OR,Pacific Northwest,False,656751,0630,power,Electric & gas utilities,utility,3244000,4.939467164876795,107.12,2022
+412051211254,Portland,OR,Pacific Northwest,False,656751,0630,transit,Transit,utility,0,0.0,107.12,2022
+412051211254,Portland,OR,Pacific Northwest,False,656751,0630,enterprise,"Airports, parking & other commercial",utility,10280000,15.652812100780965,107.12,2022
+412051211254,Portland,OR,Pacific Northwest,False,656751,0630,county,"Health, welfare, jails & schools",outside,5707000,8.689746951279862,107.12,2022
+412051211254,Portland,OR,Pacific Northwest,False,656751,0630,debt,Interest on debt,debt,170067000,258.95202291279344,107.12,2022
+412051211254,Portland,OR,Pacific Northwest,False,656751,0630,transfers,Grants & payments to other governments,other,0,0.0,107.12,2022
+252025128108,Boston,MA,Northeast,False,691531,0630,police,Police,core,441749000,638.7985498842423,111.00099999999999,2022
+252025128108,Boston,MA,Northeast,False,691531,0630,fire,Fire,core,289514000,418.6565750486963,111.00099999999999,2022
+252025128108,Boston,MA,Northeast,False,691531,0630,parks,Parks & recreation,core,148587000,214.86672325607964,111.00099999999999,2022
+252025128108,Boston,MA,Northeast,False,691531,0630,libraries,Libraries,core,66414000,96.03907850841105,111.00099999999999,2022
+252025128108,Boston,MA,Northeast,False,691531,0630,roads,Roads & highways,core,140729000,203.50353057202062,111.00099999999999,2022
+252025128108,Boston,MA,Northeast,False,691531,0630,sanitation,Sewer & trash,core,212037000,306.6196598561742,111.00099999999999,2022
+252025128108,Boston,MA,Northeast,False,691531,0630,housing,Housing & community development,core,157245000,227.38676935668826,111.00099999999999,2022
+252025128108,Boston,MA,Northeast,False,691531,0630,admin,"Administration, courts & inspection",core,1239432000,1792.3014297262162,111.00099999999999,2022
+252025128108,Boston,MA,Northeast,False,691531,0630,water,Water utility,utility,63315000,91.55771758605182,111.00099999999999,2022
+252025128108,Boston,MA,Northeast,False,691531,0630,power,Electric & gas utilities,utility,0,0.0,111.00099999999999,2022
+252025128108,Boston,MA,Northeast,False,691531,0630,transit,Transit,utility,0,0.0,111.00099999999999,2022
+252025128108,Boston,MA,Northeast,False,691531,0630,enterprise,"Airports, parking & other commercial",utility,4671000,6.754577885879303,111.00099999999999,2022
+252025128108,Boston,MA,Northeast,False,691531,0630,county,"Health, welfare, jails & schools",outside,2436975000,3524.028568495122,111.00099999999999,2022
+252025128108,Boston,MA,Northeast,False,691531,0630,debt,Interest on debt,debt,67039000,96.94287024009047,111.00099999999999,2022
+252025128108,Boston,MA,Northeast,False,691531,0630,transfers,Grants & payments to other governments,other,345216000,499.20538630950745,111.00099999999999,2022
+062073207598,San Diego,CA,West,True,1381611,0630,police,Police,core,611560000,442.6426830707051,112.6855,2023
+062073207598,San Diego,CA,West,True,1381611,0630,fire,Fire,core,353002000,255.50028191726904,112.6855,2023
+062073207598,San Diego,CA,West,True,1381611,0630,parks,Parks & recreation,core,559768000,405.15600990437974,112.6855,2023
+062073207598,San Diego,CA,West,True,1381611,0630,libraries,Libraries,core,75902000,54.93731593046089,112.6855,2023
+062073207598,San Diego,CA,West,True,1381611,0630,roads,Roads & highways,core,499926000,361.84280524691826,112.6855,2023
+062073207598,San Diego,CA,West,True,1381611,0630,sanitation,Sewer & trash,core,657578000,475.9501770035126,112.6855,2023
+062073207598,San Diego,CA,West,True,1381611,0630,housing,Housing & community development,core,669526000,484.59805256327576,112.6855,2023
+062073207598,San Diego,CA,West,True,1381611,0630,admin,"Administration, courts & inspection",core,1460146000,1056.843062193338,112.6855,2023
+062073207598,San Diego,CA,West,True,1381611,0630,water,Water utility,utility,782962000,566.702204889799,112.6855,2023
+062073207598,San Diego,CA,West,True,1381611,0630,power,Electric & gas utilities,utility,0,0.0,112.6855,2023
+062073207598,San Diego,CA,West,True,1381611,0630,transit,Transit,utility,32997000,23.88298877180335,112.6855,2023
+062073207598,San Diego,CA,West,True,1381611,0630,enterprise,"Airports, parking & other commercial",utility,8886000,6.431622214936042,112.6855,2023
+062073207598,San Diego,CA,West,True,1381611,0630,county,"Health, welfare, jails & schools",outside,40076000,29.006717520344004,112.6855,2023
+062073207598,San Diego,CA,West,True,1381611,0630,debt,Interest on debt,debt,206783000,149.6680324635516,112.6855,2023
+062073207598,San Diego,CA,West,True,1381611,0630,transfers,Grants & payments to other governments,other,3512000,2.5419600741453277,112.6855,2023
+042013207536,Phoenix,AZ,West,False,1624569,0630,police,Police,core,671307000,413.22159908258743,104.28000000000002,2023
+042013207536,Phoenix,AZ,West,False,1624569,0630,fire,Fire,core,396559000,244.1010508017819,104.28000000000002,2023
+042013207536,Phoenix,AZ,West,False,1624569,0630,parks,Parks & recreation,core,160680000,98.906232976254,104.28000000000002,2023
+042013207536,Phoenix,AZ,West,False,1624569,0630,libraries,Libraries,core,42872000,26.389768609397322,104.28000000000002,2023
+042013207536,Phoenix,AZ,West,False,1624569,0630,roads,Roads & highways,core,155389000,95.64936915575763,104.28000000000002,2023
+042013207536,Phoenix,AZ,West,False,1624569,0630,sanitation,Sewer & trash,core,350723000,215.88679828311385,104.28000000000002,2023
+042013207536,Phoenix,AZ,West,False,1624569,0630,housing,Housing & community development,core,283924000,174.76881560586224,104.28000000000002,2023
+042013207536,Phoenix,AZ,West,False,1624569,0630,admin,"Administration, courts & inspection",core,414542000,255.17044828505283,104.28000000000002,2023
+042013207536,Phoenix,AZ,West,False,1624569,0630,water,Water utility,utility,422056000,259.79567503750224,104.28000000000002,2023
+042013207536,Phoenix,AZ,West,False,1624569,0630,power,Electric & gas utilities,utility,0,0.0,104.28000000000002,2023
+042013207536,Phoenix,AZ,West,False,1624569,0630,transit,Transit,utility,430718000,265.1275507534614,104.28000000000002,2023
+042013207536,Phoenix,AZ,West,False,1624569,0630,enterprise,"Airports, parking & other commercial",utility,368979000,227.12424033697553,104.28000000000002,2023
+042013207536,Phoenix,AZ,West,False,1624569,0630,county,"Health, welfare, jails & schools",outside,54847000,33.76095444391712,104.28000000000002,2023
+042013207536,Phoenix,AZ,West,False,1624569,0630,debt,Interest on debt,debt,339928000,209.24195894418767,104.28000000000002,2023
+042013207536,Phoenix,AZ,West,False,1624569,0630,transfers,Grants & payments to other governments,other,8956000,5.512846791979904,104.28000000000002,2023
+062085100745,San Jose,CA,West,False,983489,0630,police,Police,core,526903000,535.7487475711472,114.17,2023
+062085100745,San Jose,CA,West,False,983489,0630,fire,Fire,core,268773000,273.285212137604,114.17,2023
+062085100745,San Jose,CA,West,False,983489,0630,parks,Parks & recreation,core,212655000,216.22509250230556,114.17,2023
+062085100745,San Jose,CA,West,False,983489,0630,libraries,Libraries,core,60997000,62.02102921334148,114.17,2023
+062085100745,San Jose,CA,West,False,983489,0630,roads,Roads & highways,core,275151000,279.77028721216,114.17,2023
+062085100745,San Jose,CA,West,False,983489,0630,sanitation,Sewer & trash,core,385760000,392.23621209794925,114.17,2023
+062085100745,San Jose,CA,West,False,983489,0630,housing,Housing & community development,core,207806000,211.29468656995655,114.17,2023
+062085100745,San Jose,CA,West,False,983489,0630,admin,"Administration, courts & inspection",core,373225000,379.4907721387834,114.17,2023
+062085100745,San Jose,CA,West,False,983489,0630,water,Water utility,utility,55223000,56.15009420542579,114.17,2023
+062085100745,San Jose,CA,West,False,983489,0630,power,Electric & gas utilities,utility,386186000,392.6693638668048,114.17,2023
+062085100745,San Jose,CA,West,False,983489,0630,transit,Transit,utility,0,0.0,114.17,2023
+062085100745,San Jose,CA,West,False,983489,0630,enterprise,"Airports, parking & other commercial",utility,130635000,132.82812517476046,114.17,2023
+062085100745,San Jose,CA,West,False,983489,0630,county,"Health, welfare, jails & schools",outside,0,0.0,114.17,2023
+062085100745,San Jose,CA,West,False,983489,0630,debt,Interest on debt,debt,98650000,100.30615492394932,114.17,2023
+062085100745,San Jose,CA,West,False,983489,0630,transfers,Grants & payments to other governments,other,0,0.0,114.17,2023
+482029175988,San Antonio,TX,South,False,1451853,0930,police,Police,core,519513000,357.8275486567855,95.29975,2023
+482029175988,San Antonio,TX,South,False,1451853,0930,fire,Fire,core,349731000,240.88595746263567,95.29975,2023
+482029175988,San Antonio,TX,South,False,1451853,0930,parks,Parks & recreation,core,205543000,141.5728727357384,95.29975,2023
+482029175988,San Antonio,TX,South,False,1451853,0930,libraries,Libraries,core,45569000,31.386786403306672,95.29975,2023
+482029175988,San Antonio,TX,South,False,1451853,0930,roads,Roads & highways,core,190770000,131.39760017026518,95.29975,2023
+482029175988,San Antonio,TX,South,False,1451853,0930,sanitation,Sewer & trash,core,463941000,319.5509462734864,95.29975,2023
+482029175988,San Antonio,TX,South,False,1451853,0930,housing,Housing & community development,core,144434000,99.48252336841264,95.29975,2023
+482029175988,San Antonio,TX,South,False,1451853,0930,admin,"Administration, courts & inspection",core,602914000,415.2720695552511,95.29975,2023
+482029175988,San Antonio,TX,South,False,1451853,0930,water,Water utility,utility,537901000,370.4927427225759,95.29975,2023
+482029175988,San Antonio,TX,South,False,1451853,0930,power,Electric & gas utilities,utility,3141712000,2163.932574441076,95.29975,2023
+482029175988,San Antonio,TX,South,False,1451853,0930,transit,Transit,utility,0,0.0,95.29975,2023
+482029175988,San Antonio,TX,South,False,1451853,0930,enterprise,"Airports, parking & other commercial",utility,116898000,80.51641591814047,95.29975,2023
+482029175988,San Antonio,TX,South,False,1451853,0930,county,"Health, welfare, jails & schools",outside,344254000,237.11353697653965,95.29975,2023
+482029175988,San Antonio,TX,South,False,1451853,0930,debt,Interest on debt,debt,520620000,358.5900225436046,95.29975,2023
+482029175988,San Antonio,TX,South,False,1451853,0930,transfers,Grants & payments to other governments,other,161000,0.11089276944704457,95.29975,2023
+482113187649,Dallas,TX,South,False,1288457,0930,police,Police,core,619207000,480.5802599543485,103.55000000000001,2023
+482113187649,Dallas,TX,South,False,1288457,0930,fire,Fire,core,408247000,316.84953397746295,103.55000000000001,2023
+482113187649,Dallas,TX,South,False,1288457,0930,parks,Parks & recreation,core,262184000,203.48680631173568,103.55000000000001,2023
+482113187649,Dallas,TX,South,False,1288457,0930,libraries,Libraries,core,37727000,29.2807598546168,103.55000000000001,2023
+482113187649,Dallas,TX,South,False,1288457,0930,roads,Roads & highways,core,310032000,240.6226983127881,103.55000000000001,2023
+482113187649,Dallas,TX,South,False,1288457,0930,sanitation,Sewer & trash,core,440223000,341.66681542340956,103.55000000000001,2023
+482113187649,Dallas,TX,South,False,1288457,0930,housing,Housing & community development,core,81646000,63.36726798022751,103.55000000000001,2023
+482113187649,Dallas,TX,South,False,1288457,0930,admin,"Administration, courts & inspection",core,573436000,445.0563736314056,103.55000000000001,2023
+482113187649,Dallas,TX,South,False,1288457,0930,water,Water utility,utility,379412000,294.4700521631688,103.55000000000001,2023
+482113187649,Dallas,TX,South,False,1288457,0930,power,Electric & gas utilities,utility,0,0.0,103.55000000000001,2023
+482113187649,Dallas,TX,South,False,1288457,0930,transit,Transit,utility,0,0.0,103.55000000000001,2023
+482113187649,Dallas,TX,South,False,1288457,0930,enterprise,"Airports, parking & other commercial",utility,1294327000,1004.5558369429481,103.55000000000001,2023
+482113187649,Dallas,TX,South,False,1288457,0930,county,"Health, welfare, jails & schools",outside,74079000,57.494351771149525,103.55000000000001,2023
+482113187649,Dallas,TX,South,False,1288457,0930,debt,Interest on debt,debt,414351000,321.5869835004195,103.55000000000001,2023
+482113187649,Dallas,TX,South,False,1288457,0930,transfers,Grants & payments to other governments,other,14059000,10.911501121108426,103.55000000000001,2023
+482453176394,Austin,TX,South,False,964177,0930,police,Police,core,364642000,378.1898966683503,99.10074999999999,2023
+482453176394,Austin,TX,South,False,964177,0930,fire,Fire,core,229627000,238.15855387548137,99.10074999999999,2023
+482453176394,Austin,TX,South,False,964177,0930,parks,Parks & recreation,core,221441000,229.66841150535637,99.10074999999999,2023
+482453176394,Austin,TX,South,False,964177,0930,libraries,Libraries,core,57984000,60.13833559605757,99.10074999999999,2023
+482453176394,Austin,TX,South,False,964177,0930,roads,Roads & highways,core,494518000,512.8913052271523,99.10074999999999,2023
+482453176394,Austin,TX,South,False,964177,0930,sanitation,Sewer & trash,core,393430000,408.0474850572042,99.10074999999999,2023
+482453176394,Austin,TX,South,False,964177,0930,housing,Housing & community development,core,93794000,97.27881913797985,99.10074999999999,2023
+482453176394,Austin,TX,South,False,964177,0930,admin,"Administration, courts & inspection",core,605111000,627.5932738490961,99.10074999999999,2023
+482453176394,Austin,TX,South,False,964177,0930,water,Water utility,utility,296446000,307.46014476595064,99.10074999999999,2023
+482453176394,Austin,TX,South,False,964177,0930,power,Electric & gas utilities,utility,1657624000,1719.2113066376817,99.10074999999999,2023
+482453176394,Austin,TX,South,False,964177,0930,transit,Transit,utility,0,0.0,99.10074999999999,2023
+482453176394,Austin,TX,South,False,964177,0930,enterprise,"Airports, parking & other commercial",utility,199105000,206.50254050864106,99.10074999999999,2023
+482453176394,Austin,TX,South,False,964177,0930,county,"Health, welfare, jails & schools",outside,235612000,244.36592036524414,99.10074999999999,2023
+482453176394,Austin,TX,South,False,964177,0930,debt,Interest on debt,debt,261760000,271.48542228242326,99.10074999999999,2023
+482453176394,Austin,TX,South,False,964177,0930,transfers,Grants & payments to other governments,other,0,0.0,99.10074999999999,2023
+482439176375,Fort Worth,TX,South,False,935508,0930,police,Police,core,398019000,425.45761233468875,103.55000000000001,2023
+482439176375,Fort Worth,TX,South,False,935508,0930,fire,Fire,core,184585000,197.30991076506027,103.55000000000001,2023
+482439176375,Fort Worth,TX,South,False,935508,0930,parks,Parks & recreation,core,71070000,75.96941982324041,103.55000000000001,2023
+482439176375,Fort Worth,TX,South,False,935508,0930,libraries,Libraries,core,21733000,23.23122838073004,103.55000000000001,2023
+482439176375,Fort Worth,TX,South,False,935508,0930,roads,Roads & highways,core,185247000,198.01754768532177,103.55000000000001,2023
+482439176375,Fort Worth,TX,South,False,935508,0930,sanitation,Sewer & trash,core,372028000,397.67484617982956,103.55000000000001,2023
+482439176375,Fort Worth,TX,South,False,935508,0930,housing,Housing & community development,core,155320000,166.0274417749501,103.55000000000001,2023
+482439176375,Fort Worth,TX,South,False,935508,0930,admin,"Administration, courts & inspection",core,271697000,290.427233118263,103.55000000000001,2023
+482439176375,Fort Worth,TX,South,False,935508,0930,water,Water utility,utility,359448000,384.2276068189689,103.55000000000001,2023
+482439176375,Fort Worth,TX,South,False,935508,0930,power,Electric & gas utilities,utility,0,0.0,103.55000000000001,2023
+482439176375,Fort Worth,TX,South,False,935508,0930,transit,Transit,utility,0,0.0,103.55000000000001,2023
+482439176375,Fort Worth,TX,South,False,935508,0930,enterprise,"Airports, parking & other commercial",utility,47359000,50.62383218529398,103.55000000000001,2023
+482439176375,Fort Worth,TX,South,False,935508,0930,county,"Health, welfare, jails & schools",outside,73857000,78.94854987878244,103.55000000000001,2023
+482439176375,Fort Worth,TX,South,False,935508,0930,debt,Interest on debt,debt,77235000,82.55942226041894,103.55000000000001,2023
+482439176375,Fort Worth,TX,South,False,935508,0930,transfers,Grants & payments to other governments,other,0,0.0,103.55000000000001,2023
+372119194726,Charlotte,NC,South,False,879709,0630,police,Police,core,363473000,413.1741291722604,97.05499999999999,2023
+372119194726,Charlotte,NC,South,False,879709,0630,fire,Fire,core,181766000,206.62059840242625,97.05499999999999,2023
+372119194726,Charlotte,NC,South,False,879709,0630,parks,Parks & recreation,core,145159000,165.00797422784126,97.05499999999999,2023
+372119194726,Charlotte,NC,South,False,879709,0630,libraries,Libraries,core,0,0.0,97.05499999999999,2023
+372119194726,Charlotte,NC,South,False,879709,0630,roads,Roads & highways,core,118777000,135.01851180333497,97.05499999999999,2023
+372119194726,Charlotte,NC,South,False,879709,0630,sanitation,Sewer & trash,core,520496000,591.6683812487993,97.05499999999999,2023
+372119194726,Charlotte,NC,South,False,879709,0630,housing,Housing & community development,core,167301000,190.17766102199704,97.05499999999999,2023
+372119194726,Charlotte,NC,South,False,879709,0630,admin,"Administration, courts & inspection",core,211763000,240.71937424762052,97.05499999999999,2023
+372119194726,Charlotte,NC,South,False,879709,0630,water,Water utility,utility,356287000,405.00551887044463,97.05499999999999,2023
+372119194726,Charlotte,NC,South,False,879709,0630,power,Electric & gas utilities,utility,0,0.0,97.05499999999999,2023
+372119194726,Charlotte,NC,South,False,879709,0630,transit,Transit,utility,244664000,278.1192417037907,97.05499999999999,2023
+372119194726,Charlotte,NC,South,False,879709,0630,enterprise,"Airports, parking & other commercial",utility,681295000,774.4549618112353,97.05499999999999,2023
+372119194726,Charlotte,NC,South,False,879709,0630,county,"Health, welfare, jails & schools",outside,397000,0.4512855955776285,97.05499999999999,2023
+372119194726,Charlotte,NC,South,False,879709,0630,debt,Interest on debt,debt,203491000,231.31626481029522,97.05499999999999,2023
+372119194726,Charlotte,NC,South,False,879709,0630,transfers,Grants & payments to other governments,other,9275000,10.543259191391698,97.05499999999999,2023
+392049209050,Columbus,OH,Midwest,False,906528,1231,police,Police,core,393844000,434.45321049101625,94.093,2023
+392049209050,Columbus,OH,Midwest,False,906528,1231,fire,Fire,core,300111000,331.0554114158636,94.093,2023
+392049209050,Columbus,OH,Midwest,False,906528,1231,parks,Parks & recreation,core,217943000,240.41507818842882,94.093,2023
+392049209050,Columbus,OH,Midwest,False,906528,1231,libraries,Libraries,core,0,0.0,94.093,2023
+392049209050,Columbus,OH,Midwest,False,906528,1231,roads,Roads & highways,core,194345000,214.3838910656924,94.093,2023
+392049209050,Columbus,OH,Midwest,False,906528,1231,sanitation,Sewer & trash,core,347624000,383.4674714956405,94.093,2023
+392049209050,Columbus,OH,Midwest,False,906528,1231,housing,Housing & community development,core,87324000,96.32796780684104,94.093,2023
+392049209050,Columbus,OH,Midwest,False,906528,1231,admin,"Administration, courts & inspection",core,475702000,524.7515796533587,94.093,2023
+392049209050,Columbus,OH,Midwest,False,906528,1231,water,Water utility,utility,205370000,226.54567757421722,94.093,2023
+392049209050,Columbus,OH,Midwest,False,906528,1231,power,Electric & gas utilities,utility,88865000,98.02786014331603,94.093,2023
+392049209050,Columbus,OH,Midwest,False,906528,1231,transit,Transit,utility,0,0.0,94.093,2023
+392049209050,Columbus,OH,Midwest,False,906528,1231,enterprise,"Airports, parking & other commercial",utility,32390000,35.72972925270924,94.093,2023
+392049209050,Columbus,OH,Midwest,False,906528,1231,county,"Health, welfare, jails & schools",outside,71836000,79.24300187087437,94.093,2023
+392049209050,Columbus,OH,Midwest,False,906528,1231,debt,Interest on debt,debt,160335000,176.867123795404,94.093,2023
+392049209050,Columbus,OH,Midwest,False,906528,1231,transfers,Grants & payments to other governments,other,11796000,13.012284231706026,94.093,2023
+532033184255,Seattle,WA,Pacific Northwest,False,733919,1231,police,Police,core,319496000,435.3286943109526,114.02,2023
+532033184255,Seattle,WA,Pacific Northwest,False,733919,1231,fire,Fire,core,266789000,363.5128672237672,114.02,2023
+532033184255,Seattle,WA,Pacific Northwest,False,733919,1231,parks,Parks & recreation,core,389187000,530.2860397400804,114.02,2023
+532033184255,Seattle,WA,Pacific Northwest,False,733919,1231,libraries,Libraries,core,90778000,123.68939896637094,114.02,2023
+532033184255,Seattle,WA,Pacific Northwest,False,733919,1231,roads,Roads & highways,core,484943000,660.7582035619735,114.02,2023
+532033184255,Seattle,WA,Pacific Northwest,False,733919,1231,sanitation,Sewer & trash,core,473795000,645.5685164166617,114.02,2023
+532033184255,Seattle,WA,Pacific Northwest,False,733919,1231,housing,Housing & community development,core,294126000,400.7608469054487,114.02,2023
+532033184255,Seattle,WA,Pacific Northwest,False,733919,1231,admin,"Administration, courts & inspection",core,746524000,1017.1749198481032,114.02,2023
+532033184255,Seattle,WA,Pacific Northwest,False,733919,1231,water,Water utility,utility,206878000,281.8812430254565,114.02,2023
+532033184255,Seattle,WA,Pacific Northwest,False,733919,1231,power,Electric & gas utilities,utility,1093600000,1490.082693049233,114.02,2023
+532033184255,Seattle,WA,Pacific Northwest,False,733919,1231,transit,Transit,utility,0,0.0,114.02,2023
+532033184255,Seattle,WA,Pacific Northwest,False,733919,1231,enterprise,"Airports, parking & other commercial",utility,11226000,15.295965903594265,114.02,2023
+532033184255,Seattle,WA,Pacific Northwest,False,733919,1231,county,"Health, welfare, jails & schools",outside,310455000,423.00989618745393,114.02,2023
+532033184255,Seattle,WA,Pacific Northwest,False,733919,1231,debt,Interest on debt,debt,232060000,316.19293137253567,114.02,2023
+532033184255,Seattle,WA,Pacific Northwest,False,733919,1231,transfers,Grants & payments to other governments,other,199413000,271.70982083853943,114.02,2023
+412051211254,Portland,OR,Pacific Northwest,False,641162,0630,police,Police,core,240035000,374.3749629578796,107.77350000000001,2023
+412051211254,Portland,OR,Pacific Northwest,False,641162,0630,fire,Fire,core,173849000,271.1467616608595,107.77350000000001,2023
+412051211254,Portland,OR,Pacific Northwest,False,641162,0630,parks,Parks & recreation,core,189252000,295.1703313671116,107.77350000000001,2023
+412051211254,Portland,OR,Pacific Northwest,False,641162,0630,libraries,Libraries,core,0,0.0,107.77350000000001,2023
+412051211254,Portland,OR,Pacific Northwest,False,641162,0630,roads,Roads & highways,core,275640000,429.90695019355485,107.77350000000001,2023
+412051211254,Portland,OR,Pacific Northwest,False,641162,0630,sanitation,Sewer & trash,core,421573000,657.514013619023,107.77350000000001,2023
+412051211254,Portland,OR,Pacific Northwest,False,641162,0630,housing,Housing & community development,core,186943000,291.56905743010344,107.77350000000001,2023
+412051211254,Portland,OR,Pacific Northwest,False,641162,0630,admin,"Administration, courts & inspection",core,426566000,665.3014370783047,107.77350000000001,2023
+412051211254,Portland,OR,Pacific Northwest,False,641162,0630,water,Water utility,utility,213703000,333.3057791946497,107.77350000000001,2023
+412051211254,Portland,OR,Pacific Northwest,False,641162,0630,power,Electric & gas utilities,utility,3273000,5.1047941081973045,107.77350000000001,2023
+412051211254,Portland,OR,Pacific Northwest,False,641162,0630,transit,Transit,utility,0,0.0,107.77350000000001,2023
+412051211254,Portland,OR,Pacific Northwest,False,641162,0630,enterprise,"Airports, parking & other commercial",utility,11060000,17.24993059476388,107.77350000000001,2023
+412051211254,Portland,OR,Pacific Northwest,False,641162,0630,county,"Health, welfare, jails & schools",outside,5754000,8.974330980313868,107.77350000000001,2023
+412051211254,Portland,OR,Pacific Northwest,False,641162,0630,debt,Interest on debt,debt,149081000,232.5168990052436,107.77350000000001,2023
+412051211254,Portland,OR,Pacific Northwest,False,641162,0630,transfers,Grants & payments to other governments,other,0,0.0,107.77350000000001,2023
+252025128108,Boston,MA,Northeast,False,654776,0630,police,Police,core,450395000,687.8611922245165,111.29,2023
+252025128108,Boston,MA,Northeast,False,654776,0630,fire,Fire,core,280621000,428.5755739367356,111.29,2023
+252025128108,Boston,MA,Northeast,False,654776,0630,parks,Parks & recreation,core,158102000,241.45967475900156,111.29,2023
+252025128108,Boston,MA,Northeast,False,654776,0630,libraries,Libraries,core,71664000,109.44811660781703,111.29,2023
+252025128108,Boston,MA,Northeast,False,654776,0630,roads,Roads & highways,core,144378000,220.4998350580962,111.29,2023
+252025128108,Boston,MA,Northeast,False,654776,0630,sanitation,Sewer & trash,core,254367000,388.4794189157819,111.29,2023
+252025128108,Boston,MA,Northeast,False,654776,0630,housing,Housing & community development,core,194572000,297.1581120871871,111.29,2023
+252025128108,Boston,MA,Northeast,False,654776,0630,admin,"Administration, courts & inspection",core,1337875000,2043.2560142705292,111.29,2023
+252025128108,Boston,MA,Northeast,False,654776,0630,water,Water utility,utility,77364000,118.15338375261157,111.29,2023
+252025128108,Boston,MA,Northeast,False,654776,0630,power,Electric & gas utilities,utility,0,0.0,111.29,2023
+252025128108,Boston,MA,Northeast,False,654776,0630,transit,Transit,utility,0,0.0,111.29,2023
+252025128108,Boston,MA,Northeast,False,654776,0630,enterprise,"Airports, parking & other commercial",utility,4856000,7.416276711424976,111.29,2023
+252025128108,Boston,MA,Northeast,False,654776,0630,county,"Health, welfare, jails & schools",outside,2481444000,3789.760162253962,111.29,2023
+252025128108,Boston,MA,Northeast,False,654776,0630,debt,Interest on debt,debt,77990000,119.10943589868901,111.29,2023
+252025128108,Boston,MA,Northeast,False,654776,0630,transfers,Grants & payments to other governments,other,348280000,531.9070949454469,111.29,2023
+062073207598,San Diego,CA,West,True,1381162,0630,police,Police,core,677921000,490.8338051582653,111.31400000000001,2024
+062073207598,San Diego,CA,West,True,1381162,0630,fire,Fire,core,372339000,269.5838721308579,111.31400000000001,2024
+062073207598,San Diego,CA,West,True,1381162,0630,parks,Parks & recreation,core,730299000,528.7569452388641,111.31400000000001,2024
+062073207598,San Diego,CA,West,True,1381162,0630,libraries,Libraries,core,85499000,61.90367241496653,111.31400000000001,2024
+062073207598,San Diego,CA,West,True,1381162,0630,roads,Roads & highways,core,640493000,463.73488410483344,111.31400000000001,2024
+062073207598,San Diego,CA,West,True,1381162,0630,sanitation,Sewer & trash,core,820746000,594.24310833921,111.31400000000001,2024
+062073207598,San Diego,CA,West,True,1381162,0630,housing,Housing & community development,core,742935000,537.905763407913,111.31400000000001,2024
+062073207598,San Diego,CA,West,True,1381162,0630,admin,"Administration, courts & inspection",core,1560166000,1129.6039132266887,111.31400000000001,2024
+062073207598,San Diego,CA,West,True,1381162,0630,water,Water utility,utility,1009560000,730.9497365262004,111.31400000000001,2024
+062073207598,San Diego,CA,West,True,1381162,0630,power,Electric & gas utilities,utility,0,0.0,111.31400000000001,2024
+062073207598,San Diego,CA,West,True,1381162,0630,transit,Transit,utility,45132000,32.67683298555853,111.31400000000001,2024
+062073207598,San Diego,CA,West,True,1381162,0630,enterprise,"Airports, parking & other commercial",utility,14553000,10.536779899823483,111.31400000000001,2024
+062073207598,San Diego,CA,West,True,1381162,0630,county,"Health, welfare, jails & schools",outside,129326000,93.63564882323725,111.31400000000001,2024
+062073207598,San Diego,CA,West,True,1381162,0630,debt,Interest on debt,debt,207954000,150.5645246538784,111.31400000000001,2024
+062073207598,San Diego,CA,West,True,1381162,0630,transfers,Grants & payments to other governments,other,5429000,3.9307481671230455,111.31400000000001,2024
+042013207536,Phoenix,AZ,West,False,1644409,0630,police,Police,core,709524000,431.4765973672,103.996,2024
+042013207536,Phoenix,AZ,West,False,1644409,0630,fire,Fire,core,442999000,269.3970903832319,103.996,2024
+042013207536,Phoenix,AZ,West,False,1644409,0630,parks,Parks & recreation,core,305050000,185.50737681440566,103.996,2024
+042013207536,Phoenix,AZ,West,False,1644409,0630,libraries,Libraries,core,47895000,29.1259656204752,103.996,2024
+042013207536,Phoenix,AZ,West,False,1644409,0630,roads,Roads & highways,core,263626000,160.31656357998529,103.996,2024
+042013207536,Phoenix,AZ,West,False,1644409,0630,sanitation,Sewer & trash,core,291939000,177.53429955686207,103.996,2024
+042013207536,Phoenix,AZ,West,False,1644409,0630,housing,Housing & community development,core,369534000,224.72146528023137,103.996,2024
+042013207536,Phoenix,AZ,West,False,1644409,0630,admin,"Administration, courts & inspection",core,389619000,236.93557989526937,103.996,2024
+042013207536,Phoenix,AZ,West,False,1644409,0630,water,Water utility,utility,284976000,173.29995153273913,103.996,2024
+042013207536,Phoenix,AZ,West,False,1644409,0630,power,Electric & gas utilities,utility,0,0.0,103.996,2024
+042013207536,Phoenix,AZ,West,False,1644409,0630,transit,Transit,utility,561621000,341.5336452184341,103.996,2024
+042013207536,Phoenix,AZ,West,False,1644409,0630,enterprise,"Airports, parking & other commercial",utility,374187000,227.55105329635145,103.996,2024
+042013207536,Phoenix,AZ,West,False,1644409,0630,county,"Health, welfare, jails & schools",outside,5118000,3.112364381367409,103.996,2024
+042013207536,Phoenix,AZ,West,False,1644409,0630,debt,Interest on debt,debt,335035000,203.7418914637417,103.996,2024
+042013207536,Phoenix,AZ,West,False,1644409,0630,transfers,Grants & payments to other governments,other,10429000,6.3420961573428505,103.996,2024
+062085100745,San Jose,CA,West,False,971233,0630,police,Police,core,520660000,536.0814552223823,111.741,2024
+062085100745,San Jose,CA,West,False,971233,0630,fire,Fire,core,280371000,288.67532301723685,111.741,2024
+062085100745,San Jose,CA,West,False,971233,0630,parks,Parks & recreation,core,225600000,232.28205796137487,111.741,2024
+062085100745,San Jose,CA,West,False,971233,0630,libraries,Libraries,core,61813000,63.64384241474497,111.741,2024
+062085100745,San Jose,CA,West,False,971233,0630,roads,Roads & highways,core,317908000,327.32413334390407,111.741,2024
+062085100745,San Jose,CA,West,False,971233,0630,sanitation,Sewer & trash,core,389636000,401.17664865176533,111.741,2024
+062085100745,San Jose,CA,West,False,971233,0630,housing,Housing & community development,core,283741000,292.14513921994,111.741,2024
+062085100745,San Jose,CA,West,False,971233,0630,admin,"Administration, courts & inspection",core,398215000,410.0097504924153,111.741,2024
+062085100745,San Jose,CA,West,False,971233,0630,water,Water utility,utility,59277000,61.03272850078199,111.741,2024
+062085100745,San Jose,CA,West,False,971233,0630,power,Electric & gas utilities,utility,413394000,425.638338071297,111.741,2024
+062085100745,San Jose,CA,West,False,971233,0630,transit,Transit,utility,0,0.0,111.741,2024
+062085100745,San Jose,CA,West,False,971233,0630,enterprise,"Airports, parking & other commercial",utility,144019000,148.28470614157467,111.741,2024
+062085100745,San Jose,CA,West,False,971233,0630,county,"Health, welfare, jails & schools",outside,0,0.0,111.741,2024
+062085100745,San Jose,CA,West,False,971233,0630,debt,Interest on debt,debt,94991000,97.80454329702553,111.741,2024
+062085100745,San Jose,CA,West,False,971233,0630,transfers,Grants & payments to other governments,other,0,0.0,111.741,2024
+482029175988,San Antonio,TX,South,False,1472909,0930,police,Police,core,535536000,363.5906902598871,94.4975,2024
+482029175988,San Antonio,TX,South,False,1472909,0930,fire,Fire,core,359045000,243.76590814503814,94.4975,2024
+482029175988,San Antonio,TX,South,False,1472909,0930,parks,Parks & recreation,core,229267000,155.6559162853917,94.4975,2024
+482029175988,San Antonio,TX,South,False,1472909,0930,libraries,Libraries,core,47300000,32.113321325350036,94.4975,2024
+482029175988,San Antonio,TX,South,False,1472909,0930,roads,Roads & highways,core,208950000,141.8621245440146,94.4975,2024
+482029175988,San Antonio,TX,South,False,1472909,0930,sanitation,Sewer & trash,core,535499000,363.56556990282496,94.4975,2024
+482029175988,San Antonio,TX,South,False,1472909,0930,housing,Housing & community development,core,95539000,64.86415657722236,94.4975,2024
+482029175988,San Antonio,TX,South,False,1472909,0930,admin,"Administration, courts & inspection",core,568963000,386.28523554408315,94.4975,2024
+482029175988,San Antonio,TX,South,False,1472909,0930,water,Water utility,utility,631605000,428.81467897881,94.4975,2024
+482029175988,San Antonio,TX,South,False,1472909,0930,power,Electric & gas utilities,utility,3045833000,2067.903040853169,94.4975,2024
+482029175988,San Antonio,TX,South,False,1472909,0930,transit,Transit,utility,0,0.0,94.4975,2024
+482029175988,San Antonio,TX,South,False,1472909,0930,enterprise,"Airports, parking & other commercial",utility,148494000,100.81681896166022,94.4975,2024
+482029175988,San Antonio,TX,South,False,1472909,0930,county,"Health, welfare, jails & schools",outside,377133000,256.04636810556525,94.4975,2024
+482029175988,San Antonio,TX,South,False,1472909,0930,debt,Interest on debt,debt,569714000,386.79511089958714,94.4975,2024
+482029175988,San Antonio,TX,South,False,1472909,0930,transfers,Grants & payments to other governments,other,1169000,0.793667497448926,94.4975,2024
+482113187649,Dallas,TX,South,False,1299544,0930,police,Police,core,672300000,517.3353114630978,102.7205,2024
+482113187649,Dallas,TX,South,False,1299544,0930,fire,Fire,core,444810000,342.28160031518746,102.7205,2024
+482113187649,Dallas,TX,South,False,1299544,0930,parks,Parks & recreation,core,298522000,229.71288390389245,102.7205,2024
+482113187649,Dallas,TX,South,False,1299544,0930,libraries,Libraries,core,62276000,47.921424745910876,102.7205,2024
+482113187649,Dallas,TX,South,False,1299544,0930,roads,Roads & highways,core,321486000,247.3836976662583,102.7205,2024
+482113187649,Dallas,TX,South,False,1299544,0930,sanitation,Sewer & trash,core,495021000,380.91899927974737,102.7205,2024
+482113187649,Dallas,TX,South,False,1299544,0930,housing,Housing & community development,core,74048000,56.97998682614825,102.7205,2024
+482113187649,Dallas,TX,South,False,1299544,0930,admin,"Administration, courts & inspection",core,607928000,467.80101327850383,102.7205,2024
+482113187649,Dallas,TX,South,False,1299544,0930,water,Water utility,utility,449824000,346.1398767567701,102.7205,2024
+482113187649,Dallas,TX,South,False,1299544,0930,power,Electric & gas utilities,utility,0,0.0,102.7205,2024
+482113187649,Dallas,TX,South,False,1299544,0930,transit,Transit,utility,0,0.0,102.7205,2024
+482113187649,Dallas,TX,South,False,1299544,0930,enterprise,"Airports, parking & other commercial",utility,1473447000,1133.8184778660823,102.7205,2024
+482113187649,Dallas,TX,South,False,1299544,0930,county,"Health, welfare, jails & schools",outside,72762000,55.99040894344478,102.7205,2024
+482113187649,Dallas,TX,South,False,1299544,0930,debt,Interest on debt,debt,486139000,374.0842941831904,102.7205,2024
+482113187649,Dallas,TX,South,False,1299544,0930,transfers,Grants & payments to other governments,other,14903000,11.467868729338907,102.7205,2024
+482453176394,Austin,TX,South,False,974447,0930,police,Police,core,393514000,403.83314844214203,98.4095,2024
+482453176394,Austin,TX,South,False,974447,0930,fire,Fire,core,249752000,256.30126625665633,98.4095,2024
+482453176394,Austin,TX,South,False,974447,0930,parks,Parks & recreation,core,244047000,250.44666359483892,98.4095,2024
+482453176394,Austin,TX,South,False,974447,0930,libraries,Libraries,core,63414000,65.07691028860472,98.4095,2024
+482453176394,Austin,TX,South,False,974447,0930,roads,Roads & highways,core,568505000,583.412951140493,98.4095,2024
+482453176394,Austin,TX,South,False,974447,0930,sanitation,Sewer & trash,core,436068000,447.5030453169849,98.4095,2024
+482453176394,Austin,TX,South,False,974447,0930,housing,Housing & community development,core,104429000,107.1674498459126,98.4095,2024
+482453176394,Austin,TX,South,False,974447,0930,admin,"Administration, courts & inspection",core,661491000,678.8373303011862,98.4095,2024
+482453176394,Austin,TX,South,False,974447,0930,water,Water utility,utility,320235000,328.63254748590737,98.4095,2024
+482453176394,Austin,TX,South,False,974447,0930,power,Electric & gas utilities,utility,1807087000,1854.4743839326304,98.4095,2024
+482453176394,Austin,TX,South,False,974447,0930,transit,Transit,utility,0,0.0,98.4095,2024
+482453176394,Austin,TX,South,False,974447,0930,enterprise,"Airports, parking & other commercial",utility,219824000,225.58846196868583,98.4095,2024
+482453176394,Austin,TX,South,False,974447,0930,county,"Health, welfare, jails & schools",outside,254814000,261.4960074791138,98.4095,2024
+482453176394,Austin,TX,South,False,974447,0930,debt,Interest on debt,debt,282455000,289.86183958696574,98.4095,2024
+482453176394,Austin,TX,South,False,974447,0930,transfers,Grants & payments to other governments,other,482000,0.49463952375039383,98.4095,2024
+482439176375,Fort Worth,TX,South,False,956709,0930,police,Police,core,455203000,475.80089661537625,102.7205,2024
+482439176375,Fort Worth,TX,South,False,956709,0930,fire,Fire,core,200663000,209.7429834986396,102.7205,2024
+482439176375,Fort Worth,TX,South,False,956709,0930,parks,Parks & recreation,core,94559000,98.83778662059206,102.7205,2024
+482439176375,Fort Worth,TX,South,False,956709,0930,libraries,Libraries,core,25874000,27.044796275565506,102.7205,2024
+482439176375,Fort Worth,TX,South,False,956709,0930,roads,Roads & highways,core,152437000,159.33476114471588,102.7205,2024
+482439176375,Fort Worth,TX,South,False,956709,0930,sanitation,Sewer & trash,core,432087000,451.6388996027005,102.7205,2024
+482439176375,Fort Worth,TX,South,False,956709,0930,housing,Housing & community development,core,154572000,161.5663697111661,102.7205,2024
+482439176375,Fort Worth,TX,South,False,956709,0930,admin,"Administration, courts & inspection",core,276317000,288.82032049452863,102.7205,2024
+482439176375,Fort Worth,TX,South,False,956709,0930,water,Water utility,utility,484457000,506.3786376003571,102.7205,2024
+482439176375,Fort Worth,TX,South,False,956709,0930,power,Electric & gas utilities,utility,0,0.0,102.7205,2024
+482439176375,Fort Worth,TX,South,False,956709,0930,transit,Transit,utility,0,0.0,102.7205,2024
+482439176375,Fort Worth,TX,South,False,956709,0930,enterprise,"Airports, parking & other commercial",utility,42252000,44.16389936751928,102.7205,2024
+482439176375,Fort Worth,TX,South,False,956709,0930,county,"Health, welfare, jails & schools",outside,80025000,83.64612437010626,102.7205,2024
+482439176375,Fort Worth,TX,South,False,956709,0930,debt,Interest on debt,debt,90970000,95.08638467914486,102.7205,2024
+482439176375,Fort Worth,TX,South,False,956709,0930,transfers,Grants & payments to other governments,other,0,0.0,102.7205,2024
+372119194726,Charlotte,NC,South,False,897720,0630,police,Police,core,388589000,432.8621396426503,97.33549999999998,2024
+372119194726,Charlotte,NC,South,False,897720,0630,fire,Fire,core,195184000,217.42191329144944,97.33549999999998,2024
+372119194726,Charlotte,NC,South,False,897720,0630,parks,Parks & recreation,core,169134000,188.40395669028206,97.33549999999998,2024
+372119194726,Charlotte,NC,South,False,897720,0630,libraries,Libraries,core,0,0.0,97.33549999999998,2024
+372119194726,Charlotte,NC,South,False,897720,0630,roads,Roads & highways,core,136386000,151.9248763534287,97.33549999999998,2024
+372119194726,Charlotte,NC,South,False,897720,0630,sanitation,Sewer & trash,core,534272000,595.1432517934322,97.33549999999998,2024
+372119194726,Charlotte,NC,South,False,897720,0630,housing,Housing & community development,core,152583000,169.96725036759793,97.33549999999998,2024
+372119194726,Charlotte,NC,South,False,897720,0630,admin,"Administration, courts & inspection",core,234118000,260.79178362963955,97.33549999999998,2024
+372119194726,Charlotte,NC,South,False,897720,0630,water,Water utility,utility,383083000,426.72882413224613,97.33549999999998,2024
+372119194726,Charlotte,NC,South,False,897720,0630,power,Electric & gas utilities,utility,0,0.0,97.33549999999998,2024
+372119194726,Charlotte,NC,South,False,897720,0630,transit,Transit,utility,268088000,298.63209018402176,97.33549999999998,2024
+372119194726,Charlotte,NC,South,False,897720,0630,enterprise,"Airports, parking & other commercial",utility,773345000,861.4545738092055,97.33549999999998,2024
+372119194726,Charlotte,NC,South,False,897720,0630,county,"Health, welfare, jails & schools",outside,397000,0.4422314307356414,97.33549999999998,2024
+372119194726,Charlotte,NC,South,False,897720,0630,debt,Interest on debt,debt,236489000,263.43291895022946,97.33549999999998,2024
+372119194726,Charlotte,NC,South,False,897720,0630,transfers,Grants & payments to other governments,other,11384000,12.681014124671389,97.33549999999998,2024
+392049209050,Columbus,OH,Midwest,False,907971,1231,police,Police,core,394461000,434.44228945638133,94.63,2024
+392049209050,Columbus,OH,Midwest,False,907971,1231,fire,Fire,core,313117000,344.85352505751837,94.63,2024
+392049209050,Columbus,OH,Midwest,False,907971,1231,parks,Parks & recreation,core,280843000,309.3083369402767,94.63,2024
+392049209050,Columbus,OH,Midwest,False,907971,1231,libraries,Libraries,core,0,0.0,94.63,2024
+392049209050,Columbus,OH,Midwest,False,907971,1231,roads,Roads & highways,core,296580000,326.6403882943398,94.63,2024
+392049209050,Columbus,OH,Midwest,False,907971,1231,sanitation,Sewer & trash,core,384483000,423.4529516911884,94.63,2024
+392049209050,Columbus,OH,Midwest,False,907971,1231,housing,Housing & community development,core,118897000,130.94801485950543,94.63,2024
+392049209050,Columbus,OH,Midwest,False,907971,1231,admin,"Administration, courts & inspection",core,480429000,529.1237275199318,94.63,2024
+392049209050,Columbus,OH,Midwest,False,907971,1231,water,Water utility,utility,240814000,265.2221271384218,94.63,2024
+392049209050,Columbus,OH,Midwest,False,907971,1231,power,Electric & gas utilities,utility,91762000,101.06269913906942,94.63,2024
+392049209050,Columbus,OH,Midwest,False,907971,1231,transit,Transit,utility,0,0.0,94.63,2024
+392049209050,Columbus,OH,Midwest,False,907971,1231,enterprise,"Airports, parking & other commercial",utility,21433000,23.605379466965356,94.63,2024
+392049209050,Columbus,OH,Midwest,False,907971,1231,county,"Health, welfare, jails & schools",outside,81425000,89.67797429653591,94.63,2024
+392049209050,Columbus,OH,Midwest,False,907971,1231,debt,Interest on debt,debt,165251000,182.00030617717968,94.63,2024
+392049209050,Columbus,OH,Midwest,False,907971,1231,transfers,Grants & payments to other governments,other,10195000,11.228332182415517,94.63,2024
+532033184255,Seattle,WA,Pacific Northwest,False,749256,1231,police,Police,core,366586000,489.266685885732,112.731,2024
+532033184255,Seattle,WA,Pacific Northwest,False,749256,1231,fire,Fire,core,306166000,408.62669101081605,112.731,2024
+532033184255,Seattle,WA,Pacific Northwest,False,749256,1231,parks,Parks & recreation,core,480160000,640.8490555964851,112.731,2024
+532033184255,Seattle,WA,Pacific Northwest,False,749256,1231,libraries,Libraries,core,103212000,137.75265062942438,112.731,2024
+532033184255,Seattle,WA,Pacific Northwest,False,749256,1231,roads,Roads & highways,core,540446000,721.310206391407,112.731,2024
+532033184255,Seattle,WA,Pacific Northwest,False,749256,1231,sanitation,Sewer & trash,core,508882000,679.1830829516214,112.731,2024
+532033184255,Seattle,WA,Pacific Northwest,False,749256,1231,housing,Housing & community development,core,263883000,352.1933758288222,112.731,2024
+532033184255,Seattle,WA,Pacific Northwest,False,749256,1231,admin,"Administration, courts & inspection",core,838630000,1119.2836627267582,112.731,2024
+532033184255,Seattle,WA,Pacific Northwest,False,749256,1231,water,Water utility,utility,226750000,302.6335458107776,112.731,2024
+532033184255,Seattle,WA,Pacific Northwest,False,749256,1231,power,Electric & gas utilities,utility,1238700000,1653.2400140939812,112.731,2024
+532033184255,Seattle,WA,Pacific Northwest,False,749256,1231,transit,Transit,utility,0,0.0,112.731,2024
+532033184255,Seattle,WA,Pacific Northwest,False,749256,1231,enterprise,"Airports, parking & other commercial",utility,15958000,21.298461407049125,112.731,2024
+532033184255,Seattle,WA,Pacific Northwest,False,749256,1231,county,"Health, welfare, jails & schools",outside,355481000,474.44531642055586,112.731,2024
+532033184255,Seattle,WA,Pacific Northwest,False,749256,1231,debt,Interest on debt,debt,237580000,317.087884514772,112.731,2024
+532033184255,Seattle,WA,Pacific Northwest,False,749256,1231,transfers,Grants & payments to other governments,other,219826000,293.39237857287765,112.731,2024
+412051211254,Portland,OR,Pacific Northwest,False,635067,0630,police,Police,core,276522000,435.4217743954575,106.0675,2024
+412051211254,Portland,OR,Pacific Northwest,False,635067,0630,fire,Fire,core,180606000,284.3888912508444,106.0675,2024
+412051211254,Portland,OR,Pacific Northwest,False,635067,0630,parks,Parks & recreation,core,250975000,395.19452278263554,106.0675,2024
+412051211254,Portland,OR,Pacific Northwest,False,635067,0630,libraries,Libraries,core,0,0.0,106.0675,2024
+412051211254,Portland,OR,Pacific Northwest,False,635067,0630,roads,Roads & highways,core,270671000,426.2085732686472,106.0675,2024
+412051211254,Portland,OR,Pacific Northwest,False,635067,0630,sanitation,Sewer & trash,core,520995000,820.3780073598533,106.0675,2024
+412051211254,Portland,OR,Pacific Northwest,False,635067,0630,housing,Housing & community development,core,173192000,272.7145324823995,106.0675,2024
+412051211254,Portland,OR,Pacific Northwest,False,635067,0630,admin,"Administration, courts & inspection",core,455031000,716.5086518430339,106.0675,2024
+412051211254,Portland,OR,Pacific Northwest,False,635067,0630,water,Water utility,utility,279792000,440.57083740770656,106.0675,2024
+412051211254,Portland,OR,Pacific Northwest,False,635067,0630,power,Electric & gas utilities,utility,3116000,4.906568913201284,106.0675,2024
+412051211254,Portland,OR,Pacific Northwest,False,635067,0630,transit,Transit,utility,0,0.0,106.0675,2024
+412051211254,Portland,OR,Pacific Northwest,False,635067,0630,enterprise,"Airports, parking & other commercial",utility,15820000,24.910757447639384,106.0675,2024
+412051211254,Portland,OR,Pacific Northwest,False,635067,0630,county,"Health, welfare, jails & schools",outside,5901000,9.291932977150442,106.0675,2024
+412051211254,Portland,OR,Pacific Northwest,False,635067,0630,debt,Interest on debt,debt,154938000,243.97110856019916,106.0675,2024
+412051211254,Portland,OR,Pacific Northwest,False,635067,0630,transfers,Grants & payments to other governments,other,0,0.0,106.0675,2024
+252025128108,Boston,MA,Northeast,False,650706,0630,police,Police,core,550945000,846.6880588161166,109.3295,2024
+252025128108,Boston,MA,Northeast,False,650706,0630,fire,Fire,core,320770000,492.9568806803687,109.3295,2024
+252025128108,Boston,MA,Northeast,False,650706,0630,parks,Parks & recreation,core,216366000,332.5096126361214,109.3295,2024
+252025128108,Boston,MA,Northeast,False,650706,0630,libraries,Libraries,core,85797000,131.85217287069736,109.3295,2024
+252025128108,Boston,MA,Northeast,False,650706,0630,roads,Roads & highways,core,179279000,275.51459491690565,109.3295,2024
+252025128108,Boston,MA,Northeast,False,650706,0630,sanitation,Sewer & trash,core,270334000,415.44722194047694,109.3295,2024
+252025128108,Boston,MA,Northeast,False,650706,0630,housing,Housing & community development,core,213344000,327.86542616788535,109.3295,2024
+252025128108,Boston,MA,Northeast,False,650706,0630,admin,"Administration, courts & inspection",core,1496319000,2299.531585693078,109.3295,2024
+252025128108,Boston,MA,Northeast,False,650706,0630,water,Water utility,utility,105002000,161.36626986688304,109.3295,2024
+252025128108,Boston,MA,Northeast,False,650706,0630,power,Electric & gas utilities,utility,0,0.0,109.3295,2024
+252025128108,Boston,MA,Northeast,False,650706,0630,transit,Transit,utility,0,0.0,109.3295,2024
+252025128108,Boston,MA,Northeast,False,650706,0630,enterprise,"Airports, parking & other commercial",utility,12235000,18.802654347739225,109.3295,2024
+252025128108,Boston,MA,Northeast,False,650706,0630,county,"Health, welfare, jails & schools",outside,2700937000,4150.779307398426,109.3295,2024
+252025128108,Boston,MA,Northeast,False,650706,0630,debt,Interest on debt,debt,83136000,127.76276843920296,109.3295,2024
+252025128108,Boston,MA,Northeast,False,650706,0630,transfers,Grants & payments to other governments,other,355772000,546.7476863591238,109.3295,2024

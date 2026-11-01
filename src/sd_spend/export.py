@@ -43,17 +43,19 @@ def vendors_payload(vendors: pd.DataFrame, cov: dict) -> dict:
     }
 
 
-def peers_payload(tidy: pd.DataFrame, fiscal_year: int = 2024) -> dict:
+def peers_payload(tidy: pd.DataFrame) -> dict:
+    """One snapshot per Census survey year (oldest first); `rpp` is the BEA price level (US = 100)."""
     groups = tidy[["group", "label", "kind"]].drop_duplicates().rename(columns={"group": "key"})
-    cities = tidy[["city", "state", "region", "population", "fy_end", "is_home"]].drop_duplicates("city")
-    rows = tidy[["city", "group", "amount_usd", "per_resident"]].rename(columns={"amount_usd": "amount"})
     home = tidy.loc[tidy["is_home"], "city"].iloc[0]
-    return {
-        "fiscal_year": fiscal_year,
-        "home": home,
-        "groups": groups.to_dict("records"),
-        "cities": [{**c, "population": int(c["population"]), "is_home": bool(c["is_home"])}
-                   for c in cities.to_dict("records")],
-        "rows": [{**r, "amount": int(r["amount"]), "per_resident": round(float(r["per_resident"]), 2)}
-                 for r in rows.to_dict("records")],
-    }
+    years = []
+    for fiscal_year, year in sorted(tidy.groupby("fiscal_year"), key=lambda kv: kv[0]):
+        cities = year[["city", "state", "region", "population", "fy_end", "is_home", "rpp"]].drop_duplicates("city")
+        rows = year[["city", "group", "amount_usd", "per_resident"]].rename(columns={"amount_usd": "amount"})
+        years.append({
+            "fiscal_year": int(fiscal_year),
+            "cities": [{**c, "population": int(c["population"]), "is_home": bool(c["is_home"]), "rpp": round(float(c["rpp"]), 2)}
+                       for c in cities.to_dict("records")],
+            "rows": [{**r, "amount": int(r["amount"]), "per_resident": round(float(r["per_resident"]), 2)}
+                     for r in rows.to_dict("records")],
+        })
+    return {"home": home, "groups": groups.to_dict("records"), "years": years}

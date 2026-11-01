@@ -3,15 +3,43 @@ import { formatPerResident } from "./format.js";
 export const KINDS = ["core", "utility", "outside", "debt", "other"];
 export const DEFAULT_KINDS = ["core"];
 
-export function parsePeerHash(hash) {
-  const m = /kinds=([^&]*)/.exec(hash || "");
-  const kinds = m ? m[1].split(",").filter((k) => KINDS.includes(k)) : [];
-  return { kinds: kinds.length ? KINDS.filter((k) => kinds.includes(k)) : [...DEFAULT_KINDS] };
+const decode = (text) => { try { return decodeURIComponent(text); } catch { return ""; } };
+
+function hashParams(hash) {
+  const params = new Map();
+  for (const part of String(hash || "").replace(/^#/, "").split("&")) {
+    const i = part.indexOf("=");
+    if (i > 0) params.set(part.slice(0, i), decode(part.slice(i + 1)));
+  }
+  return params;
 }
 
-export function serializePeerHash({ kinds }) {
-  const same = kinds.length === DEFAULT_KINDS.length && kinds.every((k, i) => k === DEFAULT_KINDS[i]);
-  return same ? "" : `#kinds=${kinds.join(",")}`;
+export function parsePeerHash(hash) {
+  const params = hashParams(hash);
+  const kinds = (params.get("kinds") || "").split(",").filter((k) => KINDS.includes(k));
+  const year = /^\d{4}$/.test(params.get("year") || "") ? Number(params.get("year")) : null;
+  const trend = /^[a-z]+$/.test(params.get("trend") || "") ? params.get("trend") : "all";
+  return { kinds: kinds.length ? KINDS.filter((k) => kinds.includes(k)) : [...DEFAULT_KINDS], adjusted: params.get("adjust") === "1", year, trend };
+}
+
+export function serializePeerHash({ kinds, adjusted = false, year = null, trend = "all" }) {
+  const parts = [];
+  if (!(kinds.length === DEFAULT_KINDS.length && kinds.every((k, i) => k === DEFAULT_KINDS[i]))) parts.push(`kinds=${kinds.join(",")}`);
+  if (adjusted) parts.push("adjust=1");
+  if (year !== null) parts.push(`year=${year}`);
+  if (trend !== "all") parts.push(`trend=${trend}`);
+  return parts.length ? `#${parts.join("&")}` : "";
+}
+
+// One survey year in the single-year shape the rest of this module uses. Adjusting divides each city's
+// per-resident figure by its metro price level (US average = 100) so cities are compared at the same prices.
+export function yearView(data, fiscalYear, adjusted) {
+  const snapshot = data.years.find((y) => y.fiscal_year === fiscalYear) ?? data.years[data.years.length - 1];
+  const factor = new Map(snapshot.cities.map((c) => [c.city, adjusted && c.rpp > 0 ? 100 / c.rpp : 1]));
+  return {
+    fiscal_year: snapshot.fiscal_year, home: data.home, groups: data.groups, cities: snapshot.cities,
+    rows: snapshot.rows.map((r) => ({ ...r, per_resident: r.per_resident * (factor.get(r.city) ?? 1) })),
+  };
 }
 
 export function visibleGroups(data, kinds) {
@@ -47,16 +75,34 @@ export function groupStats(data, key) {
   };
 }
 
-export function headline(data, kinds) {
-  const keys = visibleGroups(data, kinds).map((g) => g.key);
+function cityTotals(view, keys) {
   const totals = new Map();
-  for (const r of data.rows) if (keys.includes(r.group)) totals.set(r.city, (totals.get(r.city) || 0) + r.per_resident);
-  const home = totals.get(data.home) || 0;
-  const mid = median([...totals].filter(([c, v]) => c !== data.home && v > 0).map(([, v]) => v));
-  if (!mid) return `San Diego spends ${formatPerResident(home)} per resident on these services (including construction).`;
-  const pct = Math.round(Math.abs(home / mid - 1) * 100);
-  const dir = home >= mid ? "more" : "less";
-  return `San Diego spends ${formatPerResident(home)} per resident on these services (including construction), ${pct}% ${dir} than the middle peer (${formatPerResident(mid)}).`;
+  for (const r of view.rows) if (keys.includes(r.group)) totals.set(r.city, (totals.get(r.city) || 0) + r.per_resident);
+  const home = totals.get(view.home) || 0;
+  const middle = median([...totals].filter(([c, v]) => c !== view.home && v > 0).map(([, v]) => v));
+  return { home, middle, pct: middle ? (home / middle - 1) * 100 : null };
+}
+
+export function headline(data, kinds, adjusted = false) {
+  const { home, middle, pct } = cityTotals(data, visibleGroups(data, kinds).map((g) => g.key));
+  const scope = `on these services (including construction${adjusted ? ", adjusted to US-average prices" : ""})`;
+  if (!middle) return `San Diego spends ${formatPerResident(home)} per resident ${scope}.`;
+  const rounded = Math.round(Math.abs(pct));
+  const compare = rounded === 0 ? "about the same as" : `${rounded}% ${pct >= 0 ? "more" : "less"} than`;
+  return `San Diego spends ${formatPerResident(home)} per resident ${scope}, ${compare} the middle peer (${formatPerResident(middle)}).`;
+}
+
+// San Diego against the middle peer for every survey year, as reported and adjusted to the same price level.
+// `service` is a group key, or "all" (also used when the key is not among the visible kinds).
+export function trendSeries(data, kinds, service) {
+  const groups = visibleGroups(data, kinds);
+  const keys = service !== "all" && groups.some((g) => g.key === service) ? [service] : groups.map((g) => g.key);
+  return data.years.map((y) => {
+    const raw = cityTotals(yearView(data, y.fiscal_year, false), keys);
+    const adj = cityTotals(yearView(data, y.fiscal_year, true), keys);
+    return { fiscal_year: y.fiscal_year, home: raw.home, middle: raw.middle, pct: raw.pct,
+      homeAdjusted: adj.home, middleAdjusted: adj.middle, pctAdjusted: adj.pct };
+  });
 }
 
 const MONTH_NAMES = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];

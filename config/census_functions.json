@@ -7,16 +7,15 @@
     {"key": "roads", "label": "Roads & highways", "kind": "core", "codes": ["E44", "F44"]},
     {"key": "sanitation", "label": "Sewer & trash", "kind": "core", "codes": ["E80", "F80", "E81", "F81"]},
     {"key": "housing", "label": "Housing & community development", "kind": "core", "codes": ["E50", "F50"]},
-    {"key": "admin", "label": "Administration, courts & inspection", "kind": "core",
-     "codes": ["E23", "F23", "E29", "F29", "E31", "F31", "E89", "F89", "E25", "F25", "E66", "F66", "E59", "F59"]},
+    {"key": "admin", "label": "Administration, courts & inspection", "kind": "core", "codes": ["E23", "F23", "E29", "F29", "E31", "F31", "E89", "F89", "E25", "F25", "E66", "F66", "E59", "F59"]},
     {"key": "water", "label": "Water utility", "kind": "utility", "codes": ["E91", "F91"]},
     {"key": "power", "label": "Electric & gas utilities", "kind": "utility", "codes": ["E92", "F92", "E93", "F93"]},
     {"key": "transit", "label": "Transit", "kind": "utility", "codes": ["E94", "F94"]},
-    {"key": "enterprise", "label": "Airports, parking & other commercial", "kind": "utility",
-     "codes": ["E01", "F01", "E60", "F60", "E03", "F03"]},
-    {"key": "county", "label": "Health, welfare, jails & schools", "kind": "outside",
-     "codes": ["E32", "F32", "E36", "F36", "E79", "F79", "E04", "F04", "E12", "F12"]},
+    {"key": "enterprise", "label": "Airports, parking & other commercial", "kind": "utility", "codes": ["E01", "F01", "E60", "F60", "E03", "F03", "E87", "F87"]},
+    {"key": "county", "label": "Health, welfare, jails & schools", "kind": "outside", "codes": ["E32", "F32", "E36", "F36", "E79", "F79", "E04", "F04", "E12", "F12", "E75", "J68"]},
     {"key": "debt", "label": "Interest on debt", "kind": "debt", "codes": ["I89", "I91", "I92", "I93", "I94"]},
     {"key": "transfers", "label": "Grants & payments to other governments", "kind": "other", "codes": ["J19", "L89", "M89"]}
-  ]
+  ],
+  "prefix_groups": {"L": "transfers", "M": "transfers", "S": "transfers"},
+  "ignored_prefixes": ["G"]
 }

@@ -52,17 +52,26 @@ def test_vendors_payload_shapes_years_coverage_and_sorted_vendors():
     assert payload["vendors"][1] == {"name": "Alpha Inc", "ids": "1; 2; 3", "amounts": {"2024": 100, "2025": 50}}
 
 
-def test_peers_payload_shape():
+def test_peers_payload_has_one_snapshot_per_survey_year_with_price_levels():
     import pandas as pd
     from sd_spend.export import peers_payload
+
+    def row(fy, city, home, pop, fy_end, amount, per, rpp):
+        return {"fiscal_year": fy, "city": city, "state": "CA", "region": "West", "is_home": home, "population": pop,
+                "fy_end": fy_end, "group": "police", "label": "Police", "kind": "core", "amount_usd": amount,
+                "per_resident": per, "rpp": rpp}
     tidy = pd.DataFrame([
-        {"city": "San Diego", "state": "CA", "region": "West", "is_home": True, "population": 100, "fy_end": "0630",
-         "group": "police", "label": "Police", "kind": "core", "amount_usd": 5000, "per_resident": 50.0},
-        {"city": "Dallas", "state": "TX", "region": "South", "is_home": False, "population": 200, "fy_end": "0930",
-         "group": "police", "label": "Police", "kind": "core", "amount_usd": 6000, "per_resident": 30.0},
+        row(2024, "San Diego", True, 100, "0630", 5000, 50.0, 112.34567),
+        row(2024, "Dallas", False, 200, "0930", 6000, 30.0, 101.0),
+        row(2023, "San Diego", True, 90, "0630", 4000, 44.444444, 111.0),
+        row(2023, "Dallas", False, 190, "0930", 5000, 26.0, 100.0),
     ])
     p = peers_payload(tidy)
-    assert p["home"] == "San Diego" and p["fiscal_year"] == 2024
+    assert p["home"] == "San Diego"
     assert p["groups"] == [{"key": "police", "label": "Police", "kind": "core"}]
-    assert [c["city"] for c in p["cities"]] == ["San Diego", "Dallas"]
-    assert p["rows"][0] == {"city": "San Diego", "group": "police", "amount": 5000, "per_resident": 50.0}
+    assert [y["fiscal_year"] for y in p["years"]] == [2023, 2024]  # oldest first
+    latest = p["years"][-1]
+    assert [c["city"] for c in latest["cities"]] == ["San Diego", "Dallas"]
+    assert latest["cities"][0]["rpp"] == 112.35 and latest["cities"][0]["population"] == 100
+    assert latest["rows"][0] == {"city": "San Diego", "group": "police", "amount": 5000, "per_resident": 50.0}
+    assert p["years"][0]["rows"][0]["per_resident"] == 44.44

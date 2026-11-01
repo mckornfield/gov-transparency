@@ -17,8 +17,8 @@ export function parseSortValue(text) {
   if (/^under \$1/i.test(t)) return 0.5;
   m = /^([-−])?\$(\d[\d,]*\.?\d*|\.\d+)([KMB])?/.exec(t);
   if (m) return (m[1] ? -1 : 1) * Number(m[2].replace(/,/g, "")) * (SUFFIX[m[3]] || 1);
-  m = /^([-−])?(\d[\d,]*\.?\d*|\.\d+)%?$/.exec(t);
-  if (m) return (m[1] ? -1 : 1) * Number(m[2].replace(/,/g, ""));
+  m = /^([-−+])?(\d[\d,]*\.?\d*|\.\d+)%?$/.exec(t);
+  if (m) return ("-−".includes(m[1] ?? "+") ? -1 : 1) * Number(m[2].replace(/,/g, ""));
   return t.toLowerCase();
 }
 

@@ -10,7 +10,8 @@ REQUIRED = {
     "sandiego/accounts.csv.gz",
     "sandiego/depts.csv.gz",
     "sco/san_diego_population.csv.gz",
-    "census/2024_Individual_Unit_Files.zip.gz",
+    *{f"census/{y}_Individual_Unit_Files.zip.gz" for y in range(2019, 2025)},
+    "bea/MARPP.zip.gz",
     "census/2024_methodology.pdf.gz",
     *{f"sandiego/vendor_payments_fy{fy}.pdf.gz" for fy in range(2022, 2027)},
 }

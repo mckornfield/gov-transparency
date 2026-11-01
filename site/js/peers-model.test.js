@@ -1,6 +1,6 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { parsePeerHash, serializePeerHash, groupStats, visibleGroups, headline, DEFAULT_KINDS } from "./peers-model.js";
+import { parsePeerHash, serializePeerHash, groupStats, visibleGroups, headline, DEFAULT_KINDS, yearView, trendSeries } from "./peers-model.js";
 
 const city = (c, region = "South", home = false) => ({ city: c, state: "XX", region, population: 100, fy_end: "0630", is_home: home });
 const data = {
@@ -83,4 +83,71 @@ test("a tiny non-zero amount is not shown as $0", () => {
   assert.equal(formatPerResident(0.49), "under $1");
   assert.equal(formatPerResident(0), "$0");
   assert.equal(formatPerResident(1234.4), "$1,234");
+});
+
+// Two survey years; San Diego prices are 20% above the US average, A is average, B is 20% below.
+const PRICE = { "San Diego": 120, A: 100, B: 80 };
+const snapshot = (fiscal_year, perResident) => ({
+  fiscal_year,
+  cities: Object.keys(PRICE).map((c) => ({ city: c, state: "XX", region: c === "San Diego" ? "West" : "South", population: 100, fy_end: "0630", is_home: c === "San Diego", rpp: PRICE[c] })),
+  rows: Object.entries(perResident).flatMap(([c, byGroup]) => Object.entries(byGroup).map(([group, v]) => ({ city: c, group, amount: v * 100, per_resident: v }))),
+});
+const multi = {
+  home: "San Diego",
+  groups: [{ key: "police", label: "Police", kind: "core" }, { key: "fire", label: "Fire", kind: "core" }, { key: "water", label: "Water", kind: "utility" }],
+  years: [
+    snapshot(2023, { "San Diego": { police: 120, fire: 60, water: 5 }, A: { police: 100, fire: 50, water: 5 }, B: { police: 80, fire: 40, water: 5 } }),
+    snapshot(2024, { "San Diego": { police: 144, fire: 72, water: 5 }, A: { police: 100, fire: 50, water: 5 }, B: { police: 80, fire: 40, water: 5 } }),
+  ],
+};
+
+test("hash carries price adjustment, year and trend service, and drops garbage", () => {
+  assert.deepEqual(parsePeerHash("#adjust=1&year=2023&trend=police"), { kinds: DEFAULT_KINDS, adjusted: true, year: 2023, trend: "police" });
+  assert.deepEqual(parsePeerHash(""), { kinds: DEFAULT_KINDS, adjusted: false, year: null, trend: "all" });
+  assert.deepEqual(parsePeerHash("#adjust=2&year=abc&trend=%00x y"), { kinds: DEFAULT_KINDS, adjusted: false, year: null, trend: "all" });
+  assert.equal(serializePeerHash({ kinds: DEFAULT_KINDS, adjusted: false, year: null, trend: "all" }), "");
+  assert.equal(serializePeerHash({ kinds: ["core", "utility"], adjusted: true, year: 2023, trend: "fire" }), "#kinds=core,utility&adjust=1&year=2023&trend=fire");
+  assert.deepEqual(parsePeerHash("#kinds=core,utility&adjust=1"), { kinds: ["core", "utility"], adjusted: true, year: null, trend: "all" });
+});
+
+test("yearView picks the year, falls back to the latest, and divides by each city's price level", () => {
+  assert.equal(yearView(multi, 2023, false).fiscal_year, 2023);
+  assert.equal(yearView(multi, 1999, false).fiscal_year, 2024);
+  assert.equal(yearView(multi, null, false).fiscal_year, 2024);
+  const raw = yearView(multi, 2024, false);
+  assert.equal(raw.rows.find((r) => r.city === "San Diego" && r.group === "police").per_resident, 144);
+  const adj = yearView(multi, 2024, true);
+  assert.equal(adj.rows.find((r) => r.city === "San Diego" && r.group === "police").per_resident, 120); // 144 / 1.2
+  assert.equal(adj.rows.find((r) => r.city === "B" && r.group === "police").per_resident, 100); // 80 / 0.8
+  assert.equal(adj.home, "San Diego");
+  assert.equal(adj.rows.find((r) => r.city === "A" && r.group === "police").amount, 10000); // dollars are never adjusted
+});
+
+test("the price-adjusted comparison can flip the answer", () => {
+  const raw = headline(yearView(multi, 2023, false), ["core"]);
+  const adj = headline(yearView(multi, 2023, true), ["core"], true);
+  assert.match(raw, /San Diego spends \$180 per resident/); assert.match(raw, /33% more than the middle peer \(\$135\)/);
+  assert.match(adj, /\$150 per resident/); assert.match(adj, /adjusted/i); assert.match(adj, /the same as the middle peer/);
+});
+
+test("trend gives San Diego against the middle peer per year, as reported and price-adjusted", () => {
+  const t = trendSeries(multi, ["core"], "all");
+  assert.deepEqual(t.map((r) => r.fiscal_year), [2023, 2024]);
+  assert.equal(t[0].home, 180); assert.equal(t[0].middle, 135); assert.ok(Math.abs(t[0].pct - 100 / 3) < 1e-9);
+  assert.ok(Math.abs(t[0].pctAdjusted - 0) < 1e-9);
+  assert.equal(t[1].home, 216); assert.ok(Math.abs(t[1].pct - 60) < 1e-9); assert.ok(Math.abs(t[1].pctAdjusted - 20) < 1e-9);
+  assert.equal(t[1].homeAdjusted, 180); assert.equal(t[1].middleAdjusted, 150);
+});
+
+test("trend can follow one service, and ignores services outside the chosen kinds", () => {
+  const police = trendSeries(multi, ["core"], "police");
+  assert.equal(police[1].home, 144); assert.equal(police[1].middle, 90);
+  assert.equal(trendSeries(multi, ["core"], "water")[0].home, 180); // water is not a visible kind: falls back to all visible
+  assert.equal(trendSeries(multi, ["core", "utility"], "all")[0].home, 185);
+});
+
+test("trend has no gap for a year when nobody else reports spending", () => {
+  const empty = { ...multi, years: [snapshot(2024, { "San Diego": { police: 5 }, A: { police: 0 }, B: { police: 0 } })] };
+  const t = trendSeries(empty, ["core"], "police");
+  assert.equal(t[0].middle, null); assert.equal(t[0].pct, null); assert.equal(t[0].pctAdjusted, null);
 });

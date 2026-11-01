@@ -26,6 +26,18 @@ def read_zip_member(zip_bytes: bytes, suffix: str) -> str:
     raise CensusError(f"{suffix} not found in zip")
 
 
+def read_survey(zip_bytes: bytes, year: int) -> tuple[str, str]:
+    """(unit-file text, item-file text) from one year's zip. Census renamed the files over the years
+    (..._modp.txt, ..._modp_pu.txt), so find them by their stable parts."""
+    with zipfile.ZipFile(io.BytesIO(zip_bytes)) as z:
+        def member(part: str) -> str:
+            for name in z.namelist():
+                if part in name.rsplit("/", 1)[-1]:
+                    return z.read(name).decode("latin-1")
+            raise CensusError(f"{part} not found in the {year} zip")
+        return member(f"Fin_PID_{year}"), member("FinEstDAT")
+
+
 def parse_units(text: str) -> pd.DataFrame:
     rows = []
     for line in text.splitlines():
@@ -66,13 +78,19 @@ def build_peer_spending(units: pd.DataFrame, items: pd.DataFrame, peers_cfg: dic
             raise CensusError(f"city {uid} found {n} times in the unit file (expected 1)")
 
     code_to_group = {c: g["key"] for g in functions_cfg["groups"] for c in g["codes"]}
+    # Older (FY2019-21) files break intergovernmental transfers (L, M, S) out by function and add "other capital
+    # outlay" (G: equipment and land), which FY2022+ files do not publish. Transfers roll up by prefix and G is
+    # ignored in every year so the years stay comparable.
+    prefix_groups = functions_cfg.get("prefix_groups", {})
+    ignored = tuple(functions_cfg.get("ignored_prefixes", ()))
     spend = items[items["unit_id"].isin(wanted) & items["item"].str[0].isin(list(EXPENDITURE_PREFIXES))]
-    unmapped = sorted(set(spend["item"]) - set(code_to_group))
+    spend = spend[~spend["item"].str.startswith(ignored)] if ignored else spend
+    spend = spend.assign(group=[code_to_group.get(c) or prefix_groups.get(c[0]) for c in spend["item"]])
+    unmapped = sorted(set(spend.loc[spend["group"].isna(), "item"]))
     if unmapped:
         raise CensusError(f"expenditure item codes not mapped in census_functions.json: {', '.join(unmapped)}")
 
-    by_group = (spend.assign(group=spend["item"].map(code_to_group))
-                .groupby(["unit_id", "group"], as_index=False)["amount_usd"].sum())
+    by_group = (spend.groupby(["unit_id", "group"], as_index=False)["amount_usd"].sum())
     rows = []
     for uid, meta in wanted.items():
         u = present[present["unit_id"] == uid].iloc[0]

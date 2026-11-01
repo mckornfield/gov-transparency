@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Compared with other cities · San Diego Spending</title>
-  <meta name="description" content="City of San Diego spending per resident by service, next to 11 comparable US cities (Census Bureau, FY2024).">
+  <meta name="description" content="City of San Diego spending per resident by service, next to 11 comparable US cities, FY2019 to FY2024 (Census Bureau), with an option to adjust for local prices (BEA).">
   <link rel="stylesheet" href="css/site.css?v=2">
 </head>
 <body>
@@ -20,12 +20,17 @@
   <main>
     <h1>Compared with other cities</h1>
     <p id="phead" class="headline" aria-live="polite">Loading…</p>
+    <p id="adjust-note" class="note" hidden>Adjusted: every city's figure is divided by its metro area's price level
+      (BEA regional price parities, US average = 100), so the numbers show what each city spends at the same prices.
+      Adjusting lowers the figures of expensive metros and raises those of cheaper ones, so how much it changes San Diego's gap depends on the peers too. It is a rough correction:
+      prices for households are not the same as the wages and construction costs a city pays.</p>
     <p id="peer-note" class="note">The peers are 11 US cities of roughly 0.6 to 1.7 million people, chosen to be broadly
       similar and to cover several regions. A higher number is not waste: it can reflect higher prices or wages, or
-      a different mix of services. Fiscal years end in different months and nothing is adjusted for cost of living.
-      This compares San Diego with other cities, not with the private sector. "Administration, courts &amp; inspection" is
-      a broad Census category that includes spending not classified elsewhere, so it is the least comparable row: part
-      of any gap there may reflect how cities report.</p>
+      a different mix of services. Fiscal years end in different months. By default nothing is adjusted for cost of
+      living; tick the box below to put every city on the same price level. This compares San Diego with other
+      cities, not with the private sector. "Administration, courts &amp; inspection" is a broad Census category that
+      includes spending not classified elsewhere, so it is the least comparable row: part of any gap there may reflect
+      how cities report.</p>
 
     <form class="controls" aria-label="Which services to include" onsubmit="return false">
       <fieldset>
@@ -36,6 +41,15 @@
         <label><input type="checkbox" id="kind-debt" value="debt"> Interest on debt</label>
         <label><input type="checkbox" id="kind-other" value="other"> Grants to other governments</label>
       </fieldset>
+      <fieldset>
+        <legend>Prices</legend>
+        <label><input type="checkbox" id="adjust"> Adjust for local prices</label>
+      </fieldset>
+      <fieldset>
+        <legend>Census survey year</legend>
+        <label class="visually-hidden" for="year">Census survey year</label>
+        <select id="year"></select>
+      </fieldset>
     </form>
 
     <h2>Per resident, by service</h2>
@@ -44,11 +58,12 @@
       <ul id="peer-legend" class="legend"></ul>
       <details class="method">
         <summary>Method</summary>
-        <p>Source: Census Bureau, Annual Survey of State and Local Government Finances, FY2024 individual unit files.
+        <p>Source: Census Bureau, Annual Survey of State and Local Government Finances, individual unit files (survey years 2019 to 2024; the page opens on 2024).
           Each service is current operation plus construction spending under the matching Census item codes; per resident
           is that amount divided by the city's population as the Census reports it. A $0 means the city reports no
           spending on that service, usually because a county or special district provides it; those cities are left out
-          of the middle peer and the rank. "Administration" is a broad Census category that includes spending not
+          of the middle peer and the rank. With "Adjust for local prices" on, each city is divided by the BEA regional price
+          parity for its metro area over its fiscal year. "Administration" is a broad Census category that includes spending not
           classified elsewhere, so differences there may partly reflect how cities report. See
           <a href="methods.html">Data &amp; methods</a>.</p>
       </details>
@@ -57,6 +72,30 @@
       <table id="peer-table" data-title="Per resident, by service">
         <caption class="note">The same figures. "Middle peer" is the median of the other cities that report spending.</caption>
         <thead><tr><th scope="col">Service</th><th scope="col">San Diego</th><th scope="col">Middle peer</th><th scope="col">Lowest to highest</th><th scope="col">San Diego rank, by spending</th><th scope="col">Cities reporting $0</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+
+    <h2>Is the gap changing?</h2>
+    <p class="note">San Diego compared with the middle peer in each survey year from 2019 to 2024, as reported and
+      adjusted to the same price level. These are dollars of the day, not corrected for inflation, so look at the gap
+      rather than the amounts. The 2022 survey was a full census of governments and many cities' broad
+      "administration" line jumps that year, so choose a single service to see the steadier picture.</p>
+    <form class="controls" aria-label="Which service to follow" onsubmit="return false">
+      <fieldset>
+        <legend>Service</legend>
+        <label class="visually-hidden" for="trend-service">Service to follow over time</label>
+        <select id="trend-service"></select>
+      </fieldset>
+    </form>
+    <figure>
+      <div id="trend-chart" role="img" aria-label="Line chart of San Diego's gap to the middle peer by survey year, as reported and price-adjusted"></div>
+      <ul id="trend-legend" class="legend"></ul>
+    </figure>
+    <div class="table-wrap">
+      <table id="trend-table" data-title="San Diego against the middle peer, by year" data-default-sort="0:desc">
+        <caption class="note">Per resident for the services chosen above. "Gap" is how much more (+) or less (−) San Diego spends than the middle peer, the median of the other cities that report spending.</caption>
+        <thead><tr><th scope="col">Survey year</th><th scope="col">San Diego</th><th scope="col">Middle peer</th><th scope="col">Gap</th><th scope="col">San Diego, price-adjusted</th><th scope="col">Middle peer, price-adjusted</th><th scope="col">Gap, price-adjusted</th></tr></thead>
         <tbody></tbody>
       </table>
     </div>
@@ -73,7 +112,7 @@
     <h2>The cities</h2>
     <div class="table-wrap">
       <table id="city-table" data-title="The cities" data-default-sort="3:desc">
-        <caption class="note">Population and the fiscal year that ended, as reported to the Census. The FY2024 survey covers years that ended between July 2023 and June 2024, so cities with a September or December year end are showing 2023.</caption>
+        <caption class="note" id="city-caption"></caption>
         <thead><tr><th scope="col">City</th><th scope="col">Region</th><th scope="col">Population</th><th scope="col">Fiscal year ends</th></tr></thead>
         <tbody></tbody>
       </table>

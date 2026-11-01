@@ -81,9 +81,9 @@
 
     <h2>Compared with other cities</h2>
     <ul>
-      <li><strong>Source:</strong> Census Bureau, Annual Survey of State and Local Government Finances, FY2024
-        individual unit files (<a href="https://www2.census.gov/programs-surveys/gov-finances/tables/2024/">census.gov</a>),
-        retrieved 2026-10-29. Amounts are in thousands of dollars in the source; the processed table stores dollars.</li>
+      <li><strong>Source:</strong> Census Bureau, Annual Survey of State and Local Government Finances, individual
+        unit files for survey years 2019 to 2024 (<a href="https://www2.census.gov/programs-surveys/gov-finances/tables/">census.gov</a>),
+        retrieved 2026-10-29 (2024) and 2026-10-31 (2019 to 2023). The 2022 survey was the five-yearly census of all governments. Amounts are in thousands of dollars in the source; the processed table stores dollars.</li>
       <li><strong>Peers:</strong> Phoenix, San Jose, San Antonio, Dallas, Austin, Fort Worth, Charlotte, Columbus,
         Seattle, Portland and Boston: US cities of roughly 0.6 to 1.7 million people, spread across regions. Seattle,
         Portland and Boston (0.64 to 0.75 million) are smaller than San Diego (1.38 million) and were added for
@@ -99,10 +99,25 @@
         are left out of the middle peer and the rank.</li>
       <li><strong>Administration is a catch-all.</strong> It includes the Census's "general, not elsewhere classified"
         spending, so differences there may partly reflect how each city reports rather than how much it spends.</li>
-      <li><strong>Not adjusted:</strong> the Census's 2024 survey covers each government's fiscal year that ended between
-        July 2023 and June 2024. San Diego's ended June 2024, but Dallas, San Antonio, Austin and Fort Worth ended
-        September 2023 and Columbus and Seattle ended December 2023, up to nine months earlier. Nothing is adjusted for
-        timing, cost of living or wages (a BEA price adjustment is planned). A higher figure is not waste.</li>
+      <li><strong>Fiscal-year timing:</strong> a survey year covers each government's fiscal year that ended between
+        July of the year before and June of that year. In the 2024 survey San Diego's ended June 2024, but Dallas, San
+        Antonio, Austin and Fort Worth ended September 2023 and Columbus and Seattle ended December 2023, up to nine
+        months earlier. Nothing is adjusted for that timing.</li>
+      <li><strong>Price adjustment (optional):</strong> with "Adjust for local prices" on, each city's per-resident figure is
+        divided by its metro area's price level, the BEA Regional Price Parity for all items (US average = 100;
+        <a href="https://apps.bea.gov/regional/">apps.bea.gov</a>, table MARPP, retrieved 2026-10-31). A city's fiscal year
+        spans two calendar years, so the level is the two years blended by months (a year ended June 2024 is half 2023
+        and half 2024). Dallas and Fort Worth share one metro area, as do the other peers within their metros; the
+        metro for each city is in <code>config/peers.json</code>. This is a rough correction: the index measures what
+        households pay for goods and rent, not the wages and construction costs a city pays. It is off by default and
+        the as-reported and adjusted gaps are both shown in the trend table.</li>
+      <li><strong>Over time:</strong> the trend compares San Diego with the middle peer in each survey year, in dollars
+        of the day (no inflation adjustment), so the gap is meaningful but the amounts are not comparable across
+        years. To keep the years comparable, "other capital outlay" (equipment and land, published only through the
+        2021 survey) is left out of every year and intergovernmental transfers, which older files list by service, are
+        grouped into "Grants to other governments". Many cities' broad administration line jumps in the 2022
+        survey, so the single-service trends are steadier. Census population estimates change between years, and some
+        cities carry the same estimate across two surveys.</li>
       <li><strong>Peer gap, not margin:</strong> peers share the same pressures and habits, so this says nothing about
         what a private-sector provider would charge.</li>
     </ul>

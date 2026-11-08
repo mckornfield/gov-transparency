@@ -30,9 +30,11 @@
     <h2>What the city spends</h2>
     <p class="note">The City's Homelessness Strategies &amp; Solutions Department, from each year's adopted budget (actual
       spending for 2021 to 2024, then the budget and adopted amounts). "Per person counted" divides by the people counted
-      on one night in January of that year. The department's revenue is shown beside its spending, not netted off, and
-      it may include state grants such as the HHAP money below, so city and state dollars are never added together.
-      Other city departments, such as police and libraries, also spend on homelessness and are not included.</p>
+      on one night in January of that year. That count covers the whole county, not just the city, so these per-person
+      figures understate the city's spending per person counted in the city. The department's revenue (in the budget,
+      charges for services and transfers such as hotel-tax money, not grants) is shown beside its spending, not
+      netted off. The budget does not say which funds, such as the state HHAP grants below, paid for which spending, so
+      city and state dollars are shown separately and never added together. Other city departments, such as police and libraries, also spend on homelessness and are not included.</p>
     <figure>
       <div id="city-chart" role="img" aria-label="Bar chart of the Homelessness Strategies and Solutions Department's spending and revenue by fiscal year"></div>
       <ul id="city-legend" class="legend"></ul>
@@ -40,7 +42,7 @@
     <div class="table-wrap">
       <table id="city-table" data-title="City homelessness department, by year" data-default-sort="0:desc">
         <caption class="note">The department changed shape over these years (2021 includes one-off pandemic funds), so compare years with care.</caption>
-        <thead><tr><th scope="col">Fiscal year</th><th scope="col">Basis</th><th scope="col">Spending</th><th scope="col">Department revenue</th><th scope="col">People counted</th><th scope="col">Spending per person counted</th></tr></thead>
+        <thead><tr><th scope="col">Fiscal year</th><th scope="col">Basis</th><th scope="col">Spending</th><th scope="col">Department revenue</th><th scope="col">People counted (city and county)</th><th scope="col">Spending per person counted</th></tr></thead>
         <tbody></tbody>
       </table>
     </div>
@@ -50,8 +52,11 @@
       amounts set aside for the regional homelessness body, the city and the county, added together for each area.
       These are allocations, not money spent, and HHAP is only one state program. Each round's amount is divided by the
       count its allocation was based on (the year in the table). Because the state split each round in proportion to counts,
-      the per-person amounts come out almost the same in every area by design; the differences that remain come from
-      funds redirected between jurisdictions and from rounding to the older counts some areas were allowed to use.</p>
+      the per-person amounts come out almost the same in every area by design. Areas the state approved to use an
+      older (2017) count, which includes San Diego for rounds 1 to 3, are divided by that count. The remaining
+      differences are mostly how the state split large counties: Los Angeles County's award reflects the whole county,
+      including areas with their own regional bodies, but is divided here by the Los Angeles count only, so Los Angeles
+      can look lower per person than it is.</p>
     <figure>
       <div id="hhap-chart" role="img" aria-label="Bar chart of HHAP awards per person counted, by round, for San Diego and other California regions"></div>
       <ul id="hhap-legend" class="legend"></ul>
@@ -82,7 +87,7 @@
     <h2>How many people are counted</h2>
     <p class="note">The one-night count each January, shown relative to 2019 (2019 = 100) because the areas differ in
       size. A "region" is the area the federal count covers, usually a city plus its county, so it is larger than the
-      city. 2021 is blank: the federal government waived the unsheltered count that year. A hollow dot marks a year in
+      city. 2021 is blank for most regions, San Diego included: the federal government waived the unsheltered count that year, and only some regions counted. A hollow dot marks a year in
       which a region counted only its shelters and HUD reused its last unsheltered count. Dashed lines are reference
       areas (Arlington County VA and Vancouver WA), included because they matter to the reader, not as peers.</p>
     <figure>

@@ -1,574 +1,578 @@
-round,kind,name,amount
-Round 1 (redirected),coc,"Alpine, Inyo, Mono Counties CoC",733546.24
-Round 1 (redirected),city,Anaheim,8422162.84
-Round 1 (redirected),county,Alameda,18204668.05
-Round 1 (redirected),coc,"Amador, Calaveras, Mariposa, Tuolumne Counties CoC",1917594.67
-Round 1 (redirected),city,Bakersfield,3265736.61
-Round 1 (redirected),county,Alpine,0.0
-Round 1 (redirected),coc,Bakersfield/Kern County CoC,1566746.98
-Round 1 (redirected),city,Fresno,6158246.18
-Round 1 (redirected),county,Amador,0.0
-Round 1 (redirected),coc,"Chico, Paradise/Butte County CoC",0.0
-Round 1 (redirected),city,Long Beach,4650605.37
-Round 1 (redirected),county,Butte,2872988.0
-Round 1 (redirected),coc,"Colusa, Glenn, Trinity Counties CoC",500000.0
-Round 1 (redirected),city,Los Angeles,117562500.0
-Round 1 (redirected),county,Calaveras,0.0
-Round 1 (redirected),coc,Daly/San Mateo County CoC,0.0
-Round 1 (redirected),city,Oakland,19697548.19
-Round 1 (redirected),county,Colusa,61114.9
-Round 1 (redirected),coc,"Davis, Woodland/Yolo County CoC",771593.44
-Round 1 (redirected),city,Riverside,6902244.82
-Round 1 (redirected),county,Contra Costa,5208141.76
-Round 1 (redirected),coc,El Dorado County CoC,722117.21
-Round 1 (redirected),city,Sacramento,13654707.74
-Round 1 (redirected),county,Del Norte,200806.11
-Round 1 (redirected),coc,Fresno City & County/Madera County CoC,2954437.15
-Round 1 (redirected),city,San Diego,22491840.12
-Round 1 (redirected),county,El Dorado,668989.93
-Round 1 (redirected),coc,Glendale CoC,500000.0
-Round 1 (redirected),city,San Francisco,19729468.92
-Round 1 (redirected),county,Fresno,2325640.36
-Round 1 (redirected),coc,Humboldt County CoC,2004964.93
-Round 1 (redirected),city,San Jose,23832510.94
-Round 1 (redirected),county,Glenn,62206.24
-Round 1 (redirected),coc,Imperial County CoC,3206581.4
-Round 1 (redirected),city,Santa Ana,8422162.84
-Round 1 (redirected),county,Humboldt,1857456.54
-Round 1 (redirected),coc,Lake County CoC,500000.0
-Round 1 (redirected),city,Stockton,6460265.43
-Round 1 (redirected),county,Imperial,0.0
-Round 1 (redirected),coc,Long Beach CoC,2231141.93
-Round 1 (redirected),county,Inyo,0.0
-Round 1 (redirected),coc,Los Angeles City & County CoC,66271041.04
-Round 1 (redirected),county,Kern,1451478.97
-Round 1 (redirected),coc,Marin County CoC,1218057.42
-Round 1 (redirected),county,Kings,272834.39
-Round 1 (redirected),coc,Mendocino County CoC,924734.12
-Round 1 (redirected),county,Lake,445265.73
-Round 1 (redirected),coc,Merced City & County CoC,716227.19
-Round 1 (redirected),county,Lassen,50201.53
-Round 1 (redirected),coc,Napa City & County CoC,0.0
-Round 1 (redirected),county,Los Angeles,64319071.0
-Round 1 (redirected),coc,Nevada County CoC,500000.0
-Round 1 (redirected),county,Madera,411434.26
-Round 1 (redirected),coc,"Oakland, Berkeley/Alameda County CoC",0.0
-Round 1 (redirected),county,Marin,1128443.05
-Round 1 (redirected),coc,"Oxnard, San Buenaventura/Ventura County CoC",1966090.75
-Round 1 (redirected),county,Mariposa,0.0
-Round 1 (redirected),coc,Pasadena CoC,638478.84
-Round 1 (redirected),county,Mendocino,856699.99
-Round 1 (redirected),county,Merced,663533.24
-Round 1 (redirected),county,Modoc,5456.69
-Round 1 (redirected),coc,Richmond/Contra Costa County CoC,0.0
-Round 1 (redirected),county,Mono,0.0
-Round 1 (redirected),coc,Riverside City & County CoC,3311372.74
-Round 1 (redirected),county,Monterey,2642128.26
-Round 1 (redirected),coc,"Roseville, Rocklin/Placer County CoC",726829.24
-Round 1 (redirected),county,Napa,851410.7
-Round 1 (redirected),coc,Sacramento City & County CoC,6550887.16
-Round 1 (redirected),county,Nevada,452905.09
-Round 1 (redirected),coc,"Salinas/Monterey, San Benito Counties CoC",3185326.18
-Round 1 (redirected),county,Orange,7486575.73
-Round 1 (redirected),coc,San Bernardino City & County CoC,3071059.67
-Round 1 (redirected),county,Placer,673355.28
-Round 1 (redirected),coc,San Diego City and County CoC,10790528.04
-Round 1 (redirected),county,Plumas,50201.53
-Round 1 (redirected),coc,San Francisco CoC,9465272.14
-Round 1 (redirected),county,Riverside,3067749.91
-Round 1 (redirected),coc,San Jose/Santa Clara City & County CoC,11433718.9
-Round 1 (redirected),county,Sacramento,6068928.22
-Round 1 (redirected),coc,San Luis Obispo County CoC,1746981.78
-Round 1 (redirected),county,San Benito,308848.53
-Round 1 (redirected),coc,"Santa Ana, Anaheim/Orange County CoC",8081115.98
-Round 1 (redirected),county,San Bernardino,2845117.04
-Round 1 (redirected),coc,Santa Maria/Santa Barbara County CoC,2123943.46
-Round 1 (redirected),county,San Diego,9996652.14
-Round 1 (redirected),coc,"Santa Rosa, Petaluma/Sonoma County CoC",3476293.48
-Round 1 (redirected),county,San Francisco,8768897.37
-Round 1 (redirected),coc,Stockton/San Joaquin County CoC,3099331.8
-Round 1 (redirected),county,San Joaquin,2871309.15
-Round 1 (redirected),coc,Tehama County CoC,500000.0
-Round 1 (redirected),coc,"Turlock, Modesto/Stanislaus County CoC",2265304.09
-Round 1 (redirected),county,San Mateo,3431246.34
-Round 1 (redirected),coc,Vallejo/Solano County CoC,1355884.04
-Round 1 (redirected),county,Santa Barbara,1967681.64
-Round 1 (redirected),coc,"Visalia/Kings, Tulare Counties CoC",2141746.36
-Round 1 (redirected),county,Santa Clara,10592522.45
-Round 1 (redirected),coc,Watsonville/Santa Cruz City & County CoC,2552737.36
-Round 1 (redirected),county,Santa Cruz,2364928.51
-Round 1 (redirected),coc,Yuba City & County/Sutter County CoC,849341.78
-Round 1 (redirected),county,Shasta,902536.17
-Round 1 (redirected),county,Sierra,13096.05
-Round 1 (redirected),county,Siskiyou,249916.3
-Round 1 (redirected),county,Solano,1256129.54
-Round 1 (redirected),county,Sonoma,3220537.17
-Round 1 (redirected),county,Stanislaus,2098642.15
-Round 1 (redirected),county,Sutter,319761.91
-Round 1 (redirected),county,Tehama,314305.22
-Round 1 (redirected),county,Trinity,86215.67
-Round 1 (redirected),county,Tulare,0.0
-Round 1 (redirected),county,Tuolumne,0.0
-Round 1 (redirected),county,Ventura,1821442.4
-Round 1 (redirected),county,Yolo,714826.11
-Round 1 (redirected),county,Yuba,467092.48
-Round 2,coc,"Alpine, Inyo, Mono Counties CoC",250000.0
-Round 2,city,Anaheim,3981386.0
-Round 2,county,Alameda,4002153.0
-Round 2,coc,"Amador, Calaveras, Mariposa, Tuolumne Counties CoC",470994.0
-Round 2,city,Bakersfield,1543803.0
-Round 2,county,Alpine,0.0
-Round 2,coc,Bakersfield/Kern County CoC,741328.0
-Round 2,city,Fresno,2911171.0
-Round 2,county,Amador,106764.0
-Round 2,coc,"Chico, Paradise/Butte County CoC",705655.0
-Round 2,city,Long Beach,2198468.0
-Round 2,county,Butte,631604.0
-Round 2,coc,"Colusa, Glenn, Trinity Counties CoC",250000.0
-Round 2,city,Los Angeles,55575000.0
-Round 2,county,Calaveras,92795.0
-Round 2,coc,Daly/San Mateo County CoC,842773.0
-Round 2,city,Oakland,9311568.0
-Round 2,county,Colusa,27938.0
-Round 2,coc,"Davis, Woodland/Yolo County CoC",365090.0
-Round 2,city,Riverside,3262879.0
-Round 2,county,Contra Costa,1144969.0
-Round 2,coc,El Dorado County CoC,341680.0
-Round 2,city,Sacramento,6454953.0
-Round 2,county,Del Norte,91797.0
-Round 2,coc,Fresno City & County/Madera County CoC,1397933.0
-Round 2,city,San Diego,10632506.0
-Round 2,county,El Dorado,305824.0
-Round 2,coc,Glendale CoC,250000.0
-Round 2,city,San Francisco,9326658.0
-Round 2,county,Fresno,1063150.0
-Round 2,coc,Humboldt County CoC,948677.0
-Round 2,city,San Jose,11266278.0
-Round 2,county,Glenn,28437.0
-Round 2,coc,Imperial County CoC,787591.0
-Round 2,city,Santa Ana,3981386.0
-Round 2,county,Humboldt,849123.0
-Round 2,coc,Lake County CoC,250000.0
-Round 2,city,Stockton,3053944.0
-Round 2,county,Imperial,704942.0
-Round 2,coc,Long Beach CoC,1055696.0
-Round 2,county,Inyo,72340.0
-Round 2,coc,Los Angeles City & County CoC,31357060.0
-Round 2,county,Kern,663533.0
-Round 2,coc,Marin County CoC,576341.0
-Round 2,county,Kings,124724.0
-Round 2,coc,Mendocino County CoC,437551.0
-Round 2,county,Lake,203550.0
-Round 2,coc,Merced City & County CoC,338893.0
-Round 2,county,Lassen,22949.0
-Round 2,coc,Napa City & County CoC,250000.0
-Round 2,county,Los Angeles,29403004.0
-Round 2,coc,Nevada County CoC,250000.0
-Round 2,county,Madera,188084.0
-Round 2,coc,"Oakland, Berkeley/Alameda County CoC",4471378.0
-Round 2,county,Marin,515860.0
-Round 2,coc,"Oxnard, San Buenaventura/Ventura County CoC",930283.0
-Round 2,county,Mariposa,29934.0
-Round 2,coc,Pasadena CoC,302105.0
-Round 2,county,Mendocino,391634.0
-Round 2,county,Merced,303329.0
-Round 2,county,Modoc,2494.0
-Round 2,coc,Richmond/Contra Costa County CoC,1279209.0
-Round 2,county,Mono,34424.0
-Round 2,coc,Riverside City & County CoC,1566822.0
-Round 2,county,Monterey,1207830.0
-Round 2,coc,"Roseville, Rocklin/Placer County CoC",343909.0
-Round 2,county,Napa,160645.0
-Round 2,coc,Sacramento City & County CoC,3099643.0
-Round 2,county,Nevada,207042.0
-Round 2,coc,"Salinas/Monterey, San Benito Counties CoC",1507181.0
-Round 2,county,Orange,3422435.0
-Round 2,coc,San Bernardino City & County CoC,1453114.0
-Round 2,county,Placer,307820.0
-Round 2,coc,San Diego City and County CoC,5105688.0
-Round 2,county,Plumas,22949.0
-Round 2,coc,San Francisco CoC,4478625.0
-Round 2,county,Riverside,1402400.0
-Round 2,coc,San Jose/Santa Clara City & County CoC,5410022.0
-Round 2,county,Sacramento,2774367.0
-Round 2,coc,San Luis Obispo County CoC,826609.0
-Round 2,county,San Benito,141188.0
-Round 2,coc,"Santa Ana, Anaheim/Orange County CoC",3823692.0
-Round 2,county,San Bernardino,1300625.0
-Round 2,coc,Santa Maria/Santa Barbara County CoC,1004973.0
-Round 2,county,San Diego,4569898.0
-Round 2,coc,"Santa Rosa, Petaluma/Sonoma County CoC",1644856.0
-Round 2,county,San Francisco,4008639.0
-Round 2,coc,Stockton/San Joaquin County CoC,1466492.0
-Round 2,county,San Joaquin,1312598.0
-Round 2,coc,Tehama County CoC,250000.0
-Round 2,county,San Luis Obispo,739865.0
-Round 2,coc,"Turlock, Modesto/Stanislaus County CoC",1071860.0
-Round 2,county,San Mateo,754333.0
-Round 2,coc,Vallejo/Solano County CoC,641555.0
-Round 2,county,Santa Barbara,899512.0
-Round 2,coc,"Visalia/Kings, Tulare Counties CoC",593062.0
-Round 2,county,Santa Clara,4842296.0
-Round 2,coc,Watsonville/Santa Cruz City & County CoC,1207863.0
-Round 2,county,Santa Cruz,1081110.0
-Round 2,coc,Yuba City & County/Sutter County CoC,401878.0
-Round 2,county,Shasta,412588.0
-Round 2,county,Sierra,5987.0
-Round 2,county,Siskiyou,114247.0
-Round 2,county,Solano,574231.0
-Round 2,county,Sonoma,1472246.0
-Round 2,county,Stanislaus,959379.0
-Round 2,county,Sutter,146177.0
-Round 2,county,Tehama,143682.0
-Round 2,county,Trinity,39413.0
-Round 2,county,Tulare,406102.0
-Round 2,county,Tuolumne,192075.0
-Round 2,county,Ventura,832659.0
-Round 2,county,Yolo,326778.0
-Round 2,county,Yuba,213528.0
-Round 3,coc,"Alpine, Inyo, Mono Counties CoC",320291.99
-Round 3,city,Anaheim,10290351.69
-Round 3,county,Alameda,11206028.78
-Round 3,coc,"Amador, Calaveras, Mariposa, Tuolumne Counties CoC",1264704.34
-Round 3,city,Bakersfield,3990136.37
-Round 3,county,Alpine,0.0
-Round 3,coc,Bakersfield/Kern County CoC,1990599.73
-Round 3,city,Fresno,7524257.15
-Round 3,county,Amador,298939.19
-Round 3,coc,"Chico, Paradise/Butte County CoC",1894811.47
-Round 3,city,Long Beach,5682194.2
-Round 3,county,Butte,1768490.7
-Round 3,coc,"Colusa, Glenn, Trinity Counties CoC",287364.77
-Round 3,city,Los Angeles,143640000.0
-Round 3,county,Calaveras,259825.65
-Round 3,coc,Daly/San Mateo County CoC,2262997.58
-Round 3,city,Oakland,24066822.52
-Round 3,county,Colusa,78227.08
-Round 3,coc,"Davis, Woodland/Yolo County CoC",980332.95
-Round 3,city,Riverside,8433288.22
-Round 3,county,Contra Costa,3205913.24
-Round 3,coc,El Dorado County CoC,917471.9
-Round 3,city,Sacramento,16683570.18
-Round 3,county,Del Norte,257031.82
-Round 3,coc,Fresno City & County/Madera County CoC,3753702.34
-Round 3,city,San Diego,27480939.2
-Round 3,county,El Dorado,856307.11
-Round 3,coc,Glendale CoC,363696.04
-Round 3,city,San Francisco,24105823.85
-Round 3,county,Fresno,2976819.66
-Round 3,coc,Humboldt County CoC,2547368.97
-Round 3,city,San Jose,29118995.18
-Round 3,county,Glenn,79623.99
-Round 3,coc,Imperial County CoC,2114825.12
-Round 3,city,Santa Ana,10290351.69
-Round 3,county,Humboldt,2377544.38
-Round 3,coc,Lake County CoC,610650.14
-Round 3,city,Stockton,7893269.76
-Round 3,county,Imperial,1973836.78
-Round 3,coc,Long Beach CoC,2834733.75
-Round 3,county,Inyo,202552.25
-Round 3,coc,Los Angeles City & County CoC,84199375.07
-Round 3,county,Kern,1857893.08
-Round 3,coc,Marin County CoC,1547579.04
-Round 3,county,Kings,349228.02
-Round 3,coc,Mendocino County CoC,1174902.85
-Round 3,county,Lake,569940.13
-Round 3,coc,Merced County CoC,909988.45
-Round 3,county,Lassen,64257.96
-Round 3,coc,Napa City & County CoC,481934.67
-Round 3,county,Los Angeles,82328410.88
-Round 3,coc,Nevada County CoC,621126.98
-Round 3,county,Madera,526635.86
-Round 3,coc,"Oakland, Berkeley/Alameda County CoC",12006459.41
-Round 3,county,Marin,1444407.1
-Round 3,coc,"Oxnard, San Buenaventura/Ventura County CoC",2497978.15
-Round 3,county,Mariposa,83814.73
-Round 3,coc,Pasadena CoC,811206.81
-Round 3,county,Mendocino,1096575.99
-Round 3,county,Merced,849322.55
-Round 3,coc,"Modoc, Sierra Counties CoC",2019036.87
-Round 3,county,Modoc,6984.56
-Round 3,coc,Richmond/Contra Costa County CoC,3434907.05
-Round 3,county,Mono,96386.93
-Round 3,coc,Riverside City & County CoC,4207199.87
-Round 3,county,Monterey,3381924.17
-Round 3,coc,"Roseville, Rocklin/Placer County CoC",923458.67
-Round 3,county,Napa,449805.69
-Round 3,coc,Sacramento City & County CoC,8323101.56
-Round 3,county,Nevada,579718.52
-Round 3,coc,"Salinas/Monterey, San Benito Counties CoC",4047053.88
-Round 3,county,Orange,9582816.93
-Round 3,coc,San Bernardino City & County CoC,3901874.8
-Round 3,county,Placer,861894.76
-Round 3,coc,San Diego City and County CoC,13709694.36
-Round 3,county,Plumas,64257.96
-Round 3,coc,San Francisco CoC,12025916.4
-Round 3,county,Riverside,3926719.88
-Round 3,coc,San Jose/Santa Clara City & County CoC,14526887.93
-Round 3,county,Sacramento,7768228.13
-Round 3,coc,San Luis Obispo County CoC,2219593.53
-Round 3,county,San Benito,395326.12
-Round 3,coc,"Santa Ana, Anaheim/Orange County CoC",10267303.85
-Round 3,county,San Bernardino,3641749.82
-Round 3,coc,Santa Maria/Santa Barbara County CoC,2698534.82
-Round 3,county,San Diego,12795714.74
-Round 3,coc,"Santa Rosa, Petaluma/Sonoma County CoC",4416736.69
-Round 3,county,San Francisco,11224188.64
-Round 3,coc,Stockton/San Joaquin County CoC,3937795.4
-Round 3,county,San Joaquin,3675275.71
-Round 3,coc,Tehama County CoC,431047.16
-Round 3,county,San Luis Obispo,2071620.63
-Round 3,coc,"Turlock, Modesto/Stanislaus County CoC",2878137.8
-Round 3,county,San Mateo,2112131.08
-Round 3,coc,Vallejo/Solano County CoC,1722691.94
-Round 3,county,Santa Barbara,2518632.5
-Round 3,coc,"Visalia/Kings, Tulare Counties CoC",1592479.78
-Round 3,county,Santa Clara,13558428.74
-Round 3,coc,Watsonville/Santa Cruz City & County CoC,3243330.53
-Round 3,county,Santa Cruz,3027108.5
-Round 3,coc,Yuba City & County/Sutter County CoC,1079114.59
-Round 3,county,Shasta,1155246.3
-Round 3,county,Sierra,16762.95
-Round 3,county,Siskiyou,319892.87
-Round 3,county,Solano,1607845.81
-Round 3,county,Sonoma,4122287.57
-Round 3,county,Stanislaus,2686261.95
-Round 3,county,Sutter,409295.24
-Round 3,county,Tehama,402310.68
-Round 3,county,Trinity,110356.06
-Round 3,county,Tulare,1137086.44
-Round 3,county,Tuolumne,537811.15
-Round 3,county,Ventura,2331446.28
-Round 3,county,Yolo,914977.42
-Round 3,county,Yuba,597878.37
-Round 4,coc,"Alpine, Inyo, Mono Counties CoC",186099.67
-Round 4,city,Anaheim,5092955.47
-Round 4,county,Alameda,12156020.98
-Round 4,coc,"Amador, Calaveras, Mariposa, Tuolumne Counties CoC",830802.06
-Round 4,city,Bakersfield,4283319.84
-Round 4,county,Alpine,3741.48
-Round 4,coc,Bakersfield/Kern County CoC,2130841.12
-Round 4,city,Fresno,11265425.1
-Round 4,county,Amador,231970.85
-Round 4,coc,"Chico, Paradise/Butte County CoC",1337258.99
-Round 4,city,Irvine,5092955.47
-Round 4,county,Butte,1254638.05
-Round 4,coc,"Colusa, Glenn, Trinity Counties CoC",451956.32
-Round 4,city,Long Beach,8807125.51
-Round 4,county,Calaveras,153400.08
-Round 4,coc,Daly/San Mateo County CoC,2403344.2
-Round 4,city,Los Angeles,143640000.0
-Round 4,county,Colusa,42403.27
-Round 4,coc,"Davis, Woodland/Yolo County CoC",991645.34
-Round 4,city,Oakland,26044615.38
-Round 4,county,Contra Costa,3857450.79
-Round 4,coc,El Dorado County CoC,679263.76
-Round 4,city,Riverside,8860566.8
-Round 4,county,Del Norte,576185.67
-Round 4,coc,Fresno City & County/Madera County CoC,5604258.37
-Round 4,city,Sacramento,24791417.0
-Round 4,county,El Dorado,637296.27
-Round 4,coc,Glendale CoC,299088.75
-Round 4,city,San Diego,22517489.88
-Round 4,county,Fresno,4911296.87
-Round 4,coc,Humboldt County CoC,2190658.87
-Round 4,city,San Francisco,20719190.28
-Round 4,county,Glenn,140928.53
-Round 4,coc,Imperial County CoC,1405052.44
-Round 4,city,San Jose,26795465.58
-Round 4,county,Humboldt,2055311.64
-Round 4,coc,Lake County CoC,450627.04
-Round 4,city,Santa Ana,5092955.47
-Round 4,county,Imperial,1318242.96
-Round 4,coc,Long Beach CoC,4381317.74
-Round 4,city,Stockton,6196518.22
-Round 4,county,Inyo,119726.89
-Round 4,coc,Los Angeles City & County CoC,86550964.6
-Round 4,county,Kern,1999189.66
-Round 4,coc,Marin County CoC,1490126.57
-Round 4,county,Kings,390359.55
-Round 4,coc,Mendocino County CoC,1103305.13
-Round 4,county,Lake,422785.59
-Round 4,coc,Merced County CoC,1136537.22
-Round 4,county,Lassen,127209.82
-Round 4,coc,Napa City & County CoC,657995.23
-Round 4,county,Los Angeles,85120000.0
-Round 4,coc,Nevada County CoC,700532.3
-Round 4,county,Madera,346709.12
-Round 4,coc,"Oakland, Berkeley/Alameda County CoC",12956524.27
-Round 4,county,Marin,1398060.89
-Round 4,coc,"Oxnard, San Buenaventura/Ventura County CoC",2988228.85
-Round 4,county,Mariposa,59863.45
-Round 4,coc,Pasadena CoC,680593.05
-Round 4,county,Mendocino,1035138.75
-Round 4,county,Merced,1066317.63
-Round 4,coc,"Modoc, Sierra Counties CoC",2441893.41
-Round 4,county,Modoc,14965.87
-Round 4,coc,Richmond/Contra Costa County CoC,4111473.23
-Round 4,county,Mono,51133.36
-Round 4,coc,Riverside City & County CoC,4407903.41
-Round 4,county,Monterey,2552926.54
-Round 4,coc,"Roseville, Rocklin/Placer County CoC",996962.47
-Round 4,county,Napa,617341.79
-Round 4,coc,Sacramento City & County CoC,12333090.41
-Round 4,county,Nevada,657250.75
-Round 4,coc,"Salinas/Monterey, San Benito Counties CoC",3195597.04
-Round 4,county,Orange,7131232.99
-Round 4,coc,San Bernardino City & County CoC,4430501.22
-Round 4,county,Placer,935366.34
-Round 4,coc,San Diego City and County CoC,11201870.32
-Round 4,county,Plumas,163377.32
-Round 4,coc,San Francisco CoC,10307262.67
-Round 4,county,Riverside,4135566.39
-Round 4,coc,San Jose/Santa Clara City & County CoC,13330052.88
-Round 4,county,Sacramento,11571105.23
-Round 4,coc,San Luis Obispo County CoC,1924802.21
-Round 4,county,San Benito,445234.38
-Round 4,coc,"Santa Ana, Anaheim/Orange County CoC",7600841.88
-Round 4,county,San Bernardino,4156768.02
-Round 4,coc,Santa Maria/Santa Barbara County CoC,2608053.82
-Round 4,county,San Diego,10509776.22
-Round 4,coc,"Santa Rosa, Petaluma/Sonoma County CoC",3845616.57
-Round 4,county,San Francisco,9670440.82
-Round 4,coc,Stockton/San Joaquin County CoC,3082607.96
-Round 4,county,San Joaquin,2892152.73
-Round 4,coc,Tehama County CoC,386821.45
-Round 4,county,San Luis Obispo,1805880.62
-Round 4,coc,"Turlock, Modesto/Stanislaus County CoC",2468479.08
-Round 4,county,San Mateo,2254856.46
-Round 4,coc,Vallejo/Solano County CoC,1567225.0
-Round 4,county,Santa Barbara,2446918.35
-Round 4,coc,"Visalia/Kings, Tulare Counties CoC",1641664.87
-Round 4,county,Santa Clara,12506471.57
-Round 4,coc,Watsonville/Santa Cruz City & County CoC,3056022.29
-Round 4,county,Santa Cruz,2867209.63
-Round 4,coc,Yuba City & County/Sutter County CoC,1454235.92
-Round 4,county,Shasta,995229.79
-Round 4,county,Sierra,13718.72
-Round 4,county,Siskiyou,400336.79
-Round 4,county,Solano,1470395.89
-Round 4,county,Sonoma,3608019.77
-Round 4,county,Stanislaus,2315967.06
-Round 4,county,Sutter,487637.65
-Round 4,county,Tehama,362922.14
-Round 4,county,Trinity,240700.94
-Round 4,county,Tulare,1149877.02
-Round 4,county,Tuolumne,334237.57
-Round 4,county,Ventura,2803604.72
-Round 4,county,Yolo,930377.72
-Round 4,county,Yuba,876750.05
-Round 5,coc,"Alpine, Inyo, Mono Counties CoC",126543.18
-Round 5,city,Anaheim,5878393.38
-Round 5,county,Alameda,13463753.5
-Round 5,coc,"Amador, Calaveras, Mariposa, Tuolumne Counties CoC",1051170.9
-Round 5,city,Bakersfield,5678236.56
-Round 5,county,Alpine,0.0
-Round 5,coc,Bakersfield/Kern County CoC,2801205.08
-Round 5,city,Fresno,13096671.82
-Round 5,county,Amador,262128.61
-Round 5,coc,"Chico, Paradise/Butte County CoC",1778793.98
-Round 5,city,Irvine,5878393.38
-Round 5,county,Butte,1706595.25
-Round 5,coc,"Colusa, Glenn, Trinity Counties CoC",517676.5
-Round 5,city,Long Beach,10047680.34
-Round 5,county,Calaveras,240054.62
-Round 5,coc,Daly/San Mateo County CoC,2673223.94
-Round 5,city,Los Angeles,164335500.0
-Round 5,county,Colusa,68981.21
-Round 5,coc,"Davis, Woodland/Yolo County CoC",1059798.84
-Round 5,city,Oakland,28446565.83
-Round 5,county,Contra Costa,3272468.82
-Round 5,coc,El Dorado County CoC,706053.23
-Round 5,city,Riverside,10858024.16
-Round 5,county,Del Norte,957459.26
-Round 5,coc,Fresno City & County/Madera County CoC,6460890.36
-Round 5,city,Sacramento,27053240.85
-Round 5,county,El Dorado,677395.53
-Round 5,coc,Glendale CoC,280408.11
-Round 5,city,San Diego,29918593.27
-Round 5,county,Fresno,5259127.81
-Round 5,coc,Humboldt County CoC,2381311.91
-Round 5,city,San Francisco,22100815.88
-Round 5,county,Glenn,202804.78
-Round 5,coc,Imperial County CoC,1873701.34
-Round 5,city,San Jose,28866312.28
-Round 5,county,Humboldt,2284657.84
-Round 5,coc,Lake County CoC,661475.53
-Round 5,city,Santa Ana,5878393.38
-Round 5,county,Imperial,1797650.45
-Round 5,coc,Long Beach CoC,4956752.51
-Round 5,city,Stockton,7153178.87
-Round 5,county,Inyo,66221.97
-Round 5,coc,Los Angeles City & County CoC,102557467.24
-Round 5,county,Kern,2687508.13
-Round 5,coc,Marin County CoC,1607673.15
-Round 5,county,Kings,575303.34
-Round 5,coc,Mendocino County CoC,910247.84
-Round 5,county,Lake,634627.17
-Round 5,coc,Merced County CoC,1127384.39
-Round 5,county,Lassen,184869.66
-Round 5,coc,Napa City & County CoC,727623.09
-Round 5,county,Los Angeles,97384000.0
-Round 5,coc,Nevada County CoC,707491.22
-Round 5,county,Madera,939524.14
-Round 5,coc,"Oakland, Berkeley/Alameda County CoC",14033347.21
-Round 5,county,Marin,1542419.96
-Round 5,coc,"Oxnard, San Buenaventura/Ventura County CoC",3510134.29
-Round 5,county,Mariposa,75879.33
-Round 5,coc,Pasadena CoC,799522.6
-Round 5,county,Mendocino,873302.17
-Round 5,county,Merced,1081625.45
-Round 5,county,Modoc,37249.86
-Round 5,coc,Richmond/Contra Costa County CoC,3410912.96
-Round 5,county,Mono,55184.97
-Round 5,coc,Riverside City & County CoC,5356513.81
-Round 5,county,Monterey,2555064.19
-Round 5,coc,"Roseville, Rocklin/Placer County CoC",1019535.11
-Round 5,county,Napa,698089.89
-Round 5,coc,Sacramento City & County CoC,13345987.85
-Round 5,county,Nevada,678775.15
-Round 5,coc,"Salinas/Monterey, San Benito Counties CoC",3180834.51
-Round 5,county,Orange,8346726.98
-Round 5,coc,San Bernardino City & County CoC,6032369.26
-Round 5,county,Placer,978153.62
-Round 5,coc,San Diego City and County CoC,14759532.3
-Round 5,county,Plumas,184869.66
-Round 5,coc,San Francisco CoC,10902842.35
-Round 5,county,Riverside,5139100.5
-Round 5,coc,San Jose/Santa Clara City & County CoC,14240417.8
-Round 5,county,Sacramento,12804293.08
-Round 5,coc,San Luis Obispo County CoC,2203001.12
-Round 5,county,San Benito,496664.75
-Round 5,coc,"Santa Ana, Anaheim/Orange County CoC",8699841.23
-Round 5,county,San Bernardino,5787523.92
-Round 5,coc,Santa Maria/Santa Barbara County CoC,2713487.68
-Round 5,county,San Diego,14160463.76
-Round 5,coc,"Santa Rosa, Petaluma/Sonoma County CoC",3258485.99
-Round 5,county,San Francisco,10460311.4
-Round 5,coc,Stockton/San Joaquin County CoC,3528828.17
-Round 5,county,San Joaquin,3385598.02
-Round 5,coc,Tehama County CoC,437149.04
-Round 5,county,San Luis Obispo,2113584.42
-Round 5,coc,"Turlock, Modesto/Stanislaus County CoC",3006837.69
-Round 5,county,San Mateo,2564721.56
-Round 5,coc,Vallejo/Solano County CoC,1725588.34
-Round 5,county,Santa Barbara,2603351.05
-Round 5,coc,"Visalia/Kings, Tulare Counties CoC",2113845.72
-Round 5,county,Santa Clara,13662419.4
-Round 5,coc,Watsonville/Santa Cruz City & County CoC,2594134.47
-Round 5,county,Santa Cruz,2488842.22
-Round 5,coc,Yuba City & County/Sutter County CoC,1384784.65
-Round 5,county,Shasta,1397559.41
-Round 5,county,Sierra,16555.55
-Round 5,county,Siskiyou,699469.52
-Round 5,county,Solano,1655549.15
-Round 5,county,Sonoma,3126228.65
-Round 5,county,Stanislaus,2884794.4
-Round 5,county,Sutter,576682.95
-Round 5,county,Tehama,419405.78
-Round 5,county,Trinity,224878.76
-Round 5,county,Tulare,1452744.38
-Round 5,county,Tuolumne,430442.78
-Round 5,county,Ventura,3367662.91
-Round 5,county,Yolo,1016783.11
-Round 5,county,Yuba,751895.25
+round,kind,name,amount,basis_year
+Round 1 (redirected),coc,"Alpine, Inyo, Mono Counties CoC",733546.24,2019
+Round 1 (redirected),city,Anaheim,8422162.84,2019
+Round 1 (redirected),county,Alameda,18204668.05,2019
+Round 1 (redirected),coc,"Amador, Calaveras, Mariposa, Tuolumne Counties CoC",1917594.67,2019
+Round 1 (redirected),city,Bakersfield,3265736.61,2019
+Round 1 (redirected),county,Alpine,0.0,2019
+Round 1 (redirected),coc,Bakersfield/Kern County CoC,1566746.98,2019
+Round 1 (redirected),city,Fresno,6158246.18,2019
+Round 1 (redirected),county,Amador,0.0,2019
+Round 1 (redirected),coc,"Chico, Paradise/Butte County CoC",0.0,2019
+Round 1 (redirected),city,Long Beach,4650605.37,2019
+Round 1 (redirected),county,Butte,2872988.0,2019
+Round 1 (redirected),coc,"Colusa, Glenn, Trinity Counties CoC",500000.0,2019
+Round 1 (redirected),city,Los Angeles,117562500.0,2019
+Round 1 (redirected),county,Calaveras,0.0,2019
+Round 1 (redirected),coc,Daly/San Mateo County CoC,0.0,2019
+Round 1 (redirected),city,Oakland,19697548.19,2019
+Round 1 (redirected),county,Colusa,61114.9,2019
+Round 1 (redirected),coc,"Davis, Woodland/Yolo County CoC",771593.44,2019
+Round 1 (redirected),city,Riverside,6902244.82,2019
+Round 1 (redirected),county,Contra Costa,5208141.76,2019
+Round 1 (redirected),coc,El Dorado County CoC,722117.21,2019
+Round 1 (redirected),city,Sacramento,13654707.74,2019
+Round 1 (redirected),county,Del Norte,200806.11,2019
+Round 1 (redirected),coc,Fresno City & County/Madera County CoC,2954437.15,2019
+Round 1 (redirected),city,San Diego,22491840.12,2017
+Round 1 (redirected),county,El Dorado,668989.93,2019
+Round 1 (redirected),coc,Glendale CoC,500000.0,2019
+Round 1 (redirected),city,San Francisco,19729468.92,2019
+Round 1 (redirected),county,Fresno,2325640.36,2019
+Round 1 (redirected),coc,Humboldt County CoC,2004964.93,2019
+Round 1 (redirected),city,San Jose,23832510.94,2019
+Round 1 (redirected),county,Glenn,62206.24,2019
+Round 1 (redirected),coc,Imperial County CoC,3206581.4,2019
+Round 1 (redirected),city,Santa Ana,8422162.84,2019
+Round 1 (redirected),county,Humboldt,1857456.54,2019
+Round 1 (redirected),coc,Lake County CoC,500000.0,2019
+Round 1 (redirected),city,Stockton,6460265.43,2019
+Round 1 (redirected),county,Imperial,0.0,2019
+Round 1 (redirected),coc,Long Beach CoC,2231141.93,2019
+Round 1 (redirected),county,Inyo,0.0,2019
+Round 1 (redirected),coc,Los Angeles City & County CoC,66271041.04,2019
+Round 1 (redirected),county,Kern,1451478.97,2019
+Round 1 (redirected),coc,Marin County CoC,1218057.42,2019
+Round 1 (redirected),county,Kings,272834.39,2019
+Round 1 (redirected),coc,Mendocino County CoC,924734.12,2019
+Round 1 (redirected),county,Lake,445265.73,2019
+Round 1 (redirected),coc,Merced City & County CoC,716227.19,2019
+Round 1 (redirected),county,Lassen,50201.53,2019
+Round 1 (redirected),coc,Napa City & County CoC,0.0,2019
+Round 1 (redirected),county,Los Angeles,64319071.0,2019
+Round 1 (redirected),coc,Nevada County CoC,500000.0,2019
+Round 1 (redirected),county,Madera,411434.26,2019
+Round 1 (redirected),coc,"Oakland, Berkeley/Alameda County CoC",0.0,2019
+Round 1 (redirected),county,Marin,1128443.05,2019
+Round 1 (redirected),coc,"Oxnard, San Buenaventura/Ventura County CoC",1966090.75,2019
+Round 1 (redirected),county,Mariposa,0.0,2019
+Round 1 (redirected),coc,Pasadena CoC,638478.84,2019
+Round 1 (redirected),county,Mendocino,856699.99,2019
+Round 1 (redirected),county,Merced,663533.24,2019
+Round 1 (redirected),coc,,1589129.07,2019
+Round 1 (redirected),county,Modoc,5456.69,2019
+Round 1 (redirected),coc,Richmond/Contra Costa County CoC,0.0,2019
+Round 1 (redirected),county,Mono,0.0,2019
+Round 1 (redirected),coc,Riverside City & County CoC,3311372.74,2019
+Round 1 (redirected),county,Monterey,2642128.26,2019
+Round 1 (redirected),coc,"Roseville, Rocklin/Placer County CoC",726829.24,2019
+Round 1 (redirected),county,Napa,851410.7,2019
+Round 1 (redirected),coc,Sacramento City & County CoC,6550887.16,2019
+Round 1 (redirected),county,Nevada,452905.09,2019
+Round 1 (redirected),coc,"Salinas/Monterey, San Benito Counties CoC",3185326.18,2019
+Round 1 (redirected),county,Orange,7486575.73,2019
+Round 1 (redirected),coc,San Bernardino City & County CoC,3071059.67,2019
+Round 1 (redirected),county,Placer,673355.28,2019
+Round 1 (redirected),coc,San Diego City and County CoC,10790528.04,2017
+Round 1 (redirected),county,Plumas,50201.53,2019
+Round 1 (redirected),coc,San Francisco CoC,9465272.14,2019
+Round 1 (redirected),county,Riverside,3067749.91,2019
+Round 1 (redirected),coc,San Jose/Santa Clara City & County CoC,11433718.9,2019
+Round 1 (redirected),county,Sacramento,6068928.22,2019
+Round 1 (redirected),coc,San Luis Obispo County CoC,1746981.78,2019
+Round 1 (redirected),county,San Benito,308848.53,2019
+Round 1 (redirected),coc,"Santa Ana, Anaheim/Orange County CoC",8081115.98,2019
+Round 1 (redirected),county,San Bernardino,2845117.04,2019
+Round 1 (redirected),coc,Santa Maria/Santa Barbara County CoC,2123943.46,2019
+Round 1 (redirected),county,San Diego,9996652.14,2017
+Round 1 (redirected),coc,"Santa Rosa, Petaluma/Sonoma County CoC",3476293.48,2019
+Round 1 (redirected),county,San Francisco,8768897.37,2019
+Round 1 (redirected),coc,Stockton/San Joaquin County CoC,3099331.8,2019
+Round 1 (redirected),county,San Joaquin,2871309.15,2019
+Round 1 (redirected),coc,Tehama County CoC,500000.0,2019
+Round 1 (redirected),county,San Luis Obispo,1618453.62,2019
+Round 1 (redirected),coc,"Turlock, Modesto/Stanislaus County CoC",2265304.09,2019
+Round 1 (redirected),county,San Mateo,3431246.34,2019
+Round 1 (redirected),coc,Vallejo/Solano County CoC,1355884.04,2019
+Round 1 (redirected),county,Santa Barbara,1967681.64,2019
+Round 1 (redirected),coc,"Visalia/Kings, Tulare Counties CoC",2141746.36,2019
+Round 1 (redirected),county,Santa Clara,10592522.45,2019
+Round 1 (redirected),coc,Watsonville/Santa Cruz City & County CoC,2552737.36,2019
+Round 1 (redirected),county,Santa Cruz,2364928.51,2019
+Round 1 (redirected),coc,Yuba City & County/Sutter County CoC,849341.78,2019
+Round 1 (redirected),county,Shasta,902536.17,2019
+Round 1 (redirected),county,Sierra,13096.05,2019
+Round 1 (redirected),county,Siskiyou,249916.3,2019
+Round 1 (redirected),county,Solano,1256129.54,2019
+Round 1 (redirected),county,Sonoma,3220537.17,2019
+Round 1 (redirected),county,Stanislaus,2098642.15,2019
+Round 1 (redirected),county,Sutter,319761.91,2019
+Round 1 (redirected),county,Tehama,314305.22,2019
+Round 1 (redirected),county,Trinity,86215.67,2019
+Round 1 (redirected),county,Tulare,0.0,2019
+Round 1 (redirected),county,Tuolumne,0.0,2019
+Round 1 (redirected),county,Ventura,1821442.4,2019
+Round 1 (redirected),county,Yolo,714826.11,2019
+Round 1 (redirected),county,Yuba,467092.48,2019
+Round 2,coc,"Alpine, Inyo, Mono Counties CoC",250000.0,2019
+Round 2,city,Anaheim,3981386.0,2019
+Round 2,county,Alameda,4002153.0,2019
+Round 2,coc,"Amador, Calaveras, Mariposa, Tuolumne Counties CoC",470994.0,2019
+Round 2,city,Bakersfield,1543803.0,2019
+Round 2,county,Alpine,0.0,2019
+Round 2,coc,Bakersfield/Kern County CoC,741328.0,2019
+Round 2,city,Fresno,2911171.0,2019
+Round 2,county,Amador,106764.0,2019
+Round 2,coc,"Chico, Paradise/Butte County CoC",705655.0,2019
+Round 2,city,Long Beach,2198468.0,2019
+Round 2,county,Butte,631604.0,2019
+Round 2,coc,"Colusa, Glenn, Trinity Counties CoC",250000.0,2019
+Round 2,city,Los Angeles,55575000.0,2019
+Round 2,county,Calaveras,92795.0,2019
+Round 2,coc,Daly/San Mateo County CoC,842773.0,2019
+Round 2,city,Oakland,9311568.0,2019
+Round 2,county,Colusa,27938.0,2019
+Round 2,coc,"Davis, Woodland/Yolo County CoC",365090.0,2019
+Round 2,city,Riverside,3262879.0,2019
+Round 2,county,Contra Costa,1144969.0,2019
+Round 2,coc,El Dorado County CoC,341680.0,2019
+Round 2,city,Sacramento,6454953.0,2019
+Round 2,county,Del Norte,91797.0,2019
+Round 2,coc,Fresno City & County/Madera County CoC,1397933.0,2019
+Round 2,city,San Diego,10632506.0,2017
+Round 2,county,El Dorado,305824.0,2019
+Round 2,coc,Glendale CoC,250000.0,2019
+Round 2,city,San Francisco,9326658.0,2019
+Round 2,county,Fresno,1063150.0,2019
+Round 2,coc,Humboldt County CoC,948677.0,2019
+Round 2,city,San Jose,11266278.0,2019
+Round 2,county,Glenn,28437.0,2019
+Round 2,coc,Imperial County CoC,787591.0,2019
+Round 2,city,Santa Ana,3981386.0,2019
+Round 2,county,Humboldt,849123.0,2019
+Round 2,coc,Lake County CoC,250000.0,2019
+Round 2,city,Stockton,3053944.0,2019
+Round 2,county,Imperial,704942.0,2019
+Round 2,coc,Long Beach CoC,1055696.0,2019
+Round 2,county,Inyo,72340.0,2019
+Round 2,coc,Los Angeles City & County CoC,31357060.0,2019
+Round 2,county,Kern,663533.0,2019
+Round 2,coc,Marin County CoC,576341.0,2019
+Round 2,county,Kings,124724.0,2019
+Round 2,coc,Mendocino County CoC,437551.0,2019
+Round 2,county,Lake,203550.0,2019
+Round 2,coc,Merced City & County CoC,338893.0,2019
+Round 2,county,Lassen,22949.0,2019
+Round 2,coc,Napa City & County CoC,250000.0,2019
+Round 2,county,Los Angeles,29403004.0,2019
+Round 2,coc,Nevada County CoC,250000.0,2019
+Round 2,county,Madera,188084.0,2019
+Round 2,coc,"Oakland, Berkeley/Alameda County CoC",4471378.0,2019
+Round 2,county,Marin,515860.0,2019
+Round 2,coc,"Oxnard, San Buenaventura/Ventura County CoC",930283.0,2019
+Round 2,county,Mariposa,29934.0,2019
+Round 2,coc,Pasadena CoC,302105.0,2019
+Round 2,county,Mendocino,391634.0,2019
+Round 2,county,Merced,303329.0,2019
+Round 2,coc,,751918.0,2019
+Round 2,county,Modoc,2494.0,2019
+Round 2,coc,Richmond/Contra Costa County CoC,1279209.0,2019
+Round 2,county,Mono,34424.0,2019
+Round 2,coc,Riverside City & County CoC,1566822.0,2019
+Round 2,county,Monterey,1207830.0,2019
+Round 2,coc,"Roseville, Rocklin/Placer County CoC",343909.0,2019
+Round 2,county,Napa,160645.0,2019
+Round 2,coc,Sacramento City & County CoC,3099643.0,2019
+Round 2,county,Nevada,207042.0,2019
+Round 2,coc,"Salinas/Monterey, San Benito Counties CoC",1507181.0,2019
+Round 2,county,Orange,3422435.0,2019
+Round 2,coc,San Bernardino City & County CoC,1453114.0,2019
+Round 2,county,Placer,307820.0,2019
+Round 2,coc,San Diego City and County CoC,5105688.0,2017
+Round 2,county,Plumas,22949.0,2019
+Round 2,coc,San Francisco CoC,4478625.0,2019
+Round 2,county,Riverside,1402400.0,2019
+Round 2,coc,San Jose/Santa Clara City & County CoC,5410022.0,2019
+Round 2,county,Sacramento,2774367.0,2019
+Round 2,coc,San Luis Obispo County CoC,826609.0,2019
+Round 2,county,San Benito,141188.0,2019
+Round 2,coc,"Santa Ana, Anaheim/Orange County CoC",3823692.0,2019
+Round 2,county,San Bernardino,1300625.0,2019
+Round 2,coc,Santa Maria/Santa Barbara County CoC,1004973.0,2019
+Round 2,county,San Diego,4569898.0,2017
+Round 2,coc,"Santa Rosa, Petaluma/Sonoma County CoC",1644856.0,2019
+Round 2,county,San Francisco,4008639.0,2019
+Round 2,coc,Stockton/San Joaquin County CoC,1466492.0,2019
+Round 2,county,San Joaquin,1312598.0,2019
+Round 2,coc,Tehama County CoC,250000.0,2019
+Round 2,county,San Luis Obispo,739865.0,2019
+Round 2,coc,"Turlock, Modesto/Stanislaus County CoC",1071860.0,2019
+Round 2,county,San Mateo,754333.0,2019
+Round 2,coc,Vallejo/Solano County CoC,641555.0,2019
+Round 2,county,Santa Barbara,899512.0,2019
+Round 2,coc,"Visalia/Kings, Tulare Counties CoC",593062.0,2019
+Round 2,county,Santa Clara,4842296.0,2019
+Round 2,coc,Watsonville/Santa Cruz City & County CoC,1207863.0,2019
+Round 2,county,Santa Cruz,1081110.0,2019
+Round 2,coc,Yuba City & County/Sutter County CoC,401878.0,2019
+Round 2,county,Shasta,412588.0,2019
+Round 2,county,Sierra,5987.0,2019
+Round 2,county,Siskiyou,114247.0,2019
+Round 2,county,Solano,574231.0,2019
+Round 2,county,Sonoma,1472246.0,2019
+Round 2,county,Stanislaus,959379.0,2019
+Round 2,county,Sutter,146177.0,2019
+Round 2,county,Tehama,143682.0,2019
+Round 2,county,Trinity,39413.0,2019
+Round 2,county,Tulare,406102.0,2019
+Round 2,county,Tuolumne,192075.0,2019
+Round 2,county,Ventura,832659.0,2019
+Round 2,county,Yolo,326778.0,2019
+Round 2,county,Yuba,213528.0,2019
+Round 3,coc,"Alpine, Inyo, Mono Counties CoC",320291.99,2019
+Round 3,city,Anaheim,10290351.69,2019
+Round 3,county,Alameda,11206028.78,2019
+Round 3,coc,"Amador, Calaveras, Mariposa, Tuolumne Counties CoC",1264704.34,2019
+Round 3,city,Bakersfield,3990136.37,2019
+Round 3,county,Alpine,0.0,2019
+Round 3,coc,Bakersfield/Kern County CoC,1990599.73,2019
+Round 3,city,Fresno,7524257.15,2019
+Round 3,county,Amador,298939.19,2019
+Round 3,coc,"Chico, Paradise/Butte County CoC",1894811.47,2019
+Round 3,city,Long Beach,5682194.2,2019
+Round 3,county,Butte,1768490.7,2019
+Round 3,coc,"Colusa, Glenn, Trinity Counties CoC",287364.77,2019
+Round 3,city,Los Angeles,143640000.0,2019
+Round 3,county,Calaveras,259825.65,2019
+Round 3,coc,Daly/San Mateo County CoC,2262997.58,2019
+Round 3,city,Oakland,24066822.52,2019
+Round 3,county,Colusa,78227.08,2019
+Round 3,coc,"Davis, Woodland/Yolo County CoC",980332.95,2019
+Round 3,city,Riverside,8433288.22,2019
+Round 3,county,Contra Costa,3205913.24,2019
+Round 3,coc,El Dorado County CoC,917471.9,2019
+Round 3,city,Sacramento,16683570.18,2019
+Round 3,county,Del Norte,257031.82,2019
+Round 3,coc,Fresno City & County/Madera County CoC,3753702.34,2019
+Round 3,city,San Diego,27480939.2,2017
+Round 3,county,El Dorado,856307.11,2019
+Round 3,coc,Glendale CoC,363696.04,2019
+Round 3,city,San Francisco,24105823.85,2019
+Round 3,county,Fresno,2976819.66,2019
+Round 3,coc,Humboldt County CoC,2547368.97,2019
+Round 3,city,San Jose,29118995.18,2019
+Round 3,county,Glenn,79623.99,2019
+Round 3,coc,Imperial County CoC,2114825.12,2019
+Round 3,city,Santa Ana,10290351.69,2019
+Round 3,county,Humboldt,2377544.38,2019
+Round 3,coc,Lake County CoC,610650.14,2019
+Round 3,city,Stockton,7893269.76,2019
+Round 3,county,Imperial,1973836.78,2019
+Round 3,coc,Long Beach CoC,2834733.75,2019
+Round 3,county,Inyo,202552.25,2019
+Round 3,coc,Los Angeles City & County CoC,84199375.07,2019
+Round 3,county,Kern,1857893.08,2019
+Round 3,coc,Marin County CoC,1547579.04,2019
+Round 3,county,Kings,349228.02,2019
+Round 3,coc,Mendocino County CoC,1174902.85,2019
+Round 3,county,Lake,569940.13,2019
+Round 3,coc,Merced County CoC,909988.45,2019
+Round 3,county,Lassen,64257.96,2019
+Round 3,coc,Napa City & County CoC,481934.67,2019
+Round 3,county,Los Angeles,82328410.88,2019
+Round 3,coc,Nevada County CoC,621126.98,2019
+Round 3,county,Madera,526635.86,2019
+Round 3,coc,"Oakland, Berkeley/Alameda County CoC",12006459.41,2019
+Round 3,county,Marin,1444407.1,2019
+Round 3,coc,"Oxnard, San Buenaventura/Ventura County CoC",2497978.15,2019
+Round 3,county,Mariposa,83814.73,2019
+Round 3,coc,Pasadena CoC,811206.81,2019
+Round 3,county,Mendocino,1096575.99,2019
+Round 3,county,Merced,849322.55,2019
+Round 3,coc,"Modoc, Sierra Counties CoC",2019036.87,2019
+Round 3,county,Modoc,6984.56,2019
+Round 3,coc,Richmond/Contra Costa County CoC,3434907.05,2019
+Round 3,county,Mono,96386.93,2019
+Round 3,coc,Riverside City & County CoC,4207199.87,2019
+Round 3,county,Monterey,3381924.17,2019
+Round 3,coc,"Roseville, Rocklin/Placer County CoC",923458.67,2019
+Round 3,county,Napa,449805.69,2019
+Round 3,coc,Sacramento City & County CoC,8323101.56,2019
+Round 3,county,Nevada,579718.52,2019
+Round 3,coc,"Salinas/Monterey, San Benito Counties CoC",4047053.88,2019
+Round 3,county,Orange,9582816.93,2019
+Round 3,coc,San Bernardino City & County CoC,3901874.8,2019
+Round 3,county,Placer,861894.76,2019
+Round 3,coc,San Diego City and County CoC,13709694.36,2017
+Round 3,county,Plumas,64257.96,2019
+Round 3,coc,San Francisco CoC,12025916.4,2019
+Round 3,county,Riverside,3926719.88,2019
+Round 3,coc,San Jose/Santa Clara City & County CoC,14526887.93,2019
+Round 3,county,Sacramento,7768228.13,2019
+Round 3,coc,San Luis Obispo County CoC,2219593.53,2019
+Round 3,county,San Benito,395326.12,2019
+Round 3,coc,"Santa Ana, Anaheim/Orange County CoC",10267303.85,2019
+Round 3,county,San Bernardino,3641749.82,2019
+Round 3,coc,Santa Maria/Santa Barbara County CoC,2698534.82,2019
+Round 3,county,San Diego,12795714.74,2017
+Round 3,coc,"Santa Rosa, Petaluma/Sonoma County CoC",4416736.69,2019
+Round 3,county,San Francisco,11224188.64,2019
+Round 3,coc,Stockton/San Joaquin County CoC,3937795.4,2019
+Round 3,county,San Joaquin,3675275.71,2019
+Round 3,coc,Tehama County CoC,431047.16,2019
+Round 3,county,San Luis Obispo,2071620.63,2019
+Round 3,coc,"Turlock, Modesto/Stanislaus County CoC",2878137.8,2019
+Round 3,county,San Mateo,2112131.08,2019
+Round 3,coc,Vallejo/Solano County CoC,1722691.94,2019
+Round 3,county,Santa Barbara,2518632.5,2019
+Round 3,coc,"Visalia/Kings, Tulare Counties CoC",1592479.78,2019
+Round 3,county,Santa Clara,13558428.74,2019
+Round 3,coc,Watsonville/Santa Cruz City & County CoC,3243330.53,2019
+Round 3,county,Santa Cruz,3027108.5,2019
+Round 3,coc,Yuba City & County/Sutter County CoC,1079114.59,2019
+Round 3,county,Shasta,1155246.3,2019
+Round 3,county,Sierra,16762.95,2019
+Round 3,county,Siskiyou,319892.87,2019
+Round 3,county,Solano,1607845.81,2019
+Round 3,county,Sonoma,4122287.57,2019
+Round 3,county,Stanislaus,2686261.95,2019
+Round 3,county,Sutter,409295.24,2019
+Round 3,county,Tehama,402310.68,2019
+Round 3,county,Trinity,110356.06,2019
+Round 3,county,Tulare,1137086.44,2019
+Round 3,county,Tuolumne,537811.15,2019
+Round 3,county,Ventura,2331446.28,2019
+Round 3,county,Yolo,914977.42,2019
+Round 3,county,Yuba,597878.37,2019
+Round 4,coc,"Alpine, Inyo, Mono Counties CoC",186099.67,2022
+Round 4,city,Anaheim,5092955.47,2022
+Round 4,county,Alameda,12156020.98,2022
+Round 4,coc,"Amador, Calaveras, Mariposa, Tuolumne Counties CoC",830802.06,2022
+Round 4,city,Bakersfield,4283319.84,2022
+Round 4,county,Alpine,3741.48,2022
+Round 4,coc,Bakersfield/Kern County CoC,2130841.12,2022
+Round 4,city,Fresno,11265425.1,2022
+Round 4,county,Amador,231970.85,2022
+Round 4,coc,"Chico, Paradise/Butte County CoC",1337258.99,2022
+Round 4,city,Irvine,5092955.47,2022
+Round 4,county,Butte,1254638.05,2022
+Round 4,coc,"Colusa, Glenn, Trinity Counties CoC",451956.32,2022
+Round 4,city,Long Beach,8807125.51,2022
+Round 4,county,Calaveras,153400.08,2022
+Round 4,coc,Daly/San Mateo County CoC,2403344.2,2022
+Round 4,city,Los Angeles,143640000.0,2022
+Round 4,county,Colusa,42403.27,2022
+Round 4,coc,"Davis, Woodland/Yolo County CoC",991645.34,2022
+Round 4,city,Oakland,26044615.38,2022
+Round 4,county,Contra Costa,3857450.79,2022
+Round 4,coc,El Dorado County CoC,679263.76,2022
+Round 4,city,Riverside,8860566.8,2022
+Round 4,county,Del Norte,576185.67,2022
+Round 4,coc,Fresno City & County/Madera County CoC,5604258.37,2022
+Round 4,city,Sacramento,24791417.0,2022
+Round 4,county,El Dorado,637296.27,2022
+Round 4,coc,Glendale CoC,299088.75,2022
+Round 4,city,San Diego,22517489.88,2022
+Round 4,county,Fresno,4911296.87,2022
+Round 4,coc,Humboldt County CoC,2190658.87,2022
+Round 4,city,San Francisco,20719190.28,2022
+Round 4,county,Glenn,140928.53,2022
+Round 4,coc,Imperial County CoC,1405052.44,2022
+Round 4,city,San Jose,26795465.58,2022
+Round 4,county,Humboldt,2055311.64,2022
+Round 4,coc,Lake County CoC,450627.04,2022
+Round 4,city,Santa Ana,5092955.47,2022
+Round 4,county,Imperial,1318242.96,2022
+Round 4,coc,Long Beach CoC,4381317.74,2022
+Round 4,city,Stockton,6196518.22,2022
+Round 4,county,Inyo,119726.89,2022
+Round 4,coc,Los Angeles City & County CoC,86550964.6,2022
+Round 4,county,Kern,1999189.66,2022
+Round 4,coc,Marin County CoC,1490126.57,2022
+Round 4,county,Kings,390359.55,2022
+Round 4,coc,Mendocino County CoC,1103305.13,2022
+Round 4,county,Lake,422785.59,2022
+Round 4,coc,Merced County CoC,1136537.22,2022
+Round 4,county,Lassen,127209.82,2022
+Round 4,coc,Napa City & County CoC,657995.23,2022
+Round 4,county,Los Angeles,85120000.0,2022
+Round 4,coc,Nevada County CoC,700532.3,2022
+Round 4,county,Madera,346709.12,2022
+Round 4,coc,"Oakland, Berkeley/Alameda County CoC",12956524.27,2022
+Round 4,county,Marin,1398060.89,2022
+Round 4,coc,"Oxnard, San Buenaventura/Ventura County CoC",2988228.85,2022
+Round 4,county,Mariposa,59863.45,2022
+Round 4,coc,Pasadena CoC,680593.05,2022
+Round 4,county,Mendocino,1035138.75,2022
+Round 4,county,Merced,1066317.63,2022
+Round 4,coc,"Modoc, Sierra Counties CoC",2441893.41,2022
+Round 4,county,Modoc,14965.87,2022
+Round 4,coc,Richmond/Contra Costa County CoC,4111473.23,2022
+Round 4,county,Mono,51133.36,2022
+Round 4,coc,Riverside City & County CoC,4407903.41,2022
+Round 4,county,Monterey,2552926.54,2022
+Round 4,coc,"Roseville, Rocklin/Placer County CoC",996962.47,2022
+Round 4,county,Napa,617341.79,2022
+Round 4,coc,Sacramento City & County CoC,12333090.41,2022
+Round 4,county,Nevada,657250.75,2022
+Round 4,coc,"Salinas/Monterey, San Benito Counties CoC",3195597.04,2022
+Round 4,county,Orange,7131232.99,2022
+Round 4,coc,San Bernardino City & County CoC,4430501.22,2022
+Round 4,county,Placer,935366.34,2022
+Round 4,coc,San Diego City and County CoC,11201870.32,2022
+Round 4,county,Plumas,163377.32,2022
+Round 4,coc,San Francisco CoC,10307262.67,2022
+Round 4,county,Riverside,4135566.39,2022
+Round 4,coc,San Jose/Santa Clara City & County CoC,13330052.88,2022
+Round 4,county,Sacramento,11571105.23,2022
+Round 4,coc,San Luis Obispo County CoC,1924802.21,2022
+Round 4,county,San Benito,445234.38,2022
+Round 4,coc,"Santa Ana, Anaheim/Orange County CoC",7600841.88,2022
+Round 4,county,San Bernardino,4156768.02,2022
+Round 4,coc,Santa Maria/Santa Barbara County CoC,2608053.82,2022
+Round 4,county,San Diego,10509776.22,2022
+Round 4,coc,"Santa Rosa, Petaluma/Sonoma County CoC",3845616.57,2022
+Round 4,county,San Francisco,9670440.82,2022
+Round 4,coc,Stockton/San Joaquin County CoC,3082607.96,2022
+Round 4,county,San Joaquin,2892152.73,2022
+Round 4,coc,Tehama County CoC,386821.45,2022
+Round 4,county,San Luis Obispo,1805880.62,2022
+Round 4,coc,"Turlock, Modesto/Stanislaus County CoC",2468479.08,2022
+Round 4,county,San Mateo,2254856.46,2022
+Round 4,coc,Vallejo/Solano County CoC,1567225.0,2022
+Round 4,county,Santa Barbara,2446918.35,2022
+Round 4,coc,"Visalia/Kings, Tulare Counties CoC",1641664.87,2022
+Round 4,county,Santa Clara,12506471.57,2022
+Round 4,coc,Watsonville/Santa Cruz City & County CoC,3056022.29,2022
+Round 4,county,Santa Cruz,2867209.63,2022
+Round 4,coc,Yuba City & County/Sutter County CoC,1454235.92,2022
+Round 4,county,Shasta,995229.79,2022
+Round 4,county,Sierra,13718.72,2022
+Round 4,county,Siskiyou,400336.79,2022
+Round 4,county,Solano,1470395.89,2022
+Round 4,county,Sonoma,3608019.77,2022
+Round 4,county,Stanislaus,2315967.06,2022
+Round 4,county,Sutter,487637.65,2022
+Round 4,county,Tehama,362922.14,2022
+Round 4,county,Trinity,240700.94,2022
+Round 4,county,Tulare,1149877.02,2022
+Round 4,county,Tuolumne,334237.57,2022
+Round 4,county,Ventura,2803604.72,2022
+Round 4,county,Yolo,930377.72,2022
+Round 4,county,Yuba,876750.05,2022
+Round 5,coc,"Alpine, Inyo, Mono Counties CoC",126543.18,2023
+Round 5,city,Anaheim,5878393.38,2023
+Round 5,county,Alameda,13463753.5,2023
+Round 5,coc,"Amador, Calaveras, Mariposa, Tuolumne Counties CoC",1051170.9,2023
+Round 5,city,Bakersfield,5678236.56,2023
+Round 5,county,Alpine,0.0,2023
+Round 5,coc,Bakersfield/Kern County CoC,2801205.08,2023
+Round 5,city,Fresno,13096671.82,2023
+Round 5,county,Amador,262128.61,2023
+Round 5,coc,"Chico, Paradise/Butte County CoC",1778793.98,2023
+Round 5,city,Irvine,5878393.38,2023
+Round 5,county,Butte,1706595.25,2023
+Round 5,coc,"Colusa, Glenn, Trinity Counties CoC",517676.5,2023
+Round 5,city,Long Beach,10047680.34,2023
+Round 5,county,Calaveras,240054.62,2023
+Round 5,coc,Daly/San Mateo County CoC,2673223.94,2023
+Round 5,city,Los Angeles,164335500.0,2023
+Round 5,county,Colusa,68981.21,2023
+Round 5,coc,"Davis, Woodland/Yolo County CoC",1059798.84,2023
+Round 5,city,Oakland,28446565.83,2023
+Round 5,county,Contra Costa,3272468.82,2023
+Round 5,coc,El Dorado County CoC,706053.23,2023
+Round 5,city,Riverside,10858024.16,2023
+Round 5,county,Del Norte,957459.26,2023
+Round 5,coc,Fresno City & County/Madera County CoC,6460890.36,2023
+Round 5,city,Sacramento,27053240.85,2023
+Round 5,county,El Dorado,677395.53,2023
+Round 5,coc,Glendale CoC,280408.11,2023
+Round 5,city,San Diego,29918593.27,2023
+Round 5,county,Fresno,5259127.81,2023
+Round 5,coc,Humboldt County CoC,2381311.91,2023
+Round 5,city,San Francisco,22100815.88,2023
+Round 5,county,Glenn,202804.78,2023
+Round 5,coc,Imperial County CoC,1873701.34,2023
+Round 5,city,San Jose,28866312.28,2023
+Round 5,county,Humboldt,2284657.84,2023
+Round 5,coc,Lake County CoC,661475.53,2023
+Round 5,city,Santa Ana,5878393.38,2023
+Round 5,county,Imperial,1797650.45,2023
+Round 5,coc,Long Beach CoC,4956752.51,2023
+Round 5,city,Stockton,7153178.87,2023
+Round 5,county,Inyo,66221.97,2023
+Round 5,coc,Los Angeles City & County CoC,102557467.24,2023
+Round 5,county,Kern,2687508.13,2023
+Round 5,coc,Marin County CoC,1607673.15,2023
+Round 5,county,Kings,575303.34,2023
+Round 5,coc,Mendocino County CoC,910247.84,2023
+Round 5,county,Lake,634627.17,2023
+Round 5,coc,Merced County CoC,1127384.39,2023
+Round 5,county,Lassen,184869.66,2023
+Round 5,coc,Napa City & County CoC,727623.09,2023
+Round 5,county,Los Angeles,97384000.0,2023
+Round 5,coc,Nevada County CoC,707491.22,2023
+Round 5,county,Madera,939524.14,2023
+Round 5,coc,"Oakland, Berkeley/Alameda County CoC",14033347.21,2023
+Round 5,county,Marin,1542419.96,2023
+Round 5,coc,"Oxnard, San Buenaventura/Ventura County CoC",3510134.29,2023
+Round 5,county,Mariposa,75879.33,2023
+Round 5,coc,Pasadena CoC,799522.6,2023
+Round 5,county,Mendocino,873302.17,2023
+Round 5,county,Merced,1081625.45,2023
+Round 5,coc,,3625173.51,2023
+Round 5,county,Modoc,37249.86,2023
+Round 5,coc,Richmond/Contra Costa County CoC,3410912.96,2023
+Round 5,county,Mono,55184.97,2023
+Round 5,coc,Riverside City & County CoC,5356513.81,2023
+Round 5,county,Monterey,2555064.19,2023
+Round 5,coc,"Roseville, Rocklin/Placer County CoC",1019535.11,2023
+Round 5,county,Napa,698089.89,2023
+Round 5,coc,Sacramento City & County CoC,13345987.85,2023
+Round 5,county,Nevada,678775.15,2023
+Round 5,coc,"Salinas/Monterey, San Benito Counties CoC",3180834.51,2023
+Round 5,county,Orange,8346726.98,2023
+Round 5,coc,San Bernardino City & County CoC,6032369.26,2023
+Round 5,county,Placer,978153.62,2023
+Round 5,coc,San Diego City and County CoC,14759532.3,2023
+Round 5,county,Plumas,184869.66,2023
+Round 5,coc,San Francisco CoC,10902842.35,2023
+Round 5,county,Riverside,5139100.5,2023
+Round 5,coc,San Jose/Santa Clara City & County CoC,14240417.8,2023
+Round 5,county,Sacramento,12804293.08,2023
+Round 5,coc,San Luis Obispo County CoC,2203001.12,2023
+Round 5,county,San Benito,496664.75,2023
+Round 5,coc,"Santa Ana, Anaheim/Orange County CoC",8699841.23,2023
+Round 5,county,San Bernardino,5787523.92,2023
+Round 5,coc,Santa Maria/Santa Barbara County CoC,2713487.68,2023
+Round 5,county,San Diego,14160463.76,2023
+Round 5,coc,"Santa Rosa, Petaluma/Sonoma County CoC",3258485.99,2023
+Round 5,county,San Francisco,10460311.4,2023
+Round 5,coc,Stockton/San Joaquin County CoC,3528828.17,2023
+Round 5,county,San Joaquin,3385598.02,2023
+Round 5,coc,Tehama County CoC,437149.04,2023
+Round 5,county,San Luis Obispo,2113584.42,2023
+Round 5,coc,"Turlock, Modesto/Stanislaus County CoC",3006837.69,2023
+Round 5,county,San Mateo,2564721.56,2023
+Round 5,coc,Vallejo/Solano County CoC,1725588.34,2023
+Round 5,county,Santa Barbara,2603351.05,2023
+Round 5,coc,"Visalia/Kings, Tulare Counties CoC",2113845.72,2023
+Round 5,county,Santa Clara,13662419.4,2023
+Round 5,coc,Watsonville/Santa Cruz City & County CoC,2594134.47,2023
+Round 5,county,Santa Cruz,2488842.22,2023
+Round 5,coc,Yuba City & County/Sutter County CoC,1384784.65,2023
+Round 5,county,Shasta,1397559.41,2023
+Round 5,county,Sierra,16555.55,2023
+Round 5,county,Siskiyou,699469.52,2023
+Round 5,county,Solano,1655549.15,2023
+Round 5,county,Sonoma,3126228.65,2023
+Round 5,county,Stanislaus,2884794.4,2023
+Round 5,county,Sutter,576682.95,2023
+Round 5,county,Tehama,419405.78,2023
+Round 5,county,Trinity,224878.76,2023
+Round 5,county,Tulare,1452744.38,2023
+Round 5,county,Tuolumne,430442.78,2023
+Round 5,county,Ventura,3367662.91,2023
+Round 5,county,Yolo,1016783.11,2023
+Round 5,county,Yuba,751895.25,2023

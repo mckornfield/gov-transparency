@@ -24,23 +24,24 @@ def pdf_text(rel: str) -> str:
 
 
 def city_lines() -> list[dict]:
-    """Actual spending from each volume's actual year, then the latest volume's budget and adopted years."""
-    lines = {}
+    """Actual spending from each volume's actual year, then the budget and adopted years of the latest volume."""
+    lines, latest = {}, None
     for fy in range(2023, 2027):
-        b = parse_budget(pdf_text(f"sandiego/hssd_budget_fy{fy}.pdf"))
-        a = b["actual_year"]
-        lines[a] = {"fy": a, "expenditures": b["expenditures"][a], "revenue": b["revenue"][a], "kind": "actual"}
-    for fy, kind in ((2025, "budget"), (2026, "adopted")):
-        lines[fy] = {"fy": fy, "expenditures": b["expenditures"][fy], "revenue": b["revenue"][fy], "kind": kind}
+        latest = parse_budget(pdf_text(f"sandiego/hssd_budget_fy{fy}.pdf"), require_title=True)
+        a = latest["actual_year"]
+        lines[a] = {"fy": a, "expenditures": latest["expenditures"][a], "revenue": latest["revenue"][a], "kind": "actual"}
+    for fy, kind in ((2025, "budget"), (2026, "adopted")):  # `latest` is the FY2026 volume
+        lines[fy] = {"fy": fy, "expenditures": latest["expenditures"][fy], "revenue": latest["revenue"][fy], "kind": kind}
     return [lines[k] for k in sorted(lines)]
 
 
 def main() -> None:
     cfg = json.loads((ROOT / "config" / "homelessness.json").read_text())
     spm = parse_spm(raw_bytes("calich/ca_spms.csv").decode("utf-8"))
-    hhap = pd.concat([parse_hhap(pdf_text(f"hcd/{key}.pdf"), r["label"]) for key, r in cfg["hhap_rounds"].items()],
+    hhap = pd.concat([parse_hhap(pdf_text(f"hcd/{key}.pdf"), r["label"], r["pit_year"]) for key, r in cfg["hhap_rounds"].items()],
                      ignore_index=True)
-    pit = parse_hud_pit(raw_bytes("hud/2007-2024-PIT-Counts-by-CoC.xlsb"), [r["coc_id"] for r in cfg["regions"]])
+    pit = parse_hud_pit(raw_bytes("hud/2007-2024-PIT-Counts-by-CoC.xlsb"),
+                        [r["coc_id"] for r in cfg["regions"] if r["role"] != "state"])
     city = city_lines()
     pop = pd.read_csv(OUT / "population.csv")
     payload = homelessness_payload(spm, hhap, city, pit, pop, cfg)

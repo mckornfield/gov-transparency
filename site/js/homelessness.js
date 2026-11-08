@@ -93,14 +93,17 @@ function drawLines(chartId, legendId, series, valueKey, fmt, yLabel, pointFilter
         title: (d) => `${NAMES[d.coc_id]}, ${d.year}: ${fmt(d[valueKey])}${d.carried ? " (unsheltered count reused)" : ""}` }),
     ],
   }));
-  legend(legendId, ids.map((id) => [colorOf(id), NAMES[id] + (ROLE[id] === "reference" ? " (reference)" : ""), ROLE[id] === "reference" ? "opacity:.6" : ""]));
+  const shown = ids.filter((id) => series.some((p) => p.coc_id === id && p[valueKey] !== null));
+  legend(legendId, shown.map((id) => [colorOf(id), NAMES[id] + (ROLE[id] === "reference" ? " (reference)" : ""), ROLE[id] === "reference" ? "opacity:.6" : ""]));
 }
 
 function headline() {
   const rows = cityPerCounted(data).filter((r) => r.kind === "actual" && r.perCounted !== null);
+  if (!rows.length) { $("hhead").textContent = "The city's homelessness spending could not be matched to a count."; return; }
   const latest = rows[rows.length - 1];
   const first = rows.find((r) => r.fy === 2022) ?? rows[0];
-  $("hhead").textContent = `In fiscal year ${latest.fy} the City of San Diego's homelessness department spent ${formatMoney(latest.expenditures)}, about ${formatPerResident(latest.perCounted)} for each of the ${latest.count.toLocaleString("en-US")} people counted on one night in January ${latest.fy}. For comparison, the count was ${first.count.toLocaleString("en-US")} in January ${first.fy}.`;
+  const n = (v) => v.toLocaleString("en-US");
+  $("hhead").textContent = `In fiscal year ${latest.fy} the City of San Diego's homelessness department spent ${formatMoney(latest.expenditures)}, about ${formatPerResident(latest.perCounted)} for each of the ${n(latest.count)} people counted across the city and county on one night in January ${latest.fy}. Because the count covers the whole county, this understates the city's spending per person counted in the city. For comparison, the county count was ${n(first.count)} in January ${first.fy}.`;
 }
 
 function render() {
@@ -110,7 +113,7 @@ function render() {
   fillTable("city-table", city.map((r) => [`FY${r.fy}`, r.kind === "actual" ? "Actual" : r.kind === "budget" ? "Budget" : "Adopted", money(r.expenditures), money(r.revenue), r.count === null ? "n/a" : r.count.toLocaleString("en-US"), perPerson(r.perCounted)]));
   const hhap = hhapPerCounted(data);
   drawHhap(hhap);
-  fillTable("hhap-table", hhap.map((r) => [r.round, NAMES[r.coc_id], money(r.awarded), String(r.pit_year), r.count === null ? "n/a" : r.count.toLocaleString("en-US"), perPerson(r.perCounted)]));
+  fillTable("hhap-table", hhap.filter((r) => state.regions.includes(r.coc_id)).map((r) => [r.round, NAMES[r.coc_id], money(r.awarded), String(r.pit_year), r.count === null ? "n/a" : r.count.toLocaleString("en-US"), perPerson(r.perCounted)]));
   for (const r of data.regions.filter((r) => r.role !== "home")) $(`region-${r.coc_id}`).checked = state.regions.includes(r.coc_id);
   $("measure").value = state.measure;
   const pit = pitIndex(data, state.regions);
@@ -121,13 +124,13 @@ function render() {
   $("outcome-note").textContent = text.note;
   $("outcome-col").textContent = text.label;
   $("outcome-caption").textContent = `${text.label}, reported by the state for each region and calendar year. California regions only: the state does not publish these for other states.`;
-  drawLines("outcome-chart", "outcome-legend", out.filter((p) => ROLE[p.coc_id] !== "peer" && ROLE[p.coc_id] !== "reference"), "value", text.fmt, text.label);
+  drawLines("outcome-chart", "outcome-legend", out, "value", text.fmt, text.label);
   fillTable("outcome-table", out.map((p) => [String(p.year), NAMES[p.coc_id], text.fmt(p.value)]));
 }
 
 function buildBoxes() {
   const box = $("region-boxes");
-  const parts = [["ca", "California regions"], ["peer", "US cities"], ["reference", "Reference areas"]];
+  const parts = [["state", "California"], ["ca", "California regions"], ["peer", "US cities"], ["reference", "Reference areas"]];
   for (const [role, title] of parts) {
     for (const r of data.regions.filter((x) => x.role === role)) {
       const label = document.createElement("label");

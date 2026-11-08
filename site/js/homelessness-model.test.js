@@ -5,7 +5,7 @@ import { cityPerCounted, hhapPerCounted, pitIndex, outcomeSeries, parseHomelessH
 const pit = (coc_id, year, total, carried = false) => ({ coc_id, year, total, sheltered: null, unsheltered: null, carried });
 const data = {
   home: "CA-1",
-  regions: [{ coc_id: "CA-1", name: "Home", role: "home" }, { coc_id: "CA-2", name: "Other", role: "ca" }, { coc_id: "TX-1", name: "Peer", role: "peer" }],
+  regions: [{ coc_id: "CA-1", name: "Home", role: "home" }, { coc_id: "CA", name: "State", role: "state" }, { coc_id: "CA-2", name: "Other", role: "ca" }, { coc_id: "TX-1", name: "Peer", role: "peer" }],
   pit: [pit("CA-1", 2019, 100), pit("CA-1", 2020, 110), pit("CA-1", 2021, null), pit("CA-1", 2022, 120), pit("CA-1", 2023, 130), pit("CA-1", 2024, 150),
         pit("CA-2", 2019, 1000), pit("CA-2", 2020, 900, true), pit("CA-2", 2021, null), pit("CA-2", 2022, 1100), pit("CA-2", 2023, 1100), pit("CA-2", 2024, 1200)],
   city: [{ fy: 2021, expenditures: 600, revenue: 500, kind: "actual" }, { fy: 2024, expenditures: 300, revenue: 100, kind: "actual" },
@@ -58,6 +58,10 @@ test("hash round trips and garbage falls back to the default regions and measure
   assert.equal(serializeHomelessHash(parsed), "#regions=CA-1,TX-1&measure=days");
   assert.equal(serializeHomelessHash({ regions: null, measure: "exit" }), "");
   const bad = normalizeHomelessState(data, parseHomelessHash("#regions=%E0%A4%A&measure=zzz"));
-  assert.deepEqual(bad, { regions: ["CA-1", "CA-2"], measure: "exit" });
+  assert.deepEqual(bad, { regions: ["CA-1", "CA", "CA-2"], measure: "exit" });
+  // an explicit "San Diego alone" survives; it is not mistaken for "no choice"
+  assert.deepEqual(parseHomelessHash("#regions=none"), { regions: [], measure: "exit" });
+  assert.equal(serializeHomelessHash({ regions: [], measure: "exit" }), "#regions=none");
+  assert.deepEqual(normalizeHomelessState(data, { regions: [], measure: "exit" }), { regions: ["CA-1"], measure: "exit" });
   assert.deepEqual(normalizeHomelessState(data, { regions: ["TX-1", "NOPE"], measure: "days" }), { regions: ["CA-1", "TX-1"], measure: "days" });
 });

@@ -5,6 +5,7 @@
     {"coc_id": "CA-600", "name": "Los Angeles", "role": "ca", "hhap": {"coc": "Los Angeles City & County CoC", "city": "Los Angeles", "county": "Los Angeles"}},
     {"coc_id": "CA-501", "name": "San Francisco", "role": "ca", "hhap": {"coc": "San Francisco CoC", "city": "San Francisco", "county": "San Francisco"}},
     {"coc_id": "CA-500", "name": "San Jose / Santa Clara", "role": "ca", "hhap": {"coc": "San Jose/Santa Clara City & County CoC", "city": "San Jose", "county": "Santa Clara"}},
+    {"coc_id": "CA", "name": "California (statewide)", "role": "state"},
     {"coc_id": "AZ-502", "name": "Phoenix / Maricopa", "role": "peer"},
     {"coc_id": "TX-500", "name": "San Antonio / Bexar", "role": "peer"},
     {"coc_id": "TX-600", "name": "Dallas", "role": "peer"},

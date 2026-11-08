@@ -1,5 +1,5 @@
 // Pure functions behind the homelessness page. Missing counts stay null: nothing here turns a gap into 0, and
-// city and state dollars are never added together (the city's grant revenue includes state money).
+// city and state dollars are never added together (the budget does not say which funds paid for what).
 
 export const MEASURES = ["exit", "days", "returns"];
 export const BASE_YEAR = 2019;
@@ -16,24 +16,26 @@ function hashParams(hash) {
 
 export function parseHomelessHash(hash) {
   const params = hashParams(hash);
-  const regions = (params.get("regions") || "").split(",").filter(Boolean);
+  const raw = params.get("regions");
+  const regions = raw === "none" ? [] : (raw || "").split(",").filter(Boolean);
   const measure = MEASURES.includes(params.get("measure")) ? params.get("measure") : "exit";
-  return { regions: regions.length ? regions : null, measure };
+  return { regions: raw === "none" || regions.length ? regions : null, measure };
 }
 
 export function serializeHomelessHash({ regions, measure }) {
   const parts = [];
-  if (regions && regions.length) parts.push(`regions=${regions.join(",")}`);
+  if (regions) parts.push(`regions=${regions.length ? regions.join(",") : "none"}`);
   if (measure !== "exit") parts.push(`measure=${measure}`);
   return parts.length ? `#${parts.join("&")}` : "";
 }
 
-// San Diego is always shown; unknown ids are dropped; no valid choice means San Diego plus the California regions.
+// San Diego is always shown; unknown ids are dropped; no choice at all (null) means San Diego plus the California
+// regions and the state, while an explicit empty list means San Diego alone.
 export function normalizeHomelessState(data, parsed) {
   const known = data.regions.map((r) => r.coc_id);
   const chosen = (parsed.regions || []).filter((id) => known.includes(id) && id !== data.home);
-  const fallback = data.regions.filter((r) => r.role === "ca").map((r) => r.coc_id);
-  const rest = chosen.length ? known.filter((id) => chosen.includes(id)) : fallback;
+  const fallback = data.regions.filter((r) => r.role === "ca" || r.role === "state").map((r) => r.coc_id);
+  const rest = parsed.regions === null || parsed.regions === undefined || (parsed.regions.length && !chosen.length) ? fallback : known.filter((id) => chosen.includes(id));
   return { regions: [data.home, ...rest.filter((id) => id !== data.home)], measure: MEASURES.includes(parsed.measure) ? parsed.measure : "exit" };
 }
 

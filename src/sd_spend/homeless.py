@@ -44,30 +44,42 @@ def parse_spm(text: str) -> pd.DataFrame:
     return pd.DataFrame(rows, columns=["location", "coc_id", "metric", "period", "value"])
 
 
-MONEY = re.compile(r"(?:(\S.*?)\s{2,})?\$\s*([\d,]+(?:\.\d{2})?|-)")
+AMOUNT = r"\$\s*(\d{1,3}(?:,\d{3})*\.\d{2}|-)"
+MONEY = re.compile(r"(?:(\S.*?)\s+)?" + AMOUNT)
+OLDER_COUNTS = re.compile(r"\*\s*Indicates jurisdictions approved to use (\d{4}) PIT counts")
 
 
-def parse_hhap(text: str, round_label: str) -> pd.DataFrame:
-    """Rows of kind 'coc' | 'city' | 'county', by the column each amount sits in under the header."""
+def parse_hhap(text: str, round_label: str, default_year: int) -> pd.DataFrame:
+    """Rows of kind 'coc' | 'city' | 'county', by the column each amount sits in under the header.
+
+    `basis_year` is the point-in-time count the award was based on: `default_year`, except that where the table
+    says a single * marks areas approved to use older counts, starred rows get that year. An amount whose name
+    wrapped onto neighbouring lines is kept with an empty name rather than dropped.
+    """
     header = next((l for l in text.splitlines() if "CONTINUUM OF CARE" in l and "CITY" in l and "COUNTY" in l), None)
     if header is None:
         raise HomelessError(f"{round_label}: no CONTINUUM OF CARE / CITY / COUNTY header line")
+    older = OLDER_COUNTS.search(text)
     city_at, county_at = header.index("CITY") - 4, header.index("COUNTY") - 4
     rows = []
     for line in text.splitlines():
         if line is header:
             continue
         for match in MONEY.finditer(line):
-            name = match.group(1)
-            if name is None:  # an amount whose name wrapped onto neighbouring lines
-                continue
-            name = re.split(r"\s{2,}", name)[-1]  # a wrapped name's tail can precede this column's name
-            start = match.end(1) - len(name)
+            name = match.group(1) or ""
+            if name:
+                name = re.split(r"\s{2,}", name)[-1]  # a wrapped name's tail can precede this column's name
+                start = match.end(1) - len(name)
+            else:
+                start = match.start(2) - 1
             kind = "county" if start >= county_at else "city" if start >= city_at else "coc"
+            trimmed = name.rstrip()
+            single = len(trimmed) - len(trimmed.rstrip("*")) == 1  # '**' and '***' mean other things
+            basis = int(older.group(1)) if older and single else default_year
             raw = match.group(2)
             rows.append((round_label, kind, name.strip().rstrip("*").strip(),
-                         0.0 if raw == "-" else float(raw.replace(",", ""))))
-    out = pd.DataFrame(rows, columns=["round", "kind", "name", "amount"])
+                         0.0 if raw == "-" else float(raw.replace(",", "")), basis))
+    out = pd.DataFrame(rows, columns=["round", "kind", "name", "amount", "basis_year"])
     for kind in ("coc", "city", "county"):
         if not out[(out.kind == kind) & out.name.str.startswith("San Diego")].shape[0]:
             raise HomelessError(f"{round_label}: no San Diego row in the {kind} column")
@@ -76,25 +88,42 @@ def parse_hhap(text: str, round_label: str) -> pd.DataFrame:
 
 YEARS = re.compile(r"^\s*FY(\d{4})\s+FY(\d{4})\s+FY(\d{4})\s+FY\d{4}-\d{4}\s*$")
 TOTAL = re.compile(r"^\s*Total Department (Expenditures|Revenue)\s+(.*)$")
-NUMBER = re.compile(r"\(?\$?\s*[\d,]+\)?")
+NUMBER = re.compile(r"\(?\$?\s*[\d,]+\)?|(?<![\w,])-(?![\w,])")
 
 
-def parse_budget(text: str) -> dict:
-    """Totals for the department from the first 'FYxxxx Actual | Budget | Adopted' table in a budget volume."""
+def _numbers(cells: str) -> list[float]:
+    out = []
+    for token in NUMBER.findall(cells.replace("$", " ")):
+        token = token.strip()
+        out.append(0.0 if token == "-" else float(token.replace(",", "").replace("(", "-").replace(")", "")))
+    return out
+
+
+def parse_budget(text: str, require_title: bool = False) -> dict:
+    """Totals for the department from the first 'FYxxxx Actual | Budget | Adopted' table in a budget volume.
+
+    Every total line must carry exactly four cells (zero cells printed as '-' count) and the last, the change
+    from budget to adopted, must equal the difference of the two before it. With `require_title` the table must
+    sit under a 'Department Summary' heading.
+    """
     lines = text.splitlines()
     for i, line in enumerate(lines):
         m = YEARS.match(line)
-        if m and "Actual" in lines[i + 1]:
-            years = [int(y) for y in m.groups()]
-            found = {}
-            for l in lines[i + 2:i + 14]:
-                t = TOTAL.match(l)
-                if t:
-                    nums = [float(n.replace("$", "").replace(",", "").replace("(", "-").replace(")", "").strip())
-                            for n in NUMBER.findall(t.group(2))]
-                    found["expenditures" if t.group(1) == "Expenditures" else "revenue"] = dict(zip(years, nums[:3]))
-            if set(found) == {"expenditures", "revenue"}:
-                return {**found, "actual_year": years[0]}
+        if not (m and i + 1 < len(lines) and "Actual" in lines[i + 1]):
+            continue
+        if require_title and not any("Department Summary" in l for l in lines[max(0, i - 4):i]):
+            raise HomelessError("the first Actual/Budget/Adopted table is not under a 'Department Summary' heading")
+        years = [int(y) for y in m.groups()]
+        found = {}
+        for l in lines[i + 2:i + 14]:
+            t = TOTAL.match(l)
+            if t:
+                nums = _numbers(t.group(2))
+                if len(nums) != 4 or abs((nums[2] - nums[1]) - nums[3]) > 1:
+                    raise HomelessError(f"department total line does not parse into four cells whose change adds up: {l.strip()!r}")
+                found["expenditures" if t.group(1) == "Expenditures" else "revenue"] = dict(zip(years, nums[:3]))
+        if set(found) == {"expenditures", "revenue"}:
+            return {**found, "actual_year": years[0]}
     raise HomelessError("no department expenditure/revenue totals under an Actual/Budget/Adopted header")
 
 

@@ -1,4 +1,5 @@
 import pandas as pd
+import pytest
 
 from sd_spend import export
 from sd_spend.spending import KEYS
@@ -89,16 +90,19 @@ def test_homelessness_payload_keeps_missing_as_null_and_limits_hhap_to_configure
     spm = pd.DataFrame([("CA-1 Home CoC", "CA-1", "M3", "2024", 5.0), ("California", None, "M3", "2024", 50.0),
                         ("CA-9 Other", "CA-9", "M3", "2024", 7.0), ("CA-1 Home CoC", "CA-1", "PIT Count", "2021", math.nan)],
                        columns=["location", "coc_id", "metric", "period", "value"])
-    hhap = pd.DataFrame([("Round 5", "coc", "Home CoC", 10.4), ("Round 5", "city", "Home", 20.6),
-                         ("Round 5", "county", "Home County", 30.0), ("Round 5", "city", "Elsewhere", 99.0)],
-                        columns=["round", "kind", "name", "amount"])
+    hhap = pd.DataFrame([("Round 5", "coc", "Home CoC", 10.4, 2017), ("Round 5", "city", "Home", 20.6, 2017),
+                         ("Round 5", "county", "Home County", 30.0, 2017), ("Round 5", "city", "Elsewhere", 99.0, 2023)],
+                        columns=["round", "kind", "name", "amount", "basis_year"])
     pit = pd.DataFrame([("CA-1", 2021, math.nan, 4.0, math.nan), ("CA-1", 2022, 9.0, 4.0, 5.0)],
                        columns=["coc_id", "year", "total", "sheltered", "unsheltered"]).assign(carried=[False, True])
     city = [{"fy": 2024, "expenditures": 42.4, "revenue": 34.6, "kind": "actual"}]
     pop = pd.DataFrame({"fy": [2024], "population": [1_380_000], "source": ["reported"]})
     p = homelessness_payload(spm, hhap, city, pit, pop, cfg)
-    assert p["hhap"] == [{"round": "Round 5", "coc_id": "CA-1", "pit_year": 2023, "coc": 10, "city": 21, "county": 30}]
+    assert p["hhap"] == [{"round": "Round 5", "coc_id": "CA-1", "pit_year": 2017, "coc": 10, "city": 21, "county": 30}]
     assert {r["coc_id"] for r in p["measures"]} == {"CA-1", "CA"}  # CA-9 is not configured; California is the state row
     assert p["pit"][0] == {"coc_id": "CA-1", "year": 2021, "total": None, "sheltered": 4, "unsheltered": None, "carried": False}
     assert [r["role"] for r in p["regions"]] == ["home", "peer"] and "total" not in p["city"][0]
     assert p["population"] == [{"fy": 2024, "population": 1380000}]
+    mixed = hhap.assign(basis_year=[2017, 2023, 2017, 2023])
+    with pytest.raises(ValueError, match="different count years"):
+        homelessness_payload(spm, mixed, city, pit, pop, cfg)

@@ -68,23 +68,26 @@ def _num(x):
 def homelessness_payload(spm: pd.DataFrame, hhap: pd.DataFrame, city: list[dict], pit: pd.DataFrame,
                          pop: pd.DataFrame, cfg: dict) -> dict:
     """One JSON for the homelessness page. Missing values are null (never 0); city and state dollars stay in
-    separate lists because the city's grant revenue includes state money."""
+    separate lists because the city budget does not say which funds paid for what."""
     regions = cfg["regions"]
     ids = {r["coc_id"] for r in regions}
     measures = spm[spm.coc_id.isin(ids) | (spm.location == "California")]
-    pit_years = {r["label"]: r["pit_year"] for r in cfg["hhap_rounds"].values()}  # the count each round's awards were based on
     hhap_rows = []
     for rnd in hhap["round"].drop_duplicates():
         one = hhap[hhap["round"] == rnd]
         for r in regions:
             if "hhap" not in r:
                 continue
-            row = {"round": rnd, "coc_id": r["coc_id"], "pit_year": pit_years[rnd]}
+            row, bases = {"round": rnd, "coc_id": r["coc_id"]}, set()
             for kind in ("coc", "city", "county"):
                 match = one[(one.kind == kind) & (one.name == r["hhap"][kind])]
                 if len(match) != 1:
                     raise ValueError(f"{rnd}: expected one {kind} row named {r['hhap'][kind]!r}, found {len(match)}")
                 row[kind] = _num(match.amount.iloc[0])
+                bases.add(int(match.basis_year.iloc[0]))
+            if len(bases) != 1:  # a region's three awards must rest on the same count to be divided by one
+                raise ValueError(f"{rnd} {r['coc_id']}: the awards use different count years {sorted(bases)}")
+            row["pit_year"] = bases.pop()
             hhap_rows.append(row)
     return {
         "home": cfg["home"],

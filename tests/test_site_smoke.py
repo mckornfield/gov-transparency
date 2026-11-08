@@ -445,6 +445,7 @@ def test_homelessness_headline_and_city_table_use_the_budget_and_count(page, sit
     errors = open_homelessness(page, site_url)
     head = page.locator("#hhead").inner_text()
     assert "$42.1M" in head and "10,605" in head and "$3,971" in head
+    assert "city and county" in head and "understates" in head  # the count is countywide
     rows = page.locator("#city-table tbody tr")
     assert rows.count() == 6
     fy24 = page.locator("#city-table tbody tr", has_text="FY2024")
@@ -458,6 +459,8 @@ def test_homelessness_hhap_table_keeps_each_round_and_its_count_year(page, site_
     sd5 = page.locator("#hhap-table tbody tr", has_text="Round 5").filter(has_text="San Diego")
     text = sd5.inner_text()
     assert "$58.8M" in text and "2023" in text
+    sd3 = page.locator("#hhap-table tbody tr", has_text="Round 3").filter(has_text="San Diego").inner_text()
+    assert "2017" in sd3 and "$5,894" in sd3  # divided by the 2017 count the table approves, like San Francisco and San Jose
     assert page.locator("#hhap-table tbody tr").count() == 20  # 5 rounds x San Diego + 3 CA regions
 
 
@@ -480,6 +483,17 @@ def test_homelessness_region_and_outcome_pickers_change_the_page(page, site_url)
     assert "Dallas" not in page.locator("#outcome-table").inner_text()  # outcomes exist for California regions only
 
 
+def test_homelessness_can_show_san_diego_alone_and_the_state_series_has_outcomes(page, site_url):
+    open_homelessness(page, site_url)
+    assert "California (statewide)" in page.locator("#outcome-legend").inner_text()
+    for box in ("CA", "CA-600", "CA-501", "CA-500"):
+        page.click(f"#region-{box}")
+    assert "regions=none" in page.url
+    assert page.locator("#pit-table tbody tr", has_text="Los Angeles").count() == 0
+    assert page.locator("#pit-table tbody tr", has_text="San Diego").count() > 0
+    assert "Los Angeles" not in page.locator("#outcome-legend").inner_text()
+
+
 def test_homelessness_garbage_hash_falls_back_and_phone_width_does_not_scroll(page, site_url):
     errors = open_homelessness(page, site_url, "#regions=%E0%A4%A&measure=zzz")
     assert page.locator("#pit-table tbody tr").count() > 0 and errors == []
@@ -493,4 +507,4 @@ def test_homelessness_page_never_claims_effectiveness(page, site_url):
     open_homelessness(page, site_url)
     body = page.locator("main").inner_text()
     assert 'every outcome is "reported", not "effective"' in body
-    assert "cannot show that the\n      spending caused" in body or "cannot show that the spending caused" in body
+    assert body.lower().count("effective") == 1  # only the caveat itself uses the word

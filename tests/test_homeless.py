@@ -42,7 +42,7 @@ Counties CoC                                                                    
 
 
 def test_hhap_assigns_amounts_to_the_coc_city_and_county_columns():
-    t = parse_hhap(HHAP, "Round 5")
+    t = parse_hhap(HHAP, "Round 5", 2023)
     sd = t[t.name == "San Diego"].set_index("kind")["amount"]
     assert sd["city"] == 29918593.27 and sd["county"] == 14160463.76
     assert t[(t.kind == "coc") & (t.name == "San Diego City and County CoC")].amount.iloc[0] == 14759532.30
@@ -51,7 +51,33 @@ def test_hhap_assigns_amounts_to_the_coc_city_and_county_columns():
 
 def test_hhap_requires_san_diego_in_every_column():
     with pytest.raises(HomelessError, match="county"):
-        parse_hhap(HHAP.replace("San Diego         $14,160,463.76", "Other             $14,160,463.76"), "Round 5")
+        parse_hhap(HHAP.replace("San Diego         $14,160,463.76", "Other             $14,160,463.76"), "Round 5", 2023)
+
+
+HHAP_2017 = """
+CONTINUUM OF CARE                              ALLOCATION        CITY            ALLOCATION        COUNTY            ALLOCATION
+San Diego City and County CoC *               $13,709,694.36     San Diego *     $27,480,939.20    San Diego*        $12,795,714.74
+Fresno CoC                                     $3,753,702.34     Fresno          $1,000,000.00     San Luis Obispo $ 1,618,453.62
+Redding/Shasta, Siskiyou
+                                                $3,625,173.51
+Counties CoC
+*Indicates jurisdictions approved to use 2017 PIT counts per HSC § 50216 (j). All other allocations are based on 2019 PIT counts.
+**When more than one eligible city is within the same PIT count area, the proportionate share is split equally.
+"""
+
+
+def test_hhap_asterisk_means_the_2017_count_where_the_table_says_so_and_nothing_is_dropped():
+    t = parse_hhap(HHAP_2017, "Round 3", 2019)
+    basis = t.set_index(["kind", "name"])["basis_year"]
+    assert basis[("coc", "San Diego City and County CoC")] == 2017 and basis[("city", "San Diego")] == 2017
+    assert basis[("county", "San Diego")] == 2017 and basis[("coc", "Fresno CoC")] == 2019
+    assert t[(t.kind == "county") & (t.name == "San Luis Obispo")].amount.iloc[0] == 1618453.62  # one space before the $
+    assert t.amount.eq(3625173.51).sum() == 1  # an amount whose name wrapped is kept, not skipped
+
+
+def test_hhap_asterisks_in_a_table_without_the_2017_footnote_do_not_change_the_basis_year():
+    t = parse_hhap(HHAP.replace("San Diego       $29,918", "San Diego*      $29,918"), "Round 5", 2023)
+    assert set(t.basis_year) == {2023}
 
 
 BUDGET = """
@@ -68,6 +94,19 @@ def test_budget_reads_actual_budget_and_adopted_columns_by_header_year():
     assert b["expenditures"] == {2024: 42114403, 2025: 53916571, 2026: 53821132}
     assert b["revenue"][2024] == 34561306
     assert b["actual_year"] == 2024
+
+
+def test_budget_zero_cells_keep_their_column_and_the_change_must_add_up():
+    zero = BUDGET.replace("$   34,561,306 $      40,837,415 $     53,189,289 $    12,351,874", "$            - $      40,837,415 $     53,189,289 $    12,351,874")
+    assert parse_budget(zero)["revenue"][2024] == 0
+    with pytest.raises(HomelessError, match="change"):
+        parse_budget(BUDGET.replace("12,351,874", "99,999,999"))
+
+
+def test_budget_requires_the_department_summary_table():
+    with pytest.raises(HomelessError, match="Department Summary"):
+        parse_budget(BUDGET, require_title=True)
+    assert parse_budget("Department Summary\n" + BUDGET, require_title=True)["actual_year"] == 2024
 
 
 def test_budget_without_the_totals_fails():

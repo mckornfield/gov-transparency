@@ -133,6 +133,32 @@
         what a private-sector provider would charge.</li>
     </ul>
 
+    <h2>Homelessness</h2>
+    <ul>
+      <li><strong>Sources:</strong> the California Interagency Council on Homelessness's system performance measures
+        (<a href="https://data.ca.gov/dataset/ca-system-performance-measures-statewide-and-by-coc">data.ca.gov</a>, through
+        March 2026); the Department of Housing and Community Development's HHAP allocation tables, rounds 1 to 5; the
+        Homelessness Strategies &amp; Solutions Department pages of the City's adopted budgets for FY2023 to FY2026; and
+        HUD's "2007-2024 Point-in-Time Estimates by CoC". HUD blocks automated downloads, so that workbook was downloaded
+        in a browser and added by hand; the others are fetched by <code>scripts/fetch_homelessness.py</code>.</li>
+      <li><strong>City dollars</strong> are that one department's spending, so they are a floor: police, libraries and
+        other departments also spend on homelessness, and the State Auditor found in 2024 that the City could not total
+        all of it. The department changed shape over these years (FY2021 includes one-off pandemic funds), and its
+        revenue is shown beside its spending and never netted off. Fiscal year N is set beside the January N count.</li>
+      <li><strong>State dollars</strong> are HHAP awards, not spending, and HHAP is only one state program. The state
+        sets aside separate amounts for the regional body, the city and the county; the page adds them for each area.
+        City revenue may include state grants, so city and state dollars are never added together. The "redirected"
+        Round 1 table is used for round 1. Each round is divided by the count it was allocated on (2019, 2022 or 2023).</li>
+      <li><strong>Counts</strong> are the one-night January counts for each Continuum of Care (a region that is usually a
+        city plus its county), so they are not city populations and the page does not divide by population. 2021 is
+        blank because the unsheltered count was waived. In some years HUD's file marks a region as "sheltered-only"
+        but still lists an unsheltered figure; that figure is the region's last unsheltered count reused, so those totals
+        are kept and flagged on the page.</li>
+      <li><strong>Outcomes</strong> are the state's own measures (people served, exits to permanent housing, days
+        homeless, returns within six months), published for California regions only. They are what the regions report
+        and cannot show that any spending caused them. Exit rate is exits divided by people served.</li>
+    </ul>
+
     <h2>Checks that run on every build</h2>
     <ul>
       <li>Aggregating never changes a total.</li>
@@ -140,6 +166,9 @@
       <li>No year's total changes by more than 40% from the year before (this would catch double counting).</li>
       <li>City comparison: every configured city must be found exactly once, every spending code must be mapped, and a
         city's total (leaving out schools, health and welfare) must be between $500 and $8,000 per resident.</li>
+      <li>Homelessness: the San Diego count must match in HUD's file and the state's file, San Diego must appear in
+        every column of every HHAP table, every configured region must have a count in each counted year, and any
+        unparseable value in the state file stops the build.</li>
     </ul>
     <p class="note">Margin estimates (spending compared with private-sector prices) are not on the site yet.</p>
   </main>

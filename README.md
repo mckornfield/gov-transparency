@@ -14,6 +14,8 @@ uv run python scripts/build_processed.py        # -> data/processed/, site/data/
 uv run python scripts/fetch_census_finances.py   # Census city finances FY2019-FY2024 -> data/raw/census/
 uv run python scripts/fetch_bea_rpp.py           # BEA regional price parities -> data/raw/bea/
 uv run python scripts/build_peers.py            # -> data/processed/peer_spending.csv, site/data/peers.json
+uv run python scripts/fetch_homelessness.py --hud-file ~/Downloads/2007-2024-PIT-Counts-by-CoC.xlsb   # HUD blocks scripts: download that file in a browser first
+uv run python scripts/build_homelessness.py     # -> data/processed/homeless_*.csv, site/data/homelessness.json
 uv run python scripts/build_vendors.py          # needs poppler: brew install poppler (or apt install poppler-utils)
 uv run pytest -m "not smoke" && npm test        # unit + data checks
 uv run playwright install chromium && uv run pytest -m smoke   # browser smoke test
@@ -29,6 +31,7 @@ original bytes; files are stored gzip-compressed).
 | City population by year | State Controller's Office, bythenumbers.sco.ca.gov (dataset rrtv-rsj9) | `fetch_sco_population.py` |
 | City finances for San Diego and 11 peer cities, FY2019-FY2024 (Census individual unit files; fixed-width text in a zip) | Census Bureau, Annual Survey of State and Local Government Finances | `fetch_census_finances.py`, `build_peers.py`; peers in `config/peers.json`, service mapping in `config/census_functions.json` |
 | Regional price parities by metro area, 2008-2024 (zip of CSV) | Bureau of Economic Analysis, table MARPP | `fetch_bea_rpp.py`; used by `build_peers.py` |
+| Homelessness: state system performance measures and point-in-time counts (CSV), HHAP allocation tables (PDF), the City's homelessness department budget pages (PDF), HUD point-in-time counts by CoC (xlsb, downloaded by hand) | Cal ICH via data.ca.gov; HCD; City of San Diego adopted budgets; HUD AHAR | `fetch_homelessness.py`, `build_homelessness.py`; regions in `config/homelessness.json` |
 | Vendor payments of $25,000 or more, FY2022-FY2026 (PDF, one per year) | City of San Diego, sandiego.gov "Cumulative Amounts Paid to Vendors" | `fetch_sd_vendor_payments.py`, `build_vendors.py` |
 
 ## Data-quality notes

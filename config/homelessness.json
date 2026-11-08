@@ -1,0 +1,25 @@
+{
+  "home": "CA-601",
+  "regions": [
+    {"coc_id": "CA-601", "name": "San Diego", "role": "home", "hhap": {"coc": "San Diego City and County CoC", "city": "San Diego", "county": "San Diego"}},
+    {"coc_id": "CA-600", "name": "Los Angeles", "role": "ca", "hhap": {"coc": "Los Angeles City & County CoC", "city": "Los Angeles", "county": "Los Angeles"}},
+    {"coc_id": "CA-501", "name": "San Francisco", "role": "ca", "hhap": {"coc": "San Francisco CoC", "city": "San Francisco", "county": "San Francisco"}},
+    {"coc_id": "CA-500", "name": "San Jose / Santa Clara", "role": "ca", "hhap": {"coc": "San Jose/Santa Clara City & County CoC", "city": "San Jose", "county": "Santa Clara"}},
+    {"coc_id": "AZ-502", "name": "Phoenix / Maricopa", "role": "peer"},
+    {"coc_id": "TX-500", "name": "San Antonio / Bexar", "role": "peer"},
+    {"coc_id": "TX-600", "name": "Dallas", "role": "peer"},
+    {"coc_id": "TX-503", "name": "Austin / Travis", "role": "peer"},
+    {"coc_id": "TX-601", "name": "Fort Worth / Tarrant", "role": "peer"},
+    {"coc_id": "NC-505", "name": "Charlotte / Mecklenburg", "role": "peer"},
+    {"coc_id": "OH-503", "name": "Columbus / Franklin", "role": "peer"},
+    {"coc_id": "WA-500", "name": "Seattle / King", "role": "peer"},
+    {"coc_id": "OR-501", "name": "Portland / Multnomah", "role": "peer"},
+    {"coc_id": "MA-500", "name": "Boston", "role": "peer"},
+    {"coc_id": "VA-600", "name": "Arlington County, VA", "role": "reference"},
+    {"coc_id": "WA-508", "name": "Vancouver / Clark, WA", "role": "reference"}
+  ],
+  "hhap_rounds": {
+    "hhap_r1_redir": "Round 1 (redirected)", "hhap_r2": "Round 2", "hhap_r3": "Round 3",
+    "hhap_r4": "Round 4", "hhap_r5": "Round 5"
+  }
+}

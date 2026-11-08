@@ -33,7 +33,7 @@ def parse_spm(text: str) -> pd.DataFrame:
             raise HomelessError(f"{location} {metric}: {len(values)} values for {len(periods)} periods")
         coc = re.match(r"CA-\d{3}", location)
         for period, raw in zip(periods, values):
-            if raw.strip() == "N/A":
+            if raw.strip() in ("N/A", ""):  # not collected (waived 2021 count, small CoCs)
                 value = float("nan")
             else:
                 try:
@@ -101,8 +101,9 @@ def parse_budget(text: str) -> dict:
 def pit_rows(rows_by_year: dict[int, list[tuple]], coc_ids: list[str]) -> pd.DataFrame:
     """rows_by_year[year] = [(coc_id, count_type, total, sheltered, unsheltered)].
 
-    Only a full sheltered+unsheltered count is a total. HUD's 2021 sheet mostly holds sheltered-only or
-    partial counts (the unsheltered count was waived), which would understate and so become missing.
+    A full sheltered+unsheltered count is a total. In years a CoC counted only its shelters, HUD fills the
+    unsheltered figure with the CoC's last unsheltered count: that total is kept but flagged `carried`.
+    With no unsheltered figure at all (the waived 2021 count) or only a partial count, the total is missing.
     Pre-2015 style sheets have no count type (None) and are treated as full counts.
     """
     out = []
@@ -112,14 +113,16 @@ def pit_rows(rows_by_year: dict[int, list[tuple]], coc_ids: list[str]) -> pd.Dat
             if coc not in by_coc:
                 if year >= 2019:
                     raise HomelessError(f"{coc} is missing from the {year} sheet")
-                out.append((coc, year, None, None, None))
+                out.append((coc, year, None, None, None, False))
                 continue
             _, count_type, total, sheltered, unsheltered = by_coc[coc]
-            if count_type not in (None, "", FULL_COUNT):
-                out.append((coc, year, None, sheltered, None))
+            if count_type in (None, "", FULL_COUNT):
+                out.append((coc, year, total, sheltered, unsheltered, False))
+            elif count_type == "Sheltered-Only Count" and (unsheltered or 0) > 0:
+                out.append((coc, year, total, sheltered, unsheltered, True))  # unsheltered count carried over
             else:
-                out.append((coc, year, total, sheltered, unsheltered))
-    df = pd.DataFrame(out, columns=["coc_id", "year", "total", "sheltered", "unsheltered"])
+                out.append((coc, year, None, sheltered, None, False))
+    df = pd.DataFrame(out, columns=["coc_id", "year", "total", "sheltered", "unsheltered", "carried"])
     return df.astype({c: "float64" for c in ("total", "sheltered", "unsheltered")})
 
 

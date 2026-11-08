@@ -59,3 +59,41 @@ def peers_payload(tidy: pd.DataFrame) -> dict:
                      for r in rows.to_dict("records")],
         })
     return {"home": home, "groups": groups.to_dict("records"), "years": years}
+
+
+def _num(x):
+    return None if pd.isna(x) else round(float(x))
+
+
+def homelessness_payload(spm: pd.DataFrame, hhap: pd.DataFrame, city: list[dict], pit: pd.DataFrame,
+                         pop: pd.DataFrame, cfg: dict) -> dict:
+    """One JSON for the homelessness page. Missing values are null (never 0); city and state dollars stay in
+    separate lists because the city's grant revenue includes state money."""
+    regions = cfg["regions"]
+    ids = {r["coc_id"] for r in regions}
+    measures = spm[spm.coc_id.isin(ids) | (spm.location == "California")]
+    hhap_rows = []
+    for rnd in hhap["round"].drop_duplicates():
+        one = hhap[hhap["round"] == rnd]
+        for r in regions:
+            if "hhap" not in r:
+                continue
+            row = {"round": rnd, "coc_id": r["coc_id"]}
+            for kind in ("coc", "city", "county"):
+                match = one[(one.kind == kind) & (one.name == r["hhap"][kind])]
+                if len(match) != 1:
+                    raise ValueError(f"{rnd}: expected one {kind} row named {r['hhap'][kind]!r}, found {len(match)}")
+                row[kind] = _num(match.amount.iloc[0])
+            hhap_rows.append(row)
+    return {
+        "home": cfg["home"],
+        "regions": [{"coc_id": r["coc_id"], "name": r["name"], "role": r["role"]} for r in regions],
+        "pit": [{"coc_id": r.coc_id, "year": int(r.year), "total": _num(r.total), "sheltered": _num(r.sheltered),
+                 "unsheltered": _num(r.unsheltered), "carried": bool(r.carried)} for r in pit.itertuples()],
+        "measures": [{"coc_id": r.coc_id if isinstance(r.coc_id, str) else "CA", "metric": r.metric, "period": r.period,
+                      "value": None if pd.isna(r.value) else round(float(r.value), 4)} for r in measures.itertuples()],
+        "hhap": hhap_rows,
+        "city": [{"fy": c["fy"], "expenditures": _num(c["expenditures"]), "revenue": _num(c["revenue"]),
+                  "kind": c["kind"]} for c in city],
+        "population": [{"fy": int(r.fy), "population": int(r.population)} for r in pop.itertuples()],
+    }

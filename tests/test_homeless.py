@@ -18,6 +18,11 @@ def test_spm_keeps_na_as_missing_not_zero_and_extracts_coc_id():
     assert t[t.location == "California"].coc_id.isna().all()
 
 
+def test_spm_blank_cells_are_missing_too():
+    t = parse_spm(SPM + "CA-509 Mendocino County CoC,M6,,5,6\n")
+    assert t[t.coc_id == "CA-509"].value.isna().sum() == 1
+
+
 def test_spm_rejects_unknown_metric_and_garbage_values():
     with pytest.raises(HomelessError, match="M9"):
         parse_spm(SPM + "California,M9,1,2,3\n")
@@ -70,13 +75,16 @@ def test_budget_without_the_totals_fails():
         parse_budget("nothing here")
 
 
-def test_only_full_counts_are_totals_and_partial_counts_are_missing():
-    rows = {2021: [("CA-601", "Sheltered-Only Count", 5000.0, 5000.0, None),
+def test_waived_counts_are_missing_but_carried_over_unsheltered_counts_are_kept_and_flagged():
+    rows = {2021: [("CA-601", "Sheltered-Only Count", 4143.0, 4143.0, 0.0),
                    ("CA-600", "Sheltered and Unsheltered Count", 70000.0, 20000.0, 50000.0),
-                   ("CA-500", "Sheltered and Partial Unsheltered Count", 9000.0, 3000.0, 6000.0)]}
-    t = pit_rows(rows, ["CA-601", "CA-600", "CA-500"]).set_index("coc_id")
-    assert pd.isna(t.loc["CA-601", "total"]) and pd.isna(t.loc["CA-500", "total"])
-    assert t.loc["CA-600", "total"] == 70000 and t.loc["CA-600", "unsheltered"] == 50000
+                   ("CA-500", "Sheltered and Partial Unsheltered Count", 9000.0, 3000.0, 6000.0),
+                   ("CA-501", "Sheltered-Only Count", 8124.0, 2944.0, 5180.0)]}
+    t = pit_rows(rows, ["CA-601", "CA-600", "CA-500", "CA-501"]).set_index("coc_id")
+    assert pd.isna(t.loc["CA-601", "total"]) and pd.isna(t.loc["CA-500", "total"])  # no unsheltered count at all
+    assert t.loc["CA-600", "total"] == 70000 and not t.loc["CA-600", "carried"]
+    # HUD reuses the last unsheltered count in a year the CoC only counted shelters
+    assert t.loc["CA-501", "total"] == 8124 and t.loc["CA-501", "carried"]
 
 
 def test_pit_rows_names_a_missing_coc():

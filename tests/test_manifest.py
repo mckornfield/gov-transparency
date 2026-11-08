@@ -14,6 +14,11 @@ REQUIRED = {
     "bea/MARPP.zip.gz",
     "census/2024_methodology.pdf.gz",
     *{f"sandiego/vendor_payments_fy{fy}.pdf.gz" for fy in range(2022, 2027)},
+    "calich/ca_spms.csv.gz",
+    "calich/ca_spms_dictionary.csv.gz",
+    *{f"hcd/{n}.pdf.gz" for n in ("hhap_r1_redir", "hhap_r2", "hhap_r3", "hhap_r4", "hhap_r5")},
+    *{f"sandiego/hssd_budget_fy{fy}.pdf.gz" for fy in range(2023, 2027)},
+    "hud/2007-2024-PIT-Counts-by-CoC.xlsb.gz",
 }
 
 

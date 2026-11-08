@@ -3,7 +3,7 @@ name = "gov-transparency"
 version = "0.1.0"
 description = "San Diego government spending transparency explorer"
 requires-python = ">=3.11"
-dependencies = ["pandas>=2.2", "requests>=2.32"]
+dependencies = ["pandas>=2.2", "requests>=2.32", "pyxlsb>=1.0.10"]
 
 [dependency-groups]
 dev = ["pytest>=8", "pytest-playwright>=0.5"]

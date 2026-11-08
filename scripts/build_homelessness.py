@@ -38,7 +38,7 @@ def city_lines() -> list[dict]:
 def main() -> None:
     cfg = json.loads((ROOT / "config" / "homelessness.json").read_text())
     spm = parse_spm(raw_bytes("calich/ca_spms.csv").decode("utf-8"))
-    hhap = pd.concat([parse_hhap(pdf_text(f"hcd/{key}.pdf"), label) for key, label in cfg["hhap_rounds"].items()],
+    hhap = pd.concat([parse_hhap(pdf_text(f"hcd/{key}.pdf"), r["label"]) for key, r in cfg["hhap_rounds"].items()],
                      ignore_index=True)
     pit = parse_hud_pit(raw_bytes("hud/2007-2024-PIT-Counts-by-CoC.xlsb"), [r["coc_id"] for r in cfg["regions"]])
     city = city_lines()

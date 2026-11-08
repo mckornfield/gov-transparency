@@ -19,7 +19,10 @@
     {"coc_id": "WA-508", "name": "Vancouver / Clark, WA", "role": "reference"}
   ],
   "hhap_rounds": {
-    "hhap_r1_redir": "Round 1 (redirected)", "hhap_r2": "Round 2", "hhap_r3": "Round 3",
-    "hhap_r4": "Round 4", "hhap_r5": "Round 5"
+    "hhap_r1_redir": {"label": "Round 1 (redirected)", "pit_year": 2019},
+    "hhap_r2": {"label": "Round 2", "pit_year": 2019},
+    "hhap_r3": {"label": "Round 3", "pit_year": 2019},
+    "hhap_r4": {"label": "Round 4", "pit_year": 2022},
+    "hhap_r5": {"label": "Round 5", "pit_year": 2023}
   }
 }

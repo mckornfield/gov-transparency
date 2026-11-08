@@ -431,3 +431,66 @@ def test_reference_cities_are_marked_and_kept_out_of_the_peer_summary(page, site
     # libraries: Vancouver reports $0, and the rank is still out of the 12 peers + San Diego reporting spending
     assert "Vancouver, WA" in page.locator("#peer-table tbody tr", has_text="Libraries").inner_text()
     assert "of 12" in page.locator("#peer-table tbody tr", has_text="Police").inner_text()  # San Diego + 11 peers only
+
+
+def open_homelessness(page, site_url, hash_=""):
+    errors = []
+    page.on("pageerror", lambda e: errors.append(str(e)))
+    page.goto(f"{site_url}/homelessness.html{hash_}")
+    page.wait_for_selector("#pit-chart svg")
+    return errors
+
+
+def test_homelessness_headline_and_city_table_use_the_budget_and_count(page, site_url):
+    errors = open_homelessness(page, site_url)
+    head = page.locator("#hhead").inner_text()
+    assert "$42.1M" in head and "10,605" in head and "$3,971" in head
+    rows = page.locator("#city-table tbody tr")
+    assert rows.count() == 6
+    fy24 = page.locator("#city-table tbody tr", has_text="FY2024")
+    assert "$34.6M" in fy24.inner_text() and "Actual" in fy24.inner_text()
+    assert "n/a" in page.locator("#city-table tbody tr", has_text="FY2021").inner_text()  # no 2021 count: no per-person figure
+    assert errors == []
+
+
+def test_homelessness_hhap_table_keeps_each_round_and_its_count_year(page, site_url):
+    open_homelessness(page, site_url)
+    sd5 = page.locator("#hhap-table tbody tr", has_text="Round 5").filter(has_text="San Diego")
+    text = sd5.inner_text()
+    assert "$58.8M" in text and "2023" in text
+    assert page.locator("#hhap-table tbody tr").count() == 20  # 5 rounds x San Diego + 3 CA regions
+
+
+def test_homelessness_waived_2021_count_is_a_gap_and_reused_counts_are_flagged(page, site_url):
+    open_homelessness(page, site_url, "#regions=CA-501")
+    row = page.locator("#pit-table tbody tr", has_text="2021").filter(has_text="San Diego")
+    assert "Count waived" in row.inner_text() and "n/a" in row.inner_text()
+    reused = page.locator("#pit-table tbody tr", has_text="2020").filter(has_text="San Francisco")
+    assert "Reused unsheltered count" in reused.inner_text()
+
+
+def test_homelessness_region_and_outcome_pickers_change_the_page(page, site_url):
+    open_homelessness(page, site_url)
+    assert page.locator("#pit-table tbody tr", has_text="Dallas").count() == 0
+    page.click("#region-TX-600")
+    assert page.locator("#pit-table tbody tr", has_text="Dallas").count() > 0
+    assert "regions=" in page.url
+    page.select_option("#measure", "days")
+    assert "days" in page.locator("#outcome-col").inner_text().lower()
+    assert "Dallas" not in page.locator("#outcome-table").inner_text()  # outcomes exist for California regions only
+
+
+def test_homelessness_garbage_hash_falls_back_and_phone_width_does_not_scroll(page, site_url):
+    errors = open_homelessness(page, site_url, "#regions=%E0%A4%A&measure=zzz")
+    assert page.locator("#pit-table tbody tr").count() > 0 and errors == []
+    page.set_viewport_size({"width": 390, "height": 800})
+    page.reload()
+    page.wait_for_selector("#pit-chart svg")
+    assert page.evaluate("document.documentElement.scrollWidth <= document.documentElement.clientWidth")
+
+
+def test_homelessness_page_never_claims_effectiveness(page, site_url):
+    open_homelessness(page, site_url)
+    body = page.locator("main").inner_text()
+    assert 'every outcome is "reported", not "effective"' in body
+    assert "cannot show that the\n      spending caused" in body or "cannot show that the spending caused" in body

@@ -84,7 +84,8 @@ def test_homelessness_payload_keeps_missing_as_null_and_limits_hhap_to_configure
 
     cfg = {"home": "CA-1", "regions": [
         {"coc_id": "CA-1", "name": "Home", "role": "home", "hhap": {"coc": "Home CoC", "city": "Home", "county": "Home County"}},
-        {"coc_id": "TX-1", "name": "Peer", "role": "peer"}]}
+        {"coc_id": "TX-1", "name": "Peer", "role": "peer"}],
+        "hhap_rounds": {"r5": {"label": "Round 5", "pit_year": 2023}}}
     spm = pd.DataFrame([("CA-1 Home CoC", "CA-1", "M3", "2024", 5.0), ("California", None, "M3", "2024", 50.0),
                         ("CA-9 Other", "CA-9", "M3", "2024", 7.0), ("CA-1 Home CoC", "CA-1", "PIT Count", "2021", math.nan)],
                        columns=["location", "coc_id", "metric", "period", "value"])
@@ -96,7 +97,7 @@ def test_homelessness_payload_keeps_missing_as_null_and_limits_hhap_to_configure
     city = [{"fy": 2024, "expenditures": 42.4, "revenue": 34.6, "kind": "actual"}]
     pop = pd.DataFrame({"fy": [2024], "population": [1_380_000], "source": ["reported"]})
     p = homelessness_payload(spm, hhap, city, pit, pop, cfg)
-    assert p["hhap"] == [{"round": "Round 5", "coc_id": "CA-1", "coc": 10, "city": 21, "county": 30}]
+    assert p["hhap"] == [{"round": "Round 5", "coc_id": "CA-1", "pit_year": 2023, "coc": 10, "city": 21, "county": 30}]
     assert {r["coc_id"] for r in p["measures"]} == {"CA-1", "CA"}  # CA-9 is not configured; California is the state row
     assert p["pit"][0] == {"coc_id": "CA-1", "year": 2021, "total": None, "sheltered": 4, "unsheltered": None, "carried": False}
     assert [r["role"] for r in p["regions"]] == ["home", "peer"] and "total" not in p["city"][0]

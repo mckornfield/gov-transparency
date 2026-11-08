@@ -72,13 +72,14 @@ def homelessness_payload(spm: pd.DataFrame, hhap: pd.DataFrame, city: list[dict]
     regions = cfg["regions"]
     ids = {r["coc_id"] for r in regions}
     measures = spm[spm.coc_id.isin(ids) | (spm.location == "California")]
+    pit_years = {r["label"]: r["pit_year"] for r in cfg["hhap_rounds"].values()}  # the count each round's awards were based on
     hhap_rows = []
     for rnd in hhap["round"].drop_duplicates():
         one = hhap[hhap["round"] == rnd]
         for r in regions:
             if "hhap" not in r:
                 continue
-            row = {"round": rnd, "coc_id": r["coc_id"]}
+            row = {"round": rnd, "coc_id": r["coc_id"], "pit_year": pit_years[rnd]}
             for kind in ("coc", "city", "county"):
                 match = one[(one.kind == kind) & (one.name == r["hhap"][kind])]
                 if len(match) != 1:

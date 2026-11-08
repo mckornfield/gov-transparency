@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Homelessness spending and outcomes · San Diego Spending</title>
+  <meta name="description" content="What the City of San Diego and the State of California spend on homelessness per person counted, next to the point-in-time counts and outcomes the state reports, compared with other California regions and US cities.">
+  <link rel="stylesheet" href="css/site.css?v=2">
+</head>
+<body>
+  <header class="site-header">
+    <nav>
+      <strong>San Diego Spending</strong>
+      <a href="index.html">Where your dollar goes</a>
+      <a href="vendors.html">Who gets paid</a>
+      <a href="peers.html">Compared with other cities</a>
+      <a href="homelessness.html" aria-current="page">Homelessness</a>
+      <a href="methods.html">Data &amp; methods</a>
+    </nav>
+  </header>
+  <main>
+    <h1>Homelessness: dollars and reported outcomes</h1>
+    <p id="hhead" class="headline" aria-live="polite">Loading…</p>
+    <p class="note">This page shows what is spent and what the state reports, side by side. It cannot show that the
+      spending caused any change: counts also move with housing costs, the economy and how and when people are counted.
+      The State Auditor found in 2024 that California has not consistently tracked either the cost or the results of its
+      homelessness programs, and that San Diego could not total all of its own homelessness spending. Every dollar figure
+      here is therefore a floor, and every outcome is "reported", not "effective".</p>
+
+    <h2>What the city spends</h2>
+    <p class="note">The City's Homelessness Strategies &amp; Solutions Department, from each year's adopted budget (actual
+      spending for 2021 to 2024, then the budget and adopted amounts). "Per person counted" divides by the people counted
+      on one night in January of that year. The department's revenue is shown beside its spending, not netted off, and
+      it may include state grants such as the HHAP money below, so city and state dollars are never added together.
+      Other city departments, such as police and libraries, also spend on homelessness and are not included.</p>
+    <figure>
+      <div id="city-chart" role="img" aria-label="Bar chart of the Homelessness Strategies and Solutions Department's spending and revenue by fiscal year"></div>
+      <ul id="city-legend" class="legend"></ul>
+    </figure>
+    <div class="table-wrap">
+      <table id="city-table" data-title="City homelessness department, by year" data-default-sort="0:desc">
+        <caption class="note">The department changed shape over these years (2021 includes one-off pandemic funds), so compare years with care.</caption>
+        <thead><tr><th scope="col">Fiscal year</th><th scope="col">Basis</th><th scope="col">Spending</th><th scope="col">Department revenue</th><th scope="col">People counted</th><th scope="col">Spending per person counted</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+
+    <h2>What the state awarded</h2>
+    <p class="note">Awards from the state's Homeless Housing, Assistance and Prevention (HHAP) program, rounds 1 to 5: the
+      amounts set aside for the regional homelessness body, the city and the county, added together for each area.
+      These are allocations, not money spent, and HHAP is only one state program. Each round's amount is divided by the
+      count its allocation was based on (the year in the table).</p>
+    <figure>
+      <div id="hhap-chart" role="img" aria-label="Bar chart of HHAP awards per person counted, by round, for San Diego and other California regions"></div>
+      <ul id="hhap-legend" class="legend"></ul>
+    </figure>
+    <div class="table-wrap">
+      <table id="hhap-table" data-title="HHAP awards, by round and region">
+        <caption class="note">Awards to the regional body, city and county in each area, added together.</caption>
+        <thead><tr><th scope="col">Round</th><th scope="col">Region</th><th scope="col">Awarded</th><th scope="col">Based on the count of</th><th scope="col">People counted</th><th scope="col">Awarded per person counted</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+
+    <form class="controls" aria-label="Which regions and outcome to show" onsubmit="return false">
+      <fieldset id="region-boxes">
+        <legend>Compare San Diego with</legend>
+      </fieldset>
+      <fieldset>
+        <legend>Reported outcome</legend>
+        <label class="visually-hidden" for="measure">Reported outcome</label>
+        <select id="measure">
+          <option value="exit">Share of people served who exited to permanent housing</option>
+          <option value="days">Average days spent homeless</option>
+          <option value="returns">Returns to homelessness within 6 months</option>
+        </select>
+      </fieldset>
+    </form>
+
+    <h2>How many people are counted</h2>
+    <p class="note">The one-night count each January, shown relative to 2019 (2019 = 100) because the areas differ in
+      size. A "region" is the area the federal count covers, usually a city plus its county, so it is larger than the
+      city. 2021 is blank: the federal government waived the unsheltered count that year. A hollow dot marks a year in
+      which a region counted only its shelters and HUD reused its last unsheltered count. Dashed lines are reference
+      areas (Arlington County VA and Vancouver WA), included because they matter to the reader, not as peers.</p>
+    <figure>
+      <div id="pit-chart" role="img" aria-label="Line chart of point-in-time counts relative to 2019 for the chosen regions"></div>
+      <ul id="pit-legend" class="legend"></ul>
+    </figure>
+    <div class="table-wrap">
+      <table id="pit-table" data-title="Point-in-time counts" data-default-sort="0:desc">
+        <caption class="note">People counted on one night in January. Relative to 2019 = 100. "Reused" means the unsheltered figure was carried over from an earlier count.</caption>
+        <thead><tr><th scope="col">Year</th><th scope="col">Region</th><th scope="col">People counted</th><th scope="col">Relative to 2019</th><th scope="col">Note</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+
+    <h2>What the state reports</h2>
+    <p id="outcome-note" class="note"></p>
+    <figure>
+      <div id="outcome-chart" role="img" aria-label="Line chart of the chosen reported outcome by calendar year for the chosen regions"></div>
+      <ul id="outcome-legend" class="legend"></ul>
+    </figure>
+    <div class="table-wrap">
+      <table id="outcome-table" data-title="Reported outcomes" data-default-sort="0:desc">
+        <caption class="note" id="outcome-caption"></caption>
+        <thead><tr><th scope="col">Year</th><th scope="col">Region</th><th scope="col" id="outcome-col">Value</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+    <details class="method">
+      <summary>Sources and limits</summary>
+      <p>Counts and outcomes come from the California Interagency Council on Homelessness (system performance measures
+        built from each region's records) and from HUD's point-in-time counts. HHAP awards are from the Department of
+        Housing and Community Development's allocation tables. City amounts are from the City's adopted budgets.
+        Comparing regions is not comparing city governments: the state's regions cover different areas and spend through
+        counties, cities and nonprofits. See <a href="methods.html">Data &amp; methods</a>.</p>
+    </details>
+  </main>
+  <script type="module" src="js/homelessness.js"></script>
+</body>
+</html>

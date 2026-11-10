@@ -76,3 +76,64 @@ def test_va_ages_read_the_grand_total_row():
 def test_va_ages_fail_when_bands_do_not_match_recipients():
     with pytest.raises(AgeSpendError, match="recipients"):
         parse_va_ages(VA.replace("2,4,6,7,1", "2,4,6,70,1"), "Compensation")
+
+
+from sd_spend.agespend import parse_omb_line, parse_ssa_ages, ssa_annual_dollars
+
+SSA = """Table 5.A1.2—Disabled-worker beneficiaries: Number and average monthly benefit, by age and sex,
+December 2024
+Age                                    Number          benefit (dollars)
+      Total                          7,231,147                1,580.79
+Under 20                                   667                  689.37
+20–24                                   24,897                  891.62
+  20                                     1,335                  751.96
+  21                                     2,633                  802.01
+65–66                                  922,518                1,757.61
+  65                                   552,383                1,756.39
+SOURCE: Social Security Administration.
+Table 5.A1.3—Spousal
+  20                                   999                  1.00
+"""
+
+
+def test_ssa_rows_are_read_until_the_source_line_and_exclude_the_total():
+    rows = parse_ssa_ages(SSA, "Table 5.A1.2")
+    assert [(r["lo"], r["hi"]) for r in rows] == [(19, 19), (20, 24), (20, 20), (21, 21), (65, 66), (65, 65)]
+    assert rows[0]["number"] == 667 and rows[0]["avg"] == 689.37
+
+
+def test_ssa_dollars_use_single_years_and_groups_only_where_no_single_year_follows():
+    dollars = ssa_annual_dollars(parse_ssa_ages(SSA, "Table 5.A1.2"))
+    assert dollars == [(19, 667 * 689.37 * 12), (20, 1335 * 751.96 * 12), (21, 2633 * 802.01 * 12), (65, 552383 * 1756.39 * 12)]
+
+
+def test_ssa_table_must_be_found():
+    with pytest.raises(AgeSpendError, match="Table 9.9"):
+        parse_ssa_ages(SSA, "Table 9.9")
+
+
+def test_omb_line_reads_the_requested_year():
+    import io, openpyxl
+    wb = openpyxl.Workbook()
+    ws = wb.active
+    ws.append(["Table 3.2"]); ws.append(["(in millions of dollars)"])
+    ws.append(["Function and Subfunction", "2023", "2024"])
+    ws.append(["501 Elementary, secondary, and vocational education", 100.0, 105.0])
+    buf = io.BytesIO(); wb.save(buf)
+    assert parse_omb_line(buf.getvalue(), "501 Elementary", 2024) == 105.0e6
+    with pytest.raises(AgeSpendError, match="999 Missing"):
+        parse_omb_line(buf.getvalue(), "999 Missing", 2024)
+
+
+def test_nhe_federal_medicaid_is_read_in_billions():
+    import io, openpyxl
+    from sd_spend.agespend import parse_nhe_federal_medicaid
+    wb = openpyxl.Workbook()
+    ws = wb.active
+    ws.append(["Table 5-3"]); ws.append([" ", 2023, 2024])
+    ws.append(["     Federal Portion of Medicaid Payments", 592.6, 596.7])
+    ws.append(["     Federal Portion of Medicare Buy-in Premiums", 1.0, 2.0])
+    buf = io.BytesIO(); wb.save(buf)
+    assert parse_nhe_federal_medicaid(buf.getvalue(), 2024) == 596.7e9
+    with pytest.raises(AgeSpendError, match="2019"):
+        parse_nhe_federal_medicaid(buf.getvalue(), 2019)

@@ -1,0 +1,39 @@
+import pytest
+
+from sd_spend.ageallocate import AllocationError, KEYS, band_of, from_shares, generation_labels, scale, spread_ages, va_bands
+
+POP = {a: 10 for a in range(0, 101)}
+
+
+def test_band_edges():
+    assert [band_of(a) for a in (0, 18, 19, 44, 45, 64, 65, 84, 85, 100)] == ["0-18", "0-18", "19-44", "19-44", "45-64", "45-64", "65-84", "65-84", "85+", "85+"]
+
+
+def test_spread_ages_follows_population_and_keeps_the_total():
+    out = spread_ages(1000.0, 40, 49, POP)
+    assert out["19-44"] == pytest.approx(500.0) and out["45-64"] == pytest.approx(500.0)
+    assert sum(out.values()) == pytest.approx(1000.0)
+
+
+def test_spread_ages_fails_without_population():
+    with pytest.raises(AllocationError):
+        spread_ages(1.0, 200, 210, POP)
+
+
+def test_scale_keeps_the_shape_and_hits_the_total():
+    out = scale({k: float(i + 1) for i, k in enumerate(KEYS)}, 150.0)
+    assert sum(out.values()) == pytest.approx(150.0) and out["85+"] == pytest.approx(50.0)
+
+
+def test_from_shares():
+    assert sum(from_shares(100.0, dict(zip(KEYS, (0.1, 0.2, 0.3, 0.3, 0.1)))).values()) == pytest.approx(100.0)
+
+
+def test_va_bands_split_dollars_by_recipient_counts():
+    out = va_bands({"young": 1, "old": 3}, 400.0, POP, {"young": (19, 30), "old": (65, 84)})
+    assert out["19-44"] == pytest.approx(100.0) and out["65-84"] == pytest.approx(300.0)
+
+
+def test_generation_labels_come_after_the_brackets():
+    assert generation_labels(("65-84", 65, 84), POP, 2024) == ["Silent", "Baby Boomers"]
+    assert generation_labels(("0-18", 0, 18), POP, 2024) == ["Gen Z", "Gen Alpha"]

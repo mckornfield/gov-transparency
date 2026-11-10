@@ -1,0 +1,36 @@
+fiscal_year,program,group,method,band,dollars
+2024,Social Security,Retirement,published,0-18,25876738902
+2024,Social Security,Retirement,published,19-44,23740918944
+2024,Social Security,Retirement,published,45-64,156606345578
+2024,Social Security,Retirement,published,65-84,1133432206262
+2024,Social Security,Retirement,published,85+,121257496065
+2024,Medicare,Health,published,0-18,120833746
+2024,Medicare,Health,published,19-44,27082870310
+2024,Medicare,Health,published,45-64,128949170729
+2024,Medicare,Health,published,65-84,594472110452
+2024,Medicare,Health,published,85+,123509350556
+2024,Medicaid (federal share),Health,published,0-18,116229936010
+2024,Medicaid (federal share),Health,published,19-44,188875930290
+2024,Medicaid (federal share),Health,published,45-64,167012893133
+2024,Medicaid (federal share),Health,published,65-84,89484644583
+2024,Medicaid (federal share),Health,published,85+,35096595984
+2024,VA compensation and pension,Veterans,proxy,0-18,1047622594
+2024,VA compensation and pension,Veterans,proxy,19-44,44808531545
+2024,VA compensation and pension,Veterans,proxy,45-64,53671795900
+2024,VA compensation and pension,Veterans,proxy,65-84,52679770663
+2024,VA compensation and pension,Veterans,proxy,85+,9104279299
+2024,VA health care,Veterans,proxy,0-18,911429254
+2024,VA health care,Veterans,proxy,19-44,38926106045
+2024,VA health care,Veterans,proxy,45-64,46591108646
+2024,VA health care,Veterans,proxy,65-84,44418633277
+2024,VA health care,Veterans,proxy,85+,7695722777
+2024,Elementary and secondary education,Kids and education,proxy,0-18,105373000000
+2024,Elementary and secondary education,Kids and education,proxy,19-44,0
+2024,Elementary and secondary education,Kids and education,proxy,45-64,0
+2024,Elementary and secondary education,Kids and education,proxy,65-84,0
+2024,Elementary and secondary education,Kids and education,proxy,85+,0
+2024,Higher education and student aid,Kids and education,proxy,0-18,13415827601
+2024,Higher education and student aid,Kids and education,proxy,19-44,147616172399
+2024,Higher education and student aid,Kids and education,proxy,45-64,0
+2024,Higher education and student aid,Kids and education,proxy,65-84,0
+2024,Higher education and student aid,Kids and education,proxy,85+,0

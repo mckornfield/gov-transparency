@@ -4,6 +4,7 @@ Every parser fails loudly on a layout it does not recognise rather than returnin
 """
 import csv
 import io
+import re
 
 
 class AgeSpendError(ValueError):
@@ -84,3 +85,101 @@ def parse_va_ages(text: str, kind: str) -> dict:
     if sum(bands.values()) + unknown != recipients:
         raise AgeSpendError(f"VA {kind} age bands do not add up to the recipients")
     return {"recipients": recipients, "dollars": _money(total[layout["dollars"]]), "bands": bands, "unknown": unknown}
+
+
+ROW = re.compile(r"^\s*(Under \d+|\d+ or older|\d+–\d+|\d+)\s+([\d,]+)\s+([\d,]+\.\d\d)\b")
+
+
+def parse_ssa_ages(text: str, title: str) -> list[dict]:
+    """Age rows (first number column and its average monthly benefit) of one table of the SSA statistical supplement."""
+    lines = text.splitlines()
+    start = next((i for i, line in enumerate(lines) if re.match(rf"^\s*{re.escape(title)}(?!\d)", line)), None)
+    if start is None:
+        raise AgeSpendError(f"SSA supplement has no {title}")
+    rows = []
+    for line in lines[start + 1:]:
+        if line.startswith("SOURCE:"):
+            break
+        m = ROW.match(line)
+        if not m:
+            continue
+        label = m.group(1)
+        if label.startswith("Under"):
+            lo = hi = int(label.split()[1]) - 1
+        elif "or older" in label:
+            lo = hi = int(label.split()[0])
+        elif "–" in label:
+            lo, hi = (int(x) for x in label.split("–"))
+        else:
+            lo = hi = int(label)
+        rows.append({"lo": lo, "hi": hi, "number": int(m.group(2).replace(",", "")), "avg": float(m.group(3).replace(",", ""))})
+    if not rows:
+        raise AgeSpendError(f"SSA {title} has no age rows")
+    return rows
+
+
+def ssa_annual_dollars(rows: list[dict]) -> list[tuple[int, float]]:
+    """(age, annual dollars) from monthly benefits times 12; a range row counts only if no single-year row lies in it."""
+    singles = {r["lo"] for r in rows if r["lo"] == r["hi"]}
+    out = []
+    for r in rows:
+        if r["lo"] != r["hi"] and any(r["lo"] <= a <= r["hi"] for a in singles):
+            continue
+        out.append((r["lo"], r["number"] * r["avg"] * 12))
+    return out
+
+
+def parse_omb_line(xlsx: bytes, prefix: str, year: int) -> float:
+    """Dollars (the table is in millions) on the line of OMB table 3.2 starting with prefix, in the given year."""
+    import openpyxl
+    sheet = openpyxl.load_workbook(io.BytesIO(xlsx), data_only=True).active
+    rows = list(sheet.iter_rows(values_only=True))
+    header = next((r for r in rows if r and r[0] == "Function and Subfunction"), None)
+    if header is None or str(year) not in [str(c) for c in header]:
+        raise AgeSpendError(f"OMB table has no {year} column")
+    col = [str(c) for c in header].index(str(year))
+    for r in rows:
+        if r and isinstance(r[0], str) and r[0].strip().startswith(prefix):
+            if not isinstance(r[col], (int, float)):
+                raise AgeSpendError(f"OMB line {prefix!r} has no number for {year}")
+            return float(r[col]) * 1e6
+    raise AgeSpendError(f"OMB table has no line starting {prefix!r}")
+
+
+OTHER_ADULT_TYPES = ("Wives and husbands of retired workers", "Wives and husbands of disabled workers", "Nondisabled widow(er)s",
+                     "Disabled widow(er)s", "Widowed mothers and fathers", "Parents of deceased workers")
+
+
+def parse_ssa_other_adults(text: str) -> dict[str, float]:
+    """Annual dollars (December monthly benefit times 12) of the adult types other than workers, by under 62, 62-64, 65 or older."""
+    lines = text.splitlines()
+    start = next((i for i, line in enumerate(lines) if re.match(r"^\s*Table 5\.A16", line)), None)
+    if start is None:
+        raise AgeSpendError("SSA supplement has no Table 5.A16")
+    found = {}
+    for line in lines[start + 1:]:
+        if line.strip() == "Men":
+            break
+        cells = re.split(r"\s{2,}", line.strip())
+        if cells[0] in OTHER_ADULT_TYPES and len(cells) == 9:
+            number = [0 if c in ("...", "(X)") else int(c.replace(",", "")) for c in cells[2:5]]
+            average = [0.0 if c in ("...", "(X)") else float(c.replace(",", "")) for c in cells[6:9]]
+            found[cells[0]] = [n * a * 12 for n, a in zip(number, average)]
+    if set(found) != set(OTHER_ADULT_TYPES):
+        raise AgeSpendError(f"SSA Table 5.A16 is missing {sorted(set(OTHER_ADULT_TYPES) - set(found))}")
+    return {k: sum(v[i] for v in found.values()) for i, k in enumerate(("under 62", "62-64", "65 or older"))}
+
+
+def parse_nhe_federal_medicaid(xlsx: bytes, year: int) -> float:
+    """Federal portion of Medicaid payments (dollars) for a calendar year, from CMS national health expenditure table 5-3."""
+    import openpyxl
+    sheet = openpyxl.load_workbook(io.BytesIO(xlsx), data_only=True).active
+    rows = list(sheet.iter_rows(values_only=True))
+    header = next((r for r in rows if r and year in r), None)
+    if header is None:
+        raise AgeSpendError(f"NHE table 5-3 has no {year} column")
+    col = list(header).index(year)
+    for r in rows:
+        if r and isinstance(r[0], str) and r[0].strip() == "Federal Portion of Medicaid Payments" and isinstance(r[col], (int, float)):
+            return float(r[col]) * 1e9
+    raise AgeSpendError("NHE table 5-3 has no federal Medicaid line")

@@ -1,0 +1,165 @@
+{
+ "fiscal_year": 2024,
+ "population_year": 2024,
+ "bands": [
+  {
+   "key": "0-18",
+   "lo": 0,
+   "hi": 18,
+   "population": 77616803,
+   "generations": [
+    "Gen Z",
+    "Gen Alpha"
+   ]
+  },
+  {
+   "key": "19-44",
+   "lo": 19,
+   "hi": 44,
+   "population": 118872186,
+   "generations": [
+    "Millennials",
+    "Gen Z"
+   ]
+  },
+  {
+   "key": "45-64",
+   "lo": 45,
+   "hi": 64,
+   "population": 82442081,
+   "generations": [
+    "Baby Boomers",
+    "Gen X"
+   ]
+  },
+  {
+   "key": "65-84",
+   "lo": 65,
+   "hi": 84,
+   "population": 54744775,
+   "generations": [
+    "Silent",
+    "Baby Boomers"
+   ]
+  },
+  {
+   "key": "85+",
+   "lo": 85,
+   "hi": 100,
+   "population": 6435143,
+   "generations": [
+    "Silent"
+   ]
+  }
+ ],
+ "programs": [
+  {
+   "program": "Social Security",
+   "group": "Retirement",
+   "method": "published",
+   "note": "SSA beneficiaries by age (Dec 2024), scaled to Treasury outlays; spouse and survivor benefits only come in three age groups and are spread by population",
+   "dollars": 1460913705752.69,
+   "by_band": {
+    "0-18": 25876738902.474888,
+    "19-44": 23740918944.491737,
+    "45-64": 156606345577.8152,
+    "65-84": 1133432206262.428,
+    "85+": 121257496065.4802
+   }
+  },
+  {
+   "program": "Medicare",
+   "group": "Health",
+   "method": "published",
+   "note": "CMS age shape of Medicare spending (2020, the latest) applied to FY2024 Treasury outlays",
+   "dollars": 874134335792.92,
+   "by_band": {
+    "0-18": 120833746.17656447,
+    "19-44": 27082870309.707317,
+    "45-64": 128949170729.29906,
+    "65-84": 594472110451.5487,
+    "85+": 123509350556.18839
+   }
+  },
+  {
+   "program": "Medicaid (federal share)",
+   "group": "Health",
+   "method": "published",
+   "note": "CMS age shape of Medicaid spending (2020) applied to the federal portion of Medicaid payments (CMS, calendar 2024)",
+   "dollars": 596700000000.0,
+   "by_band": {
+    "0-18": 116229936009.8818,
+    "19-44": 188875930289.73352,
+    "45-64": 167012893132.58936,
+    "65-84": 89484644583.46873,
+    "85+": 35096595984.32659
+   }
+  },
+  {
+   "program": "VA compensation and pension",
+   "group": "Veterans",
+   "method": "proxy",
+   "note": "VA recipients by age band (FY2024), spread within each band by population, scaled to OMB subfunction 701",
+   "dollars": 161312000000.0,
+   "by_band": {
+    "0-18": 1047622593.606779,
+    "19-44": 44808531544.69215,
+    "45-64": 53671795899.82805,
+    "65-84": 52679770662.75184,
+    "85+": 9104279299.121185
+   }
+  },
+  {
+   "program": "VA health care",
+   "group": "Veterans",
+   "method": "proxy",
+   "note": "OMB subfunction 703 spread like VA compensation recipients by age (no VA health spending by age found)",
+   "dollars": 138543000000.0,
+   "by_band": {
+    "0-18": 911429254.119732,
+    "19-44": 38926106045.38986,
+    "45-64": 46591108646.16264,
+    "65-84": 44418633277.34543,
+    "85+": 7695722776.982336
+   }
+  },
+  {
+   "program": "Elementary and secondary education",
+   "group": "Kids and education",
+   "method": "proxy",
+   "note": "OMB subfunction 501 spread over ages 5-18 by population",
+   "dollars": 105373000000.00002,
+   "by_band": {
+    "0-18": 105373000000.00002,
+    "19-44": 0.0,
+    "45-64": 0.0,
+    "65-84": 0.0,
+    "85+": 0.0
+   }
+  },
+  {
+   "program": "Higher education and student aid",
+   "group": "Kids and education",
+   "method": "proxy",
+   "note": "OMB subfunction 502 spread over ages 18-29 by population (no age split of Pell grants or loan costs used)",
+   "dollars": 161032000000.0,
+   "by_band": {
+    "0-18": 13415827600.725094,
+    "19-44": 147616172399.2749,
+    "45-64": 0.0,
+    "65-84": 0.0,
+    "85+": 0.0
+   }
+  }
+ ],
+ "total_outlays": 6751551633812.29,
+ "allocated": 3498008041545.61,
+ "own_check": {
+  "per_child": 3388.1244516987495,
+  "per_person_65_plus": 36141.77465748878
+ },
+ "kids_share": {
+  "per_child": 6860,
+  "per_person_65_plus": 40050
+ }
+}

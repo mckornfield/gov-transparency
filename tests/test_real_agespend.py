@@ -42,3 +42,42 @@ def test_va_age_bands_for_fy2024(kind, file):
     got = parse_va_ages(raw(f"va/{file}").decode(), kind)
     assert got["recipients"] > 100_000
     assert got["dollars"] > 1e9
+
+
+def committed():
+    from sd_spend.io import ROOT
+    return json.loads((ROOT / "site" / "data" / "age-spending.json").read_text())
+
+
+def test_every_program_split_adds_to_its_total_and_stays_positive():
+    for r in committed()["programs"]:
+        assert sum(r["by_band"].values()) == pytest.approx(r["dollars"], rel=1e-9), r["program"]
+        assert all(v >= 0 for v in r["by_band"].values()), r["program"]
+
+
+def test_pinned_federal_totals_for_fy2024():
+    by = {r["program"]: r["dollars"] for r in committed()["programs"]}
+    assert round(by["Social Security"] / 1e9) == 1461
+    assert round(by["Medicare"] / 1e9) == 874
+    assert round(by["Medicaid (federal share)"] / 1e9) == 597
+
+
+def test_coverage_is_between_zero_and_all_outlays():
+    d = committed()
+    assert 0 < d["allocated"] < d["total_outlays"]
+    assert 0.3 < d["allocated"] / d["total_outlays"] < 0.8
+
+
+def test_brackets_have_population_and_generations_but_dollars_are_not_cut_by_generation():
+    d = committed()
+    assert [b["key"] for b in d["bands"]] == ["0-18", "19-44", "45-64", "65-84", "85+"]
+    assert all(b["population"] > 1_000_000 and b["generations"] for b in d["bands"])
+    assert "Baby Boomers" in next(b for b in d["bands"] if b["key"] == "65-84")["generations"]
+
+
+def test_older_people_get_far_more_per_person_than_children():
+    d = committed()
+    pop = {b["key"]: b["population"] for b in d["bands"]}
+    child = sum(r["by_band"]["0-18"] for r in d["programs"]) / pop["0-18"]
+    old = sum(r["by_band"]["65-84"] for r in d["programs"]) / pop["65-84"]
+    assert old > 3 * child

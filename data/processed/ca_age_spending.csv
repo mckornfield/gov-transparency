@@ -1,0 +1,46 @@
+fiscal_year,program,group,method,band,dollars
+2023-24,K-12 education,Schools,proxy,0-18,62552207000
+2023-24,K-12 education,Schools,proxy,19-44,0
+2023-24,K-12 education,Schools,proxy,45-64,0
+2023-24,K-12 education,Schools,proxy,65-84,0
+2023-24,K-12 education,Schools,proxy,85+,0
+2023-24,"UC, CSU and Cal Grants",Higher education,proxy,0-18,1105043255
+2023-24,"UC, CSU and Cal Grants",Higher education,proxy,19-44,11734134745
+2023-24,"UC, CSU and Cal Grants",Higher education,proxy,45-64,0
+2023-24,"UC, CSU and Cal Grants",Higher education,proxy,65-84,0
+2023-24,"UC, CSU and Cal Grants",Higher education,proxy,85+,0
+2023-24,Community colleges,Higher education,proxy,0-18,354135505
+2023-24,Community colleges,Higher education,proxy,19-44,7600889495
+2023-24,Community colleges,Higher education,proxy,45-64,0
+2023-24,Community colleges,Higher education,proxy,65-84,0
+2023-24,Community colleges,Higher education,proxy,85+,0
+2023-24,Medi-Cal and other state health care (state share),Health,proxy,0-18,11723065881
+2023-24,Medi-Cal and other state health care (state share),Health,proxy,19-44,19050212451
+2023-24,Medi-Cal and other state health care (state share),Health,proxy,45-64,16845084979
+2023-24,Medi-Cal and other state health care (state share),Health,proxy,65-84,9025509433
+2023-24,Medi-Cal and other state health care (state share),Health,proxy,85+,3539877256
+2023-24,Developmental services,Disability and care,published,0-18,4810258362
+2023-24,Developmental services,Disability and care,published,19-44,2552297048
+2023-24,Developmental services,Disability and care,published,45-64,653437515
+2023-24,Developmental services,Disability and care,published,65-84,221052911
+2023-24,Developmental services,Disability and care,published,85+,27807163
+2023-24,In-Home Supportive Services (state share),Disability and care,published,0-18,813892252
+2023-24,In-Home Supportive Services (state share),Disability and care,published,19-44,1114990324
+2023-24,In-Home Supportive Services (state share),Disability and care,published,45-64,1626947420
+2023-24,In-Home Supportive Services (state share),Disability and care,published,65-84,3301096780
+2023-24,In-Home Supportive Services (state share),Disability and care,published,85+,1158817225
+2023-24,SSI state supplement (SSP),Income support,published,0-18,306614530
+2023-24,SSI state supplement (SSP),Income support,published,19-44,806871658
+2023-24,SSI state supplement (SSP),Income support,published,45-64,538298131
+2023-24,SSI state supplement (SSP),Income support,published,65-84,1683246159
+2023-24,SSI state supplement (SSP),Income support,published,85+,211742523
+2023-24,CalWORKs (state share),Income support,published,0-18,1150305905
+2023-24,CalWORKs (state share),Income support,published,19-44,301188894
+2023-24,CalWORKs (state share),Income support,published,45-64,51250201
+2023-24,CalWORKs (state share),Income support,published,65-84,0
+2023-24,CalWORKs (state share),Income support,published,85+,0
+2023-24,Child care (state share),Children,proxy,0-18,2408745000
+2023-24,Child care (state share),Children,proxy,19-44,0
+2023-24,Child care (state share),Children,proxy,45-64,0
+2023-24,Child care (state share),Children,proxy,65-84,0
+2023-24,Child care (state share),Children,proxy,85+,0

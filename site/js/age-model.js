@@ -22,9 +22,11 @@ export function serializeAgeHash({ measure, groups }) {
   return parts.length ? `#${parts.join("&")}` : "";
 }
 
-export function normalizeAgeState(parsed) {
-  const chosen = (parsed.groups || []).filter((g) => GROUPS.includes(g));
-  return { measure: MEASURES.includes(parsed.measure) ? parsed.measure : "person", groups: chosen.length ? GROUPS.filter((g) => chosen.includes(g)) : GROUPS };
+export const CA_GROUPS = ["Schools", "Higher education", "Health", "Disability and care", "Income support", "Children"];
+
+export function normalizeAgeState(parsed, all = GROUPS) {
+  const chosen = (parsed.groups || []).filter((g) => all.includes(g));
+  return { measure: MEASURES.includes(parsed.measure) ? parsed.measure : "person", groups: chosen.length ? all.filter((g) => chosen.includes(g)) : all };
 }
 
 // One row per bracket and group, in dollars per person or total dollars.
@@ -64,5 +66,5 @@ export function ratioText(data, groups) {
   const name = (k) => (k === "85+" ? "85 and over" : k.replace("-", "–"));
   // Only compare when the youngest bracket is a real, different recipient; a near-zero base makes a meaningless ratio.
   const ratio = top.key !== young.key && young.value >= 50 ? ` The youngest bracket (${name(young.key)}) received ${money(young.value)}, about ${(top.value / young.value).toFixed(1)} times less.` : "";
-  return `Of the programs counted here, the bracket aged ${name(top.key)} received the most per person in FY${data.fiscal_year}: ${money(top.value)}.${ratio}`;
+  return `Of the programs counted here, the bracket aged ${name(top.key)} received the most per person in ${data.year_label ? data.year_label : `FY${data.fiscal_year}`}: ${money(top.value)}.${ratio}`;
 }

@@ -1,5 +1,10 @@
 path,url,retrieved,sha256_original,bytes_original
 bea/MARPP.zip.gz,https://apps.bea.gov/regional/zip/MARPP.zip,2026-10-31,5dbf2e6ac2af222cc9abc205586c9b480344d89392752eb689c3ec823a34c83e,146479
+ca/ca237cw_fy2023_24.xlsx.gz,https://cdss.ca.gov/Portals/9/DSSDB/DataTables/CA237CW%20FY%202023-24.xlsx,2026-11-10,4db7fc3f9d9757283f63c5de05af3c022c15dba696495dc3a4adc0ce70182cc3,576783
+ca/dds_consumers_by_age_gender.csv.gz,https://data.chhs.ca.gov/dataset/cad404fb-4dc4-4c02-856e-91f176d5501e/resource/70d85261-a4e1-4c6c-a7ca-746f57cc4623/download/dds-consumers-served-by-age-group-and-gender.csv,2026-11-10,fb9abc80ac12019a01933a5dbfd120a167bbb65451fab41ecf1ef9f6d9e66f90,116797
+ca/dss_5180_2025_26_gb.pdf.gz,https://ebudget.ca.gov/2025-26/pdf/GovernorsBudget/4000/5180.pdf,2026-11-10,d47a65453decbbd1524a65ff22f638f6430e9911e93cf2e48fffa0e5ccfca01e,1265677
+ca/ihss_program_data_jan2024.xlsx.gz,https://www.cdss.ca.gov/Portals/9/IHSS/Data/IHSS_Program_Data-Jan2024.xlsx,2026-11-10,4c38e86ec7f87124c166c679ed2ee9730167242f3dde1a704f6def380a6fa0bd,1234888
+ca/schedule9_2025_26_gb.pdf.gz,https://ebudget.ca.gov/2025-26/pdf/BudgetSummary/BS_SCH9.pdf,2026-11-10,670173ff1f32d7572e601b6c89687ac17022df90841ece360f03acd9489b9774,7014418
 calich/ca_spms.csv.gz,https://publish.data.ca.gov/dataset/d3f9ca4d-3e60-434b-9fa3-91ee0befd34d/resource/e02178d9-1d34-4798-9979-f50af9f1742e/download/ca-spms-prior-years-and-last-twelve-months-through-march-2026.csv,2026-11-07,f3cdf767c718249bc2a6d2d58ed22b46a14b02b23735826d7fe25234d206e0b0,27649
 calich/ca_spms_dictionary.csv.gz,https://publish.data.ca.gov/dataset/d3f9ca4d-3e60-434b-9fa3-91ee0befd34d/resource/fd4ff7c8-a54a-4af2-9a13-03a8fdcc9b22/download/ca-spms-data-dictionary.csv,2026-11-07,9abd5aaae58e671861726d95b43645ec705be08e992071f214b0451a5f377e8f,3156
 cdc/nvsr75_02_births_final_2024.pdf.gz,https://www.cdc.gov/nchs/data/nvsr/nvsr75/nvsr75-02.pdf,2026-11-09,f43f8d957dec2b972d2cd2e235ff88cc8cfe03d2e09f38458867aaf077991696,1696050
@@ -11,6 +16,7 @@ census/2023_Individual_Unit_Files.zip.gz,https://www2.census.gov/programs-survey
 census/2024_Individual_Unit_Files.zip.gz,https://www2.census.gov/programs-surveys/gov-finances/tables/2024/2024_Individual_Unit_Files.zip,2026-10-31,0967c4d30466593796acb26f2b30c1afb37b5b9a5de43766dc65e4ccc95bd89a,4267040
 census/2024_methodology.pdf.gz,https://www2.census.gov/programs-surveys/gov-finances/tables/2024/2024_methodology.pdf,2026-10-31,6a8d82a94335bf6d03130ba047f68df037a555761d9d82bde15ead86f9a9b6f9,384434
 census/nc-est2024-agesex-res.csv.gz,https://www2.census.gov/programs-surveys/popest/datasets/2020-2024/national/asrh/nc-est2024-agesex-res.csv,2026-11-09,fbb151e8ae8554283dcbf192e6b420658ea444ee7d8849988aa1d5615183edf1,16171
+census/sc-est2024-agesex-civ.csv.gz,https://www2.census.gov/programs-surveys/popest/datasets/2020-2024/state/asrh/sc-est2024-agesex-civ.csv,2026-11-10,46e3881e3bcfa92a58d595ddde127e12cba556235c2afee2b72bcb7f02d5f73d,832279
 cms/age_and_sex_csv_files.zip.gz,https://www.cms.gov/research-statistics-data-and-systems/statistics-trends-and-reports/nationalhealthexpenddata/downloads/ageandgendercsvfiles.zip,2026-11-09,aaa567d332becefd47ed897fc5441309d45fa781a1033d9755cfb49f8b5098be,67708
 cms/nhe_tables.zip.gz,https://www.cms.gov/files/zip/nhe-tables.zip,2026-11-09,a09ef6d3e84e25d745047a47b6b08a0d96b303085b4c725b67ce67a0eb0c4420,520391
 dol/ar203_eta203.csv.gz,https://oui.doleta.gov/unemploy/csv/ar203.csv,2026-11-09,88d78c7c2af675c02e3032fdf83973ac25ca8aed024a366d7b97bd85e6d2db73,5886855

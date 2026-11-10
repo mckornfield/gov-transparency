@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Who receives California state dollars, by age · San Diego Spending</title>
+  <meta name="description" content="A rough estimate of how the State of California's own spending on people (schools, colleges, Medi-Cal, disability and care, income support, child care) falls across age brackets, 2023-24.">
+  <link rel="stylesheet" href="css/site.css?v=2">
+</head>
+<body>
+  <header class="site-header">
+    <nav>
+      <strong>San Diego Spending</strong>
+      <a href="index.html">Where your dollar goes</a>
+      <a href="vendors.html">Who gets paid</a>
+      <a href="peers.html">Compared with other cities</a>
+      <a href="homelessness.html">Homelessness</a>
+      <a href="age.html">Who receives federal dollars</a>
+      <a href="california-age.html" aria-current="page">Who receives state dollars</a>
+      <a href="methods.html">Data &amp; methods</a>
+    </nav>
+  </header>
+  <main>
+    <h1>Who receives California state dollars, by age</h1>
+    <p id="ahead" class="headline" aria-live="polite">Loading…</p>
+    <p class="note">A rough estimate for the State of California, fiscal year 2023&ndash;24 (July 2023 to June 2024). It counts the state's own money
+      (General Fund, special funds and bond funds) for programs whose dollars could be tied to an age: K-12 schools, colleges and
+      universities, Medi-Cal, developmental services, in-home care, the SSI state supplement, CalWORKs and child care. Money the state sends to
+      school districts and counties is counted here, because the state pays it. Federal money that flows through the same departments is left
+      out: it is on the <a href="age.html">federal page</a>, so the two pages do not count the same dollar twice. Local money, such as the
+      property-tax share of school funding, is not here either. The totals are floors, not the whole picture, and a rough split can move
+      dollars between brackets. The page shows who received money, not who paid taxes, and it cannot show whether anyone was better or worse
+      off. The brackets match the federal page; the generation labels are only a guide to who is in each bracket.</p>
+
+    <form class="controls" aria-label="Which programs and measure" onsubmit="return false">
+      <fieldset>
+        <legend>Include</legend>
+        <label><input type="checkbox" id="g-0"> Schools (K-12)</label>
+        <label><input type="checkbox" id="g-1"> Higher education</label>
+        <label><input type="checkbox" id="g-2"> Health (Medi-Cal)</label>
+        <label><input type="checkbox" id="g-3"> Disability and care</label>
+        <label><input type="checkbox" id="g-4"> Income support</label>
+        <label><input type="checkbox" id="g-5"> Children (child care)</label>
+      </fieldset>
+      <fieldset>
+        <legend>Show</legend>
+        <label class="visually-hidden" for="measure">Dollars per person or total dollars</label>
+        <select id="measure"><option value="person">Dollars per person</option><option value="total">Total dollars</option></select>
+      </fieldset>
+    </form>
+
+    <p id="coverage" class="note"></p>
+    <figure>
+      <div id="age-chart" role="img" aria-label="Stacked bar chart of California state dollars received by age bracket, by program group"></div>
+      <ul id="age-legend" class="legend"></ul>
+    </figure>
+
+    <h2>The brackets</h2>
+    <div class="table-wrap">
+      <table id="band-table" data-title="Age brackets">
+        <caption class="note">Californians in each bracket (Census, July 2024, civilian population) and the generations they mostly belong to. A bracket can hold parts of two generations.</caption>
+        <thead><tr><th scope="col">Ages</th><th scope="col">People</th><th scope="col">Mostly</th><th scope="col">Per person</th><th scope="col">Total</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+
+    <h2>How each program was split</h2>
+    <div class="table-wrap">
+      <table id="program-table" data-title="Programs and how each was split by age" data-default-sort="2:desc">
+        <caption class="note">"Published" means a state or federal agency counts this program's recipients by age. "Proxy" means the total was spread by who plausibly receives it. Every split adds up to the program's state funds in the Governor's Budget.</caption>
+        <thead><tr><th scope="col">Program</th><th scope="col">Group</th><th scope="col">State dollars</th><th scope="col">Split</th><th scope="col">How</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+
+    <h2>What is not given an age</h2>
+    <div class="table-wrap">
+      <table id="rest-table" data-title="State funds not allocated to an age" data-default-sort="1:desc">
+        <caption class="note">The rest of the state's own spending, and why it is left out. Together with the programs above it adds up to all state funds.</caption>
+        <thead><tr><th scope="col">Spending</th><th scope="col">State dollars</th><th scope="col">Why it is not split</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+    <p class="note">See <a href="methods.html">Data &amp; methods</a> for sources and limits.</p>
+  </main>
+  <script type="module" src="js/california-age.js"></script>
+</body>
+</html>

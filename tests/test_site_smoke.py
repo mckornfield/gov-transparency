@@ -552,3 +552,37 @@ def test_age_page_never_claims_effectiveness_or_desert(page, site_url):
     open_age(page, site_url)
     text = page.inner_text("main").lower()
     assert "effective" not in text and "deserv" not in text
+
+
+def open_california_age(page, site_url, hash_=""):
+    errors = []
+    page.on("pageerror", lambda e: errors.append(str(e)))
+    page.goto(f"{site_url}/california-age.html{hash_}")
+    page.wait_for_selector("#age-chart rect")
+    return errors
+
+
+def test_california_age_page_shows_headline_tables_and_keeps_federal_money_out(page, site_url):
+    errors = open_california_age(page, site_url)
+    assert "received the most per person in 2023-24" in page.inner_text("#ahead")
+    assert page.locator("#band-table tbody tr").count() == 5
+    assert page.locator("#program-table tbody tr").count() >= 9
+    assert page.locator("#rest-table tbody tr").count() >= 5
+    coverage = page.inner_text("#coverage")
+    assert "state funds" in coverage and "counted on the federal page, not here" in coverage
+    assert errors == []
+
+
+def test_california_age_page_controls_hash_and_phone_width(page, site_url):
+    errors = open_california_age(page, site_url, "#measure=banana&groups=Retirement")
+    before = page.inner_text("#band-table tbody")
+    page.uncheck("#g-0")
+    assert page.inner_text("#band-table tbody") != before
+    assert "groups=" in page.url and "Schools" not in page.inner_text("#age-legend")
+    page.set_viewport_size({"width": 375, "height": 800})
+    page.reload()
+    page.wait_for_selector("#age-chart rect")
+    assert page.evaluate("document.documentElement.scrollWidth <= window.innerWidth")
+    text = page.inner_text("main").lower()
+    assert "effective" not in text and "deserv" not in text
+    assert errors == []

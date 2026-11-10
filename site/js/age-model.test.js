@@ -1,6 +1,6 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { GROUPS, parseAgeHash, serializeAgeHash, normalizeAgeState, bandValues, groupTotals, coverage, personCoverage, ratioText } from "./age-model.js";
+import { GROUPS, CA_GROUPS, parseAgeHash, serializeAgeHash, normalizeAgeState, bandValues, groupTotals, coverage, personCoverage, ratioText } from "./age-model.js";
 
 const data = {
   fiscal_year: 2024, total_outlays: 1000, person_directed: 800, allocated: 600,
@@ -46,4 +46,10 @@ test("the headline does not compare a bracket with itself or with a near-zero ba
   const onlyKids = ratioText(data, ["Kids and education"]);
   assert.doesNotMatch(onlyKids, /times/);
   assert.match(onlyKids, /aged 0–18/);
+});
+
+test("a page with its own groups keeps only those groups and labels a split fiscal year", () => {
+  assert.deepEqual(normalizeAgeState(parseAgeHash("#groups=Schools,Retirement"), CA_GROUPS).groups, ["Schools"]);
+  assert.deepEqual(normalizeAgeState(parseAgeHash("#groups=Retirement"), CA_GROUPS).groups, CA_GROUPS);
+  assert.match(ratioText({ ...data, year_label: "2023-24" }, GROUPS), /per person in 2023-24:/);
 });

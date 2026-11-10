@@ -12,7 +12,7 @@ Show, for one state fiscal year, how the State of California's own spending on p
 - Counted here: state funds only, as Schedule 9 of the Governor's Budget classifies them (General Fund, special funds, selected bond funds). This includes state money sent to school districts and counties.
 - Not counted here: federal funds (they are on the federal page) and reimbursements between departments. The page shows, for information, the federal funds that flow through the same departments.
 - Local money (for example the property-tax share of school funding) belongs to the San Diego page, not here.
-- Department totals come from Schedule 9. Programs inside the Department of Social Services and the Department of Health Care Services come from each department's Governor's Budget page ("Detailed expenditures by program", which lists every fund), using the same fund classification; the build checks that a department's programs do not add up to more than its Schedule 9 state funds.
+- Department totals come from Schedule 9. Programs inside the Department of Social Services come from its Governor's Budget page ("Detailed expenditures by program", which lists every fund), using the same fund classification; the build checks that a department's programs do not add up to more than its Schedule 9 state funds.
 
 ## Programs and split method
 Each row is `published` (the agency gives recipients or dollars by age) or `proxy` (spread by a stated population).
@@ -22,7 +22,7 @@ Each row is `published` (the agency gives recipients or dollars by age) or `prox
 | Schools | K-12 education, Department of Education (Schedule 9) | proxy: ages 4-18 by population (includes transitional kindergarten and state preschool) |
 | Higher education | UC, CSU, Student Aid Commission (Schedule 9) | proxy: ages 18-29 by population |
 | Higher education | Community colleges (Schedule 9) | proxy: ages 18-39 by population |
-| Health | Medi-Cal, state share (DHCS budget page) | proxy: CMS national age shape of Medicaid spending (2020), as on the federal page. Medi-Cal eligibles by age (DHCS) are fetched and shown for context and for the San Diego page |
+| Health | Medi-Cal and other state health care programs, state share (Department of Health Care Services, Schedule 9) | proxy: CMS national age shape of Medicaid spending (2020), as on the federal page. The whole department's state funds are used (it is almost all Medi-Cal). Medi-Cal eligibles by age and county (DHCS) are left for the San Diego page |
 | Disability and care | Developmental services (Schedule 9) | published: DDS consumers by age group, spread within groups by population |
 | Disability and care | In-Home Supportive Services, state share (CDSS budget page) | published: CDSS recipients in six age groups |
 | Income support | SSI state supplement (CDSS budget page) | published: SSA SSI report, California recipients under 18, 18-64, 65 and over |

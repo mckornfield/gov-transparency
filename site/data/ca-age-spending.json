@@ -1,0 +1,230 @@
+{
+ "fiscal_year": 2024,
+ "year_label": "2023-24",
+ "population_year": 2024,
+ "bands": [
+  {
+   "key": "0-18",
+   "lo": 0,
+   "hi": 18,
+   "population": 8958186,
+   "generations": [
+    "Gen Z",
+    "Gen Alpha"
+   ]
+  },
+  {
+   "key": "19-44",
+   "lo": 19,
+   "hi": 44,
+   "population": 14286494,
+   "generations": [
+    "Millennials",
+    "Gen Z"
+   ]
+  },
+  {
+   "key": "45-64",
+   "lo": 45,
+   "hi": 64,
+   "population": 9531123,
+   "generations": [
+    "Baby Boomers",
+    "Gen X"
+   ]
+  },
+  {
+   "key": "65-84",
+   "lo": 65,
+   "hi": 84,
+   "population": 5793131,
+   "generations": [
+    "Silent",
+    "Baby Boomers"
+   ]
+  },
+  {
+   "key": "85+",
+   "lo": 85,
+   "hi": 100,
+   "population": 728742,
+   "generations": [
+    "Silent"
+   ]
+  }
+ ],
+ "programs": [
+  {
+   "program": "K-12 education",
+   "group": "Schools",
+   "method": "proxy",
+   "kind": "outlay",
+   "note": "Department of Education state funds (Schedule 9) spread over ages 4-18 by population; includes transitional kindergarten and state preschool. The local property-tax share of school funding is local money and is not here",
+   "dollars": 62552206999.99999,
+   "by_band": {
+    "0-18": 62552206999.99999,
+    "19-44": 0.0,
+    "45-64": 0.0,
+    "65-84": 0.0,
+    "85+": 0.0
+   }
+  },
+  {
+   "program": "UC, CSU and Cal Grants",
+   "group": "Higher education",
+   "method": "proxy",
+   "kind": "outlay",
+   "note": "University of California, California State University and Student Aid Commission state funds (Schedule 9) spread over ages 18-29 by population; no enrolment by age was used",
+   "dollars": 12839178000.0,
+   "by_band": {
+    "0-18": 1105043255.4769387,
+    "19-44": 11734134744.523062,
+    "45-64": 0.0,
+    "65-84": 0.0,
+    "85+": 0.0
+   }
+  },
+  {
+   "program": "Community colleges",
+   "group": "Higher education",
+   "method": "proxy",
+   "kind": "outlay",
+   "note": "Community colleges state funds (Schedule 9, including bond-funded construction) spread over ages 18-39 by population; no enrolment by age was used",
+   "dollars": 7955025000.0,
+   "by_band": {
+    "0-18": 354135505.1280554,
+    "19-44": 7600889494.871944,
+    "45-64": 0.0,
+    "65-84": 0.0,
+    "85+": 0.0
+   }
+  },
+  {
+   "program": "Medi-Cal and other state health care (state share)",
+   "group": "Health",
+   "method": "proxy",
+   "kind": "outlay",
+   "note": "Department of Health Care Services state funds (Schedule 9; almost all Medi-Cal, and including provider fees and drug rebates the budget counts as special funds), split by CMS's national age shape of Medicaid spending (2020). The state's share differs by eligibility group, which this does not capture",
+   "dollars": 60183750000.0,
+   "by_band": {
+    "0-18": 11723065881.238016,
+    "19-44": 19050212451.105663,
+    "45-64": 16845084979.166206,
+    "65-84": 9025509432.630026,
+    "85+": 3539877255.8600893
+   }
+  },
+  {
+   "program": "Developmental services",
+   "group": "Disability and care",
+   "method": "published",
+   "kind": "outlay",
+   "note": "Department of Developmental Services state funds (Schedule 9) spread like the people it serves by age group (monthly average, July 2023 to June 2024), assuming equal cost per person; within each group by population",
+   "dollars": 8264853000.0,
+   "by_band": {
+    "0-18": 4810258362.452021,
+    "19-44": 2552297047.9787965,
+    "45-64": 653437514.721881,
+    "65-84": 221052911.37380716,
+    "85+": 27807163.473494906
+   }
+  },
+  {
+   "program": "In-Home Supportive Services (state share)",
+   "group": "Disability and care",
+   "method": "published",
+   "kind": "outlay",
+   "note": "State funds for IHSS (Department of Social Services budget page) spread like recipients in six age groups (January 2024), assuming equal hours per person",
+   "dollars": 8015744000.0,
+   "by_band": {
+    "0-18": 813892251.610348,
+    "19-44": 1114990323.8073726,
+    "45-64": 1626947419.5234985,
+    "65-84": 3301096780.4308977,
+    "85+": 1158817224.6278827
+   }
+  },
+  {
+   "program": "SSI state supplement (SSP)",
+   "group": "Income support",
+   "method": "published",
+   "kind": "outlay",
+   "note": "State funds for SSI/SSP spread like California's SSI recipients under 18, 18-64 and 65 and over (SSA, December 2025), within each by population",
+   "dollars": 3546773000.0,
+   "by_band": {
+    "0-18": 306614530.35579497,
+    "19-44": 806871657.6604692,
+    "45-64": 538298130.6943343,
+    "65-84": 1683246158.6152864,
+    "85+": 211742522.67411548
+   }
+  },
+  {
+   "program": "CalWORKs (state share)",
+   "group": "Income support",
+   "method": "published",
+   "kind": "outlay",
+   "note": "State funds for CalWORKs spread by children and adults in cash-grant cases (2023-24), assuming equal dollars per person; children over ages 0-17 and adults over 18-49 by population",
+   "dollars": 1502745000.0,
+   "by_band": {
+    "0-18": 1150305905.3017485,
+    "19-44": 301188894.0773907,
+    "45-64": 51250200.62086089,
+    "65-84": 0.0,
+    "85+": 0.0
+   }
+  },
+  {
+   "program": "Child care (state share)",
+   "group": "Children",
+   "method": "proxy",
+   "kind": "outlay",
+   "note": "State funds for subsidised child care (Department of Social Services) spread over ages 0-12 by population",
+   "dollars": 2408745000.0,
+   "by_band": {
+    "0-18": 2408745000.0,
+    "19-44": 0.0,
+    "45-64": 0.0,
+    "65-84": 0.0,
+    "85+": 0.0
+   }
+  }
+ ],
+ "total_outlays": 305278585000.0,
+ "person_directed": 202234643000.0,
+ "allocated": 167269020000.0,
+ "tax_credits": 0,
+ "federal_through": 122300478000.0,
+ "not_allocated": [
+  {
+   "name": "Prisons and rehabilitation",
+   "dollars": 18824779000.0,
+   "reason": "Ages of people in prison exist, but they are not recipients in this page's sense"
+  },
+  {
+   "name": "Teachers' retirement contributions",
+   "dollars": 3938929000.0,
+   "reason": "Pay for past work, not a benefit by age"
+  },
+  {
+   "name": "Rest of education",
+   "dollars": 6174782000.0,
+   "reason": "School facilities, the state library, other colleges and commissions: no age split used"
+  },
+  {
+   "name": "Rest of the Department of Social Services",
+   "dollars": 3500329000.0,
+   "reason": "Child welfare, county administration and other assistance: no age split found"
+  },
+  {
+   "name": "Rest of health and human services",
+   "dollars": 21351583000.0,
+   "reason": "Public health, state hospitals and other departments: no age split found"
+  },
+  {
+   "name": "Everything else",
+   "dollars": 84219163000.0,
+   "reason": "Transportation, courts, natural resources, general government and the like: collective costs, mostly not payments to individuals"
+  }
+ ]
+}

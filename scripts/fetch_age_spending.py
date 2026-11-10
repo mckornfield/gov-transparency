@@ -17,6 +17,8 @@ CMS = ("https://www.cms.gov/research-statistics-data-and-systems/statistics-tren
 VA = {"va_compensation_by_age_fy2024.csv": "https://www.data.va.gov/api/views/ibas-uwj3/rows.csv?accessType=DOWNLOAD",
       "va_pension_by_age_fy2024.csv": "https://www.data.va.gov/api/views/sbtk-kfnm/rows.csv?accessType=DOWNLOAD"}
 NHE = "https://www.cms.gov/files/zip/nhe-tables.zip"
+SNAP_REPORT = "https://www.fns.usda.gov/sites/default/files/resource-files/snap-FY23-Characteristics-Report.pdf"
+FNS_KEYDATA = "https://www.fns.usda.gov/sites/default/files/data-files/keydata-january-2025.pdf"
 SSA_PAGE = "https://www.ssa.gov/policy/docs/statcomps/supplement/2025/5a.pdf"
 OMB_PAGE = "https://www.whitehouse.gov/omb/information-resources/budget/historical-tables/"
 HEADERS = {"User-Agent": "gov-transparency/0.1 (open civic-data project; github.com/mckornfield/gov-transparency)"}
@@ -37,6 +39,8 @@ def main() -> None:
     fetch(CENSUS, "census/nc-est2024-agesex-res.csv")
     fetch(CMS, "cms/age_and_sex_csv_files.zip")
     fetch(NHE, "cms/nhe_tables.zip")
+    fetch(SNAP_REPORT, "fns/snap_characteristics_fy2023.pdf")
+    fetch(FNS_KEYDATA, "fns/keydata_jan2025_fy2024.pdf")
     for name, url in VA.items():
         fetch(url, f"va/{name}")
     if args.ssa_file:

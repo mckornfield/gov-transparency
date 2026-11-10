@@ -4,7 +4,7 @@ import { formatMoney, formatPerResident } from "./format.js";
 import { GROUPS, parseAgeHash, serializeAgeHash, normalizeAgeState, bandValues, coverage, ratioText } from "./age-model.js";
 
 const $ = (id) => document.getElementById(id);
-const COLORS = ["#E69F00", "#56B4E9", "#009E73", "#CC79A7"];
+const COLORS = ["#E69F00", "#56B4E9", "#009E73", "#CC79A7", "#D55E00"];
 
 let data;
 try {

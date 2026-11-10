@@ -81,3 +81,10 @@ def test_older_people_get_far_more_per_person_than_children():
     child = sum(r["by_band"]["0-18"] for r in d["programs"]) / pop["0-18"]
     old = sum(r["by_band"]["65-84"] for r in d["programs"]) / pop["65-84"]
     assert old > 3 * child
+
+
+def test_food_aid_programs_are_in_the_build_and_children_get_school_meals_only():
+    by = {r["program"]: r for r in committed()["programs"]}
+    assert round(by["SNAP"]["dollars"] / 1e9) == 100
+    meals = by["School meals, child nutrition and WIC"]["by_band"]
+    assert meals["0-18"] > 0 and all(meals[k] == 0 for k in ("19-44", "45-64", "65-84", "85+"))

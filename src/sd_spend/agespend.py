@@ -183,3 +183,48 @@ def parse_nhe_federal_medicaid(xlsx: bytes, year: int) -> float:
         if r and isinstance(r[0], str) and r[0].strip() == "Federal Portion of Medicaid Payments" and isinstance(r[col], (int, float)):
             return float(r[col]) * 1e9
     raise AgeSpendError("NHE table 5-3 has no federal Medicaid line")
+
+
+def parse_snap_ages(text: str) -> dict[str, int]:
+    """SNAP participants (people) by age group from Table A.23 of the FNS characteristics report; the table is in thousands."""
+    labels = {"Child": "0-17", "18–35 years": "18-35", "36–59 years": "36-59", "Elderly individual": "60+"}
+    found, total = {}, None
+    lines = text.splitlines()
+    start = next((i for i, line in enumerate(lines) if line.startswith("Table A.23.") and "...." not in line), None)
+    if start is None:
+        raise AgeSpendError("SNAP report has no Table A.23")
+    for line in lines[start + 1:]:
+        if line.startswith("Source:"):
+            break
+        m = re.match(r"^\s*(Total|Child|18–35 years|36–59 years|Elderly individual)\s+([\d,]+)\s+\d+\.\d", line)
+        if not m:
+            continue
+        if m.group(1) == "Total":
+            total = total or int(m.group(2).replace(",", "")) * 1000
+        else:
+            found.setdefault(labels[m.group(1)], int(m.group(2).replace(",", "")) * 1000)
+    if set(found) != set(labels.values()) or total is None:
+        raise AgeSpendError("SNAP Table A.23 is missing an age row")
+    if abs(sum(found.values()) - total) > 0.005 * total:
+        raise AgeSpendError("SNAP participants by age do not add up to the total")
+    return found
+
+
+def parse_fns_costs(text: str, fiscal_year: str) -> dict[str, float]:
+    """SNAP, child nutrition and WIC costs for a fiscal year from the FNS Keydata 'Total FNS Cost' table."""
+    lines = text.splitlines()
+    start = next((i for i, line in enumerate(lines) if "Total FNS Cost -- All Programs" in line), None)
+    if start is None:
+        raise AgeSpendError("FNS Keydata has no Total FNS Cost table")
+    year = next((i for i in range(start, len(lines)) if lines[i].strip() == fiscal_year), None)
+    row = next((lines[i] for i in range(year or len(lines), len(lines)) if re.match(r"^Total\s+[\d,]{5,}", lines[i])), None) if year is not None else None
+    if row is None:
+        raise AgeSpendError(f"FNS Keydata has no total row for {fiscal_year}")
+    cells = [c for c in row.split()[1:] if c != "--"]
+    values = [float(c.replace(",", "")) for c in cells]
+    if len(values) < 9:
+        raise AgeSpendError("FNS Keydata total row has too few columns")
+    parts, total = values[:-1], values[-1]
+    if abs(sum(parts) - total) > 0.005 * total:
+        raise AgeSpendError("FNS cost columns do not add up to the total")
+    return {"SNAP": values[0], "Child nutrition": values[1], "WIC": values[3], "Total": total}

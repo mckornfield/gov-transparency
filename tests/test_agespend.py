@@ -137,3 +137,48 @@ def test_nhe_federal_medicaid_is_read_in_billions():
     assert parse_nhe_federal_medicaid(buf.getvalue(), 2024) == 596.7e9
     with pytest.raises(AgeSpendError, match="2019"):
         parse_nhe_federal_medicaid(buf.getvalue(), 2019)
+
+
+from sd_spend.agespend import parse_fns_costs, parse_snap_ages
+
+SNAP = """Table A.23. SNAP participants by sex and selected demographic characteristics
+
+                                      Total participants         Female participants     Male participants
+ Participant characteristic          (000)      Column %hh       (000)       Row %hh    (000)       Row %hh
+ Total                              40,065         100.0        22,952        57.3     17,113        42.7
+ Age
+  Child                             15,575          38.9         7,671        19.1      7,904        19.7
+    Preschool-age                    4,464          11.1         2,216         5.5      2,248         5.6
+    School-age                      11,111          27.7         5,455        13.6      5,656        14.1
+  Non-elderly adult                 16,684          41.6        10,442        26.1      6,242        15.6
+    18–35 years                      7,843          19.6         5,144        12.8      2,699         6.7
+    36–59 years                      8,840          22.1         5,297        13.2      3,543         8.8
+  Elderly individual                 7,807          19.5         4,840        12.1      2,967         7.4
+ Citizenship
+"""
+
+
+def test_snap_ages_read_children_two_adult_groups_and_elderly_in_thousands():
+    assert parse_snap_ages(SNAP) == {"0-17": 15_575_000, "18-35": 7_843_000, "36-59": 8_840_000, "60+": 7_807_000}
+
+
+def test_snap_ages_must_add_to_the_total():
+    with pytest.raises(AgeSpendError, match="participants"):
+        parse_snap_ages(SNAP.replace("7,807 ", "9,807 "))
+
+
+FNS = """Table 1: Total FNS Cost -- All Programs 1/
+FY 2024
+ Oct 2023 7 3 1 1 1 1 1 1 -- 15
+Total 100,339,677,729 28,983,954,219 4,691,793 7,315,132,348 384,025,547 2,594,600,944 168,739,228 3,007,343,776 -- 142,798,165,584
+Total 4 Months 1 2 3 4 5 6 7 8 -- 9
+"""
+
+
+def test_fns_costs_read_snap_child_nutrition_and_wic_for_the_year():
+    assert parse_fns_costs(FNS, "FY 2024") == {"SNAP": 100_339_677_729.0, "Child nutrition": 28_983_954_219.0, "WIC": 7_315_132_348.0, "Total": 142_798_165_584.0}
+
+
+def test_fns_costs_fail_when_columns_do_not_add_to_the_total():
+    with pytest.raises(AgeSpendError, match="add up"):
+        parse_fns_costs(FNS.replace("142,798,165,584", "152,798,165,584"), "FY 2024")

@@ -18,6 +18,8 @@ REQUIRED = {
     "census/nc-est2024-agesex-res.csv.gz",
     "cms/age_and_sex_csv_files.zip.gz",
     "cms/nhe_tables.zip.gz",
+    "fns/snap_characteristics_fy2023.pdf.gz",
+    "fns/keydata_jan2025_fy2024.pdf.gz",
     "ssa/statcomps_2025_5a.pdf.gz",
     "omb/hist_fy2027.zip.gz",
     "va/va_compensation_by_age_fy2024.csv.gz",

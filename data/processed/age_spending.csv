@@ -34,3 +34,13 @@ fiscal_year,program,group,method,band,dollars
 2024,Higher education and student aid,Kids and education,proxy,45-64,0
 2024,Higher education and student aid,Kids and education,proxy,65-84,0
 2024,Higher education and student aid,Kids and education,proxy,85+,0
+2024,SNAP,Food aid,proxy,0-18,40073150426
+2024,SNAP,Food aid,proxy,19-44,27435218730
+2024,SNAP,Food aid,proxy,45-64,18328806299
+2024,SNAP,Food aid,proxy,65-84,12977072378
+2024,SNAP,Food aid,proxy,85+,1525429897
+2024,"School meals, child nutrition and WIC",Food aid,proxy,0-18,36299086567
+2024,"School meals, child nutrition and WIC",Food aid,proxy,19-44,0
+2024,"School meals, child nutrition and WIC",Food aid,proxy,45-64,0
+2024,"School meals, child nutrition and WIC",Food aid,proxy,65-84,0
+2024,"School meals, child nutrition and WIC",Food aid,proxy,85+,0

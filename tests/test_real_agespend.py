@@ -110,3 +110,25 @@ def test_real_births_by_mother_age_for_2024():
         text = subprocess.run(["pdftotext", "-layout", str(pdf), "-"], check=True, capture_output=True, text=True).stdout
     got = parse_births_by_mother(text)
     assert sum(n for _, _, n in got) == 3_628_934 and got[3] == (25, 29, 990_817)
+
+
+def test_real_unemployment_claims_by_age_for_fy2024():
+    from sd_spend.agespend import parse_ui_ages
+    got = parse_ui_ages(raw("dol/ar203_eta203.csv").decode("latin-1"), "2023-10-01", "2024-09-30")
+    assert 20e6 < sum(got.values()) < 23e6
+    assert got["25-34"] > got["65+"] > got["under 22"] > 0
+
+
+def test_real_ssi_for_2024():
+    from sd_spend.agespend import parse_ssi
+    got = parse_ssi(raw("ssa/ssi_asr25.xlsx"), 2024)
+    assert round(got["federal_dollars"] / 1e9) == 60
+    assert got["group_shares"]["18-64"] > got["group_shares"]["65+"] > got["group_shares"]["0-17"]
+
+
+def test_second_coverage_figure_counts_only_spending_on_people():
+    d = committed()
+    assert d["allocated"] < d["person_directed"] < d["total_outlays"]
+    assert 0.6 < d["allocated"] / d["person_directed"] < 1.0
+    names = {r["program"] for r in d["programs"]}
+    assert {"Supplemental Security Income (federal)", "Unemployment insurance"} <= names

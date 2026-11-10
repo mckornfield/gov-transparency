@@ -247,3 +247,72 @@ def test_irs_credits_fail_when_not_in_thousands():
     t33 = Sheet({(0, 0): "Table 3.3.", (9, 0): "All returns, total", (9, 13): 1.0, (9, 39): 1.0})
     with pytest.raises(AgeSpendError, match="thousands"):
         parse_irs_credits(t25, t33)
+
+
+UI_HEADER = '"st","rptdate","c1","c2","c3","c4","c12","c13","c14","c15","c16","c17","c18","c19","c20"'
+
+
+def ui_csv(rows):
+    return "\n".join([UI_HEADER, *rows]) + "\n"
+
+
+def test_unemployment_ages_sum_the_fiscal_year_months_and_drop_unknown_ages():
+    from sd_spend.agespend import UI_AGE_BANDS, parse_ui_ages
+    rows = [f'"AK","2024-{m:02d}-30","P",60,40,0,1,2,30,30,20,10,5,2,0' for m in range(1, 13)]
+    rows += ['"AK","2023-08-31","P",999,999,0,1,1,1,1,1,1,1,1,0']  # outside the window
+    got = parse_ui_ages(ui_csv(rows), "2024-01-01", "2024-12-31")
+    assert list(got) == list(UI_AGE_BANDS)
+    assert got["25-34"] == 360 and got["65+"] == 24 and sum(got.values()) == 1200
+
+
+def test_unemployment_ages_fail_when_ages_do_not_match_the_sex_total():
+    from sd_spend.agespend import parse_ui_ages
+    rows = [f'"AK","2024-{m:02d}-30","P",60,40,0,1,2,30,30,20,10,5,2,0' for m in range(1, 13)]
+    rows[0] = '"AK","2024-01-30","P",60,40,0,1,2,30,30,20,10,5,2,500'
+    with pytest.raises(AgeSpendError, match="unknown"):
+        parse_ui_ages(ui_csv(rows), "2024-01-01", "2024-12-31")
+
+
+def test_unemployment_ages_fail_when_a_state_is_missing_months():
+    from sd_spend.agespend import parse_ui_ages
+    rows = [f'"AK","2024-{m:02d}-30","P",60,40,0,1,2,30,30,20,10,5,2,0' for m in range(1, 12)]
+    with pytest.raises(AgeSpendError, match="months"):
+        parse_ui_ages(ui_csv(rows), "2024-01-01", "2024-12-31")
+
+
+def ssi_book(federal=52_000_000, swap_total=False):
+    import io
+    import openpyxl
+    wb = openpyxl.Workbook()
+    wb.remove(wb.active)
+    t2 = wb.create_sheet("Table 2")
+    t2.append(["Federal Benefit Rates"]); t2.append(["Table 2. Total payments"]); t2.append(["Year", "Total", "Federal SSI", "Federally administered state supplementation"])
+    t2.append(["All recipients"]); t2.append([2023, 54_000_000, 51_500_000, 2_500_000]); t2.append([2024, federal + 2_000_000, federal, 2_000_000])
+    t2.append(["Disabled"]); t2.append([2024, 1_000, 900, 100])
+    t5 = wb.create_sheet("Table 5")
+    t5.append(["Federally Administered Payments"]); t5.append(["Table 5. Recipients"]); t5.append(["Type of payment and sex", "Total", "Category", "Age"])
+    t5.append(["Aged", "Blind", "Disabled", "Under 18", "18–64", "65 or older"]); t5.append(["Number"])
+    t5.append(["Federal SSI", 700, 0, 0, 0, 100, 400, 200])
+    t5.append(["Total payments (thousands of dollars)"])
+    t5.append(["All payments", 1000, 0, 0, 0, 200, 500, 300])
+    t5.append(["Federal SSI", 950 if swap_total else 1000, 0, 0, 0, 200, 600, 200])
+    t35 = wb.create_sheet("Table 35")
+    t35.append(["Recipients Under Age 65"]); t35.append(["Table 35. Recipients"])
+    t35.append(["Diagnostic group", "All ages", "Under 5", "5–12", "13–17", "18–21", "22–25", "26–29", "30–39", "40–49", "50–59", "60–64"])
+    t35.append(["Number"]); t35.append(["Total", 500, 10, 20, 70, 20, 20, 20, 100, 100, 100, 40])
+    buf = io.BytesIO(); wb.save(buf); return buf.getvalue()
+
+
+def test_ssi_reads_federal_dollars_age_group_shares_and_fine_ages():
+    from sd_spend.agespend import parse_ssi
+    got = parse_ssi(ssi_book(), 2024)
+    assert got["federal_dollars"] == 52_000_000 * 1000
+    assert got["group_shares"] == pytest.approx({"0-17": 0.2, "18-64": 0.6, "65+": 0.2})
+    assert got["under18_counts"] == {"0-4": 10, "5-12": 20, "13-17": 70}
+    assert got["adult_counts"]["18-21"] == 20 and got["adult_counts"]["60-64"] == 40 and len(got["adult_counts"]) == 7
+
+
+def test_ssi_fails_when_age_groups_do_not_add_to_the_total():
+    from sd_spend.agespend import parse_ssi
+    with pytest.raises(AgeSpendError, match="add up"):
+        parse_ssi(ssi_book(swap_total=True), 2024)

@@ -1,7 +1,7 @@
 // Pure functions behind the age page. Dollars are federal outlays the page could tie to an age; the rest is
 // "not allocated" and is never spread over ages to make the picture look complete.
 
-export const GROUPS = ["Retirement", "Health", "Veterans", "Kids and education", "Food aid", "Housing aid", "Tax credits"];
+export const GROUPS = ["Retirement", "Health", "Veterans", "Kids and education", "Food aid", "Housing aid", "Income support", "Tax credits"];
 export const MEASURES = ["person", "total"];
 
 export function parseAgeHash(hash) {
@@ -46,6 +46,8 @@ export function groupTotals(data) {
 }
 
 export const coverage = (data) => data.allocated / data.total_outlays;
+// Share of spending on people (health, retirement, income support, veterans, education and social services) that is placed by age.
+export const personCoverage = (data) => data.allocated / data.person_directed;
 
 const perPerson = (data, band, groups) => {
   const info = data.bands.find((b) => b.key === band);

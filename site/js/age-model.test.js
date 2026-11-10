@@ -1,9 +1,9 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { GROUPS, parseAgeHash, serializeAgeHash, normalizeAgeState, bandValues, groupTotals, coverage, ratioText } from "./age-model.js";
+import { GROUPS, parseAgeHash, serializeAgeHash, normalizeAgeState, bandValues, groupTotals, coverage, personCoverage, ratioText } from "./age-model.js";
 
 const data = {
-  fiscal_year: 2024, total_outlays: 1000, allocated: 600,
+  fiscal_year: 2024, total_outlays: 1000, person_directed: 800, allocated: 600,
   bands: [{ key: "0-18", population: 10, generations: ["Gen Z"] }, { key: "65-84", population: 5, generations: ["Baby Boomers"] }],
   programs: [
     { program: "A", group: "Retirement", dollars: 500, by_band: { "0-18": 0, "65-84": 500 } },
@@ -32,6 +32,7 @@ test("bandValues is per person or total and only counts the chosen groups", () =
 test("group totals add programs and coverage is allocated over outlays", () => {
   assert.deepEqual(groupTotals(data), { Retirement: 500, "Kids and education": 100 });
   assert.equal(coverage(data), 0.6);
+  assert.equal(personCoverage(data), 0.75);
 });
 
 test("ratio text compares two brackets per person and never says deserved or effective", () => {

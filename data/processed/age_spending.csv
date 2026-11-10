@@ -49,6 +49,16 @@ fiscal_year,program,group,method,band,dollars
 2024,HUD-assisted housing,Housing aid,proxy,45-64,21147027021
 2024,HUD-assisted housing,Housing aid,proxy,65-84,20328208159
 2024,HUD-assisted housing,Housing aid,proxy,85+,2637267024
+2024,Supplemental Security Income (federal),Income support,proxy,0-18,10956516079
+2024,Supplemental Security Income (federal),Income support,proxy,19-44,15413826857
+2024,Supplemental Security Income (federal),Income support,proxy,45-64,18258787780
+2024,Supplemental Security Income (federal),Income support,proxy,65-84,13454451402
+2024,Supplemental Security Income (federal),Income support,proxy,85+,1581544883
+2024,Unemployment insurance,Income support,proxy,0-18,402059146
+2024,Unemployment insurance,Income support,proxy,19-44,20598573679
+2024,Unemployment insurance,Income support,proxy,45-64,14621040070
+2024,Unemployment insurance,Income support,proxy,65-84,2656327104
+2024,Unemployment insurance,Income support,proxy,85+,0
 2024,Earned income tax credit (claimed),Tax credits,proxy,0-18,215335948
 2024,Earned income tax credit (claimed),Tax credits,proxy,19-44,43477541532
 2024,Earned income tax credit (claimed),Tax credits,proxy,45-64,16358971360

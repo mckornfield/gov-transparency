@@ -25,6 +25,8 @@ REQUIRED = {
     "cdc/nvsr75_02_births_final_2024.pdf.gz",
     "fns/keydata_jan2025_fy2024.pdf.gz",
     "ssa/statcomps_2025_5a.pdf.gz",
+    "ssa/ssi_asr25.xlsx.gz",
+    "dol/ar203_eta203.csv.gz",
     "omb/hist_fy2027.zip.gz",
     "va/va_compensation_by_age_fy2024.csv.gz",
     "va/va_pension_by_age_fy2024.csv.gz",

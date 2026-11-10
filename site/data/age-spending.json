@@ -204,6 +204,36 @@
    }
   },
   {
+   "program": "Supplemental Security Income (federal)",
+   "group": "Income support",
+   "method": "proxy",
+   "kind": "outlay",
+   "note": "SSA federal SSI payments for 2024 (calendar year; state supplements are state money and left out), split across under 18, 18-64 and 65+ by SSA's December 2025 payments by age, then within the first two by recipients by finer age (under 65) and population; 65+ spread over 65-100 by population. Part of OMB subfunction 609",
+   "dollars": 59665127000.0,
+   "by_band": {
+    "0-18": 10956516079.02526,
+    "19-44": 15413826857.148,
+    "45-64": 18258787779.540314,
+    "65-84": 13454451401.587305,
+    "85+": 1581544882.6991205
+   }
+  },
+  {
+   "program": "Unemployment insurance",
+   "group": "Income support",
+   "method": "proxy",
+   "kind": "outlay",
+   "note": "OMB subfunction 603 spread like weeks of unemployment insurance claimed by age (Labor Department ETA 203, October 2023 to September 2024), assuming equal benefits per week; the 65+ group is spread over 65-74 by population and ages are within each group by population",
+   "dollars": 38278000000.0,
+   "by_band": {
+    "0-18": 402059146.29365623,
+    "19-44": 20598573679.323215,
+    "45-64": 14621040070.083464,
+    "65-84": 2656327104.2996655,
+    "85+": 0.0
+   }
+  },
+  {
    "program": "Earned income tax credit (claimed)",
    "group": "Tax credits",
    "method": "proxy",
@@ -235,11 +265,12 @@
   }
  ],
  "total_outlays": 6751551633812.29,
- "allocated": 3700578481453.61,
+ "person_directed": 4548196770390.689,
+ "allocated": 3798521608453.61,
  "tax_credits": 177945277000.0,
  "own_check": {
-  "per_child": 4359.709986321284,
-  "per_person_65_plus": 36754.7036876459
+  "per_child": 4506.051690517977,
+  "per_person_65_plus": 37043.88883151266
  },
  "kids_share": {
   "per_child": 6860,

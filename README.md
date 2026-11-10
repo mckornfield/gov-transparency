@@ -16,7 +16,7 @@ uv run python scripts/fetch_bea_rpp.py           # BEA regional price parities -
 uv run python scripts/build_peers.py            # -> data/processed/peer_spending.csv, site/data/peers.json
 uv run python scripts/fetch_homelessness.py --hud-file ~/Downloads/2007-2024-PIT-Counts-by-CoC.xlsb   # HUD blocks scripts: download that file in a browser first
 uv run python scripts/build_homelessness.py     # -> data/processed/homeless_*.csv, site/data/homelessness.json
-uv run python scripts/fetch_age_spending.py --ssa-file ~/Downloads/age/oasdi_2025.pdf --omb-file ~/Downloads/age/hist_fy2027.zip   # SSA and the White House block scripts: download those two in a browser first
+uv run python scripts/fetch_age_spending.py --ssa-file ~/Downloads/age/oasdi_2025.pdf --omb-file ~/Downloads/age/hist_fy2027.zip --ssi-file ~/Downloads/age/ssi_asr25.xlsx   # SSA and the White House block scripts: download those in a browser first
 uv run python scripts/build_age_spending.py     # needs pdftotext; -> data/processed/age_spending.csv, site/data/age-spending.json
 uv run python scripts/build_vendors.py          # needs poppler: brew install poppler (or apt install poppler-utils)
 uv run pytest -m "not smoke" && npm test        # unit + data checks
@@ -34,7 +34,7 @@ original bytes; files are stored gzip-compressed).
 | City finances for San Diego and 11 peer cities, FY2019-FY2024 (Census individual unit files; fixed-width text in a zip) | Census Bureau, Annual Survey of State and Local Government Finances | `fetch_census_finances.py`, `build_peers.py`; peers in `config/peers.json`, service mapping in `config/census_functions.json` |
 | Regional price parities by metro area, 2008-2024 (zip of CSV) | Bureau of Economic Analysis, table MARPP | `fetch_bea_rpp.py`; used by `build_peers.py` |
 | Homelessness: state system performance measures and point-in-time counts (CSV), HHAP allocation tables (PDF), the City's homelessness department budget pages (PDF), HUD point-in-time counts by CoC (xlsb, downloaded by hand) | Cal ICH via data.ca.gov; HCD; City of San Diego adopted budgets; HUD AHAR | `fetch_homelessness.py`, `build_homelessness.py`; regions in `config/homelessness.json` |
-| Federal spending by age: Treasury Monthly Treasury Statement, OMB historical table 3.2 (zip), CMS national health expenditure tables and age and sex tables, SSA Annual Statistical Supplement 2025 (PDF, downloaded by hand), Census population by age, VA compensation and pension by age | Treasury Fiscal Data; OMB; CMS; SSA; Census; VA | `fetch_age_spending.py`, `build_age_spending.py`; allocation in `src/sd_spend/ageallocate.py` |
+| Federal spending by age: Treasury Monthly Treasury Statement, OMB historical table 3.2 (zip), CMS national health expenditure tables and age and sex tables, SSA Annual Statistical Supplement 2025 (PDF, downloaded by hand), Census population by age, VA compensation and pension by age, SSA SSI report (xlsx, downloaded by hand), Labor Department ETA 203 unemployment claims by age | Treasury Fiscal Data; OMB; CMS; SSA; Census; VA | `fetch_age_spending.py`, `build_age_spending.py`; allocation in `src/sd_spend/ageallocate.py` |
 | Vendor payments of $25,000 or more, FY2022-FY2026 (PDF, one per year) | City of San Diego, sandiego.gov "Cumulative Amounts Paid to Vendors" | `fetch_sd_vendor_payments.py`, `build_vendors.py` |
 
 ## Data-quality notes

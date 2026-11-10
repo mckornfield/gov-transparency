@@ -289,3 +289,89 @@ def parse_irs_credits(table25, table33) -> dict[str, float]:
 
 def sheet_label(sheet, row: int) -> str:
     return str(sheet.cell_value(row, 0)).strip()
+
+
+# Treasury functions that pay for or serve people (health, retirement, income support, veterans, education and social services).
+# Defense, interest, justice, transport, science, energy, farm, commerce and the like are collective costs and are left out.
+PERSON_FUNCTIONS = ("Social Security", "Medicare", "Health", "Income Security", "Veterans Benefits and Services",
+                    "Education, Training, Employment, and Social Services")
+
+
+def person_directed_total(lines: dict[str, float]) -> float:
+    missing = [name for name in PERSON_FUNCTIONS if name not in lines]
+    if missing:
+        raise AgeSpendError(f"Treasury outlays have no line for {', '.join(missing)}")
+    return sum(lines[name] for name in PERSON_FUNCTIONS)
+
+
+UI_AGE_COLUMNS = ("c12", "c13", "c14", "c15", "c16", "c17", "c18", "c19")
+UI_AGE_BANDS = ("under 22", "22-24", "25-34", "35-44", "45-54", "55-59", "60-64", "65+")
+
+
+def parse_ui_ages(text: str, start: str, end: str) -> dict[str, int]:
+    """Weeks of unemployment insurance claimed by age (DOL ETA 203, insured unemployed), summed over report dates in
+    [start, end]. Columns c12 to c19 are the eight age groups, c20 is age not available (DOL's ar203 data map)."""
+    reader = csv.DictReader(io.StringIO(text))
+    totals = dict.fromkeys(UI_AGE_COLUMNS, 0)
+    unknown = sexes = 0
+    months: dict[str, int] = {}
+    try:
+        for row in reader:
+            if not start <= row["rptdate"] <= end:
+                continue
+            months[row["st"]] = months.get(row["st"], 0) + 1
+            for col in UI_AGE_COLUMNS:
+                totals[col] += int(row[col])
+            unknown += int(row["c20"])
+            sexes += int(row["c2"]) + int(row["c3"]) + int(row["c4"])
+    except (KeyError, ValueError) as err:
+        raise AgeSpendError(f"ETA 203 file has an unexpected layout: {err}") from err
+    expected = (int(end[:4]) - int(start[:4])) * 12 + int(end[5:7]) - int(start[5:7]) + 1
+    if not months or set(months.values()) != {expected}:
+        raise AgeSpendError(f"ETA 203 file does not have {expected} months for every state in the window")
+    aged = sum(totals.values())
+    if sexes <= 0 or unknown > 0.02 * sexes:
+        raise AgeSpendError(f"ETA 203 ages unknown for {unknown} of {sexes} claims")
+    if aged + unknown != sexes:
+        raise AgeSpendError(f"ETA 203 ages ({aged} + {unknown} unknown) do not match the sex totals ({sexes})")
+    return dict(zip(UI_AGE_BANDS, (totals[c] for c in UI_AGE_COLUMNS)))
+
+
+SSI_UNDER18 = ("Under 5", "5–12", "13–17")
+SSI_ADULT = ("18–21", "22–25", "26–29", "30–39", "40–49", "50–59", "60–64")
+
+
+def parse_ssi(xlsx: bytes, year: int) -> dict:
+    """SSI annual statistical report: federal SSI dollars for the year (table 2), the split of federal SSI payments across
+    under 18, 18-64 and 65+ (table 5, December of the report year) and recipients under 65 by fine age (table 35)."""
+    import openpyxl
+    book = openpyxl.load_workbook(io.BytesIO(xlsx), data_only=True)
+
+    def rows(name):
+        if name not in book.sheetnames:
+            raise AgeSpendError(f"SSI report has no {name}")
+        return [[c for c in r if c is not None] for r in book[name].iter_rows(values_only=True)]
+
+    t2 = rows("Table 2")
+    first = next((i for i, r in enumerate(t2) if r == ["All recipients"]), None)
+    row = next((r for r in t2[first:] if r and r[0] == year and len(r) == 4), None) if first is not None else None
+    if row is None or abs(row[1] - row[2] - row[3]) > 2:
+        raise AgeSpendError(f"SSI table 2 has no usable row for {year}")
+    t5 = rows("Table 5")
+    start = next((i for i, r in enumerate(t5) if r and str(r[0]).startswith("Total payments")), None)
+    pay = next((r for r in t5[start:] if r and r[0] == "Federal SSI"), None) if start is not None else None
+    if pay is None or len(pay) != 8:
+        raise AgeSpendError("SSI table 5 has no federal SSI payments row")
+    groups = pay[5:8]
+    if abs(sum(groups) - pay[1]) > 2:
+        raise AgeSpendError("SSI payments by age do not add up to the total")
+    t35 = next((r for r in rows("Table 35") if r and r[0] == "Total"), None)
+    if t35 is None or len(t35) != 12:
+        raise AgeSpendError("SSI table 35 has no Total row")
+    counts = t35[2:]
+    if sum(counts) != t35[1]:
+        raise AgeSpendError("SSI recipients by fine age do not add up to the total")
+    return {"federal_dollars": row[2] * 1000.0,
+            "group_shares": {k: g / pay[1] for k, g in zip(("0-17", "18-64", "65+"), groups)},
+            "under18_counts": dict(zip(("0-4", "5-12", "13-17"), counts[:3])),
+            "adult_counts": dict(zip(("18-21", "22-25", "26-29", "30-39", "40-49", "50-59", "60-64"), counts[3:]))}

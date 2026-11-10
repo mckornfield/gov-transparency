@@ -53,3 +53,13 @@ def test_parent_age_fails_without_children():
     from sd_spend.ageallocate import by_parent_age
     with pytest.raises(AllocationError):
         by_parent_age(1.0, 10, 16, {a: 0 for a in range(0, 101)}, [(30, 30, 5)])
+
+
+def test_person_directed_total_counts_only_people_functions():
+    import sys
+    from pathlib import Path
+    sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
+    from sd_spend.agespend import PERSON_FUNCTIONS, person_directed_total
+    lines = {name: 10.0 for name in PERSON_FUNCTIONS} | {"National Defense": 500.0, "Net Interest": 400.0, "Total": 9999.0}
+    assert person_directed_total(lines) == 10.0 * len(PERSON_FUNCTIONS)
+    assert "National Defense" not in PERSON_FUNCTIONS and "Net Interest" not in PERSON_FUNCTIONS

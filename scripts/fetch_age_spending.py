@@ -21,6 +21,8 @@ SNAP_REPORT = "https://www.fns.usda.gov/sites/default/files/resource-files/snap-
 FNS_KEYDATA = "https://www.fns.usda.gov/sites/default/files/data-files/keydata-january-2025.pdf"
 IRS = {"irs/22in25ic.xls": "https://www.irs.gov/pub/irs-soi/22in25ic.xls", "irs/22in33ar.xls": "https://www.irs.gov/pub/irs-soi/22in33ar.xls"}
 CDC_BIRTHS = "https://www.cdc.gov/nchs/data/nvsr/nvsr75/nvsr75-02.pdf"
+UI_CSV = "https://oui.doleta.gov/unemploy/csv/ar203.csv"
+SSI_PAGE = "https://www.ssa.gov/policy/docs/statcomps/ssi_asr/2025/ssi_asr25.xlsx"
 SSA_PAGE = "https://www.ssa.gov/policy/docs/statcomps/supplement/2025/5a.pdf"
 HUD_PAGE = "https://www.huduser.gov/portal/datasets/assthsg.html"
 OMB_PAGE = "https://www.whitehouse.gov/omb/information-resources/budget/historical-tables/"
@@ -37,6 +39,7 @@ def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--ssa-file", type=Path, help="SSA Annual Statistical Supplement 2025 section 5.A PDF")
     parser.add_argument("--omb-file", type=Path, help="OMB historical tables .zip (table 3.2, outlays by function and subfunction, is inside)")
+    parser.add_argument("--ssi-file", type=Path, help="SSA SSI Annual Statistical Report 2025, all tables (ssi_asr25.xlsx; the SSA site refuses plain downloads)")
     parser.add_argument("--hud-housing-file", type=Path, help="HUD Picture of Subsidized Households US_2024_2020census.xlsx (the HUD site only serves browsers)")
     args = parser.parse_args()
     fetch(MTS, f"treasury/mts_table9_fy{FISCAL_YEAR}_sep.json")
@@ -48,11 +51,15 @@ def main() -> None:
     fetch(NHE, "cms/nhe_tables.zip")
     fetch(SNAP_REPORT, "fns/snap_characteristics_fy2023.pdf")
     fetch(FNS_KEYDATA, "fns/keydata_jan2025_fy2024.pdf")
+    fetch(UI_CSV, "dol/ar203_eta203.csv")
     for name, url in VA.items():
         fetch(url, f"va/{name}")
     if args.ssa_file:
         save_raw(args.ssa_file.read_bytes(), "ssa/statcomps_2025_5a.pdf", SSA_PAGE)
         print("stored", args.ssa_file)
+    if args.ssi_file:
+        save_raw(args.ssi_file.read_bytes(), "ssa/ssi_asr25.xlsx", SSI_PAGE)
+        print("stored", args.ssi_file)
     if args.hud_housing_file:
         save_raw(args.hud_housing_file.read_bytes(), "hud/US_2024_2020census.xlsx", HUD_PAGE)
         print("stored", args.hud_housing_file)

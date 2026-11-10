@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Who receives federal dollars · San Diego Spending</title>
+  <meta name="description" content="Federal spending on Social Security, Medicare, Medicaid, veterans and education by age bracket, FY2024, in dollars per person, with the generations in each bracket.">
+  <link rel="stylesheet" href="css/site.css?v=2">
+</head>
+<body>
+  <header class="site-header">
+    <nav>
+      <strong>San Diego Spending</strong>
+      <a href="index.html">Where your dollar goes</a>
+      <a href="vendors.html">Who gets paid</a>
+      <a href="peers.html">Compared with other cities</a>
+      <a href="homelessness.html">Homelessness</a>
+      <a href="age.html" aria-current="page">Who receives federal dollars</a>
+      <a href="methods.html">Data &amp; methods</a>
+    </nav>
+  </header>
+  <main>
+    <h1>Who receives federal dollars, by age</h1>
+    <p id="ahead" class="headline" aria-live="polite">Loading…</p>
+    <p class="note">A rough estimate for the whole United States, fiscal year 2024. It counts only programs whose dollars could be
+      tied to an age: Social Security, Medicare, Medicaid (the federal share), veterans' benefits and health care, and
+      education. Most of the rest of the budget (defense, interest on the debt, food aid, housing, tax credits) is not
+      allocated to an age here, so these are floors, not the whole picture. It shows who received money, not who paid taxes, and
+      it cannot show whether anyone was better or worse off. The brackets follow the health data (the most limiting source);
+      the generation labels are only a guide to who is in each bracket.</p>
+
+    <form class="controls" aria-label="Which programs and measure" onsubmit="return false">
+      <fieldset>
+        <legend>Include</legend>
+        <label><input type="checkbox" id="g-Retirement"> Retirement (Social Security)</label>
+        <label><input type="checkbox" id="g-Health"> Health (Medicare, Medicaid)</label>
+        <label><input type="checkbox" id="g-Veterans"> Veterans</label>
+        <label><input type="checkbox" id="g-Kids and education"> Kids and education</label>
+      </fieldset>
+      <fieldset>
+        <legend>Show</legend>
+        <label class="visually-hidden" for="measure">Dollars per person or total dollars</label>
+        <select id="measure"><option value="person">Dollars per person</option><option value="total">Total dollars</option></select>
+      </fieldset>
+    </form>
+
+    <p id="coverage" class="note"></p>
+    <figure>
+      <div id="age-chart" role="img" aria-label="Stacked bar chart of federal dollars received by age bracket, by program group"></div>
+      <ul id="age-legend" class="legend"></ul>
+    </figure>
+
+    <h2>The brackets</h2>
+    <div class="table-wrap">
+      <table id="band-table" data-title="Age brackets">
+        <caption class="note">People in each bracket (Census, July 2024) and the generations they mostly belong to. A bracket can hold parts of two generations.</caption>
+        <thead><tr><th scope="col">Ages</th><th scope="col">People</th><th scope="col">Mostly</th><th scope="col">Per person</th><th scope="col">Total</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+
+    <h2>How each program was split</h2>
+    <div class="table-wrap">
+      <table id="program-table" data-title="Programs and how each was split by age" data-default-sort="2:desc">
+        <caption class="note">"Published" means an agency gave dollars or recipients by age. "Proxy" means the total was spread by who plausibly receives it. Every program's split adds up to its federal outlay.</caption>
+        <thead><tr><th scope="col">Program</th><th scope="col">Group</th><th scope="col">Federal dollars</th><th scope="col">Split</th><th scope="col">How</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+
+    <h2>A rough check</h2>
+    <p class="note" id="check"></p>
+  </main>
+  <script type="module" src="js/age.js"></script>
+</body>
+</html>

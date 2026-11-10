@@ -508,3 +508,47 @@ def test_homelessness_page_never_claims_effectiveness(page, site_url):
     body = page.locator("main").inner_text()
     assert 'every outcome is "reported", not "effective"' in body
     assert body.lower().count("effective") == 1  # only the caveat itself uses the word
+
+
+def open_age(page, site_url, hash_=""):
+    errors = []
+    page.on("pageerror", lambda e: errors.append(str(e)))
+    page.goto(f"{site_url}/age.html{hash_}")
+    page.wait_for_selector("#age-chart rect")
+    return errors
+
+
+def test_age_page_shows_headline_brackets_programs_and_coverage(page, site_url):
+    errors = open_age(page, site_url)
+    assert "received" in page.inner_text("#ahead")
+    assert page.locator("#band-table tbody tr").count() == 5
+    assert page.locator("#program-table tbody tr").count() >= 7
+    assert "not allocated to an age" in page.inner_text("#coverage")
+    assert "Baby Boomers" in page.inner_text("#band-table")
+    assert errors == []
+
+
+def test_age_page_group_and_measure_controls_change_the_page_and_the_hash(page, site_url):
+    open_age(page, site_url)
+    before = page.inner_text("#band-table tbody")
+    page.uncheck("#g-Retirement")
+    page.select_option("#measure", "total")
+    assert page.inner_text("#band-table tbody") != before
+    assert "measure=total" in page.url and "groups=" in page.url
+    assert "Retirement" not in page.inner_text("#age-legend")
+
+
+def test_age_page_garbage_hash_falls_back_and_phone_width_does_not_scroll(page, site_url):
+    errors = open_age(page, site_url, "#measure=banana&groups=Nope")
+    assert page.locator("#age-chart rect").count() > 0
+    page.set_viewport_size({"width": 375, "height": 800})
+    page.reload()
+    page.wait_for_selector("#age-chart rect")
+    assert page.evaluate("document.documentElement.scrollWidth <= window.innerWidth")
+    assert errors == []
+
+
+def test_age_page_never_claims_effectiveness_or_desert(page, site_url):
+    open_age(page, site_url)
+    text = page.inner_text("main").lower()
+    assert "effective" not in text and "deserv" not in text

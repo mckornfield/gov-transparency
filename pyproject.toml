@@ -5,9 +5,10 @@ description = "San Diego government spending transparency explorer"
 requires-python = ">=3.11"
 dependencies = [
     "pandas>=2.2",
- "requests>=2.32",
- "pyxlsb>=1.0.10",
- "openpyxl>=3.1.5",
+    "requests>=2.32",
+    "pyxlsb>=1.0.10",
+    "openpyxl>=3.1.5",
+    "xlrd>=2.0.2",
 ]
 
 [dependency-groups]

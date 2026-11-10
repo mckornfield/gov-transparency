@@ -57,6 +57,7 @@
    "program": "Social Security",
    "group": "Retirement",
    "method": "published",
+   "kind": "outlay",
    "note": "SSA beneficiaries by age (Dec 2024), scaled to Treasury outlays; spouse and survivor benefits only come in three age groups and are spread by population",
    "dollars": 1460913705752.69,
    "by_band": {
@@ -71,6 +72,7 @@
    "program": "Medicare",
    "group": "Health",
    "method": "published",
+   "kind": "outlay",
    "note": "CMS age shape of Medicare spending (2020, the latest) applied to FY2024 Treasury outlays",
    "dollars": 874134335792.92,
    "by_band": {
@@ -85,6 +87,7 @@
    "program": "Medicaid (federal share)",
    "group": "Health",
    "method": "published",
+   "kind": "outlay",
    "note": "CMS age shape of Medicaid spending (2020) applied to the federal portion of Medicaid payments (CMS, calendar 2024). The shape covers federal plus state spending; the federal match differs by group (higher for expansion adults, lower for older people), which this does not capture",
    "dollars": 596700000000.0,
    "by_band": {
@@ -99,6 +102,7 @@
    "program": "VA compensation and pension",
    "group": "Veterans",
    "method": "proxy",
+   "kind": "outlay",
    "note": "VA recipients by age band (FY2024), spread within each band by population, scaled to OMB subfunction 701",
    "dollars": 161312000000.0,
    "by_band": {
@@ -113,6 +117,7 @@
    "program": "VA health care",
    "group": "Veterans",
    "method": "proxy",
+   "kind": "outlay",
    "note": "OMB subfunction 703 spread like VA compensation recipients by age (no VA health spending by age found)",
    "dollars": 138543000000.0,
    "by_band": {
@@ -127,6 +132,7 @@
    "program": "Elementary and secondary education",
    "group": "Kids and education",
    "method": "proxy",
+   "kind": "outlay",
    "note": "OMB subfunction 501 spread over ages 5-18 by population",
    "dollars": 105373000000.00002,
    "by_band": {
@@ -141,6 +147,7 @@
    "program": "Higher education and student aid",
    "group": "Kids and education",
    "method": "proxy",
+   "kind": "outlay",
    "note": "OMB subfunction 502 spread over ages 18-29 by population. It may include student-loan accounting costs (estimates that move with policy), not only cash grants, and no age split of Pell grants or loans was used; treat it as the least certain row",
    "dollars": 161032000000.0,
    "by_band": {
@@ -155,6 +162,7 @@
    "program": "SNAP",
    "group": "Food aid",
    "method": "proxy",
+   "kind": "outlay",
    "note": "FNS FY2024 SNAP cost spread by SNAP participants by age (FY2023 quality-control sample), assuming equal benefits per person; the 60+ group is spread over ages 60-100 by population",
    "dollars": 100339677729.0,
    "by_band": {
@@ -169,6 +177,7 @@
    "program": "School meals, child nutrition and WIC",
    "group": "Food aid",
    "method": "proxy",
+   "kind": "outlay",
    "note": "FNS FY2024 child nutrition and WIC costs counted at ages 0-17 (mothers' share of WIC is counted with children)",
    "dollars": 36299086567.0,
    "by_band": {
@@ -183,6 +192,7 @@
    "program": "HUD-assisted housing",
    "group": "Housing aid",
    "method": "proxy",
+   "kind": "outlay",
    "note": "HUD units times average monthly federal spending (2024), counted at the age of the household head because the file gives no ages for other residents; children in assisted households are not counted as recipients",
    "dollars": 65931675612.00001,
    "by_band": {
@@ -192,13 +202,44 @@
     "65-84": 20328208159.474236,
     "85+": 2637267024.48
    }
+  },
+  {
+   "program": "Earned income tax credit (claimed)",
+   "group": "Tax credits",
+   "method": "proxy",
+   "kind": "tax credit",
+   "note": "IRS tax year 2022 credits claimed, put at the likely age of the parent (child age plus mother's age at birth, CDC 2024 births); the childless credit ($2.6B) is spread over ages 25-64 by population. Tax-year dollars, not FY2024 outlays",
+   "dollars": 60068921000.000015,
+   "by_band": {
+    "0-18": 215335947.87263602,
+    "19-44": 43477541532.10444,
+    "45-64": 16358971359.684986,
+    "65-84": 17072160.3379525,
+    "85+": 0.0
+   }
+  },
+  {
+   "program": "Child tax credit (claimed)",
+   "group": "Tax credits",
+   "method": "proxy",
+   "kind": "tax credit",
+   "note": "IRS tax year 2022 nonrefundable child and other dependent credit plus the refundable additional child tax credit, put at the likely age of the parent for children aged 0-16 (child age plus mother's age at birth). Fathers and other claimants are typically a few years older and are not modelled. Tax-year dollars, not FY2024 outlays",
+   "dollars": 117876355999.99997,
+   "by_band": {
+    "0-18": 500048781.6424652,
+    "19-44": 92413454596.88942,
+    "45-64": 24948954435.116867,
+    "65-84": 13898186.351222824,
+    "85+": 0.0
+   }
   }
  ],
  "total_outlays": 6751551633812.29,
  "allocated": 3700578481453.61,
+ "tax_credits": 177945277000.0,
  "own_check": {
-  "per_child": 4350.493106704184,
-  "per_person_65_plus": 36754.19747012059
+  "per_child": 4359.709986321284,
+  "per_person_65_plus": 36754.7036876459
  },
  "kids_share": {
   "per_child": 6860,

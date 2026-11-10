@@ -522,7 +522,7 @@ def test_age_page_shows_headline_brackets_programs_and_coverage(page, site_url):
     errors = open_age(page, site_url)
     assert "received" in page.inner_text("#ahead")
     assert page.locator("#band-table tbody tr").count() == 5
-    assert page.locator("#program-table tbody tr").count() >= 10
+    assert page.locator("#program-table tbody tr").count() >= 12
     assert "not allocated to an age" in page.inner_text("#coverage")
     assert "Baby Boomers" in page.inner_text("#band-table")
     assert errors == []

@@ -199,3 +199,51 @@ def test_hud_housing_reads_units_spending_and_head_age_shares():
     buf = io.BytesIO(); wb.save(buf)
     with pytest.raises(AgeSpendError, match="head ages"):
         parse_hud_housing(buf.getvalue())
+
+
+from sd_spend.agespend import parse_births_by_mother, parse_irs_credits
+
+BIRTHS = """Table 3. Births, by age of mother, live-birth order, and race and Hispanic origin of mother: United States, 2024
+    Race and Hispanic origin of                                 Younger
+    mother and live-birth order                     All ages    than 15    Total    15        16           17        18      19      20–24     25–29      30–34      35–39     40–44     45–49   50–54
+
+        All races and origins1
+Total . . . . . . . . . . . . . . . . . . . . . . . 3,628,934    1,727    137,273   4,136   10,087     20,242      37,460   65,348   611,800   990,817   1,112,409   622,517   141,515   9,688   1,188
+  1st child . . . . . . . . . . . . . . . . . . 1,427,020        1,698    118,128   4,019    9,564     18,475      32,699   53,371   354,230   404,955     362,002   151,974    30,846   2,768     419
+"""
+
+
+def test_births_by_mother_age_groups_add_to_all_ages():
+    got = parse_births_by_mother(BIRTHS)
+    assert got[0] == (10, 14, 1727) and got[1] == (15, 19, 137273) and got[-1] == (50, 54, 1188)
+    assert sum(n for _, _, n in got) == 3_628_934
+
+
+def test_births_fail_when_groups_do_not_add_up():
+    with pytest.raises(AgeSpendError, match="births"):
+        parse_births_by_mother(BIRTHS.replace("611,800", "711,800"))
+
+
+class Sheet:
+    def __init__(self, cells):
+        self.cells = cells
+        self.nrows = max(r for r, _ in cells) + 1
+        self.ncols = max(c for _, c in cells) + 1
+
+    def cell_value(self, r, c):
+        return self.cells.get((r, c), "")
+
+
+def test_irs_credits_read_the_total_rows_in_thousands():
+    t25 = Sheet({(0, 0): "Table 2.5. Returns with Earned Income Credit, Tax Year 2022", (1, 0): "(money amounts are in thousands of dollars)",
+                 (8, 0): "Total", (8, 10): 60_000_000.0, (8, 26): 3_000_000.0})
+    t33 = Sheet({(0, 0): "Table 3.3. Tax Year 2022", (1, 0): "(money amounts are in thousands of dollars)",
+                 (9, 0): "All returns, total", (9, 13): 80_000_000.0, (9, 39): 30_000_000.0})
+    assert parse_irs_credits(t25, t33) == {"EITC": 60e9, "EITC childless": 3e9, "Child credit nonrefundable": 80e9, "Child credit refundable": 30e9}
+
+
+def test_irs_credits_fail_when_not_in_thousands():
+    t25 = Sheet({(0, 0): "Table 2.5.", (8, 0): "Total", (8, 10): 1.0, (8, 26): 1.0})
+    t33 = Sheet({(0, 0): "Table 3.3.", (9, 0): "All returns, total", (9, 13): 1.0, (9, 39): 1.0})
+    with pytest.raises(AgeSpendError, match="thousands"):
+        parse_irs_credits(t25, t33)

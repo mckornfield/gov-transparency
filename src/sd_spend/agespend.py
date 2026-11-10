@@ -244,3 +244,48 @@ def parse_hud_housing(xlsx: bytes) -> dict:
     if not 98 <= sum(heads.values()) <= 102:
         raise AgeSpendError(f"HUD head ages add up to {sum(heads.values())} percent")
     return {"dollars": float(row["total_units"]) * float(row["spending_per_month"]) * 12, "heads": heads}
+
+
+MOTHER_GROUPS = ((10, 14), (15, 19), (20, 24), (25, 29), (30, 34), (35, 39), (40, 44), (45, 49), (50, 54))
+
+
+def parse_births_by_mother(text: str) -> list[tuple[int, int, int]]:
+    """Births by age of mother (age group, count) from table 3 of the CDC final births report, all races and origins."""
+    lines = text.splitlines()
+    start = next((i for i, line in enumerate(lines) if line.startswith("Table 3. Births, by age of mother")), None)
+    if start is None:
+        raise AgeSpendError("CDC births report has no Table 3")
+    row = next((line for line in lines[start:] if re.match(r"^Total[ .]+[\d,]+", line)), None)
+    if row is None:
+        raise AgeSpendError("CDC Table 3 has no Total row")
+    nums = [int(x.replace(",", "")) for x in re.findall(r"\d[\d,]*", row.split(". .")[-1] if ". ." in row else row)]
+    # all ages, younger than 15, 15-19 total, ages 15 to 19 singly (5), 20-24 ... 50-54
+    if len(nums) != 1 + 1 + 1 + 5 + 7:
+        raise AgeSpendError(f"CDC Table 3 total row has {len(nums)} numbers")
+    all_ages, young, teens, rest = nums[0], nums[1], nums[2], nums[8:]
+    counts = [young, teens, *rest]
+    if sum(counts) != all_ages:
+        raise AgeSpendError("CDC births by age of mother do not add up to all births")
+    return [(lo, hi, n) for (lo, hi), n in zip(MOTHER_GROUPS, counts)]
+
+
+def _money_thousands(sheet, row: int, col: int) -> float:
+    value = sheet.cell_value(row, col)
+    if not isinstance(value, (int, float)):
+        raise AgeSpendError(f"IRS table has no number at row {row} column {col}")
+    return float(value) * 1000
+
+
+def parse_irs_credits(table25, table33) -> dict[str, float]:
+    """Tax year credits (dollars) from IRS SOI table 2.5 (EITC) and 3.3 (child credits); both tables are in thousands."""
+    for sheet in (table25, table33):
+        if "thousands" not in str(sheet.cell_value(0, 0)) + str(sheet.cell_value(1, 0)):
+            raise AgeSpendError("IRS table is not stated in thousands of dollars")
+    if sheet_label(table25, 8) != "Total" or sheet_label(table33, 9) != "All returns, total":
+        raise AgeSpendError("IRS table rows moved")
+    return {"EITC": _money_thousands(table25, 8, 10), "EITC childless": _money_thousands(table25, 8, 26),
+            "Child credit nonrefundable": _money_thousands(table33, 9, 13), "Child credit refundable": _money_thousands(table33, 9, 39)}
+
+
+def sheet_label(sheet, row: int) -> str:
+    return str(sheet.cell_value(row, 0)).strip()

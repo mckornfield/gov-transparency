@@ -88,3 +88,25 @@ def test_food_aid_programs_are_in_the_build_and_children_get_school_meals_only()
     assert round(by["SNAP"]["dollars"] / 1e9) == 100
     meals = by["School meals, child nutrition and WIC"]["by_band"]
     assert meals["0-18"] > 0 and all(meals[k] == 0 for k in ("19-44", "45-64", "65-84", "85+"))
+
+
+def test_tax_credits_are_in_the_chart_but_not_in_the_share_of_outlays():
+    d = committed()
+    credits = [r for r in d["programs"] if r["kind"] == "tax credit"]
+    assert {r["program"] for r in credits} == {"Earned income tax credit (claimed)", "Child tax credit (claimed)"}
+    assert d["tax_credits"] == pytest.approx(sum(r["dollars"] for r in credits))
+    assert d["allocated"] == pytest.approx(sum(r["dollars"] for r in d["programs"] if r["kind"] == "outlay"))
+    for r in credits:  # a parent is almost never a child: nearly everything lands in the working-age brackets
+        assert r["by_band"]["0-18"] < 0.01 * r["dollars"] and r["by_band"]["85+"] == 0
+
+
+@pytest.mark.skipif(not __import__("shutil").which("pdftotext"), reason="needs poppler")
+def test_real_births_by_mother_age_for_2024():
+    import subprocess, tempfile, pathlib
+    from sd_spend.agespend import parse_births_by_mother
+    with tempfile.TemporaryDirectory() as tmp:
+        pdf = pathlib.Path(tmp) / "b.pdf"
+        pdf.write_bytes(raw("cdc/nvsr75_02_births_final_2024.pdf"))
+        text = subprocess.run(["pdftotext", "-layout", str(pdf), "-"], check=True, capture_output=True, text=True).stdout
+    got = parse_births_by_mother(text)
+    assert sum(n for _, _, n in got) == 3_628_934 and got[3] == (25, 29, 990_817)

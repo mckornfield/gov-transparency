@@ -19,6 +19,8 @@ VA = {"va_compensation_by_age_fy2024.csv": "https://www.data.va.gov/api/views/ib
 NHE = "https://www.cms.gov/files/zip/nhe-tables.zip"
 SNAP_REPORT = "https://www.fns.usda.gov/sites/default/files/resource-files/snap-FY23-Characteristics-Report.pdf"
 FNS_KEYDATA = "https://www.fns.usda.gov/sites/default/files/data-files/keydata-january-2025.pdf"
+IRS = {"irs/22in25ic.xls": "https://www.irs.gov/pub/irs-soi/22in25ic.xls", "irs/22in33ar.xls": "https://www.irs.gov/pub/irs-soi/22in33ar.xls"}
+CDC_BIRTHS = "https://www.cdc.gov/nchs/data/nvsr/nvsr75/nvsr75-02.pdf"
 SSA_PAGE = "https://www.ssa.gov/policy/docs/statcomps/supplement/2025/5a.pdf"
 HUD_PAGE = "https://www.huduser.gov/portal/datasets/assthsg.html"
 OMB_PAGE = "https://www.whitehouse.gov/omb/information-resources/budget/historical-tables/"
@@ -40,6 +42,9 @@ def main() -> None:
     fetch(MTS, f"treasury/mts_table9_fy{FISCAL_YEAR}_sep.json")
     fetch(CENSUS, "census/nc-est2024-agesex-res.csv")
     fetch(CMS, "cms/age_and_sex_csv_files.zip")
+    for rel, url in IRS.items():
+        fetch(url, rel)
+    fetch(CDC_BIRTHS, "cdc/nvsr75_02_births_final_2024.pdf")
     fetch(NHE, "cms/nhe_tables.zip")
     fetch(SNAP_REPORT, "fns/snap_characteristics_fy2023.pdf")
     fetch(FNS_KEYDATA, "fns/keydata_jan2025_fy2024.pdf")

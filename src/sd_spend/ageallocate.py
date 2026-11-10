@@ -78,3 +78,21 @@ def generation_labels(band: tuple[str, int, int], pop: dict[int, int], year: int
         if total and n / total >= minimum:
             out.append(name)
     return out
+
+
+def by_parent_age(total: float, child_lo: int, child_hi: int, pop: dict[int, int], births: list[tuple[int, int, int]]) -> dict[str, float]:
+    """Put a credit at the likely age of the parent: a child's age plus the mother's age at birth.
+
+    Children are weighted by population; mothers' ages at birth by the year's births, spread evenly within each age group.
+    Fathers and other claimants are not modelled (they are typically a few years older)."""
+    kids = sum(pop[a] for a in range(child_lo, child_hi + 1))
+    mothers = sum(n for _, _, n in births)
+    if kids <= 0 or mothers <= 0:
+        raise AllocationError("no children or births to place a credit by parent age")
+    out = dict.fromkeys(KEYS, 0.0)
+    for age in range(child_lo, child_hi + 1):
+        for lo, hi, n in births:
+            share = total * (pop[age] / kids) * (n / mothers) / (hi - lo + 1)
+            for mother in range(lo, hi + 1):
+                out[band_of(min(age + mother, 100))] += share
+    return out

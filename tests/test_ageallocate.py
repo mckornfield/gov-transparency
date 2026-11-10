@@ -37,3 +37,19 @@ def test_va_bands_split_dollars_by_recipient_counts():
 def test_generation_labels_come_after_the_brackets():
     assert generation_labels(("65-84", 65, 84), POP, 2024) == ["Silent", "Baby Boomers"]
     assert generation_labels(("0-18", 0, 18), POP, 2024) == ["Gen Z", "Gen Alpha"]
+
+
+def test_parent_age_places_the_credit_a_mothers_age_later_and_keeps_the_total():
+    from sd_spend.ageallocate import by_parent_age
+    pop = {a: 10 for a in range(0, 101)}
+    # every mother was 30 at birth: a child of 10 has a 40-year-old parent, a child of 16 a 46-year-old
+    out = by_parent_age(1000.0, 10, 16, pop, [(30, 30, 5)])
+    assert sum(out.values()) == pytest.approx(1000.0)
+    assert out["19-44"] == pytest.approx(1000.0 * 5 / 7) and out["45-64"] == pytest.approx(1000.0 * 2 / 7)
+    assert out["0-18"] == 0
+
+
+def test_parent_age_fails_without_children():
+    from sd_spend.ageallocate import by_parent_age
+    with pytest.raises(AllocationError):
+        by_parent_age(1.0, 10, 16, {a: 0 for a in range(0, 101)}, [(30, 30, 5)])

@@ -49,3 +49,13 @@ fiscal_year,program,group,method,band,dollars
 2024,HUD-assisted housing,Housing aid,proxy,45-64,21147027021
 2024,HUD-assisted housing,Housing aid,proxy,65-84,20328208159
 2024,HUD-assisted housing,Housing aid,proxy,85+,2637267024
+2024,Earned income tax credit (claimed),Tax credits,proxy,0-18,215335948
+2024,Earned income tax credit (claimed),Tax credits,proxy,19-44,43477541532
+2024,Earned income tax credit (claimed),Tax credits,proxy,45-64,16358971360
+2024,Earned income tax credit (claimed),Tax credits,proxy,65-84,17072160
+2024,Earned income tax credit (claimed),Tax credits,proxy,85+,0
+2024,Child tax credit (claimed),Tax credits,proxy,0-18,500048782
+2024,Child tax credit (claimed),Tax credits,proxy,19-44,92413454597
+2024,Child tax credit (claimed),Tax credits,proxy,45-64,24948954435
+2024,Child tax credit (claimed),Tax credits,proxy,65-84,13898186
+2024,Child tax credit (claimed),Tax credits,proxy,85+,0

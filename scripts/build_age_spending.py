@@ -10,11 +10,13 @@ import shutil
 import subprocess
 import tempfile
 import zipfile
+
+import xlrd
 from pathlib import Path
 
-from sd_spend.ageallocate import BANDS, KEYS, add, band_of, from_shares, generation_labels, population_by_band, scale, spread_ages, ssa_other_adults, ssa_workers_and_children, va_bands
+from sd_spend.ageallocate import BANDS, KEYS, add, band_of, by_parent_age, from_shares, generation_labels, population_by_band, scale, spread_ages, ssa_other_adults, ssa_workers_and_children, va_bands
 from sd_spend.agespend import (parse_cms_shares, parse_mts_outlays, parse_nhe_federal_medicaid, parse_omb_line, parse_population,
-                               parse_ssa_ages, parse_ssa_other_adults, parse_va_ages, ssa_annual_dollars, parse_fns_costs, parse_hud_housing, parse_snap_ages)
+                               parse_ssa_ages, parse_ssa_other_adults, parse_va_ages, ssa_annual_dollars, parse_fns_costs, parse_hud_housing, parse_snap_ages, parse_births_by_mother, parse_irs_credits)
 from sd_spend.io import RAW, ROOT
 
 YEAR = 2024
@@ -52,6 +54,8 @@ def build() -> dict:
     omb = zipped("omb/hist_fy2027.zip", "hist03z2.xlsx")
     omb_line = lambda prefix: parse_omb_line(omb, prefix, YEAR)  # noqa: E731
     medicaid = parse_nhe_federal_medicaid(zipped("cms/nhe_tables.zip", "Table 05-3 Federal Government Sponsor Expenditures.xlsx"), YEAR)
+    births = parse_births_by_mother(pdf_text("cdc/nvsr75_02_births_final_2024.pdf"))
+    credits = parse_irs_credits(xlrd.open_workbook(file_contents=raw("irs/22in25ic.xls")).sheet_by_index(0), xlrd.open_workbook(file_contents=raw("irs/22in33ar.xls")).sheet_by_index(0))
     housing = parse_hud_housing(raw("hud/US_2024_2020census.xlsx"))
     text = pdf_text("ssa/statcomps_2025_5a.pdf")
     snap = parse_snap_ages(pdf_text("fns/snap_characteristics_fy2023.pdf"))
@@ -85,6 +89,10 @@ def build() -> dict:
          spread_ages(fns["Child nutrition"] + fns["WIC"], 0, 17, pop)),
         ("HUD-assisted housing", "Housing aid", "proxy", "HUD units times average monthly federal spending (2024), counted at the age of the household head because the file gives no ages for other residents; children in assisted households are not counted as recipients",
          va_bands(housing["heads"], housing["dollars"], pop, HOUSING_RANGES)),
+        ("Earned income tax credit (claimed)", "Tax credits", "proxy", "IRS tax year 2022 credits claimed, put at the likely age of the parent (child age plus mother's age at birth, CDC 2024 births); the childless credit ($2.6B) is spread over ages 25-64 by population. Tax-year dollars, not FY2024 outlays",
+         add(by_parent_age(credits["EITC"] - credits["EITC childless"], 0, 18, pop, births), spread_ages(credits["EITC childless"], 25, 64, pop))),
+        ("Child tax credit (claimed)", "Tax credits", "proxy", "IRS tax year 2022 nonrefundable child and other dependent credit plus the refundable additional child tax credit, put at the likely age of the parent for children aged 0-16 (child age plus mother's age at birth). Fathers and other claimants are typically a few years older and are not modelled. Tax-year dollars, not FY2024 outlays",
+         by_parent_age(credits["Child credit nonrefundable"] + credits["Child credit refundable"], 0, 16, pop, births)),
     ]
     population = population_by_band(pop)
     rows = []
@@ -92,8 +100,9 @@ def build() -> dict:
         total = sum(by_band.values())
         if total <= 0 or any(v < 0 for v in by_band.values()):
             raise SystemExit(f"{name} has an impossible split")
-        rows.append({"program": name, "group": group, "method": method, "note": note, "dollars": total, "by_band": by_band})
-    allocated = sum(r["dollars"] for r in rows)
+        rows.append({"program": name, "group": group, "method": method, "kind": "tax credit" if group == "Tax credits" else "outlay", "note": note, "dollars": total, "by_band": by_band})
+    allocated = sum(r["dollars"] for r in rows if r["kind"] == "outlay")
+    tax_credits = sum(r["dollars"] for r in rows if r["kind"] == "tax credit")
     if not 0 < allocated < mts["Total"]:
         raise SystemExit("allocated dollars must be a share of total outlays")
     per_person = {r["program"]: {k: r["by_band"][k] / population[k] for k in KEYS} for r in rows}
@@ -104,7 +113,7 @@ def build() -> dict:
         "fiscal_year": YEAR, "population_year": YEAR,
         "bands": [{"key": k, "lo": lo, "hi": min(hi, 100), "population": population[k], "generations": generation_labels((k, lo, hi), pop, YEAR)}
                   for k, lo, hi in BANDS],
-        "programs": rows, "total_outlays": mts["Total"], "allocated": allocated,
+        "programs": rows, "total_outlays": mts["Total"], "allocated": allocated, "tax_credits": tax_credits,
         "own_check": {"per_child": sum(r["by_band"]["0-18"] for r in rows) / population["0-18"], "per_person_65_plus": older},
         "kids_share": KIDS_SHARE,
     }

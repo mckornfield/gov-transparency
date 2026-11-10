@@ -7,9 +7,9 @@ Show, for one recent fiscal year, how federal spending on people is spread acros
 FY2024 (Oct 2023 to Sep 2024). It is the latest year where the age sources line up: VA compensation and pension by age (FY2024), SSA Annual Statistical Supplement (December 2024 data), Census July 2024 population estimates, and the Urban Institute Kids' Share FY2024 cross-check. If a source is missing for FY2024 the fetch step fails; the year is a config value.
 
 ## Brackets and generations
-- Brackets: 0-17, 18-24, 25-44, 45-64, 65-79, 80+.
+- Brackets follow the data, not the generations: CMS publishes health spending in five age groups, so the page uses those: 0-18, 19-44, 45-64, 65-84, 85+. Every other source is re-binned onto them (SSA by single year or 5-year age sums directly; VA's four bands 34 and under, 35-54, 55-74, 75 and over are split across the CMS groups in proportion to Census population within the band, labelled `proxy`).
 - Generations (Pew birth years): Silent up to 1945, Baby Boomers 1946-64, Gen X 1965-80, Millennials 1981-96, Gen Z 1997-2012, Gen Alpha 2013 on.
-- A bracket's labels are the generations with at least 10% of the bracket's people born in them. A bracket may carry two labels; no dollar figure is ever split between generations.
+- Generations are labels only. A bracket's labels are the generations with at least 10% of the bracket's people born in them; the brackets are never cut to fit a generation, and no dollar figure is split between generations.
 
 ## Dollar totals
 Each program's total is federal outlays for the year from the Treasury's Monthly Treasury Statement (Fiscal Data API, outlays by budget function and subfunction), so every program ties to the budget. Age sources only decide the split of that total. Medicare and Medicaid are federal share only; Medicaid's federal share is taken from the budget outlay, not from total Medicaid spending.

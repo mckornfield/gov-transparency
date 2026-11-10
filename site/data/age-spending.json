@@ -208,7 +208,7 @@
    "group": "Income support",
    "method": "proxy",
    "kind": "outlay",
-   "note": "SSA federal SSI payments for 2024 (calendar year; state supplements are state money and left out), split across under 18, 18-64 and 65+ by SSA's December 2025 payments by age, then within the first two by recipients by finer age (under 65) and population; 65+ spread over 65-100 by population. Part of OMB subfunction 609",
+   "note": "SSA federal SSI payments for 2024 (calendar year, not a budget line, so it can run a few billion above fiscal-year cash; state supplements are state money and left out), split across under 18, 18-64 and 65+ by SSA's December 2025 payments by age, then within the first two by recipients by finer age (under 65) and population; 65+ spread over 65-100 by population. Part of OMB subfunction 609",
    "dollars": 59665127000.0,
    "by_band": {
     "0-18": 10956516079.02526,
@@ -223,7 +223,7 @@
    "group": "Income support",
    "method": "proxy",
    "kind": "outlay",
-   "note": "OMB subfunction 603 spread like weeks of unemployment insurance claimed by age (Labor Department ETA 203, October 2023 to September 2024), assuming equal benefits per week; the 65+ group is spread over 65-74 by population and ages are within each group by population",
+   "note": "OMB subfunction 603 spread like the insured unemployed by age (Labor Department ETA 203, monthly counts October 2023 to September 2024), assuming equal benefits per person; the 65+ group is spread over 65-74 by population and ages are within each group by population",
    "dollars": 38278000000.0,
    "by_band": {
     "0-18": 402059146.29365623,

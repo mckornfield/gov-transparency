@@ -309,17 +309,20 @@ UI_AGE_BANDS = ("under 22", "22-24", "25-34", "35-44", "45-54", "55-59", "60-64"
 
 
 def parse_ui_ages(text: str, start: str, end: str) -> dict[str, int]:
-    """Weeks of unemployment insurance claimed by age (DOL ETA 203, insured unemployed), summed over report dates in
+    """The insured unemployed by age (DOL ETA 203, one count a month), summed over report dates in
     [start, end]. Columns c12 to c19 are the eight age groups, c20 is age not available (DOL's ar203 data map)."""
     reader = csv.DictReader(io.StringIO(text))
     totals = dict.fromkeys(UI_AGE_COLUMNS, 0)
     unknown = sexes = 0
-    months: dict[str, int] = {}
+    months: dict[str, set] = {}
     try:
         for row in reader:
             if not start <= row["rptdate"] <= end:
                 continue
-            months[row["st"]] = months.get(row["st"], 0) + 1
+            dates = months.setdefault(row["st"], set())
+            if row["rptdate"] in dates:
+                raise AgeSpendError(f"ETA 203 file has {row['st']} twice for {row['rptdate']}")
+            dates.add(row["rptdate"])
             for col in UI_AGE_COLUMNS:
                 totals[col] += int(row[col])
             unknown += int(row["c20"])
@@ -327,7 +330,7 @@ def parse_ui_ages(text: str, start: str, end: str) -> dict[str, int]:
     except (KeyError, ValueError) as err:
         raise AgeSpendError(f"ETA 203 file has an unexpected layout: {err}") from err
     expected = (int(end[:4]) - int(start[:4])) * 12 + int(end[5:7]) - int(start[5:7]) + 1
-    if not months or set(months.values()) != {expected}:
+    if not months or {len(d) for d in months.values()} != {expected}:
         raise AgeSpendError(f"ETA 203 file does not have {expected} months for every state in the window")
     aged = sum(totals.values())
     if sexes <= 0 or unknown > 0.02 * sexes:

@@ -94,11 +94,11 @@ def build() -> dict:
          spread_ages(fns["Child nutrition"] + fns["WIC"], 0, 17, pop)),
         ("HUD-assisted housing", "Housing aid", "proxy", "HUD units times average monthly federal spending (2024), counted at the age of the household head because the file gives no ages for other residents; children in assisted households are not counted as recipients",
          va_bands(housing["heads"], housing["dollars"], pop, HOUSING_RANGES)),
-        ("Supplemental Security Income (federal)", "Income support", "proxy", "SSA federal SSI payments for 2024 (calendar year; state supplements are state money and left out), split across under 18, 18-64 and 65+ by SSA's December 2025 payments by age, then within the first two by recipients by finer age (under 65) and population; 65+ spread over 65-100 by population. Part of OMB subfunction 609",
+        ("Supplemental Security Income (federal)", "Income support", "proxy", "SSA federal SSI payments for 2024 (calendar year, not a budget line, so it can run a few billion above fiscal-year cash; state supplements are state money and left out), split across under 18, 18-64 and 65+ by SSA's December 2025 payments by age, then within the first two by recipients by finer age (under 65) and population; 65+ spread over 65-100 by population. Part of OMB subfunction 609",
          add(va_bands(ssi["under18_counts"], ssi["federal_dollars"] * ssi["group_shares"]["0-17"], pop, SSI_UNDER18),
              va_bands(ssi["adult_counts"], ssi["federal_dollars"] * ssi["group_shares"]["18-64"], pop, SSI_ADULT),
              spread_ages(ssi["federal_dollars"] * ssi["group_shares"]["65+"], 65, 100, pop))),
-        ("Unemployment insurance", "Income support", "proxy", "OMB subfunction 603 spread like weeks of unemployment insurance claimed by age (Labor Department ETA 203, October 2023 to September 2024), assuming equal benefits per week; the 65+ group is spread over 65-74 by population and ages are within each group by population",
+        ("Unemployment insurance", "Income support", "proxy", "OMB subfunction 603 spread like the insured unemployed by age (Labor Department ETA 203, monthly counts October 2023 to September 2024), assuming equal benefits per person; the 65+ group is spread over 65-74 by population and ages are within each group by population",
          va_bands(ui, omb_line("603 Unemployment compensation"), pop, UI_RANGES)),
         ("Earned income tax credit (claimed)", "Tax credits", "proxy", "IRS tax year 2022 credits claimed, put at the likely age of the parent (child age plus mother's age at birth, CDC 2024 births); the childless credit ($2.6B) is spread over ages 25-64 by population. Tax-year dollars, not FY2024 outlays",
          add(by_parent_age(credits["EITC"] - credits["EITC childless"], 0, 18, pop, births), spread_ages(credits["EITC childless"], 25, 64, pop))),
@@ -115,6 +115,13 @@ def build() -> dict:
     allocated = sum(r["dollars"] for r in rows if r["kind"] == "outlay")
     tax_credits = sum(r["dollars"] for r in rows if r["kind"] == "tax credit")
     person_directed = person_directed_total(mts)
+    inside = {"Health": ("Medicaid (federal share)",), "Veterans Benefits and Services": ("VA compensation and pension", "VA health care"),
+              "Education, Training, Employment, and Social Services": ("Elementary and secondary education", "Higher education and student aid"),
+              "Income Security": ("SNAP", "School meals, child nutrition and WIC", "HUD-assisted housing", "Supplemental Security Income (federal)", "Unemployment insurance")}
+    by_name = {r["program"]: r["dollars"] for r in rows}
+    for function, names in inside.items():
+        if sum(by_name[n] for n in names) > mts[function]:
+            raise SystemExit(f"programs placed in {function} add up to more than that function's outlays")
     if not 0 < allocated < person_directed < mts["Total"]:
         raise SystemExit("allocated dollars must be a share of person-directed outlays, which are a share of total outlays")
     per_person = {r["program"]: {k: r["by_band"][k] / population[k] for k in KEYS} for r in rows}

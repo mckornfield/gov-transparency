@@ -265,12 +265,37 @@ def test_unemployment_ages_sum_the_fiscal_year_months_and_drop_unknown_ages():
     assert got["25-34"] == 360 and got["65+"] == 24 and sum(got.values()) == 1200
 
 
-def test_unemployment_ages_fail_when_ages_do_not_match_the_sex_total():
+def test_unemployment_ages_fail_when_many_ages_are_unknown():
     from sd_spend.agespend import parse_ui_ages
     rows = [f'"AK","2024-{m:02d}-30","P",60,40,0,1,2,30,30,20,10,5,2,0' for m in range(1, 13)]
     rows[0] = '"AK","2024-01-30","P",60,40,0,1,2,30,30,20,10,5,2,500'
     with pytest.raises(AgeSpendError, match="unknown"):
         parse_ui_ages(ui_csv(rows), "2024-01-01", "2024-12-31")
+
+
+def test_unemployment_ages_fail_when_ages_do_not_match_the_sex_total():
+    from sd_spend.agespend import parse_ui_ages
+    rows = [f'"AK","2024-{m:02d}-30","P",60,40,0,1,2,30,30,20,10,5,2,0' for m in range(1, 13)]
+    rows[0] = '"AK","2024-01-30","P",61,40,0,1,2,30,30,20,10,5,2,0'
+    with pytest.raises(AgeSpendError, match="do not match"):
+        parse_ui_ages(ui_csv(rows), "2024-01-01", "2024-12-31")
+
+
+def test_unemployment_ages_fail_on_a_duplicate_state_month():
+    from sd_spend.agespend import parse_ui_ages
+    rows = [f'"AK","2024-{m:02d}-30","P",60,40,0,1,2,30,30,20,10,5,2,0' for m in range(1, 12)]
+    rows += ['"AK","2024-11-30","S",60,40,0,1,2,30,30,20,10,5,2,0']
+    with pytest.raises(AgeSpendError, match="twice"):
+        parse_ui_ages(ui_csv(rows), "2024-01-01", "2024-12-31")
+
+
+def test_person_directed_total_counts_only_people_functions():
+    from sd_spend.agespend import PERSON_FUNCTIONS, person_directed_total
+    lines = {name: 10.0 for name in PERSON_FUNCTIONS} | {"National Defense": 500.0, "Net Interest": 400.0, "Total": 9999.0}
+    assert person_directed_total(lines) == 10.0 * len(PERSON_FUNCTIONS)
+    del lines["Health"]
+    with pytest.raises(AgeSpendError, match="Health"):
+        person_directed_total(lines)
 
 
 def test_unemployment_ages_fail_when_a_state_is_missing_months():

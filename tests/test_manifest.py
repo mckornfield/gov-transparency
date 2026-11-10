@@ -19,6 +19,7 @@ REQUIRED = {
     "cms/age_and_sex_csv_files.zip.gz",
     "cms/nhe_tables.zip.gz",
     "fns/snap_characteristics_fy2023.pdf.gz",
+    "hud/US_2024_2020census.xlsx.gz",
     "fns/keydata_jan2025_fy2024.pdf.gz",
     "ssa/statcomps_2025_5a.pdf.gz",
     "omb/hist_fy2027.zip.gz",

@@ -228,3 +228,19 @@ def parse_fns_costs(text: str, fiscal_year: str) -> dict[str, float]:
     if abs(sum(parts) - total) > 0.005 * total:
         raise AgeSpendError("FNS cost columns do not add up to the total")
     return {"SNAP": values[0], "Child nutrition": values[1], "WIC": values[3], "Total": total}
+
+
+def parse_hud_housing(xlsx: bytes) -> dict:
+    """HUD-assisted housing, all programs: annual federal dollars (units x average monthly spending x 12) and the percent of
+    households by age of the household head (the file gives household heads, not residents)."""
+    import openpyxl
+    rows = list(openpyxl.load_workbook(io.BytesIO(xlsx), data_only=True).active.iter_rows(values_only=True))
+    header = list(rows[0])
+    row = next((dict(zip(header, r)) for r in rows[1:] if r[header.index("program")] == 1), None)
+    if row is None or row["program_label"] != "Summary of All HUD Programs":
+        raise AgeSpendError("HUD file has no all-programs summary row")
+    heads = {"24 and under": row["pct_lt24_head"], "25-50": row["pct_age25_50"], "51-61": row["pct_age51_61"],
+             "62-84": row["pct_age62plus"] - row["pct_age85plus"], "85 and over": row["pct_age85plus"]}
+    if not 98 <= sum(heads.values()) <= 102:
+        raise AgeSpendError(f"HUD head ages add up to {sum(heads.values())} percent")
+    return {"dollars": float(row["total_units"]) * float(row["spending_per_month"]) * 12, "heads": heads}

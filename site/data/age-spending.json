@@ -178,13 +178,27 @@
     "65-84": 0.0,
     "85+": 0.0
    }
+  },
+  {
+   "program": "HUD-assisted housing",
+   "group": "Housing aid",
+   "method": "proxy",
+   "note": "HUD units times average monthly federal spending (2024), counted at the age of the household head because the file gives no ages for other residents; children in assisted households are not counted as recipients",
+   "dollars": 65931675612.00001,
+   "by_band": {
+    "0-18": 282793163.5250427,
+    "19-44": 21536380243.620804,
+    "45-64": 21147027020.899925,
+    "65-84": 20328208159.474236,
+    "85+": 2637267024.48
+   }
   }
  ],
  "total_outlays": 6751551633812.29,
- "allocated": 3634646805841.61,
+ "allocated": 3700578481453.61,
  "own_check": {
-  "per_child": 4346.849653835802,
-  "per_person_65_plus": 36378.82143277523
+  "per_child": 4350.493106704184,
+  "per_person_65_plus": 36754.19747012059
  },
  "kids_share": {
   "per_child": 6860,

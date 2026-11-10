@@ -182,3 +182,20 @@ def test_fns_costs_read_snap_child_nutrition_and_wic_for_the_year():
 def test_fns_costs_fail_when_columns_do_not_add_to_the_total():
     with pytest.raises(AgeSpendError, match="add up"):
         parse_fns_costs(FNS.replace("142,798,165,584", "152,798,165,584"), "FY 2024")
+
+
+def test_hud_housing_reads_units_spending_and_head_age_shares():
+    import io, openpyxl
+    from sd_spend.agespend import parse_hud_housing
+    wb = openpyxl.Workbook()
+    ws = wb.active
+    ws.append(["program", "program_label", "total_units", "spending_per_month", "pct_lt24_head", "pct_age25_50", "pct_age51_61", "pct_age62plus", "pct_age85plus"])
+    ws.append([1, "Summary of All HUD Programs", 1000, 1000, 10, 40, 20, 30, 5])
+    ws.append([2, "Public Housing", 1, 1, 1, 1, 1, 1, 1])
+    buf = io.BytesIO(); wb.save(buf)
+    got = parse_hud_housing(buf.getvalue())
+    assert got == {"dollars": 12_000_000.0, "heads": {"24 and under": 10, "25-50": 40, "51-61": 20, "62-84": 25, "85 and over": 5}}
+    ws["H2"] = 90
+    buf = io.BytesIO(); wb.save(buf)
+    with pytest.raises(AgeSpendError, match="head ages"):
+        parse_hud_housing(buf.getvalue())

@@ -14,13 +14,14 @@ from pathlib import Path
 
 from sd_spend.ageallocate import BANDS, KEYS, add, band_of, from_shares, generation_labels, population_by_band, scale, spread_ages, ssa_other_adults, ssa_workers_and_children, va_bands
 from sd_spend.agespend import (parse_cms_shares, parse_mts_outlays, parse_nhe_federal_medicaid, parse_omb_line, parse_population,
-                               parse_ssa_ages, parse_ssa_other_adults, parse_va_ages, ssa_annual_dollars, parse_fns_costs, parse_snap_ages)
+                               parse_ssa_ages, parse_ssa_other_adults, parse_va_ages, ssa_annual_dollars, parse_fns_costs, parse_hud_housing, parse_snap_ages)
 from sd_spend.io import RAW, ROOT
 
 YEAR = 2024
 CMS_GROUPS = ("0-18", "19-44", "45-64", "65-84", "85+")
 VA_COMP = {"34 and under": (19, 34), "35-54": (35, 54), "55-74": (55, 74), "75 and over": (75, 100)}
 VA_PENSION = {"34 and under": (19, 34), "35-64": (35, 64), "65-74": (65, 74), "75 and over": (75, 100)}
+HOUSING_RANGES = {"24 and under": (18, 24), "25-50": (25, 50), "51-61": (51, 61), "62-84": (62, 84), "85 and over": (85, 100)}
 SNAP_RANGES = {"0-17": (0, 17), "18-35": (18, 35), "36-59": (36, 59), "60+": (60, 100)}
 # Urban Institute Kids' Share FY2024 as reported in news coverage (Peter G. Peterson Foundation summary and others), not read at the source; a rough range check only.
 KIDS_SHARE = {"per_child": 6860, "per_person_65_plus": 40050}
@@ -51,6 +52,7 @@ def build() -> dict:
     omb = zipped("omb/hist_fy2027.zip", "hist03z2.xlsx")
     omb_line = lambda prefix: parse_omb_line(omb, prefix, YEAR)  # noqa: E731
     medicaid = parse_nhe_federal_medicaid(zipped("cms/nhe_tables.zip", "Table 05-3 Federal Government Sponsor Expenditures.xlsx"), YEAR)
+    housing = parse_hud_housing(raw("hud/US_2024_2020census.xlsx"))
     text = pdf_text("ssa/statcomps_2025_5a.pdf")
     snap = parse_snap_ages(pdf_text("fns/snap_characteristics_fy2023.pdf"))
     fns = parse_fns_costs(pdf_text("fns/keydata_jan2025_fy2024.pdf"), "FY 2024")
@@ -81,6 +83,8 @@ def build() -> dict:
          va_bands(snap, fns["SNAP"], pop, SNAP_RANGES)),
         ("School meals, child nutrition and WIC", "Food aid", "proxy", "FNS FY2024 child nutrition and WIC costs counted at ages 0-17 (mothers' share of WIC is counted with children)",
          spread_ages(fns["Child nutrition"] + fns["WIC"], 0, 17, pop)),
+        ("HUD-assisted housing", "Housing aid", "proxy", "HUD units times average monthly federal spending (2024), counted at the age of the household head because the file gives no ages for other residents; children in assisted households are not counted as recipients",
+         va_bands(housing["heads"], housing["dollars"], pop, HOUSING_RANGES)),
     ]
     population = population_by_band(pop)
     rows = []

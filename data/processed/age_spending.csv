@@ -44,3 +44,8 @@ fiscal_year,program,group,method,band,dollars
 2024,"School meals, child nutrition and WIC",Food aid,proxy,45-64,0
 2024,"School meals, child nutrition and WIC",Food aid,proxy,65-84,0
 2024,"School meals, child nutrition and WIC",Food aid,proxy,85+,0
+2024,HUD-assisted housing,Housing aid,proxy,0-18,282793164
+2024,HUD-assisted housing,Housing aid,proxy,19-44,21536380244
+2024,HUD-assisted housing,Housing aid,proxy,45-64,21147027021
+2024,HUD-assisted housing,Housing aid,proxy,65-84,20328208159
+2024,HUD-assisted housing,Housing aid,proxy,85+,2637267024

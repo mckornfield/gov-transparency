@@ -25,17 +25,17 @@
     <p class="note">A rough estimate for the whole United States, fiscal year 2024. It counts only programs whose dollars could be
       tied to an age: Social Security, Medicare, Medicaid (the federal share), veterans' benefits and health care, and
       education. Most of the rest of the budget (defense, interest on the debt, food aid, housing, tax credits) is not
-      allocated to an age here, so these are floors, not the whole picture. It shows who received money, not who paid taxes, and
+      allocated to an age here, so the totals are floors, not the whole picture (a rough split can move dollars between brackets). It shows who received money, not who paid taxes, and
       it cannot show whether anyone was better or worse off. The brackets follow the health data (the most limiting source);
       the generation labels are only a guide to who is in each bracket.</p>
 
     <form class="controls" aria-label="Which programs and measure" onsubmit="return false">
       <fieldset>
         <legend>Include</legend>
-        <label><input type="checkbox" id="g-Retirement"> Retirement (Social Security)</label>
-        <label><input type="checkbox" id="g-Health"> Health (Medicare, Medicaid)</label>
-        <label><input type="checkbox" id="g-Veterans"> Veterans</label>
-        <label><input type="checkbox" id="g-Kids and education"> Kids and education</label>
+        <label><input type="checkbox" id="g-0"> Retirement (Social Security)</label>
+        <label><input type="checkbox" id="g-1"> Health (Medicare, Medicaid)</label>
+        <label><input type="checkbox" id="g-2"> Veterans</label>
+        <label><input type="checkbox" id="g-3"> Kids and education</label>
       </fieldset>
       <fieldset>
         <legend>Show</legend>
@@ -62,7 +62,7 @@
     <h2>How each program was split</h2>
     <div class="table-wrap">
       <table id="program-table" data-title="Programs and how each was split by age" data-default-sort="2:desc">
-        <caption class="note">"Published" means an agency gave dollars or recipients by age. "Proxy" means the total was spread by who plausibly receives it. Every program's split adds up to its federal outlay.</caption>
+        <caption class="note">"Published" means an agency gave this program's dollars (or its spending pattern) by age. "Proxy" means the total was spread by who plausibly receives it. Every split adds up to the program's federal dollars (Medicaid is CMS's calendar-year federal payments, not a budget outlay).</caption>
         <thead><tr><th scope="col">Program</th><th scope="col">Group</th><th scope="col">Federal dollars</th><th scope="col">Split</th><th scope="col">How</th></tr></thead>
         <tbody></tbody>
       </table>

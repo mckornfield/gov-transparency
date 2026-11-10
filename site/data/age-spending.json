@@ -85,7 +85,7 @@
    "program": "Medicaid (federal share)",
    "group": "Health",
    "method": "published",
-   "note": "CMS age shape of Medicaid spending (2020) applied to the federal portion of Medicaid payments (CMS, calendar 2024)",
+   "note": "CMS age shape of Medicaid spending (2020) applied to the federal portion of Medicaid payments (CMS, calendar 2024). The shape covers federal plus state spending; the federal match differs by group (higher for expansion adults, lower for older people), which this does not capture",
    "dollars": 596700000000.0,
    "by_band": {
     "0-18": 116229936009.8818,
@@ -102,8 +102,8 @@
    "note": "VA recipients by age band (FY2024), spread within each band by population, scaled to OMB subfunction 701",
    "dollars": 161312000000.0,
    "by_band": {
-    "0-18": 1047622593.606779,
-    "19-44": 44808531544.69215,
+    "0-18": 0.0,
+    "19-44": 45856154138.29894,
     "45-64": 53671795899.82805,
     "65-84": 52679770662.75184,
     "85+": 9104279299.121185
@@ -116,8 +116,8 @@
    "note": "OMB subfunction 703 spread like VA compensation recipients by age (no VA health spending by age found)",
    "dollars": 138543000000.0,
    "by_band": {
-    "0-18": 911429254.119732,
-    "19-44": 38926106045.38986,
+    "0-18": 0.0,
+    "19-44": 39837535299.5096,
     "45-64": 46591108646.16264,
     "65-84": 44418633277.34543,
     "85+": 7695722776.982336
@@ -141,7 +141,7 @@
    "program": "Higher education and student aid",
    "group": "Kids and education",
    "method": "proxy",
-   "note": "OMB subfunction 502 spread over ages 18-29 by population (no age split of Pell grants or loan costs used)",
+   "note": "OMB subfunction 502 spread over ages 18-29 by population. It may include student-loan accounting costs (estimates that move with policy), not only cash grants, and no age split of Pell grants or loans was used; treat it as the least certain row",
    "dollars": 161032000000.0,
    "by_band": {
     "0-18": 13415827600.725094,
@@ -155,7 +155,7 @@
  "total_outlays": 6751551633812.29,
  "allocated": 3498008041545.61,
  "own_check": {
-  "per_child": 3388.1244516987495,
+  "per_child": 3362.8844035132233,
   "per_person_65_plus": 36141.77465748878
  },
  "kids_share": {

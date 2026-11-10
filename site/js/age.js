@@ -4,7 +4,6 @@ import { formatMoney, formatPerResident } from "./format.js";
 import { GROUPS, parseAgeHash, serializeAgeHash, normalizeAgeState, bandValues, coverage, ratioText } from "./age-model.js";
 
 const $ = (id) => document.getElementById(id);
-const css = (name) => getComputedStyle(document.documentElement).getPropertyValue(name).trim();
 const COLORS = ["#E69F00", "#56B4E9", "#009E73", "#CC79A7"];
 
 let data;
@@ -29,7 +28,7 @@ function fillTable(id, lines) {
 }
 
 function readControls() {
-  return normalizeAgeState({ measure: $("measure").value, groups: GROUPS.filter((g) => $(`g-${g}`).checked) });
+  return normalizeAgeState({ measure: $("measure").value, groups: GROUPS.filter((g) => $(`g-${GROUPS.indexOf(g)}`).checked) });
 }
 
 function update() {
@@ -58,7 +57,7 @@ function drawChart() {
 }
 
 function render() {
-  for (const g of GROUPS) $(`g-${g}`).checked = state.groups.includes(g);
+  for (const g of GROUPS) $(`g-${GROUPS.indexOf(g)}`).checked = state.groups.includes(g);
   $("measure").value = state.measure;
   const text = ratioText(data, state.groups);
   if ($("ahead").textContent !== text) $("ahead").textContent = text;
@@ -70,10 +69,10 @@ function render() {
   }));
   fillTable("program-table", data.programs.map((p) => [p.program, p.group, formatMoney(p.dollars), p.method === "published" ? "Published" : "Proxy", p.note]));
   const c = data.own_check, k = data.kids_share;
-  $("check").textContent = `The Urban Institute's Kids' Share series, as reported in news coverage, puts federal spending at about ${formatPerResident(k.per_child)} per child and ${formatPerResident(k.per_person_65_plus)} per person aged 65 and over. This page counts fewer programs (no food aid, housing or tax credits), so its figures are lower: about ${formatPerResident(c.per_child)} per child and ${formatPerResident(c.per_person_65_plus)} per person aged 65 and over. The gap between older people and children is similar in both.`;
+  $("check").textContent = `The Urban Institute's Kids' Share series, as described in news coverage, (figures not yet confirmed at the source) puts federal spending at about ${formatPerResident(k.per_child)} per child and ${formatPerResident(k.per_person_65_plus)} per person aged 65 and over. This page counts fewer programs (no food aid, housing or tax credits), so its figures are lower: about ${formatPerResident(c.per_child)} per child and ${formatPerResident(c.per_person_65_plus)} per person aged 65 and over. The dollar difference between the two groups is about ${formatPerResident(c.per_person_65_plus - c.per_child)} here, against about ${formatPerResident(k.per_person_65_plus - k.per_child)} there.`;
 }
 
-for (const id of [...GROUPS.map((g) => `g-${g}`), "measure"]) $(id).addEventListener("change", update);
+for (const id of [...GROUPS.map((g, i) => `g-${i}`), "measure"]) $(id).addEventListener("change", update);
 window.addEventListener("hashchange", () => { state = normalizeAgeState(parseAgeHash(location.hash)); render(); });
 window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", render);
 let lastWidth = $("age-chart").clientWidth;

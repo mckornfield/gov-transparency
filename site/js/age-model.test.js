@@ -36,7 +36,13 @@ test("group totals add programs and coverage is allocated over outlays", () => {
 
 test("ratio text compares two brackets per person and never says deserved or effective", () => {
   const text = ratioText(data, GROUPS);
-  assert.match(text, /\$100 per person/);
+  assert.match(text, /received the most per person.*\$100/);
   assert.match(text, /received/);
   assert.doesNotMatch(text, /effective|deserve/);
+});
+
+test("the headline does not compare a bracket with itself or with a near-zero base", () => {
+  const onlyKids = ratioText(data, ["Kids and education"]);
+  assert.doesNotMatch(onlyKids, /times/);
+  assert.match(onlyKids, /aged 0–18/);
 });

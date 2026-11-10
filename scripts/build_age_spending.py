@@ -19,9 +19,9 @@ from sd_spend.io import RAW, ROOT
 
 YEAR = 2024
 CMS_GROUPS = ("0-18", "19-44", "45-64", "65-84", "85+")
-VA_COMP = {"34 and under": (18, 34), "35-54": (35, 54), "55-74": (55, 74), "75 and over": (75, 100)}
-VA_PENSION = {"34 and under": (18, 34), "35-64": (35, 64), "65-74": (65, 74), "75 and over": (75, 100)}
-# Urban Institute Kids' Share FY2024 as reported in news coverage (not read at the source); a rough range check only.
+VA_COMP = {"34 and under": (19, 34), "35-54": (35, 54), "55-74": (55, 74), "75 and over": (75, 100)}
+VA_PENSION = {"34 and under": (19, 34), "35-64": (35, 64), "65-74": (65, 74), "75 and over": (75, 100)}
+# Urban Institute Kids' Share FY2024 as reported in news coverage (Peter G. Peterson Foundation summary and others), not read at the source; a rough range check only.
 KIDS_SHARE = {"per_child": 6860, "per_person_65_plus": 40050}
 
 
@@ -64,7 +64,7 @@ def build() -> dict:
          scale(ssa_shape, mts["Social Security"])),
         ("Medicare", "Health", "published", "CMS age shape of Medicare spending (2020, the latest) applied to FY2024 Treasury outlays",
          from_shares(mts["Medicare"], cms["Medicare"])),
-        ("Medicaid (federal share)", "Health", "published", "CMS age shape of Medicaid spending (2020) applied to the federal portion of Medicaid payments (CMS, calendar 2024)",
+        ("Medicaid (federal share)", "Health", "published", "CMS age shape of Medicaid spending (2020) applied to the federal portion of Medicaid payments (CMS, calendar 2024). The shape covers federal plus state spending; the federal match differs by group (higher for expansion adults, lower for older people), which this does not capture",
          from_shares(medicaid, cms["Medicaid"])),
         ("VA compensation and pension", "Veterans", "proxy", "VA recipients by age band (FY2024), spread within each band by population, scaled to OMB subfunction 701",
          scale(va_money, omb_line("701 Income security for veterans"))),
@@ -72,7 +72,7 @@ def build() -> dict:
          scale(va_health, omb_line("703 Hospital and medical care"))),
         ("Elementary and secondary education", "Kids and education", "proxy", "OMB subfunction 501 spread over ages 5-18 by population",
          spread_ages(omb_line("501 Elementary"), 5, 18, pop)),
-        ("Higher education and student aid", "Kids and education", "proxy", "OMB subfunction 502 spread over ages 18-29 by population (no age split of Pell grants or loan costs used)",
+        ("Higher education and student aid", "Kids and education", "proxy", "OMB subfunction 502 spread over ages 18-29 by population. It may include student-loan accounting costs (estimates that move with policy), not only cash grants, and no age split of Pell grants or loans was used; treat it as the least certain row",
          spread_ages(omb_line("502 Higher education"), 18, 29, pop)),
     ]
     population = population_by_band(pop)

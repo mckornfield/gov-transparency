@@ -14,13 +14,13 @@ fiscal_year,program,group,method,band,dollars
 2024,Medicaid (federal share),Health,published,45-64,167012893133
 2024,Medicaid (federal share),Health,published,65-84,89484644583
 2024,Medicaid (federal share),Health,published,85+,35096595984
-2024,VA compensation and pension,Veterans,proxy,0-18,1047622594
-2024,VA compensation and pension,Veterans,proxy,19-44,44808531545
+2024,VA compensation and pension,Veterans,proxy,0-18,0
+2024,VA compensation and pension,Veterans,proxy,19-44,45856154138
 2024,VA compensation and pension,Veterans,proxy,45-64,53671795900
 2024,VA compensation and pension,Veterans,proxy,65-84,52679770663
 2024,VA compensation and pension,Veterans,proxy,85+,9104279299
-2024,VA health care,Veterans,proxy,0-18,911429254
-2024,VA health care,Veterans,proxy,19-44,38926106045
+2024,VA health care,Veterans,proxy,0-18,0
+2024,VA health care,Veterans,proxy,19-44,39837535300
 2024,VA health care,Veterans,proxy,45-64,46591108646
 2024,VA health care,Veterans,proxy,65-84,44418633277
 2024,VA health care,Veterans,proxy,85+,7695722777

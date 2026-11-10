@@ -531,7 +531,7 @@ def test_age_page_shows_headline_brackets_programs_and_coverage(page, site_url):
 def test_age_page_group_and_measure_controls_change_the_page_and_the_hash(page, site_url):
     open_age(page, site_url)
     before = page.inner_text("#band-table tbody")
-    page.uncheck("#g-Retirement")
+    page.uncheck("#g-0")
     page.select_option("#measure", "total")
     assert page.inner_text("#band-table tbody") != before
     assert "measure=total" in page.url and "groups=" in page.url

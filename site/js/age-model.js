@@ -59,6 +59,8 @@ export function ratioText(data, groups) {
   const top = values.reduce((a, b) => (b.value > a.value ? b : a));
   const young = values[0];
   const money = (v) => `$${Math.round(v).toLocaleString("en-US")}`;
-  const ratio = young.value > 0 ? ` That is about ${(top.value / young.value).toFixed(1)} times what the average person aged ${young.key} received.` : "";
-  return `Of the programs counted here, the average person aged ${top.key} received ${money(top.value)} per person in FY${data.fiscal_year}.${ratio}`;
+  const name = (k) => (k === "85+" ? "85 and over" : k.replace("-", "–"));
+  // Only compare when the youngest bracket is a real, different recipient; a near-zero base makes a meaningless ratio.
+  const ratio = top.key !== young.key && young.value >= 50 ? ` The youngest bracket (${name(young.key)}) received ${money(young.value)}, about ${(top.value / young.value).toFixed(1)} times less.` : "";
+  return `Of the programs counted here, the bracket aged ${name(top.key)} received the most per person in FY${data.fiscal_year}: ${money(top.value)}.${ratio}`;
 }

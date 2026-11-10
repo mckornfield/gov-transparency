@@ -3,6 +3,7 @@
 export function formatMoney(value) {
   const sign = value < 0 ? "-" : "";
   const abs = Math.abs(value);
+  if (abs >= 999.5e9) return `${sign}$${(abs / 1e12).toFixed(2)}T`;
   if (abs >= 999.5e6) return `${sign}$${(abs / 1e9).toFixed(1)}B`;
   if (abs >= 99.95e6) return `${sign}$${Math.round(abs / 1e6)}M`;
   if (abs >= 999.5e3) return `${sign}$${(abs / 1e6).toFixed(1)}M`;

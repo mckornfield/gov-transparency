@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Where school money goes · San Diego Spending</title>
+  <meta name="description" content="What San Diego County school districts spend each general-fund dollar on: teacher pay, other staff pay, pensions, health benefits, supplies and services, per student and by district, 2023-24.">
+  <link rel="stylesheet" href="css/site.css?v=2">
+</head>
+<body>
+  <header class="site-header">
+    <nav>
+      <strong>San Diego Spending</strong>
+      <a href="index.html">Where your dollar goes</a>
+      <a href="vendors.html">Who gets paid</a>
+      <a href="peers.html">Compared with other cities</a>
+      <a href="homelessness.html">Homelessness</a>
+      <a href="age.html">Who receives federal dollars</a>
+      <a href="california-age.html">Who receives state dollars</a>
+      <a href="schools.html" aria-current="page">Where school money goes</a>
+      <a href="methods.html">Data &amp; methods</a>
+    </nav>
+  </header>
+  <main>
+    <h1>Where school money goes</h1>
+    <p id="shead" class="headline" aria-live="polite">Loading…</p>
+    <p class="note">The 42 school districts in San Diego County and the County Office of Education, fiscal year 2023&ndash;24, as each
+      filed its unaudited year-end accounts with the state. The headline is the general fund, the day-to-day operating budget; construction,
+      bond repayment, cafeterias and other separate funds are listed further down so they do not blur the operating picture. Benefits are what
+      the district pays on top of salaries: pension contributions, health coverage, Social Security and insurance. Part of the teacher-pension
+      line is paid by the state on the district's behalf and is recorded in the district's books as both income and spending. Charter schools
+      that file their own accounts are not included, and their students are not in the student counts; the County Office of Education's spending is in the county total but it has no student count of its own, so the county-wide figure per student runs a little high. The ledger has dollars only, so it cannot show pay per employee or how many people were
+      employed, and nothing here says whether any amount is too much or too little.</p>
+
+    <form class="controls" aria-label="Which district" onsubmit="return false">
+      <fieldset>
+        <legend>District</legend>
+        <label class="visually-hidden" for="district">School district</label>
+        <select id="district"></select>
+      </fieldset>
+    </form>
+
+    <p id="sgroups" class="note"></p>
+    <figure>
+      <div id="school-chart" role="img" aria-label="Bar chart of the share of general-fund spending by category"></div>
+      <ul id="school-legend" class="legend"></ul>
+    </figure>
+
+    <h2>Each dollar, by what it bought</h2>
+    <div class="table-wrap">
+      <table id="category-table" data-title="General-fund spending by category" data-default-sort="2:desc">
+        <caption class="note">General-fund spending by the kind of cost. "Per student" divides by average daily attendance.</caption>
+        <thead><tr><th scope="col">Category</th><th scope="col">Kind</th><th scope="col">Share</th><th scope="col">Dollars</th><th scope="col">Per student</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+
+    <h2>By purpose</h2>
+    <div class="table-wrap">
+      <table id="purpose-table" data-title="General-fund spending by purpose" data-default-sort="1:desc">
+        <caption class="note">The same dollars by what they were for. Salaries and benefits are inside each purpose.</caption>
+        <thead><tr><th scope="col">Purpose</th><th scope="col">Share</th><th scope="col">Dollars</th><th scope="col">Per student</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+
+    <h2>Where the money comes from</h2>
+    <div class="table-wrap">
+      <table id="revenue-table" data-title="General-fund revenue by source" data-default-sort="2:desc">
+        <caption class="note">General-fund revenue. A negative line is property-tax money a district passes on to charter schools. Revenue and spending differ in any one year.</caption>
+        <thead><tr><th scope="col">Source</th><th scope="col">Share</th><th scope="col">Dollars</th><th scope="col">Per student</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+
+    <h2>Money outside the general fund</h2>
+    <div class="table-wrap">
+      <table id="funds-table" data-title="Spending in other funds" data-default-sort="1:desc">
+        <caption class="note">Spending recorded in a district's other funds, not counted in the figures above.</caption>
+        <thead><tr><th scope="col">Fund</th><th scope="col">Dollars</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+
+    <h2>Every district</h2>
+    <div class="table-wrap">
+      <table id="district-table" data-title="Every district" data-default-sort="2:desc">
+        <caption class="note">General-fund spending for each district. Small districts cost more per student; high-school districts and districts with many students in special education differ from the rest for that reason, not because of how well they are run.</caption>
+        <thead><tr><th scope="col">District</th><th scope="col">Type</th><th scope="col">Students</th><th scope="col">General fund</th><th scope="col">Per student</th><th scope="col">Salaries</th><th scope="col">Benefits</th><th scope="col">Pensions (part of benefits)</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+    <p class="note">See <a href="methods.html">Data &amp; methods</a> for sources and limits.</p>
+  </main>
+  <script type="module" src="js/schools.js"></script>
+</body>
+</html>

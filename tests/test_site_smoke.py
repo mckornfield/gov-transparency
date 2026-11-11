@@ -588,3 +588,45 @@ def test_california_age_page_controls_hash_and_phone_width(page, site_url):
     text = page.inner_text("main").lower()
     assert "effective" not in text and "deserv" not in text
     assert errors == []
+
+
+def open_schools(page, site_url, hash_=""):
+    errors = []
+    page.on("pageerror", lambda e: errors.append(str(e)))
+    page.goto(f"{site_url}/schools.html{hash_}")
+    page.wait_for_selector("#school-chart rect")
+    return errors
+
+
+def test_schools_page_shows_headline_categories_and_every_district(page, site_url):
+    errors = open_schools(page, site_url)
+    head = page.inner_text("#shead")
+    assert "Of each general-fund dollar San Diego County school districts spent in 2023-24" in head and "teacher salaries" in head
+    assert page.locator("#category-table tbody tr").count() >= 20
+    assert page.locator("#purpose-table tbody tr").count() >= 8
+    assert page.locator("#revenue-table tbody tr").count() >= 5
+    assert page.locator("#district-table tbody tr").count() >= 42
+    assert "paid by the state on the district's behalf" in page.inner_text("#category-table")
+    assert errors == []
+
+
+def test_schools_page_district_picker_changes_the_page_and_the_hash(page, site_url):
+    errors = open_schools(page, site_url)
+    before = page.inner_text("#category-table tbody")
+    page.select_option("#district", "68338")
+    assert "San Diego Unified" in page.inner_text("#shead")
+    assert page.inner_text("#category-table tbody") != before
+    assert page.url.endswith("#d=68338")
+    assert errors == []
+
+
+def test_schools_page_garbage_hash_phone_width_and_neutral_words(page, site_url):
+    errors = open_schools(page, site_url, "#d=banana")
+    assert "San Diego County school districts" in page.inner_text("#shead")
+    page.set_viewport_size({"width": 375, "height": 800})
+    page.reload()
+    page.wait_for_selector("#school-chart rect")
+    assert page.evaluate("document.documentElement.scrollWidth <= window.innerWidth")
+    text = page.inner_text("main").lower()
+    assert "waste" not in text and "effective" not in text and "deserv" not in text
+    assert errors == []

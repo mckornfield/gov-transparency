@@ -16,6 +16,7 @@
       <a href="homelessness.html">Homelessness</a>
       <a href="age.html">Who receives federal dollars</a>
       <a href="california-age.html">Who receives state dollars</a>
+      <a href="schools.html">Where school money goes</a>
       <a href="methods.html" aria-current="page">Data &amp; methods</a>
     </nav>
   </header>
@@ -226,6 +227,36 @@
         age split was found, and everything else (transportation, courts, natural resources, general government).</li>
       <li>Population is the Census Bureau's July 2024 estimate for California by single year of age (civilian population; ages 85 and over
         are one group), so brackets with many service members are slightly undercounted.</li>
+    </ul>
+
+    <h2>Where school money goes</h2>
+    <p>General-fund spending of the 42 school districts in San Diego County and the County Office of Education in 2023&ndash;24.</p>
+    <ul>
+      <li><strong>Source</strong>: California Department of Education, SACS unaudited actual data for 2023&ndash;24, the year-end ledgers
+        every district files in the state's standard account codes. The state publishes one Microsoft Access database for all of
+        California; the fetch step exports it with mdbtools and keeps only San Diego County's rows, the district list and the code titles.
+        These are unaudited figures as filed.</li>
+      <li><strong>What counts</strong>: the general fund (fund 01), object codes 1000&ndash;7499, which are expenditures. Transfers between
+        a district's own funds are left out. Spending in every other fund (building, bond repayment, cafeteria, child development, adult
+        education, self-insurance and so on) is listed separately and not mixed in.</li>
+      <li><strong>Categories</strong> follow the state's object codes: certificated salaries (teachers 1100, pupil support 1200,
+        administrators 1300, other 1900), classified salaries (2100&ndash;2900), benefits (CalSTRS 3100s, CalPERS 3200s, Social Security and
+        Medicare 3300s, health and welfare 3400s, unemployment and workers' compensation 3500s&ndash;3600s, retiree health 3700s, other),
+        books and supplies (4000s), services (5000s), capital outlay (6000s) and other outgo (7000&ndash;7499). Every expenditure row falls in
+        exactly one category or the build fails.</li>
+      <li><strong>State-paid pensions</strong>: the state makes part of the CalSTRS contribution on districts' behalf. Districts record it
+        as both revenue and spending under resource 7690; the page shows it as its own line so it can be told apart from what districts pay.</li>
+      <li><strong>Purpose</strong> uses the state's function codes (instruction 1000, special education instruction 1100s, school
+        administration 2700, pupil services 3000s, general administration 7000s, plant services 8000s).</li>
+      <li><strong>Revenue</strong> is general-fund revenue by object code: state aid under the funding formula and the Education Protection
+        Account (8010s), local property taxes (8020&ndash;8089), property taxes passed to charter schools (8090s, negative), federal
+        (8100&ndash;8299), other state (8300&ndash;8599) and other local (8600&ndash;8799). Revenue and spending differ in any one year.</li>
+      <li><strong>Per student</strong> divides by the state's K-12 average daily attendance for the district. That count leaves out charter
+        students whose school files its own accounts, and the County Office of Education has no count, so its spending raises the
+        county-wide figure per student slightly.</li>
+      <li><strong>Limits</strong>: the ledger has dollars, not employees, so it cannot show average pay or headcount. Districts differ in
+        size, grade span and the share of students in special education, so per-student differences are not a measure of how well a
+        district is run.</li>
     </ul>
 
     <h2>Checks that run on every build</h2>

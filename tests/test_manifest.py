@@ -36,6 +36,7 @@ REQUIRED = {
     "ca/dds_pos_statewide_fy2023_24.xlsx.gz",
     "ca/medi_cal_eligibles_age_sex.csv.gz",
     "macpac/exhibit21_fy2023.xlsx.gz",
+    *{f"cde/sacs2324_{name}.csv.gz" for name in ("san_diego_ledger", "san_diego_districts", "san_diego_charters", "objects", "funds", "functions", "resources", "goals")},
     "omb/hist_fy2027.zip.gz",
     "va/va_compensation_by_age_fy2024.csv.gz",
     "va/va_pension_by_age_fy2024.csv.gz",

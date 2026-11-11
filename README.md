@@ -20,6 +20,8 @@ uv run python scripts/fetch_age_spending.py --ssa-file ~/Downloads/age/oasdi_202
 uv run python scripts/build_age_spending.py     # needs pdftotext; -> data/processed/age_spending.csv, site/data/age-spending.json
 uv run python scripts/fetch_ca_age_spending.py  # California: Governor's Budget, Census state population, state recipient counts by age
 uv run python scripts/build_ca_age_spending.py  # needs pdftotext; -> data/processed/ca_age_spending.csv, site/data/ca-age-spending.json
+uv run python scripts/fetch_schools.py          # needs mdbtools (brew install mdbtools); state school ledgers, San Diego County rows only
+uv run python scripts/build_schools.py          # -> data/processed/schools_spending.csv, site/data/schools.json
 uv run python scripts/build_vendors.py          # needs poppler: brew install poppler (or apt install poppler-utils)
 uv run pytest -m "not smoke" && npm test        # unit + data checks
 uv run playwright install chromium && uv run pytest -m smoke   # browser smoke test
@@ -38,6 +40,7 @@ original bytes; files are stored gzip-compressed).
 | Homelessness: state system performance measures and point-in-time counts (CSV), HHAP allocation tables (PDF), the City's homelessness department budget pages (PDF), HUD point-in-time counts by CoC (xlsb, downloaded by hand) | Cal ICH via data.ca.gov; HCD; City of San Diego adopted budgets; HUD AHAR | `fetch_homelessness.py`, `build_homelessness.py`; regions in `config/homelessness.json` |
 | Federal spending by age: Treasury Monthly Treasury Statement, OMB historical table 3.2 (zip), CMS national health expenditure tables and age and sex tables, SSA Annual Statistical Supplement 2025 (PDF, downloaded by hand), Census population by age, VA compensation and pension by age, SSA SSI report (xlsx, downloaded by hand), Labor Department ETA 203 unemployment claims by age | Treasury Fiscal Data; OMB; CMS; SSA; Census; VA | `fetch_age_spending.py`, `build_age_spending.py`; allocation in `src/sd_spend/ageallocate.py` |
 | California state spending by age: Governor's Budget 2025-26 (Schedule 9 and the Department of Social Services page, 2023-24 actuals), Census state population by age, DDS consumers by age, CDSS in-home care recipients by age and CalWORKs children and adults | California Department of Finance; Census; DDS; CDSS | `fetch_ca_age_spending.py`, `build_ca_age_spending.py`; parsers in `src/sd_spend/caspend.py` |
+| School district spending: SACS unaudited actual data 2023-24 (San Diego County extract of the state's Access database) | California Department of Education | `fetch_schools.py`, `build_schools.py`; categories in `src/sd_spend/schools.py` |
 | Vendor payments of $25,000 or more, FY2022-FY2026 (PDF, one per year) | City of San Diego, sandiego.gov "Cumulative Amounts Paid to Vendors" | `fetch_sd_vendor_payments.py`, `build_vendors.py` |
 
 ## Data-quality notes

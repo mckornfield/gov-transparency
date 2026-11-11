@@ -1,0 +1,947 @@
+fiscal_year,district_code,district,students_ada,group,category,dollars
+2023-24,67967,Alpine Union Elementary,1379.05,Salaries,Teacher salaries,7764739
+2023-24,67967,Alpine Union Elementary,1379.05,Salaries,"Counselors, nurses and other pupil support",723814
+2023-24,67967,Alpine Union Elementary,1379.05,Salaries,Principals and certificated administrators,1121152
+2023-24,67967,Alpine Union Elementary,1379.05,Salaries,Other certificated staff,147095
+2023-24,67967,Alpine Union Elementary,1379.05,Salaries,Classroom aides,976333
+2023-24,67967,Alpine Union Elementary,1379.05,Salaries,"Maintenance, food, transport and other support staff",1104172
+2023-24,67967,Alpine Union Elementary,1379.05,Salaries,Classified supervisors and administrators,359157
+2023-24,67967,Alpine Union Elementary,1379.05,Salaries,Office and technical staff,840546
+2023-24,67967,Alpine Union Elementary,1379.05,Salaries,Other classified staff,511709
+2023-24,67967,Alpine Union Elementary,1379.05,Benefits,"Teacher pensions (CalSTRS), paid by the district",1640676
+2023-24,67967,Alpine Union Elementary,1379.05,Benefits,"Teacher pensions (CalSTRS), paid by the state on the district's behalf",684271
+2023-24,67967,Alpine Union Elementary,1379.05,Benefits,Staff pensions (CalPERS),814351
+2023-24,67967,Alpine Union Elementary,1379.05,Benefits,Social Security and Medicare,447982
+2023-24,67967,Alpine Union Elementary,1379.05,Benefits,Health and welfare benefits,1410328
+2023-24,67967,Alpine Union Elementary,1379.05,Benefits,Unemployment and workers' compensation insurance,284073
+2023-24,67967,Alpine Union Elementary,1379.05,Benefits,Retiree health benefits,165171
+2023-24,67967,Alpine Union Elementary,1379.05,Benefits,Other benefits,600
+2023-24,67967,Alpine Union Elementary,1379.05,Everything else,Books and supplies,1009428
+2023-24,67967,Alpine Union Elementary,1379.05,Everything else,Contracted services (subagreements),1047701
+2023-24,67967,Alpine Union Elementary,1379.05,Everything else,Other services and operating costs,2501953
+2023-24,67967,Alpine Union Elementary,1379.05,Everything else,Capital outlay,29379
+2023-24,67967,Alpine Union Elementary,1379.05,Everything else,"Tuition, payments to other agencies and debt service",393062
+2023-24,76851,Bonsall Unified,2034.68,Salaries,Teacher salaries,10627501
+2023-24,76851,Bonsall Unified,2034.68,Salaries,"Counselors, nurses and other pupil support",1272511
+2023-24,76851,Bonsall Unified,2034.68,Salaries,Principals and certificated administrators,2116196
+2023-24,76851,Bonsall Unified,2034.68,Salaries,Other certificated staff,0
+2023-24,76851,Bonsall Unified,2034.68,Salaries,Classroom aides,1495692
+2023-24,76851,Bonsall Unified,2034.68,Salaries,"Maintenance, food, transport and other support staff",1956013
+2023-24,76851,Bonsall Unified,2034.68,Salaries,Classified supervisors and administrators,520443
+2023-24,76851,Bonsall Unified,2034.68,Salaries,Office and technical staff,1403784
+2023-24,76851,Bonsall Unified,2034.68,Salaries,Other classified staff,224479
+2023-24,76851,Bonsall Unified,2034.68,Benefits,"Teacher pensions (CalSTRS), paid by the district",2610630
+2023-24,76851,Bonsall Unified,2034.68,Benefits,"Teacher pensions (CalSTRS), paid by the state on the district's behalf",1185258
+2023-24,76851,Bonsall Unified,2034.68,Benefits,Staff pensions (CalPERS),1345943
+2023-24,76851,Bonsall Unified,2034.68,Benefits,Social Security and Medicare,624416
+2023-24,76851,Bonsall Unified,2034.68,Benefits,Health and welfare benefits,2413439
+2023-24,76851,Bonsall Unified,2034.68,Benefits,Unemployment and workers' compensation insurance,318175
+2023-24,76851,Bonsall Unified,2034.68,Benefits,Retiree health benefits,66166
+2023-24,76851,Bonsall Unified,2034.68,Benefits,Other benefits,23951
+2023-24,76851,Bonsall Unified,2034.68,Everything else,Books and supplies,1742781
+2023-24,76851,Bonsall Unified,2034.68,Everything else,Contracted services (subagreements),985993
+2023-24,76851,Bonsall Unified,2034.68,Everything else,Other services and operating costs,4118430
+2023-24,76851,Bonsall Unified,2034.68,Everything else,Capital outlay,472868
+2023-24,76851,Bonsall Unified,2034.68,Everything else,"Tuition, payments to other agencies and debt service",674493
+2023-24,67983,Borrego Springs Unified,322.83,Salaries,Teacher salaries,1775918
+2023-24,67983,Borrego Springs Unified,322.83,Salaries,"Counselors, nurses and other pupil support",112455
+2023-24,67983,Borrego Springs Unified,322.83,Salaries,Principals and certificated administrators,221758
+2023-24,67983,Borrego Springs Unified,322.83,Salaries,Other certificated staff,0
+2023-24,67983,Borrego Springs Unified,322.83,Salaries,Classroom aides,529271
+2023-24,67983,Borrego Springs Unified,322.83,Salaries,"Maintenance, food, transport and other support staff",765493
+2023-24,67983,Borrego Springs Unified,322.83,Salaries,Classified supervisors and administrators,305146
+2023-24,67983,Borrego Springs Unified,322.83,Salaries,Office and technical staff,335773
+2023-24,67983,Borrego Springs Unified,322.83,Salaries,Other classified staff,0
+2023-24,67983,Borrego Springs Unified,322.83,Benefits,"Teacher pensions (CalSTRS), paid by the district",367728
+2023-24,67983,Borrego Springs Unified,322.83,Benefits,"Teacher pensions (CalSTRS), paid by the state on the district's behalf",174614
+2023-24,67983,Borrego Springs Unified,322.83,Benefits,Staff pensions (CalPERS),462228
+2023-24,67983,Borrego Springs Unified,322.83,Benefits,Social Security and Medicare,171105
+2023-24,67983,Borrego Springs Unified,322.83,Benefits,Health and welfare benefits,780298
+2023-24,67983,Borrego Springs Unified,322.83,Benefits,Unemployment and workers' compensation insurance,97315
+2023-24,67983,Borrego Springs Unified,322.83,Benefits,Retiree health benefits,38622
+2023-24,67983,Borrego Springs Unified,322.83,Benefits,Other benefits,0
+2023-24,67983,Borrego Springs Unified,322.83,Everything else,Books and supplies,879336
+2023-24,67983,Borrego Springs Unified,322.83,Everything else,Contracted services (subagreements),0
+2023-24,67983,Borrego Springs Unified,322.83,Everything else,Other services and operating costs,1867734
+2023-24,67983,Borrego Springs Unified,322.83,Everything else,Capital outlay,1197808
+2023-24,67983,Borrego Springs Unified,322.83,Everything else,"Tuition, payments to other agencies and debt service",0
+2023-24,67991,Cajon Valley Union Elementary,14484.85,Salaries,Teacher salaries,92451003
+2023-24,67991,Cajon Valley Union Elementary,14484.85,Salaries,"Counselors, nurses and other pupil support",8444689
+2023-24,67991,Cajon Valley Union Elementary,14484.85,Salaries,Principals and certificated administrators,15158775
+2023-24,67991,Cajon Valley Union Elementary,14484.85,Salaries,Other certificated staff,2295026
+2023-24,67991,Cajon Valley Union Elementary,14484.85,Salaries,Classroom aides,22441059
+2023-24,67991,Cajon Valley Union Elementary,14484.85,Salaries,"Maintenance, food, transport and other support staff",14884817
+2023-24,67991,Cajon Valley Union Elementary,14484.85,Salaries,Classified supervisors and administrators,3779283
+2023-24,67991,Cajon Valley Union Elementary,14484.85,Salaries,Office and technical staff,10160036
+2023-24,67991,Cajon Valley Union Elementary,14484.85,Salaries,Other classified staff,3606148
+2023-24,67991,Cajon Valley Union Elementary,14484.85,Benefits,"Teacher pensions (CalSTRS), paid by the district",21366713
+2023-24,67991,Cajon Valley Union Elementary,14484.85,Benefits,"Teacher pensions (CalSTRS), paid by the state on the district's behalf",9723753
+2023-24,67991,Cajon Valley Union Elementary,14484.85,Benefits,Staff pensions (CalPERS),13810311
+2023-24,67991,Cajon Valley Union Elementary,14484.85,Benefits,Social Security and Medicare,5910016
+2023-24,67991,Cajon Valley Union Elementary,14484.85,Benefits,Health and welfare benefits,17283484
+2023-24,67991,Cajon Valley Union Elementary,14484.85,Benefits,Unemployment and workers' compensation insurance,5346646
+2023-24,67991,Cajon Valley Union Elementary,14484.85,Benefits,Retiree health benefits,1299689
+2023-24,67991,Cajon Valley Union Elementary,14484.85,Benefits,Other benefits,139214
+2023-24,67991,Cajon Valley Union Elementary,14484.85,Everything else,Books and supplies,13356332
+2023-24,67991,Cajon Valley Union Elementary,14484.85,Everything else,Contracted services (subagreements),0
+2023-24,67991,Cajon Valley Union Elementary,14484.85,Everything else,Other services and operating costs,38231952
+2023-24,67991,Cajon Valley Union Elementary,14484.85,Everything else,Capital outlay,19186626
+2023-24,67991,Cajon Valley Union Elementary,14484.85,Everything else,"Tuition, payments to other agencies and debt service",951442
+2023-24,68007,Cardiff Elementary,611.41,Salaries,Teacher salaries,5033109
+2023-24,68007,Cardiff Elementary,611.41,Salaries,"Counselors, nurses and other pupil support",221048
+2023-24,68007,Cardiff Elementary,611.41,Salaries,Principals and certificated administrators,571315
+2023-24,68007,Cardiff Elementary,611.41,Salaries,Other certificated staff,0
+2023-24,68007,Cardiff Elementary,611.41,Salaries,Classroom aides,715886
+2023-24,68007,Cardiff Elementary,611.41,Salaries,"Maintenance, food, transport and other support staff",394157
+2023-24,68007,Cardiff Elementary,611.41,Salaries,Classified supervisors and administrators,181853
+2023-24,68007,Cardiff Elementary,611.41,Salaries,Office and technical staff,551870
+2023-24,68007,Cardiff Elementary,611.41,Salaries,Other classified staff,101374
+2023-24,68007,Cardiff Elementary,611.41,Benefits,"Teacher pensions (CalSTRS), paid by the district",1082993
+2023-24,68007,Cardiff Elementary,611.41,Benefits,"Teacher pensions (CalSTRS), paid by the state on the district's behalf",481058
+2023-24,68007,Cardiff Elementary,611.41,Benefits,Staff pensions (CalPERS),487532
+2023-24,68007,Cardiff Elementary,611.41,Benefits,Social Security and Medicare,242639
+2023-24,68007,Cardiff Elementary,611.41,Benefits,Health and welfare benefits,580598
+2023-24,68007,Cardiff Elementary,611.41,Benefits,Unemployment and workers' compensation insurance,102599
+2023-24,68007,Cardiff Elementary,611.41,Benefits,Retiree health benefits,0
+2023-24,68007,Cardiff Elementary,611.41,Benefits,Other benefits,0
+2023-24,68007,Cardiff Elementary,611.41,Everything else,Books and supplies,372925
+2023-24,68007,Cardiff Elementary,611.41,Everything else,Contracted services (subagreements),54825
+2023-24,68007,Cardiff Elementary,611.41,Everything else,Other services and operating costs,1407416
+2023-24,68007,Cardiff Elementary,611.41,Everything else,Capital outlay,56639
+2023-24,68007,Cardiff Elementary,611.41,Everything else,"Tuition, payments to other agencies and debt service",566557
+2023-24,73551,Carlsbad Unified,10219.31,Salaries,Teacher salaries,55806866
+2023-24,73551,Carlsbad Unified,10219.31,Salaries,"Counselors, nurses and other pupil support",3936477
+2023-24,73551,Carlsbad Unified,10219.31,Salaries,Principals and certificated administrators,6020900
+2023-24,73551,Carlsbad Unified,10219.31,Salaries,Other certificated staff,3163662
+2023-24,73551,Carlsbad Unified,10219.31,Salaries,Classroom aides,4387352
+2023-24,73551,Carlsbad Unified,10219.31,Salaries,"Maintenance, food, transport and other support staff",7300780
+2023-24,73551,Carlsbad Unified,10219.31,Salaries,Classified supervisors and administrators,1088318
+2023-24,73551,Carlsbad Unified,10219.31,Salaries,Office and technical staff,5065290
+2023-24,73551,Carlsbad Unified,10219.31,Salaries,Other classified staff,1297587
+2023-24,73551,Carlsbad Unified,10219.31,Benefits,"Teacher pensions (CalSTRS), paid by the district",12778269
+2023-24,73551,Carlsbad Unified,10219.31,Benefits,"Teacher pensions (CalSTRS), paid by the state on the district's behalf",6168152
+2023-24,73551,Carlsbad Unified,10219.31,Benefits,Staff pensions (CalPERS),4781525
+2023-24,73551,Carlsbad Unified,10219.31,Benefits,Social Security and Medicare,2315255
+2023-24,73551,Carlsbad Unified,10219.31,Benefits,Health and welfare benefits,15054702
+2023-24,73551,Carlsbad Unified,10219.31,Benefits,Unemployment and workers' compensation insurance,1516482
+2023-24,73551,Carlsbad Unified,10219.31,Benefits,Retiree health benefits,968516
+2023-24,73551,Carlsbad Unified,10219.31,Benefits,Other benefits,175907
+2023-24,73551,Carlsbad Unified,10219.31,Everything else,Books and supplies,4329380
+2023-24,73551,Carlsbad Unified,10219.31,Everything else,Contracted services (subagreements),17276135
+2023-24,73551,Carlsbad Unified,10219.31,Everything else,Other services and operating costs,14899594
+2023-24,73551,Carlsbad Unified,10219.31,Everything else,Capital outlay,704831
+2023-24,73551,Carlsbad Unified,10219.31,Everything else,"Tuition, payments to other agencies and debt service",471240
+2023-24,68023,Chula Vista Elementary,21220.08,Salaries,Teacher salaries,134631020
+2023-24,68023,Chula Vista Elementary,21220.08,Salaries,"Counselors, nurses and other pupil support",17560189
+2023-24,68023,Chula Vista Elementary,21220.08,Salaries,Principals and certificated administrators,13706441
+2023-24,68023,Chula Vista Elementary,21220.08,Salaries,Other certificated staff,443309
+2023-24,68023,Chula Vista Elementary,21220.08,Salaries,Classroom aides,21459897
+2023-24,68023,Chula Vista Elementary,21220.08,Salaries,"Maintenance, food, transport and other support staff",17290329
+2023-24,68023,Chula Vista Elementary,21220.08,Salaries,Classified supervisors and administrators,4332669
+2023-24,68023,Chula Vista Elementary,21220.08,Salaries,Office and technical staff,16198697
+2023-24,68023,Chula Vista Elementary,21220.08,Salaries,Other classified staff,7264435
+2023-24,68023,Chula Vista Elementary,21220.08,Benefits,"Teacher pensions (CalSTRS), paid by the district",30679565
+2023-24,68023,Chula Vista Elementary,21220.08,Benefits,"Teacher pensions (CalSTRS), paid by the state on the district's behalf",19238469
+2023-24,68023,Chula Vista Elementary,21220.08,Benefits,Staff pensions (CalPERS),16029794
+2023-24,68023,Chula Vista Elementary,21220.08,Benefits,Social Security and Medicare,7284410
+2023-24,68023,Chula Vista Elementary,21220.08,Benefits,Health and welfare benefits,28710467
+2023-24,68023,Chula Vista Elementary,21220.08,Benefits,Unemployment and workers' compensation insurance,3631681
+2023-24,68023,Chula Vista Elementary,21220.08,Benefits,Retiree health benefits,0
+2023-24,68023,Chula Vista Elementary,21220.08,Benefits,Other benefits,2095071
+2023-24,68023,Chula Vista Elementary,21220.08,Everything else,Books and supplies,14668178
+2023-24,68023,Chula Vista Elementary,21220.08,Everything else,Contracted services (subagreements),11597377
+2023-24,68023,Chula Vista Elementary,21220.08,Everything else,Other services and operating costs,34883444
+2023-24,68023,Chula Vista Elementary,21220.08,Everything else,Capital outlay,2386944
+2023-24,68023,Chula Vista Elementary,21220.08,Everything else,"Tuition, payments to other agencies and debt service",1200685
+2023-24,68031,Coronado Unified,2604.7,Salaries,Teacher salaries,17285797
+2023-24,68031,Coronado Unified,2604.7,Salaries,"Counselors, nurses and other pupil support",895619
+2023-24,68031,Coronado Unified,2604.7,Salaries,Principals and certificated administrators,2903512
+2023-24,68031,Coronado Unified,2604.7,Salaries,Other certificated staff,155093
+2023-24,68031,Coronado Unified,2604.7,Salaries,Classroom aides,2695870
+2023-24,68031,Coronado Unified,2604.7,Salaries,"Maintenance, food, transport and other support staff",2693186
+2023-24,68031,Coronado Unified,2604.7,Salaries,Classified supervisors and administrators,769917
+2023-24,68031,Coronado Unified,2604.7,Salaries,Office and technical staff,2113463
+2023-24,68031,Coronado Unified,2604.7,Salaries,Other classified staff,364627
+2023-24,68031,Coronado Unified,2604.7,Benefits,"Teacher pensions (CalSTRS), paid by the district",3848031
+2023-24,68031,Coronado Unified,2604.7,Benefits,"Teacher pensions (CalSTRS), paid by the state on the district's behalf",1728986
+2023-24,68031,Coronado Unified,2604.7,Benefits,Staff pensions (CalPERS),1979687
+2023-24,68031,Coronado Unified,2604.7,Benefits,Social Security and Medicare,977489
+2023-24,68031,Coronado Unified,2604.7,Benefits,Health and welfare benefits,4660869
+2023-24,68031,Coronado Unified,2604.7,Benefits,Unemployment and workers' compensation insurance,500134
+2023-24,68031,Coronado Unified,2604.7,Benefits,Retiree health benefits,201380
+2023-24,68031,Coronado Unified,2604.7,Benefits,Other benefits,0
+2023-24,68031,Coronado Unified,2604.7,Everything else,Books and supplies,2636950
+2023-24,68031,Coronado Unified,2604.7,Everything else,Contracted services (subagreements),1462190
+2023-24,68031,Coronado Unified,2604.7,Everything else,Other services and operating costs,6612660
+2023-24,68031,Coronado Unified,2604.7,Everything else,Capital outlay,242318
+2023-24,68031,Coronado Unified,2604.7,Everything else,"Tuition, payments to other agencies and debt service",-56088
+2023-24,68049,Dehesa Elementary,227.51,Salaries,Teacher salaries,893694
+2023-24,68049,Dehesa Elementary,227.51,Salaries,"Counselors, nurses and other pupil support",0
+2023-24,68049,Dehesa Elementary,227.51,Salaries,Principals and certificated administrators,172231
+2023-24,68049,Dehesa Elementary,227.51,Salaries,Other certificated staff,0
+2023-24,68049,Dehesa Elementary,227.51,Salaries,Classroom aides,166933
+2023-24,68049,Dehesa Elementary,227.51,Salaries,"Maintenance, food, transport and other support staff",256641
+2023-24,68049,Dehesa Elementary,227.51,Salaries,Classified supervisors and administrators,213686
+2023-24,68049,Dehesa Elementary,227.51,Salaries,Office and technical staff,161473
+2023-24,68049,Dehesa Elementary,227.51,Salaries,Other classified staff,7080
+2023-24,68049,Dehesa Elementary,227.51,Benefits,"Teacher pensions (CalSTRS), paid by the district",184742
+2023-24,68049,Dehesa Elementary,227.51,Benefits,"Teacher pensions (CalSTRS), paid by the state on the district's behalf",56504
+2023-24,68049,Dehesa Elementary,227.51,Benefits,Staff pensions (CalPERS),178191
+2023-24,68049,Dehesa Elementary,227.51,Benefits,Social Security and Medicare,75630
+2023-24,68049,Dehesa Elementary,227.51,Benefits,Health and welfare benefits,223238
+2023-24,68049,Dehesa Elementary,227.51,Benefits,Unemployment and workers' compensation insurance,31555
+2023-24,68049,Dehesa Elementary,227.51,Benefits,Retiree health benefits,0
+2023-24,68049,Dehesa Elementary,227.51,Benefits,Other benefits,9659
+2023-24,68049,Dehesa Elementary,227.51,Everything else,Books and supplies,350583
+2023-24,68049,Dehesa Elementary,227.51,Everything else,Contracted services (subagreements),0
+2023-24,68049,Dehesa Elementary,227.51,Everything else,Other services and operating costs,1249683
+2023-24,68049,Dehesa Elementary,227.51,Everything else,Capital outlay,0
+2023-24,68049,Dehesa Elementary,227.51,Everything else,"Tuition, payments to other agencies and debt service",5603
+2023-24,68056,Del Mar Union Elementary,3502.62,Salaries,Teacher salaries,29758694
+2023-24,68056,Del Mar Union Elementary,3502.62,Salaries,"Counselors, nurses and other pupil support",1557114
+2023-24,68056,Del Mar Union Elementary,3502.62,Salaries,Principals and certificated administrators,3610018
+2023-24,68056,Del Mar Union Elementary,3502.62,Salaries,Other certificated staff,0
+2023-24,68056,Del Mar Union Elementary,3502.62,Salaries,Classroom aides,2802685
+2023-24,68056,Del Mar Union Elementary,3502.62,Salaries,"Maintenance, food, transport and other support staff",3299996
+2023-24,68056,Del Mar Union Elementary,3502.62,Salaries,Classified supervisors and administrators,1183702
+2023-24,68056,Del Mar Union Elementary,3502.62,Salaries,Office and technical staff,2197487
+2023-24,68056,Del Mar Union Elementary,3502.62,Salaries,Other classified staff,931934
+2023-24,68056,Del Mar Union Elementary,3502.62,Benefits,"Teacher pensions (CalSTRS), paid by the district",6662745
+2023-24,68056,Del Mar Union Elementary,3502.62,Benefits,"Teacher pensions (CalSTRS), paid by the state on the district's behalf",3102476
+2023-24,68056,Del Mar Union Elementary,3502.62,Benefits,Staff pensions (CalPERS),2426382
+2023-24,68056,Del Mar Union Elementary,3502.62,Benefits,Social Security and Medicare,1252121
+2023-24,68056,Del Mar Union Elementary,3502.62,Benefits,Health and welfare benefits,4469360
+2023-24,68056,Del Mar Union Elementary,3502.62,Benefits,Unemployment and workers' compensation insurance,731230
+2023-24,68056,Del Mar Union Elementary,3502.62,Benefits,Retiree health benefits,282056
+2023-24,68056,Del Mar Union Elementary,3502.62,Benefits,Other benefits,38829
+2023-24,68056,Del Mar Union Elementary,3502.62,Everything else,Books and supplies,3330432
+2023-24,68056,Del Mar Union Elementary,3502.62,Everything else,Contracted services (subagreements),1402542
+2023-24,68056,Del Mar Union Elementary,3502.62,Everything else,Other services and operating costs,8783592
+2023-24,68056,Del Mar Union Elementary,3502.62,Everything else,Capital outlay,81430
+2023-24,68056,Del Mar Union Elementary,3502.62,Everything else,"Tuition, payments to other agencies and debt service",573617
+2023-24,68080,Encinitas Union Elementary,4253.04,Salaries,Teacher salaries,30637290
+2023-24,68080,Encinitas Union Elementary,4253.04,Salaries,"Counselors, nurses and other pupil support",1445332
+2023-24,68080,Encinitas Union Elementary,4253.04,Salaries,Principals and certificated administrators,3772998
+2023-24,68080,Encinitas Union Elementary,4253.04,Salaries,Other certificated staff,15200
+2023-24,68080,Encinitas Union Elementary,4253.04,Salaries,Classroom aides,3111358
+2023-24,68080,Encinitas Union Elementary,4253.04,Salaries,"Maintenance, food, transport and other support staff",3454954
+2023-24,68080,Encinitas Union Elementary,4253.04,Salaries,Classified supervisors and administrators,1167012
+2023-24,68080,Encinitas Union Elementary,4253.04,Salaries,Office and technical staff,2367838
+2023-24,68080,Encinitas Union Elementary,4253.04,Salaries,Other classified staff,1178395
+2023-24,68080,Encinitas Union Elementary,4253.04,Benefits,"Teacher pensions (CalSTRS), paid by the district",6698575
+2023-24,68080,Encinitas Union Elementary,4253.04,Benefits,"Teacher pensions (CalSTRS), paid by the state on the district's behalf",3455275
+2023-24,68080,Encinitas Union Elementary,4253.04,Benefits,Staff pensions (CalPERS),2737824
+2023-24,68080,Encinitas Union Elementary,4253.04,Benefits,Social Security and Medicare,1398598
+2023-24,68080,Encinitas Union Elementary,4253.04,Benefits,Health and welfare benefits,3519592
+2023-24,68080,Encinitas Union Elementary,4253.04,Benefits,Unemployment and workers' compensation insurance,882839
+2023-24,68080,Encinitas Union Elementary,4253.04,Benefits,Retiree health benefits,817533
+2023-24,68080,Encinitas Union Elementary,4253.04,Benefits,Other benefits,1217500
+2023-24,68080,Encinitas Union Elementary,4253.04,Everything else,Books and supplies,2197234
+2023-24,68080,Encinitas Union Elementary,4253.04,Everything else,Contracted services (subagreements),1133670
+2023-24,68080,Encinitas Union Elementary,4253.04,Everything else,Other services and operating costs,7943426
+2023-24,68080,Encinitas Union Elementary,4253.04,Everything else,Capital outlay,2471676
+2023-24,68080,Encinitas Union Elementary,4253.04,Everything else,"Tuition, payments to other agencies and debt service",-51041
+2023-24,68098,Escondido Union Elementary,12984.27,Salaries,Teacher salaries,91609551
+2023-24,68098,Escondido Union Elementary,12984.27,Salaries,"Counselors, nurses and other pupil support",11189820
+2023-24,68098,Escondido Union Elementary,12984.27,Salaries,Principals and certificated administrators,9167492
+2023-24,68098,Escondido Union Elementary,12984.27,Salaries,Other certificated staff,5188294
+2023-24,68098,Escondido Union Elementary,12984.27,Salaries,Classroom aides,11415450
+2023-24,68098,Escondido Union Elementary,12984.27,Salaries,"Maintenance, food, transport and other support staff",10647561
+2023-24,68098,Escondido Union Elementary,12984.27,Salaries,Classified supervisors and administrators,1798566
+2023-24,68098,Escondido Union Elementary,12984.27,Salaries,Office and technical staff,10331692
+2023-24,68098,Escondido Union Elementary,12984.27,Salaries,Other classified staff,3029203
+2023-24,68098,Escondido Union Elementary,12984.27,Benefits,"Teacher pensions (CalSTRS), paid by the district",21842408
+2023-24,68098,Escondido Union Elementary,12984.27,Benefits,"Teacher pensions (CalSTRS), paid by the state on the district's behalf",10387699
+2023-24,68098,Escondido Union Elementary,12984.27,Benefits,Staff pensions (CalPERS),9558072
+2023-24,68098,Escondido Union Elementary,12984.27,Benefits,Social Security and Medicare,4479961
+2023-24,68098,Escondido Union Elementary,12984.27,Benefits,Health and welfare benefits,21032534
+2023-24,68098,Escondido Union Elementary,12984.27,Benefits,Unemployment and workers' compensation insurance,2951718
+2023-24,68098,Escondido Union Elementary,12984.27,Benefits,Retiree health benefits,778195
+2023-24,68098,Escondido Union Elementary,12984.27,Benefits,Other benefits,0
+2023-24,68098,Escondido Union Elementary,12984.27,Everything else,Books and supplies,7562794
+2023-24,68098,Escondido Union Elementary,12984.27,Everything else,Contracted services (subagreements),22450105
+2023-24,68098,Escondido Union Elementary,12984.27,Everything else,Other services and operating costs,20024633
+2023-24,68098,Escondido Union Elementary,12984.27,Everything else,Capital outlay,11589990
+2023-24,68098,Escondido Union Elementary,12984.27,Everything else,"Tuition, payments to other agencies and debt service",1048557
+2023-24,68106,Escondido Union High,5936.95,Salaries,Teacher salaries,36092434
+2023-24,68106,Escondido Union High,5936.95,Salaries,"Counselors, nurses and other pupil support",4972664
+2023-24,68106,Escondido Union High,5936.95,Salaries,Principals and certificated administrators,6476422
+2023-24,68106,Escondido Union High,5936.95,Salaries,Other certificated staff,5154134
+2023-24,68106,Escondido Union High,5936.95,Salaries,Classroom aides,5199487
+2023-24,68106,Escondido Union High,5936.95,Salaries,"Maintenance, food, transport and other support staff",8374656
+2023-24,68106,Escondido Union High,5936.95,Salaries,Classified supervisors and administrators,1989396
+2023-24,68106,Escondido Union High,5936.95,Salaries,Office and technical staff,5838374
+2023-24,68106,Escondido Union High,5936.95,Salaries,Other classified staff,1302086
+2023-24,68106,Escondido Union High,5936.95,Benefits,"Teacher pensions (CalSTRS), paid by the district",9724724
+2023-24,68106,Escondido Union High,5936.95,Benefits,"Teacher pensions (CalSTRS), paid by the state on the district's behalf",4558001
+2023-24,68106,Escondido Union High,5936.95,Benefits,Staff pensions (CalPERS),5537115
+2023-24,68106,Escondido Union High,5936.95,Benefits,Social Security and Medicare,2476272
+2023-24,68106,Escondido Union High,5936.95,Benefits,Health and welfare benefits,12133745
+2023-24,68106,Escondido Union High,5936.95,Benefits,Unemployment and workers' compensation insurance,1516242
+2023-24,68106,Escondido Union High,5936.95,Benefits,Retiree health benefits,1116094
+2023-24,68106,Escondido Union High,5936.95,Benefits,Other benefits,683168
+2023-24,68106,Escondido Union High,5936.95,Everything else,Books and supplies,5890537
+2023-24,68106,Escondido Union High,5936.95,Everything else,Contracted services (subagreements),0
+2023-24,68106,Escondido Union High,5936.95,Everything else,Other services and operating costs,15777574
+2023-24,68106,Escondido Union High,5936.95,Everything else,Capital outlay,3991190
+2023-24,68106,Escondido Union High,5936.95,Everything else,"Tuition, payments to other agencies and debt service",-289429
+2023-24,68114,Fallbrook Union Elementary,4797.86,Salaries,Teacher salaries,35199412
+2023-24,68114,Fallbrook Union Elementary,4797.86,Salaries,"Counselors, nurses and other pupil support",2220098
+2023-24,68114,Fallbrook Union Elementary,4797.86,Salaries,Principals and certificated administrators,4297607
+2023-24,68114,Fallbrook Union Elementary,4797.86,Salaries,Other certificated staff,108742
+2023-24,68114,Fallbrook Union Elementary,4797.86,Salaries,Classroom aides,5210197
+2023-24,68114,Fallbrook Union Elementary,4797.86,Salaries,"Maintenance, food, transport and other support staff",6396104
+2023-24,68114,Fallbrook Union Elementary,4797.86,Salaries,Classified supervisors and administrators,1569525
+2023-24,68114,Fallbrook Union Elementary,4797.86,Salaries,Office and technical staff,3650771
+2023-24,68114,Fallbrook Union Elementary,4797.86,Salaries,Other classified staff,2357554
+2023-24,68114,Fallbrook Union Elementary,4797.86,Benefits,"Teacher pensions (CalSTRS), paid by the district",7574354
+2023-24,68114,Fallbrook Union Elementary,4797.86,Benefits,"Teacher pensions (CalSTRS), paid by the state on the district's behalf",3800598
+2023-24,68114,Fallbrook Union Elementary,4797.86,Benefits,Staff pensions (CalPERS),4154948
+2023-24,68114,Fallbrook Union Elementary,4797.86,Benefits,Social Security and Medicare,1896246
+2023-24,68114,Fallbrook Union Elementary,4797.86,Benefits,Health and welfare benefits,9282492
+2023-24,68114,Fallbrook Union Elementary,4797.86,Benefits,Unemployment and workers' compensation insurance,1070093
+2023-24,68114,Fallbrook Union Elementary,4797.86,Benefits,Retiree health benefits,507123
+2023-24,68114,Fallbrook Union Elementary,4797.86,Benefits,Other benefits,193431
+2023-24,68114,Fallbrook Union Elementary,4797.86,Everything else,Books and supplies,3721296
+2023-24,68114,Fallbrook Union Elementary,4797.86,Everything else,Contracted services (subagreements),824890
+2023-24,68114,Fallbrook Union Elementary,4797.86,Everything else,Other services and operating costs,9244777
+2023-24,68114,Fallbrook Union Elementary,4797.86,Everything else,Capital outlay,634641
+2023-24,68114,Fallbrook Union Elementary,4797.86,Everything else,"Tuition, payments to other agencies and debt service",290971
+2023-24,68122,Fallbrook Union High,1867.55,Salaries,Teacher salaries,12521581
+2023-24,68122,Fallbrook Union High,1867.55,Salaries,"Counselors, nurses and other pupil support",1303146
+2023-24,68122,Fallbrook Union High,1867.55,Salaries,Principals and certificated administrators,1273358
+2023-24,68122,Fallbrook Union High,1867.55,Salaries,Other certificated staff,393163
+2023-24,68122,Fallbrook Union High,1867.55,Salaries,Classroom aides,2128887
+2023-24,68122,Fallbrook Union High,1867.55,Salaries,"Maintenance, food, transport and other support staff",2175246
+2023-24,68122,Fallbrook Union High,1867.55,Salaries,Classified supervisors and administrators,482704
+2023-24,68122,Fallbrook Union High,1867.55,Salaries,Office and technical staff,1807469
+2023-24,68122,Fallbrook Union High,1867.55,Salaries,Other classified staff,139245
+2023-24,68122,Fallbrook Union High,1867.55,Benefits,"Teacher pensions (CalSTRS), paid by the district",2704909
+2023-24,68122,Fallbrook Union High,1867.55,Benefits,"Teacher pensions (CalSTRS), paid by the state on the district's behalf",1264288
+2023-24,68122,Fallbrook Union High,1867.55,Benefits,Staff pensions (CalPERS),1655427
+2023-24,68122,Fallbrook Union High,1867.55,Benefits,Social Security and Medicare,727818
+2023-24,68122,Fallbrook Union High,1867.55,Benefits,Health and welfare benefits,2623717
+2023-24,68122,Fallbrook Union High,1867.55,Benefits,Unemployment and workers' compensation insurance,362760
+2023-24,68122,Fallbrook Union High,1867.55,Benefits,Retiree health benefits,612248
+2023-24,68122,Fallbrook Union High,1867.55,Benefits,Other benefits,0
+2023-24,68122,Fallbrook Union High,1867.55,Everything else,Books and supplies,2373920
+2023-24,68122,Fallbrook Union High,1867.55,Everything else,Contracted services (subagreements),2370393
+2023-24,68122,Fallbrook Union High,1867.55,Everything else,Other services and operating costs,5168540
+2023-24,68122,Fallbrook Union High,1867.55,Everything else,Capital outlay,1117366
+2023-24,68122,Fallbrook Union High,1867.55,Everything else,"Tuition, payments to other agencies and debt service",744656
+2023-24,68130,Grossmont Union High,14835.35,Salaries,Teacher salaries,99754723
+2023-24,68130,Grossmont Union High,14835.35,Salaries,"Counselors, nurses and other pupil support",11768396
+2023-24,68130,Grossmont Union High,14835.35,Salaries,Principals and certificated administrators,11855064
+2023-24,68130,Grossmont Union High,14835.35,Salaries,Other certificated staff,6276044
+2023-24,68130,Grossmont Union High,14835.35,Salaries,Classroom aides,11994692
+2023-24,68130,Grossmont Union High,14835.35,Salaries,"Maintenance, food, transport and other support staff",16238429
+2023-24,68130,Grossmont Union High,14835.35,Salaries,Classified supervisors and administrators,4695009
+2023-24,68130,Grossmont Union High,14835.35,Salaries,Office and technical staff,14756060
+2023-24,68130,Grossmont Union High,14835.35,Salaries,Other classified staff,6939592
+2023-24,68130,Grossmont Union High,14835.35,Benefits,"Teacher pensions (CalSTRS), paid by the district",22888671
+2023-24,68130,Grossmont Union High,14835.35,Benefits,"Teacher pensions (CalSTRS), paid by the state on the district's behalf",9743198
+2023-24,68130,Grossmont Union High,14835.35,Benefits,Staff pensions (CalPERS),15034587
+2023-24,68130,Grossmont Union High,14835.35,Benefits,Social Security and Medicare,6217110
+2023-24,68130,Grossmont Union High,14835.35,Benefits,Health and welfare benefits,25621092
+2023-24,68130,Grossmont Union High,14835.35,Benefits,Unemployment and workers' compensation insurance,2788594
+2023-24,68130,Grossmont Union High,14835.35,Benefits,Retiree health benefits,3302070
+2023-24,68130,Grossmont Union High,14835.35,Benefits,Other benefits,175714
+2023-24,68130,Grossmont Union High,14835.35,Everything else,Books and supplies,11939412
+2023-24,68130,Grossmont Union High,14835.35,Everything else,Contracted services (subagreements),18167283
+2023-24,68130,Grossmont Union High,14835.35,Everything else,Other services and operating costs,25742631
+2023-24,68130,Grossmont Union High,14835.35,Everything else,Capital outlay,12236074
+2023-24,68130,Grossmont Union High,14835.35,Everything else,"Tuition, payments to other agencies and debt service",1769663
+2023-24,68155,Jamul-Dulzura Union Elementary,562.34,Salaries,Teacher salaries,2375319
+2023-24,68155,Jamul-Dulzura Union Elementary,562.34,Salaries,"Counselors, nurses and other pupil support",153345
+2023-24,68155,Jamul-Dulzura Union Elementary,562.34,Salaries,Principals and certificated administrators,611865
+2023-24,68155,Jamul-Dulzura Union Elementary,562.34,Salaries,Other certificated staff,12193
+2023-24,68155,Jamul-Dulzura Union Elementary,562.34,Salaries,Classroom aides,401145
+2023-24,68155,Jamul-Dulzura Union Elementary,562.34,Salaries,"Maintenance, food, transport and other support staff",643117
+2023-24,68155,Jamul-Dulzura Union Elementary,562.34,Salaries,Classified supervisors and administrators,402421
+2023-24,68155,Jamul-Dulzura Union Elementary,562.34,Salaries,Office and technical staff,531037
+2023-24,68155,Jamul-Dulzura Union Elementary,562.34,Salaries,Other classified staff,82719
+2023-24,68155,Jamul-Dulzura Union Elementary,562.34,Benefits,"Teacher pensions (CalSTRS), paid by the district",528465
+2023-24,68155,Jamul-Dulzura Union Elementary,562.34,Benefits,"Teacher pensions (CalSTRS), paid by the state on the district's behalf",238380
+2023-24,68155,Jamul-Dulzura Union Elementary,562.34,Benefits,Staff pensions (CalPERS),421813
+2023-24,68155,Jamul-Dulzura Union Elementary,562.34,Benefits,Social Security and Medicare,207436
+2023-24,68155,Jamul-Dulzura Union Elementary,562.34,Benefits,Health and welfare benefits,528750
+2023-24,68155,Jamul-Dulzura Union Elementary,562.34,Benefits,Unemployment and workers' compensation insurance,77404
+2023-24,68155,Jamul-Dulzura Union Elementary,562.34,Benefits,Retiree health benefits,30659
+2023-24,68155,Jamul-Dulzura Union Elementary,562.34,Benefits,Other benefits,0
+2023-24,68155,Jamul-Dulzura Union Elementary,562.34,Everything else,Books and supplies,856422
+2023-24,68155,Jamul-Dulzura Union Elementary,562.34,Everything else,Contracted services (subagreements),453652
+2023-24,68155,Jamul-Dulzura Union Elementary,562.34,Everything else,Other services and operating costs,1393803
+2023-24,68155,Jamul-Dulzura Union Elementary,562.34,Everything else,Capital outlay,0
+2023-24,68155,Jamul-Dulzura Union Elementary,562.34,Everything else,"Tuition, payments to other agencies and debt service",187747
+2023-24,68163,Julian Union Elementary,253.23,Salaries,Teacher salaries,1432558
+2023-24,68163,Julian Union Elementary,253.23,Salaries,"Counselors, nurses and other pupil support",0
+2023-24,68163,Julian Union Elementary,253.23,Salaries,Principals and certificated administrators,388655
+2023-24,68163,Julian Union Elementary,253.23,Salaries,Other certificated staff,0
+2023-24,68163,Julian Union Elementary,253.23,Salaries,Classroom aides,346191
+2023-24,68163,Julian Union Elementary,253.23,Salaries,"Maintenance, food, transport and other support staff",212388
+2023-24,68163,Julian Union Elementary,253.23,Salaries,Classified supervisors and administrators,16194
+2023-24,68163,Julian Union Elementary,253.23,Salaries,Office and technical staff,371484
+2023-24,68163,Julian Union Elementary,253.23,Salaries,Other classified staff,8300
+2023-24,68163,Julian Union Elementary,253.23,Benefits,"Teacher pensions (CalSTRS), paid by the district",319855
+2023-24,68163,Julian Union Elementary,253.23,Benefits,"Teacher pensions (CalSTRS), paid by the state on the district's behalf",120661
+2023-24,68163,Julian Union Elementary,253.23,Benefits,Staff pensions (CalPERS),276639
+2023-24,68163,Julian Union Elementary,253.23,Benefits,Social Security and Medicare,114128
+2023-24,68163,Julian Union Elementary,253.23,Benefits,Health and welfare benefits,629638
+2023-24,68163,Julian Union Elementary,253.23,Benefits,Unemployment and workers' compensation insurance,53592
+2023-24,68163,Julian Union Elementary,253.23,Benefits,Retiree health benefits,0
+2023-24,68163,Julian Union Elementary,253.23,Benefits,Other benefits,0
+2023-24,68163,Julian Union Elementary,253.23,Everything else,Books and supplies,310459
+2023-24,68163,Julian Union Elementary,253.23,Everything else,Contracted services (subagreements),0
+2023-24,68163,Julian Union Elementary,253.23,Everything else,Other services and operating costs,1709752
+2023-24,68163,Julian Union Elementary,253.23,Everything else,Capital outlay,150108
+2023-24,68163,Julian Union Elementary,253.23,Everything else,"Tuition, payments to other agencies and debt service",5115
+2023-24,68171,Julian Union High,110.05,Salaries,Teacher salaries,791186
+2023-24,68171,Julian Union High,110.05,Salaries,"Counselors, nurses and other pupil support",75192
+2023-24,68171,Julian Union High,110.05,Salaries,Principals and certificated administrators,279420
+2023-24,68171,Julian Union High,110.05,Salaries,Other certificated staff,73402
+2023-24,68171,Julian Union High,110.05,Salaries,Classroom aides,124857
+2023-24,68171,Julian Union High,110.05,Salaries,"Maintenance, food, transport and other support staff",194017
+2023-24,68171,Julian Union High,110.05,Salaries,Classified supervisors and administrators,159453
+2023-24,68171,Julian Union High,110.05,Salaries,Office and technical staff,148015
+2023-24,68171,Julian Union High,110.05,Salaries,Other classified staff,3514
+2023-24,68171,Julian Union High,110.05,Benefits,"Teacher pensions (CalSTRS), paid by the district",181720
+2023-24,68171,Julian Union High,110.05,Benefits,"Teacher pensions (CalSTRS), paid by the state on the district's behalf",71461
+2023-24,68171,Julian Union High,110.05,Benefits,Staff pensions (CalPERS),149730
+2023-24,68171,Julian Union High,110.05,Benefits,Social Security and Medicare,55397
+2023-24,68171,Julian Union High,110.05,Benefits,Health and welfare benefits,213206
+2023-24,68171,Julian Union High,110.05,Benefits,Unemployment and workers' compensation insurance,46448
+2023-24,68171,Julian Union High,110.05,Benefits,Retiree health benefits,0
+2023-24,68171,Julian Union High,110.05,Benefits,Other benefits,0
+2023-24,68171,Julian Union High,110.05,Everything else,Books and supplies,720238
+2023-24,68171,Julian Union High,110.05,Everything else,Contracted services (subagreements),20002
+2023-24,68171,Julian Union High,110.05,Everything else,Other services and operating costs,764443
+2023-24,68171,Julian Union High,110.05,Everything else,Capital outlay,79550
+2023-24,68171,Julian Union High,110.05,Everything else,"Tuition, payments to other agencies and debt service",-5742
+2023-24,68197,La Mesa-Spring Valley,9911.51,Salaries,Teacher salaries,64018081
+2023-24,68197,La Mesa-Spring Valley,9911.51,Salaries,"Counselors, nurses and other pupil support",10438238
+2023-24,68197,La Mesa-Spring Valley,9911.51,Salaries,Principals and certificated administrators,8286233
+2023-24,68197,La Mesa-Spring Valley,9911.51,Salaries,Other certificated staff,682049
+2023-24,68197,La Mesa-Spring Valley,9911.51,Salaries,Classroom aides,10282382
+2023-24,68197,La Mesa-Spring Valley,9911.51,Salaries,"Maintenance, food, transport and other support staff",8463294
+2023-24,68197,La Mesa-Spring Valley,9911.51,Salaries,Classified supervisors and administrators,2474412
+2023-24,68197,La Mesa-Spring Valley,9911.51,Salaries,Office and technical staff,8738184
+2023-24,68197,La Mesa-Spring Valley,9911.51,Salaries,Other classified staff,6864923
+2023-24,68197,La Mesa-Spring Valley,9911.51,Benefits,"Teacher pensions (CalSTRS), paid by the district",15217824
+2023-24,68197,La Mesa-Spring Valley,9911.51,Benefits,"Teacher pensions (CalSTRS), paid by the state on the district's behalf",6935528
+2023-24,68197,La Mesa-Spring Valley,9911.51,Benefits,Staff pensions (CalPERS),8213052
+2023-24,68197,La Mesa-Spring Valley,9911.51,Benefits,Social Security and Medicare,4106064
+2023-24,68197,La Mesa-Spring Valley,9911.51,Benefits,Health and welfare benefits,13842228
+2023-24,68197,La Mesa-Spring Valley,9911.51,Benefits,Unemployment and workers' compensation insurance,2280014
+2023-24,68197,La Mesa-Spring Valley,9911.51,Benefits,Retiree health benefits,2094902
+2023-24,68197,La Mesa-Spring Valley,9911.51,Benefits,Other benefits,1565447
+2023-24,68197,La Mesa-Spring Valley,9911.51,Everything else,Books and supplies,9723834
+2023-24,68197,La Mesa-Spring Valley,9911.51,Everything else,Contracted services (subagreements),0
+2023-24,68197,La Mesa-Spring Valley,9911.51,Everything else,Other services and operating costs,15034789
+2023-24,68197,La Mesa-Spring Valley,9911.51,Everything else,Capital outlay,3521176
+2023-24,68197,La Mesa-Spring Valley,9911.51,Everything else,"Tuition, payments to other agencies and debt service",-177668
+2023-24,68189,Lakeside Union Elementary,4238.89,Salaries,Teacher salaries,25678081
+2023-24,68189,Lakeside Union Elementary,4238.89,Salaries,"Counselors, nurses and other pupil support",1766932
+2023-24,68189,Lakeside Union Elementary,4238.89,Salaries,Principals and certificated administrators,2596998
+2023-24,68189,Lakeside Union Elementary,4238.89,Salaries,Other certificated staff,253099
+2023-24,68189,Lakeside Union Elementary,4238.89,Salaries,Classroom aides,3283640
+2023-24,68189,Lakeside Union Elementary,4238.89,Salaries,"Maintenance, food, transport and other support staff",3018079
+2023-24,68189,Lakeside Union Elementary,4238.89,Salaries,Classified supervisors and administrators,943322
+2023-24,68189,Lakeside Union Elementary,4238.89,Salaries,Office and technical staff,2574182
+2023-24,68189,Lakeside Union Elementary,4238.89,Salaries,Other classified staff,2076662
+2023-24,68189,Lakeside Union Elementary,4238.89,Benefits,"Teacher pensions (CalSTRS), paid by the district",5560623
+2023-24,68189,Lakeside Union Elementary,4238.89,Benefits,"Teacher pensions (CalSTRS), paid by the state on the district's behalf",2476968
+2023-24,68189,Lakeside Union Elementary,4238.89,Benefits,Staff pensions (CalPERS),2727050
+2023-24,68189,Lakeside Union Elementary,4238.89,Benefits,Social Security and Medicare,1352595
+2023-24,68189,Lakeside Union Elementary,4238.89,Benefits,Health and welfare benefits,8089774
+2023-24,68189,Lakeside Union Elementary,4238.89,Benefits,Unemployment and workers' compensation insurance,659535
+2023-24,68189,Lakeside Union Elementary,4238.89,Benefits,Retiree health benefits,643184
+2023-24,68189,Lakeside Union Elementary,4238.89,Benefits,Other benefits,426850
+2023-24,68189,Lakeside Union Elementary,4238.89,Everything else,Books and supplies,2880447
+2023-24,68189,Lakeside Union Elementary,4238.89,Everything else,Contracted services (subagreements),145965
+2023-24,68189,Lakeside Union Elementary,4238.89,Everything else,Other services and operating costs,7015796
+2023-24,68189,Lakeside Union Elementary,4238.89,Everything else,Capital outlay,5191805
+2023-24,68189,Lakeside Union Elementary,4238.89,Everything else,"Tuition, payments to other agencies and debt service",997528
+2023-24,68205,Lemon Grove Elementary,2847.43,Salaries,Teacher salaries,20197841
+2023-24,68205,Lemon Grove Elementary,2847.43,Salaries,"Counselors, nurses and other pupil support",1753471
+2023-24,68205,Lemon Grove Elementary,2847.43,Salaries,Principals and certificated administrators,3072199
+2023-24,68205,Lemon Grove Elementary,2847.43,Salaries,Other certificated staff,118866
+2023-24,68205,Lemon Grove Elementary,2847.43,Salaries,Classroom aides,2166087
+2023-24,68205,Lemon Grove Elementary,2847.43,Salaries,"Maintenance, food, transport and other support staff",2384669
+2023-24,68205,Lemon Grove Elementary,2847.43,Salaries,Classified supervisors and administrators,1029244
+2023-24,68205,Lemon Grove Elementary,2847.43,Salaries,Office and technical staff,2022752
+2023-24,68205,Lemon Grove Elementary,2847.43,Salaries,Other classified staff,2112937
+2023-24,68205,Lemon Grove Elementary,2847.43,Benefits,"Teacher pensions (CalSTRS), paid by the district",4620888
+2023-24,68205,Lemon Grove Elementary,2847.43,Benefits,"Teacher pensions (CalSTRS), paid by the state on the district's behalf",2141949
+2023-24,68205,Lemon Grove Elementary,2847.43,Benefits,Staff pensions (CalPERS),2071309
+2023-24,68205,Lemon Grove Elementary,2847.43,Benefits,Social Security and Medicare,1093499
+2023-24,68205,Lemon Grove Elementary,2847.43,Benefits,Health and welfare benefits,4022643
+2023-24,68205,Lemon Grove Elementary,2847.43,Benefits,Unemployment and workers' compensation insurance,587741
+2023-24,68205,Lemon Grove Elementary,2847.43,Benefits,Retiree health benefits,672828
+2023-24,68205,Lemon Grove Elementary,2847.43,Benefits,Other benefits,0
+2023-24,68205,Lemon Grove Elementary,2847.43,Everything else,Books and supplies,4620689
+2023-24,68205,Lemon Grove Elementary,2847.43,Everything else,Contracted services (subagreements),582904
+2023-24,68205,Lemon Grove Elementary,2847.43,Everything else,Other services and operating costs,7811223
+2023-24,68205,Lemon Grove Elementary,2847.43,Everything else,Capital outlay,373276
+2023-24,68205,Lemon Grove Elementary,2847.43,Everything else,"Tuition, payments to other agencies and debt service",10894
+2023-24,68213,Mountain Empire Unified,1665.71,Salaries,Teacher salaries,9981358
+2023-24,68213,Mountain Empire Unified,1665.71,Salaries,"Counselors, nurses and other pupil support",1081356
+2023-24,68213,Mountain Empire Unified,1665.71,Salaries,Principals and certificated administrators,659639
+2023-24,68213,Mountain Empire Unified,1665.71,Salaries,Other certificated staff,167155
+2023-24,68213,Mountain Empire Unified,1665.71,Salaries,Classroom aides,1576971
+2023-24,68213,Mountain Empire Unified,1665.71,Salaries,"Maintenance, food, transport and other support staff",2214458
+2023-24,68213,Mountain Empire Unified,1665.71,Salaries,Classified supervisors and administrators,418833
+2023-24,68213,Mountain Empire Unified,1665.71,Salaries,Office and technical staff,1317481
+2023-24,68213,Mountain Empire Unified,1665.71,Salaries,Other classified staff,1137200
+2023-24,68213,Mountain Empire Unified,1665.71,Benefits,"Teacher pensions (CalSTRS), paid by the district",2070771
+2023-24,68213,Mountain Empire Unified,1665.71,Benefits,"Teacher pensions (CalSTRS), paid by the state on the district's behalf",976563
+2023-24,68213,Mountain Empire Unified,1665.71,Benefits,Staff pensions (CalPERS),1633326
+2023-24,68213,Mountain Empire Unified,1665.71,Benefits,Social Security and Medicare,693207
+2023-24,68213,Mountain Empire Unified,1665.71,Benefits,Health and welfare benefits,3033717
+2023-24,68213,Mountain Empire Unified,1665.71,Benefits,Unemployment and workers' compensation insurance,399750
+2023-24,68213,Mountain Empire Unified,1665.71,Benefits,Retiree health benefits,178611
+2023-24,68213,Mountain Empire Unified,1665.71,Benefits,Other benefits,17597
+2023-24,68213,Mountain Empire Unified,1665.71,Everything else,Books and supplies,2302128
+2023-24,68213,Mountain Empire Unified,1665.71,Everything else,Contracted services (subagreements),354795
+2023-24,68213,Mountain Empire Unified,1665.71,Everything else,Other services and operating costs,5523090
+2023-24,68213,Mountain Empire Unified,1665.71,Everything else,Capital outlay,595378
+2023-24,68213,Mountain Empire Unified,1665.71,Everything else,"Tuition, payments to other agencies and debt service",866308
+2023-24,68221,National Elementary,3831.13,Salaries,Teacher salaries,27309902
+2023-24,68221,National Elementary,3831.13,Salaries,"Counselors, nurses and other pupil support",2162153
+2023-24,68221,National Elementary,3831.13,Salaries,Principals and certificated administrators,4233441
+2023-24,68221,National Elementary,3831.13,Salaries,Other certificated staff,29242
+2023-24,68221,National Elementary,3831.13,Salaries,Classroom aides,4461273
+2023-24,68221,National Elementary,3831.13,Salaries,"Maintenance, food, transport and other support staff",4328189
+2023-24,68221,National Elementary,3831.13,Salaries,Classified supervisors and administrators,1344242
+2023-24,68221,National Elementary,3831.13,Salaries,Office and technical staff,3436820
+2023-24,68221,National Elementary,3831.13,Salaries,Other classified staff,1142584
+2023-24,68221,National Elementary,3831.13,Benefits,"Teacher pensions (CalSTRS), paid by the district",6150629
+2023-24,68221,National Elementary,3831.13,Benefits,"Teacher pensions (CalSTRS), paid by the state on the district's behalf",2712880
+2023-24,68221,National Elementary,3831.13,Benefits,Staff pensions (CalPERS),3251608
+2023-24,68221,National Elementary,3831.13,Benefits,Social Security and Medicare,1483413
+2023-24,68221,National Elementary,3831.13,Benefits,Health and welfare benefits,8373772
+2023-24,68221,National Elementary,3831.13,Benefits,Unemployment and workers' compensation insurance,1329536
+2023-24,68221,National Elementary,3831.13,Benefits,Retiree health benefits,338658
+2023-24,68221,National Elementary,3831.13,Benefits,Other benefits,141223
+2023-24,68221,National Elementary,3831.13,Everything else,Books and supplies,6894919
+2023-24,68221,National Elementary,3831.13,Everything else,Contracted services (subagreements),4448970
+2023-24,68221,National Elementary,3831.13,Everything else,Other services and operating costs,14369391
+2023-24,68221,National Elementary,3831.13,Everything else,Capital outlay,3124767
+2023-24,68221,National Elementary,3831.13,Everything else,"Tuition, payments to other agencies and debt service",483355
+2023-24,73569,Oceanside Unified,13968.58,Salaries,Teacher salaries,84416910
+2023-24,73569,Oceanside Unified,13968.58,Salaries,"Counselors, nurses and other pupil support",8846252
+2023-24,73569,Oceanside Unified,13968.58,Salaries,Principals and certificated administrators,10677041
+2023-24,73569,Oceanside Unified,13968.58,Salaries,Other certificated staff,2897297
+2023-24,73569,Oceanside Unified,13968.58,Salaries,Classroom aides,8953996
+2023-24,73569,Oceanside Unified,13968.58,Salaries,"Maintenance, food, transport and other support staff",11887979
+2023-24,73569,Oceanside Unified,13968.58,Salaries,Classified supervisors and administrators,1916560
+2023-24,73569,Oceanside Unified,13968.58,Salaries,Office and technical staff,12077751
+2023-24,73569,Oceanside Unified,13968.58,Salaries,Other classified staff,4541883
+2023-24,73569,Oceanside Unified,13968.58,Benefits,"Teacher pensions (CalSTRS), paid by the district",20022811
+2023-24,73569,Oceanside Unified,13968.58,Benefits,"Teacher pensions (CalSTRS), paid by the state on the district's behalf",9951578
+2023-24,73569,Oceanside Unified,13968.58,Benefits,Staff pensions (CalPERS),9749805
+2023-24,73569,Oceanside Unified,13968.58,Benefits,Social Security and Medicare,4645483
+2023-24,73569,Oceanside Unified,13968.58,Benefits,Health and welfare benefits,26489869
+2023-24,73569,Oceanside Unified,13968.58,Benefits,Unemployment and workers' compensation insurance,3156376
+2023-24,73569,Oceanside Unified,13968.58,Benefits,Retiree health benefits,157932
+2023-24,73569,Oceanside Unified,13968.58,Benefits,Other benefits,257180
+2023-24,73569,Oceanside Unified,13968.58,Everything else,Books and supplies,10383443
+2023-24,73569,Oceanside Unified,13968.58,Everything else,Contracted services (subagreements),7582065
+2023-24,73569,Oceanside Unified,13968.58,Everything else,Other services and operating costs,38734693
+2023-24,73569,Oceanside Unified,13968.58,Everything else,Capital outlay,11385522
+2023-24,73569,Oceanside Unified,13968.58,Everything else,"Tuition, payments to other agencies and debt service",1474013
+2023-24,68296,Poway Unified,33174.46,Salaries,Teacher salaries,179449563
+2023-24,68296,Poway Unified,33174.46,Salaries,"Counselors, nurses and other pupil support",19022101
+2023-24,68296,Poway Unified,33174.46,Salaries,Principals and certificated administrators,16918911
+2023-24,68296,Poway Unified,33174.46,Salaries,Other certificated staff,7673998
+2023-24,68296,Poway Unified,33174.46,Salaries,Classroom aides,30425768
+2023-24,68296,Poway Unified,33174.46,Salaries,"Maintenance, food, transport and other support staff",23200925
+2023-24,68296,Poway Unified,33174.46,Salaries,Classified supervisors and administrators,6356953
+2023-24,68296,Poway Unified,33174.46,Salaries,Office and technical staff,20593689
+2023-24,68296,Poway Unified,33174.46,Salaries,Other classified staff,5891659
+2023-24,68296,Poway Unified,33174.46,Benefits,"Teacher pensions (CalSTRS), paid by the district",41078249
+2023-24,68296,Poway Unified,33174.46,Benefits,"Teacher pensions (CalSTRS), paid by the state on the district's behalf",19079047
+2023-24,68296,Poway Unified,33174.46,Benefits,Staff pensions (CalPERS),21748815
+2023-24,68296,Poway Unified,33174.46,Benefits,Social Security and Medicare,9667577
+2023-24,68296,Poway Unified,33174.46,Benefits,Health and welfare benefits,46594668
+2023-24,68296,Poway Unified,33174.46,Benefits,Unemployment and workers' compensation insurance,6163563
+2023-24,68296,Poway Unified,33174.46,Benefits,Retiree health benefits,2127216
+2023-24,68296,Poway Unified,33174.46,Benefits,Other benefits,3316904
+2023-24,68296,Poway Unified,33174.46,Everything else,Books and supplies,15304629
+2023-24,68296,Poway Unified,33174.46,Everything else,Contracted services (subagreements),9227614
+2023-24,68296,Poway Unified,33174.46,Everything else,Other services and operating costs,38681073
+2023-24,68296,Poway Unified,33174.46,Everything else,Capital outlay,10287396
+2023-24,68296,Poway Unified,33174.46,Everything else,"Tuition, payments to other agencies and debt service",3055408
+2023-24,68304,Ramona City Unified,4693.12,Salaries,Teacher salaries,24265360
+2023-24,68304,Ramona City Unified,4693.12,Salaries,"Counselors, nurses and other pupil support",2952818
+2023-24,68304,Ramona City Unified,4693.12,Salaries,Principals and certificated administrators,3272725
+2023-24,68304,Ramona City Unified,4693.12,Salaries,Other certificated staff,754903
+2023-24,68304,Ramona City Unified,4693.12,Salaries,Classroom aides,3328591
+2023-24,68304,Ramona City Unified,4693.12,Salaries,"Maintenance, food, transport and other support staff",4351951
+2023-24,68304,Ramona City Unified,4693.12,Salaries,Classified supervisors and administrators,1208697
+2023-24,68304,Ramona City Unified,4693.12,Salaries,Office and technical staff,3412890
+2023-24,68304,Ramona City Unified,4693.12,Salaries,Other classified staff,2163238
+2023-24,68304,Ramona City Unified,4693.12,Benefits,"Teacher pensions (CalSTRS), paid by the district",5656983
+2023-24,68304,Ramona City Unified,4693.12,Benefits,"Teacher pensions (CalSTRS), paid by the state on the district's behalf",2577033
+2023-24,68304,Ramona City Unified,4693.12,Benefits,Staff pensions (CalPERS),3608231
+2023-24,68304,Ramona City Unified,4693.12,Benefits,Social Security and Medicare,1495679
+2023-24,68304,Ramona City Unified,4693.12,Benefits,Health and welfare benefits,7195031
+2023-24,68304,Ramona City Unified,4693.12,Benefits,Unemployment and workers' compensation insurance,728450
+2023-24,68304,Ramona City Unified,4693.12,Benefits,Retiree health benefits,63351
+2023-24,68304,Ramona City Unified,4693.12,Benefits,Other benefits,750
+2023-24,68304,Ramona City Unified,4693.12,Everything else,Books and supplies,3199633
+2023-24,68304,Ramona City Unified,4693.12,Everything else,Contracted services (subagreements),0
+2023-24,68304,Ramona City Unified,4693.12,Everything else,Other services and operating costs,8072060
+2023-24,68304,Ramona City Unified,4693.12,Everything else,Capital outlay,3694317
+2023-24,68304,Ramona City Unified,4693.12,Everything else,"Tuition, payments to other agencies and debt service",2507527
+2023-24,68312,Rancho Santa Fe Elementary,509.87,Salaries,Teacher salaries,5220457
+2023-24,68312,Rancho Santa Fe Elementary,509.87,Salaries,"Counselors, nurses and other pupil support",385728
+2023-24,68312,Rancho Santa Fe Elementary,509.87,Salaries,Principals and certificated administrators,736431
+2023-24,68312,Rancho Santa Fe Elementary,509.87,Salaries,Other certificated staff,0
+2023-24,68312,Rancho Santa Fe Elementary,509.87,Salaries,Classroom aides,1188777
+2023-24,68312,Rancho Santa Fe Elementary,509.87,Salaries,"Maintenance, food, transport and other support staff",351811
+2023-24,68312,Rancho Santa Fe Elementary,509.87,Salaries,Classified supervisors and administrators,115012
+2023-24,68312,Rancho Santa Fe Elementary,509.87,Salaries,Office and technical staff,641362
+2023-24,68312,Rancho Santa Fe Elementary,509.87,Salaries,Other classified staff,495099
+2023-24,68312,Rancho Santa Fe Elementary,509.87,Benefits,"Teacher pensions (CalSTRS), paid by the district",1158179
+2023-24,68312,Rancho Santa Fe Elementary,509.87,Benefits,"Teacher pensions (CalSTRS), paid by the state on the district's behalf",522660
+2023-24,68312,Rancho Santa Fe Elementary,509.87,Benefits,Staff pensions (CalPERS),653050
+2023-24,68312,Rancho Santa Fe Elementary,509.87,Benefits,Social Security and Medicare,290152
+2023-24,68312,Rancho Santa Fe Elementary,509.87,Benefits,Health and welfare benefits,852988
+2023-24,68312,Rancho Santa Fe Elementary,509.87,Benefits,Unemployment and workers' compensation insurance,198449
+2023-24,68312,Rancho Santa Fe Elementary,509.87,Benefits,Retiree health benefits,136822
+2023-24,68312,Rancho Santa Fe Elementary,509.87,Benefits,Other benefits,0
+2023-24,68312,Rancho Santa Fe Elementary,509.87,Everything else,Books and supplies,552464
+2023-24,68312,Rancho Santa Fe Elementary,509.87,Everything else,Contracted services (subagreements),0
+2023-24,68312,Rancho Santa Fe Elementary,509.87,Everything else,Other services and operating costs,1643281
+2023-24,68312,Rancho Santa Fe Elementary,509.87,Everything else,Capital outlay,452053
+2023-24,68312,Rancho Santa Fe Elementary,509.87,Everything else,"Tuition, payments to other agencies and debt service",6499
+2023-24,10371,San Diego County Office of Education,0.0,Salaries,Teacher salaries,27304964
+2023-24,10371,San Diego County Office of Education,0.0,Salaries,"Counselors, nurses and other pupil support",4443786
+2023-24,10371,San Diego County Office of Education,0.0,Salaries,Principals and certificated administrators,32100973
+2023-24,10371,San Diego County Office of Education,0.0,Salaries,Other certificated staff,4351832
+2023-24,10371,San Diego County Office of Education,0.0,Salaries,Classroom aides,7668543
+2023-24,10371,San Diego County Office of Education,0.0,Salaries,"Maintenance, food, transport and other support staff",4693443
+2023-24,10371,San Diego County Office of Education,0.0,Salaries,Classified supervisors and administrators,25372002
+2023-24,10371,San Diego County Office of Education,0.0,Salaries,Office and technical staff,28937733
+2023-24,10371,San Diego County Office of Education,0.0,Salaries,Other classified staff,6560623
+2023-24,10371,San Diego County Office of Education,0.0,Benefits,"Teacher pensions (CalSTRS), paid by the district",11730695
+2023-24,10371,San Diego County Office of Education,0.0,Benefits,"Teacher pensions (CalSTRS), paid by the state on the district's behalf",5125829
+2023-24,10371,San Diego County Office of Education,0.0,Benefits,Staff pensions (CalPERS),15040774
+2023-24,10371,San Diego County Office of Education,0.0,Benefits,Social Security and Medicare,6420583
+2023-24,10371,San Diego County Office of Education,0.0,Benefits,Health and welfare benefits,20791909
+2023-24,10371,San Diego County Office of Education,0.0,Benefits,Unemployment and workers' compensation insurance,1974632
+2023-24,10371,San Diego County Office of Education,0.0,Benefits,Retiree health benefits,1479896
+2023-24,10371,San Diego County Office of Education,0.0,Benefits,Other benefits,59995
+2023-24,10371,San Diego County Office of Education,0.0,Everything else,Books and supplies,5812398
+2023-24,10371,San Diego County Office of Education,0.0,Everything else,Contracted services (subagreements),73482519
+2023-24,10371,San Diego County Office of Education,0.0,Everything else,Other services and operating costs,42181855
+2023-24,10371,San Diego County Office of Education,0.0,Everything else,Capital outlay,8431065
+2023-24,10371,San Diego County Office of Education,0.0,Everything else,"Tuition, payments to other agencies and debt service",33012984
+2023-24,68338,San Diego Unified,87342.88,Salaries,Teacher salaries,652510188
+2023-24,68338,San Diego Unified,87342.88,Salaries,"Counselors, nurses and other pupil support",67309368
+2023-24,68338,San Diego Unified,87342.88,Salaries,Principals and certificated administrators,67877253
+2023-24,68338,San Diego Unified,87342.88,Salaries,Other certificated staff,25944764
+2023-24,68338,San Diego Unified,87342.88,Salaries,Classroom aides,82592772
+2023-24,68338,San Diego Unified,87342.88,Salaries,"Maintenance, food, transport and other support staff",118752407
+2023-24,68338,San Diego Unified,87342.88,Salaries,Classified supervisors and administrators,29005768
+2023-24,68338,San Diego Unified,87342.88,Salaries,Office and technical staff,79290002
+2023-24,68338,San Diego Unified,87342.88,Salaries,Other classified staff,7668769
+2023-24,68338,San Diego Unified,87342.88,Benefits,"Teacher pensions (CalSTRS), paid by the district",149766342
+2023-24,68338,San Diego Unified,87342.88,Benefits,"Teacher pensions (CalSTRS), paid by the state on the district's behalf",64169976
+2023-24,68338,San Diego Unified,87342.88,Benefits,Staff pensions (CalPERS),79045108
+2023-24,68338,San Diego Unified,87342.88,Benefits,Social Security and Medicare,37014462
+2023-24,68338,San Diego Unified,87342.88,Benefits,Health and welfare benefits,226128142
+2023-24,68338,San Diego Unified,87342.88,Benefits,Unemployment and workers' compensation insurance,28698430
+2023-24,68338,San Diego Unified,87342.88,Benefits,Retiree health benefits,4041533
+2023-24,68338,San Diego Unified,87342.88,Benefits,Other benefits,5048303
+2023-24,68338,San Diego Unified,87342.88,Everything else,Books and supplies,53299512
+2023-24,68338,San Diego Unified,87342.88,Everything else,Contracted services (subagreements),127870413
+2023-24,68338,San Diego Unified,87342.88,Everything else,Other services and operating costs,23173668
+2023-24,68338,San Diego Unified,87342.88,Everything else,Capital outlay,4592026
+2023-24,68338,San Diego Unified,87342.88,Everything else,"Tuition, payments to other agencies and debt service",13822730
+2023-24,68346,San Dieguito Union High,11892.37,Salaries,Teacher salaries,66314435
+2023-24,68346,San Dieguito Union High,11892.37,Salaries,"Counselors, nurses and other pupil support",8857017
+2023-24,68346,San Dieguito Union High,11892.37,Salaries,Principals and certificated administrators,7693172
+2023-24,68346,San Dieguito Union High,11892.37,Salaries,Other certificated staff,2438787
+2023-24,68346,San Dieguito Union High,11892.37,Salaries,Classroom aides,5158012
+2023-24,68346,San Dieguito Union High,11892.37,Salaries,"Maintenance, food, transport and other support staff",9235119
+2023-24,68346,San Dieguito Union High,11892.37,Salaries,Classified supervisors and administrators,2300162
+2023-24,68346,San Dieguito Union High,11892.37,Salaries,Office and technical staff,7730609
+2023-24,68346,San Dieguito Union High,11892.37,Salaries,Other classified staff,1452226
+2023-24,68346,San Dieguito Union High,11892.37,Benefits,"Teacher pensions (CalSTRS), paid by the district",16161932
+2023-24,68346,San Dieguito Union High,11892.37,Benefits,"Teacher pensions (CalSTRS), paid by the state on the district's behalf",7218465
+2023-24,68346,San Dieguito Union High,11892.37,Benefits,Staff pensions (CalPERS),6087511
+2023-24,68346,San Dieguito Union High,11892.37,Benefits,Social Security and Medicare,3232108
+2023-24,68346,San Dieguito Union High,11892.37,Benefits,Health and welfare benefits,5153571
+2023-24,68346,San Dieguito Union High,11892.37,Benefits,Unemployment and workers' compensation insurance,2207161
+2023-24,68346,San Dieguito Union High,11892.37,Benefits,Retiree health benefits,787141
+2023-24,68346,San Dieguito Union High,11892.37,Benefits,Other benefits,4349540
+2023-24,68346,San Dieguito Union High,11892.37,Everything else,Books and supplies,7357980
+2023-24,68346,San Dieguito Union High,11892.37,Everything else,Contracted services (subagreements),3970336
+2023-24,68346,San Dieguito Union High,11892.37,Everything else,Other services and operating costs,18848029
+2023-24,68346,San Dieguito Union High,11892.37,Everything else,Capital outlay,3229855
+2023-24,68346,San Dieguito Union High,11892.37,Everything else,"Tuition, payments to other agencies and debt service",2798922
+2023-24,73791,San Marcos Unified,18128.53,Salaries,Teacher salaries,104617501
+2023-24,73791,San Marcos Unified,18128.53,Salaries,"Counselors, nurses and other pupil support",10599464
+2023-24,73791,San Marcos Unified,18128.53,Salaries,Principals and certificated administrators,11802993
+2023-24,73791,San Marcos Unified,18128.53,Salaries,Other certificated staff,1384407
+2023-24,73791,San Marcos Unified,18128.53,Salaries,Classroom aides,13135548
+2023-24,73791,San Marcos Unified,18128.53,Salaries,"Maintenance, food, transport and other support staff",17037306
+2023-24,73791,San Marcos Unified,18128.53,Salaries,Classified supervisors and administrators,2915490
+2023-24,73791,San Marcos Unified,18128.53,Salaries,Office and technical staff,10613300
+2023-24,73791,San Marcos Unified,18128.53,Salaries,Other classified staff,2241963
+2023-24,73791,San Marcos Unified,18128.53,Benefits,"Teacher pensions (CalSTRS), paid by the district",24010004
+2023-24,73791,San Marcos Unified,18128.53,Benefits,"Teacher pensions (CalSTRS), paid by the state on the district's behalf",11229483
+2023-24,73791,San Marcos Unified,18128.53,Benefits,Staff pensions (CalPERS),10355258
+2023-24,73791,San Marcos Unified,18128.53,Benefits,Social Security and Medicare,5347420
+2023-24,73791,San Marcos Unified,18128.53,Benefits,Health and welfare benefits,29348644
+2023-24,73791,San Marcos Unified,18128.53,Benefits,Unemployment and workers' compensation insurance,3696760
+2023-24,73791,San Marcos Unified,18128.53,Benefits,Retiree health benefits,5936608
+2023-24,73791,San Marcos Unified,18128.53,Benefits,Other benefits,819915
+2023-24,73791,San Marcos Unified,18128.53,Everything else,Books and supplies,9063428
+2023-24,73791,San Marcos Unified,18128.53,Everything else,Contracted services (subagreements),5538819
+2023-24,73791,San Marcos Unified,18128.53,Everything else,Other services and operating costs,27512941
+2023-24,73791,San Marcos Unified,18128.53,Everything else,Capital outlay,6509823
+2023-24,73791,San Marcos Unified,18128.53,Everything else,"Tuition, payments to other agencies and debt service",1364001
+2023-24,68353,San Pasqual Union Elementary,505.67,Salaries,Teacher salaries,2470612
+2023-24,68353,San Pasqual Union Elementary,505.67,Salaries,"Counselors, nurses and other pupil support",255900
+2023-24,68353,San Pasqual Union Elementary,505.67,Salaries,Principals and certificated administrators,320741
+2023-24,68353,San Pasqual Union Elementary,505.67,Salaries,Other certificated staff,0
+2023-24,68353,San Pasqual Union Elementary,505.67,Salaries,Classroom aides,427845
+2023-24,68353,San Pasqual Union Elementary,505.67,Salaries,"Maintenance, food, transport and other support staff",298525
+2023-24,68353,San Pasqual Union Elementary,505.67,Salaries,Classified supervisors and administrators,127535
+2023-24,68353,San Pasqual Union Elementary,505.67,Salaries,Office and technical staff,206058
+2023-24,68353,San Pasqual Union Elementary,505.67,Salaries,Other classified staff,215880
+2023-24,68353,San Pasqual Union Elementary,505.67,Benefits,"Teacher pensions (CalSTRS), paid by the district",553268
+2023-24,68353,San Pasqual Union Elementary,505.67,Benefits,"Teacher pensions (CalSTRS), paid by the state on the district's behalf",251288
+2023-24,68353,San Pasqual Union Elementary,505.67,Benefits,Staff pensions (CalPERS),329486
+2023-24,68353,San Pasqual Union Elementary,505.67,Benefits,Social Security and Medicare,150040
+2023-24,68353,San Pasqual Union Elementary,505.67,Benefits,Health and welfare benefits,380018
+2023-24,68353,San Pasqual Union Elementary,505.67,Benefits,Unemployment and workers' compensation insurance,65033
+2023-24,68353,San Pasqual Union Elementary,505.67,Benefits,Retiree health benefits,0
+2023-24,68353,San Pasqual Union Elementary,505.67,Benefits,Other benefits,0
+2023-24,68353,San Pasqual Union Elementary,505.67,Everything else,Books and supplies,279870
+2023-24,68353,San Pasqual Union Elementary,505.67,Everything else,Contracted services (subagreements),1717
+2023-24,68353,San Pasqual Union Elementary,505.67,Everything else,Other services and operating costs,935284
+2023-24,68353,San Pasqual Union Elementary,505.67,Everything else,Capital outlay,0
+2023-24,68353,San Pasqual Union Elementary,505.67,Everything else,"Tuition, payments to other agencies and debt service",5283
+2023-24,68379,San Ysidro Elementary,3876.26,Salaries,Teacher salaries,25914501
+2023-24,68379,San Ysidro Elementary,3876.26,Salaries,"Counselors, nurses and other pupil support",1784076
+2023-24,68379,San Ysidro Elementary,3876.26,Salaries,Principals and certificated administrators,2870743
+2023-24,68379,San Ysidro Elementary,3876.26,Salaries,Other certificated staff,75473
+2023-24,68379,San Ysidro Elementary,3876.26,Salaries,Classroom aides,3712335
+2023-24,68379,San Ysidro Elementary,3876.26,Salaries,"Maintenance, food, transport and other support staff",5006670
+2023-24,68379,San Ysidro Elementary,3876.26,Salaries,Classified supervisors and administrators,717297
+2023-24,68379,San Ysidro Elementary,3876.26,Salaries,Office and technical staff,3811759
+2023-24,68379,San Ysidro Elementary,3876.26,Salaries,Other classified staff,1789770
+2023-24,68379,San Ysidro Elementary,3876.26,Benefits,"Teacher pensions (CalSTRS), paid by the district",5470384
+2023-24,68379,San Ysidro Elementary,3876.26,Benefits,"Teacher pensions (CalSTRS), paid by the state on the district's behalf",2865847
+2023-24,68379,San Ysidro Elementary,3876.26,Benefits,Staff pensions (CalPERS),3394294
+2023-24,68379,San Ysidro Elementary,3876.26,Benefits,Social Security and Medicare,1570410
+2023-24,68379,San Ysidro Elementary,3876.26,Benefits,Health and welfare benefits,5296766
+2023-24,68379,San Ysidro Elementary,3876.26,Benefits,Unemployment and workers' compensation insurance,1197864
+2023-24,68379,San Ysidro Elementary,3876.26,Benefits,Retiree health benefits,383643
+2023-24,68379,San Ysidro Elementary,3876.26,Benefits,Other benefits,1800
+2023-24,68379,San Ysidro Elementary,3876.26,Everything else,Books and supplies,2916595
+2023-24,68379,San Ysidro Elementary,3876.26,Everything else,Contracted services (subagreements),0
+2023-24,68379,San Ysidro Elementary,3876.26,Everything else,Other services and operating costs,17220837
+2023-24,68379,San Ysidro Elementary,3876.26,Everything else,Capital outlay,2101906
+2023-24,68379,San Ysidro Elementary,3876.26,Everything else,"Tuition, payments to other agencies and debt service",953296
+2023-24,68361,Santee Elementary,5741.74,Salaries,Teacher salaries,35467552
+2023-24,68361,Santee Elementary,5741.74,Salaries,"Counselors, nurses and other pupil support",2111114
+2023-24,68361,Santee Elementary,5741.74,Salaries,Principals and certificated administrators,4598464
+2023-24,68361,Santee Elementary,5741.74,Salaries,Other certificated staff,89839
+2023-24,68361,Santee Elementary,5741.74,Salaries,Classroom aides,4897762
+2023-24,68361,Santee Elementary,5741.74,Salaries,"Maintenance, food, transport and other support staff",5536257
+2023-24,68361,Santee Elementary,5741.74,Salaries,Classified supervisors and administrators,1715942
+2023-24,68361,Santee Elementary,5741.74,Salaries,Office and technical staff,3079674
+2023-24,68361,Santee Elementary,5741.74,Salaries,Other classified staff,623243
+2023-24,68361,Santee Elementary,5741.74,Benefits,"Teacher pensions (CalSTRS), paid by the district",7792426
+2023-24,68361,Santee Elementary,5741.74,Benefits,"Teacher pensions (CalSTRS), paid by the state on the district's behalf",3595991
+2023-24,68361,Santee Elementary,5741.74,Benefits,Staff pensions (CalPERS),3624900
+2023-24,68361,Santee Elementary,5741.74,Benefits,Social Security and Medicare,1743269
+2023-24,68361,Santee Elementary,5741.74,Benefits,Health and welfare benefits,5103161
+2023-24,68361,Santee Elementary,5741.74,Benefits,Unemployment and workers' compensation insurance,1128467
+2023-24,68361,Santee Elementary,5741.74,Benefits,Retiree health benefits,395023
+2023-24,68361,Santee Elementary,5741.74,Benefits,Other benefits,405492
+2023-24,68361,Santee Elementary,5741.74,Everything else,Books and supplies,4962052
+2023-24,68361,Santee Elementary,5741.74,Everything else,Contracted services (subagreements),0
+2023-24,68361,Santee Elementary,5741.74,Everything else,Other services and operating costs,9300116
+2023-24,68361,Santee Elementary,5741.74,Everything else,Capital outlay,967519
+2023-24,68361,Santee Elementary,5741.74,Everything else,"Tuition, payments to other agencies and debt service",290886
+2023-24,68387,Solana Beach Elementary,2625.26,Salaries,Teacher salaries,20942445
+2023-24,68387,Solana Beach Elementary,2625.26,Salaries,"Counselors, nurses and other pupil support",2842739
+2023-24,68387,Solana Beach Elementary,2625.26,Salaries,Principals and certificated administrators,2657974
+2023-24,68387,Solana Beach Elementary,2625.26,Salaries,Other certificated staff,139725
+2023-24,68387,Solana Beach Elementary,2625.26,Salaries,Classroom aides,2197533
+2023-24,68387,Solana Beach Elementary,2625.26,Salaries,"Maintenance, food, transport and other support staff",1826918
+2023-24,68387,Solana Beach Elementary,2625.26,Salaries,Classified supervisors and administrators,864108
+2023-24,68387,Solana Beach Elementary,2625.26,Salaries,Office and technical staff,2345171
+2023-24,68387,Solana Beach Elementary,2625.26,Salaries,Other classified staff,694362
+2023-24,68387,Solana Beach Elementary,2625.26,Benefits,"Teacher pensions (CalSTRS), paid by the district",4910450
+2023-24,68387,Solana Beach Elementary,2625.26,Benefits,"Teacher pensions (CalSTRS), paid by the state on the district's behalf",2516184
+2023-24,68387,Solana Beach Elementary,2625.26,Benefits,Staff pensions (CalPERS),2063708
+2023-24,68387,Solana Beach Elementary,2625.26,Benefits,Social Security and Medicare,997978
+2023-24,68387,Solana Beach Elementary,2625.26,Benefits,Health and welfare benefits,5167356
+2023-24,68387,Solana Beach Elementary,2625.26,Benefits,Unemployment and workers' compensation insurance,514568
+2023-24,68387,Solana Beach Elementary,2625.26,Benefits,Retiree health benefits,412274
+2023-24,68387,Solana Beach Elementary,2625.26,Benefits,Other benefits,0
+2023-24,68387,Solana Beach Elementary,2625.26,Everything else,Books and supplies,2579913
+2023-24,68387,Solana Beach Elementary,2625.26,Everything else,Contracted services (subagreements),526561
+2023-24,68387,Solana Beach Elementary,2625.26,Everything else,Other services and operating costs,7551213
+2023-24,68387,Solana Beach Elementary,2625.26,Everything else,Capital outlay,649732
+2023-24,68387,Solana Beach Elementary,2625.26,Everything else,"Tuition, payments to other agencies and debt service",-41835
+2023-24,68395,South Bay Union Elementary,3476.51,Salaries,Teacher salaries,27450783
+2023-24,68395,South Bay Union Elementary,3476.51,Salaries,"Counselors, nurses and other pupil support",2711665
+2023-24,68395,South Bay Union Elementary,3476.51,Salaries,Principals and certificated administrators,3867542
+2023-24,68395,South Bay Union Elementary,3476.51,Salaries,Other certificated staff,628765
+2023-24,68395,South Bay Union Elementary,3476.51,Salaries,Classroom aides,4378660
+2023-24,68395,South Bay Union Elementary,3476.51,Salaries,"Maintenance, food, transport and other support staff",6358508
+2023-24,68395,South Bay Union Elementary,3476.51,Salaries,Classified supervisors and administrators,1248629
+2023-24,68395,South Bay Union Elementary,3476.51,Salaries,Office and technical staff,3256379
+2023-24,68395,South Bay Union Elementary,3476.51,Salaries,Other classified staff,679756
+2023-24,68395,South Bay Union Elementary,3476.51,Benefits,"Teacher pensions (CalSTRS), paid by the district",6310436
+2023-24,68395,South Bay Union Elementary,3476.51,Benefits,"Teacher pensions (CalSTRS), paid by the state on the district's behalf",2939315
+2023-24,68395,South Bay Union Elementary,3476.51,Benefits,Staff pensions (CalPERS),3593656
+2023-24,68395,South Bay Union Elementary,3476.51,Benefits,Social Security and Medicare,1672415
+2023-24,68395,South Bay Union Elementary,3476.51,Benefits,Health and welfare benefits,8710522
+2023-24,68395,South Bay Union Elementary,3476.51,Benefits,Unemployment and workers' compensation insurance,2276673
+2023-24,68395,South Bay Union Elementary,3476.51,Benefits,Retiree health benefits,1020930
+2023-24,68395,South Bay Union Elementary,3476.51,Benefits,Other benefits,708108
+2023-24,68395,South Bay Union Elementary,3476.51,Everything else,Books and supplies,2888424
+2023-24,68395,South Bay Union Elementary,3476.51,Everything else,Contracted services (subagreements),1968878
+2023-24,68395,South Bay Union Elementary,3476.51,Everything else,Other services and operating costs,12866683
+2023-24,68395,South Bay Union Elementary,3476.51,Everything else,Capital outlay,899508
+2023-24,68395,South Bay Union Elementary,3476.51,Everything else,"Tuition, payments to other agencies and debt service",-133993
+2023-24,68403,Spencer Valley Elementary,44.88,Salaries,Teacher salaries,436854
+2023-24,68403,Spencer Valley Elementary,44.88,Salaries,"Counselors, nurses and other pupil support",0
+2023-24,68403,Spencer Valley Elementary,44.88,Salaries,Principals and certificated administrators,27300
+2023-24,68403,Spencer Valley Elementary,44.88,Salaries,Other certificated staff,0
+2023-24,68403,Spencer Valley Elementary,44.88,Salaries,Classroom aides,88341
+2023-24,68403,Spencer Valley Elementary,44.88,Salaries,"Maintenance, food, transport and other support staff",89147
+2023-24,68403,Spencer Valley Elementary,44.88,Salaries,Classified supervisors and administrators,0
+2023-24,68403,Spencer Valley Elementary,44.88,Salaries,Office and technical staff,165605
+2023-24,68403,Spencer Valley Elementary,44.88,Salaries,Other classified staff,0
+2023-24,68403,Spencer Valley Elementary,44.88,Benefits,"Teacher pensions (CalSTRS), paid by the district",84143
+2023-24,68403,Spencer Valley Elementary,44.88,Benefits,"Teacher pensions (CalSTRS), paid by the state on the district's behalf",38948
+2023-24,68403,Spencer Valley Elementary,44.88,Benefits,Staff pensions (CalPERS),74409
+2023-24,68403,Spencer Valley Elementary,44.88,Benefits,Social Security and Medicare,32740
+2023-24,68403,Spencer Valley Elementary,44.88,Benefits,Health and welfare benefits,138096
+2023-24,68403,Spencer Valley Elementary,44.88,Benefits,Unemployment and workers' compensation insurance,15488
+2023-24,68403,Spencer Valley Elementary,44.88,Benefits,Retiree health benefits,7787
+2023-24,68403,Spencer Valley Elementary,44.88,Benefits,Other benefits,0
+2023-24,68403,Spencer Valley Elementary,44.88,Everything else,Books and supplies,82423
+2023-24,68403,Spencer Valley Elementary,44.88,Everything else,Contracted services (subagreements),0
+2023-24,68403,Spencer Valley Elementary,44.88,Everything else,Other services and operating costs,388031
+2023-24,68403,Spencer Valley Elementary,44.88,Everything else,Capital outlay,0
+2023-24,68403,Spencer Valley Elementary,44.88,Everything else,"Tuition, payments to other agencies and debt service",0
+2023-24,68411,Sweetwater Union High,31952.64,Salaries,Teacher salaries,179263294
+2023-24,68411,Sweetwater Union High,31952.64,Salaries,"Counselors, nurses and other pupil support",21833368
+2023-24,68411,Sweetwater Union High,31952.64,Salaries,Principals and certificated administrators,20774419
+2023-24,68411,Sweetwater Union High,31952.64,Salaries,Other certificated staff,18387968
+2023-24,68411,Sweetwater Union High,31952.64,Salaries,Classroom aides,21064337
+2023-24,68411,Sweetwater Union High,31952.64,Salaries,"Maintenance, food, transport and other support staff",28697363
+2023-24,68411,Sweetwater Union High,31952.64,Salaries,Classified supervisors and administrators,3546333
+2023-24,68411,Sweetwater Union High,31952.64,Salaries,Office and technical staff,24040748
+2023-24,68411,Sweetwater Union High,31952.64,Salaries,Other classified staff,5624473
+2023-24,68411,Sweetwater Union High,31952.64,Benefits,"Teacher pensions (CalSTRS), paid by the district",43472869
+2023-24,68411,Sweetwater Union High,31952.64,Benefits,"Teacher pensions (CalSTRS), paid by the state on the district's behalf",19810584
+2023-24,68411,Sweetwater Union High,31952.64,Benefits,Staff pensions (CalPERS),21629104
+2023-24,68411,Sweetwater Union High,31952.64,Benefits,Social Security and Medicare,9904021
+2023-24,68411,Sweetwater Union High,31952.64,Benefits,Health and welfare benefits,38617213
+2023-24,68411,Sweetwater Union High,31952.64,Benefits,Unemployment and workers' compensation insurance,8910462
+2023-24,68411,Sweetwater Union High,31952.64,Benefits,Retiree health benefits,2564401
+2023-24,68411,Sweetwater Union High,31952.64,Benefits,Other benefits,0
+2023-24,68411,Sweetwater Union High,31952.64,Everything else,Books and supplies,29411648
+2023-24,68411,Sweetwater Union High,31952.64,Everything else,Contracted services (subagreements),1720326
+2023-24,68411,Sweetwater Union High,31952.64,Everything else,Other services and operating costs,59704062
+2023-24,68411,Sweetwater Union High,31952.64,Everything else,Capital outlay,8356177
+2023-24,68411,Sweetwater Union High,31952.64,Everything else,"Tuition, payments to other agencies and debt service",1695557
+2023-24,68437,Vallecitos Elementary,179.25,Salaries,Teacher salaries,1153514
+2023-24,68437,Vallecitos Elementary,179.25,Salaries,"Counselors, nurses and other pupil support",78334
+2023-24,68437,Vallecitos Elementary,179.25,Salaries,Principals and certificated administrators,290562
+2023-24,68437,Vallecitos Elementary,179.25,Salaries,Other certificated staff,0
+2023-24,68437,Vallecitos Elementary,179.25,Salaries,Classroom aides,198598
+2023-24,68437,Vallecitos Elementary,179.25,Salaries,"Maintenance, food, transport and other support staff",127403
+2023-24,68437,Vallecitos Elementary,179.25,Salaries,Classified supervisors and administrators,96716
+2023-24,68437,Vallecitos Elementary,179.25,Salaries,Office and technical staff,167557
+2023-24,68437,Vallecitos Elementary,179.25,Salaries,Other classified staff,48919
+2023-24,68437,Vallecitos Elementary,179.25,Benefits,"Teacher pensions (CalSTRS), paid by the district",318702
+2023-24,68437,Vallecitos Elementary,179.25,Benefits,"Teacher pensions (CalSTRS), paid by the state on the district's behalf",128564
+2023-24,68437,Vallecitos Elementary,179.25,Benefits,Staff pensions (CalPERS),163174
+2023-24,68437,Vallecitos Elementary,179.25,Benefits,Social Security and Medicare,71030
+2023-24,68437,Vallecitos Elementary,179.25,Benefits,Health and welfare benefits,303300
+2023-24,68437,Vallecitos Elementary,179.25,Benefits,Unemployment and workers' compensation insurance,37310
+2023-24,68437,Vallecitos Elementary,179.25,Benefits,Retiree health benefits,0
+2023-24,68437,Vallecitos Elementary,179.25,Benefits,Other benefits,0
+2023-24,68437,Vallecitos Elementary,179.25,Everything else,Books and supplies,153226
+2023-24,68437,Vallecitos Elementary,179.25,Everything else,Contracted services (subagreements),460391
+2023-24,68437,Vallecitos Elementary,179.25,Everything else,Other services and operating costs,430989
+2023-24,68437,Vallecitos Elementary,179.25,Everything else,Capital outlay,20995
+2023-24,68437,Vallecitos Elementary,179.25,Everything else,"Tuition, payments to other agencies and debt service",0
+2023-24,75614,Valley Center-Pauma Unified,3361.38,Salaries,Teacher salaries,20878721
+2023-24,75614,Valley Center-Pauma Unified,3361.38,Salaries,"Counselors, nurses and other pupil support",1787890
+2023-24,75614,Valley Center-Pauma Unified,3361.38,Salaries,Principals and certificated administrators,3108087
+2023-24,75614,Valley Center-Pauma Unified,3361.38,Salaries,Other certificated staff,1663548
+2023-24,75614,Valley Center-Pauma Unified,3361.38,Salaries,Classroom aides,1633520
+2023-24,75614,Valley Center-Pauma Unified,3361.38,Salaries,"Maintenance, food, transport and other support staff",4430175
+2023-24,75614,Valley Center-Pauma Unified,3361.38,Salaries,Classified supervisors and administrators,758273
+2023-24,75614,Valley Center-Pauma Unified,3361.38,Salaries,Office and technical staff,2256426
+2023-24,75614,Valley Center-Pauma Unified,3361.38,Salaries,Other classified staff,629880
+2023-24,75614,Valley Center-Pauma Unified,3361.38,Benefits,"Teacher pensions (CalSTRS), paid by the district",4990660
+2023-24,75614,Valley Center-Pauma Unified,3361.38,Benefits,"Teacher pensions (CalSTRS), paid by the state on the district's behalf",2257280
+2023-24,75614,Valley Center-Pauma Unified,3361.38,Benefits,Staff pensions (CalPERS),2288554
+2023-24,75614,Valley Center-Pauma Unified,3361.38,Benefits,Social Security and Medicare,1109809
+2023-24,75614,Valley Center-Pauma Unified,3361.38,Benefits,Health and welfare benefits,3891998
+2023-24,75614,Valley Center-Pauma Unified,3361.38,Benefits,Unemployment and workers' compensation insurance,513772
+2023-24,75614,Valley Center-Pauma Unified,3361.38,Benefits,Retiree health benefits,244583
+2023-24,75614,Valley Center-Pauma Unified,3361.38,Benefits,Other benefits,39888
+2023-24,75614,Valley Center-Pauma Unified,3361.38,Everything else,Books and supplies,2408133
+2023-24,75614,Valley Center-Pauma Unified,3361.38,Everything else,Contracted services (subagreements),1048320
+2023-24,75614,Valley Center-Pauma Unified,3361.38,Everything else,Other services and operating costs,6504731
+2023-24,75614,Valley Center-Pauma Unified,3361.38,Everything else,Capital outlay,4093927
+2023-24,75614,Valley Center-Pauma Unified,3361.38,Everything else,"Tuition, payments to other agencies and debt service",159685
+2023-24,68452,Vista Unified,17231.41,Salaries,Teacher salaries,114622534
+2023-24,68452,Vista Unified,17231.41,Salaries,"Counselors, nurses and other pupil support",11692826
+2023-24,68452,Vista Unified,17231.41,Salaries,Principals and certificated administrators,13554158
+2023-24,68452,Vista Unified,17231.41,Salaries,Other certificated staff,4578671
+2023-24,68452,Vista Unified,17231.41,Salaries,Classroom aides,14101416
+2023-24,68452,Vista Unified,17231.41,Salaries,"Maintenance, food, transport and other support staff",16778425
+2023-24,68452,Vista Unified,17231.41,Salaries,Classified supervisors and administrators,2582636
+2023-24,68452,Vista Unified,17231.41,Salaries,Office and technical staff,12768112
+2023-24,68452,Vista Unified,17231.41,Salaries,Other classified staff,5641720
+2023-24,68452,Vista Unified,17231.41,Benefits,"Teacher pensions (CalSTRS), paid by the district",26523415
+2023-24,68452,Vista Unified,17231.41,Benefits,"Teacher pensions (CalSTRS), paid by the state on the district's behalf",11779102
+2023-24,68452,Vista Unified,17231.41,Benefits,Staff pensions (CalPERS),12209546
+2023-24,68452,Vista Unified,17231.41,Benefits,Social Security and Medicare,5701166
+2023-24,68452,Vista Unified,17231.41,Benefits,Health and welfare benefits,20019069
+2023-24,68452,Vista Unified,17231.41,Benefits,Unemployment and workers' compensation insurance,7159512
+2023-24,68452,Vista Unified,17231.41,Benefits,Retiree health benefits,1345897
+2023-24,68452,Vista Unified,17231.41,Benefits,Other benefits,1822718
+2023-24,68452,Vista Unified,17231.41,Everything else,Books and supplies,20106949
+2023-24,68452,Vista Unified,17231.41,Everything else,Contracted services (subagreements),7442484
+2023-24,68452,Vista Unified,17231.41,Everything else,Other services and operating costs,36069400
+2023-24,68452,Vista Unified,17231.41,Everything else,Capital outlay,7897780
+2023-24,68452,Vista Unified,17231.41,Everything else,"Tuition, payments to other agencies and debt service",1687874
+2023-24,75416,Warner Unified,177.73,Salaries,Teacher salaries,1569957
+2023-24,75416,Warner Unified,177.73,Salaries,"Counselors, nurses and other pupil support",0
+2023-24,75416,Warner Unified,177.73,Salaries,Principals and certificated administrators,12125
+2023-24,75416,Warner Unified,177.73,Salaries,Other certificated staff,0
+2023-24,75416,Warner Unified,177.73,Salaries,Classroom aides,525015
+2023-24,75416,Warner Unified,177.73,Salaries,"Maintenance, food, transport and other support staff",297421
+2023-24,75416,Warner Unified,177.73,Salaries,Classified supervisors and administrators,162150
+2023-24,75416,Warner Unified,177.73,Salaries,Office and technical staff,207058
+2023-24,75416,Warner Unified,177.73,Salaries,Other classified staff,9435
+2023-24,75416,Warner Unified,177.73,Benefits,"Teacher pensions (CalSTRS), paid by the district",253371
+2023-24,75416,Warner Unified,177.73,Benefits,"Teacher pensions (CalSTRS), paid by the state on the district's behalf",140877
+2023-24,75416,Warner Unified,177.73,Benefits,Staff pensions (CalPERS),251847
+2023-24,75416,Warner Unified,177.73,Benefits,Social Security and Medicare,122264
+2023-24,75416,Warner Unified,177.73,Benefits,Health and welfare benefits,328042
+2023-24,75416,Warner Unified,177.73,Benefits,Unemployment and workers' compensation insurance,59425
+2023-24,75416,Warner Unified,177.73,Benefits,Retiree health benefits,0
+2023-24,75416,Warner Unified,177.73,Benefits,Other benefits,0
+2023-24,75416,Warner Unified,177.73,Everything else,Books and supplies,453787
+2023-24,75416,Warner Unified,177.73,Everything else,Contracted services (subagreements),0
+2023-24,75416,Warner Unified,177.73,Everything else,Other services and operating costs,1034850
+2023-24,75416,Warner Unified,177.73,Everything else,Capital outlay,553976
+2023-24,75416,Warner Unified,177.73,Everything else,"Tuition, payments to other agencies and debt service",45737

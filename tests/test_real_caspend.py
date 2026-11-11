@@ -99,4 +99,4 @@ def test_real_tightening_sources_for_developmental_services_and_medi_cal():
 
 def test_committed_developmental_services_dollars_go_mostly_to_adults():
     row = next(p for p in committed()["programs"] if p["program"] == "Developmental services")
-    assert row["method"] == "published" and row["by_band"]["0-18"] < 0.3 * row["dollars"]
+    assert row["method"] == "proxy" and row["by_band"]["0-18"] < 0.3 * row["dollars"]

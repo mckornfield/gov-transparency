@@ -31,6 +31,9 @@ test("selecting the county adds the districts up; an unknown code falls back to 
   assert.equal(all.spending["Teacher salaries"], 1000);
   assert.equal(all.other_funds["Building Fund"], 50);
   assert.equal(selectDistrict(data, "nope").name, all.name);
+  // per-student figures for the county leave out agencies with no student count
+  assert.equal(all.withStudents.spending["Teacher salaries"], 600);
+  assert.equal(selectDistrict(data, "1").withStudents.spending["Teacher salaries"], 600);
   assert.equal(selectDistrict(data, "1").name, "Alpha Unified");
 });
 
@@ -39,6 +42,9 @@ test("table rows give dollars, share and dollars per student, and no per-student
   assert.deepEqual(rows[0], { label: "Teacher salaries", dollars: 600, share: 0.6, perStudent: 6 });
   assert.equal(rows.length, 4); // categories with no spending are left out
   assert.equal(tableRows(selectDistrict(data, "2").spending, ["Teacher salaries"], 0)[0].perStudent, null);
+  const all = selectDistrict(data, "all");
+  const county = tableRows(all.spending, ["Teacher salaries"], all.ada, all.withStudents.spending)[0];
+  assert.deepEqual(county, { label: "Teacher salaries", dollars: 1000, share: 0.5, perStudent: 6 });
 });
 
 test("group shares add up to one", () => {

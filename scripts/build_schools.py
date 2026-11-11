@@ -29,7 +29,8 @@ def build() -> dict:
             continue  # listed by the state but filed no general-fund spending
         if abs(sum(s["spending"].values()) - sum(s["purpose"].values())) > 1:
             raise SystemExit(f"{info['name']}: categories and purposes do not add up to the same total")
-        districts.append({"code": code, **info, **{k: {name: round(v, 2) for name, v in s[k].items()} for k in ("spending", "purpose", "revenue", "other_funds")}})
+        districts.append({"code": code, **info, **{k: {name: round(v, 2) for name, v in s[k].items()} for k in ("spending", "purpose", "revenue", "other_funds")},
+                          "charter_schools": round(s["charter_schools"], 2), "passed_through": round(s["passed_through"], 2)})
     total = sum(sum(d["spending"].values()) for d in districts)
     groups = dict((label, group) for group, label in CATEGORY_ORDER)
     payroll = sum(v for d in districts for label, v in d["spending"].items() if groups[label] != "Everything else")

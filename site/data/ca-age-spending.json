@@ -104,7 +104,7 @@
    "group": "Health",
    "method": "proxy",
    "kind": "outlay",
-   "note": "Department of Health Care Services state funds (Schedule 9; almost all Medi-Cal, and including provider fees and drug rebates the budget counts as special funds), split in three steps: California's Medicaid spending by eligibility group (MACPAC, federal fiscal year 2023: children, expansion adults, other adults, disabled, aged); the share the state pays for each (assumed 10% for expansion adults and 50% for the rest); then age (children at 0-18, adults by Medi-Cal eligibles aged 19-44 and 45-64, disabled people by SSI recipients' ages, aged people between 65-84 and 85 and over by CMS's national shape)",
+   "note": "Department of Health Care Services state funds (Schedule 9; almost all Medi-Cal, and including provider fees and drug rebates the budget counts as special funds), split in three steps: California's Medicaid spending by eligibility group (MACPAC, federal fiscal year 2023: children, expansion adults, other adults, disabled, aged); the share the state pays for each (assumed 10% for expansion adults and 50% for the rest); then age (children at 0-18, adults by Medi-Cal eligibles aged 19-44 and 45-64, disabled people by SSI recipients' ages, aged people between 65-84 and 85 and over by CMS's national shape). Coverage the state pays for entirely by itself, mostly for working-age adults, is not in the MACPAC figures and is spread like the rest",
    "dollars": 60183750000.0,
    "by_band": {
     "0-18": 12290559174.077156,
@@ -117,9 +117,9 @@
   {
    "program": "Developmental services",
    "group": "Disability and care",
-   "method": "published",
+   "method": "proxy",
    "kind": "outlay",
-   "note": "Department of Developmental Services state funds (Schedule 9) split like regional-center spending for ages 0-2, 3-21 and 22 and over (DDS annual purchase-of-service report, 2023-24), then within each like the people served by finer age group",
+   "note": "Department of Developmental Services state funds (Schedule 9) split like regional-center spending for ages 0-2, 3-21 and 22 and over (DDS annual purchase-of-service report, 2023-24, all funds), then within each like the people served by finer age group",
    "dollars": 8264853000.0,
    "by_band": {
     "0-18": 1782520420.0121207,

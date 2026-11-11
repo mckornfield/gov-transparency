@@ -9,6 +9,8 @@ class SchoolsError(ValueError):
 
 
 GENERAL_FUND = "01"
+PASS_THROUGH_FUNDS = ("10",)  # money a county office only hands on to districts, which count it as their own revenue
+DISTRICT_LEVEL = "0000000"  # school code of a district's own rows; charter schools filing their own accounts carry a school code
 ON_BEHALF = "7690"  # resource: the state's pension contributions on a district's behalf
 # (group, label, first object, last object); the first match wins, so narrow ranges come before the catch-alls.
 CATEGORIES = (
@@ -29,8 +31,8 @@ CATEGORIES = (
     ("Benefits", "Retiree health benefits", "3700", "3799"),
     ("Benefits", "Other benefits", "3800", "3999"),
     ("Everything else", "Books and supplies", "4000", "4999"),
-    ("Everything else", "Contracted services (subagreements)", "5100", "5199"),
-    ("Everything else", "Other services and operating costs", "5000", "5999"),
+    ("Everything else", "Services subcontracted to other agencies", "5100", "5199"),
+    ("Everything else", "Professional services, utilities, rents and other operating costs", "5000", "5999"),
     ("Everything else", "Capital outlay", "6000", "6999"),
     ("Everything else", "Tuition, payments to other agencies and debt service", "7000", "7499"),
 )
@@ -44,18 +46,20 @@ PURPOSES = (
     ("School administration", "2700", "2799"),
     ("Instructional support (supervision, library, training)", "2000", "2999"),
     ("Pupil transportation", "3600", "3699"),
-    ("Pupil services (counseling, health, psychology)", "3000", "3999"),
+    ("Pupil services (counseling, health, psychology, food)", "3000", "3999"),
     ("District administration", "7000", "7999"),
     ("Buildings, maintenance and operations", "8000", "8999"),
-    ("Other (community, enterprise, debt, transfers to agencies)", "4000", "9999"),
+    ("Other (athletics and activities, community, enterprise, debt, transfers to agencies)", "4000", "9999"),
 )
 REVENUES = (
     ("State aid (funding formula and Education Protection Account)", "8010", "8019"),
     ("Local property taxes", "8020", "8089"),
-    ("Property taxes passed to charter schools", "8090", "8099"),
+    ("Property taxes passed to charter schools", "8096", "8096"),
+    ("Other property-tax and funding-formula transfers", "8090", "8099"),
     ("Federal", "8100", "8299"),
     ("Other state", "8300", "8599"),
-    ("Other local", "8600", "8799"),
+    ("Other local", "8600", "8699"),
+    ("Passed on by other school agencies (mostly state special-education money)", "8700", "8799"),
 )
 
 
@@ -89,7 +93,7 @@ def revenue_group_of(obj: str) -> str | None:
 
 def parse_ledger(text: str) -> list[dict]:
     reader = csv.DictReader(io.StringIO(text))
-    need = ("Dcode", "Fund", "Resource", "Function", "Object", "Value")
+    need = ("Dcode", "SchoolCode", "Fund", "Resource", "Function", "Object", "Value")
     missing = [c for c in need if c not in (reader.fieldnames or [])]
     if missing:
         raise SchoolsError(f"ledger has no {', '.join(missing)} column")
@@ -99,7 +103,7 @@ def parse_ledger(text: str) -> list[dict]:
             value = float(r["Value"])
         except ValueError as err:
             raise SchoolsError(f"ledger has an unreadable amount {r['Value']!r}") from err
-        rows.append({"district": r["Dcode"].strip(), "fund": r["Fund"].strip(), "resource": r["Resource"].strip(),
+        rows.append({"district": r["Dcode"].strip(), "school": r["SchoolCode"].strip(), "fund": r["Fund"].strip(), "resource": r["Resource"].strip(),
                      "function": r["Function"].strip(), "object": r["Object"].strip(), "value": value})
     return rows
 
@@ -115,16 +119,21 @@ def parse_titles(text: str) -> dict[str, str]:
 
 def summarize(rows: list[dict], fund_titles: dict[str, str]) -> dict[str, dict]:
     """Per district: general-fund spending by category and by purpose, general-fund revenue by source, and spending in
-    every other fund by fund name."""
+    every other fund by fund name. Charter schools that file their own accounts (rows with a school code) and
+    pass-through funds are kept out of the district's figures and only totalled."""
     out: dict[str, dict] = {}
 
     def bump(table: dict, key: str, value: float) -> None:
         table[key] = table.get(key, 0.0) + value
 
     for r in rows:
-        d = out.setdefault(r["district"], {"spending": {}, "purpose": {}, "revenue": {}, "other_funds": {}})
+        d = out.setdefault(r["district"], {"spending": {}, "purpose": {}, "revenue": {}, "other_funds": {}, "charter_schools": 0.0, "passed_through": 0.0})
         category = category_of(r["object"], r["resource"], strict=r["object"] < "8000")
-        if r["fund"] == GENERAL_FUND:
+        if r["school"] != DISTRICT_LEVEL:
+            d["charter_schools"] += r["value"] if category is not None else 0.0
+        elif r["fund"] in PASS_THROUGH_FUNDS:
+            d["passed_through"] += r["value"] if category is not None else 0.0
+        elif r["fund"] == GENERAL_FUND:
             if category is not None:
                 bump(d["spending"], category, r["value"])
                 bump(d["purpose"], purpose_of(r["function"]), r["value"])

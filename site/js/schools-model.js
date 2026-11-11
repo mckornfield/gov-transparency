@@ -19,17 +19,19 @@ const sumTables = (tables) => {
 // One district, or every district added up when the code is "all" or unknown.
 export function selectDistrict(data, code) {
   const one = data.districts.find((d) => d.code === code);
-  if (one) return one;
+  if (one) return { ...one, withStudents: one };
   const fields = ["spending", "purpose", "revenue", "other_funds"];
+  const add = (list) => Object.fromEntries(fields.map((f) => [f, sumTables(list.map((d) => d[f]))]));
+  // Per-student figures use only the agencies that report students, so the County Office's spending does not inflate them.
   return { code: "all", name: `${data.county} school districts`, type: "All districts", ada: data.districts.reduce((s, d) => s + d.ada, 0),
-    ...Object.fromEntries(fields.map((f) => [f, sumTables(data.districts.map((d) => d[f]))])) };
+    ...add(data.districts), withStudents: add(data.districts.filter((d) => d.ada > 0)) };
 }
 
 const total = (table) => Object.values(table).reduce((s, v) => s + v, 0);
 
-export function tableRows(table, labels, ada) {
+export function tableRows(table, labels, ada, perStudentTable = table) {
   const all = total(table);
-  return labels.filter((label) => table[label]).map((label) => ({ label, dollars: table[label], share: table[label] / all, perStudent: ada > 0 ? table[label] / ada : null }));
+  return labels.filter((label) => table[label]).map((label) => ({ label, dollars: table[label], share: table[label] / all, perStudent: ada > 0 ? (perStudentTable[label] || 0) / ada : null }));
 }
 
 export function groupShares(data, selected) {

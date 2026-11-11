@@ -23,8 +23,8 @@ IHSS_RANGES = {"0-17": (0, 17), "18-44": (18, 44), "45-64": (45, 64), "65-74": (
 SSI_RANGES = {"0-17": (0, 17), "18-64": (18, 64), "65+": (65, TOP)}
 CALWORKS_RANGES = {"children": (0, 17), "adults": (18, 49)}
 # The fraction of each Medicaid group's cost the state pays: California's regular federal match is 50%; the federal
-# government pays 90% for adults covered by the Affordable Care Act expansion. Children's CHIP match and temporary
-# pandemic increases are ignored.
+# government pays 90% for adults covered by the Affordable Care Act expansion. Temporary pandemic increases are
+# ignored, and MACPAC's figures leave out CHIP-funded children and coverage the state funds alone.
 STATE_RATE = {"child": 0.5, "new adult": 0.1, "other adult": 0.5, "disabled": 0.5, "aged": 0.5}
 # Departments whose federal funds are shown for information (they are counted on the federal page, not here).
 DEPARTMENTS = ("4260", "4300", "5180", "6100", "6440", "6610", "6870", "6980")
@@ -80,9 +80,9 @@ def build() -> dict:
          spread_ages(total("6440") + total("6610") + total("6980"), 18, 29, pop)),
         ("Community colleges", "Higher education", "proxy", "Community colleges state funds (Schedule 9, including bond-funded construction) spread over ages 18-39 by population; no enrolment by age was used",
          spread_ages(total("6870"), 18, 39, pop)),
-        ("Medi-Cal and other state health care (state share)", "Health", "proxy", "Department of Health Care Services state funds (Schedule 9; almost all Medi-Cal, and including provider fees and drug rebates the budget counts as special funds), split in three steps: California's Medicaid spending by eligibility group (MACPAC, federal fiscal year 2023: children, expansion adults, other adults, disabled, aged); the share the state pays for each (assumed 10% for expansion adults and 50% for the rest); then age (children at 0-18, adults by Medi-Cal eligibles aged 19-44 and 45-64, disabled people by SSI recipients' ages, aged people between 65-84 and 85 and over by CMS's national shape)",
+        ("Medi-Cal and other state health care (state share)", "Health", "proxy", "Department of Health Care Services state funds (Schedule 9; almost all Medi-Cal, and including provider fees and drug rebates the budget counts as special funds), split in three steps: California's Medicaid spending by eligibility group (MACPAC, federal fiscal year 2023: children, expansion adults, other adults, disabled, aged); the share the state pays for each (assumed 10% for expansion adults and 50% for the rest); then age (children at 0-18, adults by Medi-Cal eligibles aged 19-44 and 45-64, disabled people by SSI recipients' ages, aged people between 65-84 and 85 and over by CMS's national shape). Coverage the state pays for entirely by itself, mostly for working-age adults, is not in the MACPAC figures and is spread like the rest",
          medi_cal),
-        ("Developmental services", "Disability and care", "published", "Department of Developmental Services state funds (Schedule 9) split like regional-center spending for ages 0-2, 3-21 and 22 and over (DDS annual purchase-of-service report, 2023-24), then within each like the people served by finer age group",
+        ("Developmental services", "Disability and care", "proxy", "Department of Developmental Services state funds (Schedule 9) split like regional-center spending for ages 0-2, 3-21 and 22 and over (DDS annual purchase-of-service report, 2023-24, all funds), then within each like the people served by finer age group",
          dds_split),
         ("In-Home Supportive Services (state share)", "Disability and care", "published", "State funds for IHSS (Department of Social Services budget page) spread like recipients in six age groups (January 2024), assuming equal hours per person",
          va_bands(ihss, dss["IHSS"], pop, IHSS_RANGES)),

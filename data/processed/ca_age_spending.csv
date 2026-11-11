@@ -19,11 +19,11 @@ fiscal_year,program,group,method,band,dollars
 2023-24,Medi-Cal and other state health care (state share),Health,proxy,45-64,13489417012
 2023-24,Medi-Cal and other state health care (state share),Health,proxy,65-84,12882323670
 2023-24,Medi-Cal and other state health care (state share),Health,proxy,85+,5052550762
-2023-24,Developmental services,Disability and care,published,0-18,1782520420
-2023-24,Developmental services,Disability and care,published,19-44,4571194778
-2023-24,Developmental services,Disability and care,published,45-64,1384032441
-2023-24,Developmental services,Disability and care,published,65-84,468207585
-2023-24,Developmental services,Disability and care,published,85+,58897776
+2023-24,Developmental services,Disability and care,proxy,0-18,1782520420
+2023-24,Developmental services,Disability and care,proxy,19-44,4571194778
+2023-24,Developmental services,Disability and care,proxy,45-64,1384032441
+2023-24,Developmental services,Disability and care,proxy,65-84,468207585
+2023-24,Developmental services,Disability and care,proxy,85+,58897776
 2023-24,In-Home Supportive Services (state share),Disability and care,published,0-18,813892252
 2023-24,In-Home Supportive Services (state share),Disability and care,published,19-44,1114990324
 2023-24,In-Home Supportive Services (state share),Disability and care,published,45-64,1626947420

@@ -10,6 +10,10 @@ def ledger(*rows):
                           for d, fund, res, fn, obj, value in rows)
 
 
+def charter_row(d, school, fund, obj, value):
+    return f'"37","{d}","{school}","2023","A","BA","x","{fund}","0000","0","0000","1000","{obj}",{value}\n'
+
+
 def test_objects_map_to_one_category_each():
     assert category_of("1100", "0000") == "Teacher salaries"
     assert category_of("1300", "0000") == "Principals and certificated administrators"
@@ -19,8 +23,8 @@ def test_objects_map_to_one_category_each():
     assert category_of("3202", "0000") == "Staff pensions (CalPERS)"
     assert category_of("3401", "0000") == "Health and welfare benefits"
     assert category_of("3701", "0000") == "Retiree health benefits"
-    assert category_of("5100", "0000") == "Contracted services (subagreements)"
-    assert category_of("5800", "0000") == "Other services and operating costs"
+    assert category_of("5100", "0000") == "Services subcontracted to other agencies"
+    assert category_of("5800", "0000") == "Professional services, utilities, rents and other operating costs"
     assert category_of("7439", "0000") == "Tuition, payments to other agencies and debt service"
 
 
@@ -39,13 +43,18 @@ def test_purposes_and_revenue_groups():
     assert purpose_of("1120") == "Special education instruction"
     assert purpose_of("2700") == "School administration"
     assert purpose_of("3600") == "Pupil transportation"
-    assert purpose_of("3110") == "Pupil services (counseling, health, psychology)"
+    assert purpose_of("3110") == "Pupil services (counseling, health, psychology, food)"
     assert purpose_of("7200") == "District administration"
     assert purpose_of("8100") == "Buildings, maintenance and operations"
-    assert purpose_of("9100") == "Other (community, enterprise, debt, transfers to agencies)"
+    assert purpose_of("9100") == "Other (athletics and activities, community, enterprise, debt, transfers to agencies)"
+    assert purpose_of("4200") == "Other (athletics and activities, community, enterprise, debt, transfers to agencies)"
     assert revenue_group_of("8011") == "State aid (funding formula and Education Protection Account)"
     assert revenue_group_of("8041") == "Local property taxes"
     assert revenue_group_of("8096") == "Property taxes passed to charter schools"
+    assert revenue_group_of("8097") == "Other property-tax and funding-formula transfers"
+    assert revenue_group_of("8091") == "Other property-tax and funding-formula transfers"
+    assert revenue_group_of("8792") == "Passed on by other school agencies (mostly state special-education money)"
+    assert revenue_group_of("8710") == "Passed on by other school agencies (mostly state special-education money)"
     assert revenue_group_of("8290") == "Federal"
     assert revenue_group_of("8590") == "Other state"
     assert revenue_group_of("8699") == "Other local"
@@ -65,14 +74,23 @@ def test_summary_splits_general_fund_spending_revenue_and_other_funds():
                                ("68338", "21", "0000", "8500", "6200", 400.0), ("68338", "01", "0000", "0000", "9110", 5.0)))
     got = summarize(rows, {"21": "Building Fund"})["68338"]
     assert got["spending"] == {"Teacher salaries": 600.0, "Teacher pensions (CalSTRS), paid by the state on the district's behalf": 50.0,
-                               "Other services and operating costs": 150.0}
+                               "Professional services, utilities, rents and other operating costs": 150.0}
     assert got["purpose"] == {"Classroom instruction": 650.0, "Buildings, maintenance and operations": 150.0}
     assert got["revenue"] == {"Local property taxes": 700.0, "State aid (funding formula and Education Protection Account)": 300.0}
     assert got["other_funds"] == {"Building Fund": 400.0}
 
 
+def test_charter_school_rows_and_pass_through_funds_stay_out_of_the_district():
+    text = ledger(("68338", "01", "0000", "1000", "1100", 600.0), ("68338", "10", "0000", "9200", "7221", 300.0)) \
+        + charter_row("68338", "0123456", "62", "1100", 900.0) + charter_row("68338", "0123456", "01", "1100", 70.0)
+    got = summarize(parse_ledger(text), {"62": "Charter Schools Enterprise Fund", "10": "Special Education Pass-Through Fund"})["68338"]
+    assert got["spending"] == {"Teacher salaries": 600.0}
+    assert got["other_funds"] == {}
+    assert got["charter_schools"] == 970.0 and got["passed_through"] == 300.0
+
+
 def test_ledger_fails_on_a_missing_column_or_a_bad_amount():
     with pytest.raises(SchoolsError, match="Object"):
-        parse_ledger("Ccode,Dcode,Fund,Resource,Function,Value\n37,1,01,0000,1000,5\n")
+        parse_ledger("Ccode,Dcode,SchoolCode,Fund,Resource,Function,Value\n37,1,0000000,01,0000,1000,5\n")
     with pytest.raises(SchoolsError, match="amount"):
         parse_ledger(ledger(("68338", "01", "0000", "1000", "1100", "abc")))

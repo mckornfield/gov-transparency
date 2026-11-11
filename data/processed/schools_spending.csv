@@ -17,8 +17,8 @@ fiscal_year,district_code,district,students_ada,group,category,dollars
 2023-24,67967,Alpine Union Elementary,1379.05,Benefits,Retiree health benefits,165171
 2023-24,67967,Alpine Union Elementary,1379.05,Benefits,Other benefits,600
 2023-24,67967,Alpine Union Elementary,1379.05,Everything else,Books and supplies,1009428
-2023-24,67967,Alpine Union Elementary,1379.05,Everything else,Contracted services (subagreements),1047701
-2023-24,67967,Alpine Union Elementary,1379.05,Everything else,Other services and operating costs,2501953
+2023-24,67967,Alpine Union Elementary,1379.05,Everything else,Services subcontracted to other agencies,1047701
+2023-24,67967,Alpine Union Elementary,1379.05,Everything else,"Professional services, utilities, rents and other operating costs",2501953
 2023-24,67967,Alpine Union Elementary,1379.05,Everything else,Capital outlay,29379
 2023-24,67967,Alpine Union Elementary,1379.05,Everything else,"Tuition, payments to other agencies and debt service",393062
 2023-24,76851,Bonsall Unified,2034.68,Salaries,Teacher salaries,10627501
@@ -39,8 +39,8 @@ fiscal_year,district_code,district,students_ada,group,category,dollars
 2023-24,76851,Bonsall Unified,2034.68,Benefits,Retiree health benefits,66166
 2023-24,76851,Bonsall Unified,2034.68,Benefits,Other benefits,23951
 2023-24,76851,Bonsall Unified,2034.68,Everything else,Books and supplies,1742781
-2023-24,76851,Bonsall Unified,2034.68,Everything else,Contracted services (subagreements),985993
-2023-24,76851,Bonsall Unified,2034.68,Everything else,Other services and operating costs,4118430
+2023-24,76851,Bonsall Unified,2034.68,Everything else,Services subcontracted to other agencies,985993
+2023-24,76851,Bonsall Unified,2034.68,Everything else,"Professional services, utilities, rents and other operating costs",4118430
 2023-24,76851,Bonsall Unified,2034.68,Everything else,Capital outlay,472868
 2023-24,76851,Bonsall Unified,2034.68,Everything else,"Tuition, payments to other agencies and debt service",674493
 2023-24,67983,Borrego Springs Unified,322.83,Salaries,Teacher salaries,1775918
@@ -61,8 +61,8 @@ fiscal_year,district_code,district,students_ada,group,category,dollars
 2023-24,67983,Borrego Springs Unified,322.83,Benefits,Retiree health benefits,38622
 2023-24,67983,Borrego Springs Unified,322.83,Benefits,Other benefits,0
 2023-24,67983,Borrego Springs Unified,322.83,Everything else,Books and supplies,879336
-2023-24,67983,Borrego Springs Unified,322.83,Everything else,Contracted services (subagreements),0
-2023-24,67983,Borrego Springs Unified,322.83,Everything else,Other services and operating costs,1867734
+2023-24,67983,Borrego Springs Unified,322.83,Everything else,Services subcontracted to other agencies,0
+2023-24,67983,Borrego Springs Unified,322.83,Everything else,"Professional services, utilities, rents and other operating costs",1867734
 2023-24,67983,Borrego Springs Unified,322.83,Everything else,Capital outlay,1197808
 2023-24,67983,Borrego Springs Unified,322.83,Everything else,"Tuition, payments to other agencies and debt service",0
 2023-24,67991,Cajon Valley Union Elementary,14484.85,Salaries,Teacher salaries,92451003
@@ -83,8 +83,8 @@ fiscal_year,district_code,district,students_ada,group,category,dollars
 2023-24,67991,Cajon Valley Union Elementary,14484.85,Benefits,Retiree health benefits,1299689
 2023-24,67991,Cajon Valley Union Elementary,14484.85,Benefits,Other benefits,139214
 2023-24,67991,Cajon Valley Union Elementary,14484.85,Everything else,Books and supplies,13356332
-2023-24,67991,Cajon Valley Union Elementary,14484.85,Everything else,Contracted services (subagreements),0
-2023-24,67991,Cajon Valley Union Elementary,14484.85,Everything else,Other services and operating costs,38231952
+2023-24,67991,Cajon Valley Union Elementary,14484.85,Everything else,Services subcontracted to other agencies,0
+2023-24,67991,Cajon Valley Union Elementary,14484.85,Everything else,"Professional services, utilities, rents and other operating costs",38231952
 2023-24,67991,Cajon Valley Union Elementary,14484.85,Everything else,Capital outlay,19186626
 2023-24,67991,Cajon Valley Union Elementary,14484.85,Everything else,"Tuition, payments to other agencies and debt service",951442
 2023-24,68007,Cardiff Elementary,611.41,Salaries,Teacher salaries,5033109
@@ -105,8 +105,8 @@ fiscal_year,district_code,district,students_ada,group,category,dollars
 2023-24,68007,Cardiff Elementary,611.41,Benefits,Retiree health benefits,0
 2023-24,68007,Cardiff Elementary,611.41,Benefits,Other benefits,0
 2023-24,68007,Cardiff Elementary,611.41,Everything else,Books and supplies,372925
-2023-24,68007,Cardiff Elementary,611.41,Everything else,Contracted services (subagreements),54825
-2023-24,68007,Cardiff Elementary,611.41,Everything else,Other services and operating costs,1407416
+2023-24,68007,Cardiff Elementary,611.41,Everything else,Services subcontracted to other agencies,54825
+2023-24,68007,Cardiff Elementary,611.41,Everything else,"Professional services, utilities, rents and other operating costs",1407416
 2023-24,68007,Cardiff Elementary,611.41,Everything else,Capital outlay,56639
 2023-24,68007,Cardiff Elementary,611.41,Everything else,"Tuition, payments to other agencies and debt service",566557
 2023-24,73551,Carlsbad Unified,10219.31,Salaries,Teacher salaries,55806866
@@ -127,8 +127,8 @@ fiscal_year,district_code,district,students_ada,group,category,dollars
 2023-24,73551,Carlsbad Unified,10219.31,Benefits,Retiree health benefits,968516
 2023-24,73551,Carlsbad Unified,10219.31,Benefits,Other benefits,175907
 2023-24,73551,Carlsbad Unified,10219.31,Everything else,Books and supplies,4329380
-2023-24,73551,Carlsbad Unified,10219.31,Everything else,Contracted services (subagreements),17276135
-2023-24,73551,Carlsbad Unified,10219.31,Everything else,Other services and operating costs,14899594
+2023-24,73551,Carlsbad Unified,10219.31,Everything else,Services subcontracted to other agencies,17276135
+2023-24,73551,Carlsbad Unified,10219.31,Everything else,"Professional services, utilities, rents and other operating costs",14899594
 2023-24,73551,Carlsbad Unified,10219.31,Everything else,Capital outlay,704831
 2023-24,73551,Carlsbad Unified,10219.31,Everything else,"Tuition, payments to other agencies and debt service",471240
 2023-24,68023,Chula Vista Elementary,21220.08,Salaries,Teacher salaries,134631020
@@ -149,8 +149,8 @@ fiscal_year,district_code,district,students_ada,group,category,dollars
 2023-24,68023,Chula Vista Elementary,21220.08,Benefits,Retiree health benefits,0
 2023-24,68023,Chula Vista Elementary,21220.08,Benefits,Other benefits,2095071
 2023-24,68023,Chula Vista Elementary,21220.08,Everything else,Books and supplies,14668178
-2023-24,68023,Chula Vista Elementary,21220.08,Everything else,Contracted services (subagreements),11597377
-2023-24,68023,Chula Vista Elementary,21220.08,Everything else,Other services and operating costs,34883444
+2023-24,68023,Chula Vista Elementary,21220.08,Everything else,Services subcontracted to other agencies,11597377
+2023-24,68023,Chula Vista Elementary,21220.08,Everything else,"Professional services, utilities, rents and other operating costs",34883444
 2023-24,68023,Chula Vista Elementary,21220.08,Everything else,Capital outlay,2386944
 2023-24,68023,Chula Vista Elementary,21220.08,Everything else,"Tuition, payments to other agencies and debt service",1200685
 2023-24,68031,Coronado Unified,2604.7,Salaries,Teacher salaries,17285797
@@ -171,8 +171,8 @@ fiscal_year,district_code,district,students_ada,group,category,dollars
 2023-24,68031,Coronado Unified,2604.7,Benefits,Retiree health benefits,201380
 2023-24,68031,Coronado Unified,2604.7,Benefits,Other benefits,0
 2023-24,68031,Coronado Unified,2604.7,Everything else,Books and supplies,2636950
-2023-24,68031,Coronado Unified,2604.7,Everything else,Contracted services (subagreements),1462190
-2023-24,68031,Coronado Unified,2604.7,Everything else,Other services and operating costs,6612660
+2023-24,68031,Coronado Unified,2604.7,Everything else,Services subcontracted to other agencies,1462190
+2023-24,68031,Coronado Unified,2604.7,Everything else,"Professional services, utilities, rents and other operating costs",6612660
 2023-24,68031,Coronado Unified,2604.7,Everything else,Capital outlay,242318
 2023-24,68031,Coronado Unified,2604.7,Everything else,"Tuition, payments to other agencies and debt service",-56088
 2023-24,68049,Dehesa Elementary,227.51,Salaries,Teacher salaries,893694
@@ -193,8 +193,8 @@ fiscal_year,district_code,district,students_ada,group,category,dollars
 2023-24,68049,Dehesa Elementary,227.51,Benefits,Retiree health benefits,0
 2023-24,68049,Dehesa Elementary,227.51,Benefits,Other benefits,9659
 2023-24,68049,Dehesa Elementary,227.51,Everything else,Books and supplies,350583
-2023-24,68049,Dehesa Elementary,227.51,Everything else,Contracted services (subagreements),0
-2023-24,68049,Dehesa Elementary,227.51,Everything else,Other services and operating costs,1249683
+2023-24,68049,Dehesa Elementary,227.51,Everything else,Services subcontracted to other agencies,0
+2023-24,68049,Dehesa Elementary,227.51,Everything else,"Professional services, utilities, rents and other operating costs",1249683
 2023-24,68049,Dehesa Elementary,227.51,Everything else,Capital outlay,0
 2023-24,68049,Dehesa Elementary,227.51,Everything else,"Tuition, payments to other agencies and debt service",5603
 2023-24,68056,Del Mar Union Elementary,3502.62,Salaries,Teacher salaries,29758694
@@ -215,8 +215,8 @@ fiscal_year,district_code,district,students_ada,group,category,dollars
 2023-24,68056,Del Mar Union Elementary,3502.62,Benefits,Retiree health benefits,282056
 2023-24,68056,Del Mar Union Elementary,3502.62,Benefits,Other benefits,38829
 2023-24,68056,Del Mar Union Elementary,3502.62,Everything else,Books and supplies,3330432
-2023-24,68056,Del Mar Union Elementary,3502.62,Everything else,Contracted services (subagreements),1402542
-2023-24,68056,Del Mar Union Elementary,3502.62,Everything else,Other services and operating costs,8783592
+2023-24,68056,Del Mar Union Elementary,3502.62,Everything else,Services subcontracted to other agencies,1402542
+2023-24,68056,Del Mar Union Elementary,3502.62,Everything else,"Professional services, utilities, rents and other operating costs",8783592
 2023-24,68056,Del Mar Union Elementary,3502.62,Everything else,Capital outlay,81430
 2023-24,68056,Del Mar Union Elementary,3502.62,Everything else,"Tuition, payments to other agencies and debt service",573617
 2023-24,68080,Encinitas Union Elementary,4253.04,Salaries,Teacher salaries,30637290
@@ -237,8 +237,8 @@ fiscal_year,district_code,district,students_ada,group,category,dollars
 2023-24,68080,Encinitas Union Elementary,4253.04,Benefits,Retiree health benefits,817533
 2023-24,68080,Encinitas Union Elementary,4253.04,Benefits,Other benefits,1217500
 2023-24,68080,Encinitas Union Elementary,4253.04,Everything else,Books and supplies,2197234
-2023-24,68080,Encinitas Union Elementary,4253.04,Everything else,Contracted services (subagreements),1133670
-2023-24,68080,Encinitas Union Elementary,4253.04,Everything else,Other services and operating costs,7943426
+2023-24,68080,Encinitas Union Elementary,4253.04,Everything else,Services subcontracted to other agencies,1133670
+2023-24,68080,Encinitas Union Elementary,4253.04,Everything else,"Professional services, utilities, rents and other operating costs",7943426
 2023-24,68080,Encinitas Union Elementary,4253.04,Everything else,Capital outlay,2471676
 2023-24,68080,Encinitas Union Elementary,4253.04,Everything else,"Tuition, payments to other agencies and debt service",-51041
 2023-24,68098,Escondido Union Elementary,12984.27,Salaries,Teacher salaries,91609551
@@ -259,8 +259,8 @@ fiscal_year,district_code,district,students_ada,group,category,dollars
 2023-24,68098,Escondido Union Elementary,12984.27,Benefits,Retiree health benefits,778195
 2023-24,68098,Escondido Union Elementary,12984.27,Benefits,Other benefits,0
 2023-24,68098,Escondido Union Elementary,12984.27,Everything else,Books and supplies,7562794
-2023-24,68098,Escondido Union Elementary,12984.27,Everything else,Contracted services (subagreements),22450105
-2023-24,68098,Escondido Union Elementary,12984.27,Everything else,Other services and operating costs,20024633
+2023-24,68098,Escondido Union Elementary,12984.27,Everything else,Services subcontracted to other agencies,22450105
+2023-24,68098,Escondido Union Elementary,12984.27,Everything else,"Professional services, utilities, rents and other operating costs",20024633
 2023-24,68098,Escondido Union Elementary,12984.27,Everything else,Capital outlay,11589990
 2023-24,68098,Escondido Union Elementary,12984.27,Everything else,"Tuition, payments to other agencies and debt service",1048557
 2023-24,68106,Escondido Union High,5936.95,Salaries,Teacher salaries,36092434
@@ -281,8 +281,8 @@ fiscal_year,district_code,district,students_ada,group,category,dollars
 2023-24,68106,Escondido Union High,5936.95,Benefits,Retiree health benefits,1116094
 2023-24,68106,Escondido Union High,5936.95,Benefits,Other benefits,683168
 2023-24,68106,Escondido Union High,5936.95,Everything else,Books and supplies,5890537
-2023-24,68106,Escondido Union High,5936.95,Everything else,Contracted services (subagreements),0
-2023-24,68106,Escondido Union High,5936.95,Everything else,Other services and operating costs,15777574
+2023-24,68106,Escondido Union High,5936.95,Everything else,Services subcontracted to other agencies,0
+2023-24,68106,Escondido Union High,5936.95,Everything else,"Professional services, utilities, rents and other operating costs",15777574
 2023-24,68106,Escondido Union High,5936.95,Everything else,Capital outlay,3991190
 2023-24,68106,Escondido Union High,5936.95,Everything else,"Tuition, payments to other agencies and debt service",-289429
 2023-24,68114,Fallbrook Union Elementary,4797.86,Salaries,Teacher salaries,35199412
@@ -303,8 +303,8 @@ fiscal_year,district_code,district,students_ada,group,category,dollars
 2023-24,68114,Fallbrook Union Elementary,4797.86,Benefits,Retiree health benefits,507123
 2023-24,68114,Fallbrook Union Elementary,4797.86,Benefits,Other benefits,193431
 2023-24,68114,Fallbrook Union Elementary,4797.86,Everything else,Books and supplies,3721296
-2023-24,68114,Fallbrook Union Elementary,4797.86,Everything else,Contracted services (subagreements),824890
-2023-24,68114,Fallbrook Union Elementary,4797.86,Everything else,Other services and operating costs,9244777
+2023-24,68114,Fallbrook Union Elementary,4797.86,Everything else,Services subcontracted to other agencies,824890
+2023-24,68114,Fallbrook Union Elementary,4797.86,Everything else,"Professional services, utilities, rents and other operating costs",9244777
 2023-24,68114,Fallbrook Union Elementary,4797.86,Everything else,Capital outlay,634641
 2023-24,68114,Fallbrook Union Elementary,4797.86,Everything else,"Tuition, payments to other agencies and debt service",290971
 2023-24,68122,Fallbrook Union High,1867.55,Salaries,Teacher salaries,12521581
@@ -325,8 +325,8 @@ fiscal_year,district_code,district,students_ada,group,category,dollars
 2023-24,68122,Fallbrook Union High,1867.55,Benefits,Retiree health benefits,612248
 2023-24,68122,Fallbrook Union High,1867.55,Benefits,Other benefits,0
 2023-24,68122,Fallbrook Union High,1867.55,Everything else,Books and supplies,2373920
-2023-24,68122,Fallbrook Union High,1867.55,Everything else,Contracted services (subagreements),2370393
-2023-24,68122,Fallbrook Union High,1867.55,Everything else,Other services and operating costs,5168540
+2023-24,68122,Fallbrook Union High,1867.55,Everything else,Services subcontracted to other agencies,2370393
+2023-24,68122,Fallbrook Union High,1867.55,Everything else,"Professional services, utilities, rents and other operating costs",5168540
 2023-24,68122,Fallbrook Union High,1867.55,Everything else,Capital outlay,1117366
 2023-24,68122,Fallbrook Union High,1867.55,Everything else,"Tuition, payments to other agencies and debt service",744656
 2023-24,68130,Grossmont Union High,14835.35,Salaries,Teacher salaries,99754723
@@ -347,8 +347,8 @@ fiscal_year,district_code,district,students_ada,group,category,dollars
 2023-24,68130,Grossmont Union High,14835.35,Benefits,Retiree health benefits,3302070
 2023-24,68130,Grossmont Union High,14835.35,Benefits,Other benefits,175714
 2023-24,68130,Grossmont Union High,14835.35,Everything else,Books and supplies,11939412
-2023-24,68130,Grossmont Union High,14835.35,Everything else,Contracted services (subagreements),18167283
-2023-24,68130,Grossmont Union High,14835.35,Everything else,Other services and operating costs,25742631
+2023-24,68130,Grossmont Union High,14835.35,Everything else,Services subcontracted to other agencies,18167283
+2023-24,68130,Grossmont Union High,14835.35,Everything else,"Professional services, utilities, rents and other operating costs",25742631
 2023-24,68130,Grossmont Union High,14835.35,Everything else,Capital outlay,12236074
 2023-24,68130,Grossmont Union High,14835.35,Everything else,"Tuition, payments to other agencies and debt service",1769663
 2023-24,68155,Jamul-Dulzura Union Elementary,562.34,Salaries,Teacher salaries,2375319
@@ -369,8 +369,8 @@ fiscal_year,district_code,district,students_ada,group,category,dollars
 2023-24,68155,Jamul-Dulzura Union Elementary,562.34,Benefits,Retiree health benefits,30659
 2023-24,68155,Jamul-Dulzura Union Elementary,562.34,Benefits,Other benefits,0
 2023-24,68155,Jamul-Dulzura Union Elementary,562.34,Everything else,Books and supplies,856422
-2023-24,68155,Jamul-Dulzura Union Elementary,562.34,Everything else,Contracted services (subagreements),453652
-2023-24,68155,Jamul-Dulzura Union Elementary,562.34,Everything else,Other services and operating costs,1393803
+2023-24,68155,Jamul-Dulzura Union Elementary,562.34,Everything else,Services subcontracted to other agencies,453652
+2023-24,68155,Jamul-Dulzura Union Elementary,562.34,Everything else,"Professional services, utilities, rents and other operating costs",1393803
 2023-24,68155,Jamul-Dulzura Union Elementary,562.34,Everything else,Capital outlay,0
 2023-24,68155,Jamul-Dulzura Union Elementary,562.34,Everything else,"Tuition, payments to other agencies and debt service",187747
 2023-24,68163,Julian Union Elementary,253.23,Salaries,Teacher salaries,1432558
@@ -391,8 +391,8 @@ fiscal_year,district_code,district,students_ada,group,category,dollars
 2023-24,68163,Julian Union Elementary,253.23,Benefits,Retiree health benefits,0
 2023-24,68163,Julian Union Elementary,253.23,Benefits,Other benefits,0
 2023-24,68163,Julian Union Elementary,253.23,Everything else,Books and supplies,310459
-2023-24,68163,Julian Union Elementary,253.23,Everything else,Contracted services (subagreements),0
-2023-24,68163,Julian Union Elementary,253.23,Everything else,Other services and operating costs,1709752
+2023-24,68163,Julian Union Elementary,253.23,Everything else,Services subcontracted to other agencies,0
+2023-24,68163,Julian Union Elementary,253.23,Everything else,"Professional services, utilities, rents and other operating costs",1709752
 2023-24,68163,Julian Union Elementary,253.23,Everything else,Capital outlay,150108
 2023-24,68163,Julian Union Elementary,253.23,Everything else,"Tuition, payments to other agencies and debt service",5115
 2023-24,68171,Julian Union High,110.05,Salaries,Teacher salaries,791186
@@ -413,8 +413,8 @@ fiscal_year,district_code,district,students_ada,group,category,dollars
 2023-24,68171,Julian Union High,110.05,Benefits,Retiree health benefits,0
 2023-24,68171,Julian Union High,110.05,Benefits,Other benefits,0
 2023-24,68171,Julian Union High,110.05,Everything else,Books and supplies,720238
-2023-24,68171,Julian Union High,110.05,Everything else,Contracted services (subagreements),20002
-2023-24,68171,Julian Union High,110.05,Everything else,Other services and operating costs,764443
+2023-24,68171,Julian Union High,110.05,Everything else,Services subcontracted to other agencies,20002
+2023-24,68171,Julian Union High,110.05,Everything else,"Professional services, utilities, rents and other operating costs",764443
 2023-24,68171,Julian Union High,110.05,Everything else,Capital outlay,79550
 2023-24,68171,Julian Union High,110.05,Everything else,"Tuition, payments to other agencies and debt service",-5742
 2023-24,68197,La Mesa-Spring Valley,9911.51,Salaries,Teacher salaries,64018081
@@ -435,8 +435,8 @@ fiscal_year,district_code,district,students_ada,group,category,dollars
 2023-24,68197,La Mesa-Spring Valley,9911.51,Benefits,Retiree health benefits,2094902
 2023-24,68197,La Mesa-Spring Valley,9911.51,Benefits,Other benefits,1565447
 2023-24,68197,La Mesa-Spring Valley,9911.51,Everything else,Books and supplies,9723834
-2023-24,68197,La Mesa-Spring Valley,9911.51,Everything else,Contracted services (subagreements),0
-2023-24,68197,La Mesa-Spring Valley,9911.51,Everything else,Other services and operating costs,15034789
+2023-24,68197,La Mesa-Spring Valley,9911.51,Everything else,Services subcontracted to other agencies,0
+2023-24,68197,La Mesa-Spring Valley,9911.51,Everything else,"Professional services, utilities, rents and other operating costs",15034789
 2023-24,68197,La Mesa-Spring Valley,9911.51,Everything else,Capital outlay,3521176
 2023-24,68197,La Mesa-Spring Valley,9911.51,Everything else,"Tuition, payments to other agencies and debt service",-177668
 2023-24,68189,Lakeside Union Elementary,4238.89,Salaries,Teacher salaries,25678081
@@ -457,8 +457,8 @@ fiscal_year,district_code,district,students_ada,group,category,dollars
 2023-24,68189,Lakeside Union Elementary,4238.89,Benefits,Retiree health benefits,643184
 2023-24,68189,Lakeside Union Elementary,4238.89,Benefits,Other benefits,426850
 2023-24,68189,Lakeside Union Elementary,4238.89,Everything else,Books and supplies,2880447
-2023-24,68189,Lakeside Union Elementary,4238.89,Everything else,Contracted services (subagreements),145965
-2023-24,68189,Lakeside Union Elementary,4238.89,Everything else,Other services and operating costs,7015796
+2023-24,68189,Lakeside Union Elementary,4238.89,Everything else,Services subcontracted to other agencies,145965
+2023-24,68189,Lakeside Union Elementary,4238.89,Everything else,"Professional services, utilities, rents and other operating costs",7015796
 2023-24,68189,Lakeside Union Elementary,4238.89,Everything else,Capital outlay,5191805
 2023-24,68189,Lakeside Union Elementary,4238.89,Everything else,"Tuition, payments to other agencies and debt service",997528
 2023-24,68205,Lemon Grove Elementary,2847.43,Salaries,Teacher salaries,20197841
@@ -479,8 +479,8 @@ fiscal_year,district_code,district,students_ada,group,category,dollars
 2023-24,68205,Lemon Grove Elementary,2847.43,Benefits,Retiree health benefits,672828
 2023-24,68205,Lemon Grove Elementary,2847.43,Benefits,Other benefits,0
 2023-24,68205,Lemon Grove Elementary,2847.43,Everything else,Books and supplies,4620689
-2023-24,68205,Lemon Grove Elementary,2847.43,Everything else,Contracted services (subagreements),582904
-2023-24,68205,Lemon Grove Elementary,2847.43,Everything else,Other services and operating costs,7811223
+2023-24,68205,Lemon Grove Elementary,2847.43,Everything else,Services subcontracted to other agencies,582904
+2023-24,68205,Lemon Grove Elementary,2847.43,Everything else,"Professional services, utilities, rents and other operating costs",7811223
 2023-24,68205,Lemon Grove Elementary,2847.43,Everything else,Capital outlay,373276
 2023-24,68205,Lemon Grove Elementary,2847.43,Everything else,"Tuition, payments to other agencies and debt service",10894
 2023-24,68213,Mountain Empire Unified,1665.71,Salaries,Teacher salaries,9981358
@@ -501,8 +501,8 @@ fiscal_year,district_code,district,students_ada,group,category,dollars
 2023-24,68213,Mountain Empire Unified,1665.71,Benefits,Retiree health benefits,178611
 2023-24,68213,Mountain Empire Unified,1665.71,Benefits,Other benefits,17597
 2023-24,68213,Mountain Empire Unified,1665.71,Everything else,Books and supplies,2302128
-2023-24,68213,Mountain Empire Unified,1665.71,Everything else,Contracted services (subagreements),354795
-2023-24,68213,Mountain Empire Unified,1665.71,Everything else,Other services and operating costs,5523090
+2023-24,68213,Mountain Empire Unified,1665.71,Everything else,Services subcontracted to other agencies,354795
+2023-24,68213,Mountain Empire Unified,1665.71,Everything else,"Professional services, utilities, rents and other operating costs",5523090
 2023-24,68213,Mountain Empire Unified,1665.71,Everything else,Capital outlay,595378
 2023-24,68213,Mountain Empire Unified,1665.71,Everything else,"Tuition, payments to other agencies and debt service",866308
 2023-24,68221,National Elementary,3831.13,Salaries,Teacher salaries,27309902
@@ -523,8 +523,8 @@ fiscal_year,district_code,district,students_ada,group,category,dollars
 2023-24,68221,National Elementary,3831.13,Benefits,Retiree health benefits,338658
 2023-24,68221,National Elementary,3831.13,Benefits,Other benefits,141223
 2023-24,68221,National Elementary,3831.13,Everything else,Books and supplies,6894919
-2023-24,68221,National Elementary,3831.13,Everything else,Contracted services (subagreements),4448970
-2023-24,68221,National Elementary,3831.13,Everything else,Other services and operating costs,14369391
+2023-24,68221,National Elementary,3831.13,Everything else,Services subcontracted to other agencies,4448970
+2023-24,68221,National Elementary,3831.13,Everything else,"Professional services, utilities, rents and other operating costs",14369391
 2023-24,68221,National Elementary,3831.13,Everything else,Capital outlay,3124767
 2023-24,68221,National Elementary,3831.13,Everything else,"Tuition, payments to other agencies and debt service",483355
 2023-24,73569,Oceanside Unified,13968.58,Salaries,Teacher salaries,84416910
@@ -545,8 +545,8 @@ fiscal_year,district_code,district,students_ada,group,category,dollars
 2023-24,73569,Oceanside Unified,13968.58,Benefits,Retiree health benefits,157932
 2023-24,73569,Oceanside Unified,13968.58,Benefits,Other benefits,257180
 2023-24,73569,Oceanside Unified,13968.58,Everything else,Books and supplies,10383443
-2023-24,73569,Oceanside Unified,13968.58,Everything else,Contracted services (subagreements),7582065
-2023-24,73569,Oceanside Unified,13968.58,Everything else,Other services and operating costs,38734693
+2023-24,73569,Oceanside Unified,13968.58,Everything else,Services subcontracted to other agencies,7582065
+2023-24,73569,Oceanside Unified,13968.58,Everything else,"Professional services, utilities, rents and other operating costs",38734693
 2023-24,73569,Oceanside Unified,13968.58,Everything else,Capital outlay,11385522
 2023-24,73569,Oceanside Unified,13968.58,Everything else,"Tuition, payments to other agencies and debt service",1474013
 2023-24,68296,Poway Unified,33174.46,Salaries,Teacher salaries,179449563
@@ -567,8 +567,8 @@ fiscal_year,district_code,district,students_ada,group,category,dollars
 2023-24,68296,Poway Unified,33174.46,Benefits,Retiree health benefits,2127216
 2023-24,68296,Poway Unified,33174.46,Benefits,Other benefits,3316904
 2023-24,68296,Poway Unified,33174.46,Everything else,Books and supplies,15304629
-2023-24,68296,Poway Unified,33174.46,Everything else,Contracted services (subagreements),9227614
-2023-24,68296,Poway Unified,33174.46,Everything else,Other services and operating costs,38681073
+2023-24,68296,Poway Unified,33174.46,Everything else,Services subcontracted to other agencies,9227614
+2023-24,68296,Poway Unified,33174.46,Everything else,"Professional services, utilities, rents and other operating costs",38681073
 2023-24,68296,Poway Unified,33174.46,Everything else,Capital outlay,10287396
 2023-24,68296,Poway Unified,33174.46,Everything else,"Tuition, payments to other agencies and debt service",3055408
 2023-24,68304,Ramona City Unified,4693.12,Salaries,Teacher salaries,24265360
@@ -589,8 +589,8 @@ fiscal_year,district_code,district,students_ada,group,category,dollars
 2023-24,68304,Ramona City Unified,4693.12,Benefits,Retiree health benefits,63351
 2023-24,68304,Ramona City Unified,4693.12,Benefits,Other benefits,750
 2023-24,68304,Ramona City Unified,4693.12,Everything else,Books and supplies,3199633
-2023-24,68304,Ramona City Unified,4693.12,Everything else,Contracted services (subagreements),0
-2023-24,68304,Ramona City Unified,4693.12,Everything else,Other services and operating costs,8072060
+2023-24,68304,Ramona City Unified,4693.12,Everything else,Services subcontracted to other agencies,0
+2023-24,68304,Ramona City Unified,4693.12,Everything else,"Professional services, utilities, rents and other operating costs",8072060
 2023-24,68304,Ramona City Unified,4693.12,Everything else,Capital outlay,3694317
 2023-24,68304,Ramona City Unified,4693.12,Everything else,"Tuition, payments to other agencies and debt service",2507527
 2023-24,68312,Rancho Santa Fe Elementary,509.87,Salaries,Teacher salaries,5220457
@@ -611,8 +611,8 @@ fiscal_year,district_code,district,students_ada,group,category,dollars
 2023-24,68312,Rancho Santa Fe Elementary,509.87,Benefits,Retiree health benefits,136822
 2023-24,68312,Rancho Santa Fe Elementary,509.87,Benefits,Other benefits,0
 2023-24,68312,Rancho Santa Fe Elementary,509.87,Everything else,Books and supplies,552464
-2023-24,68312,Rancho Santa Fe Elementary,509.87,Everything else,Contracted services (subagreements),0
-2023-24,68312,Rancho Santa Fe Elementary,509.87,Everything else,Other services and operating costs,1643281
+2023-24,68312,Rancho Santa Fe Elementary,509.87,Everything else,Services subcontracted to other agencies,0
+2023-24,68312,Rancho Santa Fe Elementary,509.87,Everything else,"Professional services, utilities, rents and other operating costs",1643281
 2023-24,68312,Rancho Santa Fe Elementary,509.87,Everything else,Capital outlay,452053
 2023-24,68312,Rancho Santa Fe Elementary,509.87,Everything else,"Tuition, payments to other agencies and debt service",6499
 2023-24,10371,San Diego County Office of Education,0.0,Salaries,Teacher salaries,27304964
@@ -633,8 +633,8 @@ fiscal_year,district_code,district,students_ada,group,category,dollars
 2023-24,10371,San Diego County Office of Education,0.0,Benefits,Retiree health benefits,1479896
 2023-24,10371,San Diego County Office of Education,0.0,Benefits,Other benefits,59995
 2023-24,10371,San Diego County Office of Education,0.0,Everything else,Books and supplies,5812398
-2023-24,10371,San Diego County Office of Education,0.0,Everything else,Contracted services (subagreements),73482519
-2023-24,10371,San Diego County Office of Education,0.0,Everything else,Other services and operating costs,42181855
+2023-24,10371,San Diego County Office of Education,0.0,Everything else,Services subcontracted to other agencies,73482519
+2023-24,10371,San Diego County Office of Education,0.0,Everything else,"Professional services, utilities, rents and other operating costs",42181855
 2023-24,10371,San Diego County Office of Education,0.0,Everything else,Capital outlay,8431065
 2023-24,10371,San Diego County Office of Education,0.0,Everything else,"Tuition, payments to other agencies and debt service",33012984
 2023-24,68338,San Diego Unified,87342.88,Salaries,Teacher salaries,652510188
@@ -655,8 +655,8 @@ fiscal_year,district_code,district,students_ada,group,category,dollars
 2023-24,68338,San Diego Unified,87342.88,Benefits,Retiree health benefits,4041533
 2023-24,68338,San Diego Unified,87342.88,Benefits,Other benefits,5048303
 2023-24,68338,San Diego Unified,87342.88,Everything else,Books and supplies,53299512
-2023-24,68338,San Diego Unified,87342.88,Everything else,Contracted services (subagreements),127870413
-2023-24,68338,San Diego Unified,87342.88,Everything else,Other services and operating costs,23173668
+2023-24,68338,San Diego Unified,87342.88,Everything else,Services subcontracted to other agencies,127870413
+2023-24,68338,San Diego Unified,87342.88,Everything else,"Professional services, utilities, rents and other operating costs",23173668
 2023-24,68338,San Diego Unified,87342.88,Everything else,Capital outlay,4592026
 2023-24,68338,San Diego Unified,87342.88,Everything else,"Tuition, payments to other agencies and debt service",13822730
 2023-24,68346,San Dieguito Union High,11892.37,Salaries,Teacher salaries,66314435
@@ -677,8 +677,8 @@ fiscal_year,district_code,district,students_ada,group,category,dollars
 2023-24,68346,San Dieguito Union High,11892.37,Benefits,Retiree health benefits,787141
 2023-24,68346,San Dieguito Union High,11892.37,Benefits,Other benefits,4349540
 2023-24,68346,San Dieguito Union High,11892.37,Everything else,Books and supplies,7357980
-2023-24,68346,San Dieguito Union High,11892.37,Everything else,Contracted services (subagreements),3970336
-2023-24,68346,San Dieguito Union High,11892.37,Everything else,Other services and operating costs,18848029
+2023-24,68346,San Dieguito Union High,11892.37,Everything else,Services subcontracted to other agencies,3970336
+2023-24,68346,San Dieguito Union High,11892.37,Everything else,"Professional services, utilities, rents and other operating costs",18848029
 2023-24,68346,San Dieguito Union High,11892.37,Everything else,Capital outlay,3229855
 2023-24,68346,San Dieguito Union High,11892.37,Everything else,"Tuition, payments to other agencies and debt service",2798922
 2023-24,73791,San Marcos Unified,18128.53,Salaries,Teacher salaries,104617501
@@ -699,8 +699,8 @@ fiscal_year,district_code,district,students_ada,group,category,dollars
 2023-24,73791,San Marcos Unified,18128.53,Benefits,Retiree health benefits,5936608
 2023-24,73791,San Marcos Unified,18128.53,Benefits,Other benefits,819915
 2023-24,73791,San Marcos Unified,18128.53,Everything else,Books and supplies,9063428
-2023-24,73791,San Marcos Unified,18128.53,Everything else,Contracted services (subagreements),5538819
-2023-24,73791,San Marcos Unified,18128.53,Everything else,Other services and operating costs,27512941
+2023-24,73791,San Marcos Unified,18128.53,Everything else,Services subcontracted to other agencies,5538819
+2023-24,73791,San Marcos Unified,18128.53,Everything else,"Professional services, utilities, rents and other operating costs",27512941
 2023-24,73791,San Marcos Unified,18128.53,Everything else,Capital outlay,6509823
 2023-24,73791,San Marcos Unified,18128.53,Everything else,"Tuition, payments to other agencies and debt service",1364001
 2023-24,68353,San Pasqual Union Elementary,505.67,Salaries,Teacher salaries,2470612
@@ -721,8 +721,8 @@ fiscal_year,district_code,district,students_ada,group,category,dollars
 2023-24,68353,San Pasqual Union Elementary,505.67,Benefits,Retiree health benefits,0
 2023-24,68353,San Pasqual Union Elementary,505.67,Benefits,Other benefits,0
 2023-24,68353,San Pasqual Union Elementary,505.67,Everything else,Books and supplies,279870
-2023-24,68353,San Pasqual Union Elementary,505.67,Everything else,Contracted services (subagreements),1717
-2023-24,68353,San Pasqual Union Elementary,505.67,Everything else,Other services and operating costs,935284
+2023-24,68353,San Pasqual Union Elementary,505.67,Everything else,Services subcontracted to other agencies,1717
+2023-24,68353,San Pasqual Union Elementary,505.67,Everything else,"Professional services, utilities, rents and other operating costs",935284
 2023-24,68353,San Pasqual Union Elementary,505.67,Everything else,Capital outlay,0
 2023-24,68353,San Pasqual Union Elementary,505.67,Everything else,"Tuition, payments to other agencies and debt service",5283
 2023-24,68379,San Ysidro Elementary,3876.26,Salaries,Teacher salaries,25914501
@@ -743,8 +743,8 @@ fiscal_year,district_code,district,students_ada,group,category,dollars
 2023-24,68379,San Ysidro Elementary,3876.26,Benefits,Retiree health benefits,383643
 2023-24,68379,San Ysidro Elementary,3876.26,Benefits,Other benefits,1800
 2023-24,68379,San Ysidro Elementary,3876.26,Everything else,Books and supplies,2916595
-2023-24,68379,San Ysidro Elementary,3876.26,Everything else,Contracted services (subagreements),0
-2023-24,68379,San Ysidro Elementary,3876.26,Everything else,Other services and operating costs,17220837
+2023-24,68379,San Ysidro Elementary,3876.26,Everything else,Services subcontracted to other agencies,0
+2023-24,68379,San Ysidro Elementary,3876.26,Everything else,"Professional services, utilities, rents and other operating costs",17220837
 2023-24,68379,San Ysidro Elementary,3876.26,Everything else,Capital outlay,2101906
 2023-24,68379,San Ysidro Elementary,3876.26,Everything else,"Tuition, payments to other agencies and debt service",953296
 2023-24,68361,Santee Elementary,5741.74,Salaries,Teacher salaries,35467552
@@ -765,8 +765,8 @@ fiscal_year,district_code,district,students_ada,group,category,dollars
 2023-24,68361,Santee Elementary,5741.74,Benefits,Retiree health benefits,395023
 2023-24,68361,Santee Elementary,5741.74,Benefits,Other benefits,405492
 2023-24,68361,Santee Elementary,5741.74,Everything else,Books and supplies,4962052
-2023-24,68361,Santee Elementary,5741.74,Everything else,Contracted services (subagreements),0
-2023-24,68361,Santee Elementary,5741.74,Everything else,Other services and operating costs,9300116
+2023-24,68361,Santee Elementary,5741.74,Everything else,Services subcontracted to other agencies,0
+2023-24,68361,Santee Elementary,5741.74,Everything else,"Professional services, utilities, rents and other operating costs",9300116
 2023-24,68361,Santee Elementary,5741.74,Everything else,Capital outlay,967519
 2023-24,68361,Santee Elementary,5741.74,Everything else,"Tuition, payments to other agencies and debt service",290886
 2023-24,68387,Solana Beach Elementary,2625.26,Salaries,Teacher salaries,20942445
@@ -787,8 +787,8 @@ fiscal_year,district_code,district,students_ada,group,category,dollars
 2023-24,68387,Solana Beach Elementary,2625.26,Benefits,Retiree health benefits,412274
 2023-24,68387,Solana Beach Elementary,2625.26,Benefits,Other benefits,0
 2023-24,68387,Solana Beach Elementary,2625.26,Everything else,Books and supplies,2579913
-2023-24,68387,Solana Beach Elementary,2625.26,Everything else,Contracted services (subagreements),526561
-2023-24,68387,Solana Beach Elementary,2625.26,Everything else,Other services and operating costs,7551213
+2023-24,68387,Solana Beach Elementary,2625.26,Everything else,Services subcontracted to other agencies,526561
+2023-24,68387,Solana Beach Elementary,2625.26,Everything else,"Professional services, utilities, rents and other operating costs",7551213
 2023-24,68387,Solana Beach Elementary,2625.26,Everything else,Capital outlay,649732
 2023-24,68387,Solana Beach Elementary,2625.26,Everything else,"Tuition, payments to other agencies and debt service",-41835
 2023-24,68395,South Bay Union Elementary,3476.51,Salaries,Teacher salaries,27450783
@@ -809,8 +809,8 @@ fiscal_year,district_code,district,students_ada,group,category,dollars
 2023-24,68395,South Bay Union Elementary,3476.51,Benefits,Retiree health benefits,1020930
 2023-24,68395,South Bay Union Elementary,3476.51,Benefits,Other benefits,708108
 2023-24,68395,South Bay Union Elementary,3476.51,Everything else,Books and supplies,2888424
-2023-24,68395,South Bay Union Elementary,3476.51,Everything else,Contracted services (subagreements),1968878
-2023-24,68395,South Bay Union Elementary,3476.51,Everything else,Other services and operating costs,12866683
+2023-24,68395,South Bay Union Elementary,3476.51,Everything else,Services subcontracted to other agencies,1968878
+2023-24,68395,South Bay Union Elementary,3476.51,Everything else,"Professional services, utilities, rents and other operating costs",12866683
 2023-24,68395,South Bay Union Elementary,3476.51,Everything else,Capital outlay,899508
 2023-24,68395,South Bay Union Elementary,3476.51,Everything else,"Tuition, payments to other agencies and debt service",-133993
 2023-24,68403,Spencer Valley Elementary,44.88,Salaries,Teacher salaries,436854
@@ -831,8 +831,8 @@ fiscal_year,district_code,district,students_ada,group,category,dollars
 2023-24,68403,Spencer Valley Elementary,44.88,Benefits,Retiree health benefits,7787
 2023-24,68403,Spencer Valley Elementary,44.88,Benefits,Other benefits,0
 2023-24,68403,Spencer Valley Elementary,44.88,Everything else,Books and supplies,82423
-2023-24,68403,Spencer Valley Elementary,44.88,Everything else,Contracted services (subagreements),0
-2023-24,68403,Spencer Valley Elementary,44.88,Everything else,Other services and operating costs,388031
+2023-24,68403,Spencer Valley Elementary,44.88,Everything else,Services subcontracted to other agencies,0
+2023-24,68403,Spencer Valley Elementary,44.88,Everything else,"Professional services, utilities, rents and other operating costs",388031
 2023-24,68403,Spencer Valley Elementary,44.88,Everything else,Capital outlay,0
 2023-24,68403,Spencer Valley Elementary,44.88,Everything else,"Tuition, payments to other agencies and debt service",0
 2023-24,68411,Sweetwater Union High,31952.64,Salaries,Teacher salaries,179263294
@@ -853,8 +853,8 @@ fiscal_year,district_code,district,students_ada,group,category,dollars
 2023-24,68411,Sweetwater Union High,31952.64,Benefits,Retiree health benefits,2564401
 2023-24,68411,Sweetwater Union High,31952.64,Benefits,Other benefits,0
 2023-24,68411,Sweetwater Union High,31952.64,Everything else,Books and supplies,29411648
-2023-24,68411,Sweetwater Union High,31952.64,Everything else,Contracted services (subagreements),1720326
-2023-24,68411,Sweetwater Union High,31952.64,Everything else,Other services and operating costs,59704062
+2023-24,68411,Sweetwater Union High,31952.64,Everything else,Services subcontracted to other agencies,1720326
+2023-24,68411,Sweetwater Union High,31952.64,Everything else,"Professional services, utilities, rents and other operating costs",59704062
 2023-24,68411,Sweetwater Union High,31952.64,Everything else,Capital outlay,8356177
 2023-24,68411,Sweetwater Union High,31952.64,Everything else,"Tuition, payments to other agencies and debt service",1695557
 2023-24,68437,Vallecitos Elementary,179.25,Salaries,Teacher salaries,1153514
@@ -875,8 +875,8 @@ fiscal_year,district_code,district,students_ada,group,category,dollars
 2023-24,68437,Vallecitos Elementary,179.25,Benefits,Retiree health benefits,0
 2023-24,68437,Vallecitos Elementary,179.25,Benefits,Other benefits,0
 2023-24,68437,Vallecitos Elementary,179.25,Everything else,Books and supplies,153226
-2023-24,68437,Vallecitos Elementary,179.25,Everything else,Contracted services (subagreements),460391
-2023-24,68437,Vallecitos Elementary,179.25,Everything else,Other services and operating costs,430989
+2023-24,68437,Vallecitos Elementary,179.25,Everything else,Services subcontracted to other agencies,460391
+2023-24,68437,Vallecitos Elementary,179.25,Everything else,"Professional services, utilities, rents and other operating costs",430989
 2023-24,68437,Vallecitos Elementary,179.25,Everything else,Capital outlay,20995
 2023-24,68437,Vallecitos Elementary,179.25,Everything else,"Tuition, payments to other agencies and debt service",0
 2023-24,75614,Valley Center-Pauma Unified,3361.38,Salaries,Teacher salaries,20878721
@@ -897,8 +897,8 @@ fiscal_year,district_code,district,students_ada,group,category,dollars
 2023-24,75614,Valley Center-Pauma Unified,3361.38,Benefits,Retiree health benefits,244583
 2023-24,75614,Valley Center-Pauma Unified,3361.38,Benefits,Other benefits,39888
 2023-24,75614,Valley Center-Pauma Unified,3361.38,Everything else,Books and supplies,2408133
-2023-24,75614,Valley Center-Pauma Unified,3361.38,Everything else,Contracted services (subagreements),1048320
-2023-24,75614,Valley Center-Pauma Unified,3361.38,Everything else,Other services and operating costs,6504731
+2023-24,75614,Valley Center-Pauma Unified,3361.38,Everything else,Services subcontracted to other agencies,1048320
+2023-24,75614,Valley Center-Pauma Unified,3361.38,Everything else,"Professional services, utilities, rents and other operating costs",6504731
 2023-24,75614,Valley Center-Pauma Unified,3361.38,Everything else,Capital outlay,4093927
 2023-24,75614,Valley Center-Pauma Unified,3361.38,Everything else,"Tuition, payments to other agencies and debt service",159685
 2023-24,68452,Vista Unified,17231.41,Salaries,Teacher salaries,114622534
@@ -919,8 +919,8 @@ fiscal_year,district_code,district,students_ada,group,category,dollars
 2023-24,68452,Vista Unified,17231.41,Benefits,Retiree health benefits,1345897
 2023-24,68452,Vista Unified,17231.41,Benefits,Other benefits,1822718
 2023-24,68452,Vista Unified,17231.41,Everything else,Books and supplies,20106949
-2023-24,68452,Vista Unified,17231.41,Everything else,Contracted services (subagreements),7442484
-2023-24,68452,Vista Unified,17231.41,Everything else,Other services and operating costs,36069400
+2023-24,68452,Vista Unified,17231.41,Everything else,Services subcontracted to other agencies,7442484
+2023-24,68452,Vista Unified,17231.41,Everything else,"Professional services, utilities, rents and other operating costs",36069400
 2023-24,68452,Vista Unified,17231.41,Everything else,Capital outlay,7897780
 2023-24,68452,Vista Unified,17231.41,Everything else,"Tuition, payments to other agencies and debt service",1687874
 2023-24,75416,Warner Unified,177.73,Salaries,Teacher salaries,1569957
@@ -941,7 +941,7 @@ fiscal_year,district_code,district,students_ada,group,category,dollars
 2023-24,75416,Warner Unified,177.73,Benefits,Retiree health benefits,0
 2023-24,75416,Warner Unified,177.73,Benefits,Other benefits,0
 2023-24,75416,Warner Unified,177.73,Everything else,Books and supplies,453787
-2023-24,75416,Warner Unified,177.73,Everything else,Contracted services (subagreements),0
-2023-24,75416,Warner Unified,177.73,Everything else,Other services and operating costs,1034850
+2023-24,75416,Warner Unified,177.73,Everything else,Services subcontracted to other agencies,0
+2023-24,75416,Warner Unified,177.73,Everything else,"Professional services, utilities, rents and other operating costs",1034850
 2023-24,75416,Warner Unified,177.73,Everything else,Capital outlay,553976
 2023-24,75416,Warner Unified,177.73,Everything else,"Tuition, payments to other agencies and debt service",45737

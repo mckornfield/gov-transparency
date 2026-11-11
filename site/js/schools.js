@@ -35,7 +35,7 @@ function drawChart(selected) {
   const narrow = width < 560;
   const group = Object.fromEntries(data.categories.map((c) => [c.label, c.group]));
   const short = (label) => truncate(label.replace(/ \(.*\)/, (m) => (narrow ? "" : m)), narrow ? 24 : 60);
-  const rows = tableRows(selected.spending, data.categories.map((c) => c.label), selected.ada).map((r) => ({ ...r, group: group[r.label], name: short(r.label) }));
+  const rows = tableRows(selected.spending, data.categories.map((c) => c.label), selected.ada, selected.withStudents.spending).map((r) => ({ ...r, group: group[r.label], name: short(r.label) }));
   $("school-chart").replaceChildren(Plot.plot({
     width, height: 24 * rows.length + 50, marginLeft: narrow ? 160 : 400, marginRight: 48,
     x: { label: "Share of general-fund spending", tickFormat: (v) => `${Math.round(100 * v)}%`, grid: true, ticks: narrow ? 3 : 6 },
@@ -58,13 +58,15 @@ function render() {
   const text = headline(data, selected);
   if ($("shead").textContent !== text) $("shead").textContent = text;
   const total = Object.values(selected.spending).reduce((s, v) => s + v, 0);
-  const students = selected.ada > 0 ? `, or ${formatPerResident(total / selected.ada)} for each of ${Math.round(selected.ada).toLocaleString("en-US")} students (average daily attendance)` : "";
+  const withStudents = Object.values(selected.withStudents.spending).reduce((s, v) => s + v, 0);
+  const left = selected.code === "all" ? "; the County Office of Education, which reports no students of its own, is left out of the per-student figures" : "";
+  const students = selected.ada > 0 ? `, or ${formatPerResident(withStudents / selected.ada)} for each of ${Math.round(selected.ada).toLocaleString("en-US")} students (average daily attendance${left})` : "";
   $("sgroups").textContent = `${selected.name}: ${formatMoney(total)} of general-fund spending${students}. ${groupShares(data, selected).map((g) => `${g.group} ${percent(g.share)}`).join(", ")}.`;
   drawChart(selected);
   const group = Object.fromEntries(data.categories.map((c) => [c.label, c.group]));
-  fillTable("category-table", tableRows(selected.spending, data.categories.map((c) => c.label), selected.ada).map((r) => [r.label, group[r.label], percent(r.share), formatMoney(r.dollars), perStudent(r.perStudent)]));
-  fillTable("purpose-table", tableRows(selected.purpose, data.purposes, selected.ada).map((r) => [r.label, percent(r.share), formatMoney(r.dollars), perStudent(r.perStudent)]));
-  fillTable("revenue-table", tableRows(selected.revenue, data.revenues, selected.ada).map((r) => [r.label, percent(r.share), formatMoney(r.dollars), perStudent(r.perStudent)]));
+  fillTable("category-table", tableRows(selected.spending, data.categories.map((c) => c.label), selected.ada, selected.withStudents.spending).map((r) => [r.label, group[r.label], percent(r.share), formatMoney(r.dollars), perStudent(r.perStudent)]));
+  fillTable("purpose-table", tableRows(selected.purpose, data.purposes, selected.ada, selected.withStudents.purpose).map((r) => [r.label, percent(r.share), formatMoney(r.dollars), perStudent(r.perStudent)]));
+  fillTable("revenue-table", tableRows(selected.revenue, data.revenues, selected.ada, selected.withStudents.revenue).map((r) => [r.label, percent(r.share), formatMoney(r.dollars), perStudent(r.perStudent)]));
   fillTable("funds-table", Object.entries(selected.other_funds).filter(([, v]) => v).map(([name, v]) => [name, formatMoney(v)]));
   fillTable("district-table", districtRows(data).map((d) => [d.name, d.type.replace(" School District", ""), Math.round(d.ada).toLocaleString("en-US"), formatMoney(d.total), perStudent(d.perStudent), percent(d.salaries), percent(d.benefits), percent(d.pensions)]));
 }

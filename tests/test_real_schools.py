@@ -25,6 +25,8 @@ def test_real_ledger_covers_san_diego_county_districts():
     assert 1.5e9 < sum(unified["spending"].values()) < 2.5e9
     assert sum(unified["spending"].values()) == pytest.approx(sum(unified["purpose"].values()))
     assert unified["other_funds"]["Building Fund"] > 0
+    assert "Special Education Pass-Through Fund" not in summary["10371"]["other_funds"] and summary["10371"]["passed_through"] > 200e6
+    assert summary["67983"]["charter_schools"] > 40e6 and "Charter Schools Enterprise Fund" not in summary["67983"]["other_funds"]
 
 
 def test_committed_school_data_adds_up_and_is_plausible():
@@ -52,3 +54,6 @@ def test_committed_school_data_separates_state_paid_pensions_and_local_taxes():
     taxes = sum(x["revenue"].get("Local property taxes", 0) for x in d["districts"])
     passed_on = sum(x["revenue"].get("Property taxes passed to charter schools", 0) for x in d["districts"])
     assert taxes > 2e9 and passed_on < 0
+    assert all(x["revenue"].get("Property taxes passed to charter schools", 0) <= 0 for x in d["districts"])
+    via_agencies = sum(x["revenue"].get("Passed on by other school agencies (mostly state special-education money)", 0) for x in d["districts"])
+    assert 150e6 < via_agencies < 350e6

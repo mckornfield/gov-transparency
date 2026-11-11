@@ -75,11 +75,11 @@
    "group": "Everything else"
   },
   {
-   "label": "Contracted services (subagreements)",
+   "label": "Services subcontracted to other agencies",
    "group": "Everything else"
   },
   {
-   "label": "Other services and operating costs",
+   "label": "Professional services, utilities, rents and other operating costs",
    "group": "Everything else"
   },
   {
@@ -97,18 +97,20 @@
   "School administration",
   "Instructional support (supervision, library, training)",
   "Pupil transportation",
-  "Pupil services (counseling, health, psychology)",
+  "Pupil services (counseling, health, psychology, food)",
   "District administration",
   "Buildings, maintenance and operations",
-  "Other (community, enterprise, debt, transfers to agencies)"
+  "Other (athletics and activities, community, enterprise, debt, transfers to agencies)"
  ],
  "revenues": [
   "State aid (funding formula and Education Protection Account)",
   "Local property taxes",
   "Property taxes passed to charter schools",
+  "Other property-tax and funding-formula transfers",
   "Federal",
   "Other state",
-  "Other local"
+  "Other local",
+  "Passed on by other school agencies (mostly state special-education money)"
  ],
  "districts": [
   {
@@ -125,12 +127,12 @@
     "Other certificated staff": 147095.08,
     "Teacher pensions (CalSTRS), paid by the district": 1640676.5,
     "Books and supplies": 1009427.85,
-    "Other services and operating costs": 2501952.63,
+    "Professional services, utilities, rents and other operating costs": 2501952.63,
     "Principals and certificated administrators": 1121151.83,
     "Counselors, nurses and other pupil support": 723813.71,
     "Maintenance, food, transport and other support staff": 1104172.23,
     "Other classified staff": 511709.11,
-    "Contracted services (subagreements)": 1047700.75,
+    "Services subcontracted to other agencies": 1047700.75,
     "Classified supervisors and administrators": 359157.11,
     "Tuition, payments to other agencies and debt service": 393062.47,
     "Teacher salaries": 7764738.58,
@@ -143,11 +145,11 @@
    "purpose": {
     "Instructional support (supervision, library, training)": 446916.47,
     "School administration": 1522738.88,
-    "Pupil services (counseling, health, psychology)": 2005387.55,
+    "Pupil services (counseling, health, psychology, food)": 2005387.55,
     "Pupil transportation": 562511.7,
     "District administration": 2092433.41,
     "Buildings, maintenance and operations": 2655554.32,
-    "Other (community, enterprise, debt, transfers to agencies)": 833750.48,
+    "Other (athletics and activities, community, enterprise, debt, transfers to agencies)": 833750.48,
     "Classroom instruction": 11508675.4,
     "Special education instruction": 2349724.41
    },
@@ -156,15 +158,18 @@
     "Local property taxes": 6788350.61,
     "Federal": 1392825.87,
     "Other state": 3144555.44,
-    "Other local": 3754628.04,
-    "Property taxes passed to charter schools": 129673.0
+    "Other local": 2629263.04,
+    "Other property-tax and funding-formula transfers": 129673.0,
+    "Passed on by other school agencies (mostly state special-education money)": 1125365.0
    },
    "other_funds": {
     "Cafeteria Special Revenue Fund": 953951.92,
     "Capital Facilities Fund": 224818.02,
     "Special Reserve Fund for Capital Outlay Projects": 1559914.08,
     "Bond Interest and Redemption Fund": 2665350.0
-   }
+   },
+   "charter_schools": 0.0,
+   "passed_through": 0.0
   },
   {
    "code": "76851",
@@ -181,7 +186,7 @@
     "Unemployment and workers' compensation insurance": 318175.38,
     "Retiree health benefits": 66165.66,
     "Books and supplies": 1742781.43,
-    "Other services and operating costs": 4118429.57,
+    "Professional services, utilities, rents and other operating costs": 4118429.57,
     "Maintenance, food, transport and other support staff": 1956012.94,
     "Other benefits": 23950.91,
     "Counselors, nurses and other pupil support": 1272510.98,
@@ -191,15 +196,15 @@
     "Teacher salaries": 10627500.67,
     "Classroom aides": 1495692.05,
     "Other classified staff": 224478.67,
-    "Contracted services (subagreements)": 985993.42,
+    "Services subcontracted to other agencies": 985993.42,
     "Teacher pensions (CalSTRS), paid by the state on the district's behalf": 1185258.0
    },
    "purpose": {
     "Instructional support (supervision, library, training)": 1572526.6,
     "School administration": 2414720.63,
-    "Pupil services (counseling, health, psychology)": 2635475.64,
+    "Pupil services (counseling, health, psychology, food)": 2635475.64,
     "Pupil transportation": 1071088.07,
-    "Other (community, enterprise, debt, transfers to agencies)": 899893.44,
+    "Other (athletics and activities, community, enterprise, debt, transfers to agencies)": 899893.44,
     "District administration": 3066912.77,
     "Buildings, maintenance and operations": 3222322.85,
     "Classroom instruction": 16039115.0,
@@ -208,10 +213,12 @@
    "revenue": {
     "State aid (funding formula and Education Protection Account)": 10557073.0,
     "Local property taxes": 15091629.38,
-    "Property taxes passed to charter schools": -359681.0,
+    "Property taxes passed to charter schools": -548598.0,
     "Federal": 1985227.01,
     "Other state": 4478270.18,
-    "Other local": 3336559.25
+    "Other local": 1560173.49,
+    "Other property-tax and funding-formula transfers": 188917.0,
+    "Passed on by other school agencies (mostly state special-education money)": 1776385.76
    },
    "other_funds": {
     "Student Activity Special Revenue Fund": 137992.69,
@@ -222,7 +229,9 @@
     "Bond Interest and Redemption Fund": 1207641.0,
     "Other Enterprise Fund": 503084.06,
     "Foundation Private-Purpose Trust Fund": 19550.0
-   }
+   },
+   "charter_schools": 0.0,
+   "passed_through": 0.0
   },
   {
    "code": "67983",
@@ -239,7 +248,7 @@
     "Health and welfare benefits": 780297.65,
     "Unemployment and workers' compensation insurance": 97315.25,
     "Retiree health benefits": 38621.95,
-    "Other services and operating costs": 1867733.65,
+    "Professional services, utilities, rents and other operating costs": 1867733.65,
     "Maintenance, food, transport and other support staff": 765493.31,
     "Books and supplies": 879335.74,
     "Capital outlay": 1197808.08,
@@ -251,30 +260,33 @@
    "purpose": {
     "School administration": 747661.53,
     "Pupil transportation": 486845.45,
-    "Pupil services (counseling, health, psychology)": 386586.6,
+    "Pupil services (counseling, health, psychology, food)": 386586.6,
     "District administration": 767414.01,
     "Buildings, maintenance and operations": 2478939.42,
     "Classroom instruction": 3695796.27,
     "Instructional support (supervision, library, training)": 348952.66,
-    "Other (community, enterprise, debt, transfers to agencies)": 277378.31,
+    "Other (athletics and activities, community, enterprise, debt, transfers to agencies)": 277378.31,
     "Special education instruction": 893026.52
    },
    "revenue": {
     "State aid (funding formula and Education Protection Account)": 5293807.0,
     "Local property taxes": 3218959.32,
-    "Property taxes passed to charter schools": -2876288.8,
+    "Property taxes passed to charter schools": -2910222.8,
     "Other state": 1471677.52,
-    "Other local": 2333195.23,
-    "Federal": 1554079.11
+    "Other local": 1776113.15,
+    "Federal": 1554079.11,
+    "Other property-tax and funding-formula transfers": 33934.0,
+    "Passed on by other school agencies (mostly state special-education money)": 557082.08
    },
    "other_funds": {
     "Child Development Fund": 222693.29,
     "Cafeteria Special Revenue Fund": 497950.11,
     "Building Fund": 3551698.4,
     "Bond Interest and Redemption Fund": 405650.0,
-    "Foundation Permanent Fund": 3250.0,
-    "Charter Schools Enterprise Fund": 46789966.48
-   }
+    "Foundation Permanent Fund": 3250.0
+   },
+   "charter_schools": 46789966.48,
+   "passed_through": 0.0
   },
   {
    "code": "67991",
@@ -290,7 +302,7 @@
     "Unemployment and workers' compensation insurance": 5346646.3,
     "Retiree health benefits": 1299689.47,
     "Books and supplies": 13356332.19,
-    "Other services and operating costs": 38231951.7,
+    "Professional services, utilities, rents and other operating costs": 38231951.7,
     "Teacher salaries": 92451003.36,
     "Principals and certificated administrators": 15158774.75,
     "Other classified staff": 3606148.06,
@@ -307,21 +319,23 @@
    "purpose": {
     "Instructional support (supervision, library, training)": 18616070.23,
     "School administration": 18506034.64,
-    "Pupil services (counseling, health, psychology)": 27369944.73,
+    "Pupil services (counseling, health, psychology, food)": 27369944.73,
     "Pupil transportation": 5081207.46,
     "District administration": 22915693.92,
     "Buildings, maintenance and operations": 35577906.78,
-    "Other (community, enterprise, debt, transfers to agencies)": 1518638.53,
+    "Other (athletics and activities, community, enterprise, debt, transfers to agencies)": 1518638.53,
     "Classroom instruction": 130973945.65,
     "Special education instruction": 59267574.25
    },
    "revenue": {
     "State aid (funding formula and Education Protection Account)": 160943089.0,
     "Local property taxes": 51856988.84,
-    "Property taxes passed to charter schools": -9227971.0,
+    "Property taxes passed to charter schools": -10734748.0,
     "Federal": 46337804.59,
     "Other state": 44279462.67,
-    "Other local": 38172523.84
+    "Other local": 24621202.27,
+    "Other property-tax and funding-formula transfers": 1506777.0,
+    "Passed on by other school agencies (mostly state special-education money)": 13551321.57
    },
    "other_funds": {
     "Student Activity Special Revenue Fund": 256956.72,
@@ -333,7 +347,9 @@
     "Special Reserve Fund for Capital Outlay Projects": 257030.24,
     "Bond Interest and Redemption Fund": 16832741.0,
     "Self-Insurance Fund": 27512839.48
-   }
+   },
+   "charter_schools": 0.0,
+   "passed_through": 0.0
   },
   {
    "code": "68007",
@@ -341,7 +357,7 @@
    "type": "Elementary School District",
    "ada": 611.41,
    "spending": {
-    "Other services and operating costs": 1407416.03,
+    "Professional services, utilities, rents and other operating costs": 1407416.03,
     "Maintenance, food, transport and other support staff": 394157.22,
     "Office and technical staff": 551869.56,
     "Staff pensions (CalPERS)": 487531.63,
@@ -356,7 +372,7 @@
     "Teacher salaries": 5033109.1,
     "Classroom aides": 715885.69,
     "Other classified staff": 101373.83,
-    "Contracted services (subagreements)": 54824.87,
+    "Services subcontracted to other agencies": 54824.87,
     "Counselors, nurses and other pupil support": 221048.47,
     "Capital outlay": 56639.05,
     "Teacher pensions (CalSTRS), paid by the state on the district's behalf": 481058.0
@@ -364,10 +380,10 @@
    "purpose": {
     "Instructional support (supervision, library, training)": 529944.36,
     "School administration": 790385.57,
-    "Pupil services (counseling, health, psychology)": 480251.89,
+    "Pupil services (counseling, health, psychology, food)": 480251.89,
     "District administration": 1114520.75,
     "Buildings, maintenance and operations": 1156394.95,
-    "Other (community, enterprise, debt, transfers to agencies)": 566556.59,
+    "Other (athletics and activities, community, enterprise, debt, transfers to agencies)": 566556.59,
     "Classroom instruction": 6994979.16,
     "Pupil transportation": 54824.87,
     "Special education instruction": 1518534.28
@@ -376,16 +392,19 @@
     "State aid (funding formula and Education Protection Account)": 509398.0,
     "Local property taxes": 11268903.61,
     "Other state": 1151893.5,
-    "Other local": 1055434.47,
+    "Other local": 579193.47,
     "Federal": 504251.24,
-    "Property taxes passed to charter schools": 56499.0
+    "Other property-tax and funding-formula transfers": 56499.0,
+    "Passed on by other school agencies (mostly state special-education money)": 476241.0
    },
    "other_funds": {
     "Cafeteria Special Revenue Fund": 293228.07,
     "Special Reserve Fund for Capital Outlay Projects": 204191.07,
     "Bond Interest and Redemption Fund": 2391282.0,
     "Other Enterprise Fund": 597143.57
-   }
+   },
+   "charter_schools": 0.0,
+   "passed_through": 0.0
   },
   {
    "code": "73551",
@@ -407,11 +426,11 @@
     "Other classified staff": 1297587.17,
     "Retiree health benefits": 968515.63,
     "Other benefits": 175907.23,
-    "Other services and operating costs": 14899593.5,
+    "Professional services, utilities, rents and other operating costs": 14899593.5,
     "Counselors, nurses and other pupil support": 3936477.04,
     "Tuition, payments to other agencies and debt service": 471240.44,
     "Capital outlay": 704830.8,
-    "Contracted services (subagreements)": 17276135.12,
+    "Services subcontracted to other agencies": 17276135.12,
     "Teacher salaries": 55806866.01,
     "Classroom aides": 4387351.9,
     "Teacher pensions (CalSTRS), paid by the state on the district's behalf": 6168152.0
@@ -419,10 +438,10 @@
    "purpose": {
     "Instructional support (supervision, library, training)": 5597770.88,
     "School administration": 11506244.94,
-    "Pupil services (counseling, health, psychology)": 12610914.8,
+    "Pupil services (counseling, health, psychology, food)": 12610914.8,
     "District administration": 9833949.71,
     "Buildings, maintenance and operations": 17354469.72,
-    "Other (community, enterprise, debt, transfers to agencies)": 3335953.56,
+    "Other (athletics and activities, community, enterprise, debt, transfers to agencies)": 3335953.56,
     "Classroom instruction": 72872781.4,
     "Pupil transportation": 4284939.32,
     "Special education instruction": 32110196.74
@@ -431,9 +450,10 @@
     "State aid (funding formula and Education Protection Account)": 3036414.0,
     "Local property taxes": 122356960.74,
     "Other state": 17760750.53,
-    "Other local": 14653774.39,
+    "Other local": 6640682.69,
     "Federal": 4012308.44,
-    "Property taxes passed to charter schools": 964880.0
+    "Other property-tax and funding-formula transfers": 964880.0,
+    "Passed on by other school agencies (mostly state special-education money)": 8013091.7
    },
    "other_funds": {
     "Child Development Fund": 159827.18,
@@ -444,7 +464,9 @@
     "Bond Interest and Redemption Fund": 23864450.0,
     "Debt Service Fund for Blended Component Units": 4946957.51,
     "Self-Insurance Fund": 1191158.67
-   }
+   },
+   "charter_schools": 0.0,
+   "passed_through": 0.0
   },
   {
    "code": "68023",
@@ -464,12 +486,12 @@
     "Health and welfare benefits": 28710466.82,
     "Unemployment and workers' compensation insurance": 3631680.72,
     "Books and supplies": 14668177.97,
-    "Other services and operating costs": 34883444.27,
+    "Professional services, utilities, rents and other operating costs": 34883444.27,
     "Maintenance, food, transport and other support staff": 17290328.8,
     "Other benefits": 2095070.53,
     "Capital outlay": 2386943.85,
     "Counselors, nurses and other pupil support": 17560188.66,
-    "Contracted services (subagreements)": 11597377.02,
+    "Services subcontracted to other agencies": 11597377.02,
     "Classroom aides": 21459896.73,
     "Tuition, payments to other agencies and debt service": 1200684.96,
     "Teacher pensions (CalSTRS), paid by the state on the district's behalf": 19238469.0
@@ -477,9 +499,9 @@
    "purpose": {
     "Instructional support (supervision, library, training)": 12751573.24,
     "School administration": 19479215.55,
-    "Pupil services (counseling, health, psychology)": 40421406.81,
+    "Pupil services (counseling, health, psychology, food)": 40421406.81,
     "Pupil transportation": 11644301.97,
-    "Other (community, enterprise, debt, transfers to agencies)": 25140274.12,
+    "Other (athletics and activities, community, enterprise, debt, transfers to agencies)": 25140274.12,
     "District administration": 23281501.67,
     "Buildings, maintenance and operations": 26364468.68,
     "Classroom instruction": 187218803.61,
@@ -488,10 +510,12 @@
    "revenue": {
     "State aid (funding formula and Education Protection Account)": 157926864.0,
     "Local property taxes": 140416735.87,
-    "Property taxes passed to charter schools": -31782591.0,
+    "Property taxes passed to charter schools": -33712734.0,
     "Federal": 40278067.5,
     "Other state": 63074799.67,
-    "Other local": 54847314.55
+    "Other local": 32765963.55,
+    "Other property-tax and funding-formula transfers": 1930143.0,
+    "Passed on by other school agencies (mostly state special-education money)": 22081351.0
    },
    "other_funds": {
     "Student Activity Special Revenue Fund": 1334831.18,
@@ -505,7 +529,9 @@
     "Bond Interest and Redemption Fund": 23451536.0,
     "Debt Service Fund for Blended Component Units": 17173106.31,
     "Self-Insurance Fund": 5000598.48
-   }
+   },
+   "charter_schools": 0.0,
+   "passed_through": 0.0
   },
   {
    "code": "68031",
@@ -521,14 +547,14 @@
     "Health and welfare benefits": 4660868.91,
     "Unemployment and workers' compensation insurance": 500133.88,
     "Retiree health benefits": 201379.66,
-    "Other services and operating costs": 6612660.11,
+    "Professional services, utilities, rents and other operating costs": 6612660.11,
     "Maintenance, food, transport and other support staff": 2693185.89,
     "Classified supervisors and administrators": 769917.38,
     "Books and supplies": 2636949.67,
     "Other certificated staff": 155092.72,
     "Other classified staff": 364626.75,
     "Counselors, nurses and other pupil support": 895619.36,
-    "Contracted services (subagreements)": 1462189.9,
+    "Services subcontracted to other agencies": 1462189.9,
     "Tuition, payments to other agencies and debt service": -56088.08,
     "Capital outlay": 242318.11,
     "Teacher salaries": 17285796.88,
@@ -538,9 +564,9 @@
    "purpose": {
     "Instructional support (supervision, library, training)": 2116256.85,
     "School administration": 3884619.56,
-    "Pupil services (counseling, health, psychology)": 4283048.83,
+    "Pupil services (counseling, health, psychology, food)": 4283048.83,
     "Pupil transportation": 766446.45,
-    "Other (community, enterprise, debt, transfers to agencies)": 1434242.24,
+    "Other (athletics and activities, community, enterprise, debt, transfers to agencies)": 1434242.24,
     "District administration": 3325208.49,
     "Buildings, maintenance and operations": 5866343.67,
     "Classroom instruction": 23271488.15,
@@ -551,8 +577,9 @@
     "Local property taxes": 16166583.05,
     "Federal": 6756214.37,
     "Other state": 4620022.92,
-    "Other local": 4288170.49,
-    "Property taxes passed to charter schools": 196904.0
+    "Other local": 2518272.49,
+    "Other property-tax and funding-formula transfers": 196904.0,
+    "Passed on by other school agencies (mostly state special-education money)": 1769898.0
    },
    "other_funds": {
     "Student Activity Special Revenue Fund": 608374.58,
@@ -566,7 +593,9 @@
     "Bond Interest and Redemption Fund": 1106565.0,
     "Foundation Permanent Fund": 4435.97,
     "Other Enterprise Fund": 110371.53
-   }
+   },
+   "charter_schools": 0.0,
+   "passed_through": 0.0
   },
   {
    "code": "68049",
@@ -583,7 +612,7 @@
     "Office and technical staff": 161472.82,
     "Teacher pensions (CalSTRS), paid by the district": 184742.02,
     "Books and supplies": 350583.43,
-    "Other services and operating costs": 1249682.79,
+    "Professional services, utilities, rents and other operating costs": 1249682.79,
     "Classified supervisors and administrators": 213685.76,
     "Other classified staff": 7080.0,
     "Tuition, payments to other agencies and debt service": 5603.0,
@@ -595,21 +624,23 @@
    "purpose": {
     "Instructional support (supervision, library, training)": 138054.14,
     "School administration": 657458.11,
-    "Pupil services (counseling, health, psychology)": 231836.08,
+    "Pupil services (counseling, health, psychology, food)": 231836.08,
     "Pupil transportation": 178835.18,
     "District administration": 603818.83,
     "Buildings, maintenance and operations": 273475.14,
-    "Other (community, enterprise, debt, transfers to agencies)": 95583.0,
+    "Other (athletics and activities, community, enterprise, debt, transfers to agencies)": 95583.0,
     "Classroom instruction": 1737651.47,
     "Special education instruction": 320414.14
    },
    "revenue": {
     "State aid (funding formula and Education Protection Account)": 2481758.0,
     "Local property taxes": 2873065.01,
-    "Property taxes passed to charter schools": -2813385.32,
+    "Property taxes passed to charter schools": -2821112.32,
     "Federal": 72593.86,
     "Other state": 241838.63,
-    "Other local": 1112808.77
+    "Other local": 935811.77,
+    "Other property-tax and funding-formula transfers": 7727.0,
+    "Passed on by other school agencies (mostly state special-education money)": 176997.0
    },
    "other_funds": {
     "Student Activity Special Revenue Fund": 2969.46,
@@ -617,9 +648,10 @@
     "Cafeteria Special Revenue Fund": 222820.78,
     "Building Fund": 109779.65,
     "County School Facilities Fund": 208754.72,
-    "Bond Interest and Redemption Fund": 269701.0,
-    "Charter Schools Enterprise Fund": 5245956.01
-   }
+    "Bond Interest and Redemption Fund": 269701.0
+   },
+   "charter_schools": 5245956.01,
+   "passed_through": 0.0
   },
   {
    "code": "68056",
@@ -637,7 +669,7 @@
     "Unemployment and workers' compensation insurance": 731229.66,
     "Other benefits": 38828.95,
     "Books and supplies": 3330432.31,
-    "Other services and operating costs": 8783591.62,
+    "Professional services, utilities, rents and other operating costs": 8783591.62,
     "Maintenance, food, transport and other support staff": 3299995.58,
     "Counselors, nurses and other pupil support": 1557113.55,
     "Classified supervisors and administrators": 1183701.6,
@@ -646,16 +678,16 @@
     "Capital outlay": 81429.82,
     "Retiree health benefits": 282056.5,
     "Classroom aides": 2802685.12,
-    "Contracted services (subagreements)": 1402541.5,
+    "Services subcontracted to other agencies": 1402541.5,
     "Teacher pensions (CalSTRS), paid by the state on the district's behalf": 3102476.0
    },
    "purpose": {
     "Instructional support (supervision, library, training)": 3738463.72,
     "School administration": 3941379.88,
-    "Pupil services (counseling, health, psychology)": 3512587.76,
+    "Pupil services (counseling, health, psychology, food)": 3512587.76,
     "District administration": 6235310.1,
     "Buildings, maintenance and operations": 9218110.28,
-    "Other (community, enterprise, debt, transfers to agencies)": 1599780.15,
+    "Other (athletics and activities, community, enterprise, debt, transfers to agencies)": 1599780.15,
     "Classroom instruction": 39538436.51,
     "Pupil transportation": 1410922.1,
     "Special education instruction": 9283448.56
@@ -663,10 +695,12 @@
    "revenue": {
     "State aid (funding formula and Education Protection Account)": 1928554.0,
     "Local property taxes": 61386966.36,
-    "Property taxes passed to charter schools": -287334.0,
+    "Other property-tax and funding-formula transfers": -255911.0,
+    "Property taxes passed to charter schools": -31423.0,
     "Other state": 6967973.63,
-    "Other local": 5657177.71,
-    "Federal": 943539.32
+    "Other local": 2875647.72,
+    "Federal": 943539.32,
+    "Passed on by other school agencies (mostly state special-education money)": 2781529.99
    },
    "other_funds": {
     "Cafeteria Special Revenue Fund": 2168760.88,
@@ -677,7 +711,9 @@
     "Bond Interest and Redemption Fund": 8716644.0,
     "Debt Service Fund for Blended Component Units": 3672300.0,
     "Other Enterprise Fund": 3522513.8
-   }
+   },
+   "charter_schools": 0.0,
+   "passed_through": 0.0
   },
   {
    "code": "68080",
@@ -698,10 +734,10 @@
     "Retiree health benefits": 817532.58,
     "Other benefits": 1217500.32,
     "Books and supplies": 2197234.04,
-    "Other services and operating costs": 7943425.87,
+    "Professional services, utilities, rents and other operating costs": 7943425.87,
     "Maintenance, food, transport and other support staff": 3454953.54,
     "Classified supervisors and administrators": 1167012.01,
-    "Contracted services (subagreements)": 1133670.12,
+    "Services subcontracted to other agencies": 1133670.12,
     "Tuition, payments to other agencies and debt service": -51040.53,
     "Capital outlay": 2471675.94,
     "Classroom aides": 3111358.02,
@@ -711,21 +747,23 @@
    "purpose": {
     "Instructional support (supervision, library, training)": 4307586.53,
     "School administration": 3189297.42,
-    "Pupil services (counseling, health, psychology)": 5253372.13,
+    "Pupil services (counseling, health, psychology, food)": 5253372.13,
     "Pupil transportation": 691018.73,
     "District administration": 4356906.47,
     "Buildings, maintenance and operations": 10527582.71,
     "Classroom instruction": 39201127.66,
-    "Other (community, enterprise, debt, transfers to agencies)": 405417.04,
+    "Other (athletics and activities, community, enterprise, debt, transfers to agencies)": 405417.04,
     "Special education instruction": 13640769.98
    },
    "revenue": {
     "State aid (funding formula and Education Protection Account)": 2886516.0,
     "Local property taxes": 62678870.14,
-    "Property taxes passed to charter schools": 177960.0,
+    "Property taxes passed to charter schools": -234018.0,
     "Other state": 8171144.19,
-    "Other local": 7692717.87,
-    "Federal": 2738471.0
+    "Other local": 4361625.09,
+    "Federal": 2738471.0,
+    "Other property-tax and funding-formula transfers": 411978.0,
+    "Passed on by other school agencies (mostly state special-education money)": 3331092.78
    },
    "other_funds": {
     "Cafeteria Special Revenue Fund": 2879656.29,
@@ -733,7 +771,9 @@
     "Special Reserve Fund for Capital Outlay Projects": 663600.39,
     "Bond Interest and Redemption Fund": 5518698.0,
     "Self-Insurance Fund": 537117.34
-   }
+   },
+   "charter_schools": 0.0,
+   "passed_through": 0.0
   },
   {
    "code": "68098",
@@ -751,12 +791,12 @@
     "Health and welfare benefits": 21032534.29,
     "Retiree health benefits": 778195.21,
     "Books and supplies": 7562794.41,
-    "Other services and operating costs": 20024633.41,
+    "Professional services, utilities, rents and other operating costs": 20024633.41,
     "Teacher salaries": 91609551.28,
     "Maintenance, food, transport and other support staff": 10647561.27,
     "Other classified staff": 3029203.01,
     "Counselors, nurses and other pupil support": 11189819.57,
-    "Contracted services (subagreements)": 22450104.54,
+    "Services subcontracted to other agencies": 22450104.54,
     "Classified supervisors and administrators": 1798565.84,
     "Tuition, payments to other agencies and debt service": 1048556.8,
     "Capital outlay": 11589990.38,
@@ -766,21 +806,23 @@
    "purpose": {
     "Instructional support (supervision, library, training)": 14875228.48,
     "School administration": 15222605.74,
-    "Pupil services (counseling, health, psychology)": 21590909.18,
+    "Pupil services (counseling, health, psychology, food)": 21590909.18,
     "Pupil transportation": 3589328.64,
     "District administration": 15541766.64,
     "Buildings, maintenance and operations": 35192895.96,
-    "Other (community, enterprise, debt, transfers to agencies)": 9497245.39,
+    "Other (athletics and activities, community, enterprise, debt, transfers to agencies)": 9497245.39,
     "Classroom instruction": 133310986.42,
     "Special education instruction": 39263328.74
    },
    "revenue": {
     "State aid (funding formula and Education Protection Account)": 131201655.0,
     "Local property taxes": 70679069.33,
-    "Property taxes passed to charter schools": -9559169.0,
+    "Property taxes passed to charter schools": -11140983.0,
     "Other state": 45277256.38,
-    "Other local": 28304836.61,
-    "Federal": 34189464.79
+    "Other local": 15919516.38,
+    "Federal": 34189464.79,
+    "Other property-tax and funding-formula transfers": 1581814.0,
+    "Passed on by other school agencies (mostly state special-education money)": 12385320.23
    },
    "other_funds": {
     "Student Activity Special Revenue Fund": 199293.3,
@@ -792,7 +834,9 @@
     "County School Facilities Fund": 33670.43,
     "Special Reserve Fund for Capital Outlay Projects": 15205368.05,
     "Bond Interest and Redemption Fund": 10844414.0
-   }
+   },
+   "charter_schools": 0.0,
+   "passed_through": 0.0
   },
   {
    "code": "68106",
@@ -812,7 +856,7 @@
     "Unemployment and workers' compensation insurance": 1516242.28,
     "Retiree health benefits": 1116094.08,
     "Books and supplies": 5890536.85,
-    "Other services and operating costs": 15777574.23,
+    "Professional services, utilities, rents and other operating costs": 15777574.23,
     "Teacher salaries": 36092434.31,
     "Maintenance, food, transport and other support staff": 8374656.24,
     "Capital outlay": 3991189.77,
@@ -825,21 +869,23 @@
    "purpose": {
     "Instructional support (supervision, library, training)": 16871776.68,
     "School administration": 10250303.05,
-    "Pupil services (counseling, health, psychology)": 10681843.82,
+    "Pupil services (counseling, health, psychology, food)": 10681843.82,
     "Pupil transportation": 3863473.57,
     "District administration": 8541807.68,
     "Buildings, maintenance and operations": 17150573.4,
-    "Other (community, enterprise, debt, transfers to agencies)": 3633470.71,
+    "Other (athletics and activities, community, enterprise, debt, transfers to agencies)": 3633470.71,
     "Classroom instruction": 53199416.01,
     "Special education instruction": 14322220.7
    },
    "revenue": {
     "State aid (funding formula and Education Protection Account)": 67953967.0,
     "Local property taxes": 54841508.93,
-    "Property taxes passed to charter schools": -12454662.0,
+    "Property taxes passed to charter schools": -13194291.0,
     "Federal": 11175084.68,
     "Other state": 13093724.98,
-    "Other local": 13144692.75
+    "Other local": 6867144.7,
+    "Passed on by other school agencies (mostly state special-education money)": 6277548.05,
+    "Other property-tax and funding-formula transfers": 739629.0
    },
    "other_funds": {
     "Student Activity Special Revenue Fund": 1177242.62,
@@ -851,7 +897,9 @@
     "Special Reserve Fund for Capital Outlay Projects": 51300.0,
     "Bond Interest and Redemption Fund": 7612050.0,
     "Self-Insurance Fund": 1187988.97
-   }
+   },
+   "charter_schools": 0.0,
+   "passed_through": 0.0
   },
   {
    "code": "68114",
@@ -870,7 +918,7 @@
     "Retiree health benefits": 507122.85,
     "Other benefits": 193430.58,
     "Books and supplies": 3721296.29,
-    "Other services and operating costs": 9244777.15,
+    "Professional services, utilities, rents and other operating costs": 9244777.15,
     "Maintenance, food, transport and other support staff": 6396104.22,
     "Counselors, nurses and other pupil support": 2220098.43,
     "Classified supervisors and administrators": 1569524.53,
@@ -879,17 +927,17 @@
     "Classroom aides": 5210197.45,
     "Other classified staff": 2357553.63,
     "Other certificated staff": 108742.0,
-    "Contracted services (subagreements)": 824890.41,
+    "Services subcontracted to other agencies": 824890.41,
     "Teacher pensions (CalSTRS), paid by the state on the district's behalf": 3800598.0
    },
    "purpose": {
     "Instructional support (supervision, library, training)": 3104276.74,
     "School administration": 5674677.58,
-    "Pupil services (counseling, health, psychology)": 5983691.91,
+    "Pupil services (counseling, health, psychology, food)": 5983691.91,
     "Pupil transportation": 2911257.78,
     "District administration": 7725600.31,
     "Buildings, maintenance and operations": 9975798.79,
-    "Other (community, enterprise, debt, transfers to agencies)": 1401937.01,
+    "Other (athletics and activities, community, enterprise, debt, transfers to agencies)": 1401937.01,
     "Classroom instruction": 51835538.43,
     "Special education instruction": 15593092.51
    },
@@ -898,8 +946,9 @@
     "Local property taxes": 22294431.94,
     "Federal": 16056980.97,
     "Other state": 17300844.87,
-    "Other local": 5660971.57,
-    "Property taxes passed to charter schools": 431944.0
+    "Other local": 1805434.94,
+    "Passed on by other school agencies (mostly state special-education money)": 3855536.63,
+    "Other property-tax and funding-formula transfers": 431944.0
    },
    "other_funds": {
     "Student Activity Special Revenue Fund": 18286.26,
@@ -909,7 +958,9 @@
     "County School Facilities Fund": 409417.78,
     "Special Reserve Fund for Capital Outlay Projects": 1068378.83,
     "Bond Interest and Redemption Fund": 2795932.0
-   }
+   },
+   "charter_schools": 0.0,
+   "passed_through": 0.0
   },
   {
    "code": "68122",
@@ -926,10 +977,10 @@
     "Unemployment and workers' compensation insurance": 362760.12,
     "Retiree health benefits": 612247.58,
     "Books and supplies": 2373920.43,
-    "Other services and operating costs": 5168540.04,
+    "Professional services, utilities, rents and other operating costs": 5168540.04,
     "Counselors, nurses and other pupil support": 1303145.98,
     "Maintenance, food, transport and other support staff": 2175246.31,
-    "Contracted services (subagreements)": 2370393.48,
+    "Services subcontracted to other agencies": 2370393.48,
     "Classified supervisors and administrators": 482704.29,
     "Tuition, payments to other agencies and debt service": 744655.82,
     "Capital outlay": 1117365.98,
@@ -942,11 +993,11 @@
    "purpose": {
     "Instructional support (supervision, library, training)": 963239.87,
     "School administration": 2172124.62,
-    "Pupil services (counseling, health, psychology)": 2596794.05,
+    "Pupil services (counseling, health, psychology, food)": 2596794.05,
     "Pupil transportation": 1877692.04,
     "District administration": 4047265.96,
     "Buildings, maintenance and operations": 6029856.66,
-    "Other (community, enterprise, debt, transfers to agencies)": 2594667.33,
+    "Other (athletics and activities, community, enterprise, debt, transfers to agencies)": 2594667.33,
     "Classroom instruction": 17978151.9,
     "Special education instruction": 5691047.93
    },
@@ -955,8 +1006,9 @@
     "Local property taxes": 13219901.3,
     "Federal": 5481141.01,
     "Other state": 5237039.17,
-    "Other local": 3118651.99,
-    "Property taxes passed to charter schools": 178403.0
+    "Other local": 1623169.99,
+    "Other property-tax and funding-formula transfers": 178403.0,
+    "Passed on by other school agencies (mostly state special-education money)": 1495482.0
    },
    "other_funds": {
     "Student Activity Special Revenue Fund": 1232422.12,
@@ -965,7 +1017,9 @@
     "Capital Facilities Fund": 1201076.58,
     "Special Reserve Fund for Capital Outlay Projects": 2669841.13,
     "Bond Interest and Redemption Fund": 1704819.0
-   }
+   },
+   "charter_schools": 0.0,
+   "passed_through": 0.0
   },
   {
    "code": "68130",
@@ -984,8 +1038,8 @@
     "Unemployment and workers' compensation insurance": 2788594.0,
     "Retiree health benefits": 3302070.4,
     "Books and supplies": 11939412.44,
-    "Contracted services (subagreements)": 18167282.58,
-    "Other services and operating costs": 25742631.34,
+    "Services subcontracted to other agencies": 18167282.58,
+    "Professional services, utilities, rents and other operating costs": 25742631.34,
     "Counselors, nurses and other pupil support": 11768396.39,
     "Maintenance, food, transport and other support staff": 16238429.1,
     "Other benefits": 175713.6,
@@ -999,9 +1053,9 @@
    "purpose": {
     "Instructional support (supervision, library, training)": 22838587.05,
     "School administration": 19800461.07,
-    "Pupil services (counseling, health, psychology)": 25504217.54,
+    "Pupil services (counseling, health, psychology, food)": 25504217.54,
     "Pupil transportation": 11600724.05,
-    "Other (community, enterprise, debt, transfers to agencies)": 6401047.2,
+    "Other (athletics and activities, community, enterprise, debt, transfers to agencies)": 6401047.2,
     "District administration": 23643240.28,
     "Buildings, maintenance and operations": 39886437.9,
     "Classroom instruction": 122673514.24,
@@ -1010,10 +1064,12 @@
    "revenue": {
     "State aid (funding formula and Education Protection Account)": 113008866.0,
     "Local property taxes": 153988821.67,
-    "Property taxes passed to charter schools": -32413115.0,
+    "Property taxes passed to charter schools": -34236583.0,
     "Other state": 28330252.08,
-    "Other local": 41762702.7,
-    "Federal": 32226229.83
+    "Other local": 25711825.2,
+    "Passed on by other school agencies (mostly state special-education money)": 16050877.5,
+    "Federal": 32226229.83,
+    "Other property-tax and funding-formula transfers": 1823468.0
    },
    "other_funds": {
     "Student Activity Special Revenue Fund": 7095886.84,
@@ -1025,7 +1081,9 @@
     "Special Reserve Fund for Capital Outlay Projects": 8201437.74,
     "Bond Interest and Redemption Fund": 42668577.0,
     "Self-Insurance Fund": 4667483.86
-   }
+   },
+   "charter_schools": 0.0,
+   "passed_through": 0.0
   },
   {
    "code": "68155",
@@ -1044,9 +1102,9 @@
     "Principals and certificated administrators": 611864.71,
     "Other certificated staff": 12192.52,
     "Teacher pensions (CalSTRS), paid by the district": 528464.7,
-    "Other services and operating costs": 1393803.12,
+    "Professional services, utilities, rents and other operating costs": 1393803.12,
     "Counselors, nurses and other pupil support": 153344.53,
-    "Contracted services (subagreements)": 453652.29,
+    "Services subcontracted to other agencies": 453652.29,
     "Classified supervisors and administrators": 402420.61,
     "Retiree health benefits": 30659.21,
     "Tuition, payments to other agencies and debt service": 187747.48,
@@ -1057,21 +1115,23 @@
    "purpose": {
     "Instructional support (supervision, library, training)": 826679.95,
     "School administration": 775578.37,
-    "Pupil services (counseling, health, psychology)": 346976.33,
+    "Pupil services (counseling, health, psychology, food)": 346976.33,
     "Pupil transportation": 441200.18,
     "District administration": 1123098.51,
     "Buildings, maintenance and operations": 1201363.04,
-    "Other (community, enterprise, debt, transfers to agencies)": 258241.2,
+    "Other (athletics and activities, community, enterprise, debt, transfers to agencies)": 258241.2,
     "Classroom instruction": 3743306.85,
     "Special education instruction": 1421247.94
    },
    "revenue": {
     "State aid (funding formula and Education Protection Account)": 3872247.0,
     "Local property taxes": 4373616.36,
-    "Property taxes passed to charter schools": -1006602.0,
+    "Property taxes passed to charter schools": -1066403.0,
     "Federal": 1082431.6,
     "Other state": 1095008.32,
-    "Other local": 1007715.67
+    "Other local": 361095.67,
+    "Other property-tax and funding-formula transfers": 59801.0,
+    "Passed on by other school agencies (mostly state special-education money)": 646620.0
    },
    "other_funds": {
     "Charter Schools Special Revenue Fund": 2508621.08,
@@ -1081,7 +1141,9 @@
     "Capital Facilities Fund": 90435.0,
     "Special Reserve Fund for Capital Outlay Projects": 118657.37,
     "Bond Interest and Redemption Fund": 1181231.0
-   }
+   },
+   "charter_schools": 0.0,
+   "passed_through": 0.0
   },
   {
    "code": "68163",
@@ -1097,7 +1159,7 @@
     "Health and welfare benefits": 629638.49,
     "Unemployment and workers' compensation insurance": 53592.35,
     "Books and supplies": 310459.3,
-    "Other services and operating costs": 1709752.4,
+    "Professional services, utilities, rents and other operating costs": 1709752.4,
     "Maintenance, food, transport and other support staff": 212388.5,
     "Classified supervisors and administrators": 16194.28,
     "Tuition, payments to other agencies and debt service": 5115.0,
@@ -1109,11 +1171,11 @@
    },
    "purpose": {
     "School administration": 762767.16,
-    "Pupil services (counseling, health, psychology)": 253787.86,
+    "Pupil services (counseling, health, psychology, food)": 253787.86,
     "Pupil transportation": 345313.49,
     "District administration": 449277.64,
     "Buildings, maintenance and operations": 603182.5,
-    "Other (community, enterprise, debt, transfers to agencies)": 5115.0,
+    "Other (athletics and activities, community, enterprise, debt, transfers to agencies)": 5115.0,
     "Classroom instruction": 2757054.81,
     "Instructional support (supervision, library, training)": 1852.89,
     "Special education instruction": 1287368.49
@@ -1121,10 +1183,12 @@
    "revenue": {
     "State aid (funding formula and Education Protection Account)": 2953591.0,
     "Local property taxes": 3019138.86,
-    "Property taxes passed to charter schools": -2569404.0,
+    "Other property-tax and funding-formula transfers": 64693.0,
+    "Property taxes passed to charter schools": -2634097.0,
     "Federal": 717149.58,
     "Other state": 1104169.18,
-    "Other local": 1446273.14
+    "Other local": 802700.14,
+    "Passed on by other school agencies (mostly state special-education money)": 643573.0
    },
    "other_funds": {
     "Student Activity Special Revenue Fund": 11313.76,
@@ -1132,9 +1196,10 @@
     "Deferred Maintenance Fund": 1800.0,
     "Capital Facilities Fund": 130700.67,
     "Special Reserve Fund for Capital Outlay Projects": 53322.69,
-    "Other Enterprise Fund": 4603.0,
-    "Charter Schools Enterprise Fund": 20404894.77
-   }
+    "Other Enterprise Fund": 4603.0
+   },
+   "charter_schools": 20404894.77,
+   "passed_through": 0.0
   },
   {
    "code": "68171",
@@ -1149,7 +1214,7 @@
     "Health and welfare benefits": 213205.98,
     "Unemployment and workers' compensation insurance": 46448.19,
     "Books and supplies": 720238.19,
-    "Other services and operating costs": 764442.82,
+    "Professional services, utilities, rents and other operating costs": 764442.82,
     "Counselors, nurses and other pupil support": 75191.95,
     "Staff pensions (CalPERS)": 149730.24,
     "Classified supervisors and administrators": 159452.53,
@@ -1160,31 +1225,35 @@
     "Other certificated staff": 73402.0,
     "Capital outlay": 79549.84,
     "Classroom aides": 124856.54,
-    "Contracted services (subagreements)": 20001.59,
+    "Services subcontracted to other agencies": 20001.59,
     "Teacher pensions (CalSTRS), paid by the state on the district's behalf": 71461.0
    },
    "purpose": {
     "School administration": 439354.86,
-    "Pupil services (counseling, health, psychology)": 174883.33,
+    "Pupil services (counseling, health, psychology, food)": 174883.33,
     "Pupil transportation": 70570.57,
     "District administration": 488354.76,
     "Buildings, maintenance and operations": 641942.13,
-    "Other (community, enterprise, debt, transfers to agencies)": 76930.16,
+    "Other (athletics and activities, community, enterprise, debt, transfers to agencies)": 76930.16,
     "Classroom instruction": 1689286.79,
     "Special education instruction": 564186.3
    },
    "revenue": {
     "State aid (funding formula and Education Protection Account)": 369203.0,
     "Local property taxes": 2284618.19,
-    "Property taxes passed to charter schools": -11486.0,
+    "Property taxes passed to charter schools": -12327.0,
     "Federal": 497780.83,
     "Other state": 659558.25,
-    "Other local": 303456.15
+    "Other local": 65136.15,
+    "Other property-tax and funding-formula transfers": 841.0,
+    "Passed on by other school agencies (mostly state special-education money)": 238320.0
    },
    "other_funds": {
     "Student Activity Special Revenue Fund": 71933.35,
     "Bond Interest and Redemption Fund": 261912.0
-   }
+   },
+   "charter_schools": 0.0,
+   "passed_through": 0.0
   },
   {
    "code": "68197",
@@ -1192,7 +1261,7 @@
    "type": "Elementary School District",
    "ada": 9911.51,
    "spending": {
-    "Other services and operating costs": 15034789.47,
+    "Professional services, utilities, rents and other operating costs": 15034789.47,
     "Retiree health benefits": 2094902.24,
     "Office and technical staff": 8738184.5,
     "Staff pensions (CalPERS)": 8213051.91,
@@ -1217,8 +1286,8 @@
    "purpose": {
     "Instructional support (supervision, library, training)": 10735044.56,
     "Pupil transportation": 4877081.16,
-    "Pupil services (counseling, health, psychology)": 18620823.99,
-    "Other (community, enterprise, debt, transfers to agencies)": 9018259.26,
+    "Pupil services (counseling, health, psychology, food)": 18620823.99,
+    "Other (athletics and activities, community, enterprise, debt, transfers to agencies)": 9018259.26,
     "District administration": 11275281.64,
     "Buildings, maintenance and operations": 18662345.7,
     "Classroom instruction": 85635137.05,
@@ -1228,10 +1297,12 @@
    "revenue": {
     "State aid (funding formula and Education Protection Account)": 91188496.0,
     "Local property taxes": 46913171.26,
-    "Property taxes passed to charter schools": -1198266.0,
+    "Property taxes passed to charter schools": -2151459.0,
     "Other state": 28631065.67,
-    "Other local": 18196674.6,
-    "Federal": 11898684.45
+    "Other local": 9821429.6,
+    "Federal": 11898684.45,
+    "Other property-tax and funding-formula transfers": 953193.0,
+    "Passed on by other school agencies (mostly state special-education money)": 8375245.0
    },
    "other_funds": {
     "Student Activity Special Revenue Fund": 173614.09,
@@ -1242,7 +1313,9 @@
     "Special Reserve Fund for Capital Outlay Projects": 325602.68,
     "Bond Interest and Redemption Fund": 10898390.0,
     "Other Enterprise Fund": 2445453.75
-   }
+   },
+   "charter_schools": 0.0,
+   "passed_through": 0.0
   },
   {
    "code": "68189",
@@ -1257,7 +1330,7 @@
     "Unemployment and workers' compensation insurance": 659534.97,
     "Retiree health benefits": 643184.29,
     "Other benefits": 426850.39,
-    "Other services and operating costs": 7015795.69,
+    "Professional services, utilities, rents and other operating costs": 7015795.69,
     "Maintenance, food, transport and other support staff": 3018078.72,
     "Staff pensions (CalPERS)": 2727050.49,
     "Office and technical staff": 2574182.08,
@@ -1270,27 +1343,29 @@
     "Teacher salaries": 25678080.51,
     "Classroom aides": 3283640.16,
     "Other certificated staff": 253098.91,
-    "Contracted services (subagreements)": 145964.91,
+    "Services subcontracted to other agencies": 145964.91,
     "Teacher pensions (CalSTRS), paid by the state on the district's behalf": 2476968.0
    },
    "purpose": {
     "Instructional support (supervision, library, training)": 1939997.63,
     "School administration": 4842584.22,
-    "Pupil services (counseling, health, psychology)": 3959941.51,
+    "Pupil services (counseling, health, psychology, food)": 3959941.51,
     "Pupil transportation": 1727624.81,
     "District administration": 6222913.18,
     "Buildings, maintenance and operations": 8522785.45,
-    "Other (community, enterprise, debt, transfers to agencies)": 1598684.8,
+    "Other (athletics and activities, community, enterprise, debt, transfers to agencies)": 1598684.8,
     "Classroom instruction": 38200826.65,
     "Special education instruction": 13343756.64
    },
    "revenue": {
     "State aid (funding formula and Education Protection Account)": 38668692.0,
     "Local property taxes": 14472087.83,
-    "Property taxes passed to charter schools": -455171.0,
+    "Property taxes passed to charter schools": -875451.0,
     "Federal": 5246400.48,
     "Other state": 9908105.64,
-    "Other local": 12391934.37
+    "Other local": 8702308.37,
+    "Other property-tax and funding-formula transfers": 420280.0,
+    "Passed on by other school agencies (mostly state special-education money)": 3689626.0
    },
    "other_funds": {
     "Student Activity Special Revenue Fund": 62263.88,
@@ -1301,7 +1376,9 @@
     "Special Reserve Fund for Capital Outlay Projects": 4464334.45,
     "Bond Interest and Redemption Fund": 3008544.0,
     "Charter Schools Enterprise Fund": 5106843.58
-   }
+   },
+   "charter_schools": 0.0,
+   "passed_through": 0.0
   },
   {
    "code": "68205",
@@ -1319,7 +1396,7 @@
     "Unemployment and workers' compensation insurance": 587740.51,
     "Retiree health benefits": 672828.08,
     "Books and supplies": 4620689.28,
-    "Other services and operating costs": 7811223.11,
+    "Professional services, utilities, rents and other operating costs": 7811223.11,
     "Maintenance, food, transport and other support staff": 2384668.78,
     "Other classified staff": 2112937.33,
     "Counselors, nurses and other pupil support": 1753470.81,
@@ -1328,27 +1405,28 @@
     "Teacher salaries": 20197841.1,
     "Classroom aides": 2166086.96,
     "Capital outlay": 373275.69,
-    "Contracted services (subagreements)": 582903.58,
+    "Services subcontracted to other agencies": 582903.58,
     "Teacher pensions (CalSTRS), paid by the state on the district's behalf": 2141949.26
    },
    "purpose": {
     "Instructional support (supervision, library, training)": 3147019.86,
     "School administration": 3384027.48,
-    "Pupil services (counseling, health, psychology)": 3664023.16,
+    "Pupil services (counseling, health, psychology, food)": 3664023.16,
     "District administration": 5003456.77,
     "Buildings, maintenance and operations": 4510001.84,
     "Classroom instruction": 29618881.56,
-    "Other (community, enterprise, debt, transfers to agencies)": 4346305.72,
+    "Other (athletics and activities, community, enterprise, debt, transfers to agencies)": 4346305.72,
     "Pupil transportation": 348871.32,
     "Special education instruction": 9445321.24
    },
    "revenue": {
     "State aid (funding formula and Education Protection Account)": 32520265.0,
     "Local property taxes": 9895795.53,
-    "Property taxes passed to charter schools": -339516.0,
+    "Other property-tax and funding-formula transfers": -339516.0,
     "Federal": 5888525.78,
     "Other state": 8713473.4,
-    "Other local": 6509676.81
+    "Other local": 4165899.81,
+    "Passed on by other school agencies (mostly state special-education money)": 2343777.0
    },
    "other_funds": {
     "Student Activity Special Revenue Fund": 29652.75,
@@ -1361,7 +1439,9 @@
     "Special Reserve Fund for Capital Outlay Projects": 9216511.24,
     "Bond Interest and Redemption Fund": 4354170.0,
     "Self-Insurance Fund": 322539.11
-   }
+   },
+   "charter_schools": 0.0,
+   "passed_through": 0.0
   },
   {
    "code": "68213",
@@ -1376,7 +1456,7 @@
     "Health and welfare benefits": 3033717.3,
     "Unemployment and workers' compensation insurance": 399749.59,
     "Books and supplies": 2302127.78,
-    "Other services and operating costs": 5523090.19,
+    "Professional services, utilities, rents and other operating costs": 5523090.19,
     "Other certificated staff": 167154.8,
     "Office and technical staff": 1317481.4,
     "Other benefits": 17596.94,
@@ -1389,27 +1469,29 @@
     "Teacher pensions (CalSTRS), paid by the district": 2070770.89,
     "Principals and certificated administrators": 659639.38,
     "Counselors, nurses and other pupil support": 1081355.65,
-    "Contracted services (subagreements)": 354795.0,
+    "Services subcontracted to other agencies": 354795.0,
     "Teacher pensions (CalSTRS), paid by the state on the district's behalf": 976563.0
    },
    "purpose": {
     "Pupil transportation": 2403479.67,
     "District administration": 2504596.72,
     "Buildings, maintenance and operations": 3459554.06,
-    "Other (community, enterprise, debt, transfers to agencies)": 1424427.07,
+    "Other (athletics and activities, community, enterprise, debt, transfers to agencies)": 1424427.07,
     "Classroom instruction": 19200110.27,
     "Instructional support (supervision, library, training)": 1104461.25,
     "School administration": 1480537.84,
-    "Pupil services (counseling, health, psychology)": 3114162.83,
+    "Pupil services (counseling, health, psychology, food)": 3114162.83,
     "Special education instruction": 2508361.15
    },
    "revenue": {
     "State aid (funding formula and Education Protection Account)": 19562291.0,
     "Local property taxes": 9805404.49,
-    "Property taxes passed to charter schools": -5719316.08,
+    "Property taxes passed to charter schools": -5910408.08,
     "Federal": 2701684.56,
     "Other state": 5137333.35,
-    "Other local": 3864029.89
+    "Other local": 1961762.67,
+    "Passed on by other school agencies (mostly state special-education money)": 1902267.22,
+    "Other property-tax and funding-formula transfers": 191092.0
    },
    "other_funds": {
     "Student Activity Special Revenue Fund": 271650.2,
@@ -1419,7 +1501,9 @@
     "Building Fund": 6621927.49,
     "Capital Facilities Fund": 84030.75,
     "Bond Interest and Redemption Fund": 1278338.0
-   }
+   },
+   "charter_schools": 0.0,
+   "passed_through": 0.0
   },
   {
    "code": "68221",
@@ -1437,7 +1521,7 @@
     "Unemployment and workers' compensation insurance": 1329536.1,
     "Retiree health benefits": 338657.64,
     "Books and supplies": 6894919.03,
-    "Other services and operating costs": 14369391.31,
+    "Professional services, utilities, rents and other operating costs": 14369391.31,
     "Maintenance, food, transport and other support staff": 4328188.84,
     "Other classified staff": 1142584.16,
     "Other certificated staff": 29241.56,
@@ -1447,27 +1531,29 @@
     "Tuition, payments to other agencies and debt service": 483354.79,
     "Classroom aides": 4461273.36,
     "Other benefits": 141223.28,
-    "Contracted services (subagreements)": 4448969.64,
+    "Services subcontracted to other agencies": 4448969.64,
     "Teacher pensions (CalSTRS), paid by the state on the district's behalf": 2712880.0
    },
    "purpose": {
     "Instructional support (supervision, library, training)": 5324920.11,
     "School administration": 4327852.57,
-    "Pupil services (counseling, health, psychology)": 5452454.57,
+    "Pupil services (counseling, health, psychology, food)": 5452454.57,
     "Pupil transportation": 2313683.41,
     "District administration": 6599416.09,
     "Buildings, maintenance and operations": 13849396.64,
-    "Other (community, enterprise, debt, transfers to agencies)": 771298.21,
+    "Other (athletics and activities, community, enterprise, debt, transfers to agencies)": 771298.21,
     "Classroom instruction": 50308897.54,
     "Special education instruction": 12603047.94
    },
    "revenue": {
     "State aid (funding formula and Education Protection Account)": 50560837.0,
     "Local property taxes": 13549590.18,
-    "Property taxes passed to charter schools": -261097.0,
+    "Property taxes passed to charter schools": -574815.0,
     "Federal": 9969832.85,
     "Other state": 15486943.75,
-    "Other local": 10455771.69
+    "Other local": 7791071.69,
+    "Other property-tax and funding-formula transfers": 313718.0,
+    "Passed on by other school agencies (mostly state special-education money)": 2664700.0
    },
    "other_funds": {
     "Student Activity Special Revenue Fund": 15863.02,
@@ -1477,7 +1563,9 @@
     "Capital Facilities Fund": 743633.32,
     "Bond Interest and Redemption Fund": 2329178.0,
     "Charter Schools Enterprise Fund": 7394549.71
-   }
+   },
+   "charter_schools": 0.0,
+   "passed_through": 0.0
   },
   {
    "code": "73569",
@@ -1498,9 +1586,9 @@
     "Retiree health benefits": 157932.01,
     "Other benefits": 257179.69,
     "Books and supplies": 10383442.87,
-    "Other services and operating costs": 38734692.88,
+    "Professional services, utilities, rents and other operating costs": 38734692.88,
     "Counselors, nurses and other pupil support": 8846252.05,
-    "Contracted services (subagreements)": 7582064.95,
+    "Services subcontracted to other agencies": 7582064.95,
     "Maintenance, food, transport and other support staff": 11887979.01,
     "Capital outlay": 11385521.69,
     "Classified supervisors and administrators": 1916560.08,
@@ -1511,8 +1599,8 @@
    "purpose": {
     "Instructional support (supervision, library, training)": 16109191.87,
     "School administration": 17540949.55,
-    "Pupil services (counseling, health, psychology)": 20100746.82,
-    "Other (community, enterprise, debt, transfers to agencies)": 2955018.7,
+    "Pupil services (counseling, health, psychology, food)": 20100746.82,
+    "Other (athletics and activities, community, enterprise, debt, transfers to agencies)": 2955018.7,
     "District administration": 9822108.61,
     "Buildings, maintenance and operations": 44504450.52,
     "Classroom instruction": 121473433.16,
@@ -1522,10 +1610,12 @@
    "revenue": {
     "State aid (funding formula and Education Protection Account)": 139171088.0,
     "Local property taxes": 90323700.43,
-    "Property taxes passed to charter schools": -13098506.0,
+    "Property taxes passed to charter schools": -14440049.0,
     "Federal": 38420155.68,
     "Other state": 40944094.41,
-    "Other local": 25838501.37
+    "Other local": 14383573.85,
+    "Passed on by other school agencies (mostly state special-education money)": 11454927.52,
+    "Other property-tax and funding-formula transfers": 1341543.0
    },
    "other_funds": {
     "Student Activity Special Revenue Fund": 1117984.83,
@@ -1536,7 +1626,9 @@
     "Special Reserve Fund for Capital Outlay Projects": 807071.54,
     "Bond Interest and Redemption Fund": 24258286.0,
     "Self-Insurance Fund": 1521940.0
-   }
+   },
+   "charter_schools": 0.0,
+   "passed_through": 0.0
   },
   {
    "code": "68296",
@@ -1556,10 +1648,10 @@
     "Retiree health benefits": 2127216.09,
     "Other benefits": 3316903.66,
     "Books and supplies": 15304628.54,
-    "Other services and operating costs": 38681072.82,
+    "Professional services, utilities, rents and other operating costs": 38681072.82,
     "Counselors, nurses and other pupil support": 19022100.68,
     "Maintenance, food, transport and other support staff": 23200924.98,
-    "Contracted services (subagreements)": 9227613.5,
+    "Services subcontracted to other agencies": 9227613.5,
     "Classified supervisors and administrators": 6356952.67,
     "Capital outlay": 10287395.96,
     "Teacher salaries": 179449562.51,
@@ -1570,18 +1662,18 @@
    "purpose": {
     "Instructional support (supervision, library, training)": 32656528.09,
     "School administration": 29314669.86,
-    "Pupil services (counseling, health, psychology)": 32329273.05,
+    "Pupil services (counseling, health, psychology, food)": 32329273.05,
     "Pupil transportation": 14211558.0,
     "District administration": 29279051.67,
     "Buildings, maintenance and operations": 51951595.33,
-    "Other (community, enterprise, debt, transfers to agencies)": 7460207.49,
+    "Other (athletics and activities, community, enterprise, debt, transfers to agencies)": 7460207.49,
     "Classroom instruction": 236297028.75,
     "Special education instruction": 102365812.38
    },
    "revenue": {
     "State aid (funding formula and Education Protection Account)": 172047493.4,
     "Local property taxes": 229500317.6,
-    "Property taxes passed to charter schools": 2095950.0,
+    "Other property-tax and funding-formula transfers": 2095950.0,
     "Federal": 20581457.91,
     "Other state": 88354982.86,
     "Other local": 21738068.11
@@ -1600,7 +1692,9 @@
     "Other Enterprise Fund": 19091328.12,
     "Self-Insurance Fund": 14898446.64,
     "Retiree Benefit Fund": 2140602.27
-   }
+   },
+   "charter_schools": 0.0,
+   "passed_through": 0.0
   },
   {
    "code": "68304",
@@ -1614,7 +1708,7 @@
     "Health and welfare benefits": 7195030.52,
     "Unemployment and workers' compensation insurance": 728450.12,
     "Retiree health benefits": 63350.63,
-    "Other services and operating costs": 8072060.25,
+    "Professional services, utilities, rents and other operating costs": 8072060.25,
     "Other certificated staff": 754902.62,
     "Counselors, nurses and other pupil support": 2952817.82,
     "Maintenance, food, transport and other support staff": 4351950.87,
@@ -1633,11 +1727,11 @@
    "purpose": {
     "Instructional support (supervision, library, training)": 2889454.97,
     "School administration": 5304580.42,
-    "Pupil services (counseling, health, psychology)": 6199959.46,
+    "Pupil services (counseling, health, psychology, food)": 6199959.46,
     "Pupil transportation": 3074535.17,
     "District administration": 6966327.3,
     "Buildings, maintenance and operations": 10455664.46,
-    "Other (community, enterprise, debt, transfers to agencies)": 2704838.73,
+    "Other (athletics and activities, community, enterprise, debt, transfers to agencies)": 2704838.73,
     "Classroom instruction": 35609041.27,
     "Special education instruction": 11305814.92
    },
@@ -1645,16 +1739,19 @@
     "State aid (funding formula and Education Protection Account)": 32266975.9,
     "Local property taxes": 30108831.1,
     "Other state": 9816101.91,
-    "Other local": 7563353.19,
+    "Other local": 3765690.19,
     "Federal": 6965341.12,
-    "Property taxes passed to charter schools": 443714.0
+    "Other property-tax and funding-formula transfers": 443714.0,
+    "Passed on by other school agencies (mostly state special-education money)": 3797663.0
    },
    "other_funds": {
     "Student Activity Special Revenue Fund": 572100.85,
     "Adult Education Fund": 52508.72,
     "Cafeteria Special Revenue Fund": 2951588.37,
     "Capital Facilities Fund": 608777.77
-   }
+   },
+   "charter_schools": 0.0,
+   "passed_through": 0.0
   },
   {
    "code": "68312",
@@ -1663,7 +1760,7 @@
    "ada": 509.87,
    "spending": {
     "Capital outlay": 452052.99,
-    "Other services and operating costs": 1643280.87,
+    "Professional services, utilities, rents and other operating costs": 1643280.87,
     "Principals and certificated administrators": 736430.63,
     "Office and technical staff": 641361.86,
     "Teacher pensions (CalSTRS), paid by the district": 1158179.32,
@@ -1687,9 +1784,9 @@
     "School administration": 813100.77,
     "District administration": 2422466.24,
     "Buildings, maintenance and operations": 1700303.96,
-    "Other (community, enterprise, debt, transfers to agencies)": 103578.19,
+    "Other (athletics and activities, community, enterprise, debt, transfers to agencies)": 103578.19,
     "Classroom instruction": 8151071.46,
-    "Pupil services (counseling, health, psychology)": 771514.44,
+    "Pupil services (counseling, health, psychology, food)": 771514.44,
     "Pupil transportation": 68708.44,
     "Special education instruction": 1549872.39
    },
@@ -1697,15 +1794,18 @@
     "State aid (funding formula and Education Protection Account)": 267149.0,
     "Local property taxes": 12099127.36,
     "Other state": 957264.28,
-    "Other local": 1968470.83,
+    "Other local": 1557323.83,
     "Federal": 429656.0,
-    "Property taxes passed to charter schools": 50669.0
+    "Passed on by other school agencies (mostly state special-education money)": 411147.0,
+    "Other property-tax and funding-formula transfers": 50669.0
    },
    "other_funds": {
     "Student Activity Special Revenue Fund": 129739.43,
     "Capital Facilities Fund": 1344.62,
     "Bond Interest and Redemption Fund": 2977250.0
-   }
+   },
+   "charter_schools": 0.0,
+   "passed_through": 0.0
   },
   {
    "code": "10371",
@@ -1714,7 +1814,7 @@
    "ada": 0.0,
    "spending": {
     "Other certificated staff": 4351831.73,
-    "Other services and operating costs": 42181854.8,
+    "Professional services, utilities, rents and other operating costs": 42181854.8,
     "Principals and certificated administrators": 32100973.07,
     "Office and technical staff": 28937732.59,
     "Teacher pensions (CalSTRS), paid by the district": 11730694.94,
@@ -1733,15 +1833,15 @@
     "Capital outlay": 8431065.15,
     "Counselors, nurses and other pupil support": 4443785.92,
     "Classroom aides": 7668542.6,
-    "Contracted services (subagreements)": 73482518.93,
+    "Services subcontracted to other agencies": 73482518.93,
     "Teacher pensions (CalSTRS), paid by the state on the district's behalf": 5125829.0
    },
    "purpose": {
     "Instructional support (supervision, library, training)": 173348802.35,
-    "Pupil services (counseling, health, psychology)": 12394775.62,
+    "Pupil services (counseling, health, psychology, food)": 12394775.62,
     "District administration": 65157436.21,
     "Buildings, maintenance and operations": 12571773.57,
-    "Other (community, enterprise, debt, transfers to agencies)": 33977117.45,
+    "Other (athletics and activities, community, enterprise, debt, transfers to agencies)": 33977117.45,
     "Classroom instruction": 31944851.6,
     "School administration": 8749229.67,
     "Special education instruction": 28835043.67
@@ -1749,22 +1849,23 @@
    "revenue": {
     "State aid (funding formula and Education Protection Account)": 41267318.0,
     "Local property taxes": 146252928.24,
-    "Property taxes passed to charter schools": -35768088.0,
+    "Other property-tax and funding-formula transfers": -35768088.0,
     "Federal": 43948023.44,
     "Other state": 106761751.07,
-    "Other local": 90400737.66
+    "Other local": 73472269.79,
+    "Passed on by other school agencies (mostly state special-education money)": 16928467.87
    },
    "other_funds": {
     "Student Activity Special Revenue Fund": 4524.91,
-    "Special Education Pass-Through Fund": 286253898.87,
     "Child Development Fund": 7148539.45,
     "Deferred Maintenance Fund": 1971092.23,
     "Forest Reserve Fund": 161177.2,
     "Capital Facilities Fund": 2804671.36,
     "Special Reserve Fund for Capital Outlay Projects": 1216536.87,
-    "Self-Insurance Fund": 1069434.71,
-    "Charter Schools Enterprise Fund": 8897558.61
-   }
+    "Self-Insurance Fund": 1069434.71
+   },
+   "charter_schools": 8897558.61,
+   "passed_through": 286253898.87
   },
   {
    "code": "68338",
@@ -1786,8 +1887,8 @@
     "Retiree health benefits": 4041533.04,
     "Other benefits": 5048302.84,
     "Books and supplies": 53299511.76,
-    "Contracted services (subagreements)": 127870412.63,
-    "Other services and operating costs": 23173667.86,
+    "Services subcontracted to other agencies": 127870412.63,
+    "Professional services, utilities, rents and other operating costs": 23173667.86,
     "Counselors, nurses and other pupil support": 67309368.15,
     "Maintenance, food, transport and other support staff": 118752407.28,
     "Capital outlay": 4592025.86,
@@ -1798,9 +1899,9 @@
    "purpose": {
     "Instructional support (supervision, library, training)": 101265579.33,
     "School administration": 134243528.96,
-    "Pupil services (counseling, health, psychology)": 190592910.84,
+    "Pupil services (counseling, health, psychology, food)": 190592910.84,
     "Pupil transportation": 46190654.63,
-    "Other (community, enterprise, debt, transfers to agencies)": 36444916.51,
+    "Other (athletics and activities, community, enterprise, debt, transfers to agencies)": 36444916.51,
     "District administration": 72009675.1,
     "Buildings, maintenance and operations": 132117854.08,
     "Classroom instruction": 866098551.32,
@@ -1809,10 +1910,12 @@
    "revenue": {
     "State aid (funding formula and Education Protection Account)": 306448839.0,
     "Local property taxes": 1104227694.91,
-    "Property taxes passed to charter schools": -160465476.0,
+    "Property taxes passed to charter schools": -168593896.0,
     "Federal": 293796888.04,
     "Other state": 363539324.82,
-    "Other local": 80707493.11
+    "Other local": 79310489.41,
+    "Other property-tax and funding-formula transfers": 8128420.0,
+    "Passed on by other school agencies (mostly state special-education money)": 1397003.7
    },
    "other_funds": {
     "Student Activity Special Revenue Fund": 10885628.79,
@@ -1824,9 +1927,10 @@
     "County School Facilities Fund": 2766482.0,
     "Special Reserve Fund for Capital Outlay Projects": 2370593.85,
     "Bond Interest and Redemption Fund": 456013047.74,
-    "Self-Insurance Fund": 56771603.48,
-    "Charter Schools Enterprise Fund": 6476959.33
-   }
+    "Self-Insurance Fund": 56771603.48
+   },
+   "charter_schools": 6476959.33,
+   "passed_through": 0.0
   },
   {
    "code": "68346",
@@ -1846,11 +1950,11 @@
     "Retiree health benefits": 787141.47,
     "Other benefits": 4349539.53,
     "Books and supplies": 7357980.47,
-    "Other services and operating costs": 18848028.84,
+    "Professional services, utilities, rents and other operating costs": 18848028.84,
     "Maintenance, food, transport and other support staff": 9235118.86,
     "Other classified staff": 1452226.44,
     "Counselors, nurses and other pupil support": 8857017.44,
-    "Contracted services (subagreements)": 3970336.17,
+    "Services subcontracted to other agencies": 3970336.17,
     "Capital outlay": 3229854.78,
     "Classified supervisors and administrators": 2300162.08,
     "Tuition, payments to other agencies and debt service": 2798922.08,
@@ -1860,11 +1964,11 @@
    "purpose": {
     "Instructional support (supervision, library, training)": 8837119.89,
     "School administration": 12387582.41,
-    "Pupil services (counseling, health, psychology)": 19387865.56,
+    "Pupil services (counseling, health, psychology, food)": 19387865.56,
     "Pupil transportation": 4461444.19,
     "District administration": 13851352.11,
     "Buildings, maintenance and operations": 21726340.16,
-    "Other (community, enterprise, debt, transfers to agencies)": 7412043.17,
+    "Other (athletics and activities, community, enterprise, debt, transfers to agencies)": 7412043.17,
     "Classroom instruction": 85615100.65,
     "Special education instruction": 18903243.62
    },
@@ -1873,8 +1977,9 @@
     "Local property taxes": 145826467.95,
     "Federal": 5343349.6,
     "Other state": 22743444.29,
-    "Other local": 17596108.62,
-    "Property taxes passed to charter schools": 1123295.0
+    "Other local": 8472578.62,
+    "Other property-tax and funding-formula transfers": 1123295.0,
+    "Passed on by other school agencies (mostly state special-education money)": 9123530.0
    },
    "other_funds": {
     "Student Activity Special Revenue Fund": 2908527.01,
@@ -1887,7 +1992,9 @@
     "Bond Interest and Redemption Fund": 20390027.0,
     "Debt Service Fund for Blended Component Units": 7376460.34,
     "Self-Insurance Fund": 89617.53
-   }
+   },
+   "charter_schools": 0.0,
+   "passed_through": 0.0
   },
   {
    "code": "73791",
@@ -1906,7 +2013,7 @@
     "Unemployment and workers' compensation insurance": 3696759.84,
     "Retiree health benefits": 5936608.12,
     "Books and supplies": 9063428.5,
-    "Other services and operating costs": 27512940.7,
+    "Professional services, utilities, rents and other operating costs": 27512940.7,
     "Maintenance, food, transport and other support staff": 17037306.3,
     "Other benefits": 819915.29,
     "Capital outlay": 6509822.66,
@@ -1915,27 +2022,29 @@
     "Teacher salaries": 104617500.92,
     "Classroom aides": 13135547.85,
     "Counselors, nurses and other pupil support": 10599464.33,
-    "Contracted services (subagreements)": 5538819.08,
+    "Services subcontracted to other agencies": 5538819.08,
     "Teacher pensions (CalSTRS), paid by the state on the district's behalf": 11229483.0
    },
    "purpose": {
     "Instructional support (supervision, library, training)": 12728475.43,
     "School administration": 18245641.9,
-    "Pupil services (counseling, health, psychology)": 21601395.8,
+    "Pupil services (counseling, health, psychology, food)": 21601395.8,
     "Pupil transportation": 13817163.06,
     "District administration": 14967149.51,
     "Buildings, maintenance and operations": 31665196.93,
-    "Other (community, enterprise, debt, transfers to agencies)": 8311922.38,
+    "Other (athletics and activities, community, enterprise, debt, transfers to agencies)": 8311922.38,
     "Classroom instruction": 141216228.6,
     "Special education instruction": 52527902.14
    },
    "revenue": {
     "State aid (funding formula and Education Protection Account)": 149797191.04,
     "Local property taxes": 81196985.24,
-    "Property taxes passed to charter schools": 1429453.0,
+    "Property taxes passed to charter schools": -269439.0,
     "Federal": 20404646.71,
     "Other state": 35645426.6,
-    "Other local": 35387671.73
+    "Other local": 20747027.02,
+    "Other property-tax and funding-formula transfers": 1698892.0,
+    "Passed on by other school agencies (mostly state special-education money)": 14640644.71
    },
    "other_funds": {
     "Student Activity Special Revenue Fund": 1769739.13,
@@ -1947,7 +2056,9 @@
     "Bond Interest and Redemption Fund": 14914629.0,
     "Other Enterprise Fund": 3354505.51,
     "Self-Insurance Fund": 3724107.28
-   }
+   },
+   "charter_schools": 0.0,
+   "passed_through": 0.0
   },
   {
    "code": "68353",
@@ -1961,7 +2072,7 @@
     "Social Security and Medicare": 150040.12,
     "Unemployment and workers' compensation insurance": 65032.82,
     "Books and supplies": 279870.39,
-    "Other services and operating costs": 935284.5,
+    "Professional services, utilities, rents and other operating costs": 935284.5,
     "Principals and certificated administrators": 320740.58,
     "Teacher pensions (CalSTRS), paid by the district": 553267.71,
     "Health and welfare benefits": 380017.77,
@@ -1970,28 +2081,29 @@
     "Tuition, payments to other agencies and debt service": 5283.07,
     "Teacher salaries": 2470612.5,
     "Classroom aides": 427844.88,
-    "Contracted services (subagreements)": 1717.45,
+    "Services subcontracted to other agencies": 1717.45,
     "Counselors, nurses and other pupil support": 255899.82,
     "Teacher pensions (CalSTRS), paid by the state on the district's behalf": 251288.0
    },
    "purpose": {
     "Instructional support (supervision, library, training)": 182250.72,
     "School administration": 495510.66,
-    "Pupil services (counseling, health, psychology)": 433186.98,
+    "Pupil services (counseling, health, psychology, food)": 433186.98,
     "Pupil transportation": 117931.29,
     "District administration": 500873.79,
     "Buildings, maintenance and operations": 857031.85,
     "Classroom instruction": 4135641.52,
-    "Other (community, enterprise, debt, transfers to agencies)": 16390.86,
+    "Other (athletics and activities, community, enterprise, debt, transfers to agencies)": 16390.86,
     "Special education instruction": 535566.23
    },
    "revenue": {
     "State aid (funding formula and Education Protection Account)": 3731774.77,
     "Local property taxes": 2007063.23,
-    "Property taxes passed to charter schools": -37167.0,
+    "Other property-tax and funding-formula transfers": -37167.0,
     "Other state": 895899.61,
-    "Other local": 641085.41,
-    "Federal": 254117.51
+    "Other local": 209517.41,
+    "Federal": 254117.51,
+    "Passed on by other school agencies (mostly state special-education money)": 431568.0
    },
    "other_funds": {
     "Student Activity Special Revenue Fund": 2024.97,
@@ -2000,7 +2112,9 @@
     "Special Reserve Fund for Capital Outlay Projects": 132685.49,
     "Bond Interest and Redemption Fund": 155350.0,
     "Other Enterprise Fund": 128863.84
-   }
+   },
+   "charter_schools": 0.0,
+   "passed_through": 0.0
   },
   {
    "code": "68379",
@@ -2019,7 +2133,7 @@
     "Staff pensions (CalPERS)": 3394294.06,
     "Counselors, nurses and other pupil support": 1784075.72,
     "Maintenance, food, transport and other support staff": 5006669.76,
-    "Other services and operating costs": 17220836.85,
+    "Professional services, utilities, rents and other operating costs": 17220836.85,
     "Classified supervisors and administrators": 717296.81,
     "Other classified staff": 1789769.92,
     "Other benefits": 1800.0,
@@ -2033,11 +2147,11 @@
    "purpose": {
     "Instructional support (supervision, library, training)": 2080485.21,
     "School administration": 4250533.61,
-    "Pupil services (counseling, health, psychology)": 6180447.85,
+    "Pupil services (counseling, health, psychology, food)": 6180447.85,
     "Pupil transportation": 998470.3,
     "District administration": 7067162.63,
     "Buildings, maintenance and operations": 9944079.26,
-    "Other (community, enterprise, debt, transfers to agencies)": 1240709.73,
+    "Other (athletics and activities, community, enterprise, debt, transfers to agencies)": 1240709.73,
     "Classroom instruction": 42276519.63,
     "Special education instruction": 15017857.54
    },
@@ -2046,8 +2160,9 @@
     "Local property taxes": 35341673.01,
     "Federal": 6370671.72,
     "Other state": 13266751.39,
-    "Other local": 7215636.92,
-    "Property taxes passed to charter schools": 328672.0
+    "Other local": 3511350.92,
+    "Other property-tax and funding-formula transfers": 328672.0,
+    "Passed on by other school agencies (mostly state special-education money)": 3704286.0
    },
    "other_funds": {
     "Student Activity Special Revenue Fund": 118083.56,
@@ -2057,7 +2172,9 @@
     "Capital Facilities Fund": 20942.0,
     "Bond Interest and Redemption Fund": 10340307.0,
     "Debt Service Fund for Blended Component Units": 3279193.35
-   }
+   },
+   "charter_schools": 0.0,
+   "passed_through": 0.0
   },
   {
    "code": "68361",
@@ -2074,7 +2191,7 @@
     "Unemployment and workers' compensation insurance": 1128467.24,
     "Retiree health benefits": 395022.81,
     "Other benefits": 405491.87,
-    "Other services and operating costs": 9300115.78,
+    "Professional services, utilities, rents and other operating costs": 9300115.78,
     "Maintenance, food, transport and other support staff": 5536256.7,
     "Classified supervisors and administrators": 1715942.01,
     "Books and supplies": 4962051.79,
@@ -2090,11 +2207,11 @@
    "purpose": {
     "Instructional support (supervision, library, training)": 3050141.0,
     "School administration": 4871257.86,
-    "Pupil services (counseling, health, psychology)": 5202814.02,
+    "Pupil services (counseling, health, psychology, food)": 5202814.02,
     "Pupil transportation": 2640978.19,
     "District administration": 5966254.23,
     "Buildings, maintenance and operations": 7688857.96,
-    "Other (community, enterprise, debt, transfers to agencies)": 3269641.97,
+    "Other (athletics and activities, community, enterprise, debt, transfers to agencies)": 3269641.97,
     "Classroom instruction": 46307502.48,
     "Special education instruction": 18431700.24
    },
@@ -2103,8 +2220,9 @@
     "Local property taxes": 24125564.88,
     "Federal": 3957647.63,
     "Other state": 12066721.17,
-    "Other local": 10809869.07,
-    "Property taxes passed to charter schools": 585525.0
+    "Other local": 6249597.07,
+    "Other property-tax and funding-formula transfers": 585525.0,
+    "Passed on by other school agencies (mostly state special-education money)": 4560272.0
    },
    "other_funds": {
     "Student Activity Special Revenue Fund": 26426.17,
@@ -2115,7 +2233,9 @@
     "Special Reserve Fund for Capital Outlay Projects": 1949730.28,
     "Bond Interest and Redemption Fund": 5367539.0,
     "Other Enterprise Fund": 2236327.18
-   }
+   },
+   "charter_schools": 0.0,
+   "passed_through": 0.0
   },
   {
    "code": "68387",
@@ -2133,7 +2253,7 @@
     "Unemployment and workers' compensation insurance": 514567.88,
     "Retiree health benefits": 412273.79,
     "Books and supplies": 2579912.6,
-    "Other services and operating costs": 7551212.83,
+    "Professional services, utilities, rents and other operating costs": 7551212.83,
     "Capital outlay": 649731.53,
     "Other classified staff": 694362.2,
     "Maintenance, food, transport and other support staff": 1826918.42,
@@ -2142,14 +2262,14 @@
     "Classroom aides": 2197532.61,
     "Classified supervisors and administrators": 864107.73,
     "Tuition, payments to other agencies and debt service": -41835.03,
-    "Contracted services (subagreements)": 526561.02,
+    "Services subcontracted to other agencies": 526561.02,
     "Teacher pensions (CalSTRS), paid by the state on the district's behalf": 2516184.0
    },
    "purpose": {
     "Instructional support (supervision, library, training)": 2759859.7,
     "School administration": 4746795.58,
-    "Pupil services (counseling, health, psychology)": 4888007.76,
-    "Other (community, enterprise, debt, transfers to agencies)": 727703.62,
+    "Pupil services (counseling, health, psychology, food)": 4888007.76,
+    "Other (athletics and activities, community, enterprise, debt, transfers to agencies)": 727703.62,
     "District administration": 5279063.0,
     "Buildings, maintenance and operations": 5443250.46,
     "Classroom instruction": 30264019.09,
@@ -2159,10 +2279,12 @@
    "revenue": {
     "State aid (funding formula and Education Protection Account)": 2208498.0,
     "Local property taxes": 52796664.53,
-    "Property taxes passed to charter schools": -804466.0,
+    "Other property-tax and funding-formula transfers": -756912.0,
+    "Property taxes passed to charter schools": -47554.0,
     "Other state": 5291990.48,
-    "Other local": 4810409.4,
-    "Federal": 683247.99
+    "Other local": 2799899.4,
+    "Federal": 683247.99,
+    "Passed on by other school agencies (mostly state special-education money)": 2010510.0
    },
    "other_funds": {
     "Cafeteria Special Revenue Fund": 2356497.3,
@@ -2175,7 +2297,9 @@
     "Debt Service Fund for Blended Component Units": 2469959.5,
     "Other Enterprise Fund": 4527588.31,
     "Self-Insurance Fund": 399733.14
-   }
+   },
+   "charter_schools": 0.0,
+   "passed_through": 0.0
   },
   {
    "code": "68395",
@@ -2189,7 +2313,7 @@
     "Health and welfare benefits": 8710522.17,
     "Unemployment and workers' compensation insurance": 2276673.28,
     "Retiree health benefits": 1020930.01,
-    "Other services and operating costs": 12866683.39,
+    "Professional services, utilities, rents and other operating costs": 12866683.39,
     "Maintenance, food, transport and other support staff": 6358507.6,
     "Classified supervisors and administrators": 1248629.3,
     "Books and supplies": 2888424.27,
@@ -2204,26 +2328,28 @@
     "Other certificated staff": 628765.43,
     "Counselors, nurses and other pupil support": 2711664.68,
     "Teacher pensions (CalSTRS), paid by the state on the district's behalf": 2939315.0,
-    "Contracted services (subagreements)": 1968878.11
+    "Services subcontracted to other agencies": 1968878.11
    },
    "purpose": {
-    "Pupil services (counseling, health, psychology)": 6885673.43,
+    "Pupil services (counseling, health, psychology, food)": 6885673.43,
     "Pupil transportation": 2495795.5,
     "District administration": 6747785.14,
     "Buildings, maintenance and operations": 7869653.51,
     "Classroom instruction": 37165832.03,
     "Instructional support (supervision, library, training)": 8236707.86,
     "School administration": 4041386.32,
-    "Other (community, enterprise, debt, transfers to agencies)": 4652471.12,
+    "Other (athletics and activities, community, enterprise, debt, transfers to agencies)": 4652471.12,
     "Special education instruction": 18206938.16
    },
    "revenue": {
     "State aid (funding formula and Education Protection Account)": 43940039.0,
     "Local property taxes": 19855911.78,
-    "Property taxes passed to charter schools": -3746415.0,
+    "Property taxes passed to charter schools": -4184854.0,
     "Federal": 8161510.35,
     "Other state": 15345614.13,
-    "Other local": 12456590.84
+    "Other local": 9626884.84,
+    "Other property-tax and funding-formula transfers": 438439.0,
+    "Passed on by other school agencies (mostly state special-education money)": 2829706.0
    },
    "other_funds": {
     "Student Activity Special Revenue Fund": 107581.05,
@@ -2234,7 +2360,9 @@
     "Capital Facilities Fund": 5154.63,
     "Special Reserve Fund for Capital Outlay Projects": 473629.02,
     "Bond Interest and Redemption Fund": 4181419.0
-   }
+   },
+   "charter_schools": 0.0,
+   "passed_through": 0.0
   },
   {
    "code": "68403",
@@ -2248,7 +2376,7 @@
     "Health and welfare benefits": 138096.14,
     "Unemployment and workers' compensation insurance": 15487.9,
     "Books and supplies": 82423.18,
-    "Other services and operating costs": 388031.04,
+    "Professional services, utilities, rents and other operating costs": 388031.04,
     "Office and technical staff": 165604.51,
     "Retiree health benefits": 7787.0,
     "Teacher salaries": 436854.02,
@@ -2258,7 +2386,7 @@
     "Teacher pensions (CalSTRS), paid by the state on the district's behalf": 38948.0
    },
    "purpose": {
-    "Pupil services (counseling, health, psychology)": 72675.08,
+    "Pupil services (counseling, health, psychology, food)": 72675.08,
     "District administration": 122546.39,
     "Buildings, maintenance and operations": 371010.71,
     "Classroom instruction": 817974.08,
@@ -2269,15 +2397,19 @@
    "revenue": {
     "State aid (funding formula and Education Protection Account)": 1593265.0,
     "Local property taxes": 291829.4,
-    "Property taxes passed to charter schools": -284130.0,
+    "Property taxes passed to charter schools": -288332.0,
     "Other state": 155852.09,
-    "Other local": 805429.39,
-    "Federal": 56870.0
+    "Other local": 770417.39,
+    "Federal": 56870.0,
+    "Other property-tax and funding-formula transfers": 4202.0,
+    "Passed on by other school agencies (mostly state special-education money)": 35012.0
    },
    "other_funds": {
     "Special Reserve Fund for Capital Outlay Projects": 3891.0,
     "Other Enterprise Fund": 90380.37
-   }
+   },
+   "charter_schools": 0.0,
+   "passed_through": 0.0
   },
   {
    "code": "68411",
@@ -2286,7 +2418,7 @@
    "ada": 31952.64,
    "spending": {
     "Teacher salaries": 179263293.83,
-    "Other services and operating costs": 59704062.13,
+    "Professional services, utilities, rents and other operating costs": 59704062.13,
     "Books and supplies": 29411647.88,
     "Maintenance, food, transport and other support staff": 28697362.71,
     "Classified supervisors and administrators": 3546332.78,
@@ -2304,16 +2436,16 @@
     "Capital outlay": 8356177.16,
     "Classroom aides": 21064337.4,
     "Counselors, nurses and other pupil support": 21833368.16,
-    "Contracted services (subagreements)": 1720325.87,
+    "Services subcontracted to other agencies": 1720325.87,
     "Teacher pensions (CalSTRS), paid by the state on the district's behalf": 19810584.0
    },
    "purpose": {
     "Instructional support (supervision, library, training)": 37396775.67,
     "Pupil transportation": 10330289.83,
-    "Pupil services (counseling, health, psychology)": 34255968.86,
+    "Pupil services (counseling, health, psychology, food)": 34255968.86,
     "District administration": 46319241.82,
     "Buildings, maintenance and operations": 53120085.72,
-    "Other (community, enterprise, debt, transfers to agencies)": 13939815.19,
+    "Other (athletics and activities, community, enterprise, debt, transfers to agencies)": 13939815.19,
     "Classroom instruction": 234420999.98,
     "School administration": 45600463.32,
     "Special education instruction": 93645085.39
@@ -2321,10 +2453,12 @@
    "revenue": {
     "State aid (funding formula and Education Protection Account)": 366064849.64,
     "Local property taxes": 130883685.73,
-    "Property taxes passed to charter schools": -3111944.82,
+    "Other property-tax and funding-formula transfers": 1795654.0,
+    "Property taxes passed to charter schools": -4907598.82,
     "Federal": 61441023.05,
     "Other state": 80798681.04,
-    "Other local": 46791136.59
+    "Other local": 21080267.59,
+    "Passed on by other school agencies (mostly state special-education money)": 25710869.0
    },
    "other_funds": {
     "Student Activity Special Revenue Fund": 4156556.78,
@@ -2338,7 +2472,9 @@
     "Capital Project Fund for Blended Component Units": 17728357.47,
     "Bond Interest and Redemption Fund": 50464326.0,
     "Debt Service Fund for Blended Component Units": 10933100.0
-   }
+   },
+   "charter_schools": 0.0,
+   "passed_through": 0.0
   },
   {
    "code": "68437",
@@ -2346,7 +2482,7 @@
    "type": "Elementary School District",
    "ada": 179.25,
    "spending": {
-    "Other services and operating costs": 430988.72,
+    "Professional services, utilities, rents and other operating costs": 430988.72,
     "Books and supplies": 153225.94,
     "Principals and certificated administrators": 290562.16,
     "Office and technical staff": 167557.28,
@@ -2363,32 +2499,35 @@
     "Teacher salaries": 1153514.36,
     "Classroom aides": 198597.92,
     "Other classified staff": 48918.7,
-    "Contracted services (subagreements)": 460391.45,
+    "Services subcontracted to other agencies": 460391.45,
     "Teacher pensions (CalSTRS), paid by the state on the district's behalf": 128564.0
    },
    "purpose": {
     "Instructional support (supervision, library, training)": 35509.2,
     "School administration": 380727.42,
-    "Pupil services (counseling, health, psychology)": 126751.01,
+    "Pupil services (counseling, health, psychology, food)": 126751.01,
     "Pupil transportation": 1048.48,
     "District administration": 561301.27,
     "Buildings, maintenance and operations": 430853.57,
     "Classroom instruction": 1944303.16,
-    "Other (community, enterprise, debt, transfers to agencies)": 287636.27,
+    "Other (athletics and activities, community, enterprise, debt, transfers to agencies)": 287636.27,
     "Special education instruction": 481153.4
    },
    "revenue": {
     "State aid (funding formula and Education Protection Account)": 1418406.0,
     "Local property taxes": 1154859.94,
     "Other state": 606424.25,
-    "Other local": 578094.15,
+    "Other local": 434686.15,
     "Federal": 233253.51,
-    "Property taxes passed to charter schools": 17696.0
+    "Other property-tax and funding-formula transfers": 17696.0,
+    "Passed on by other school agencies (mostly state special-education money)": 143408.0
    },
    "other_funds": {
     "Student Activity Special Revenue Fund": 9992.61,
     "Cafeteria Special Revenue Fund": 293552.87
-   }
+   },
+   "charter_schools": 0.0,
+   "passed_through": 0.0
   },
   {
    "code": "75614",
@@ -2406,12 +2545,12 @@
     "Staff pensions (CalPERS)": 2288553.66,
     "Health and welfare benefits": 3891997.55,
     "Books and supplies": 2408132.59,
-    "Other services and operating costs": 6504730.73,
+    "Professional services, utilities, rents and other operating costs": 6504730.73,
     "Principals and certificated administrators": 3108087.39,
     "Office and technical staff": 2256425.72,
     "Other benefits": 39887.7,
     "Counselors, nurses and other pupil support": 1787889.72,
-    "Contracted services (subagreements)": 1048320.07,
+    "Services subcontracted to other agencies": 1048320.07,
     "Capital outlay": 4093927.09,
     "Other classified staff": 629879.5,
     "Tuition, payments to other agencies and debt service": 159684.97,
@@ -2422,11 +2561,11 @@
    "purpose": {
     "Instructional support (supervision, library, training)": 4576555.14,
     "School administration": 5299318.26,
-    "Pupil services (counseling, health, psychology)": 4567543.71,
+    "Pupil services (counseling, health, psychology, food)": 4567543.71,
     "Pupil transportation": 5202385.99,
     "District administration": 4062920.32,
     "Buildings, maintenance and operations": 7302584.11,
-    "Other (community, enterprise, debt, transfers to agencies)": 1730993.9,
+    "Other (athletics and activities, community, enterprise, debt, transfers to agencies)": 1730993.9,
     "Classroom instruction": 26363515.35,
     "Special education instruction": 7592040.88
    },
@@ -2435,8 +2574,9 @@
     "Local property taxes": 26093211.57,
     "Federal": 7457821.23,
     "Other state": 7769715.09,
-    "Other local": 8820920.5,
-    "Property taxes passed to charter schools": 349794.0
+    "Other local": 6081555.5,
+    "Other property-tax and funding-formula transfers": 349794.0,
+    "Passed on by other school agencies (mostly state special-education money)": 2739365.0
    },
    "other_funds": {
     "Student Activity Special Revenue Fund": 196831.35,
@@ -2444,7 +2584,9 @@
     "Capital Facilities Fund": 26135.22,
     "Capital Project Fund for Blended Component Units": 587988.18,
     "Other Enterprise Fund": 14630.83
-   }
+   },
+   "charter_schools": 0.0,
+   "passed_through": 0.0
   },
   {
    "code": "68452",
@@ -2463,7 +2605,7 @@
     "Unemployment and workers' compensation insurance": 7159511.76,
     "Retiree health benefits": 1345897.34,
     "Books and supplies": 20106948.6,
-    "Other services and operating costs": 36069399.56,
+    "Professional services, utilities, rents and other operating costs": 36069399.56,
     "Counselors, nurses and other pupil support": 11692825.63,
     "Maintenance, food, transport and other support staff": 16778424.78,
     "Other classified staff": 5641719.52,
@@ -2472,27 +2614,29 @@
     "Classified supervisors and administrators": 2582636.26,
     "Tuition, payments to other agencies and debt service": 1687873.78,
     "Classroom aides": 14101415.98,
-    "Contracted services (subagreements)": 7442484.49,
+    "Services subcontracted to other agencies": 7442484.49,
     "Teacher pensions (CalSTRS), paid by the state on the district's behalf": 11779102.0
    },
    "purpose": {
     "Instructional support (supervision, library, training)": 19534070.18,
     "School administration": 24876894.37,
-    "Pupil services (counseling, health, psychology)": 22184837.53,
+    "Pupil services (counseling, health, psychology, food)": 22184837.53,
     "Pupil transportation": 11136152.11,
     "District administration": 17662477.17,
     "Buildings, maintenance and operations": 33892910.96,
-    "Other (community, enterprise, debt, transfers to agencies)": 6830891.52,
+    "Other (athletics and activities, community, enterprise, debt, transfers to agencies)": 6830891.52,
     "Classroom instruction": 162245081.94,
     "Special education instruction": 57722093.53
    },
    "revenue": {
     "State aid (funding formula and Education Protection Account)": 160838707.0,
     "Local property taxes": 105822151.9,
-    "Property taxes passed to charter schools": -14343676.39,
+    "Property taxes passed to charter schools": -16043735.39,
     "Federal": 41321798.52,
     "Other state": 53596226.36,
-    "Other local": 30039965.13
+    "Other local": 15673992.75,
+    "Other property-tax and funding-formula transfers": 1700059.0,
+    "Passed on by other school agencies (mostly state special-education money)": 14365972.38
    },
    "other_funds": {
     "Student Activity Special Revenue Fund": 1946750.21,
@@ -2504,7 +2648,9 @@
     "Bond Interest and Redemption Fund": 25078886.0,
     "Other Enterprise Fund": 863555.61,
     "Self-Insurance Fund": 8383686.82
-   }
+   },
+   "charter_schools": 0.0,
+   "passed_through": 0.0
   },
   {
    "code": "75416",
@@ -2519,7 +2665,7 @@
     "Staff pensions (CalPERS)": 251846.53,
     "Health and welfare benefits": 328042.16,
     "Books and supplies": 453786.51,
-    "Other services and operating costs": 1034850.17,
+    "Professional services, utilities, rents and other operating costs": 1034850.17,
     "Capital outlay": 553975.78,
     "Principals and certificated administrators": 12125.43,
     "Teacher pensions (CalSTRS), paid by the district": 253371.41,
@@ -2533,29 +2679,32 @@
    "purpose": {
     "Instructional support (supervision, library, training)": 78327.54,
     "School administration": 93973.67,
-    "Pupil services (counseling, health, psychology)": 55755.32,
+    "Pupil services (counseling, health, psychology, food)": 55755.32,
     "Pupil transportation": 885697.24,
     "District administration": 618398.53,
     "Buildings, maintenance and operations": 691477.37,
-    "Other (community, enterprise, debt, transfers to agencies)": 89244.88,
+    "Other (athletics and activities, community, enterprise, debt, transfers to agencies)": 89244.88,
     "Classroom instruction": 2929691.1,
     "Special education instruction": 584771.74
    },
    "revenue": {
     "State aid (funding formula and Education Protection Account)": 3312107.0,
     "Local property taxes": 2014665.55,
-    "Property taxes passed to charter schools": -1870594.0,
+    "Property taxes passed to charter schools": -1888167.0,
     "Federal": 1503464.38,
     "Other state": 794106.45,
-    "Other local": 809642.96
+    "Other local": 584313.96,
+    "Other property-tax and funding-formula transfers": 17573.0,
+    "Passed on by other school agencies (mostly state special-education money)": 225329.0
    },
    "other_funds": {
     "Student Activity Special Revenue Fund": 73829.56,
     "Child Development Fund": 169811.59,
     "Cafeteria Special Revenue Fund": 289581.52,
-    "Capital Facilities Fund": 5000.0,
-    "Charter Schools Enterprise Fund": 5550831.06
-   }
+    "Capital Facilities Fund": 5000.0
+   },
+   "charter_schools": 5550831.06,
+   "passed_through": 0.0
   }
  ]
 }

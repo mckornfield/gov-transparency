@@ -56,6 +56,6 @@ test("a page with its own groups keeps only those groups and labels a split fisc
 
 test("the headline calls a runner-up within 10% close instead of naming a lone winner", () => {
   const near = { ...data, programs: [...data.programs, { program: "C", group: "Health", dollars: 95, by_band: { "0-18": 950, "65-84": 0 } }] };
-  assert.match(ratioText(near, GROUPS), /aged 0–18 received the most.*aged 65–84 is close behind at \$100, a gap smaller than this estimate's error/);
+  assert.match(ratioText(near, GROUPS), /aged 0–18 received the most.*aged 65–84 is close behind at \$100\./);
   assert.doesNotMatch(ratioText(data, GROUPS), /close behind/);
 });

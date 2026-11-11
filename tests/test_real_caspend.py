@@ -83,3 +83,20 @@ def test_committed_page_data_keeps_federal_money_out_and_children_highest():
     per = {b["key"]: sum(p["by_band"][b["key"]] for p in d["programs"]) / b["population"] for b in d["bands"]}
     assert min(per["0-18"], per["85+"]) > per["45-64"]  # which of the two ends is higher is within the estimate's error
     assert all(v < 100_000 for v in per.values())
+
+
+def test_real_tightening_sources_for_developmental_services_and_medi_cal():
+    from sd_spend.caspend import parse_dds_spending_ages, parse_medi_cal_eligibles, parse_medicaid_groups
+    pos = parse_dds_spending_ages(raw("ca/dds_pos_statewide_fy2023_24.xlsx"))
+    assert 0.7 < pos["22+"] / sum(pos.values()) < 0.8 and round(sum(pos.values()) / 1e9, 1) == 10.3
+    groups = parse_medicaid_groups(raw("macpac/exhibit21_fy2023.xlsx"), "California")
+    assert groups["new adult"] > groups["disabled"] > groups["aged"] > groups["other adult"] > groups["child"]
+    months = [f"2023-{m:02d}" for m in range(7, 13)] + [f"2024-{m:02d}" for m in range(1, 7)]
+    text = raw("ca/medi_cal_eligibles_age_sex.csv").decode("utf-8-sig")
+    assert 14e6 < sum(parse_medi_cal_eligibles(text, months).values()) < 16e6
+    assert 0.9e6 < sum(parse_medi_cal_eligibles(text, months, "San Diego").values()) < 1.2e6
+
+
+def test_committed_developmental_services_dollars_go_mostly_to_adults():
+    row = next(p for p in committed()["programs"] if p["program"] == "Developmental services")
+    assert row["method"] == "published" and row["by_band"]["0-18"] < 0.3 * row["dollars"]

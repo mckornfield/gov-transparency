@@ -104,29 +104,29 @@
    "group": "Health",
    "method": "proxy",
    "kind": "outlay",
-   "note": "Department of Health Care Services state funds (Schedule 9; almost all Medi-Cal, and including provider fees and drug rebates the budget counts as special funds), split by CMS's national age shape of Medicaid spending (2020). The state's share differs by eligibility group, which this does not capture",
+   "note": "Department of Health Care Services state funds (Schedule 9; almost all Medi-Cal, and including provider fees and drug rebates the budget counts as special funds), split in three steps: California's Medicaid spending by eligibility group (MACPAC, federal fiscal year 2023: children, expansion adults, other adults, disabled, aged); the share the state pays for each (assumed 10% for expansion adults and 50% for the rest); then age (children at 0-18, adults by Medi-Cal eligibles aged 19-44 and 45-64, disabled people by SSI recipients' ages, aged people between 65-84 and 85 and over by CMS's national shape)",
    "dollars": 60183750000.0,
    "by_band": {
-    "0-18": 11723065881.238016,
-    "19-44": 19050212451.105663,
-    "45-64": 16845084979.166206,
-    "65-84": 9025509432.630026,
-    "85+": 3539877255.8600893
+    "0-18": 12290559174.077156,
+    "19-44": 16468899381.757639,
+    "45-64": 13489417011.944237,
+    "65-84": 12882323670.096004,
+    "85+": 5052550762.124968
    }
   },
   {
    "program": "Developmental services",
    "group": "Disability and care",
-   "method": "proxy",
+   "method": "published",
    "kind": "outlay",
-   "note": "Department of Developmental Services state funds (Schedule 9) spread like the people it serves by age group (monthly average, July 2023 to June 2024), assuming equal cost per person. Adults in residential and day programs cost far more than young children in early intervention, so this overstates children and understates adults; spending by age was not used",
+   "note": "Department of Developmental Services state funds (Schedule 9) split like regional-center spending for ages 0-2, 3-21 and 22 and over (DDS annual purchase-of-service report, 2023-24), then within each like the people served by finer age group",
    "dollars": 8264853000.0,
    "by_band": {
-    "0-18": 4810258362.452021,
-    "19-44": 2552297047.9787965,
-    "45-64": 653437514.721881,
-    "65-84": 221052911.37380716,
-    "85+": 27807163.473494906
+    "0-18": 1782520420.0121207,
+    "19-44": 4571194777.690968,
+    "45-64": 1384032441.4699988,
+    "65-84": 468207584.85676944,
+    "85+": 58897775.970143236
    }
   },
   {

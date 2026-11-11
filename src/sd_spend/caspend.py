@@ -208,3 +208,79 @@ def parse_ssi_state_ages(xlsx: bytes, state: str) -> dict[str, int]:
     if row is None or len(row) != 8 or sum(row[5:8]) != row[1]:
         raise CaSpendError(f"SSI table 10 has no usable row for {state}")
     return dict(zip(("0-17", "18-64", "65+"), row[5:8]))
+
+
+DDS_SPENDING_BLOCKS = (("0-2", "For birth to age 2 years"), ("3-21", "For age 3 years to 21 years"), ("22+", "For age 22 years and older"))
+
+
+def parse_dds_spending_ages(xlsx: bytes) -> dict[str, float]:
+    """Regional-center purchase-of-service spending for three age groups (DDS annual report, statewide, first sheet's totals).
+    People are counted in an age group if they were that age at any time in the year, so only the dollars are used."""
+    rows = [[c for c in r if c is not None] for r in _sheet_rows(xlsx, "POSxEth", "DDS purchase-of-service report")]
+
+    def block_total(title: str) -> float:
+        start = next((i for i, r in enumerate(rows) if r and str(r[0]).strip().startswith(title)), None)
+        total = next((r for r in rows[start + 1:] if r and str(r[0]).strip() == "Total"), None) if start is not None else None
+        if total is None or len(total) < 3 or not isinstance(total[2], (int, float)):
+            raise CaSpendError(f"DDS purchase-of-service report has no total for '{title}'")
+        return float(total[2])
+
+    out = {key: block_total(title) for key, title in DDS_SPENDING_BLOCKS}
+    everyone = block_total("All ages")
+    if abs(sum(out.values()) - everyone) > 0.001 * everyone:
+        raise CaSpendError("DDS spending by age group does not add up to all ages")
+    return out
+
+
+MEDICAID_GROUPS = ("child", "new adult", "other adult", "disabled", "aged")
+
+
+def parse_medicaid_groups(xlsx: bytes, state: str) -> dict[str, float]:
+    """Each eligibility group's share of a state's Medicaid benefit spending (MACPAC MACStats exhibit 21; federal plus state)."""
+    for r in _sheet_rows(xlsx, "Exhibit 21", "MACPAC exhibit 21"):
+        if r and isinstance(r[0], str) and re.fullmatch(rf"{re.escape(state)}\d*", r[0].strip()):
+            cells = [c for c in r if c is not None]
+            shares = cells[2:7]
+            if len(shares) != 5 or not all(isinstance(v, (int, float)) for v in shares) or abs(sum(shares) - 1) > 0.02:
+                raise CaSpendError(f"MACPAC eligibility-group shares for {state} do not add up to 1")
+            return dict(zip(MEDICAID_GROUPS, (float(v) for v in shares)))
+    raise CaSpendError(f"MACPAC exhibit 21 has no row for {state}")
+
+
+def state_share_by_group(spending: dict[str, float], state_rate: dict[str, float]) -> dict[str, float]:
+    """Turn shares of total (federal plus state) spending into shares of the state's own spending, given the fraction of
+    each group's cost the state pays."""
+    missing = [g for g in spending if g not in state_rate]
+    if missing:
+        raise CaSpendError(f"no state matching rate for {', '.join(missing)}")
+    weights = {g: share * state_rate[g] for g, share in spending.items()}
+    total = sum(weights.values())
+    return {g: w / total for g, w in weights.items()}
+
+
+def parse_medi_cal_eligibles(text: str, months: list[str], county: str | None = None) -> dict[str, float]:
+    """Medi-Cal certified eligibles by age group, averaged over the months, for one county or (county=None) all counties
+    added up. Suppressed small cells count as zero; the all-county sum must be within 1% of the statewide total."""
+    sums: dict[str, float] = {}
+    statewide: dict[str, float] = {}
+    for row in csv.DictReader(io.StringIO(text)):
+        month = row["Month of Eligibility"]
+        if month not in months:
+            continue
+        number = row["Total Eligibles"].replace(",", "").strip()
+        if row["County"] == "STATEWIDE":
+            statewide[month] = float(number)
+            continue
+        if county is not None and row["County"] != county:
+            continue
+        group = re.fullmatch(r"Age (\d\d)(?:-(\d\d)|\+)", row["Age Group"])
+        if not group:
+            raise CaSpendError(f"Medi-Cal eligibles file has an unexpected age group {row['Age Group']!r}")
+        key = f"{int(group.group(1))}-{int(group.group(2))}" if group.group(2) else f"{int(group.group(1))}+"
+        sums[key] = sums.get(key, 0.0) + (float(number) if number else 0.0)
+    missing = [m for m in months if m not in statewide]
+    if missing or not sums:
+        raise CaSpendError(f"Medi-Cal eligibles file has no rows for {', '.join(missing) or county}")
+    if county is None and abs(sum(sums.values()) - sum(statewide.values())) > 0.01 * sum(statewide.values()):
+        raise CaSpendError("Medi-Cal eligibles by county do not add up to the statewide total")
+    return {k: v / len(months) for k, v in sums.items()}

@@ -5,11 +5,12 @@ Writes data/processed/ca_age_spending.csv and site/data/ca-age-spending.json. Ne
 import csv
 import json
 
-from build_age_spending import CMS_GROUPS, pdf_text, raw, zipped
-from sd_spend.ageallocate import BANDS, KEYS, from_shares, generation_labels, population_by_band, spread_ages, va_bands
-from sd_spend.agespend import parse_cms_shares
-from sd_spend.caspend import (parse_calworks_persons, parse_dds_ages, parse_department_programs, parse_ihss_ages, parse_schedule9,
-                              parse_ssi_state_ages, parse_state_population, state_funds)
+from build_age_spending import CMS_GROUPS, SSI_ADULT, pdf_text, raw, zipped
+from sd_spend.ageallocate import BANDS, KEYS, add, generation_labels, population_by_band, spread_ages, va_bands
+from sd_spend.agespend import parse_cms_shares, parse_ssi
+from sd_spend.caspend import (parse_calworks_persons, parse_dds_ages, parse_dds_spending_ages, parse_department_programs, parse_ihss_ages,
+                              parse_medi_cal_eligibles, parse_medicaid_groups, parse_schedule9, parse_ssi_state_ages, parse_state_population,
+                              state_funds, state_share_by_group)
 from sd_spend.io import ROOT
 
 YEAR_LABEL = "2023-24"
@@ -21,6 +22,10 @@ DDS_RANGES = {"0-2": (0, 2), "3-5": (3, 5), "6-9": (6, 9), "10-13": (10, 13), "1
 IHSS_RANGES = {"0-17": (0, 17), "18-44": (18, 44), "45-64": (45, 64), "65-74": (65, 74), "75-84": (75, 84), "85+": (TOP, TOP)}
 SSI_RANGES = {"0-17": (0, 17), "18-64": (18, 64), "65+": (65, TOP)}
 CALWORKS_RANGES = {"children": (0, 17), "adults": (18, 49)}
+# The fraction of each Medicaid group's cost the state pays: California's regular federal match is 50%; the federal
+# government pays 90% for adults covered by the Affordable Care Act expansion. Children's CHIP match and temporary
+# pandemic increases are ignored.
+STATE_RATE = {"child": 0.5, "new adult": 0.1, "other adult": 0.5, "disabled": 0.5, "aged": 0.5}
 # Departments whose federal funds are shown for information (they are counted on the federal page, not here).
 DEPARTMENTS = ("4260", "4300", "5180", "6100", "6440", "6610", "6870", "6980")
 
@@ -37,6 +42,28 @@ def build() -> dict:
     calworks = parse_calworks_persons(raw("ca/ca237cw_fy2023_24.xlsx"), "Statewide")
     ssp = parse_ssi_state_ages(raw("ssa/ssi_asr25.xlsx"), "California")
     total = lambda code: s9[code]["total"]  # noqa: E731
+
+    # Developmental services: dollars follow regional-center spending for three age groups, then the people served within each.
+    pos = parse_dds_spending_ages(raw("ca/dds_pos_statewide_fy2023_24.xlsx"))
+    part = lambda key: total("4300") * pos[key] / sum(pos.values())  # noqa: E731
+    young = ("3-5", "6-9", "10-13", "14-17", "18-21")
+    dds_split = add(spread_ages(part("0-2"), 0, 2, pop),
+                    va_bands({k: dds[k] for k in young}, part("3-21"), pop, DDS_RANGES),
+                    va_bands({k: v for k, v in dds.items() if k not in young and k != "0-2"}, part("22+"), pop, DDS_RANGES))
+
+    # Medi-Cal: California's spending by eligibility group, weighted by the share the state pays, then placed by age.
+    group = state_share_by_group(parse_medicaid_groups(raw("macpac/exhibit21_fy2023.xlsx"), "California"), STATE_RATE)
+    eligibles = parse_medi_cal_eligibles(raw("ca/medi_cal_eligibles_age_sex.csv").decode("utf-8-sig"), MONTHS)
+    disabled_adults = parse_ssi(raw("ssa/ssi_asr25.xlsx"), POPULATION_YEAR)["adult_counts"]
+    health = total("4260")
+    disabled_kids = ssp["0-17"] / (ssp["0-17"] + ssp["18-64"])
+    older = cms["Medicaid"]["65-84"] + cms["Medicaid"]["85+"]
+    medi_cal = add(
+        spread_ages(health * group["child"], 0, 18, pop),
+        va_bands({k: eligibles[k] for k in ("19-44", "45-64")}, health * (group["new adult"] + group["other adult"]), pop, {"19-44": (19, 44), "45-64": (45, 64)}),
+        spread_ages(health * group["disabled"] * disabled_kids, 0, 17, pop),
+        va_bands(disabled_adults, health * group["disabled"] * (1 - disabled_kids), pop, SSI_ADULT),
+        {"65-84": health * group["aged"] * cms["Medicaid"]["65-84"] / older, "85+": health * group["aged"] * cms["Medicaid"]["85+"] / older})
     hhs, education, general = "TOTALS, HEALTH AND HUMAN SERVICES", "TOTALS, EDUCATION", "TOTALS, GENERAL GOVERNMENT"
     expected = {"4260": hhs, "4300": hhs, "5180": hhs, "5195": hhs, "5196": hhs, "6100": education, "6300": education, "6440": education,
                 "6610": education, "6870": education, "6980": education, "9889": general, "9650": general, "7900": "TOTALS, GOVERNMENT OPERATIONS", "9350": general}
@@ -53,10 +80,10 @@ def build() -> dict:
          spread_ages(total("6440") + total("6610") + total("6980"), 18, 29, pop)),
         ("Community colleges", "Higher education", "proxy", "Community colleges state funds (Schedule 9, including bond-funded construction) spread over ages 18-39 by population; no enrolment by age was used",
          spread_ages(total("6870"), 18, 39, pop)),
-        ("Medi-Cal and other state health care (state share)", "Health", "proxy", "Department of Health Care Services state funds (Schedule 9; almost all Medi-Cal, and including provider fees and drug rebates the budget counts as special funds), split by CMS's national age shape of Medicaid spending (2020). The state's share differs by eligibility group, which this does not capture",
-         from_shares(total("4260"), cms["Medicaid"])),
-        ("Developmental services", "Disability and care", "proxy", "Department of Developmental Services state funds (Schedule 9) spread like the people it serves by age group (monthly average, July 2023 to June 2024), assuming equal cost per person. Adults in residential and day programs cost far more than young children in early intervention, so this overstates children and understates adults; spending by age was not used",
-         va_bands(dds, total("4300"), pop, DDS_RANGES)),
+        ("Medi-Cal and other state health care (state share)", "Health", "proxy", "Department of Health Care Services state funds (Schedule 9; almost all Medi-Cal, and including provider fees and drug rebates the budget counts as special funds), split in three steps: California's Medicaid spending by eligibility group (MACPAC, federal fiscal year 2023: children, expansion adults, other adults, disabled, aged); the share the state pays for each (assumed 10% for expansion adults and 50% for the rest); then age (children at 0-18, adults by Medi-Cal eligibles aged 19-44 and 45-64, disabled people by SSI recipients' ages, aged people between 65-84 and 85 and over by CMS's national shape)",
+         medi_cal),
+        ("Developmental services", "Disability and care", "published", "Department of Developmental Services state funds (Schedule 9) split like regional-center spending for ages 0-2, 3-21 and 22 and over (DDS annual purchase-of-service report, 2023-24), then within each like the people served by finer age group",
+         dds_split),
         ("In-Home Supportive Services (state share)", "Disability and care", "published", "State funds for IHSS (Department of Social Services budget page) spread like recipients in six age groups (January 2024), assuming equal hours per person",
          va_bands(ihss, dss["IHSS"], pop, IHSS_RANGES)),
         ("SSI state supplement (SSP)", "Income support", "published", "State funds for SSI/SSP spread like California's SSI recipients under 18, 18-64 and 65 and over (SSA, December 2025), within each by population",

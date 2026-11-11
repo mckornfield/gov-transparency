@@ -191,3 +191,72 @@ def test_ssi_state_ages_read_one_state():
     assert parse_ssi_state_ages(data, "California") == {"0-17": 100, "18-64": 400, "65+": 500}
     with pytest.raises(CaSpendError, match="Oregon"):
         parse_ssi_state_ages(data, "Oregon")
+
+
+def pos_book(adult=7_000):
+    block = lambda title, n, dollars: [[title], [" ", "Individuals Count", "Total Expenditures"], ["Asian", 1, 1], ["Total", n, dollars, 0], []]  # noqa: E731
+    rows = [["Statewide"], *block("All ages", 500, 1_000 + 2_000 + 7_000), *block("For birth to age 2 years, inclusive", 100, 1_000),
+            *block("For age 3 years to 21 years, inclusive", 240, 2_000), *block("For age 22 years and older", 160, adult)]
+    return book({"POSxEth": rows})
+
+
+def test_dds_spending_by_age_reads_the_three_age_blocks():
+    from sd_spend.caspend import parse_dds_spending_ages
+    assert parse_dds_spending_ages(pos_book()) == {"0-2": 1_000.0, "3-21": 2_000.0, "22+": 7_000.0}
+
+
+def test_dds_spending_by_age_fails_when_blocks_do_not_add_to_all_ages():
+    from sd_spend.caspend import parse_dds_spending_ages
+    with pytest.raises(CaSpendError, match="add up"):
+        parse_dds_spending_ages(pos_book(adult=9_000))
+
+
+def macpac_book(aged=0.227):
+    head = [["EXHIBIT 21"], [], ["State", "Total", "Basis of eligibility1"], [],
+            ["Child", "New adult group3", "Other adult4", "Disabled", "Aged", "Total", "Age 65+"]]
+    return book({"Exhibit 21": [*head, ["Total", 850130.4, 0.156, 0.2253, 0.117, 0.2891, 0.2126, 1, 1],
+                                ["California5", 120957.06, 0.11, 0.2977, 0.1171, 0.2481, aged, 34704.1, 0.714]]})
+
+
+def test_medicaid_groups_read_one_state_and_ignore_the_footnote_mark():
+    from sd_spend.caspend import parse_medicaid_groups
+    got = parse_medicaid_groups(macpac_book(), "California")
+    assert got == pytest.approx({"child": 0.11, "new adult": 0.2977, "other adult": 0.1171, "disabled": 0.2481, "aged": 0.227})
+
+
+def test_medicaid_groups_fail_when_shares_do_not_add_to_one_or_the_state_is_missing():
+    from sd_spend.caspend import parse_medicaid_groups
+    with pytest.raises(CaSpendError, match="add up"):
+        parse_medicaid_groups(macpac_book(aged=0.5), "California")
+    with pytest.raises(CaSpendError, match="Oregon"):
+        parse_medicaid_groups(macpac_book(), "Oregon")
+
+
+def test_state_share_weights_each_group_by_what_the_state_pays():
+    from sd_spend.caspend import state_share_by_group
+    got = state_share_by_group({"child": 0.5, "new adult": 0.5}, {"child": 0.5, "new adult": 0.1})
+    assert got == pytest.approx({"child": 0.25 / 0.30, "new adult": 0.05 / 0.30})
+    with pytest.raises(CaSpendError, match="aged"):
+        state_share_by_group({"aged": 1.0}, {"child": 0.5})
+
+
+ELIG = ("Month of Eligibility,County,Age Group,Gender,Total Eligibles,Annotation Code,Annotation Description,Status,Date of Data\n"
+        + "".join(f'{m},{c},{a},{g},"{shown}",,,F,x\n' for m in ("2023-07", "2023-08") for c, k in (("Alameda", 1), ("San Diego", 2))
+                  for a, n in (("Age 00-18", "1,000"), ("Age 19-44", "2,000"), ("Age 45-64", "500"), ("Age 65+", "300")) for g in ("Female", "Male")
+                  for shown in [f"{int(n.replace(',', '')) * k:,}"])
+        + '2023-07,Alpine,Age 65+,Male,,1,Cell suppressed for small numbers,F,x\n'
+        + '2023-07,STATEWIDE,STATEWIDE,STATEWIDE,"22,800",,Statewide Total by MOE,F,x\n2023-08,STATEWIDE,STATEWIDE,STATEWIDE,"22,800",,Statewide Total by MOE,F,x\n')
+
+
+def test_medi_cal_eligibles_average_months_for_the_state_or_one_county():
+    from sd_spend.caspend import parse_medi_cal_eligibles
+    assert parse_medi_cal_eligibles(ELIG, ["2023-07", "2023-08"]) == {"0-18": 6000.0, "19-44": 12000.0, "45-64": 3000.0, "65+": 1800.0}
+    assert parse_medi_cal_eligibles(ELIG, ["2023-07", "2023-08"], "San Diego")["19-44"] == 8000.0
+
+
+def test_medi_cal_eligibles_fail_when_counties_do_not_match_the_statewide_total_or_a_month_is_missing():
+    from sd_spend.caspend import parse_medi_cal_eligibles
+    with pytest.raises(CaSpendError, match="statewide total"):
+        parse_medi_cal_eligibles(ELIG.replace('"22,800"', '"30,000"'), ["2023-07", "2023-08"])
+    with pytest.raises(CaSpendError, match="2023-09"):
+        parse_medi_cal_eligibles(ELIG, ["2023-07", "2023-09"])

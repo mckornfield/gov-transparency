@@ -2,8 +2,10 @@ path,url,retrieved,sha256_original,bytes_original
 bea/MARPP.zip.gz,https://apps.bea.gov/regional/zip/MARPP.zip,2026-10-31,5dbf2e6ac2af222cc9abc205586c9b480344d89392752eb689c3ec823a34c83e,146479
 ca/ca237cw_fy2023_24.xlsx.gz,https://cdss.ca.gov/Portals/9/DSSDB/DataTables/CA237CW%20FY%202023-24.xlsx,2026-11-10,4db7fc3f9d9757283f63c5de05af3c022c15dba696495dc3a4adc0ce70182cc3,576783
 ca/dds_consumers_by_age_gender.csv.gz,https://data.chhs.ca.gov/dataset/cad404fb-4dc4-4c02-856e-91f176d5501e/resource/70d85261-a4e1-4c6c-a7ca-746f57cc4623/download/dds-consumers-served-by-age-group-and-gender.csv,2026-11-10,fb9abc80ac12019a01933a5dbfd120a167bbb65451fab41ecf1ef9f6d9e66f90,116797
+ca/dds_pos_statewide_fy2023_24.xlsx.gz,https://www.dds.ca.gov/wp-content/uploads/2024/12/AnnualPOSReportDeid_Statewide_20241220.xlsx,2026-11-10,dbc9ef8bbd8905308e2635160f113f6ba88d9bea8bcd2db416fbec03e6d060b2,157849
 ca/dss_5180_2025_26_gb.pdf.gz,https://ebudget.ca.gov/2025-26/pdf/GovernorsBudget/4000/5180.pdf,2026-11-10,d47a65453decbbd1524a65ff22f638f6430e9911e93cf2e48fffa0e5ccfca01e,1265677
 ca/ihss_program_data_jan2024.xlsx.gz,https://www.cdss.ca.gov/Portals/9/IHSS/Data/IHSS_Program_Data-Jan2024.xlsx,2026-11-10,4c38e86ec7f87124c166c679ed2ee9730167242f3dde1a704f6def380a6fa0bd,1234888
+ca/medi_cal_eligibles_age_sex.csv.gz,https://data.chhs.ca.gov/dataset/8c897320-ba87-4574-bc37-bae974191c35/resource/cc08b60f-393f-4e37-9b3e-976d7a9f2a72/download/t1_eligibility_by_age_group_sex_201001_oct2026.csv,2026-11-10,9ee588bf98a3ecb98f7842d8c8cfcdb1875a51f2098aaf419e61c781d8de72c7,4636286
 ca/schedule9_2025_26_gb.pdf.gz,https://ebudget.ca.gov/2025-26/pdf/BudgetSummary/BS_SCH9.pdf,2026-11-10,670173ff1f32d7572e601b6c89687ac17022df90841ece360f03acd9489b9774,7014418
 calich/ca_spms.csv.gz,https://publish.data.ca.gov/dataset/d3f9ca4d-3e60-434b-9fa3-91ee0befd34d/resource/e02178d9-1d34-4798-9979-f50af9f1742e/download/ca-spms-prior-years-and-last-twelve-months-through-march-2026.csv,2026-11-07,f3cdf767c718249bc2a6d2d58ed22b46a14b02b23735826d7fe25234d206e0b0,27649
 calich/ca_spms_dictionary.csv.gz,https://publish.data.ca.gov/dataset/d3f9ca4d-3e60-434b-9fa3-91ee0befd34d/resource/fd4ff7c8-a54a-4af2-9a13-03a8fdcc9b22/download/ca-spms-data-dictionary.csv,2026-11-07,9abd5aaae58e671861726d95b43645ec705be08e992071f214b0451a5f377e8f,3156
@@ -31,6 +33,7 @@ hud/2007-2024-PIT-Counts-by-CoC.xlsb.gz,https://www.huduser.gov/portal/datasets/
 hud/US_2024_2020census.xlsx.gz,https://www.huduser.gov/portal/datasets/assthsg.html,2026-11-09,21c3ebc831fdd142bcb8162ccf72195f1278e07b140881238931ab90ae0682e7,17775
 irs/22in25ic.xls.gz,https://www.irs.gov/pub/irs-soi/22in25ic.xls,2026-11-09,bd890a09ef3a35c577dcc9d94272a7ee40d836453c686d70599372b48b863884,55296
 irs/22in33ar.xls.gz,https://www.irs.gov/pub/irs-soi/22in33ar.xls,2026-11-09,f04012c527c5bf40e412e112597038d70fd79c017d9476c07eebc3b59e3766a4,104960
+macpac/exhibit21_fy2023.xlsx.gz,https://www.macpac.gov/wp-content/uploads/2026/02/EXHIBIT-21.-Medicaid-Spending-by-State-Eligibility-Group-and-Dually-Eligible-Status-FY-2023-1.xlsx,2026-11-10,cd7ef6d1c69bc370a3006365512b7e839bf0aeef1e9daed5ffcaf2355d0e7ef0,54973
 omb/hist_fy2027.zip.gz,https://www.whitehouse.gov/omb/information-resources/budget/historical-tables/,2026-11-09,7a5033e6ef074e190442084a1af528fd459040a951e06659432f5bb4ec01ef9d,1103048
 sandiego/accounts.csv.gz,https://seshat.datasd.org/accounts_city_budget/budget_reference_accounts_datasd.csv,2026-10-29,6a66ca1c680a11fbd3337beeafb4851cc9f3fc73e5a875108d1b5512d7204828,194159
 sandiego/accounts_dictionary.csv.gz,https://seshat.datasd.org/accounts_city_budget/budget_reference_accounts_dictionary_datasd.csv,2026-10-29,605365659e77563aeba53eb7917a7c0c5fcaafa19fc22924dcf026fd6f158197,731

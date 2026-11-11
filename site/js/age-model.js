@@ -66,5 +66,8 @@ export function ratioText(data, groups) {
   const name = (k) => (k === "85+" ? "85 and over" : k.replace("-", "–"));
   // Only compare when the youngest bracket is a real, different recipient; a near-zero base makes a meaningless ratio.
   const ratio = top.key !== young.key && young.value >= 50 ? ` The youngest bracket (${name(young.key)}) received ${money(young.value)}, about ${(top.value / young.value).toFixed(1)} times less.` : "";
-  return `Of the programs counted here, the bracket aged ${name(top.key)} received the most per person in ${data.year_label ? data.year_label : `FY${data.fiscal_year}`}: ${money(top.value)}.${ratio}`;
+  // A runner-up within 10% is a tie for an estimate this rough, so the headline says so instead of naming a winner alone.
+  const next = values.filter((v) => v.key !== top.key).reduce((a, b) => (b.value > a.value ? b : a));
+  const close = next.value >= 0.9 * top.value ? ` The bracket aged ${name(next.key)} is close behind at ${money(next.value)}, a gap smaller than this estimate's error.` : "";
+  return `Of the programs counted here, the bracket aged ${name(top.key)} received the most per person in ${data.year_label ? data.year_label : `FY${data.fiscal_year}`}: ${money(top.value)}.${close}${ratio}`;
 }

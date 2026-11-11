@@ -37,6 +37,14 @@ def build() -> dict:
     calworks = parse_calworks_persons(raw("ca/ca237cw_fy2023_24.xlsx"), "Statewide")
     ssp = parse_ssi_state_ages(raw("ssa/ssi_asr25.xlsx"), "California")
     total = lambda code: s9[code]["total"]  # noqa: E731
+    hhs, education, general = "TOTALS, HEALTH AND HUMAN SERVICES", "TOTALS, EDUCATION", "TOTALS, GENERAL GOVERNMENT"
+    expected = {"4260": hhs, "4300": hhs, "5180": hhs, "5195": hhs, "5196": hhs, "6100": education, "6300": education, "6440": education,
+                "6610": education, "6870": education, "6980": education, "9889": general, "9650": general, "7900": "TOTALS, GOVERNMENT OPERATIONS", "9350": general}
+    wrong = [code for code, section in expected.items() if s9.get(code, {}).get("section") != section]
+    if wrong:
+        raise SystemExit(f"Schedule 9 departments are not in the expected sections: {wrong}")
+    retirement = total("6300") + total("9650") + total("7900")
+    realignment = total("5195") + total("5196")
 
     programs = [
         ("K-12 education", "Schools", "proxy", "Department of Education state funds (Schedule 9) spread over ages 4-18 by population; includes transitional kindergarten and state preschool. The local property-tax share of school funding is local money and is not here",
@@ -47,7 +55,7 @@ def build() -> dict:
          spread_ages(total("6870"), 18, 39, pop)),
         ("Medi-Cal and other state health care (state share)", "Health", "proxy", "Department of Health Care Services state funds (Schedule 9; almost all Medi-Cal, and including provider fees and drug rebates the budget counts as special funds), split by CMS's national age shape of Medicaid spending (2020). The state's share differs by eligibility group, which this does not capture",
          from_shares(total("4260"), cms["Medicaid"])),
-        ("Developmental services", "Disability and care", "published", "Department of Developmental Services state funds (Schedule 9) spread like the people it serves by age group (monthly average, July 2023 to June 2024), assuming equal cost per person; within each group by population",
+        ("Developmental services", "Disability and care", "proxy", "Department of Developmental Services state funds (Schedule 9) spread like the people it serves by age group (monthly average, July 2023 to June 2024), assuming equal cost per person. Adults in residential and day programs cost far more than young children in early intervention, so this overstates children and understates adults; spending by age was not used",
          va_bands(dds, total("4300"), pop, DDS_RANGES)),
         ("In-Home Supportive Services (state share)", "Disability and care", "published", "State funds for IHSS (Department of Social Services budget page) spread like recipients in six age groups (January 2024), assuming equal hours per person",
          va_bands(ihss, dss["IHSS"], pop, IHSS_RANGES)),
@@ -75,12 +83,16 @@ def build() -> dict:
     dss_used = dss["IHSS"] + dss["SSI/SSP"] + dss["CalWORKs"] + dss["Child Care"]
     not_allocated = [
         ("Prisons and rehabilitation", s9["TOTALS, CORRECTIONS AND REHABILITATION"]["total"], "Ages of people in prison exist, but they are not recipients in this page's sense"),
-        ("Teachers' retirement contributions", s9["6300"]["total"], "Pay for past work, not a benefit by age"),
+        ("Retirement contributions (teachers, state retirees' health, CalPERS)", retirement, "Pay for past work, not a benefit by age"),
+        ("School reserve withdrawal (Public School System Stabilization Account)", total("9889"), "Paid to K-12 schools and community colleges, but the split between them is not in these files; counting it would raise the youngest brackets"),
+        ("Realignment money passed to counties", realignment, "State special funds that counties spend on health, mental health and social services, including county shares of in-home care and CalWORKs; no age split found"),
+        ("Shared revenues sent to local governments", total("9350"), "Spent by cities and counties, not by the state"),
         ("Rest of education", s9["TOTALS, EDUCATION"]["total"] - total("6100") - total("6440") - total("6610") - total("6870") - total("6980") - s9["6300"]["total"],
-         "School facilities, the state library, other colleges and commissions: no age split used"),
+         "Bond debt service, school facilities, the state library and other colleges and commissions: no age split used"),
         ("Rest of the Department of Social Services", s9["5180"]["total"] - dss_used, "Child welfare, county administration and other assistance: no age split found"),
-        ("Rest of health and human services", s9["TOTALS, HEALTH AND HUMAN SERVICES"]["total"] - total("4260") - total("4300") - total("5180"), "Public health, state hospitals and other departments: no age split found"),
-        ("Everything else", everything - people - s9["TOTALS, CORRECTIONS AND REHABILITATION"]["total"], "Transportation, courts, natural resources, general government and the like: collective costs, mostly not payments to individuals"),
+        ("Rest of health and human services", s9[hhs]["total"] - total("4260") - total("4300") - total("5180") - realignment, "Public health, state hospitals and other departments: no age split found"),
+        ("Everything else", everything - people - s9["TOTALS, CORRECTIONS AND REHABILITATION"]["total"] - (retirement - total("6300")) - total("9889") - total("9350"),
+         "Transportation, courts, natural resources and general government (mostly collective costs), plus housing, employment and veterans programs with no age split"),
     ]
     if abs(allocated + sum(d for _, d, _ in not_allocated) - everything) > 1e6:
         raise SystemExit("allocated and not-allocated dollars do not add up to all state funds")

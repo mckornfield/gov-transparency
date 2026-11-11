@@ -15,8 +15,9 @@ HEALTH AND HUMAN SERVICES
   6305-Retirement Costs for Community Colleges
   Totals, 6305-Retirement Costs for Community Colleges     - $295               --               --      - $295              --      - $314
 TOTALS, HEALTH AND HUMAN
-                                              $70,000        $38,000             --     $108,000       $111,000        $75,000
+                                              $37,705        $22,000             --      $59,705        $96,000        $75,000
 SERVICES
+  Totals,6100-Department of Education                    $91,000           $500         $1,500      $93,000        $14,000       $107,000
 TOTALS, EDUCATION                             $91,000           $500         $1,500      $93,000        $14,000       $107,000
 GRAND TOTAL                                  $207,000        $92,000         $5,000     $304,000       $150,000       $232,000
 """
@@ -25,9 +26,10 @@ GRAND TOTAL                                  $207,000        $92,000         $5,
 def test_schedule9_reads_department_and_section_totals_for_the_actual_year():
     got = parse_schedule9(SCH9)
     assert got["4260"] == {"name": "State Department of Health Care Services", "general": 38_000_000.0, "special": 22_000_000.0,
-                           "bond": 0.0, "total": 60_000_000.0, "federal": 96_000_000.0}
+                           "bond": 0.0, "total": 60_000_000.0, "federal": 96_000_000.0, "section": "TOTALS, HEALTH AND HUMAN SERVICES"}
     assert got["6305"]["general"] == -295_000.0 and got["6305"]["federal"] == 0.0
-    assert got["TOTALS, HEALTH AND HUMAN SERVICES"]["total"] == 108_000_000.0
+    assert got["TOTALS, HEALTH AND HUMAN SERVICES"]["total"] == 59_705_000.0
+    assert got["6100"]["section"] == "TOTALS, EDUCATION"
     assert got["TOTALS, EDUCATION"]["bond"] == 1_500_000.0
     assert got["GRAND TOTAL"]["total"] == 304_000_000.0
 
@@ -35,6 +37,12 @@ def test_schedule9_reads_department_and_section_totals_for_the_actual_year():
 def test_schedule9_fails_when_a_total_is_not_the_sum_of_its_funds():
     with pytest.raises(CaSpendError, match="add up"):
         parse_schedule9(SCH9.replace("$60,000 ", "$61,000 "))
+
+
+def test_schedule9_fails_when_departments_do_not_add_up_to_their_section():
+    with pytest.raises(CaSpendError, match="do not add up to 'TOTALS, EDUCATION'"):
+        parse_schedule9(SCH9.replace("Totals,6100-Department of Education                    $91,000           $500         $1,500      $93,000",
+                                     "Totals,6100-Department of Education                    $90,000           $500         $1,500      $92,000"))
 
 
 def test_schedule9_fails_without_a_grand_total():

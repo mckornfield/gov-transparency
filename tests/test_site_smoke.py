@@ -570,6 +570,8 @@ def test_california_age_page_shows_headline_tables_and_keeps_federal_money_out(p
     assert page.locator("#rest-table tbody tr").count() >= 5
     coverage = page.inner_text("#coverage")
     assert "state funds" in coverage and "counted on the federal page, not here" in coverage
+    assert "within the error of this estimate" in page.inner_text("main")
+    assert page.locator("#rest-table tbody tr").count() >= 9
     assert errors == []
 
 

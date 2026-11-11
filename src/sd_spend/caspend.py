@@ -34,6 +34,7 @@ def parse_schedule9(text: str) -> dict[str, dict]:
     Dollars, not thousands. Every total must equal General Fund + special funds + bond funds."""
     lines = text.splitlines()
     out: dict[str, dict] = {}
+    pending: list[str] = []  # departments read since the last section total
     for i, line in enumerate(lines):
         dept = re.match(r"^\s*Totals,\s*(\d{4})-(.+?)\s{2,}(.*)$", line)
         if dept:
@@ -41,6 +42,7 @@ def parse_schedule9(text: str) -> dict[str, dict]:
             if amounts is None:
                 raise CaSpendError(f"Schedule 9 total for {dept.group(1)} has too few amounts")
             out[dept.group(1)] = {"name": dept.group(2).strip(), **amounts}
+            pending.append(dept.group(1))
             continue
         section = re.match(r"^\s*(TOTALS, [A-Z ,]+?|GRAND TOTAL)(\s{2,}.*)?$", line)
         if not section:
@@ -54,8 +56,16 @@ def parse_schedule9(text: str) -> dict[str, dict]:
             if re.fullmatch(r"[A-Z ,]+", tail):
                 name = f"{name} {tail}"
         out[name] = amounts
+        if name != "GRAND TOTAL":
+            if abs(sum(out[code]["total"] for code in pending) - amounts["total"]) > 2000 * max(1, len(pending)):
+                raise CaSpendError(f"Schedule 9 departments do not add up to '{name}'")
+            for code in pending:
+                out[code]["section"] = name
+            pending = []
     if "GRAND TOTAL" not in out:
         raise CaSpendError("Schedule 9 has no GRAND TOTAL line")
+    if pending:
+        raise CaSpendError(f"Schedule 9 departments {pending} are not inside any section total")
     for key, row in out.items():
         if abs(row["general"] + row["special"] + row["bond"] - row["total"]) > 2000:
             raise CaSpendError(f"Schedule 9 funds for {key} do not add up to its total")

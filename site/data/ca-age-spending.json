@@ -117,9 +117,9 @@
   {
    "program": "Developmental services",
    "group": "Disability and care",
-   "method": "published",
+   "method": "proxy",
    "kind": "outlay",
-   "note": "Department of Developmental Services state funds (Schedule 9) spread like the people it serves by age group (monthly average, July 2023 to June 2024), assuming equal cost per person; within each group by population",
+   "note": "Department of Developmental Services state funds (Schedule 9) spread like the people it serves by age group (monthly average, July 2023 to June 2024), assuming equal cost per person. Adults in residential and day programs cost far more than young children in early intervention, so this overstates children and understates adults; spending by age was not used",
    "dollars": 8264853000.0,
    "by_band": {
     "0-18": 4810258362.452021,
@@ -202,14 +202,29 @@
    "reason": "Ages of people in prison exist, but they are not recipients in this page's sense"
   },
   {
-   "name": "Teachers' retirement contributions",
-   "dollars": 3938929000.0,
+   "name": "Retirement contributions (teachers, state retirees' health, CalPERS)",
+   "dollars": 7905286000.0,
    "reason": "Pay for past work, not a benefit by age"
+  },
+  {
+   "name": "School reserve withdrawal (Public School System Stabilization Account)",
+   "dollars": 8413086000.0,
+   "reason": "Paid to K-12 schools and community colleges, but the split between them is not in these files; counting it would raise the youngest brackets"
+  },
+  {
+   "name": "Realignment money passed to counties",
+   "dollars": 13710046000.0,
+   "reason": "State special funds that counties spend on health, mental health and social services, including county shares of in-home care and CalWORKs; no age split found"
+  },
+  {
+   "name": "Shared revenues sent to local governments",
+   "dollars": 3529781000.0,
+   "reason": "Spent by cities and counties, not by the state"
   },
   {
    "name": "Rest of education",
    "dollars": 6174782000.0,
-   "reason": "School facilities, the state library, other colleges and commissions: no age split used"
+   "reason": "Bond debt service, school facilities, the state library and other colleges and commissions: no age split used"
   },
   {
    "name": "Rest of the Department of Social Services",
@@ -218,13 +233,13 @@
   },
   {
    "name": "Rest of health and human services",
-   "dollars": 21351583000.0,
+   "dollars": 7641537000.0,
    "reason": "Public health, state hospitals and other departments: no age split found"
   },
   {
    "name": "Everything else",
-   "dollars": 84219163000.0,
-   "reason": "Transportation, courts, natural resources, general government and the like: collective costs, mostly not payments to individuals"
+   "dollars": 68309939000.0,
+   "reason": "Transportation, courts, natural resources and general government (mostly collective costs), plus housing, employment and veterans programs with no age split"
   }
  ]
 }

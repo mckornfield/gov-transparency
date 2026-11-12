@@ -11,7 +11,7 @@ from build_age_spending import pdf_text, raw
 from sd_spend.ageallocate import BANDS, KEYS, add, generation_labels, population_by_band, spread_ages, va_bands
 from sd_spend.caspend import parse_calworks_persons, parse_ihss_ages, parse_medi_cal_eligibles
 from sd_spend.io import ROOT
-from sd_spend.sdage import (SOURCES, city_departments, funded_shares, parse_bhs_ages, parse_county_budget, parse_county_population,
+from sd_spend.sdage import (SOURCES, internal_by_group, city_departments, funded_shares, parse_bhs_ages, parse_county_budget, parse_county_population,
                             parse_county_revenue, school_totals)
 
 SCHOOLS, COUNTY, CITY = "School districts", "County of San Diego", "City of San Diego"
@@ -28,7 +28,7 @@ CHILD_RANGES = {"0-5": (0, 5), "6-11": (6, 11), "12-15": (12, 15), "16-17": (16,
 ADULT_RANGES = {"<18-25": (16, 25), "26-59": (26, 59), "60+": (60, TOP)}  # the youngest group includes some clients under 18
 COUNTY_REST = {
     "Health and Human Services Agency": ("Rest of county health and human services", "Public health, homelessness and housing programs, medical care services and administration: no age split found"),
-    "Public Safety Group": ("Sheriff, jails, district attorney, public defender and probation", "Ages of people in custody or on probation exist, but they are not recipients in this page's sense; the rest protects everyone"),
+    "Public Safety Group": ("Public safety: sheriff, jails, prosecutors, public defender, probation, fire, child support and other", "Ages of people in custody or on probation exist, but they are not recipients in this page's sense; the rest protects everyone"),
     "Land Use and Environment Group": ("Roads, planning, environmental health and other land use", "Serves everyone, mostly in the unincorporated area"),
     "Finance and General Government Group": ("County administration and finance", "Serves everyone"),
     "Finance Other": ("Countywide costs, debt and contributions to other funds", "Not tied to people of any age"),
@@ -94,10 +94,13 @@ def build() -> dict:
             raise SystemExit(f"county budget programs not found (or used twice): {department} {names}")
         used.update(keys)
         dollars = sum(budget[k] for k in keys)
-        # Revenue is balanced within a department, not within a program (one program's state and federal money covers
-        # another's costs), so the funding shares are the whole department's.
-        sources = {s: sum(v[s] for k, v in revenue.items() if k[0] == department) for s in SOURCES}
-        spent = sum(v for k, v in budget.items() if k[1] == department)
+        # A program's own budgeted revenue, unless it holds offsetting (negative) entries: the county lets one program's
+        # state and federal money cover another's costs. Then the whole department's revenue is used instead.
+        sources = {s: sum(revenue.get((k[1], k[2]), {}).get(s, 0.0) for k in keys) for s in SOURCES}
+        spent = dollars
+        if any(v < 0 for v in sources.values()):
+            sources = {s: sum(v[s] for k, v in revenue.items() if k[0] == department) for s in SOURCES}
+            spent = sum(v for k, v in budget.items() if k[1] == department)
         if abs(sum(sources.values()) - spent) > 0.01 * spent:
             raise SystemExit(f"county revenue does not match spending for {department}")
         return dollars, sources
@@ -120,19 +123,23 @@ def build() -> dict:
             "Spread over ages 60 and over by population. Adult protective services also serve dependent adults under 60, who are not separated",
             spread_ages(dollars, 60, TOP, pop), sources)
     dollars, sources = take("Self-Sufficiency Services", ("Assistance Payments",))
-    program(COUNTY, "Cash aid (mostly CalWORKs)", "published",
-            "Spread by children and adults in San Diego County CalWORKs cash-grant cases (2023-24), assuming equal dollars per person; children over ages 0-17 and adults over 18-49 by population. The line also holds general relief and other cash aid for adults",
+    program(COUNTY, "Cash aid and related services (mostly CalWORKs)", "proxy",
+            "Spread by children and adults in San Diego County CalWORKs cash-grant cases (2023-24), assuming equal dollars per person; children over ages 0-17 and adults over 18-49 by population. The line also holds general relief for adults and contracted employment services, which are not separated",
             va_bands(calworks, dollars, pop, CALWORKS_RANGES), sources)
     dollars, sources = take("Self-Sufficiency Services", ("Regional Self-Sufficiency",))
     program(COUNTY, "Benefits eligibility offices (Medi-Cal, CalFresh, CalWORKs)", "proxy",
             "Staff who enrol people in benefits, spread like San Diego County's Medi-Cal eligibles in four age groups (July 2024 to June 2025), then by population. The benefits themselves are state and federal spending and are not in the county budget",
             va_bands(eligibles, dollars, pop, ELIGIBLE_RANGES), sources)
-    dollars, sources = take("Behavioral Health Services", ("Mental Health Services", "Inpatient Health Services"))
+    dollars, sources = take("Behavioral Health Services", ("Mental Health Services",))
     clients = sum(bhs["children"].values()) + sum(bhs["adults"].values())
     program(COUNTY, "Mental health services", "proxy",
-            "Mental health and inpatient programs, spread like the county's unique mental health clients by age in 2024-25 (children's and adult systems), assuming equal cost per client, then by population within each age group. Cost per client is not published by age",
+            "Spread like the county's unique mental health clients by age in 2024-25 (children's and adult systems), assuming equal cost per client, then by population within each age group. Cost per client is not published by age",
             add(va_bands(bhs["children"], dollars * sum(bhs["children"].values()) / clients, pop, CHILD_RANGES),
                 va_bands(bhs["adults"], dollars * sum(bhs["adults"].values()) / clients, pop, ADULT_RANGES)), sources)
+    dollars, sources = take("Behavioral Health Services", ("Inpatient Health Services",))
+    program(COUNTY, "County psychiatric hospital and Edgemoor nursing facility", "proxy",
+            "Two adult facilities, spread like clients of the adult mental health system by age in 2024-25, then by population. Edgemoor's residents are probably older than that mix. Billing to Medi-Cal, Medicare and other insurers counts as local money here",
+            va_bands(bhs["adults"], dollars, pop, ADULT_RANGES), sources)
     dollars, sources = take("Behavioral Health Services", ("Alcohol and Other Drug Services",))
     program(COUNTY, "Alcohol and drug services", "proxy",
             "Spread like the county's unique substance-use clients by age in 2024-25, assuming equal cost per client, then by population within each age group",
@@ -143,11 +150,15 @@ def build() -> dict:
     library, library_sources = take("County Library")
     parks, parks_sources = take("Parks and Recreation")
     program(COUNTY, "County library and parks", "proxy",
-            "Spread evenly across county residents: no figures by age. County branches and parks mostly serve the unincorporated area and smaller cities",
+            "Spread evenly across county residents: no figures by age. County branches and parks mostly serve the unincorporated area and smaller cities, so a City of San Diego resident receives less than this average",
             even(library + parks), {s: library_sources[s] + parks_sources[s] for s in SOURCES})
-    county_total = sum(budget.values())
-    rest = [(label, sum(v for k, v in budget.items() if k[0] == group and k not in used), why) for group, (label, why) in COUNTY_REST.items()]
-    government(COUNTY, "2024-25 adopted budget", county_total, county_people, rest)
+    # Payments between county funds and departments are budgeted by both sides; take them out of the receiving group's remainder.
+    internal = internal_by_group(raw("sdcounty/open_budget_rev_fy2025.csv").decode("utf-8-sig"), COUNTY_FISCAL_YEAR)
+    if set(internal) - set(COUNTY_REST) or not 1e9 < sum(internal.values()) < 2e9:
+        raise SystemExit("county internal charges and transfers are not what this build expects")
+    county_total = sum(budget.values()) - sum(internal.values())
+    rest = [(label, sum(v for k, v in budget.items() if k[0] == group and k not in used) - internal.get(group, 0.0), why) for group, (label, why) in COUNTY_REST.items()]
+    government(COUNTY, f"2024-25 adopted budget, less ${sum(internal.values()) / 1e9:.1f}B of payments between county funds and departments", county_total, county_people, rest)
 
     # City of San Diego: adopted budget by department.
     city = city_departments((ROOT / "data" / "processed" / "spending.csv").read_text(), "adopted", CITY_FISCAL_YEAR)
@@ -168,11 +179,12 @@ def build() -> dict:
     if any((p.get("per_person", {}).get(k) or p["by_band"][k] / population[k]) > 100_000 for p in programs for k in KEYS):
         raise SystemExit("implausible per-person amount")
     return {
-        "fiscal_year": POPULATION_YEAR, "year_label": "the latest year each government publishes", "population_year": POPULATION_YEAR,
+        "fiscal_year": POPULATION_YEAR, "year_label": "2023-24 (schools) and the 2024-25 budgets (county and city)", "population_year": POPULATION_YEAR,
         "bands": [{"key": k, "lo": lo, "hi": min(hi, 100), "population": population[k], "generations": generation_labels((k, lo, hi), pop, POPULATION_YEAR)}
                   for k, lo, hi in BANDS],
         "programs": programs, "governments": governments, "not_allocated": not_allocated,
         "total_outlays": sum(g["total"] for g in governments), "allocated": sum(g["allocated"] for g in governments), "tax_credits": 0,
+        "behavioral_health_clients": bhs,
     }
 
 

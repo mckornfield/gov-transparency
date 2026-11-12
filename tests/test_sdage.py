@@ -1,7 +1,7 @@
 import pytest
 
 from sd_spend.sdage import (SdAgeError, city_departments, funded_shares, parse_bhs_ages, parse_county_budget, parse_county_population,
-                            parse_county_revenue, school_totals, source_of)
+                            parse_county_revenue, school_totals, source_of, internal_by_group)
 
 
 def population_csv(ages=range(86), county="073", year="6"):
@@ -135,3 +135,14 @@ def test_city_departments_filters_basis_and_year():
     assert city_departments(text, "adopted", "2025") == {"Library": 15.0}
     with pytest.raises(SdAgeError):
         city_departments(text, "actual", "2030")
+
+
+def test_internal_by_group_adds_interfund_charges_and_transfers_in():
+    text = """fiscal_year,drilldown_1_group,department,program,expense_type,amount2,revenue_object
+2025,Safety,Sheriff,Jails,Operating Transfers - In,300,Other Financing Sources
+2025,Safety,Sheriff,Jails,Interfund Revenues,20,Charges For Current Services
+2025,Safety,Sheriff,Jails,Federal Other,999,Intergovernmental Revenues
+2025,Finance,General Services,Fleet,Interfund Revenues,70,Charges For Current Services
+2026,Finance,General Services,Fleet,Interfund Revenues,5,Charges For Current Services
+"""
+    assert internal_by_group(text, "2025") == {"Safety": 320.0, "Finance": 70.0}

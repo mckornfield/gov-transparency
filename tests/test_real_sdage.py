@@ -63,3 +63,18 @@ def test_committed_page_data_has_the_expected_shape():
     schools = next(p for p in d["programs"] if p["group"] == "School districts")
     assert 0.35 < schools["funded"]["local"] < 0.5 and schools["by_band"]["19-44"] == 0
     assert not any("prison" in p["program"].lower() or "jail" in p["program"].lower() for p in d["programs"])
+
+
+def test_committed_county_programs_match_the_raw_budget():
+    d = committed()
+    dollars = {p["program"]: round(p["dollars"] / 1e6, 1) for p in d["programs"]}
+    assert dollars["Child welfare, foster care and adoptions"] == 479.0
+    assert dollars["Mental health services"] == 671.0
+    assert dollars["County psychiatric hospital and Edgemoor nursing facility"] == 125.3
+    assert dollars["In-Home Supportive Services (county budget)"] == 212.0
+    county = next(g for g in d["governments"] if g["name"] == "County of San Diego")
+    assert 7.0e9 < county["total"] < 7.3e9  # net of payments between county funds
+    inpatient = next(p for p in d["programs"] if p["program"].startswith("County psychiatric"))
+    assert inpatient["by_band"]["0-18"] < 0.1 * inpatient["dollars"]
+    clients = d["behavioral_health_clients"]
+    assert sum(clients["substance"].values()) == 16360 and sum(clients["children"].values()) == 11860 and sum(clients["adults"].values()) == 48213

@@ -70,6 +70,19 @@ def parse_county_revenue(text: str, fiscal_year: str) -> dict[tuple[str, str], d
     return out
 
 
+INTERNAL = ("Interfund Revenues", "Operating Transfers - In")
+
+
+def internal_by_group(text: str, fiscal_year: str) -> dict[str, float]:
+    """Money a county group receives from other county funds and departments (internal charges and operating transfers).
+    The paying side budgets the same dollars as spending, so a total that adds every program counts them twice."""
+    out: dict[str, float] = {}
+    for r in csv.DictReader(io.StringIO(text)):
+        if r["fiscal_year"] == fiscal_year and r["expense_type"] in INTERNAL:
+            out[r["drilldown_1_group"]] = out.get(r["drilldown_1_group"], 0.0) + float(r["amount2"])
+    return out
+
+
 def _number(text: str) -> int:
     return int(text.replace(",", ""))
 

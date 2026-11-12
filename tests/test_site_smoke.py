@@ -607,6 +607,9 @@ def test_san_diego_age_page_shows_three_governments_and_who_paid(page, site_url)
     assert page.locator("#rest-table tbody tr").count() >= 8
     programs = page.inner_text("#program-table tbody")
     assert "state 49%" in programs and "Not separated" in programs
+    page.uncheck("#g-0")
+    page.uncheck("#g-1")
+    assert "about the same per person" in page.inner_text("#ahead")
     assert "cannot be added together" in page.inner_text("main")
     assert errors == []
 

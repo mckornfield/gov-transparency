@@ -83,3 +83,9 @@ test("funding shares read as rounded percentages and say when the source does no
   assert.equal(fundedText({ state: 0.001, federal: 0, local: 0.999 }), "local 100%");
   assert.equal(fundedText(null), "Not separated");
 });
+
+test("spending spread evenly names no winner", () => {
+  const text = ratioText(LOCAL, ["City of San Diego"]);
+  assert.match(text, /every bracket received about the same per person/);
+  assert.doesNotMatch(text, /the most|close behind/);
+});

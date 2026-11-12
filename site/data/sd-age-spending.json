@@ -1,0 +1,392 @@
+{
+ "fiscal_year": 2024,
+ "year_label": "the latest year each government publishes",
+ "population_year": 2024,
+ "bands": [
+  {
+   "key": "0-18",
+   "lo": 0,
+   "hi": 18,
+   "population": 717037,
+   "generations": [
+    "Gen Z",
+    "Gen Alpha"
+   ]
+  },
+  {
+   "key": "19-44",
+   "lo": 19,
+   "hi": 44,
+   "population": 1276092,
+   "generations": [
+    "Millennials",
+    "Gen Z"
+   ]
+  },
+  {
+   "key": "45-64",
+   "lo": 45,
+   "hi": 64,
+   "population": 768247,
+   "generations": [
+    "Baby Boomers",
+    "Gen X"
+   ]
+  },
+  {
+   "key": "65-84",
+   "lo": 65,
+   "hi": 84,
+   "population": 477751,
+   "generations": [
+    "Silent",
+    "Baby Boomers"
+   ]
+  },
+  {
+   "key": "85+",
+   "lo": 85,
+   "hi": 100,
+   "population": 59672,
+   "generations": [
+    "Silent"
+   ]
+  }
+ ],
+ "programs": [
+  {
+   "program": "K-12 schools (general fund)",
+   "group": "School districts",
+   "method": "proxy",
+   "kind": "outlay",
+   "note": "General-fund spending of the county's 42 school districts and the County Office of Education, 2023-24 actuals, spread over ages 4-18 by population (includes transitional kindergarten; a little adult education is not separated). Independent charter schools, cafeteria funds and bond-funded construction are not in this figure",
+   "dollars": 7722271909.95,
+   "by_band": {
+    "0-18": 7722271909.95,
+    "19-44": 0.0,
+    "45-64": 0.0,
+    "65-84": 0.0,
+    "85+": 0.0
+   },
+   "funded": {
+    "state": 0.4910544962148313,
+    "federal": 0.10048495228487594,
+    "local": 0.40846055150029276
+   }
+  },
+  {
+   "program": "Child welfare, foster care and adoptions",
+   "group": "County of San Diego",
+   "method": "proxy",
+   "kind": "outlay",
+   "note": "Child and Family Well-Being department, all placed at ages 0-17 by population. Extended foster care to age 21 and services to parents are not separated",
+   "dollars": 479010650.0,
+   "by_band": {
+    "0-18": 479010650.0,
+    "19-44": 0.0,
+    "45-64": 0.0,
+    "65-84": 0.0,
+    "85+": 0.0
+   },
+   "funded": {
+    "state": 0.6060117515132493,
+    "federal": 0.3029071900593442,
+    "local": 0.09108105842740657
+   }
+  },
+  {
+   "program": "In-Home Supportive Services (county budget)",
+   "group": "County of San Diego",
+   "method": "proxy",
+   "kind": "outlay",
+   "note": "Spread like statewide recipients in six age groups (January 2024), assuming equal hours per person; recipients by age are not published for the county. Most of what caregivers are paid is state and federal money that does not pass through the county budget",
+   "dollars": 211970773.0,
+   "by_band": {
+    "0-18": 21461024.189495407,
+    "19-44": 29546933.467027187,
+    "45-64": 43023492.53503496,
+    "65-84": 87295207.56847383,
+    "85+": 30644115.23996861
+   },
+   "funded": {
+    "state": 0.6043116399821166,
+    "federal": 0.30344443905851426,
+    "local": 0.09224392095936923
+   }
+  },
+  {
+   "program": "Adult protective and senior services",
+   "group": "County of San Diego",
+   "method": "proxy",
+   "kind": "outlay",
+   "note": "Spread over ages 60 and over by population. Adult protective services also serve dependent adults under 60, who are not separated",
+   "dollars": 72059074.99999999,
+   "by_band": {
+    "0-18": 0.0,
+    "19-44": 0.0,
+    "45-64": 18691320.57399042,
+    "65-84": 47442141.562196806,
+    "85+": 5925612.863812758
+   },
+   "funded": {
+    "state": 0.6043116399821166,
+    "federal": 0.30344443905851426,
+    "local": 0.09224392095936923
+   }
+  },
+  {
+   "program": "Cash aid (mostly CalWORKs)",
+   "group": "County of San Diego",
+   "method": "published",
+   "kind": "outlay",
+   "note": "Spread by children and adults in San Diego County CalWORKs cash-grant cases (2023-24), assuming equal dollars per person; children over ages 0-17 and adults over 18-49 by population. The line also holds general relief and other cash aid for adults",
+   "dollars": 417201551.0,
+   "by_band": {
+    "0-18": 303362226.6225577,
+    "19-44": 98488965.37277006,
+    "45-64": 15350359.004672263,
+    "65-84": 0.0,
+    "85+": 0.0
+   },
+   "funded": {
+    "state": 0.5197987105823616,
+    "federal": 0.37637944951097335,
+    "local": 0.10382183990666506
+   }
+  },
+  {
+   "program": "Benefits eligibility offices (Medi-Cal, CalFresh, CalWORKs)",
+   "group": "County of San Diego",
+   "method": "proxy",
+   "kind": "outlay",
+   "note": "Staff who enrol people in benefits, spread like San Diego County's Medi-Cal eligibles in four age groups (July 2024 to June 2025), then by population. The benefits themselves are state and federal spending and are not in the county budget",
+   "dollars": 318752478.00000006,
+   "by_band": {
+    "0-18": 103155605.01552351,
+    "19-44": 117524794.92228134,
+    "45-64": 62763728.45717526,
+    "65-84": 31387937.122430325,
+    "85+": 3920412.482589596
+   },
+   "funded": {
+    "state": 0.5197987105823616,
+    "federal": 0.37637944951097335,
+    "local": 0.10382183990666506
+   }
+  },
+  {
+   "program": "Mental health services",
+   "group": "County of San Diego",
+   "method": "proxy",
+   "kind": "outlay",
+   "note": "Mental health and inpatient programs, spread like the county's unique mental health clients by age in 2024-25 (children's and adult systems), assuming equal cost per client, then by population within each age group. Cost per client is not published by age",
+   "dollars": 796237215.9999999,
+   "by_band": {
+    "0-18": 183015245.55178156,
+    "19-44": 353591190.5655753,
+    "45-64": 186449323.88346794,
+    "65-84": 65055856.90426698,
+    "85+": 8125599.094908057
+   },
+   "funded": {
+    "state": 0.4893730807569741,
+    "federal": 0.3515257536012669,
+    "local": 0.15910116564175897
+   }
+  },
+  {
+   "program": "Alcohol and drug services",
+   "group": "County of San Diego",
+   "method": "proxy",
+   "kind": "outlay",
+   "note": "Spread like the county's unique substance-use clients by age in 2024-25, assuming equal cost per client, then by population within each age group",
+   "dollars": 257977608.0,
+   "by_band": {
+    "0-18": 13768449.65507497,
+    "19-44": 143291462.28215033,
+    "45-64": 83598405.05169174,
+    "65-84": 15396268.116243428,
+    "85+": 1923022.8948395248
+   },
+   "funded": {
+    "state": 0.4893730807569741,
+    "federal": 0.3515257536012669,
+    "local": 0.15910116564175897
+   }
+  },
+  {
+   "program": "California Children's Services",
+   "group": "County of San Diego",
+   "method": "proxy",
+   "kind": "outlay",
+   "note": "Medical care for children with serious conditions, spread over ages 0-20 by population",
+   "dollars": 30798324.999999996,
+   "by_band": {
+    "0-18": 27193528.98088015,
+    "19-44": 3604796.019119849,
+    "45-64": 0.0,
+    "65-84": 0.0,
+    "85+": 0.0
+   },
+   "funded": {
+    "state": 0.3529476621967339,
+    "federal": 0.5127352849626575,
+    "local": 0.13431705284060852
+   }
+  },
+  {
+   "program": "County library and parks",
+   "group": "County of San Diego",
+   "method": "proxy",
+   "kind": "outlay",
+   "note": "Spread evenly across county residents: no figures by age. County branches and parks mostly serve the unincorporated area and smaller cities",
+   "dollars": 143735026.0,
+   "by_band": {
+    "0-18": 31242683.121330522,
+    "19-44": 55601786.22534807,
+    "45-64": 33474001.453080956,
+    "65-84": 20816531.230464783,
+    "85+": 2600023.969775667
+   },
+   "funded": {
+    "state": 0.020045921166076806,
+    "federal": 0.0,
+    "local": 0.9799540788339232
+   }
+  },
+  {
+   "program": "City libraries",
+   "group": "City of San Diego",
+   "method": "proxy",
+   "kind": "outlay",
+   "note": "Spread evenly across City of San Diego residents: no figures by age. Shown per city resident; funding sources are not separated in the city's data",
+   "dollars": 77069362.0,
+   "by_band": {
+    "0-18": 16752031.306058357,
+    "19-44": 29813152.087563988,
+    "45-64": 17948443.09956866,
+    "65-84": 11161627.2361129,
+    "85+": 1394108.2706960926
+   },
+   "funded": null,
+   "per_person": {
+    "0-18": 54.70036062648649,
+    "19-44": 54.70036062648649,
+    "45-64": 54.70036062648649,
+    "65-84": 54.70036062648649,
+    "85+": 54.70036062648649
+   }
+  },
+  {
+   "program": "City parks and recreation",
+   "group": "City of San Diego",
+   "method": "proxy",
+   "kind": "outlay",
+   "note": "Spread evenly across City of San Diego residents: no figures by age. Shown per city resident; funding sources are not separated in the city's data",
+   "dollars": 294611452.0,
+   "by_band": {
+    "0-18": 64037642.70200276,
+    "19-44": 113966118.27685894,
+    "45-64": 68611141.25614928,
+    "65-84": 42667320.98695677,
+    "85+": 5329228.778032248
+   },
+   "funded": null,
+   "per_person": {
+    "0-18": 209.10193429514592,
+    "19-44": 209.10193429514592,
+    "45-64": 209.10193429514592,
+    "65-84": 209.10193429514592,
+    "85+": 209.10193429514592
+   }
+  }
+ ],
+ "governments": [
+  {
+   "name": "School districts",
+   "basis": "2023-24 actual spending, general funds",
+   "total": 7722271909.95,
+   "allocated": 7722271909.95,
+   "residents": 3298799
+  },
+  {
+   "name": "County of San Diego",
+   "basis": "2024-25 adopted budget",
+   "total": 8530428846.0,
+   "allocated": 2727742702.0,
+   "residents": 3298799
+  },
+  {
+   "name": "City of San Diego",
+   "basis": "Fiscal year 2025 (2024-25) adopted budget",
+   "total": 4865783435.0,
+   "allocated": 371680814.0,
+   "residents": 1408937
+  }
+ ],
+ "not_allocated": [
+  {
+   "government": "County of San Diego",
+   "name": "Rest of county health and human services",
+   "dollars": 862694902.0,
+   "reason": "Public health, homelessness and housing programs, medical care services and administration: no age split found"
+  },
+  {
+   "government": "County of San Diego",
+   "name": "Sheriff, jails, district attorney, public defender and probation",
+   "dollars": 2761833543.0,
+   "reason": "Ages of people in custody or on probation exist, but they are not recipients in this page's sense; the rest protects everyone"
+  },
+  {
+   "government": "County of San Diego",
+   "name": "Roads, planning, environmental health and other land use",
+   "dollars": 653597455.0,
+   "reason": "Serves everyone, mostly in the unincorporated area"
+  },
+  {
+   "government": "County of San Diego",
+   "name": "County administration and finance",
+   "dollars": 937418936.0,
+   "reason": "Serves everyone"
+  },
+  {
+   "government": "County of San Diego",
+   "name": "Countywide costs, debt and contributions to other funds",
+   "dollars": 450994343.0,
+   "reason": "Not tied to people of any age"
+  },
+  {
+   "government": "County of San Diego",
+   "name": "Buildings and other capital projects",
+   "dollars": 136146965.0,
+   "reason": "Not tied to people of any age"
+  },
+  {
+   "government": "City of San Diego",
+   "name": "Police",
+   "dollars": 679999361.0,
+   "reason": "Protects everyone"
+  },
+  {
+   "government": "City of San Diego",
+   "name": "Fire-Rescue",
+   "dollars": 354335556.0,
+   "reason": "Protects everyone"
+  },
+  {
+   "government": "City of San Diego",
+   "name": "Water and sewer (Public Utilities)",
+   "dollars": 1221006916.0,
+   "reason": "Paid for by customers' bills; serves every household"
+  },
+  {
+   "government": "City of San Diego",
+   "name": "Everything else the city does",
+   "dollars": 2238760788.0,
+   "reason": "Streets, trash, planning, homelessness programs, administration and debt: no age split found"
+  }
+ ],
+ "total_outlays": 21118484190.95,
+ "allocated": 10821695425.95,
+ "tax_credits": 0
+}

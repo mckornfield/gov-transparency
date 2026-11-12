@@ -2,11 +2,11 @@
 import * as Plot from "https://cdn.jsdelivr.net/npm/@observablehq/plot@0.6.16/+esm";
 import { enhanceTables } from "./tables.js";
 import { formatMoney, formatPerResident } from "./format.js";
-import { parseAgeHash, serializeAgeHash, normalizeAgeState, bandValues, ratioText } from "./age-model.js";
+import { parseAgeHash, serializeAgeHash, normalizeAgeState, bandValues, perPersonValue, ratioText } from "./age-model.js";
 
 const $ = (id) => document.getElementById(id);
 
-export async function runAgePage({ dataUrl, groups: GROUPS, colors: COLORS, loadError, afterRender }) {
+export async function runAgePage({ dataUrl, groups: GROUPS, colors: COLORS, loadError, afterRender, programCells }) {
   let data;
   try {
     const response = await fetch(dataUrl);
@@ -65,9 +65,9 @@ export async function runAgePage({ dataUrl, groups: GROUPS, colors: COLORS, load
     drawChart();
     fillTable("band-table", data.bands.map((b) => {
       const dollars = data.programs.filter((p) => state.groups.includes(p.group)).reduce((s, p) => s + p.by_band[b.key], 0);
-      return [label(b.key), b.population.toLocaleString("en-US"), b.generations.join(", "), formatPerResident(dollars / b.population), formatMoney(dollars)];
+      return [label(b.key), b.population.toLocaleString("en-US"), b.generations.join(", "), formatPerResident(perPersonValue(data, b.key, state.groups)), formatMoney(dollars)];
     }));
-    fillTable("program-table", data.programs.map((p) => [p.program, p.group, formatMoney(p.dollars), p.method === "published" ? "Published" : "Proxy", p.note]));
+    fillTable("program-table", data.programs.map(programCells || ((p) => [p.program, p.group, formatMoney(p.dollars), p.method === "published" ? "Published" : "Proxy", p.note])));
     afterRender(data);
   }
 

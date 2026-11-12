@@ -1,6 +1,6 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { GROUPS, CA_GROUPS, parseAgeHash, serializeAgeHash, normalizeAgeState, bandValues, groupTotals, coverage, personCoverage, ratioText } from "./age-model.js";
+import { GROUPS, CA_GROUPS, SD_GROUPS, perPersonValue, fundedText, parseAgeHash, serializeAgeHash, normalizeAgeState, bandValues, groupTotals, coverage, personCoverage, ratioText } from "./age-model.js";
 
 const data = {
   fiscal_year: 2024, total_outlays: 1000, person_directed: 800, allocated: 600,
@@ -58,4 +58,28 @@ test("the headline calls a runner-up within 10% close instead of naming a lone w
   const near = { ...data, programs: [...data.programs, { program: "C", group: "Health", dollars: 95, by_band: { "0-18": 950, "65-84": 0 } }] };
   assert.match(ratioText(near, GROUPS), /aged 0–18 received the most.*aged 65–84 is close behind at \$100\./);
   assert.doesNotMatch(ratioText(data, GROUPS), /close behind/);
+});
+
+const LOCAL = {
+  year_label: "the latest year",
+  bands: [{ key: "0-18", population: 100 }, { key: "19-44", population: 300 }],
+  programs: [
+    { program: "Schools", group: "School districts", dollars: 1000, by_band: { "0-18": 1000, "19-44": 0 }, funded: { state: 0.494, federal: 0.1, local: 0.406 } },
+    { program: "Library", group: "City of San Diego", dollars: 400, by_band: { "0-18": 100, "19-44": 300 }, per_person: { "0-18": 4, "19-44": 4 }, funded: null },
+  ],
+};
+
+test("a program with its own per-person figures uses them instead of dividing by the page's population", () => {
+  assert.equal(perPersonValue(LOCAL, "0-18", ["City of San Diego"]), 4);
+  assert.equal(perPersonValue(LOCAL, "0-18", SD_GROUPS), 14);
+  const rows = bandValues(LOCAL, ["City of San Diego"], "person");
+  assert.deepEqual(rows.map((r) => r.value), [4, 4]);
+  assert.deepEqual(bandValues(LOCAL, ["City of San Diego"], "total").map((r) => r.value), [100, 300]);
+  assert.match(ratioText(LOCAL, SD_GROUPS), /\$14\b/);
+});
+
+test("funding shares read as rounded percentages and say when the source does not separate them", () => {
+  assert.equal(fundedText(LOCAL.programs[0].funded), "state 49%, federal 10%, local 41%");
+  assert.equal(fundedText({ state: 0.001, federal: 0, local: 0.999 }), "local 100%");
+  assert.equal(fundedText(null), "Not separated");
 });

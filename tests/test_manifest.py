@@ -45,6 +45,10 @@ REQUIRED = {
     *{f"hcd/{n}.pdf.gz" for n in ("hhap_r1_redir", "hhap_r2", "hhap_r3", "hhap_r4", "hhap_r5")},
     *{f"sandiego/hssd_budget_fy{fy}.pdf.gz" for fy in range(2023, 2027)},
     "hud/2007-2024-PIT-Counts-by-CoC.xlsb.gz",
+    "census/cc-est2024-syasex-06.csv.gz",
+    "sdcounty/open_budget_exp_fy2025.csv.gz",
+    "sdcounty/open_budget_rev_fy2025.csv.gz",
+    "sdcounty/bhs_databook_fy2024_25.pdf.gz",
 }
 
 

@@ -22,6 +22,7 @@ export function serializeAgeHash({ measure, groups }) {
   return parts.length ? `#${parts.join("&")}` : "";
 }
 
+export const SD_GROUPS = ["School districts", "County of San Diego", "City of San Diego"];
 export const CA_GROUPS = ["Schools", "Higher education", "Health", "Disability and care", "Income support", "Children"];
 
 export function normalizeAgeState(parsed, all = GROUPS) {
@@ -29,13 +30,24 @@ export function normalizeAgeState(parsed, all = GROUPS) {
   return { measure: MEASURES.includes(parsed.measure) ? parsed.measure : "person", groups: chosen.length ? all.filter((g) => chosen.includes(g)) : all };
 }
 
+// A program's dollars per person in one bracket. A program whose recipients are not the page's whole population
+// (a city's residents on a county page) carries its own per_person figures.
+const programPerPerson = (p, band) => (p.per_person ? p.per_person[band.key] : p.by_band[band.key] / band.population);
+
+// Dollars per person in one bracket, over the chosen groups.
+export function perPersonValue(data, bandKey, groups) {
+  const band = data.bands.find((b) => b.key === bandKey);
+  return data.programs.filter((p) => groups.includes(p.group)).reduce((sum, p) => sum + programPerPerson(p, band), 0);
+}
+
 // One row per bracket and group, in dollars per person or total dollars.
 export function bandValues(data, groups, measure) {
   const rows = [];
   for (const band of data.bands) {
     for (const group of groups) {
-      const dollars = data.programs.filter((p) => p.group === group).reduce((sum, p) => sum + p.by_band[band.key], 0);
-      rows.push({ band: band.key, group, value: measure === "person" ? dollars / band.population : dollars });
+      const chosen = data.programs.filter((p) => p.group === group);
+      const value = measure === "person" ? chosen.reduce((sum, p) => sum + programPerPerson(p, band), 0) : chosen.reduce((sum, p) => sum + p.by_band[band.key], 0);
+      rows.push({ band: band.key, group, value });
     }
   }
   return rows;
@@ -51,11 +63,7 @@ export const coverage = (data) => data.allocated / data.total_outlays;
 // Share of spending on people (health, retirement, income support, veterans, education and social services) that is placed by age.
 export const personCoverage = (data) => data.allocated / data.person_directed;
 
-const perPerson = (data, band, groups) => {
-  const info = data.bands.find((b) => b.key === band);
-  const dollars = data.programs.filter((p) => groups.includes(p.group)).reduce((sum, p) => sum + p.by_band[band], 0);
-  return dollars / info.population;
-};
+const perPerson = perPersonValue;
 
 // The headline: the youngest and the most-served bracket, per person.
 export function ratioText(data, groups) {
@@ -70,4 +78,10 @@ export function ratioText(data, groups) {
   const next = values.filter((v) => v.key !== top.key).reduce((a, b) => (b.value > a.value ? b : a));
   const close = next.value >= 0.9 * top.value ? ` The bracket aged ${name(next.key)} is close behind at ${money(next.value)}.` : "";
   return `Of the programs counted here, the bracket aged ${name(top.key)} received the most per person in ${data.year_label ? data.year_label : `FY${data.fiscal_year}`}: ${money(top.value)}.${close}${ratio}`;
+}
+
+// "state 49%, federal 10%, local 41%" from a program's funding shares; a dash when the source does not say.
+export function fundedText(funded) {
+  if (!funded) return "Not separated";
+  return Object.entries(funded).filter(([, share]) => Math.round(share * 100) > 0).map(([who, share]) => `${who} ${Math.round(share * 100)}%`).join(", ");
 }

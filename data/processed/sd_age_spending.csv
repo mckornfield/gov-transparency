@@ -1,0 +1,61 @@
+government,program,method,band,dollars
+School districts,K-12 schools (general fund),proxy,0-18,7722271910
+School districts,K-12 schools (general fund),proxy,19-44,0
+School districts,K-12 schools (general fund),proxy,45-64,0
+School districts,K-12 schools (general fund),proxy,65-84,0
+School districts,K-12 schools (general fund),proxy,85+,0
+County of San Diego,"Child welfare, foster care and adoptions",proxy,0-18,479010650
+County of San Diego,"Child welfare, foster care and adoptions",proxy,19-44,0
+County of San Diego,"Child welfare, foster care and adoptions",proxy,45-64,0
+County of San Diego,"Child welfare, foster care and adoptions",proxy,65-84,0
+County of San Diego,"Child welfare, foster care and adoptions",proxy,85+,0
+County of San Diego,In-Home Supportive Services (county budget),proxy,0-18,21461024
+County of San Diego,In-Home Supportive Services (county budget),proxy,19-44,29546933
+County of San Diego,In-Home Supportive Services (county budget),proxy,45-64,43023493
+County of San Diego,In-Home Supportive Services (county budget),proxy,65-84,87295208
+County of San Diego,In-Home Supportive Services (county budget),proxy,85+,30644115
+County of San Diego,Adult protective and senior services,proxy,0-18,0
+County of San Diego,Adult protective and senior services,proxy,19-44,0
+County of San Diego,Adult protective and senior services,proxy,45-64,18691321
+County of San Diego,Adult protective and senior services,proxy,65-84,47442142
+County of San Diego,Adult protective and senior services,proxy,85+,5925613
+County of San Diego,Cash aid (mostly CalWORKs),published,0-18,303362227
+County of San Diego,Cash aid (mostly CalWORKs),published,19-44,98488965
+County of San Diego,Cash aid (mostly CalWORKs),published,45-64,15350359
+County of San Diego,Cash aid (mostly CalWORKs),published,65-84,0
+County of San Diego,Cash aid (mostly CalWORKs),published,85+,0
+County of San Diego,"Benefits eligibility offices (Medi-Cal, CalFresh, CalWORKs)",proxy,0-18,103155605
+County of San Diego,"Benefits eligibility offices (Medi-Cal, CalFresh, CalWORKs)",proxy,19-44,117524795
+County of San Diego,"Benefits eligibility offices (Medi-Cal, CalFresh, CalWORKs)",proxy,45-64,62763728
+County of San Diego,"Benefits eligibility offices (Medi-Cal, CalFresh, CalWORKs)",proxy,65-84,31387937
+County of San Diego,"Benefits eligibility offices (Medi-Cal, CalFresh, CalWORKs)",proxy,85+,3920412
+County of San Diego,Mental health services,proxy,0-18,183015246
+County of San Diego,Mental health services,proxy,19-44,353591191
+County of San Diego,Mental health services,proxy,45-64,186449324
+County of San Diego,Mental health services,proxy,65-84,65055857
+County of San Diego,Mental health services,proxy,85+,8125599
+County of San Diego,Alcohol and drug services,proxy,0-18,13768450
+County of San Diego,Alcohol and drug services,proxy,19-44,143291462
+County of San Diego,Alcohol and drug services,proxy,45-64,83598405
+County of San Diego,Alcohol and drug services,proxy,65-84,15396268
+County of San Diego,Alcohol and drug services,proxy,85+,1923023
+County of San Diego,California Children's Services,proxy,0-18,27193529
+County of San Diego,California Children's Services,proxy,19-44,3604796
+County of San Diego,California Children's Services,proxy,45-64,0
+County of San Diego,California Children's Services,proxy,65-84,0
+County of San Diego,California Children's Services,proxy,85+,0
+County of San Diego,County library and parks,proxy,0-18,31242683
+County of San Diego,County library and parks,proxy,19-44,55601786
+County of San Diego,County library and parks,proxy,45-64,33474001
+County of San Diego,County library and parks,proxy,65-84,20816531
+County of San Diego,County library and parks,proxy,85+,2600024
+City of San Diego,City libraries,proxy,0-18,16752031
+City of San Diego,City libraries,proxy,19-44,29813152
+City of San Diego,City libraries,proxy,45-64,17948443
+City of San Diego,City libraries,proxy,65-84,11161627
+City of San Diego,City libraries,proxy,85+,1394108
+City of San Diego,City parks and recreation,proxy,0-18,64037643
+City of San Diego,City parks and recreation,proxy,19-44,113966118
+City of San Diego,City parks and recreation,proxy,45-64,68611141
+City of San Diego,City parks and recreation,proxy,65-84,42667321
+City of San Diego,City parks and recreation,proxy,85+,5329229

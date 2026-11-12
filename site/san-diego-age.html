@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Who receives local dollars in San Diego, by age · San Diego Spending</title>
+  <meta name="description" content="A rough estimate of how San Diego's school districts, the County of San Diego and the City of San Diego spend on people across age brackets, with the state and federal share of each marked.">
+  <link rel="stylesheet" href="css/site.css?v=2">
+</head>
+<body>
+  <header class="site-header">
+    <nav>
+      <strong>San Diego Spending</strong>
+      <a href="index.html">Where your dollar goes</a>
+      <a href="vendors.html">Who gets paid</a>
+      <a href="peers.html">Compared with other cities</a>
+      <a href="homelessness.html">Homelessness</a>
+      <a href="age.html">Who receives federal dollars</a>
+      <a href="california-age.html">Who receives state dollars</a>
+      <a href="san-diego-age.html" aria-current="page">Who receives local dollars</a>
+      <a href="schools.html">Where school money goes</a>
+      <a href="methods.html">Data &amp; methods</a>
+    </nav>
+  </header>
+  <main>
+    <h1>Who receives local dollars in San Diego, by age</h1>
+    <p id="ahead" class="headline" aria-live="polite">Loading…</p>
+    <p class="note">A rough estimate of what the local governments serving a resident of the City of San Diego spend on people of each
+      age: the county's school districts, the County of San Diego and the City of San Diego, each shown separately. Each
+      government's dollars are what it spends, whoever paid for them; the tables mark how much of each program is state, federal or
+      local money. Because of that, this page overlaps the <a href="california-age.html">state</a> and <a href="age.html">federal</a>
+      pages (state school aid is state spending there and school district spending here), so the three pages cannot be added together.
+      The years differ: school figures are 2023&ndash;24 actual spending, and the county and city figures are 2024&ndash;25 adopted
+      budgets, the nearest year each publishes as data. School and county dollars are divided by county residents and city dollars by city
+      residents, so the per-person bars describe someone living in the City of San Diego; other cities' own spending is not here.
+      Most county and city spending (law enforcement, roads, water, administration) is not tied to an age and is listed below, not
+      spread. The page shows who received money, not who paid taxes, and it cannot show whether anyone was better or worse off.</p>
+
+    <form class="controls" aria-label="Which governments and measure" onsubmit="return false">
+      <fieldset>
+        <legend>Include</legend>
+        <label><input type="checkbox" id="g-0"> School districts</label>
+        <label><input type="checkbox" id="g-1"> County of San Diego</label>
+        <label><input type="checkbox" id="g-2"> City of San Diego</label>
+      </fieldset>
+      <fieldset>
+        <legend>Show</legend>
+        <label class="visually-hidden" for="measure">Dollars per person or total dollars</label>
+        <select id="measure"><option value="person">Dollars per person</option><option value="total">Total dollars</option></select>
+      </fieldset>
+    </form>
+
+    <p id="coverage" class="note"></p>
+    <figure>
+      <div id="age-chart" role="img" aria-label="Stacked bar chart of local government dollars received by age bracket in San Diego, by government"></div>
+      <ul id="age-legend" class="legend"></ul>
+    </figure>
+
+    <h2>The brackets</h2>
+    <div class="table-wrap">
+      <table id="band-table" data-title="Age brackets">
+        <caption class="note">San Diego County residents in each bracket (Census, July 2024) and the generations they mostly belong to. Totals for the two city rows assume the city has the county's age mix.</caption>
+        <thead><tr><th scope="col">Ages</th><th scope="col">People</th><th scope="col">Mostly</th><th scope="col">Per person</th><th scope="col">Total</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+
+    <h2>The three governments</h2>
+    <div class="table-wrap">
+      <table id="government-table" data-title="Governments, their totals and the share placed by age">
+        <caption class="note">How much of each government's total this page could tie to an age. The county total includes transfers between its own funds. School districts' other funds (cafeterias, bond-funded construction) and independent charter schools are outside the school total.</caption>
+        <thead><tr><th scope="col">Government</th><th scope="col">Figures used</th><th scope="col">Total</th><th scope="col">Placed by age</th><th scope="col">Share</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+
+    <h2>How each program was split</h2>
+    <div class="table-wrap">
+      <table id="program-table" data-title="Programs, who paid and how each was split by age" data-default-sort="2:desc">
+        <caption class="note">"Published" means an agency counts this program's recipients by age. "Proxy" means the total was spread by who plausibly receives it. "Paid for by" is the mix of state, federal and local money: for schools, general-fund revenue; for the county, the revenue of the whole department the program sits in (the county balances revenue by department, not by program). Local includes property taxes, fees, reserves and transfers.</caption>
+        <thead><tr><th scope="col">Program</th><th scope="col">Government</th><th scope="col">Dollars</th><th scope="col">Paid for by</th><th scope="col">Split</th><th scope="col">How</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+
+    <h2>What is not given an age</h2>
+    <div class="table-wrap">
+      <table id="rest-table" data-title="Local spending not allocated to an age" data-default-sort="2:desc">
+        <caption class="note">The rest of each government's total, and why it is left out. Together with the programs above it adds up to each government's total.</caption>
+        <thead><tr><th scope="col">Spending</th><th scope="col">Government</th><th scope="col">Dollars</th><th scope="col">Why it is not split</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+    <p class="note">See <a href="methods.html">Data &amp; methods</a> for sources and limits.</p>
+  </main>
+  <script type="module" src="js/san-diego-age.js"></script>
+</body>
+</html>

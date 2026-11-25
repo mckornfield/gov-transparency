@@ -51,11 +51,20 @@ def test_only_vendors_paid_25000_in_a_year_are_named():
         assert e["name"] and all(a >= 25_000 for a in e["amounts"].values())
 
 
-def test_the_stored_copy_blanks_only_payees_never_paid_25000_in_a_year(payments):
-    per_year = payments.groupby(["vendor_id", "fy"])["amount"].sum().groupby("vendor_id").max()
-    blank = set(payments.loc[payments["vendor_name"] == "", "vendor_id"])
-    assert blank and all(per_year[i] < 25_000 for i in blank)
-    assert all(per_year[i] >= 25_000 for i in set(payments["vendor_id"]) - blank)
+def test_the_stored_copy_names_a_payee_only_in_years_it_was_paid_25000(payments):
+    per_year = payments.groupby(["vendor_id", "fy"]).agg(amount=("amount", "sum"), named=("vendor_name", lambda s: (s != "").all()),
+                                                          blank=("vendor_name", lambda s: (s == "").all()))
+    assert (per_year["named"] | per_year["blank"]).all()  # never named on some lines and blank on others
+    assert (per_year.loc[per_year["named"], "amount"] >= 25_000).all()
+    assert (per_year.loc[per_year["blank"], "amount"] < 25_000).all() and per_year["blank"].sum() > 3000
+
+
+def test_department_and_type_detail_holds_only_named_vendor_years():
+    detail = pd.read_csv(ROOT / "data/processed/vendor_payments_by_department.csv")
+    named = set(zip(table["fy"], table["vendor_key"]))
+    assert set(zip(detail["fy"], detail["vendor_key"])) <= named
+    for e in site["vendors"]:
+        assert set(e["by_dept"]) == set(e["by_type"]) == set(e["amounts"])
 
 
 def test_named_and_unnamed_add_up_to_every_payment(payments):

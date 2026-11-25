@@ -2,7 +2,7 @@ from datetime import date
 
 import pytest
 
-from sd_spend.payments import HEADER, NO_TYPE, PaymentsError, fiscal_year, fund_class, never_named, parse_payments
+from sd_spend.payments import HEADER, NO_TYPE, PaymentsError, fiscal_year, fund_class, parse_payments, unnamed_years
 
 
 def tsv(*rows):
@@ -49,16 +49,24 @@ def test_parse_payments_fails_on_unexpected_columns_or_no_rows():
         parse_payments(tsv())
 
 
-def test_never_named_is_by_fiscal_year_not_across_years():
+def test_unnamed_years_is_per_vendor_and_fiscal_year():
     rows = [
-        ["1", "Big Co", "2024-07-01", "", "30000"],     # named in FY2025
-        ["2", "A Person", "2024-07-01", "", "20000"],   # 20k in FY2025
-        ["2", "A Person", "2025-07-01", "", "20000"],   # and 20k in FY2026: 40k in all, never 25k in a year
-        ["3", "Small Co", "2024-08-01", "", "24999.99"],
+        ["1", "Big Co", "2024-07-01", "", "30000"],     # FY2025: named
+        ["1", "Big Co", "2025-07-01", "", "100"],       # FY2026: under $25,000, so not named that year
+        ["2", "A Person", "2024-07-01", "", "20000"],
+        ["2", "A Person", "2025-07-01", "", "20000"],
         ["4", "Two Bills", "2024-08-01", "", "15000"],
         ["4", "Two Bills", "2025-06-30", "", "10000"],  # 25k in FY2025
     ]
-    assert never_named(rows) == {"2", "3"}
+    assert unnamed_years(rows) == {("1", 2026), ("2", 2025), ("2", 2026)}
+
+
+def test_one_id_with_two_names_fails():
+    with pytest.raises(PaymentsError, match="two names"):
+        unnamed_years([["1", "Big Co", "2024-07-01", "", "1"], ["1", "Other Co", "2024-07-02", "", "1"]])
+    with pytest.raises(PaymentsError, match="two names"):
+        parse_payments(tsv(ROW, [ROW[0], "Someone Else"] + ROW[2:]))
+    assert len(parse_payments(tsv(ROW, [ROW[0], ""] + ROW[2:]))) == 2  # a blanked year is not a second name
 
 
 @pytest.mark.parametrize("code,name,expected", [
@@ -72,6 +80,9 @@ def test_never_named_is_by_fiscal_year_not_across_years():
     ("710001", "GRANT FUND-ENT-STATE", "Grants"),
     ("200811", "COVID-19 RENT RELIEF", "Grants"),
     ("720000", "FLEET OPERATIONS", "Other city funds"),
+    ("200308", "DEPT INFO TECHNOLOGY", "Other city funds"),
+    ("200700", "RDA OBLIG RET FUND", "Other city funds"),
+    ("400872", "TRANSNET COMM PAPER", "Borrowed money (bonds and loans)"),
 ])
 def test_fund_class(code, name, expected):
     assert fund_class(code, name) == expected

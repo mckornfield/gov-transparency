@@ -85,3 +85,9 @@ test("summaries, breakdowns and partial-year labels", () => {
   assert.equal(yearLabel(data, 2027), "FY2027 so far (July to September 2026)");
   assert.equal(yearLabel(data, 2026), "FY2026");
 });
+
+test("department names with slashes and ampersands survive the link", () => {
+  const years = [2026];
+  const state = { fy: 2026, q: "", dept: "Citywide Other/Special Funds" };
+  assert.deepEqual(parseVendorHash(serializeVendorHash(state), years, ["Citywide Other/Special Funds"]), state);
+});

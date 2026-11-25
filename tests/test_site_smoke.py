@@ -224,6 +224,13 @@ def test_vendors_department_filter_changes_every_chart_and_the_link(page, site_u
     assert errors == []
 
 
+def test_vendors_department_with_only_refunds_says_so(page, site_url):
+    errors = open_vendors(page, site_url, "#fy=2026&d=Mobility")
+    assert "refunds or reversals" in page.inner_text("#vhead")
+    assert "100.0%" not in page.inner_text("#leader-table")
+    assert errors == []
+
+
 def test_vendors_page_has_no_horizontal_scroll_on_a_phone(page, site_url):
     page.set_viewport_size({"width": 390, "height": 800})
     open_vendors(page, site_url)

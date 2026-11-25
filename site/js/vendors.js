@@ -70,11 +70,13 @@ function drawMonthly() {
   const values = state.dept === null ? data.monthly.all : data.monthly.departments[state.dept];
   const rows = data.monthly.months.map((m, i) => ({ month: new Date(`${m}-15T00:00:00`), amount: values[i] }));
   const start = new Date(`${state.fy - 1}-07-01T00:00:00`);
-  const end = new Date(`${state.fy}-07-01T00:00:00`);
+  const last = data.monthly.months.at(-1);
+  const dataEnd = new Date(Number(last.slice(0, 4)), Number(last.slice(5, 7)), 0);
+  const end = new Date(Math.min(new Date(`${state.fy}-07-01T00:00:00`), dataEnd));
   const width = Math.max(300, $("monthly").clientWidth);
   $("monthly").replaceChildren(Plot.plot({
     width, height: 220, marginLeft: 56,
-    x: { type: "utc", label: null, ticks: width < 500 ? 4 : 8 },
+    x: { type: "time", label: null, ticks: width < 500 ? 4 : 8 },
     y: { label: null, grid: true, tickFormat: (v) => formatMoney(v) },
     marks: [
       Plot.rectY([{ start, end }], { x1: "start", x2: "end", y1: 0, y2: Math.max(...values, 1), fill: css("--accent"), fillOpacity: 0.12 }),
@@ -133,6 +135,8 @@ function render() {
   const year = yearLabel(data, state.fy);
   if (!summary) {
     $("vhead").textContent = `${year}: ${who} made no payments in this file.`;
+  } else if (summary.total <= 0) {
+    $("vhead").textContent = `${year}: ${who}'s payments in this file are refunds or reversals that net to ${formatMoney(summary.total)}.`;
   } else {
     const small = summary.unnamed.count
       ? ` Another ${summary.unnamed.count.toLocaleString("en-US")} payees received ${formatMoney(summary.unnamed.amount)} in smaller amounts and are not named.`
@@ -152,7 +156,7 @@ function render() {
       : "Tax and garnishment payments, employees and petty cash are not in this file, so this is not total spending.";
   const leaders = topVendors(data.vendors, state.fy, 25, deptIndex);
   barsX("leaders", leaders, "name");
-  fillTable("leader-table", leaders.map((l) => [l.name, money(l.amount), summary ? `${((100 * l.amount) / summary.total).toFixed(1)}%` : "—"]));
+  fillTable("leader-table", leaders.map((l) => [l.name, money(l.amount), summary?.total > 0 ? `${((100 * l.amount) / summary.total).toFixed(1)}%` : "—"]));
   barsX("types", breakdown(summary?.types, data.types), "label");
   barsX("funds", breakdown(summary?.funds, data.funds), "label");
   drawMonthly();

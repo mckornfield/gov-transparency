@@ -27,8 +27,8 @@
     <p id="vhead" class="headline" aria-live="polite">Loading…</p>
     <p id="vcoverage" class="note"></p>
     <p id="passthrough-note" class="note">A large payment is not necessarily a purchase of services: it can be a
-      pass-through, for example to a regional water wholesaler or the Housing Commission (the City files many of these as
-      "Transfers Out"). Nothing here says a payment was too high. Payees paid less than $25,000 in a year are counted in
+      pass-through, for example to a regional water wholesaler or the Housing Commission, or a debt payment to a bond
+      trustee bank. Nothing here says a payment was too high. Payees paid less than $25,000 in a year are counted in
       every total but not named, as in the City's own published lists; many are private people.</p>
 
     <form class="controls" aria-label="Year and department" onsubmit="return false">
@@ -68,9 +68,10 @@
       <div id="types" role="img" aria-label="Bar chart of payments by the City's spending type"></div>
       <details class="method">
         <summary>Method</summary>
-        <p>The City's own spending type for each payment line (its "commitment item group"). "Transfers Out" are payments
-          the City books as transfers, mostly to other public agencies such as the Housing Commission. A few lines carry
-          no type.</p>
+        <p>The City's own spending type for each payment line (its "commitment item group"). In these payments, "Transfers
+          Out" are almost all debt payments to the banks that act as trustees for City bonds (US Bank, Computershare, BNY
+          Mellon, Wells Fargo). Payments to the regional water wholesaler are mostly "Supplies", and to the Housing
+          Commission "Contracts &amp; Services". A few lines carry no type.</p>
       </details>
     </figure>
 
@@ -83,7 +84,8 @@
           sub-funds); water and sewer funds, paid for by customers' bills; grants (federal and state grant funds,
           community development block grants, pandemic rent relief); borrowed money (funds named for bonds, commercial
           paper and loans); and every other City fund (fleet, information technology, special districts, enterprises
-          and others).</p>
+          and others). Fleet, information technology and other internal funds bill General Fund and utility departments
+          for their work, so the General Fund bar understates what General Fund departments paid for.</p>
       </details>
     </figure>
 
@@ -93,8 +95,7 @@
       <details class="method">
         <summary>Method</summary>
         <p>Payments by the month they were made, for the whole City or the chosen department, named and unnamed payees
-          together. The selected fiscal year is shaded. Payments bunch up at the end of a fiscal year and around large
-          construction bills.</p>
+          together. The selected fiscal year is shaded. Payments are highest in July, the first month of each fiscal year.</p>
       </details>
     </figure>
 

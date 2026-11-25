@@ -3030,7 +3030,6 @@ fy,vendor_key,dept,type,fund_class,amount
 2022,reconenvironmental,Transportation,Other Expenses,Other city funds,42236.36
 2022,reconenvironmental,Water,Contracts & Services,Water and sewer,7840.22
 2022,recycleaway,Environmental Services,Supplies,Grants,31073.52
-2022,regentsofuniversityofca,City Attorney,Supplies,General fund,16842.78
 2022,regentsofuniversityofca,Emergency Medical Services,Contracts & Services,Other city funds,263046.29
 2022,regentsofuniversityofca,Fire-Rescue,Contracts & Services,General fund,57955.0
 2022,regentsofuniversityofca,Fire-Rescue,Contracts & Services,Other city funds,216435.04
@@ -3285,9 +3284,8 @@ fy,vendor_key,dept,type,fund_class,amount
 2022,sandiegolandfillsystems,Environmental Services,Contracts & Services,Other city funds,109553.71
 2022,sandiegolandfillsystems,Public Utilities,Contracts & Services,Water and sewer,6637865.2
 2022,sandiegolesbiangaybisexual,Economic Development,Contracts & Services,Grants,289051.91
-2022,sandiegometropolitantransit,Homelessness Strategies & Sol,Contracts & Services,General fund,3000.0
 2022,sandiegometropolitantransit,Public Utilities,Contracts & Services,Water and sewer,7315.59
-2022,sandiegometropolitantransit,Transportation,Contracts & Services,General fund,199929.74
+2022,sandiegometropolitantransit,Transportation,Contracts & Services,General fund,191311.0
 2022,sandiegometropolitantransit,Transportation,Contracts & Services,Other city funds,24461.73
 2022,sandiegometropolitantransit,Water,Contracts & Services,Water and sewer,660.01
 2022,sandiegomodelrailroadmuseum,Special Promotional Programs,Contracts & Services,Other city funds,39417.4
@@ -3516,7 +3514,6 @@ fy,vendor_key,dept,type,fund_class,amount
 2022,southerncalcoastwaterrearchpr,Public Utilities,Contracts & Services,Water and sewer,620050.0
 2022,southerncalcoastwaterrearchpr,Stormwater,Contracts & Services,General fund,50000.0
 2022,southerncaliforniaballet,Development Services,Charges for Current Services,Other city funds,3346.98
-2022,southerncaliforniaballet,Special Promotional Programs,Contracts & Services,Other city funds,17229.0
 2022,southerncaliforniaballet,Transportation,Contracts & Services,Other city funds,2922600.5
 2022,southerncaliforniaequipment,Public Utilities,Contracts & Services,Water and sewer,356.35
 2022,southerncaliforniaequipment,Transportation,Contracts & Services,General fund,28346.86
@@ -4852,7 +4849,6 @@ fy,vendor_key,dept,type,fund_class,amount
 2023,ascentenvironmental,Sustainability & Mobility,Contracts & Services,General fund,58805.0
 2023,ascopacificsupply,Parks & Recreation,Contracts & Services,General fund,93.38
 2023,ascopacificsupply,Parks & Recreation,Supplies,General fund,35075.32
-2023,asianbusinessassociation,Council District 6,Contracts & Services,General fund,5000.0
 2023,asianbusinessassociation,Economic Development,Contracts & Services,Other city funds,240071.56
 2023,assetworks,Fleet Op & Energy,Information Technology,Other city funds,209053.44
 2023,associationofcalifornia,Public Utilities,Contracts & Services,Water and sewer,61650.0
@@ -4863,9 +4859,8 @@ fy,vendor_key,dept,type,fund_class,amount
 2023,atandt,Fire-Rescue,Energy and Utilities,General fund,144219.1
 2023,atandt,Fire-Rescue,Information Technology,General fund,31831.96
 2023,atandt,Information Technology,Information Technology,General fund,527754.28
-2023,atandt,Information Technology,Information Technology,Other city funds,5786621.81
+2023,atandt,Information Technology,Information Technology,Other city funds,5778710.52
 2023,atandt,Office of the COO,Energy and Utilities,General fund,622.96
-2023,atandt,Office of the Mayor,Contracts & Services,General fund,13.93
 2023,atandt,Parks & Recreation,Contracts & Services,General fund,245.22
 2023,atandt,Parks & Recreation,Contracts & Services,Other city funds,3365.34
 2023,atandt,Parks & Recreation,Information Technology,General fund,3651.83
@@ -7959,7 +7954,6 @@ fy,vendor_key,dept,type,fund_class,amount
 2023,reconenvironmental,Stormwater,Other Expenses,General fund,29794.86
 2023,reconenvironmental,Transportation,Contracts & Services,Other city funds,20120.0
 2023,reconenvironmental,Transportation,Other Expenses,Other city funds,79971.58
-2023,regentsofuniversityofca,City Attorney,Supplies,General fund,17523.23
 2023,regentsofuniversityofca,Cultural Affairs,Contracts & Services,Other city funds,500.0
 2023,regentsofuniversityofca,Development Services,Charges for Current Services,Other city funds,1150.65
 2023,regentsofuniversityofca,Emergency Medical Services,Contracts & Services,Other city funds,391541.91
@@ -8281,7 +8275,7 @@ fy,vendor_key,dept,type,fund_class,amount
 2023,sandiegometropolitantransit,Public Utilities,Contracts & Services,Water and sewer,5711.35
 2023,sandiegometropolitantransit,Transportation,Contracts & Services,Borrowed money (bonds and loans),750.0
 2023,sandiegometropolitantransit,Transportation,Contracts & Services,General fund,200735.77
-2023,sandiegometropolitantransit,Transportation,Contracts & Services,Other city funds,25922.27
+2023,sandiegometropolitantransit,Transportation,Contracts & Services,Other city funds,9003.16
 2023,sandiegomodelrailroadmuseum,Special Promotional Programs,Contracts & Services,Other city funds,53703.55
 2023,sandiegomountainbikingassociati,Parks & Recreation,Contracts & Services,General fund,24999.0
 2023,sandiegomountainbikingassociati,Parks & Recreation,Contracts & Services,Other city funds,72605.0
@@ -8772,7 +8766,7 @@ fy,vendor_key,dept,type,fund_class,amount
 2023,stateofcalifornia,Engineering & Capital Projects,Contracts & Services,Other city funds,4265.0
 2023,stateofcalifornia,Fire-Rescue,Contracts & Services,General fund,4758.0
 2023,stateofcalifornia,Parks & Recreation,Contracts & Services,General fund,5900.0
-2023,stateofcalifornia,Public Utilities,Contracts & Services,Water and sewer,31850.87
+2023,stateofcalifornia,Public Utilities,Contracts & Services,Water and sewer,28355.49
 2023,stateofcaliforniadeptofgensvcs,Development Services,Other Revenue,Other city funds,169022.7
 2023,stateofcaliforniadeptofgensvcs,Police,Contracts & Services,General fund,8551.25
 2023,stateofcaliforniadeptofgensvcs,Police,Contracts & Services,Other city funds,199783.8
@@ -9724,7 +9718,6 @@ fy,vendor_key,dept,type,fund_class,amount
 2024,acmecycles,Fire-Rescue,Supplies,General fund,13282.47
 2024,acmesafetyandsupply,Environmental Services,Supplies,Other city funds,387.9
 2024,acmesafetyandsupply,Library,Supplies,General fund,79.67
-2024,acmesafetyandsupply,Public Utilities,Supplies,Water and sewer,6298.79
 2024,acmesafetyandsupply,Special Events & Filming,Contracts & Services,Other city funds,33000.0
 2024,actionpolicesupply,Police,Supplies,General fund,52499.18
 2024,adamsavenuebusinessassociationi,Economic Development,Contracts & Services,General fund,15244.83
@@ -10029,9 +10022,8 @@ fy,vendor_key,dept,type,fund_class,amount
 2024,atandt,Fire-Rescue,Energy and Utilities,General fund,407756.8
 2024,atandt,Fire-Rescue,Information Technology,General fund,13328.34
 2024,atandt,Information Technology,Information Technology,General fund,653876.07
-2024,atandt,Information Technology,Information Technology,Other city funds,5047598.07
+2024,atandt,Information Technology,Information Technology,Other city funds,5043868.29
 2024,atandt,Office of the COO,Energy and Utilities,General fund,2808.95
-2024,atandt,Office of the Mayor,Contracts & Services,General fund,3.65
 2024,atandt,Parks & Recreation,Contracts & Services,General fund,311.34
 2024,atandt,Parks & Recreation,Contracts & Services,Other city funds,1478.48
 2024,atandt,Parks & Recreation,Information Technology,General fund,1673.06
@@ -12404,7 +12396,7 @@ fy,vendor_key,dept,type,fund_class,amount
 2024,judgenetting,Parks & Recreation,Contracts & Services,Other city funds,61530.65
 2024,juliaweber,City Attorney,Contracts & Services,General fund,32016.54
 2024,kanopy,Library,Supplies,General fund,100956.0
-2024,kapschtrafficcomusa,Public Utilities,Information Technology,Water and sewer,36800.0
+2024,kapschtrafficcomusa,Public Utilities,Information Technology,Water and sewer,36000.0
 2024,karenorganizationofsandiego,Economic Development,Contracts & Services,Grants,84309.74
 2024,karenorganizationofsandiego,Special Promotional Programs,Contracts & Services,Other city funds,5000.0
 2024,kdfarmstrucking,Environmental Services,Contracts & Services,Other city funds,47754.9
@@ -13420,7 +13412,6 @@ fy,vendor_key,dept,type,fund_class,amount
 2024,reconenvironmental,Transportation,Contracts & Services,Other city funds,30246.0
 2024,reelscout,Special Events & Filming,Information Technology,Other city funds,25410.0
 2024,regalresearchandmfg,Parks & Recreation,Capital Expenses,Other city funds,50363.05
-2024,regentsofuniversityofca,City Attorney,Supplies,General fund,24676.09
 2024,regentsofuniversityofca,Council District 1,Contracts & Services,General fund,5000.0
 2024,regentsofuniversityofca,Council District 4,Contracts & Services,General fund,5000.0
 2024,regentsofuniversityofca,Council District 9,Contracts & Services,General fund,5000.0
@@ -13597,7 +13588,7 @@ fy,vendor_key,dept,type,fund_class,amount
 2024,safewaysign,Transportation,Supplies,General fund,304969.18
 2024,sandiegoafricanamericanmuseum,Economic Development,Contracts & Services,General fund,30000.0
 2024,sandiegoafricanamericanmuseum,Special Promotional Programs,Contracts & Services,Other city funds,18799.65
-2024,sandiegoairandspacemuseum,Special Promotional Programs,Contracts & Services,Other city funds,40757.85
+2024,sandiegoairandspacemuseum,Special Promotional Programs,Contracts & Services,Other city funds,39257.85
 2024,sandiegoarchaeologicalcenter,Special Promotional Programs,Contracts & Services,Other city funds,33441.35
 2024,sandiegoartinstitute,Cultural Affairs,Contracts & Services,Other city funds,21686.0
 2024,sandiegoartinstitute,Special Promotional Programs,Contracts & Services,Other city funds,57450.05
@@ -14351,7 +14342,7 @@ fy,vendor_key,dept,type,fund_class,amount
 2024,stateofcalifornia,Fire-Rescue,Contracts & Services,General fund,1125.0
 2024,stateofcalifornia,Library,Contracts & Services,Grants,300.0
 2024,stateofcalifornia,Metropolitan Wastewater Muni,Contracts & Services,Water and sewer,2734.0
-2024,stateofcalifornia,Parks & Recreation,Contracts & Services,General fund,1300.0
+2024,stateofcalifornia,Parks & Recreation,Contracts & Services,General fund,500.0
 2024,stateofcalifornia,Police,Contracts & Services,General fund,650.0
 2024,stateofcalifornia,Police,Contracts & Services,Other city funds,73097.82
 2024,stateofcalifornia,Public Utilities,Contracts & Services,Water and sewer,74021.0
@@ -15367,13 +15358,6 @@ fy,vendor_key,dept,type,fund_class,amount
 2025,acmecycles,Fire-Rescue,Capital Expenses,General fund,83308.24
 2025,acmecycles,Fire-Rescue,Capital Expenses,Other city funds,22550.0
 2025,acmecycles,Fire-Rescue,Supplies,General fund,8999.44
-2025,acmesafetyandsupply,Airport Management,Supplies,Other city funds,7542.5
-2025,acmesafetyandsupply,Council District 4,Supplies,General fund,6616.0
-2025,acmesafetyandsupply,Environmental Services,Supplies,Grants,642.5
-2025,acmesafetyandsupply,Environmental Services,Supplies,Other city funds,3252.7
-2025,acmesafetyandsupply,Parks & Recreation,Contracts & Services,Other city funds,2990.0
-2025,acmesafetyandsupply,Public Utilities,Supplies,Water and sewer,1835.95
-2025,acmesafetyandsupply,Special Events & Filming,Contracts & Services,Other city funds,4750.0
 2025,acoemusa,Public Utilities,Contracts & Services,Water and sewer,29358.04
 2025,acoemusa,Public Utilities,Supplies,Water and sewer,4072.65
 2025,acrolectsolutions,Office of Emergency Services,Contracts & Services,Grants,39359.0
@@ -15670,10 +15654,6 @@ fy,vendor_key,dept,type,fund_class,amount
 2025,asburyenvironmentalservices,Public Utilities,Contracts & Services,Water and sewer,62391.96
 2025,ascentenvironmental,City Planning,Contracts & Services,Grants,320808.58
 2025,ascentenvironmental,City Planning,Contracts & Services,Other city funds,108063.42
-2025,asianbusinessassociation,Council District 3,Contracts & Services,General fund,2000.0
-2025,asianbusinessassociation,Council District 4,Contracts & Services,General fund,2000.0
-2025,asianbusinessassociation,Council District 6,Contracts & Services,General fund,10000.0
-2025,asianbusinessassociation,Council District 7,Contracts & Services,General fund,1500.0
 2025,asianbusinessassociation,Economic Development,Contracts & Services,General fund,30000.0
 2025,asianbusinessassociation,Economic Development,Contracts & Services,Other city funds,263438.0
 2025,asianstorytheater,Special Promotional Programs,Contracts & Services,Other city funds,55000.0
@@ -19027,7 +19007,6 @@ fy,vendor_key,dept,type,fund_class,amount
 2025,reconenvironmental,Public Utilities,Contracts & Services,Water and sewer,636378.96
 2025,reconenvironmental,Stormwater,Other Expenses,General fund,12674.5
 2025,recycleaway,Environmental Services,Supplies,Grants,29237.2
-2025,regentsofuniversityofca,City Attorney,Supplies,General fund,23162.83
 2025,regentsofuniversityofca,Emergency Medical Services,Contracts & Services,Other city funds,516778.0
 2025,regentsofuniversityofca,Fire-Rescue,Contracts & Services,Other city funds,129781.29
 2025,regentsofuniversityofca,Library,Contracts & Services,General fund,100.0
@@ -19346,8 +19325,7 @@ fy,vendor_key,dept,type,fund_class,amount
 2025,sandiegolesbiangaybisexualt,Council District 2,Contracts & Services,General fund,5000.0
 2025,sandiegolesbiangaybisexualt,Council District 3,Contracts & Services,General fund,2000.0
 2025,sandiegolesbiangaybisexualt,Special Promotional Programs,Contracts & Services,Other city funds,219091.0
-2025,sandiegomade,Economic Development,Contracts & Services,General fund,10000.0
-2025,sandiegomade,Special Promotional Programs,Contracts & Services,Other city funds,56261.1
+2025,sandiegomade,Special Promotional Programs,Contracts & Services,Other city funds,50000.0
 2025,sandiegomarineexchange,Fire-Rescue,Supplies,General fund,6959.04
 2025,sandiegomarineexchange,Parks & Recreation,Supplies,General fund,25549.55
 2025,sandiegomarineexchange,Public Utilities,Supplies,Water and sewer,14571.01
@@ -20420,12 +20398,10 @@ fy,vendor_key,dept,type,fund_class,amount
 2025,wellsfargosecurities,Public Utilities,Contracts & Services,Water and sewer,231818.86
 2025,wellsfargosecurities,Public Utilities,Other Expenses,Water and sewer,33400000.0
 2025,wellsfargosecurities,Public Utilities,Transfers Out,Water and sewer,406256.18
-2025,westairgasesandequipment,Facilities Services,Supplies,General fund,1354.1
-2025,westairgasesandequipment,Information Technology,Supplies,Other city funds,1357.91
 2025,westairgasesandequipment,Parks & Recreation,Supplies,General fund,297457.02
 2025,westairgasesandequipment,Police,Supplies,General fund,20723.64
 2025,westairgasesandequipment,Public Utilities,Contracts & Services,Water and sewer,830848.21
-2025,westairgasesandequipment,Public Utilities,Supplies,Water and sewer,782289.68
+2025,westairgasesandequipment,Public Utilities,Supplies,Water and sewer,779574.92
 2025,westairgasesandequipment,Transportation,Supplies,General fund,3656.12
 2025,westcoastarborists,Citywide Other/Special Funds,Contracts & Services,Other city funds,13700.0
 2025,westcoastarborists,Library,Contracts & Services,General fund,20002.18
@@ -24582,8 +24558,7 @@ fy,vendor_key,dept,type,fund_class,amount
 2026,sandiegolesbiangaybisexualt,Special Promotional Programs,Contracts & Services,Other city funds,30613.65
 2026,sandiegomade,Cultural Affairs,Contracts & Services,Other city funds,23307.85
 2026,sandiegomade,Economic Development,Contracts & Services,Other city funds,25000.0
-2026,sandiegomade,Library,Contracts & Services,General fund,255.0
-2026,sandiegomade,Special Promotional Programs,Contracts & Services,Other city funds,10104.9
+2026,sandiegomade,Special Promotional Programs,Contracts & Services,Other city funds,2604.9
 2026,sandiegomarineexchange,Fire-Rescue,Supplies,General fund,6707.54
 2026,sandiegomarineexchange,Parks & Recreation,Supplies,General fund,16490.52
 2026,sandiegomarineexchange,Public Utilities,Supplies,Water and sewer,10986.22
@@ -24628,11 +24603,10 @@ fy,vendor_key,dept,type,fund_class,amount
 2026,sandiegopolicefoundation,Council District 3,Contracts & Services,General fund,1500.0
 2026,sandiegopolicefoundation,Police,Contracts & Services,Grants,30000.0
 2026,sandiegopowerclean,Parks & Recreation,Contracts & Services,General fund,26349.0
-2026,sandiegopump,Environmental Services,Supplies,Other city funds,7090.93
-2026,sandiegopump,Public Utilities,Contracts & Services,Water and sewer,360.96
-2026,sandiegopump,Public Utilities,Not given,Other city funds,158424.65
-2026,sandiegopump,Public Utilities,Other Expenses,Other city funds,1408.81
-2026,sandiegopump,Public Utilities,Supplies,Water and sewer,11310.53
+2026,sandiegopump,Public Utilities,Contracts & Services,Water and sewer,253.21
+2026,sandiegopump,Public Utilities,Not given,Other city funds,149389.81
+2026,sandiegopump,Public Utilities,Other Expenses,Other city funds,1166.37
+2026,sandiegopump,Public Utilities,Supplies,Water and sewer,8252.58
 2026,sandiegopump,Stormwater,Supplies,General fund,22071.51
 2026,sandiegorefrigeration,Fire-Rescue,Contracts & Services,General fund,3643.38
 2026,sandiegorefrigeration,Homelessness Strategies & Sol,Contracts & Services,General fund,7284.68
@@ -25618,14 +25592,11 @@ fy,vendor_key,dept,type,fund_class,amount
 2026,wellsfargosecurities,Public Utilities,Other Expenses,Water and sewer,38800000.0
 2026,wellsfargosecurities,Public Utilities,Transfers Out,Water and sewer,349864.18
 2026,wesleyhousestudentresidence,Economic Development,Contracts & Services,Grants,31906.34
-2026,westairgasesandequipment,Facilities Services,Contracts & Services,General fund,171.35
-2026,westairgasesandequipment,Facilities Services,Supplies,General fund,2768.7
-2026,westairgasesandequipment,Fleet Op & Energy,Supplies,Other city funds,4511.2
 2026,westairgasesandequipment,Information Technology,Supplies,Other city funds,1981.54
 2026,westairgasesandequipment,Parks & Recreation,Supplies,General fund,326994.06
 2026,westairgasesandequipment,Police,Supplies,General fund,20783.42
 2026,westairgasesandequipment,Public Utilities,Contracts & Services,Water and sewer,14968.35
-2026,westairgasesandequipment,Public Utilities,Supplies,Water and sewer,1370631.05
+2026,westairgasesandequipment,Public Utilities,Supplies,Water and sewer,1369620.77
 2026,westairgasesandequipment,Transportation,Supplies,General fund,4384.25
 2026,westcoastarborists,Citywide Other/Special Funds,Contracts & Services,Other city funds,24722.0
 2026,westcoastarborists,Library,Contracts & Services,General fund,29723.75

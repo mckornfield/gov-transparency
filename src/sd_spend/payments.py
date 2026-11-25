@@ -43,17 +43,24 @@ def parse_payments(text: str) -> pd.DataFrame:
         out.append((r[0], r[1].strip(), day, fiscal_year(day), amount, r[6], r[7].strip(), r[8], r[9].strip(), r[10].strip() or NO_TYPE))
     if not out:
         raise PaymentsError("payments file has no rows")
+    named: dict[str, str] = {}
+    for vendor, name, *_ in out:
+        if name and named.setdefault(vendor, name) != name:
+            raise PaymentsError(f"vendor id {vendor} has two names: {named[vendor]!r} and {name!r}")
     return pd.DataFrame(out, columns=["vendor_id", "vendor_name", "date", "fy", "amount", "dept_code", "dept", "fund_code", "fund", "type"])
 
 
-def never_named(rows: list[list[str]]) -> set[str]:
-    """Vendor ids paid less than NAMED_MINIMUM in every fiscal year (rows are raw lines: id, name, ISO date, document, amount, ...)."""
+def unnamed_years(rows: list[list[str]]) -> set[tuple[str, int]]:
+    """(vendor id, fiscal year) pairs paid less than NAMED_MINIMUM that year (rows are raw lines: id, name, ISO date,
+    document, amount, ...). Fails if one id carries two names: the City reuses ids, and money must not be misattributed."""
     totals: dict[tuple[str, int], float] = {}
+    names: dict[str, str] = {}
     for r in rows:
+        if names.setdefault(r[0], r[1]) != r[1]:
+            raise PaymentsError(f"vendor id {r[0]} has two names: {names[r[0]]!r} and {r[1]!r}")
         key = (r[0], fiscal_year(date.fromisoformat(r[2])))
         totals[key] = totals.get(key, 0.0) + float(r[4])
-    named = {vendor for (vendor, _), amount in totals.items() if amount >= NAMED_MINIMUM}
-    return {vendor for vendor, _ in totals} - named
+    return {key for key, amount in totals.items() if amount < NAMED_MINIMUM}
 
 
 # Rough grouping of the City's ~480 funds by name, for "which money paid": checked in this order.

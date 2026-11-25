@@ -46,6 +46,7 @@ REQUIRED = {
     *{f"sandiego/hssd_budget_fy{fy}.pdf.gz" for fy in range(2023, 2027)},
     "hud/2007-2024-PIT-Counts-by-CoC.xlsb.gz",
     "census/cc-est2024-syasex-06.csv.gz",
+    "sandiego/pra_26_11538_ap_detail.tsv.gz",
     "sdcounty/open_budget_exp_fy2025.csv.gz",
     "sdcounty/open_budget_rev_fy2025.csv.gz",
     "sdcounty/bhs_databook_fy2024_25.pdf.gz",
@@ -66,7 +67,8 @@ def test_every_manifest_file_exists_and_matches_hash():
         data = gzip.decompress((RAW / row["path"]).read_bytes())
         assert hashlib.sha256(data).hexdigest() == row["sha256_original"], row["path"]
         assert str(len(data)) == row["bytes_original"], row["path"]
-        assert row["url"].startswith("https://"), row["path"]
+        # a web address, or a public records request whose response was given to the requester (no public link)
+        assert row["url"].startswith(("https://", "Public Records Act request ")), row["path"]
 
 
 def test_no_raw_file_is_missing_from_manifest():

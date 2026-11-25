@@ -62,26 +62,37 @@
 
     <h2>Who gets paid (vendor payments)</h2>
     <ul>
-      <li><strong>Source:</strong> the City's yearly "Cumulative Amounts Paid to Vendors - $25,000 or more" reports
-        (PDF), FY2022 to FY2026, read with <code>pdftotext</code>. The FY2026 report covers July 2025 to June 2026.</li>
-      <li><strong>Only payments of $25,000 or more</strong> to a vendor in the year are published, so the totals leave
-        out smaller vendors. They are not directly comparable to the City's spending either: spending includes payroll,
-        while the vendor list includes capital, pass-through and other payments. The page shows the City's figure only
-        for scale and says so.</li>
-      <li><strong>No purpose or category</strong> is published, so a large payee can be a pass-through (for example to
-        the pension system or a regional water wholesaler). The page makes no judgement about whether a payment was
-        too high.</li>
+      <li><strong>Source:</strong> the City's accounts-payable transaction detail, July 2021 to September 2026, which
+        the Department of Finance released under Public Records Act request 26-11538 (report dated 20 November 2026).
+        It has one line per payment, with the vendor, date, amount, department, fund and the City's spending type. It
+        leaves out tax and garnishment payments, employees and petty cash. The file is not on a public website; a
+        compressed copy is kept in <code>data/raw/sandiego/pra_26_11538_ap_detail.tsv.gz</code>.</li>
+      <li><strong>Who is named.</strong> A vendor is named in a fiscal year it was paid $25,000 or more in total, the
+        same line the City uses for the vendor lists it publishes. Smaller payees are counted in every total but not
+        named; many are private people, such as residents receiving refunds. In the stored copy, the names of payees
+        never paid $25,000 or more in any year are blanked; their vendor IDs and amounts are kept.</li>
+      <li><strong>Agreement with the City's published lists.</strong> For FY2023 to FY2026 the named payments add up to
+        within 1% of the City's yearly "Cumulative Amounts Paid to Vendors - $25,000 or more" reports. The FY2022 report
+        also included payments to the pension system, health plans and an employee union (about $1.0 billion) that the
+        later reports and this file leave out, so FY2022 here is lower than that report. FY2027 has only July to
+        September 2026.</li>
+      <li><strong>Not total spending.</strong> These payments are not directly comparable to the City's spending:
+        spending includes payroll, while payments include capital, pass-through and other payments. The page shows the
+        City's figure only for scale and says so.</li>
+      <li><strong>What for, and which money.</strong> "What the money paid for" is the City's own spending type
+        (commitment item group). "Which money paid" groups the City's ~480 funds roughly by name: the General Fund;
+        water and sewer funds; grants; borrowed money (bond, commercial-paper and loan funds); and other City funds.
+        The page makes no judgement about whether a payment was too high.</li>
       <li><strong>One company, several IDs or spellings.</strong> Vendors whose names match ignoring case,
         punctuation, "&amp;" vs "and" and endings like Inc, LLC, Co or "The" are combined, as is a vendor ID renamed
         to another name starting with the same word. All vendor IDs are kept in
-        <code>data/processed/vendor_payments.csv</code>. Two different companies with near-identical names could be
-        combined by mistake.</li>
-      <li><strong>Checks:</strong> the extractor fails on any line it does not recognise, page footers that are not
-        exactly 1 to N, a page count that differs from the PDF's real page count, a duplicate vendor ID or an amount
-        under $25,000. The reports print no totals, so the build also requires the number of vendors not to jump more
-        than 35% year over year and each year's vendor payments to be between 40% and 110% of the City's own spending.
-        The last check is a coarse sanity band (it mainly catches a lost first page or a double count); the page-count
-        checks are what guard against a lost page.</li>
+        <code>data/processed/vendor_payments.csv</code>; payments by department, type and fund are in
+        <code>data/processed/vendor_payments_by_department.csv</code>. Two different companies with near-identical
+        names could be combined by mistake.</li>
+      <li><strong>Checks:</strong> the build fails on an unexpected column, a line without a vendor ID, date, amount,
+        department or fund, a missing fiscal year, a yearly total outside $1.5&ndash;4.5 billion, or named and unnamed
+        payments that do not add up to the year. Each year must also be between 40% and 110% of the City's own
+        spending, a coarse sanity band.</li>
     </ul>
 
     <h2>Compared with other cities</h2>

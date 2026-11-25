@@ -167,7 +167,8 @@ def test_vendors_page_shows_leaders_headline_and_honest_coverage(page, site_url)
     head = page.locator("#vhead").inner_text()
     assert "FY2026" in head and "vendors" in head and "$" in head
     coverage = page.locator("#vcoverage").inner_text().lower()
-    assert "not directly comparable" in coverage and "less than $25,000" in coverage
+    assert "not directly comparable" in coverage and "less than $25,000" in page.inner_text("#passthrough-note")
+    assert "not named" in head
     assert "not total spending" in coverage
     assert "% of the city" not in coverage  # the two totals are not nested, so no "coverage" percentage
     assert "pass-through" in page.locator("#passthrough-note").inner_text().lower()
@@ -188,7 +189,8 @@ def test_vendor_search_finds_a_payee_and_shows_its_trend(page, site_url):
     assert "q=water%20authority" in page.url
     page.click("#search-table tbody tr button")
     page.wait_for_selector("#vendor-trend svg")
-    assert page.locator("#vendor-trend rect").count() == 5
+    assert page.locator("#vendor-trend rect").count() == 6  # FY2022-FY2026 and the start of FY2027
+    assert "Public Utilities" in page.locator("#vendor-depts").inner_text()
 
 
 def test_vendor_search_with_regex_characters_is_literal_and_safe(page, site_url):
@@ -200,11 +202,26 @@ def test_vendor_search_with_regex_characters_is_literal_and_safe(page, site_url)
 
 
 def test_vendors_deep_link_restores_year_and_search(page, site_url):
-    open_vendors(page, site_url, "#fy=2022&q=sdcers")
+    open_vendors(page, site_url, "#fy=2022&d=Library&q=gas%20and%20electric")
     assert page.input_value("#fy") == "2022"
-    assert page.input_value("#q") == "sdcers"
-    assert "SDCERS" in page.locator("#search-table").inner_text()
-    assert "FY2022" in page.locator("#vhead").inner_text()
+    assert page.input_value("#dept") == "Library"
+    assert page.input_value("#q") == "gas and electric"
+    assert "San Diego Gas and Electric" in page.locator("#search-table").inner_text()
+    head = page.locator("#vhead").inner_text()
+    assert head.startswith("FY2022: Library paid") and "named vendors" in head
+
+
+def test_vendors_department_filter_changes_every_chart_and_the_link(page, site_url):
+    errors = open_vendors(page, site_url)
+    before = {i: page.inner_text(f"#{i}") for i in ("leader-table", "types", "funds")}
+    page.select_option("#dept", "Parks & Recreation")
+    page.wait_for_function("location.hash.includes('d=Parks')")
+    assert all(page.inner_text(f"#{i}") != before[i] for i in before)
+    assert "Parks & Recreation" in page.inner_text("#vhead")
+    page.fill("#fy", "2027")
+    page.dispatch_event("#fy", "input")
+    assert "so far" in page.inner_text("#fy-label") and "first three months" in page.inner_text("#vcoverage")
+    assert errors == []
 
 
 def test_vendors_page_has_no_horizontal_scroll_on_a_phone(page, site_url):

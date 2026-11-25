@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Who gets paid · San Diego Spending</title>
-  <meta name="description" content="The vendors the City of San Diego paid $25,000 or more each year, FY2022 to FY2026.">
+  <meta name="description" content="Who the City of San Diego paid, July 2021 to September 2026: vendors paid $25,000 or more each year, which departments paid them, for what, and from which funds.">
   <link rel="stylesheet" href="css/site.css?v=2">
 </head>
 <body>
@@ -26,56 +26,111 @@
     <h1>Who gets paid</h1>
     <p id="vhead" class="headline" aria-live="polite">Loading…</p>
     <p id="vcoverage" class="note"></p>
-    <p id="passthrough-note" class="note">The City publishes no purpose or category for these payments, so a large
-      payment is not necessarily a purchase of services: it can be a pass-through, for example to the pension system
-      or a regional water wholesaler. Nothing here says a payment was too high.</p>
+    <p id="passthrough-note" class="note">A large payment is not necessarily a purchase of services: it can be a
+      pass-through, for example to a regional water wholesaler or the Housing Commission (the City files many of these as
+      "Transfers Out"). Nothing here says a payment was too high. Payees paid less than $25,000 in a year are counted in
+      every total but not named, as in the City's own published lists; many are private people.</p>
 
-    <form class="controls" aria-label="Year" onsubmit="return false">
+    <form class="controls" aria-label="Year and department" onsubmit="return false">
       <div class="year-control">
         <label for="fy">Fiscal year: <strong id="fy-label"></strong></label>
-        <input type="range" id="fy" min="2022" max="2026" step="1" value="2026">
+        <input type="range" id="fy" min="2022" max="2027" step="1" value="2026">
+      </div>
+      <div>
+        <label for="dept">Department</label>
+        <select id="dept"><option value="">All departments</option></select>
       </div>
     </form>
 
     <h2>Largest payees</h2>
     <figure>
-      <div id="leaders" role="img" aria-label="Bar chart of the 25 vendors paid the most in the selected year"></div>
+      <div id="leaders" role="img" aria-label="Bar chart of the 25 vendors paid the most in the selected year and department"></div>
       <details class="method">
         <summary>Method</summary>
-        <p>Source: the City's yearly "Cumulative Amounts Paid to Vendors - $25,000 or more" reports (PDF), read with
-          <code>pdftotext</code>. Only vendors paid $25,000 or more in the year are listed. A company that appears
-          under several vendor IDs or spellings is combined into one row. Fiscal years are named by the year they end;
-          the FY2026 report covers July 2025 to June 2026. See <a href="methods.html">Data &amp; methods</a>.</p>
+        <p>Source: the City's accounts-payable payments, July 2021 to September 2026, from Public Records Act request
+          26-11538 (one line per payment, with department, fund and type). It leaves out tax and garnishment payments,
+          employees and petty cash. A company paid under several vendor IDs or spellings is combined into one row, and
+          it is named in a year it was paid $25,000 or more in total. With a department chosen, the bars show what that
+          department paid. Fiscal years are named by the year they end; FY2027 is only July to September 2026. See
+          <a href="methods.html">Data &amp; methods</a>.</p>
       </details>
     </figure>
     <div class="table-wrap">
       <table id="leader-table" data-title="Largest payees">
-        <caption class="note">The same 25 payees, largest first.</caption>
-        <thead><tr><th scope="col">Vendor</th><th scope="col">Paid</th><th scope="col">Share of listed payments</th></tr></thead>
+        <caption class="note">The same 25 payees, largest first. The share is of everything paid in the year (or by the department), named or not.</caption>
+        <thead><tr><th scope="col">Vendor</th><th scope="col">Paid</th><th scope="col">Share of payments</th></tr></thead>
         <tbody></tbody>
       </table>
     </div>
 
+    <h2>What the money paid for</h2>
+    <figure>
+      <div id="types" role="img" aria-label="Bar chart of payments by the City's spending type"></div>
+      <details class="method">
+        <summary>Method</summary>
+        <p>The City's own spending type for each payment line (its "commitment item group"). "Transfers Out" are payments
+          the City books as transfers, mostly to other public agencies such as the Housing Commission. A few lines carry
+          no type.</p>
+      </details>
+    </figure>
+
+    <h2>Which money paid</h2>
+    <figure>
+      <div id="funds" role="img" aria-label="Bar chart of payments by kind of fund"></div>
+      <details class="method">
+        <summary>Method</summary>
+        <p>The City pays from about 480 funds. They are grouped here by name, roughly: the General Fund (and its small
+          sub-funds); water and sewer funds, paid for by customers' bills; grants (federal and state grant funds,
+          community development block grants, pandemic rent relief); borrowed money (funds named for bonds, commercial
+          paper and loans); and every other City fund (fleet, information technology, special districts, enterprises
+          and others).</p>
+      </details>
+    </figure>
+
+    <h2>Month by month</h2>
+    <figure>
+      <div id="monthly" role="img" aria-label="Bar chart of payments by month, July 2021 to September 2026"></div>
+      <details class="method">
+        <summary>Method</summary>
+        <p>Payments by the month they were made, for the whole City or the chosen department, named and unnamed payees
+          together. The selected fiscal year is shaded. Payments bunch up at the end of a fiscal year and around large
+          construction bills.</p>
+      </details>
+    </figure>
+
     <h2>Find a vendor</h2>
     <div class="vendor-search">
       <label for="q">Search by name</label>
-      <input type="search" id="q" autocomplete="off" placeholder="e.g. water, construction, SDCERS">
+      <input type="search" id="q" autocomplete="off" placeholder="e.g. water, construction, gas and electric">
     </div>
     <p id="search-empty" class="note" hidden>No vendors match that name.</p>
     <div class="table-wrap">
       <table id="search-table" data-title="Vendor search results" hidden>
-        <caption class="note">Matches, largest in the selected year first. A dash means no payment of $25,000 or more that year.</caption>
-        <thead><tr><th scope="col">Vendor</th><th scope="col">FY2022</th><th scope="col">FY2023</th><th scope="col">FY2024</th><th scope="col">FY2025</th><th scope="col">FY2026</th><th scope="col"><span class="visually-hidden">Trend</span></th></tr></thead>
+        <caption class="note">Matches, largest in the selected year first. A dash means the vendor was paid less than $25,000 (or nothing) that year.</caption>
+        <thead><tr id="search-head"><th scope="col">Vendor</th></tr></thead>
         <tbody></tbody>
       </table>
     </div>
     <figure id="trend-figure" hidden>
       <h3 id="trend-title"></h3>
       <div id="vendor-trend" role="img" aria-label="Bar chart of one vendor's payments by fiscal year"></div>
+      <div class="table-wrap">
+        <table id="vendor-depts" data-title="Departments that paid this vendor">
+          <caption class="note" id="vendor-depts-caption"></caption>
+          <thead><tr><th scope="col">Department</th><th scope="col">Paid</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <div class="table-wrap">
+        <table id="vendor-types" data-title="What this vendor was paid for">
+          <caption class="note">By the City's spending type, in the same year.</caption>
+          <thead><tr><th scope="col">Type</th><th scope="col">Paid</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
       <details class="method">
         <summary>Method</summary>
-        <p>Years with no bar had no payment of $25,000 or more to this vendor (they may have been paid less, which the
-          City does not publish).</p>
+        <p>Years with no bar had payments under $25,000 to this vendor, or none; the City does not name payees below that line.</p>
       </details>
     </figure>
   </main>

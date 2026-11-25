@@ -9,7 +9,9 @@ equivalent ("margin"). See `docs/superpowers/specs/` for the design.
 uv sync
 uv run python scripts/fetch_sd_budget.py        # ~130 MB download -> data/raw/sandiego/*.csv.gz
 uv run python scripts/fetch_sco_population.py   # -> data/raw/sco/
-uv run python scripts/fetch_sd_vendor_payments.py   # 5 PDFs -> data/raw/sandiego/vendor_payments_fy20NN.pdf.gz
+uv run python scripts/fetch_sd_vendor_payments.py   # 5 PDFs -> data/raw/sandiego/vendor_payments_fy20NN.pdf.gz (used only as a cross-check)
+# The payments file (PRA 26-11538) is already in data/raw; to re-import the workbook the City sent:
+#   uv run python scripts/import_pra_payments.py "PRA 26-11538 Accounts Payable Transaction Detail.xlsx"
 uv run python scripts/build_processed.py        # -> data/processed/, site/data/
 uv run python scripts/fetch_census_finances.py   # Census city finances FY2019-FY2024 -> data/raw/census/
 uv run python scripts/fetch_bea_rpp.py           # BEA regional price parities -> data/raw/bea/
@@ -24,7 +26,7 @@ uv run python scripts/fetch_schools.py          # needs mdbtools (brew install m
 uv run python scripts/build_schools.py          # -> data/processed/schools_spending.csv, site/data/schools.json
 uv run python scripts/fetch_sd_age_spending.py  # San Diego: county open-budget tables, behavioral health databook, Census county population
 uv run python scripts/build_sd_age_spending.py  # needs pdftotext; run after build_schools.py; -> data/processed/sd_age_spending.csv, site/data/sd-age-spending.json
-uv run python scripts/build_vendors.py          # needs poppler: brew install poppler (or apt install poppler-utils)
+uv run python scripts/build_vendors.py          # PRA payments -> data/processed/vendor_payments*.csv, site/data/vendors.json
 uv run pytest -m "not smoke" && npm test        # unit + data checks
 uv run playwright install chromium && uv run pytest -m smoke   # browser smoke test
 uv run python -m http.server --directory site   # preview at http://localhost:8000
@@ -44,7 +46,8 @@ original bytes; files are stored gzip-compressed).
 | California state spending by age: Governor's Budget 2025-26 (Schedule 9 and the Department of Social Services page, 2023-24 actuals), Census state population by age, DDS consumers by age, CDSS in-home care recipients by age and CalWORKs children and adults | California Department of Finance; Census; DDS; CDSS | `fetch_ca_age_spending.py`, `build_ca_age_spending.py`; parsers in `src/sd_spend/caspend.py` |
 | School district spending: SACS unaudited actual data 2023-24 (San Diego County extract of the state's Access database) | California Department of Education | `fetch_schools.py`, `build_schools.py`; categories in `src/sd_spend/schools.py` |
 | San Diego local spending by age: County of San Diego open-budget tables (2024-25 adopted budget by program and revenue source), Behavioral Health Services databook 2024-25 (clients by age), Census county population by age; plus the school ledger, city budget and state caseload files above | County of San Diego; Census | `fetch_sd_age_spending.py`, `build_sd_age_spending.py`; parsers in `src/sd_spend/sdage.py` |
-| Vendor payments of $25,000 or more, FY2022-FY2026 (PDF, one per year) | City of San Diego, sandiego.gov "Cumulative Amounts Paid to Vendors" | `fetch_sd_vendor_payments.py`, `build_vendors.py` |
+| Accounts-payable payments, July 2021 to September 2026 (vendor, date, amount, department, fund, spending type) | City of San Diego Department of Finance, Public Records Act request 26-11538 (not on a public website; stored copy blanks names of payees never paid $25,000 in a year) | `import_pra_payments.py`, `build_vendors.py`; parser in `src/sd_spend/payments.py` |
+| Vendor payments of $25,000 or more, FY2022-FY2026 (PDF, one per year), used to cross-check the payments file | City of San Diego, sandiego.gov "Cumulative Amounts Paid to Vendors" | `fetch_sd_vendor_payments.py`; parser in `src/sd_spend/vendors.py` |
 
 ## Data-quality notes
 - Fiscal years are named by the year they end (FY2023 = July 2022 to June 2023). Dollars are nominal.
@@ -54,7 +57,7 @@ original bytes; files are stored gzip-compressed).
 - `Transfers Out` (~13% of FY2023 spending) is hidden by default in the UI because it moves money between city funds.
 - The build fails if aggregation changes a total, if adopted budget differs from actuals by more than 25%, or if any year's total jumps more than 40%.
 - SCO population is missing for 2006, 2010 and 2026; the build interpolates or carries forward and flags those years.
-- Vendor payments: the PDFs list only vendors paid $25,000 or more in the year, with no purpose or category, and print no totals. `build_vendors.py` fails on any unrecognised line, page footers that are not exactly 1..N, a page count that differs from `pdfinfo`, a duplicate vendor ID or an amount under $25,000, and on a year-over-year change of more than 35% in vendor count. It also requires each year's vendor total to be 40%-110% of the City's own spending (currently 58%-86%), which is only a coarse sanity band; vendor payments and City spending are not directly comparable (spending includes payroll; the vendor list includes capital and pass-through payments).
+- Vendor payments: built from the PRA 26-11538 payments file. Vendors are named only in a year they were paid $25,000 or more (the City's own publishing line); smaller payees are counted but not named. FY2023-FY2026 agree with the City's published PDFs within 1% (a test checks this when poppler is installed); the FY2022 PDF also carried about $1.0B of pension, health-plan and union payments that this file leaves out. `build_vendors.py` fails on an unexpected layout, a missing year, a yearly total outside $1.5-4.5B, named plus unnamed not adding up, or a year outside 40%-110% of the City's own spending.
 - The same company can appear under several vendor IDs and spellings (e.g. San Diego Gas and Electric); vendors are merged when names match ignoring case, punctuation, "&" vs "and" and endings like Inc/LLC/Co/"The", or when a vendor ID is renamed to a name starting with the same word, and all IDs are kept in `data/processed/vendor_payments.csv`.
 - Peer cities: consolidated city-counties are excluded; $0 for a service means the city does not report it and is left out of the median and rank; `build_peers.py` fails on an unmapped spending code, a missing or duplicate city, or a total outside $500-$8,000 per resident (schools, health and welfare excluded). Administration is a Census catch-all category, so gaps there may reflect reporting. Older survey years list equipment/land (`G`) and transfers by service (`L`/`M`/`S`) separately; each `G` code is counted with its `F` construction twin (later files fold them together) and transfers roll up by prefix, so the years are comparable. Austin's lines are mostly Census-imputed (flag `I`) in most years. The optional price adjustment divides each city by its metro's BEA Regional Price Parity (all items), blended over the city's fiscal year (`config/peers.json` has each metro; `src/sd_spend/prices.py`).
-- The FY2026 vendor report covers July 2025 to June 2026; the quarterly file in the same series (July-September 2025 only) is not used.
+- FY2027 on the vendors page is only July to September 2026, the end of the PRA file.
